@@ -57,6 +57,7 @@ add_library(ed_gui_server_plugin
     src/gui_server_plugin.cpp
 )
 target_link_libraries(ed_gui_server_plugin ${catkin_LIBRARIES})
+add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_EXPORTED_TARGETS)
 
 # add_executable(exec_name
 #     src/source_file1.cpp

@@ -3,6 +3,7 @@ project(ed_gui_server)
 
 find_package(catkin REQUIRED COMPONENTS
     ed
+    message_generation
 )
 
 # find_package(Boost REQUIRED COMPONENTS system program_options)
@@ -57,7 +58,7 @@ add_library(ed_gui_server_plugin
     src/gui_server_plugin.cpp
 )
 target_link_libraries(ed_gui_server_plugin ${catkin_LIBRARIES})
-add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_EXPORTED_TARGETS)
+add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_generate_messages_cpp)
 
 # add_executable(exec_name
 #     src/source_file1.cpp

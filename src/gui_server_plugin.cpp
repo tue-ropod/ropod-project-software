@@ -129,3 +129,4 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
     return true;
 }
 
+ED_REGISTER_PLUGIN(GUIServerPlugin)

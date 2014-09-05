@@ -9,7 +9,7 @@
 #include <ros/callback_queue.h>
 #include <ros/service_server.h>
 
-class GUIServerPlugin : ed::Plugin
+class GUIServerPlugin : public ed::Plugin
 {
 
 public:

@@ -15,6 +15,7 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ed_object_models
   CATKIN_DEPENDS geolib2 roslib tue_filesystem
+  DEPENDS yaml-cpp
 )
 
 ###########
@@ -24,6 +25,7 @@ catkin_package(
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+  yaml-cpp
 )
 
 file(GLOB_RECURSE HEADER_FILES include/*.h)
@@ -38,6 +40,7 @@ add_library(ed_object_models
 # Specify libraries to link a library or executable target against
 target_link_libraries(ed_object_models
    ${catkin_LIBRARIES}
+   yaml-cpp
 )
 
 # Declare a cpp executable

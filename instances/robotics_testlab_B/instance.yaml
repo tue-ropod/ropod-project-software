@@ -1,0 +1,39 @@
+composition:
+    - type: "robotics_testlab_B.walls"
+      id: "walls"
+    - type: "robotics_testlab_B.pico_case"
+      id: "pico_case"
+      pose:
+          x: 4.05
+          y: 2
+          z: 0
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet1"
+      pose:
+          x: 6.6
+          y: 2.2
+          z: 0
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet2"
+      pose:
+          x: 6.6
+          y: 1.27
+          z: 0
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet3"
+      pose:
+          x: 6.6
+          y: 0.34
+          z: 0
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet4"
+      pose:
+          x: 6.6
+          y: -0.59
+          z: 0
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet5"
+      pose:
+          x: 6.6
+          y: -1.77
+          z: 0

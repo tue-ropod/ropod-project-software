@@ -1,13 +1,12 @@
-#include <ed/models/loader.h>
+#include "ed/models/models.h"
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
+    ed::models::NewEntityConstPtr e = ed::models::load("robotics_testlab_B");
 
-    ed::models::Loader loader;
-    geo::ShapePtr shape = loader.loadShape("rwc2014.walls");
-
-    if (!shape)
+    if (!e)
     {
-        std::cout << "Model could not be loaded." << std::endl;
+        std::cout << "Instance could not be loaded." << std::endl;
     }
 
     return 0;

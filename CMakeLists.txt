@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   geolib2
   roslib
   tue_filesystem
+  tue_config
 )
 
 ###################################
@@ -32,7 +33,8 @@ file(GLOB_RECURSE HEADER_FILES include/*.h)
 
 # Declare a cpp library
 add_library(ed_object_models
-   src/loader.cpp
+   src/models.cpp
+   src/shape_loader.cpp
    src/xml_shape_parser.cpp
    ${HEADER_FILES}
 )

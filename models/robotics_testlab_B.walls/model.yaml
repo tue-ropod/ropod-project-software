@@ -1,4 +1,4 @@
-#localizable: 1.0
+type: walls
 shape:
     path: shape/heightmap.pgm
     resolution: 0.025000

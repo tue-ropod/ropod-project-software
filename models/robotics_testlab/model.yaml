@@ -1,0 +1,4 @@
+id: robotics_testlab
+composition: 
+    - type: robotics_testlab_B
+      id: testlab_B

@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 
     std::string model_name = argv[1];
 
-    ed::models::NewEntityPtr e = ed::models::load(model_name);
+    ed::models::NewEntityPtr e = ed::models::create(model_name);
 
     if (!e)
     {

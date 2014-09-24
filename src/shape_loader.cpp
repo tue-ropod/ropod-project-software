@@ -67,18 +67,14 @@ geo::ShapePtr getHeightMapShape(const tue::filesystem::Path& path, tue::Configur
 
 // ----------------------------------------------------------------------------------------------------
 
-geo::ShapePtr loadShape(const std::string& type, tue::Configuration cfg)
+geo::ShapePtr loadShape(const std::string& model_path, tue::Configuration cfg)
 {
-    std::string object_models_path = ros::package::getPath("ed_object_models");
-
     geo::ShapePtr shape;
 
-    tue::filesystem::Path model(object_models_path + "/models/" + type);
-
-    std::string relative_shape_path;
-    if (cfg.value("path", relative_shape_path))
+    std::string path;
+    if (cfg.value("path", path))
     {
-        tue::filesystem::Path shape_path(model.string() + "/" + relative_shape_path);
+        tue::filesystem::Path shape_path(model_path + "/" + path);
 
         if (shape_path.exists())
         {
@@ -103,16 +99,16 @@ geo::ShapePtr loadShape(const std::string& type, tue::Configuration cfg)
             }
 
             if (!shape)
-                std::cout << "ed::models::loadShape() : ERROR while loading shape of type '" << type  << "' at " << shape_path.string() << std::endl;
+                std::cout << "ed::models::loadShape() : ERROR while loading shape at " << shape_path.string() << std::endl;
         }
         else
         {
-            std::cout << "ed::models::loadShape() : ERROR while loading shape of type '" << type  << "' at " << shape_path.string() << " ; file does not exist" << std::endl;
+            std::cout << "ed::models::loadShape() : ERROR while loading shape of at " << shape_path.string() << " ; file does not exist" << std::endl;
         }
     }
     else
     {
-        std::cout << "ed::models::loadShape() : ERROR while loading shape of type '" << type  << "', no path specified in model.yaml" << std::endl;
+        std::cout << "ed::models::loadShape() : ERROR while loading shape, no path specified in model.yaml" << std::endl;
     }
 
     return shape;

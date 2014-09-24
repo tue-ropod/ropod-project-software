@@ -10,8 +10,7 @@ namespace ed
 namespace models
 {
 
-NewEntityPtr load(const UUID& id);
-NewEntityPtr create(const TYPE& type, tue::Configuration cfg, const UUID& id = NewEntity::generateID());
+NewEntityPtr create(const TYPE& type, tue::Configuration cfg = tue::Configuration(), const UUID& id = NewEntity::generateID());
 
 }
 

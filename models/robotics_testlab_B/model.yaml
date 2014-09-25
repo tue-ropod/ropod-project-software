@@ -37,6 +37,12 @@ composition:
           x: 6.6
           y: -1.77
           z: 0
+    - type: "robotics_testlab_B.hallway_cabinet"
+      id: "hallway_cabinet"
+      pose:
+          x: 1.55
+          y: 0.05
+          z: 0
     - type: "robotics_testlab_B.corridor_cabinet"
       id: "corridor_cabinet"
       pose:

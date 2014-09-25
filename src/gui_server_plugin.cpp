@@ -9,6 +9,9 @@
 #include <geolib/Shape.h>
 #include <geolib/ros/msg_conversions.h>
 
+// Temp:
+#include <geolib/Box.h>
+
 #include <ed_gui_server/EntityInfos.h>
 
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
@@ -124,6 +127,8 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
         {
             if (e->shape())
             {
+                ros_res.entity_ids.push_back(id);
+
                 ros_res.meshes.push_back(ed_gui_server::Mesh());
                 ed_gui_server::Mesh& mesh_msg = ros_res.meshes.back();
 

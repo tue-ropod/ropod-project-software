@@ -9,6 +9,19 @@
 #include <geolib/Shape.h>
 #include <geolib/ros/msg_conversions.h>
 
+#include <ed_gui_server/EntityInfos.h>
+
+void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
+{
+    msg.id = e->id();
+    msg.mesh_revision = e->shapeRevision();
+    geo::convert(e->pose(), msg.pose);
+
+//    msg.pose.position.x = 0;
+//    msg.pose.position.y = 0;
+//    msg.pose.position.z = 0;
+}
+
 // ----------------------------------------------------------------------------------------------------
 
 GUIServerPlugin::GUIServerPlugin()
@@ -36,7 +49,7 @@ void GUIServerPlugin::initialize()
 
     ros::AdvertiseServiceOptions opt_srv_entities =
             ros::AdvertiseServiceOptions::create<ed_gui_server::QueryEntities>(
-                "/ed/gui_server/get_entities", boost::bind(&GUIServerPlugin::srvQueryEntities, this, _1, _2),
+                "/ed/gui/query_entities", boost::bind(&GUIServerPlugin::srvQueryEntities, this, _1, _2),
                 ros::VoidPtr(), &cb_queue_);
 
     srv_query_entities_ = nh.advertiseService(opt_srv_entities);
@@ -44,10 +57,12 @@ void GUIServerPlugin::initialize()
 
     ros::AdvertiseServiceOptions opt_srv_meshes =
             ros::AdvertiseServiceOptions::create<ed_gui_server::QueryMeshes>(
-                "/ed/gui_server/get_meshses", boost::bind(&GUIServerPlugin::srvQueryMeshes, this, _1, _2),
+                "/ed/gui/query_meshes", boost::bind(&GUIServerPlugin::srvQueryMeshes, this, _1, _2),
                 ros::VoidPtr(), &cb_queue_);
 
     srv_query_meshes_ = nh.advertiseService(opt_srv_meshes);
+
+    pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("/ed/gui/entities", 1);
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -56,6 +71,19 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
 {
     world_model_ = &world;
     cb_queue_.callAvailable();
+
+    ed_gui_server::EntityInfos entities_msg;
+    for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
+    {
+        const ed::EntityConstPtr& e = it->second;
+
+        entities_msg.entities.push_back(ed_gui_server::EntityInfo());
+        ed_gui_server::EntityInfo& msg = entities_msg.entities.back();
+
+        entityToMsg(e, msg);
+    }
+
+    pub_entities_.publish(entities_msg);
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -104,9 +132,13 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
 
                 // Vertices
                 const std::vector<geo::Vector3>& vertices = e->shape()->getMesh().getPoints();
-                mesh_msg.vertices.resize(vertices.size());
+                mesh_msg.vertices.resize(vertices.size() * 3);
                 for(unsigned int i = 0; i < vertices.size(); ++i)
-                    geo::convert(vertices[i], mesh_msg.vertices[i]);
+                {
+                    mesh_msg.vertices[i * 3] = vertices[i].x;
+                    mesh_msg.vertices[i * 3 + 1] = vertices[i].y;
+                    mesh_msg.vertices[i * 3 + 2] = vertices[i].z;
+                }
 
                 // Triangles
                 const std::vector<geo::TriangleI>& triangles = e->shape()->getMesh().getTriangleIs();

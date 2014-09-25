@@ -8,6 +8,7 @@
 
 #include <ros/callback_queue.h>
 #include <ros/service_server.h>
+#include <ros/publisher.h>
 
 class GUIServerPlugin : public ed::Plugin
 {
@@ -29,6 +30,8 @@ private:
     const ed::WorldModel* world_model_;
 
     ros::CallbackQueue cb_queue_;
+
+    ros::Publisher pub_entities_;
 
     ros::ServiceServer srv_query_meshes_;    
 

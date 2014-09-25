@@ -19,6 +19,7 @@ add_message_files(
     FILES
     Mesh.msg
     EntityInfo.msg
+    EntityInfos.msg
 )
 
 # Add services

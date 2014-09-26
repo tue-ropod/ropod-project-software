@@ -9,8 +9,8 @@
 #include <geolib/Shape.h>
 #include <geolib/ros/msg_conversions.h>
 
-// Temp:
-#include <geolib/Box.h>
+#include <tue/config/configuration.h>
+#include <tue/config/loaders/yaml.h>
 
 #include <ed_gui_server/EntityInfos.h>
 
@@ -60,6 +60,13 @@ void GUIServerPlugin::initialize()
                 ros::VoidPtr(), &cb_queue_);
 
     srv_query_meshes_ = nh.advertiseService(opt_srv_meshes);
+
+    ros::AdvertiseServiceOptions opt_srv_interact =
+            ros::AdvertiseServiceOptions::create<ed_gui_server::Interact>(
+                "/ed/gui/interact", boost::bind(&GUIServerPlugin::srvInteract, this, _1, _2),
+                ros::VoidPtr(), &cb_queue_);
+
+    srv_interact_ = nh.advertiseService(opt_srv_interact);
 
     pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("/ed/gui/entities", 1);
 }
@@ -186,6 +193,24 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
     }
 
     return true;
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+bool GUIServerPlugin::srvInteract(const ed_gui_server::Interact::Request& ros_req,
+                                ed_gui_server::Interact::Response& ros_res)
+{
+    tue::Configuration params;
+    if (tue::config::loadFromYAMLString(ros_req.command_yaml, params))
+    {
+        std::cout << params << std::endl;
+    }
+    else
+    {
+        ros_res.result_json = "{ error: \"" + params.error() + "\" }";
+    }
+
+
 }
 
 ED_REGISTER_PLUGIN(GUIServerPlugin)

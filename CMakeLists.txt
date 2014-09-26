@@ -27,6 +27,7 @@ add_service_files(
    FILES
     QueryEntities.srv
     QueryMeshes.srv
+    Interact.srv
 )
 
 # Generate added messages and services with any dependencies listed here

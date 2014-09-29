@@ -19,6 +19,24 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
     msg.id = e->id();
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
+
+    if (!e->convexHull().chull.empty())
+    {
+        const ed::ConvexHull2D& ch = e->convexHull();
+
+        msg.polygon.z_min = ch.min_z;
+        msg.polygon.z_max = ch.max_z;
+
+        unsigned int size = ch.chull.size();
+        msg.polygon.xs.resize(size);
+        msg.polygon.ys.resize(size);
+
+        for(unsigned int i = 0; i < size; ++i)
+        {
+            msg.polygon.xs[i] = ch.chull[i].x + ch.center_point.x - msg.pose.position.x;
+            msg.polygon.xs[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
+        }
+    }
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -79,15 +97,36 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
     cb_queue_.callAvailable();
 
     ed_gui_server::EntityInfos entities_msg;
+    entities_msg.entities.resize(world_model_->numEntities());
+
+    unsigned int i = 0;
     for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
-    {
-        const ed::EntityConstPtr& e = it->second;
+        entityToMsg(it->second, entities_msg.entities[i++]);
 
-        entities_msg.entities.push_back(ed_gui_server::EntityInfo());
-        ed_gui_server::EntityInfo& msg = entities_msg.entities.back();
+    // Test - - - - -
 
-        entityToMsg(e, msg);
-    }
+    ed::EntityPtr e(new ed::Entity("Test"));
+
+    ed::ConvexHull2D convex_hull;
+
+    convex_hull.min_z = 0.3;
+    convex_hull.max_z = 1.0;
+    convex_hull.chull.push_back(pcl::PointXYZ(-0.5, -0.5, 0));
+    convex_hull.chull.push_back(pcl::PointXYZ( 0.5, -0.5, 0));
+    convex_hull.chull.push_back(pcl::PointXYZ( 0.5,  0.5, 0));
+    convex_hull.chull.push_back(pcl::PointXYZ(-0.5,  0.5, 0));
+    convex_hull.center_point.x = 0;
+    convex_hull.center_point.y = 0;
+
+    e->setConvexHull(convex_hull);
+    e->setPose(geo::Pose3D::identity());
+
+    ed_gui_server::EntityInfo msg;
+    entityToMsg(e, msg);
+
+    entities_msg.entities.push_back(msg);
+
+    // - - - - - - -
 
     pub_entities_.publish(entities_msg);
 }

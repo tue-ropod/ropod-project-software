@@ -20,6 +20,7 @@ add_message_files(
     Mesh.msg
     EntityInfo.msg
     EntityInfos.msg
+    Polygon.msg
 )
 
 # Add services

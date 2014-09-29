@@ -34,7 +34,7 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
         for(unsigned int i = 0; i < size; ++i)
         {
             msg.polygon.xs[i] = ch.chull[i].x + ch.center_point.x - msg.pose.position.x;
-            msg.polygon.xs[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
+            msg.polygon.ys[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
         }
     }
 }
@@ -101,32 +101,7 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
 
     unsigned int i = 0;
     for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
-        entityToMsg(it->second, entities_msg.entities[i++]);
-
-    // Test - - - - -
-
-    ed::EntityPtr e(new ed::Entity("Test"));
-
-    ed::ConvexHull2D convex_hull;
-
-    convex_hull.min_z = 0.3;
-    convex_hull.max_z = 1.0;
-    convex_hull.chull.push_back(pcl::PointXYZ(-0.5, -0.5, 0));
-    convex_hull.chull.push_back(pcl::PointXYZ( 0.5, -0.5, 0));
-    convex_hull.chull.push_back(pcl::PointXYZ( 0.5,  0.5, 0));
-    convex_hull.chull.push_back(pcl::PointXYZ(-0.5,  0.5, 0));
-    convex_hull.center_point.x = 0;
-    convex_hull.center_point.y = 0;
-
-    e->setConvexHull(convex_hull);
-    e->setPose(geo::Pose3D::identity());
-
-    ed_gui_server::EntityInfo msg;
-    entityToMsg(e, msg);
-
-    entities_msg.entities.push_back(msg);
-
-    // - - - - - - -
+        entityToMsg(it->second, entities_msg.entities[i++]);   
 
     pub_entities_.publish(entities_msg);
 }

@@ -221,7 +221,10 @@ bool GUIServerPlugin::srvInteract(const ed_gui_server::Interact::Request& ros_re
     }
     else
     {
-        ros_res.result_json = "{ error: \"" + params.error() + "\" }";
+        if (params.hasError())
+            ros_res.result_json = "{ error: \"" + params.error() + "\" }";
+        else
+            ros_res.result_json = "{}";
     }
 
 

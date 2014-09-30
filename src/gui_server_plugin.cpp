@@ -14,6 +14,10 @@
 
 #include <ed_gui_server/EntityInfos.h>
 
+#include <ed/io/filesystem/write.h>
+
+#include <boost/filesystem.hpp>
+
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
     msg.id = e->id();
@@ -211,23 +215,52 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
 
 // ----------------------------------------------------------------------------------------------------
 
+void GUIServerPlugin::storeEntity(const std::string& id)
+{
+    ed::EntityConstPtr e = world_model_->getEntity(id);
+    if (e)
+    {
+        ed::MeasurementConstPtr msr = e->bestMeasurement();
+        if (msr)
+        {
+            char const* home = getenv("HOME");
+            if (home)
+            {
+                boost::filesystem::path dir(std::string(home) + "/.ed/entities/" + id);
+                boost::filesystem::create_directories(dir);
+                ed::write(dir.string() + "/measurement", *msr);
+            }
+        }
+        else
+        {
+            std::cout << "Entity '" + id << "' does not have any measurements." << std::endl;
+        }
+    }
+}
+
+// ----------------------------------------------------------------------------------------------------
+
 bool GUIServerPlugin::srvInteract(const ed_gui_server::Interact::Request& ros_req,
                                 ed_gui_server::Interact::Response& ros_res)
 {
     tue::Configuration params;
-    if (tue::config::loadFromYAMLString(ros_req.command_yaml, params))
+    tue::config::loadFromYAMLString(ros_req.command_yaml, params);
+
+    std::string action;
+    if (params.value("action", action))
     {
-        std::cout << params << std::endl;
+        if (action == "store")
+        {
+            std::string id;
+            if (params.value("entity", id))
+                storeEntity(id);
+        }
     }
+
+    if (params.hasError())
+        ros_res.result_json = "{ error: \"" + params.error() + "\" }";
     else
-    {
-        if (params.hasError())
-            ros_res.result_json = "{ error: \"" + params.error() + "\" }";
-        else
-            ros_res.result_json = "{}";
-    }
-
-
+        ros_res.result_json = "{}";
 }
 
 ED_REGISTER_PLUGIN(GUIServerPlugin)

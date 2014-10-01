@@ -35,8 +35,8 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
         msg.polygon.xs.resize(size);
         msg.polygon.ys.resize(size);
 
-        std::cout << e->id() << std::endl;
-        std::cout << ch.center_point.x << ", " << ch.center_point.y << ", " << msg.pose << std::endl;
+        msg.pose.position.x = ch.center_point.x;
+        msg.pose.position.y = ch.center_point.y;
 
         for(unsigned int i = 0; i < size; ++i)
         {

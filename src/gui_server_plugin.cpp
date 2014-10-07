@@ -202,10 +202,10 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
     ros_res.affordances.push_back("pick-up");
 
     ros_res.property_names.push_back("foo");
-    ros_res.property_names.push_back("123");
+    ros_res.property_values.push_back("123");
 
     ros_res.property_names.push_back("bar");
-    ros_res.property_names.push_back("456");
+    ros_res.property_values.push_back("456");
 
     cv::Mat rgb_image(480, 640, CV_8UC3, cv::Scalar(0,0,255));
     imageToBinary(rgb_image, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);

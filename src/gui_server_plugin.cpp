@@ -5,6 +5,9 @@
 
 #include <ed/world_model.h>
 #include <ed/entity.h>
+#include <ed/measurement.h>
+
+#include <rgbd/Image.h>
 
 #include <geolib/Shape.h>
 #include <geolib/ros/msg_conversions.h>
@@ -196,19 +199,39 @@ bool imageToBinary(const cv::Mat& image, std::vector<unsigned char>& data, Image
 bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Request& ros_req,
                                        ed_gui_server::GetEntityInfo::Response& ros_res)
 {
+    ed::EntityConstPtr e = world_model_->getEntity(ros_req.id);
+    if (!e)
+        return true;
 
-    ros_res.type = "Blaa";
+    ros_res.type = e->type();
+
+    // TODO: get affordances from entity
     ros_res.affordances.push_back("navigate-to");
     ros_res.affordances.push_back("pick-up");
 
-    ros_res.property_names.push_back("foo");
-    ros_res.property_values.push_back("123");
+    std::stringstream ss_pose;
+    ss_pose << "(" << e->pose().t.x << ", " << e->pose().t.y << ", " << e->pose().t.z << ")";
+    ros_res.property_names.push_back("position");
+    ros_res.property_values.push_back(ss_pose.str());
 
-    ros_res.property_names.push_back("bar");
-    ros_res.property_values.push_back("456");
+    std::stringstream ss_creationTime;
+    ss_creationTime << e->creationTime();
+    ros_res.property_names.push_back("creation time");
+    ros_res.property_values.push_back(ss_creationTime.str());
 
-    cv::Mat rgb_image(480, 640, CV_8UC3, cv::Scalar(0,0,255));
-    imageToBinary(rgb_image, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);
+    ed::MeasurementConstPtr m = e->bestMeasurement();
+    if (m)
+    {
+        const cv::Mat& rgb_image = m->image()->getRGBImage();
+        const ed::ImageMask& image_mask = m->imageMask();
+
+        cv::Mat rgb_image_masked(rgb_image.rows, rgb_image.cols, CV_8UC3, cv::Scalar(0, 0, 0));
+
+        for(ed::ImageMask::const_iterator it = image_mask.begin(rgb_image.cols); it != image_mask.end(); ++it)
+            rgb_image_masked.at<cv::Vec3b>(*it) = rgb_image.at<cv::Vec3b>(*it);
+
+        imageToBinary(rgb_image, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);
+    }
 
     return true;
 }

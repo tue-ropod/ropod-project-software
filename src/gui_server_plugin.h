@@ -6,6 +6,7 @@
 #include <ed_gui_server/QueryEntities.h>
 #include <ed_gui_server/QueryMeshes.h>
 #include <ed_gui_server/Interact.h>
+#include <ed_gui_server/GetEntityInfo.h>
 
 #include <ros/callback_queue.h>
 #include <ros/service_server.h>
@@ -43,6 +44,11 @@ private:
 
     bool srvQueryEntities(const ed_gui_server::QueryEntities::Request& ros_req,
                           ed_gui_server::QueryEntities::Response& ros_res);
+
+    ros::ServiceServer srv_get_entity_info_;
+
+    bool srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Request& ros_req,
+                          ed_gui_server::GetEntityInfo::Response& ros_res);
 
     ros::ServiceServer srv_interact_;
 

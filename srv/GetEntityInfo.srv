@@ -1,0 +1,7 @@
+string id
+---
+string type
+string[] property_names
+string[] property_values
+uint8[] measurement_image
+string[] affordances

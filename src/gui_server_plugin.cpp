@@ -18,6 +18,8 @@
 
 #include <boost/filesystem.hpp>
 
+#include <opencv2/highgui/highgui.hpp>
+
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
     msg.id = e->id();
@@ -88,6 +90,13 @@ void GUIServerPlugin::initialize()
 
     srv_query_meshes_ = nh.advertiseService(opt_srv_meshes);
 
+    ros::AdvertiseServiceOptions opt_srv_get_entity_info =
+            ros::AdvertiseServiceOptions::create<ed_gui_server::GetEntityInfo>(
+                "/ed/gui/get_entity_info", boost::bind(&GUIServerPlugin::srvGetEntityInfo, this, _1, _2),
+                ros::VoidPtr(), &cb_queue_);
+
+    srv_get_entity_info_ = nh.advertiseService(opt_srv_get_entity_info);
+
     ros::AdvertiseServiceOptions opt_srv_interact =
             ros::AdvertiseServiceOptions::create<ed_gui_server::Interact>(
                 "/ed/gui/interact", boost::bind(&GUIServerPlugin::srvInteract, this, _1, _2),
@@ -136,6 +145,70 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
             geo::convert(e->pose(), info.pose);
         }
     }
+
+    return true;
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+enum ImageCompressionType
+{
+    IMAGE_COMPRESSION_JPG,
+    IMAGE_COMPRESSION_PNG
+};
+
+bool imageToBinary(const cv::Mat& image, std::vector<unsigned char>& data, ImageCompressionType compression_type)
+{
+    if (compression_type == IMAGE_COMPRESSION_JPG)
+    {
+        // OpenCV compression settings
+        std::vector<int> rgb_params;
+        rgb_params.resize(3, 0);
+
+        rgb_params[0] = CV_IMWRITE_JPEG_QUALITY;
+        rgb_params[1] = 95; // default is 95
+
+        // Compress image
+        if (!cv::imencode(".jpg", image, data, rgb_params)) {
+            std::cout << "RGB image compression failed" << std::endl;
+            return false;
+        }
+    }
+    else if (compression_type == IMAGE_COMPRESSION_PNG)
+    {
+        std::vector<int> params;
+        params.resize(3, 0);
+
+        params[0] = CV_IMWRITE_PNG_COMPRESSION;
+        params[1] = 1;
+
+        if (!cv::imencode(".png", image, data, params)) {
+            std::cout << "PNG image compression failed" << std::endl;
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Request& ros_req,
+                                       ed_gui_server::GetEntityInfo::Response& ros_res)
+{
+
+    ros_res.type = "Blaa";
+    ros_res.affordances.push_back("navigate-to");
+    ros_res.affordances.push_back("pick-up");
+
+    ros_res.property_names.push_back("foo");
+    ros_res.property_names.push_back("123");
+
+    ros_res.property_names.push_back("bar");
+    ros_res.property_names.push_back("456");
+
+    cv::Mat rgb_image(480, 640, CV_8UC3, cv::Scalar(0,0,255));
+    imageToBinary(rgb_image, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);
 
     return true;
 }

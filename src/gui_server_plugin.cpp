@@ -230,7 +230,7 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
         for(ed::ImageMask::const_iterator it = image_mask.begin(rgb_image.cols); it != image_mask.end(); ++it)
             rgb_image_masked.at<cv::Vec3b>(*it) = rgb_image.at<cv::Vec3b>(*it);
 
-        imageToBinary(rgb_image, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);
+        imageToBinary(rgb_image_masked, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);
     }
 
     return true;

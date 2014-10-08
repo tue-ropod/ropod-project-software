@@ -1,9 +1,9 @@
 localizable: 1.0
 
 affordances:
-    navigate_to:
+    navigate-to:
         position_constraint:
-            constraint: "x^2 + y^2 < 2^2"
+            constraint: "x^2 + y^2 < 1^2"
 #            frame: $id
 #        orientation_constraint:
 #            frame: $id

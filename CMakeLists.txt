@@ -4,6 +4,7 @@ project(ed_gui_server)
 find_package(catkin REQUIRED COMPONENTS
     ed
     message_generation
+    urdf
 )
 
 # find_package(Boost REQUIRED COMPONENTS system program_options)
@@ -60,6 +61,7 @@ include_directories(
 
 add_library(ed_gui_server_plugin
     src/gui_server_plugin.cpp
+    src/robot.cpp
 )
 target_link_libraries(ed_gui_server_plugin ${catkin_LIBRARIES})
 add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_generate_messages_cpp)

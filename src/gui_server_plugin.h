@@ -12,6 +12,8 @@
 #include <ros/service_server.h>
 #include <ros/publisher.h>
 
+#include "robot.h"
+
 class GUIServerPlugin : public ed::Plugin
 {
 
@@ -35,7 +37,9 @@ private:
 
     ros::Publisher pub_entities_;
 
-    ros::ServiceServer srv_query_meshes_;    
+    ros::ServiceServer srv_query_meshes_;
+
+    gui::Robot robot_;
 
     bool srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& ros_req,
                          ed_gui_server::QueryMeshes::Response& ros_res);

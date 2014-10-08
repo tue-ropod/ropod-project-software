@@ -83,6 +83,9 @@ void Robot::initialize(const std::string& name)
 
                 std::cout << abs_filename << std::endl;
 
+                // TODO: recursively add all meshes
+                // TODO: calculate mesh position w.r.t. base_link
+
                 geo::Importer importer;
                 shape_ = importer.readMeshFile(abs_filename, mesh->scale.x * 2.54);
                 if (shape_)

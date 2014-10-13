@@ -249,15 +249,10 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
     {
         const std::string& id = ros_req.entity_ids[i];
 
-        geo::ShapeConstPtr shape;
-        int shape_revision;
+        geo::ShapeConstPtr shape = robot_.getShape(id);
+        int shape_revision = 1;
 
-        if (id == robot_.name())
-        {
-            shape = robot_.shape();
-            shape_revision = 1;
-        }
-        else
+        if (!shape)
         {
             ed::EntityConstPtr e = world_model_->getEntity(id);
             if (e)
@@ -268,7 +263,6 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
             else
                 ros_res.error_msg += "Unknown entity: '" + id + "'.\n";
         }
-
 
         if (shape)
         {

@@ -7,6 +7,8 @@
 #include <ros/package.h>
 
 #include <geolib/Importer.h>
+#include <geolib/ros/tf_conversions.h>
+#include <geolib/ros/msg_conversions.h>
 
 namespace gui
 {
@@ -37,7 +39,6 @@ void Robot::initialize(const std::string& name)
 
     std::string urdf_xml;
 
-
     ros::NodeHandle nh;
     if (!nh.getParam("/" + name + "/robot_description", urdf_xml))
     {
@@ -51,76 +52,94 @@ void Robot::initialize(const std::string& name)
         return;
     }
 
-    std::cout << robot_model.getRoot()->visual->group_name << std::endl;
-    std::cout << robot_model.getRoot()->visual->material_name << std::endl;
-    std::cout << robot_model.getRoot()->visual->origin.position.x << std::endl;
+    std::vector<boost::shared_ptr<urdf::Link> > links;
+    robot_model.getLinks(links);
 
-    for(std::vector<boost::shared_ptr<urdf::Link> >::const_iterator it = robot_model.getRoot()->child_links.begin();
-        it != robot_model.getRoot()->child_links.end(); ++it)
+    for(std::vector<boost::shared_ptr<urdf::Link> >::const_iterator it = links.begin(); it != links.end(); ++it)
     {
-        boost::shared_ptr<urdf::Link> link = *it;
-        std::cout << link->name << std::endl;
+        const boost::shared_ptr<urdf::Link>& link = *it;
         if (link->visual && link->visual->geometry->type == urdf::Geometry::MESH)
         {
             urdf::Mesh* mesh = static_cast<urdf::Mesh*>(link->visual->geometry.get());
-            std::cout << mesh->filename << std::endl;
-            std::cout << mesh->scale.x << std::endl;
-
-            std::string pkg_prefix = "package://";
-            if (mesh->filename.substr(0, pkg_prefix.size()) == pkg_prefix)
+            if (mesh)
             {
-                std::string str = mesh->filename.substr(pkg_prefix.size());
-                size_t i_slash = str.find("/");
-                std::string pkg = str.substr(0, i_slash);
-                std::cout << pkg << std::endl;
+                geo::Pose3D offset;
+                const urdf::Pose o = link->visual->origin;
+                offset.t = geo::Vector3(o.position.x, o.position.y, o.position.z);
+                offset.R.setRotation(geo::Quaternion(o.rotation.x, o.rotation.y, o.rotation.z, o.rotation.w));
 
-                std::string rel_filename = str.substr(i_slash + 1);
-                std::cout << rel_filename << std::endl;
+                std::cout << link->name << ": " << offset << std::endl;
+                std::cout << "    " << o.rotation.x << ", " << o.rotation.y<< ", " << o.rotation.z<< ", " << o.rotation.w << std::endl;
 
-                std::string pkg_path = ros::package::getPath(pkg);
-
-                std::string abs_filename = pkg_path + "/" + rel_filename;
-
-                std::cout << abs_filename << std::endl;
-
-                // TODO: recursively add all meshes
-                // TODO: calculate mesh position w.r.t. base_link
-
-                geo::Importer importer;
-                shape_ = importer.readMeshFile(abs_filename, mesh->scale.x * 2.54);
-                if (shape_)
+                std::string pkg_prefix = "package://";
+                if (mesh->filename.substr(0, pkg_prefix.size()) == pkg_prefix)
                 {
-                    std::cout << shape_->getMesh().getTriangleIs().size() << " triangles" << std::endl;
-                }
-                else
-                {
-                    std::cout << "Could not load shape" << std::endl;
+                    std::string str = mesh->filename.substr(pkg_prefix.size());
+                    size_t i_slash = str.find("/");
+
+                    std::string pkg = str.substr(0, i_slash);
+                    std::string rel_filename = str.substr(i_slash + 1);
+                    std::string pkg_path = ros::package::getPath(pkg);
+                    std::string abs_filename = pkg_path + "/" + rel_filename;
+
+                    geo::Importer importer;
+                    geo::ShapePtr shape = importer.readMeshFile(abs_filename, mesh->scale.x);
+                    if (shape)
+                    {
+                        std::string full_link_name = "/" + name_ + "/" + link->name;
+                        shapes_[full_link_name] = std::pair<geo::Pose3D, geo::ShapeConstPtr>(offset, shape);
+                    }
+                    else
+                    {
+                        std::cout << "Could not load shape" << std::endl;
+                    }
                 }
             }
         }
     }
+
 }
 
 // ----------------------------------------------------------------------------------------------------
 
-void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities)
+geo::ShapeConstPtr Robot::getShape(const std::string& id) const
 {
-    ed_gui_server::EntityInfo e;
-    e.id = name();
+    ShapeMap::const_iterator it = shapes_.find(id);
+    if (it != shapes_.end())
+        return it->second.second;
+    return geo::ShapeConstPtr();
+}
 
-    try
-    {
-        tf::StampedTransform t;
-        tf_listener_->lookupTransform("/map", "/" + name() + "/base_link", ros::Time(0), t);
-        tf::poseTFToMsg(t, e.pose);
-    }
-    catch (tf::TransformException& e)
-    {
-        std::cout << "No transform" << std::endl;
-        return;
-    }
+// ----------------------------------------------------------------------------------------------------
 
-    entities.push_back(e);
+void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const
+{
+    for(ShapeMap::const_iterator it = shapes_.begin(); it != shapes_.end(); ++it)
+    {
+        ed_gui_server::EntityInfo e;
+        e.id = it->first;
+
+        try
+        {
+            tf::StampedTransform t;
+            tf_listener_->lookupTransform("/map", e.id, ros::Time(0), t);
+
+            geo::Pose3D pose;
+            geo::convert(t, pose);
+
+            // correct for mesh offset
+            pose = pose * it->second.first;
+
+            geo::convert(pose, e.pose);
+        }
+        catch (tf::TransformException& e)
+        {
+            std::cout << "No transform" << std::endl;
+            return;
+        }
+
+        entities.push_back(e);
+    }
 }
 
 } // end namespace gui

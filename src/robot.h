@@ -10,6 +10,8 @@
 namespace gui
 {
 
+typedef std::map<std::string, std::pair<geo::Pose3D, geo::ShapeConstPtr> > ShapeMap;
+
 class Robot
 {
 
@@ -23,9 +25,9 @@ public:
 
     inline const std::string& name() const { return name_; }
 
-    inline geo::ShapeConstPtr shape() const { return shape_; }
+    geo::ShapeConstPtr getShape(const std::string& id) const;
 
-    void getEntities(std::vector<ed_gui_server::EntityInfo>& entities);
+    void getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const;
 
 private:
 
@@ -33,7 +35,7 @@ private:
 
     tf::TransformListener* tf_listener_;
 
-    geo::ShapePtr shape_;
+    ShapeMap shapes_;
 
 private:
 

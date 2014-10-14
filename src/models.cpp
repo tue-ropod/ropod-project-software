@@ -70,10 +70,20 @@ NewEntityPtr create(const TYPE& type, tue::Configuration cfg, const UUID& id)
                 //! Set pose
                 if (e->config.readGroup("pose"))
                 {
-                    if (!e->config.value("x", e->pose.t.x) || !e->config.value("y", e->pose.t.y) || !e->config.value("z", e->pose.t.z))
+                    if (!e->config.value("x", e->pose.t.x) ||
+                            !e->config.value("y", e->pose.t.y) ||
+                            !e->config.value("z", e->pose.t.z))
                     {
                         std::cout << "ed::models::create() : In model '" << type << "': ERROR loading pose; pose is malformed." << std::cout;
                         std::cout << model_cfg << std::endl;
+                    }
+
+                    double X,Y,Z;
+                    if (e->config.value("X", X) &&
+                        e->config.value("Y", Y) &&
+                        e->config.value("Z", Z))
+                    {
+                        e->pose.setRPY(X,Y,Z);
                     }
 
                     e->config.endGroup();

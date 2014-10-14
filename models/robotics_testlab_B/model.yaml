@@ -70,21 +70,45 @@ composition:
     - type: "table_120x80x76"
       id: "operator_table1"
       pose:
-          x: 0.7
-          y: -4.6
-          z: 0.76
+          x: 1.150
+          y: -2.752
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.57
     - type: "table_120x80x76"
       id: "operator_table2"
       pose:
-          x: 0.7
-          y: -3.4
-          z: 0.76
+          x: 1.150
+          y: -3.958
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.57
     - type: "table_120x80x76"
-      id: "living_room_table"
+      id: "dinner_table"
       pose:
-          x: 2.8
-          y: -1.15
-          z: 0.76
+          x: 3.174
+          y: -0.523
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.57
+    - type: "table_120x80x76"
+      id: "workbench"
+      pose:
+          x: 2.120
+          y: -3.010
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.57
+    - type: "table_120x80x76"
+      id: "supply_table"
+      pose:
+          x: 2.16
+          y: -4.16
+          z: 0
     - type: "waypoint"
       id: "living_room"
       pose:

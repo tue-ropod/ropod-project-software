@@ -1,1 +1,4 @@
-position_constraint: 'x^2 + y^2 < 1^2"
+affordances:
+    navigate-to:
+        position_constraint:
+            constraint: "x^2 + y^2 < 0.5^2"

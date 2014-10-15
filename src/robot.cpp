@@ -131,14 +131,12 @@ void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const
             pose = pose * it->second.first;
 
             geo::convert(pose, e.pose);
+            entities.push_back(e);
         }
-        catch (tf::TransformException& e)
+        catch (tf::TransformException& ex)
         {
-            std::cout << "No transform" << std::endl;
-            return;
+            std::cout << "[ed_gui_server] No transform from '/map' to '" << e.id << "'." << std::endl;
         }
-
-        entities.push_back(e);
     }
 }
 

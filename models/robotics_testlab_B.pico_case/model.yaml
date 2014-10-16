@@ -5,4 +5,7 @@ color:
     red: 0.05
     green: 0.05
     blue: 0.05
+affordances:
+    place:
+        height: 0.45
 

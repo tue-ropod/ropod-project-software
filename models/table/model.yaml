@@ -7,3 +7,5 @@ affordances:
 #            frame: $id
 #        orientation_constraint:
 #            frame: $id
+    place:
+        height: 0.76

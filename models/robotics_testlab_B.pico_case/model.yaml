@@ -8,4 +8,8 @@ color:
 affordances:
     place:
         height: 0.45
+    navigate-to:
+        position_constraint:
+            constraint: "x^2 + y^2 < 1.0^2"
+    
 

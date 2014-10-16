@@ -7,4 +7,6 @@ geometry_msgs/Pose pose
 # Special case: mesh_revision == 0 means no mesh available.
 uint32 mesh_revision
 
+Color color
+
 Polygon polygon

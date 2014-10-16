@@ -7,10 +7,19 @@
 
 #include <geolib/datatypes.h>
 
+#include <ed_gui_server/Color.h>
+
+struct Visual
+{
+    geo::Pose3D offset;
+    geo::ShapeConstPtr shape;
+    ed_gui_server::Color color;
+};
+
 namespace gui
 {
 
-typedef std::map<std::string, std::pair<geo::Pose3D, geo::ShapeConstPtr> > ShapeMap;
+typedef std::map<std::string, Visual> ShapeMap;
 
 class Robot
 {

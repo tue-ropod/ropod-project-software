@@ -22,6 +22,7 @@ add_message_files(
     EntityInfo.msg
     EntityInfos.msg
     Polygon.msg
+	Color.msg
 )
 
 # Add services

@@ -149,7 +149,34 @@ void Robot::initialize(const std::string& name)
             if (shape)
             {
                 std::string full_link_name = "/" + name_ + "/" + link->name;
-                shapes_[full_link_name] = std::pair<geo::Pose3D, geo::ShapeConstPtr>(offset, shape);
+
+                Visual visual;
+
+                // Determine color
+                std::cout << link->visual->material_name << std::endl;
+
+                visual.color.a = 255;
+                if (link->visual->material_name == "Black")
+                {
+                    visual.color.r = 0;
+                    visual.color.g = 0;
+                    visual.color.b = 0;
+                }
+                else if (link->visual->material_name == "White")
+                {
+                    visual.color.r = 255;
+                    visual.color.g = 255;
+                    visual.color.b = 255;
+                }
+                else
+                {
+                    visual.color.a = 0;
+                }
+
+                visual.offset = offset;
+                visual.shape = shape;
+
+                shapes_[full_link_name] = visual;
             }
 
         }
@@ -163,7 +190,7 @@ geo::ShapeConstPtr Robot::getShape(const std::string& id) const
 {
     ShapeMap::const_iterator it = shapes_.find(id);
     if (it != shapes_.end())
-        return it->second.second;
+        return it->second.shape;
     return geo::ShapeConstPtr();
 }
 
@@ -185,9 +212,12 @@ void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const
             geo::convert(t, pose);
 
             // correct for mesh offset
-            pose = pose * it->second.first;
+            pose = pose * it->second.offset;
 
             geo::convert(pose, e.pose);
+
+            e.color = it->second.color;
+
             entities.push_back(e);
         }
         catch (tf::TransformException& ex)

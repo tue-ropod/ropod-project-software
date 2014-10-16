@@ -31,7 +31,7 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 
     if (!e->convexHull().chull.empty())
     {
-        const ed::ConvexHull2D& ch = e->convexHull();
+        const ed::ConvexHull2D& ch = e->convexHull();        
 
         msg.polygon.z_min = ch.min_z;
         msg.polygon.z_max = ch.max_z;
@@ -50,6 +50,21 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 //            msg.polygon.xs[i] = ch.chull[i].x + ch.center_point.x - msg.pose.position.x;
 //            msg.polygon.ys[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
         }
+    }
+
+    tue::Configuration config = e->getConfig();
+
+    if (config.readGroup("color"))
+    {
+        double r, g, b;
+        if (config.value("red", r) && config.value("green", g) && config.value("blue", b))
+        {
+            msg.color.r = 255 * r;
+            msg.color.g = 255 * g;
+            msg.color.b = 255 * b;
+            msg.color.a = 255;
+        }
+        config.endGroup();
     }
 }
 

@@ -227,6 +227,7 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
     // TODO: get affordances from entity
     ros_res.affordances.push_back("navigate-to");
     ros_res.affordances.push_back("pick-up");
+    ros_res.affordances.push_back("place");
 
     std::stringstream ss_pose;
     ss_pose << "(" << e->pose().t.x << ", " << e->pose().t.y << ", " << e->pose().t.z << ")";

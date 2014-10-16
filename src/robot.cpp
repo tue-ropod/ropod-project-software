@@ -9,6 +9,7 @@
 #include <geolib/Importer.h>
 #include <geolib/ros/tf_conversions.h>
 #include <geolib/ros/msg_conversions.h>
+#include <geolib/Box.h>
 
 namespace gui
 {
@@ -58,43 +59,60 @@ void Robot::initialize(const std::string& name)
     for(std::vector<boost::shared_ptr<urdf::Link> >::const_iterator it = links.begin(); it != links.end(); ++it)
     {
         const boost::shared_ptr<urdf::Link>& link = *it;
-        if (link->visual && link->visual->geometry->type == urdf::Geometry::MESH)
+        if (link->visual && link->visual->geometry)
         {
-            urdf::Mesh* mesh = static_cast<urdf::Mesh*>(link->visual->geometry.get());
-            if (mesh)
+            geo::ShapePtr shape;
+
+            geo::Pose3D offset;
+            const urdf::Pose o = link->visual->origin;
+            offset.t = geo::Vector3(o.position.x, o.position.y, o.position.z);
+            offset.R.setRotation(geo::Quaternion(o.rotation.x, o.rotation.y, o.rotation.z, o.rotation.w));
+
+//            std::cout << link->name << ": " << offset << std::endl;
+//            std::cout << "    " << o.rotation.x << ", " << o.rotation.y<< ", " << o.rotation.z<< ", " << o.rotation.w << std::endl;
+
+            if (link->visual->geometry->type == urdf::Geometry::MESH)
             {
-                geo::Pose3D offset;
-                const urdf::Pose o = link->visual->origin;
-                offset.t = geo::Vector3(o.position.x, o.position.y, o.position.z);
-                offset.R.setRotation(geo::Quaternion(o.rotation.x, o.rotation.y, o.rotation.z, o.rotation.w));
-
-                std::cout << link->name << ": " << offset << std::endl;
-                std::cout << "    " << o.rotation.x << ", " << o.rotation.y<< ", " << o.rotation.z<< ", " << o.rotation.w << std::endl;
-
-                std::string pkg_prefix = "package://";
-                if (mesh->filename.substr(0, pkg_prefix.size()) == pkg_prefix)
+                urdf::Mesh* mesh = static_cast<urdf::Mesh*>(link->visual->geometry.get());
+                if (mesh)
                 {
-                    std::string str = mesh->filename.substr(pkg_prefix.size());
-                    size_t i_slash = str.find("/");
-
-                    std::string pkg = str.substr(0, i_slash);
-                    std::string rel_filename = str.substr(i_slash + 1);
-                    std::string pkg_path = ros::package::getPath(pkg);
-                    std::string abs_filename = pkg_path + "/" + rel_filename;
-
-                    geo::Importer importer;
-                    geo::ShapePtr shape = importer.readMeshFile(abs_filename, mesh->scale.x);
-                    if (shape)
+                    std::string pkg_prefix = "package://";
+                    if (mesh->filename.substr(0, pkg_prefix.size()) == pkg_prefix)
                     {
-                        std::string full_link_name = "/" + name_ + "/" + link->name;
-                        shapes_[full_link_name] = std::pair<geo::Pose3D, geo::ShapeConstPtr>(offset, shape);
-                    }
-                    else
-                    {
-                        std::cout << "Could not load shape" << std::endl;
+                        std::string str = mesh->filename.substr(pkg_prefix.size());
+                        size_t i_slash = str.find("/");
+
+                        std::string pkg = str.substr(0, i_slash);
+                        std::string rel_filename = str.substr(i_slash + 1);
+                        std::string pkg_path = ros::package::getPath(pkg);
+                        std::string abs_filename = pkg_path + "/" + rel_filename;
+
+                        geo::Importer importer;
+                        shape = importer.readMeshFile(abs_filename, mesh->scale.x);
+                        if (!shape)
+                            std::cout << "Could not load shape" << std::endl;
                     }
                 }
             }
+            else if (link->visual->geometry->type == urdf::Geometry::BOX)
+            {
+                urdf::Box* box = static_cast<urdf::Box*>(link->visual->geometry.get());
+                if (box)
+                {
+                    double hx = box->dim.x / 2;
+                    double hy = box->dim.y / 2;
+                    double hz = box->dim.z / 2;
+
+                    shape.reset(new geo::Box(geo::Vector3(-hx, -hy, -hz), geo::Vector3(hx, hy, hz)));
+                }
+            }
+
+            if (shape)
+            {
+                std::string full_link_name = "/" + name_ + "/" + link->name;
+                shapes_[full_link_name] = std::pair<geo::Pose3D, geo::ShapeConstPtr>(offset, shape);
+            }
+
         }
     }
 

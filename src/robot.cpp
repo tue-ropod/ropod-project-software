@@ -106,6 +106,45 @@ void Robot::initialize(const std::string& name)
                     shape.reset(new geo::Box(geo::Vector3(-hx, -hy, -hz), geo::Vector3(hx, hy, hz)));
                 }
             }
+            else if (link->visual->geometry->type == urdf::Geometry::CYLINDER)
+            {
+                urdf::Cylinder* cyl = static_cast<urdf::Cylinder*>(link->visual->geometry.get());
+                if (cyl)
+                {
+                    geo::Mesh mesh;
+
+                    int N = 20;
+
+                    // Calculate vertices
+                    for(int i = 0; i < N; ++i)
+                    {
+                        double a = 6.283 * i / N;
+                        double x = sin(a) * cyl->radius;
+                        double y = cos(a) * cyl->radius;
+
+                        mesh.addPoint(x, y, -cyl->length / 2);
+                        mesh.addPoint(x, y, cyl->length / 2);
+                    }
+
+                    // Calculate triangles
+                    for(int i = 1; i < N - 1; ++i)
+                    {
+                        int i2 = 2 * i;
+                        mesh.addTriangle(0, i2, i2 + 2);
+                        mesh.addTriangle(1, i2 + 1, i2 + 3);
+                    }
+
+                    for(int i = 0; i < N; ++i)
+                    {
+                        int j = (i + 1) % N;
+                        mesh.addTriangle(i * 2, j * 2, i * 2 + 1);
+                        mesh.addTriangle(i * 2 + 1, j * 2, j * 2 + 1);
+                    }
+
+                    shape.reset(new geo::Shape());
+                    shape->setMesh(mesh);
+                }
+            }
 
             if (shape)
             {

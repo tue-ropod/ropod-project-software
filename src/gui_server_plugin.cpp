@@ -84,7 +84,11 @@ GUIServerPlugin::~GUIServerPlugin()
 
 void GUIServerPlugin::configure(tue::Configuration config)
 {
-
+    std::string robot_name;
+    if (config.value("robot_name", robot_name, tue::OPTIONAL))
+    {
+        robot_.initialize(robot_name);
+    }
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -123,8 +127,6 @@ void GUIServerPlugin::initialize()
     srv_interact_ = nh.advertiseService(opt_srv_interact);
 
     pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("/ed/gui/entities", 1);
-
-    robot_.initialize("amigo");
 }
 
 // ----------------------------------------------------------------------------------------------------

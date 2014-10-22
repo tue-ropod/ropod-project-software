@@ -145,3 +145,28 @@ composition:
           x: 2.638 
           y: 1.951
           z: 0
+
+# - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
+
+    - type: "waypoint"
+      id: "registration_table1"
+      pose: { x: 3.13, y: 0.665, z: 0 }
+    - type: "waypoint"
+      id: "registration_table2"
+      pose: { x: 3.13, y: 0.665, z: 0 }
+    - type: "waypoint"
+      id: "registration_table3"
+      pose: { x: 3.13, y: 0.665, z: 0 }
+
+    - type: "waypoint"
+      id: "exit_1_rips"
+      pose: { x: 5, y: -2, z: 0 }
+    - type: "waypoint"
+      id: "exit_2_rips"
+      pose: { x: 5, y: -2, z: 0 }
+    - type: "waypoint"
+      id: "exit_3_rips"
+      pose: { x: 5, y: -2, z: 0 }
+    - type: "waypoint"
+      id: "exit_4_rips"
+      pose: { x: 5, y: -2, z: 0 }

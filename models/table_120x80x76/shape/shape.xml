@@ -5,22 +5,22 @@
     </box>
 
     <box>
-        <xyz>-0.50 -0.30 0.37</xyz>
+        <xyz>-0.55 -0.35 0.37</xyz>
         <size>0.05 0.05 0.74</size>
     </box>
 
     <box>
-        <xyz>0.50 -0.30 0.37</xyz>
+        <xyz>0.55 -0.35 0.37</xyz>
         <size>0.05 0.05 0.74</size>
     </box>
 
     <box>
-        <xyz>-0.50 0.30 0.37</xyz>
+        <xyz>-0.55 0.35 0.37</xyz>
         <size>0.05 0.05 0.74</size>
     </box>
 
     <box>
-        <xyz>0.50 0.30 0.37</xyz>
+        <xyz>0.55 0.35 0.37</xyz>
         <size>0.05 0.05 0.74</size>
     </box>
 </model>

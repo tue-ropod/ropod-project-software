@@ -118,7 +118,7 @@ composition:
     - type: "bed"
       id: "bed"
       pose:
-          x: -2.6
+          x: -3.1
           y: -0.35
           z: 0
           X: 0
@@ -127,8 +127,8 @@ composition:
     - type: "table_120x80x76"
       id: "operator_table1"
       pose:
-          x: -2.15
-          y: 3.9
+          x: -2.1
+          y: 4.02
           z: 0.05
           X: 0
           Y: 0
@@ -136,8 +136,8 @@ composition:
     - type: "table_120x80x76"
       id: "operator_table2"
       pose:
-          x: -3.25
-          y: 3.9
+          x: -3.3
+          y: 4.02
           z: 0.05
           X: 0
           Y: 0
@@ -154,8 +154,8 @@ composition:
     - type: "table_120x80x76"
       id: "workbench"
       pose:
-          x: -2.45
-          y: 3.12
+          x: -2.5
+          y: 3.2
           z: 0.05
           X: 0
           Y: 0
@@ -163,36 +163,24 @@ composition:
     - type: "waypoint"
       id: "living_room"
       pose:
-          x: 4
-          y: .7
+          x: 1.8
+          y: .6
           z: 0
     - type: "waypoint"
       id: "corridor"
       pose:
-          x: .5
-          y: 1.5
+          x: 2.7
+          y: 5
+          z: 0
+    - type: "waypoint"
+      id: "hallway"
+      pose:
+          x: 0
+          y: 5.5
           z: 0
     - type: "waypoint"
       id: "bedroom"
       pose:
-          x: 5.3
-          y: -2.4
-          z: 0
-    - type: "waypoint"
-      id: "test_person"
-      pose:
-          x: 3.7
-          y: -0.448
-          z: 0
-    - type: "waypoint"
-      id: "operator"
-      pose:
-          x: 0.05
-          y: -2.445
-          z: 0
-    - type: "waypoint"
-      id: "wait"
-      pose:
-          x: 2.638 
-          y: 1.951
+          x: -2.0
+          y: -1.0
           z: 0

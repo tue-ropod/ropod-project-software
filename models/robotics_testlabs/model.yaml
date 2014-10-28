@@ -184,3 +184,9 @@ composition:
           x: -2.0
           y: -1.0
           z: 0
+    - type: "waypoint"
+      id: "battery_point"
+      pose:
+          x: -2.8
+          y: 2.0
+          z: 0

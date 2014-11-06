@@ -16,6 +16,7 @@ conclusions:
         - name: chewing_gum_size
         - name: chewing_gum_odu
         - name: white
+        - name: gray
         - name: small_size
     - type: coffee
       features: 
@@ -40,6 +41,7 @@ conclusions:
         - name: cup_size
         - name: cup_odu
         - name: white
+        - name: gray
         - name: small_size
     - type: deodorant
       features: 

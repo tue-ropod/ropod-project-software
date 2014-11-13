@@ -3,6 +3,7 @@
 
 #include <geolib/datatypes.h>
 #include <tue/config/configuration.h>
+#include <boost/make_shared.hpp>
 
 namespace ed
 {
@@ -21,7 +22,11 @@ class NewEntity
 {
 
 public:
-    NewEntity(const UUID& new_id = generateID(), const TYPE& new_type = "") : id(new_id), type(new_type), pose(geo::Pose3D::identity()) {}
+    NewEntity(const UUID& new_id = generateID(), const TYPE& new_type = "") : id(new_id), type(new_type), pose(geo::Pose3D::identity())
+
+    {
+        config.data = boost::make_shared<tue::config::Data>();
+    }
     ~NewEntity() {}
 
     static UUID generateID()
@@ -45,7 +50,7 @@ public:
     geo::ShapePtr shape;
     geo::Pose3D pose;
 
-    tue::config::DataPtr config;
+    tue::config::DataPointer config;
 
     std::vector<NewEntityPtr> children;
 

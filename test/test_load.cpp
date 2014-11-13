@@ -17,7 +17,7 @@ void printEntityWithChildren(ed::models::NewEntityConstPtr e, unsigned int depth
 
 int main(int argc, char **argv)
 {
-    ed::models::NewEntityConstPtr e = ed::models::create("robotics_testlab", tue::Configuration());
+    ed::models::NewEntityConstPtr e = ed::models::create("robotics_testlab_B", tue::Configuration());
 
     if (!e)
     {

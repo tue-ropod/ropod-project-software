@@ -66,8 +66,8 @@ NewEntityPtr create(const TYPE& type, tue::Configuration cfg, const UUID& id)
                 }
 
                 //! Merge the configs
-                e->config->add(*model_cfg.data());
-                e->config->add(*cfg.data());
+                e->config.add(model_cfg.data());
+                e->config.add(cfg.data());
 
                 tue::config::Reader e_data(e->config);
 

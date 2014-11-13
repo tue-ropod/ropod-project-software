@@ -45,7 +45,7 @@ public:
     geo::ShapePtr shape;
     geo::Pose3D pose;
 
-    tue::Configuration config;
+    tue::config::DataPtr config;
 
     std::vector<NewEntityPtr> children;
 

@@ -14,6 +14,7 @@
 
 #include <tue/config/configuration.h>
 #include <tue/config/loaders/yaml.h>
+#include <tue/config/reader.h>
 
 #include <ed_gui_server/EntityInfos.h>
 
@@ -52,7 +53,7 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
         }
     }
 
-    tue::Configuration config = e->getConfig();
+    tue::config::Reader config(e->data());
 
     if (config.readGroup("color"))
     {

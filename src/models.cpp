@@ -5,6 +5,8 @@
 
 #include "shape_loader.h"
 
+#include <tue/config/reader.h>
+
 namespace ed
 {
 
@@ -64,29 +66,31 @@ NewEntityPtr create(const TYPE& type, tue::Configuration cfg, const UUID& id)
                 }
 
                 //! Merge the configs
-                e->config.add(model_cfg);
-                e->config.add(cfg);
+                e->config.add(model_cfg.data());
+                e->config.add(cfg.data());
+
+                tue::config::Reader e_data(e->config);
 
                 //! Set pose
-                if (e->config.readGroup("pose"))
+                if (e_data.readGroup("pose"))
                 {
-                    if (!e->config.value("x", e->pose.t.x) ||
-                            !e->config.value("y", e->pose.t.y) ||
-                            !e->config.value("z", e->pose.t.z))
+                    if (!e_data.value("x", e->pose.t.x) ||
+                            !e_data.value("y", e->pose.t.y) ||
+                            !e_data.value("z", e->pose.t.z))
                     {
                         std::cout << "ed::models::create() : In model '" << type << "': ERROR loading pose; pose is malformed." << std::cout;
                         std::cout << model_cfg << std::endl;
                     }
 
                     double X,Y,Z;
-                    if (e->config.value("X", X) &&
-                        e->config.value("Y", Y) &&
-                        e->config.value("Z", Z))
+                    if (e_data.value("X", X) &&
+                        e_data.value("Y", Y) &&
+                        e_data.value("Z", Z))
                     {
                         e->pose.setRPY(X,Y,Z);
                     }
 
-                    e->config.endGroup();
+                    e_data.endGroup();
                 }
             }
             else

@@ -30,7 +30,7 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
 
-    if (!e->convexHull().chull.empty())
+    if (!e->shape() && !e->convexHull().chull.empty())
     {
         const ed::ConvexHull2D& ch = e->convexHull();        
 

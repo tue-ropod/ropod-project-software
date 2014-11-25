@@ -347,7 +347,7 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
 
 // ----------------------------------------------------------------------------------------------------
 
-void GUIServerPlugin::storeEntity(const std::string& id)
+void GUIServerPlugin::storeMeasurement(const std::string& id, const std::string& type)
 {
     ed::EntityConstPtr e = world_model_->getEntity(id);
     if (e)
@@ -358,9 +358,9 @@ void GUIServerPlugin::storeEntity(const std::string& id)
             char const* home = getenv("HOME");
             if (home)
             {
-                boost::filesystem::path dir(std::string(home) + "/.ed/entities/" + id);
+                boost::filesystem::path dir(std::string(home) + "/.ed/measurements/" + type);
                 boost::filesystem::create_directories(dir);
-                ed::write(dir.string() + "/measurement", *msr);
+                ed::write(dir.string() + "/" + ed::Entity::generateID(), *msr);
             }
         }
         else
@@ -368,6 +368,8 @@ void GUIServerPlugin::storeEntity(const std::string& id)
             std::cout << "Entity '" + id << "' does not have any measurements." << std::endl;
         }
     }
+    else
+        std::cout << "Entity with id " << id << " does not exist!" << std::endl;
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -383,9 +385,11 @@ bool GUIServerPlugin::srvInteract(const ed_gui_server::Interact::Request& ros_re
     {
         if (action == "store")
         {
-            std::string id;
-            if (params.value("entity", id))
-                storeEntity(id);
+            std::string id, type;
+            if (params.value("id", id) && params.value("type", type))
+                storeMeasurement(id, type);
+            else
+                std::cout << "Please specify an id and a type!" << std::endl;
         }
     }
 

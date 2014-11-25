@@ -59,7 +59,7 @@ private:
     bool srvInteract(const ed_gui_server::Interact::Request& ros_req,
                           ed_gui_server::Interact::Response& ros_res);
 
-    void storeEntity(const std::string& id);
+    void storeMeasurement(const std::string& id, const std::string& type);
 };
 
 #endif

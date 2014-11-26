@@ -1,0 +1,72 @@
+model: 
+    name: chewing_gum_white
+    color: 
+        - set: 
+              - blue: 0.0779992
+              - grey: 0.0635863
+              - pink: 0.320899
+              - purple: 0.188639
+              - white: 0.348877
+        - set: 
+              - blue: 0.121526
+              - brown: 0.000471032
+              - grey: 0.0781912
+              - pink: 0.138012
+              - purple: 0.147904
+              - white: 0.513895
+        - set: 
+              - blue: 0.0720109
+              - grey: 0.044837
+              - pink: 0.248641
+              - purple: 0.21558
+              - white: 0.418931
+        - set: 
+              - blue: 0.121526
+              - brown: 0.000471032
+              - grey: 0.0781912
+              - pink: 0.138012
+              - purple: 0.147904
+              - white: 0.513895
+        - set: 
+              - blue: 0.05002
+              - grey: 0.158463
+              - pink: 0.321729
+              - purple: 0.235694
+              - white: 0.234094
+        - set: 
+              - blue: 0.0207337
+              - brown: 0.000797448
+              - grey: 0.151515
+              - pink: 0.363238
+              - purple: 0.413876
+              - white: 0.0498405
+        - set: 
+              - blue: 0.0869565
+              - grey: 0.077427
+              - pink: 0.303752
+              - purple: 0.246575
+              - red: 0.000595593
+              - white: 0.284693
+        - set: 
+              - blue: 0.0675142
+              - grey: 0.193336
+              - pink: 0.122753
+              - purple: 0.124068
+              - white: 0.492328
+    size: 
+        - height: 0.102197
+          width: 0.115665
+        - height: 0.101691
+          width: 0.0863771
+        - height: 0.104884
+          width: 0.0967672
+        - height: 0.101691
+          width: 0.0863771
+        - height: 0.102489
+          width: 0.117355
+        - height: 0.102605
+          width: 0.11132
+        - height: 0.0738762
+          width: 0.0937402
+        - height: 0.101685
+          width: 0.0912531

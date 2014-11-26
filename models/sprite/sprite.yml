@@ -1,0 +1,86 @@
+model: 
+    name: sprite
+    color: 
+        - set: 
+              - black: 0.0802383
+              - blue: 0.197092
+              - brown: 0.0150666
+              - green: 0.174492
+              - grey: 0.192712
+              - pink: 0.0502803
+              - purple: 0.283812
+              - white: 0.000525578
+              - yellow: 0.00578136
+        - set: 
+              - black: 0.0479138
+              - blue: 0.204035
+              - brown: 0.0132967
+              - green: 0.201055
+              - grey: 0.301926
+              - pink: 0.136176
+              - purple: 0.0685465
+              - white: 0.0224668
+              - yellow: 0.00458505
+        - set: 
+              - black: 0.0469589
+              - blue: 0.194767
+              - brown: 0.0190072
+              - green: 0.200805
+              - grey: 0.330948
+              - pink: 0.131038
+              - purple: 0.0655188
+              - white: 0.00648479
+              - yellow: 0.00447227
+        - set: 
+              - black: 0.0629422
+              - blue: 0.19395
+              - brown: 0.0178092
+              - green: 0.152476
+              - grey: 0.283728
+              - pink: 0.155404
+              - purple: 0.100756
+              - white: 0.019029
+              - yellow: 0.0139058
+        - set: 
+              - black: 0.0164978
+              - blue: 0.241103
+              - brown: 0.00848456
+              - green: 0.109828
+              - grey: 0.223898
+              - pink: 0.203394
+              - purple: 0.131039
+              - white: 0.0657554
+        - set: 
+              - black: 0.0164978
+              - blue: 0.241103
+              - brown: 0.00848456
+              - green: 0.109828
+              - grey: 0.223898
+              - pink: 0.203394
+              - purple: 0.131039
+              - white: 0.0657554
+        - set: 
+              - black: 0.0802383
+              - blue: 0.197092
+              - brown: 0.0150666
+              - green: 0.174492
+              - grey: 0.192712
+              - pink: 0.0502803
+              - purple: 0.283812
+              - white: 0.000525578
+              - yellow: 0.00578136
+    size: 
+        - height: 0.150304
+          width: 0.14111
+        - height: 0.145548
+          width: 0.117736
+        - height: 0.147703
+          width: 0.126716
+        - height: 0.139219
+          width: 0.12878
+        - height: 0.14095
+          width: 0.129284
+        - height: 0.14095
+          width: 0.129284
+        - height: 0.150304
+          width: 0.14111

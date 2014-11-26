@@ -1,0 +1,67 @@
+model: 
+    name: cup
+    color: 
+        - set: 
+              - black: 0.00243902
+              - brown: 0.169648
+              - grey: 0.42439
+              - pink: 0.21626
+              - purple: 0.0392954
+              - white: 0.147967
+        - set: 
+              - black: 0.00134409
+              - brown: 0.153495
+              - grey: 0.438441
+              - pink: 0.164785
+              - purple: 0.0163978
+              - white: 0.225538
+        - set: 
+              - black: 0.00658588
+              - brown: 0.141728
+              - grey: 0.463646
+              - pink: 0.1304
+              - purple: 0.0576923
+              - white: 0.199947
+        - set: 
+              - black: 0.00411946
+              - brown: 0.145726
+              - grey: 0.410659
+              - pink: 0.199537
+              - purple: 0.0198249
+              - white: 0.220134
+        - set: 
+              - black: 0.00157192
+              - brown: 0.155096
+              - grey: 0.436992
+              - pink: 0.228452
+              - purple: 0.0474194
+              - white: 0.130469
+        - set: 
+              - black: 0.00658588
+              - brown: 0.141728
+              - grey: 0.463646
+              - pink: 0.1304
+              - purple: 0.0576923
+              - white: 0.199947
+        - set: 
+              - black: 0.00198462
+              - brown: 0.141652
+              - grey: 0.275118
+              - pink: 0.329943
+              - purple: 0.0516001
+              - white: 0.199702
+    size: 
+        - height: 0.123828
+          width: 0.134055
+        - height: 0.125266
+          width: 0.129563
+        - height: 0.122745
+          width: 0.13236
+        - height: 0.128323
+          width: 0.135331
+        - height: 0.126982
+          width: 0.131864
+        - height: 0.122745
+          width: 0.13236
+        - height: 0.13381
+          width: 0.14112

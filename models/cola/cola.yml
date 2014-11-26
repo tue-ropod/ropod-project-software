@@ -1,0 +1,82 @@
+model: 
+    name: cola
+    color: 
+        - set: 
+              - brown: 0.0107888
+              - grey: 0.0385999
+              - pink: 0.339247
+              - purple: 0.0409974
+              - red: 0.318149
+              - white: 0.252218
+        - set: 
+              - brown: 0.0144287
+              - grey: 0.0435187
+              - pink: 0.327903
+              - purple: 0.0386316
+              - red: 0.299046
+              - white: 0.276472
+        - set: 
+              - blue: 0.000805369
+              - brown: 0.0136913
+              - grey: 0.0408054
+              - pink: 0.379597
+              - purple: 0.0730201
+              - red: 0.293154
+              - white: 0.198926
+        - set: 
+              - blue: 0.000695894
+              - brown: 0.00904663
+              - grey: 0.0373463
+              - pink: 0.365576
+              - purple: 0.072605
+              - red: 0.257945
+              - white: 0.256785
+        - set: 
+              - blue: 0.00237699
+              - brown: 0.0180651
+              - grey: 0.0886618
+              - pink: 0.259805
+              - purple: 0.0425481
+              - red: 0.328976
+              - white: 0.259567
+        - set: 
+              - blue: 0.00126775
+              - brown: 0.0197769
+              - grey: 0.0829108
+              - orange: 0.00025355
+              - pink: 0.257099
+              - purple: 0.0380325
+              - red: 0.350659
+              - white: 0.25
+        - set: 
+              - brown: 0.0107888
+              - grey: 0.0385999
+              - pink: 0.339247
+              - purple: 0.0409974
+              - red: 0.318149
+              - white: 0.252218
+        - set: 
+              - blue: 0.00120569
+              - brown: 0.00892211
+              - grey: 0.0431637
+              - pink: 0.300458
+              - purple: 0.0385821
+              - red: 0.321437
+              - white: 0.286231
+    size: 
+        - height: 0.143716
+          width: 0.118466
+        - height: 0.141205
+          width: 0.122417
+        - height: 0.139573
+          width: 0.111089
+        - height: 0.142511
+          width: 0.121586
+        - height: 0.139565
+          width: 0.126485
+        - height: 0.137079
+          width: 0.111442
+        - height: 0.143716
+          width: 0.118466
+        - height: 0.140064
+          width: 0.119723

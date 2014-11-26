@@ -1,0 +1,148 @@
+model: 
+    name: beer
+    color: 
+        - set: 
+              - black: 0.121068
+              - blue: 0.000953289
+              - brown: 0.403241
+              - grey: 0.0681602
+              - orange: 0.0867493
+              - pink: 0.135844
+              - purple: 0.108198
+              - red: 0.0209724
+              - yellow: 0.0548141
+        - set: 
+              - black: 0.115491
+              - blue: 0.000788333
+              - brown: 0.357509
+              - grey: 0.0914466
+              - orange: 0.0654316
+              - pink: 0.182105
+              - purple: 0.0918408
+              - red: 0.0204966
+              - white: 0.0145842
+              - yellow: 0.0603075
+        - set: 
+              - black: 0.164983
+              - brown: 0.301908
+              - green: 0.000374111
+              - grey: 0.0516274
+              - orange: 0.00299289
+              - pink: 0.229704
+              - purple: 0.0830527
+              - red: 0.0216985
+              - white: 0.0187056
+              - yellow: 0.124953
+        - set: 
+              - black: 0.0694572
+              - brown: 0.270469
+              - grey: 0.0597976
+              - orange: 0.0432383
+              - pink: 0.395124
+              - purple: 0.0855566
+              - red: 0.00367985
+              - white: 0.025759
+              - yellow: 0.0469181
+        - set: 
+              - black: 0.164828
+              - blue: 0.0199005
+              - brown: 0.233398
+              - green: 0.00908501
+              - grey: 0.170452
+              - orange: 0.0121133
+              - pink: 0.060783
+              - purple: 0.0376379
+              - red: 0.0229288
+              - white: 0.0713822
+              - yellow: 0.197491
+        - set: 
+              - black: 0.141299
+              - blue: 0.000908678
+              - brown: 0.395729
+              - grey: 0.083144
+              - orange: 0.0772376
+              - pink: 0.131758
+              - purple: 0.0840527
+              - red: 0.0204453
+              - white: 0.00136302
+              - yellow: 0.0640618
+        - set: 
+              - black: 0.084754
+              - brown: 0.296639
+              - grey: 0.0730638
+              - orange: 0.053093
+              - pink: 0.352655
+              - purple: 0.0623478
+              - red: 0.00487092
+              - white: 0.0360448
+              - yellow: 0.0365319
+        - set: 
+              - black: 0.164828
+              - blue: 0.0199005
+              - brown: 0.233398
+              - green: 0.00908501
+              - grey: 0.170452
+              - orange: 0.0121133
+              - pink: 0.060783
+              - purple: 0.0376379
+              - red: 0.0229288
+              - white: 0.0713822
+              - yellow: 0.197491
+        - set: 
+              - black: 0.106771
+              - blue: 0.0130208
+              - brown: 0.294271
+              - green: 0.00213068
+              - grey: 0.0598958
+              - orange: 0.0265152
+              - pink: 0.173059
+              - purple: 0.055161
+              - red: 0.0340909
+              - white: 0.0674716
+              - yellow: 0.167614
+        - set: 
+              - black: 0.164828
+              - blue: 0.0199005
+              - brown: 0.233398
+              - green: 0.00908501
+              - grey: 0.170452
+              - orange: 0.0121133
+              - pink: 0.060783
+              - purple: 0.0376379
+              - red: 0.0229288
+              - white: 0.0713822
+              - yellow: 0.197491
+        - set: 
+              - black: 0.126076
+              - brown: 0.250615
+              - green: 0.000615006
+              - grey: 0.0636531
+              - orange: 0.00246002
+              - pink: 0.309348
+              - purple: 0.111009
+              - red: 0.0132226
+              - white: 0.0162977
+              - yellow: 0.106704
+    size: 
+        - height: 0.10083
+          width: 0.0970483
+        - height: 0.10954
+          width: 0.0988038
+        - height: 0.118468
+          width: 0.109217
+        - height: 0.111
+          width: 0.104924
+        - height: 0.192471
+          width: 0.139494
+        - height: 0.102187
+          width: 0.0929938
+        - height: 0.115411
+          width: 0.114293
+        - height: 0.192471
+          width: 0.139494
+        - height: 0.190707
+          width: 0.124747
+        - height: 0.192471
+          width: 0.139494
+        - height: 0.120144
+          width: 0.133356

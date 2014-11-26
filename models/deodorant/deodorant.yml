@@ -1,0 +1,70 @@
+model: 
+    name: deodorant
+    color: 
+        - set: 
+              - brown: 0.000253293
+              - grey: 0.000759878
+              - pink: 0.715046
+              - purple: 0.182371
+              - red: 0.00329281
+              - white: 0.0982776
+        - set: 
+              - brown: 0.000515198
+              - grey: 0.0453375
+              - orange: 0.001288
+              - pink: 0.693457
+              - purple: 0.209943
+              - red: 0.00824317
+              - white: 0.0412159
+        - set: 
+              - brown: 0.00024432
+              - grey: 0.00195456
+              - pink: 0.636208
+              - purple: 0.182995
+              - red: 0.00415343
+              - white: 0.174444
+        - set: 
+              - black: 0.000248139
+              - brown: 0.00173697
+              - grey: 0.0151365
+              - orange: 0.00372208
+              - pink: 0.604218
+              - purple: 0.167742
+              - red: 0.0119107
+              - white: 0.195285
+        - set: 
+              - brown: 0.000280112
+              - grey: 0.000840336
+              - pink: 0.689356
+              - purple: 0.20056
+              - red: 0.00280112
+              - white: 0.106162
+        - set: 
+              - brown: 0.000515198
+              - grey: 0.0453375
+              - orange: 0.001288
+              - pink: 0.693457
+              - purple: 0.209943
+              - red: 0.00824317
+              - white: 0.0412159
+        - set: 
+              - grey: 0.0015
+              - pink: 0.711
+              - purple: 0.16975
+              - red: 0.0075
+              - white: 0.11025
+    size: 
+        - height: 0.185038
+          width: 0.129395
+        - height: 0.177942
+          width: 0.120596
+        - height: 0.184102
+          width: 0.123306
+        - height: 0.172724
+          width: 0.135951
+        - height: 0.179114
+          width: 0.103246
+        - height: 0.177942
+          width: 0.120596
+        - height: 0.179293
+          width: 0.144861

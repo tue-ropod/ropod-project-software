@@ -26,7 +26,7 @@
 
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
-    msg.id = e->id();
+    msg.id = e->id().str();
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
 
@@ -165,7 +165,7 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
             ros_res.entities.push_back(ed_gui_server::EntityInfo());
             ed_gui_server::EntityInfo& info = ros_res.entities.back();
 
-            info.id = e->id();
+            info.id = e->id().str();
             info.mesh_revision = e->shapeRevision();
             geo::convert(e->pose(), info.pose);
         }

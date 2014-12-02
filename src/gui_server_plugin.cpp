@@ -26,7 +26,7 @@
 
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
-    msg.id = e->id();
+    msg.id = e->id().str();
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
 
@@ -142,7 +142,7 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
 
     unsigned int i = 0;
     for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
-        entityToMsg(it->second, entities_msg.entities[i++]);   
+        entityToMsg(*it, entities_msg.entities[i++]);
 
     robot_.getEntities(entities_msg.entities);
 
@@ -156,7 +156,7 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
 {
     for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
     {
-        const ed::EntityConstPtr& e = it->second;
+        const ed::EntityConstPtr& e = *it;
         float pos_x = e->pose().t.x;
         float pos_y = e->pose().t.y;
         if (ros_req.area_min.x < pos_x && pos_x < ros_req.area_max.x
@@ -165,7 +165,7 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
             ros_res.entities.push_back(ed_gui_server::EntityInfo());
             ed_gui_server::EntityInfo& info = ros_res.entities.back();
 
-            info.id = e->id();
+            info.id = e->id().str();
             info.mesh_revision = e->shapeRevision();
             geo::convert(e->pose(), info.pose);
         }
@@ -360,7 +360,7 @@ void GUIServerPlugin::storeMeasurement(const std::string& id, const std::string&
             {
                 boost::filesystem::path dir(std::string(home) + "/.ed/measurements/" + type);
                 boost::filesystem::create_directories(dir);
-                ed::write(dir.string() + "/" + ed::Entity::generateID(), *msr);
+                ed::write(dir.string() + "/" + ed::Entity::generateID().str(), *msr);
             }
         }
         else

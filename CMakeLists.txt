@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ed_object_models
-  CATKIN_DEPENDS geolib2 roslib tue_filesystem
+  CATKIN_DEPENDS geolib2 roslib tue_filesystem tue_config
   DEPENDS yaml-cpp
 )
 

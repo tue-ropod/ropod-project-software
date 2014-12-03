@@ -146,11 +146,22 @@ composition:
           y: 1.951
           z: 0
 
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    - type: "waypoint"
+      id: "initial_pose"
+      pose: { x: 0.9, y: 0, z: 0 }
+      rz: 1.57
+    - type: "waypoint"
+      id: "exit"
+      pose: { x: 5.269, y: -2.139, z: 0 }
+      rz: -1.57
+
 # - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
 
     - type: "waypoint"
       id: "registration_table1"
-      pose: { x: 3.13, y: 0.665, z: 0 }
+
     - type: "waypoint"
       id: "registration_table2"
       pose: { x: 3.13, y: 0.665, z: 0 }
@@ -170,3 +181,23 @@ composition:
     - type: "waypoint"
       id: "exit_4_rips"
       pose: { x: 5, y: -2, z: 0 }
+
+
+# - - - - - - CHALLENGE BASIC FUNCTIONALITIES - - - - - - -
+
+    - type: "waypoint"
+      id: "avoid_that_start"
+      pose: { x: 2.684, y: 1.969, z: 0 }
+    - type: "waypoint"
+      id: "avoid_that_wp1"
+      pose: { x: 5.595, y: 1.990, z: 0 }
+    - type: "waypoint"
+      id: "avoid_that_wp2"
+      pose: { x: 5.834, y: -0.498, z: 0 }
+    - type: "waypoint"
+      id: "avoid_that_wp3"
+      pose: { x: 5.595, y: 1.990, z: 0 }
+    - type: "waypoint"
+      id: "what_did_you_say_start"
+      pose: { x: 5.834, y: -0.498, z: 0 }
+

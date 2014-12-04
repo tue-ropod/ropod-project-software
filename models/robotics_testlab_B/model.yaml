@@ -150,12 +150,10 @@ composition:
 
     - type: "waypoint"
       id: "initial_pose"
-      pose: { x: 0.9, y: 0, z: 0 }
-      rz: 1.57
+      pose: { x: 0.9, y: 0, z: 0, rz: 1.57 }
     - type: "waypoint"
       id: "exit"
-      pose: { x: 5.269, y: -2.139, z: 0 }
-      rz: -1.57
+      pose: { x: 5.269, y: -2.139, z: 0, rz: -1.57 }
 
 # - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
 

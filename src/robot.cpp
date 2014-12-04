@@ -241,7 +241,7 @@ void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const
         }
         catch (tf::TransformException& ex)
         {
-            std::cout << "[ed_gui_server] No transform from '/map' to '" << e.id << "'." << std::endl;
+            //std::cout << "[ed_gui_server] No transform from '/map' to '" << e.id << "'." << std::endl;
         }
     }
 }

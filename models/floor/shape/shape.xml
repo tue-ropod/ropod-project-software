@@ -1,6 +1,6 @@
 <model>
     <box>
-        <xyz>0 0 0</xyz>
-        <size>20 20 0.03</size>
+        <xyz>0 0 -0.1</xyz>
+        <size>20 20 0.02</size>
     </box> 
 </model>

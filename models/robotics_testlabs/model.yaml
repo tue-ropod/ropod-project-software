@@ -1,6 +1,10 @@
 composition:
     - type: "robotics_testlabs.walls"
       id: "walls"
+      pose:
+          x: 0
+          y: 0
+          z: 0
     - type: "floor"
       id: "floor"
       pose:

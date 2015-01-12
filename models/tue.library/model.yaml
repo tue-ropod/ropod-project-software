@@ -1,0 +1,21 @@
+composition:
+    - type: "floor"
+      id: "floor"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+
+    # Desk A          
+    - type: "tue.library.desk.corner"
+      id: "tue-library-desk-corner-A1"
+      pose: { x: -23.448, y: 4.419, z: 0.4}
+    - type: "tue.library.desk.corner"
+      id: "tue-library-desk-corner-A2"
+      pose: { x: -17.403, y: 4.259, z: 0.4}
+          - type: "tue.library.desk.corner"
+      id: "tue-library-desk-corner-A3"
+      pose: { x: -23.448, y: 4.419, z: 0.4}
+          - type: "tue.library.desk.corner"
+      id: "tue-library-desk-corner-A4"
+      pose: { x: -23.448, y: 4.419, z: 0.4}

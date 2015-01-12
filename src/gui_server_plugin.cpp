@@ -242,7 +242,7 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
     ros_res.property_names.push_back("creation time");
     ros_res.property_values.push_back(ss_creationTime.str());
 
-    ed::MeasurementConstPtr m = e->bestMeasurement();
+    ed::MeasurementConstPtr m = e->lastMeasurement();
     if (m)
     {
         const cv::Mat& rgb_image = m->image()->getRGBImage();
@@ -352,7 +352,7 @@ void GUIServerPlugin::storeMeasurement(const std::string& id, const std::string&
     ed::EntityConstPtr e = world_model_->getEntity(id);
     if (e)
     {
-        ed::MeasurementConstPtr msr = e->bestMeasurement();
+        ed::MeasurementConstPtr msr = e->lastMeasurement();
         if (msr)
         {
             char const* home = getenv("HOME");

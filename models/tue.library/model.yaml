@@ -7,6 +7,7 @@ composition:
           z: 0
     - id: desks-support
       type: tue.library.desks.support
+      pose: {x: 0, y: 0, z: 0}
     - id: desks-top
       type: tue.library.desks.top
       pose: {x: 0, y: 0, z: 0.7}

@@ -360,7 +360,11 @@ void GUIServerPlugin::storeMeasurement(const std::string& id, const std::string&
             {
                 boost::filesystem::path dir(std::string(home) + "/.ed/measurements/" + type);
                 boost::filesystem::create_directories(dir);
-                ed::write(dir.string() + "/" + ed::Entity::generateID().str(), *msr);
+
+                std::string filename = dir.string() + "/" + ed::Entity::generateID().str();
+                ed::write(filename, *msr);
+
+                std::cout << "Writing measurement to '" << filename << "'." << std::endl;
             }
         }
         else
@@ -377,6 +381,8 @@ void GUIServerPlugin::storeMeasurement(const std::string& id, const std::string&
 bool GUIServerPlugin::srvInteract(const ed_gui_server::Interact::Request& ros_req,
                                 ed_gui_server::Interact::Response& ros_res)
 {
+    std::cout << "[GUIServerPlugin] Received command: " << ros_req.command_yaml << std::endl;
+
     tue::Configuration params;
     tue::config::loadFromYAMLString(ros_req.command_yaml, params);
 

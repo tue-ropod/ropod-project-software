@@ -9,6 +9,82 @@
 
 #include <iostream>
 
+// ----------------------------------------------------------------------------------------------------
+
+void findContours(const cv::Mat& image, const geo::Vec2i& p, std::vector<geo::Vec2i>& points)
+{
+    static int dx[4] = {1,  0, -1,  0 };
+    static int dy[4] = {0,  1,  0, -1 };
+
+    unsigned char v = image.at<unsigned char>(p.y, p.x);
+
+    int d_current = 0;
+    int x2 = p.x;
+    int y2 = p.y;
+
+    points.push_back(p);
+
+    int n_uninterrupted = 0;
+    int segment_length = 0;
+    geo::Vec2i p_uninterrupted = p;
+
+    while (true)
+    {
+        bool found = false;
+        int d = (d_current + 3) % 4; // check going left first
+
+        for(int i = 0; i < 4; ++i)
+        {
+            if (image.at<unsigned char>(y2 + dy[d], x2 + dx[d]) == v)
+            {
+                found = true;
+                break;
+            }
+
+            d = (d + 1) % 4;
+        }
+
+        if (!found)
+            return;
+
+        if (d_current != d)
+        {
+            if (n_uninterrupted > 5)
+            {
+                if (p_uninterrupted.x != points.back().x && p_uninterrupted.y != points.back().y)
+                    points.push_back(p_uninterrupted);
+
+                points.push_back(geo::Vec2i(x2, y2));
+                segment_length = 0;
+            }
+            else if (segment_length > 10)
+            {
+                points.push_back(geo::Vec2i(x2, y2));
+                segment_length = 0;
+            }
+
+            p_uninterrupted = geo::Vec2i(x2, y2);
+            n_uninterrupted = 0;
+        }
+        else
+        {
+            ++n_uninterrupted;
+        }
+
+        ++segment_length;
+
+        x2 = x2 + dx[d];
+        y2 = y2 + dy[d];
+
+        if (x2 == p.x && y2 == p.y)
+            return;
+
+        d_current = d;
+    }
+}
+
+// ----------------------------------------------------------------------------------------------------
+
 int main(int argc, char **argv)
 {
     if (argc <= 1)
@@ -35,9 +111,6 @@ int main(int argc, char **argv)
 
         cv::Mat vertex_index_map(image.rows, image.cols, CV_32SC1, -1);
 
-        int dx[4] = {1,  0, -1,  0 };
-        int dy[4] = {0,  1,  0, -1 };
-
         for(int y = 0; y < image.rows; ++y)
         {
             for(int x = 0; x < image.cols; ++x)
@@ -46,90 +119,19 @@ int main(int argc, char **argv)
 
                 if (v == 0)
                 {
-                    int d_current = 0;
-                    int x2 = x;
-                    int y2 = y;
+                    std::vector<geo::Vec2i> points;
+                    findContours(image, geo::Vec2i(x, y), points);
 
-                    std::vector<int> xs;
-                    std::vector<int> ys;
+                    int num_points = points.size();
 
-                    xs.push_back(x);
-                    ys.push_back(y);
+                    std::cout << std::endl << "Total polygon size: " << points.size() << std::endl;
 
-                    int n_uninterrupted = 0;
-                    int segment_length = 0;
-                    int x_uninterrupted = x;
-                    int y_uninterrupted = y;
-
-                    while (true)
+                    for(unsigned int i = 0; i < num_points; ++i)
                     {
-                        bool found = false;
-                        int d = (d_current + 3) % 4; // check going left first
-
-                        for(int i = 0; i < 4; ++i)
-                        {
-                            if (image.at<unsigned char>(y2 + dy[d], x2 + dx[d]) == 0)
-                            {
-                                found = true;
-                                break;
-                            }
-
-                            d = (d + 1) % 4;
-                        }
-
-                        if (!found)
-                            break;
-
-                        if (d_current != d)
-                        {
-                            if (n_uninterrupted > 10)
-                            {
-                                if (x_uninterrupted != xs.back() && y_uninterrupted != ys.back())
-                                {
-                                    xs.push_back(x_uninterrupted);
-                                    ys.push_back(y_uninterrupted);
-                                }
-
-                                xs.push_back(x2);
-                                ys.push_back(y2);
-                                segment_length = 0;
-                            }
-                            else if (segment_length > 10)
-                            {
-                                xs.push_back(x2);
-                                ys.push_back(y2);
-                                segment_length = 0;
-                            }
-
-                            x_uninterrupted = x2;
-                            y_uninterrupted = y2;
-                            n_uninterrupted = 0;
-                        }
-                        else
-                        {
-                            ++n_uninterrupted;
-                        }
-
-                        ++segment_length;
-
-                        x2 = x2 + dx[d];
-                        y2 = y2 + dy[d];
-
-                        if (x2 == x && y2 == y)
-                            break;
-
-                        d_current = d;
+                        int k = (i + 1) % num_points;
+                        cv::line(viz, cv::Point(points[i].x, points[i].y),
+                                 cv::Point(points[k].x, points[k].y), cv::Scalar(0, 0, 255));
                     }
-
-                    for(unsigned int i = 0; i < xs.size(); ++i)
-                    {
-                        int k = (i + 1) % xs.size();
-                        cv::line(viz, cv::Point(xs[i], ys[i]), cv::Point(xs[k], ys[k]), cv::Scalar(0, 0, 255));
-                    }
-
-                    std::cout << std::endl << "Total polygon size: " << xs.size() << std::endl;
-
-                    int num_points = xs.size();
 
                     TPPLPoly poly;
                     poly.Init(num_points);
@@ -141,14 +143,14 @@ int main(int argc, char **argv)
 
                     for(unsigned int i = 0; i < num_points; ++i)
                     {
-                        poly[i].x = xs[i];
-                        poly[i].y = ys[i];
+                        poly[i].x = points[i].x;
+                        poly[i].y = points[i].y;
 
                         // Convert to world coordinates
-                        double wx = xs[i];
-                        double wy = ys[i];
+                        double wx = points[i].x * 0.025;
+                        double wy = points[i].y * 0.025;
 
-                        vertex_index_map.at<int>(ys[i], xs[i]) = i;
+                        vertex_index_map.at<int>(points[i].y, points[i].x) = i;
 
                         mesh.addPoint(geo::Vector3(wx, wy, min_z));
                         mesh.addPoint(geo::Vector3(wx, wy, max_z));
@@ -194,9 +196,9 @@ int main(int argc, char **argv)
 
                     cv::floodFill(image, cv::Point(x, y), 255);
 
-                    geo::Shape shape;
-                    shape.setMesh(mesh);
-                    geo::serialization::toFile(shape, "shape.geo");
+//                    geo::Shape shape;
+//                    shape.setMesh(mesh);
+//                    geo::serialization::toFile(shape, "shape.geo");
                 }
             }
         }        

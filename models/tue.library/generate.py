@@ -17,8 +17,17 @@ desks = [
         [(11.380, -7.734), (17.616, -14.035)]     # J
     ]
 
-f_model = open('model-auto.yaml', 'w')
+f_model = open('model.yaml', 'w')
 f_shape = open('shape/shape.xml', 'w')
+
+f_model.write("""composition:
+    - type: floor
+      id: floor
+      pose: { x: 0, y: 0, z: 0 }
+    - id: desks-top
+      type: tue.library.desks.top
+      pose: {x: 0, y: 0, z: 0.7}
+""")
 
 f_shape.write('<model name="tue.library.desks">\n')
 
@@ -31,9 +40,21 @@ for desk in desks:
 
     for j in  range(0, 2):
         for i in  range(0, 2):
+            if i == 0:
+                if j == 0:
+                    rot = 3.1415
+                else:
+                    rot = -3.1415 / 2
+            else:
+                if j == 0:
+                    rot = 3.1415 / 2
+                else:
+                    rot = 0
+
+            #rot = 0 #j * 3.1415 + i * (3.1415 / 2)
             f_model.write('    - type: "tue.library.desk.corner"' + '\n')
-            f_model.write('      id: "tue-library-desk-corner-' + desk_names[i_desk_name] + str(2 * j + i + 1) + '\n')
-            f_model.write('      pose: { x: ' + str(desk[i][0]) + ', y: ' + str(desk[j][1]) + ', z: 0.4}' + '\n')
+            f_model.write('      id: "tue-library-desk-corner-' + desk_names[i_desk_name] + str(2 * j + i + 1) + '"\n')
+            f_model.write('      pose: { x: ' + str(desk[i][0]) + ', y: ' + str(desk[j][1]) + ', z: 0.4, Z: ' + str(rot) + '}' + '\n')
 
     size_x = desk[1][0] - desk[0][0]
     size_y = desk[1][1] - desk[0][1]

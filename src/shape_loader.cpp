@@ -78,6 +78,8 @@ geo::ShapePtr loadShape(const std::string& model_path, tue::Configuration cfg)
 
         if (shape_path.exists())
         {
+            std::string error;
+
             std::string xt = shape_path.extension();
             if (xt == ".pgm")
             {
@@ -94,12 +96,11 @@ geo::ShapePtr loadShape(const std::string& model_path, tue::Configuration cfg)
             }
             else if (xt == ".xml")
             {
-                std::string error;
                 shape = parseXMLShape(shape_path.string(), error);
             }
 
             if (!shape)
-                std::cout << "ed::models::loadShape() : ERROR while loading shape at " << shape_path.string() << std::endl;
+                std::cout << "ed::models::loadShape() : ERROR while loading shape at " << shape_path.string() << ":" << std::endl << error << std::endl;
         }
         else
         {

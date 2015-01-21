@@ -51,3 +51,7 @@ add_executable(ed_object_models_view        tools/view.cpp)
 target_link_libraries(ed_object_models_test_loader ed_object_models)
 target_link_libraries(ed_object_models_view ed_object_models)
 
+add_executable(test_triangulation test/test_triangulation.cpp
+    test/polypartition/src/polypartition.cpp)
+target_link_libraries(test_triangulation ${catkin_LIBRARIES})
+

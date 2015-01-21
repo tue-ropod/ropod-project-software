@@ -1,7 +1,17 @@
 <model name="tue.library.desk.corner">
-    <box>
-		<xyz>0 0 0.4</xyz>
-		<rpy>0 0 0.7854</rpy>
-        <size>0.5 0.3 0.8</size>
-    </box>
+    <polygon>
+        <height>0.8</height>
+        <points>
+             0      -0.625
+             0.125  -0.625
+             0.275  -0.575
+             0.4    -0.5
+             0.5    -0.4
+             0.575  -0.275
+             0.625  -0.125
+             0.625	 0
+            -0.025	 0.65
+            -0.65	 0.025
+        </points>
+    </polygon>
 </model>

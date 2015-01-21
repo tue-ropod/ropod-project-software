@@ -18,11 +18,65 @@ std::vector<double> parseArray(const TiXmlElement* xml_elem)
 
     std::string word;
     std::stringstream stream(txt);
-    while( getline(stream, word, ' ') ) {
-        v.push_back(atof(word.c_str()));
-    }
+//    while( getline(stream, word, ' ') ) {
+//        v.push_back(atof(word.c_str()));
+//    }
+
+    double d;
+    while(stream >> d)
+        v.push_back(d);
 
     return v;
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+geo::ShapePtr polygonToMesh(const std::vector<double>& points, double height, const std::vector<double>& size)
+{
+    geo::Mesh mesh;
+
+    int num_points = points.size() / 2;
+
+    double size_x = 1;
+    double size_y = 1;
+
+    if (size.size() == 3)
+    {
+        height *= size[2];
+        size_x = size[0];
+        size_y = size[0];
+    }
+
+    // Calculate vertices
+    for(unsigned int i = 0; i < points.size(); i += 2)
+    {
+        double x = size_x * points[i];
+        double y = size_y * points[i + 1];
+
+        mesh.addPoint(x, y, -height / 2);
+        mesh.addPoint(x, y, height / 2);
+    }
+
+    // Calculate side triangles
+    for(int i = 1; i < num_points - 1; ++i)
+    {
+        int i2 = 2 * i;
+        mesh.addTriangle(0, i2, i2 + 2);
+        mesh.addTriangle(1, i2 + 1, i2 + 3);
+    }
+
+    // Calculate top and bottom triangles
+    for(int i = 0; i < num_points; ++i)
+    {
+        int j = (i + 1) % num_points;
+        mesh.addTriangle(i * 2, j * 2, i * 2 + 1);
+        mesh.addTriangle(i * 2 + 1, j * 2, j * 2 + 1);
+    }
+
+    geo::ShapePtr shape(new geo::Shape);
+    shape->setMesh(mesh);
+
+    return shape;
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -82,15 +136,36 @@ geo::ShapePtr parseXMLShape(const std::string& filename, std::string& error)
             size = parseArray(size_xml);
 
         std::string shape_type = shape_xml->Value();
-        if (shape_type == "box") {
+        if (shape_type == "box")
+        {
             if (!size.empty()) {
                 geo::Vector3 v_size(size[0], size[1], size[2]);
                 shape->addShape(geo::Box(-v_size / 2, v_size / 2), pose);
             } else {
                 s_error << "In definition '" << filename << "': shape '" << shape_type << "' has no size property" << std::endl;
             }
+        }
+        else if (shape_type == "polygon")
+        {
+            std::cout << "Polygon" << std::endl;
 
-        } else {
+            const TiXmlElement* height_xml = shape_xml->FirstChildElement("height");
+            double height = (height_xml) ? atof(height_xml->GetText()) : 1;
+
+            const TiXmlElement* points_xml = shape_xml->FirstChildElement("points");
+            if (points_xml)
+            {
+                std::vector<double> points = parseArray(points_xml);
+                geo::ShapePtr polygon = polygonToMesh(points, height, size);
+                shape->addShape(*polygon, pose);
+            }
+            else
+            {
+                s_error << "In definition '" << filename << "': Polygon shape needs field 'points'." << std::endl;
+            }
+        }
+        else
+        {
             s_error << "In definition '" << filename << "': Unknown shape type: '" << shape_type << "'" << std::endl;
         }
 

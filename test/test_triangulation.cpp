@@ -37,8 +37,6 @@ int main(int argc, char **argv)
             {
                 unsigned char v = image.at<unsigned char>(y, x);
 
-                viz.at<cv::Vec3b>(y, x) = cv::Vec3b(v, v, v);
-
                 if (v == 0)
                 {
                     int d_current = 0;
@@ -50,6 +48,11 @@ int main(int argc, char **argv)
 
                     xs.push_back(x);
                     ys.push_back(y);
+
+                    int n_uninterrupted = 0;
+                    int segment_length = 0;
+                    int x_uninterrupted = x;
+                    int y_uninterrupted = y;
 
                     while (true)
                     {
@@ -72,9 +75,35 @@ int main(int argc, char **argv)
 
                         if (d_current != d)
                         {
-                            xs.push_back(x2);
-                            ys.push_back(y2);
+                            if (n_uninterrupted > 10)
+                            {
+                                if (x_uninterrupted != xs.back() && y_uninterrupted != ys.back())
+                                {
+                                    xs.push_back(x_uninterrupted);
+                                    ys.push_back(y_uninterrupted);
+                                }
+
+                                xs.push_back(x2);
+                                ys.push_back(y2);
+                                segment_length = 0;
+                            }
+                            else if (segment_length > 10)
+                            {
+                                xs.push_back(x2);
+                                ys.push_back(y2);
+                                segment_length = 0;
+                            }
+
+                            x_uninterrupted = x2;
+                            y_uninterrupted = y2;
+                            n_uninterrupted = 0;
                         }
+                        else
+                        {
+                            ++n_uninterrupted;
+                        }
+
+                        ++segment_length;
 
                         x2 = x2 + dx[d];
                         y2 = y2 + dy[d];

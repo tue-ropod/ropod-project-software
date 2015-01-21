@@ -1,4 +1,4 @@
-#include "polypartition/src/polypartition.h"
+#include "polypartition/polypartition.h"
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -196,9 +196,9 @@ int main(int argc, char **argv)
 
                     cv::floodFill(image, cv::Point(x, y), 255);
 
-//                    geo::Shape shape;
-//                    shape.setMesh(mesh);
-//                    geo::serialization::toFile(shape, "shape.geo");
+                    geo::Shape shape;
+                    shape.setMesh(mesh);
+                    geo::serialization::toFile(shape, "shape.geo");
                 }
             }
         }        

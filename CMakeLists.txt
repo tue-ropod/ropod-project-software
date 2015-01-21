@@ -25,6 +25,7 @@ catkin_package(
 
 include_directories(
   include
+  3rdparty
   ${catkin_INCLUDE_DIRS}
   yaml-cpp
 )
@@ -36,6 +37,7 @@ add_library(ed_object_models
    src/models.cpp
    src/shape_loader.cpp
    src/xml_shape_parser.cpp
+   3rdparty/polypartition/polypartition.cpp
    ${HEADER_FILES}
 )
 
@@ -52,6 +54,6 @@ target_link_libraries(ed_object_models_test_loader ed_object_models)
 target_link_libraries(ed_object_models_view ed_object_models)
 
 add_executable(test_triangulation test/test_triangulation.cpp
-    test/polypartition/src/polypartition.cpp)
+    3rdparty/polypartition/polypartition.cpp)
 target_link_libraries(test_triangulation ${catkin_LIBRARIES})
 

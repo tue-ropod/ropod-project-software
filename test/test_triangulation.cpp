@@ -3,6 +3,10 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
+#include <geolib/Mesh.h>
+#include <geolib/Shape.h>
+#include <geolib/serialization.h>
+
 #include <iostream>
 
 int main(int argc, char **argv)
@@ -28,6 +32,8 @@ int main(int argc, char **argv)
     if (image.data)
     {
         std::cout << "Successfully loaded" << std::endl;
+
+        cv::Mat vertex_index_map(image.rows, image.cols, CV_32SC1, -1);
 
         int dx[4] = {1,  0, -1,  0 };
         int dy[4] = {0,  1,  0, -1 };
@@ -123,13 +129,37 @@ int main(int argc, char **argv)
 
                     std::cout << std::endl << "Total polygon size: " << xs.size() << std::endl;
 
-                    TPPLPoly poly;
-                    poly.Init(xs.size());
+                    int num_points = xs.size();
 
-                    for(unsigned int i = 0; i < xs.size(); ++i)
+                    TPPLPoly poly;
+                    poly.Init(num_points);
+
+                    geo::Mesh mesh;
+
+                    double min_z = 0;
+                    double max_z = 0;
+
+                    for(unsigned int i = 0; i < num_points; ++i)
                     {
                         poly[i].x = xs[i];
                         poly[i].y = ys[i];
+
+                        // Convert to world coordinates
+                        double wx = xs[i];
+                        double wy = ys[i];
+
+                        vertex_index_map.at<int>(ys[i], xs[i]) = i;
+
+                        mesh.addPoint(geo::Vector3(wx, wy, min_z));
+                        mesh.addPoint(geo::Vector3(wx, wy, max_z));
+                    }
+
+                    // Calculate side triangles
+                    for(int i = 0; i < num_points; ++i)
+                    {
+                        int j = (i + 1) % num_points;
+                        mesh.addTriangle(i * 2, j * 2, i * 2 + 1);
+                        mesh.addTriangle(i * 2 + 1, j * 2, j * 2 + 1);
                     }
 
                     TPPLPartition pp;
@@ -146,18 +176,30 @@ int main(int argc, char **argv)
 
                     for(std::list<TPPLPoly>::iterator it = result.begin(); it != result.end(); ++it)
                     {
-                        TPPLPoly& convex_poly = *it;
-                        for(unsigned j = 0; j < convex_poly.GetNumPoints(); ++j)
+                        TPPLPoly& cp = *it;
+
+                        int i1 = vertex_index_map.at<int>(cp[0].y, cp[0].x) + 1;
+                        int i2 = vertex_index_map.at<int>(cp[1].y, cp[1].x) + 1;
+                        int i3 = vertex_index_map.at<int>(cp[2].y, cp[2].x) + 1;
+
+                        mesh.addTriangle(i1, i2, i3);
+
+                        // visualize
+                        for(unsigned j = 0; j < cp.GetNumPoints(); ++j)
                         {
-                            int k = (j + 1) % convex_poly.GetNumPoints();
-                            cv::line(viz, cv::Point(convex_poly[j].x, convex_poly[j].y), cv::Point(convex_poly[k].x, convex_poly[k].y), cv::Scalar(0, 0, 255));
+                            int k = (j + 1) % cp.GetNumPoints();
+                            cv::line(viz, cv::Point(cp[j].x, cp[j].y), cv::Point(cp[k].x, cp[k].y), cv::Scalar(0, 0, 255));
                         }
                     }
 
                     cv::floodFill(image, cv::Point(x, y), 255);
+
+                    geo::Shape shape;
+                    shape.setMesh(mesh);
+                    geo::serialization::toFile(shape, "shape.geo");
                 }
             }
-        }
+        }        
 
         cv::imshow("image", viz);
         cv::waitKey();

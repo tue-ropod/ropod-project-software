@@ -57,7 +57,7 @@ geo::ShapePtr polygonToMesh(const std::vector<double>& points, double height, co
         mesh.addPoint(x, y, height / 2);
     }
 
-    // Calculate side triangles
+    // Calculate top and bottom triangles
     for(int i = 1; i < num_points - 1; ++i)
     {
         int i2 = 2 * i;
@@ -65,7 +65,7 @@ geo::ShapePtr polygonToMesh(const std::vector<double>& points, double height, co
         mesh.addTriangle(1, i2 + 1, i2 + 3);
     }
 
-    // Calculate top and bottom triangles
+    // Calculate side triangles
     for(int i = 0; i < num_points; ++i)
     {
         int j = (i + 1) % num_points;

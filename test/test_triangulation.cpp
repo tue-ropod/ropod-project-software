@@ -14,18 +14,30 @@ int main(int argc, char **argv)
 
     cv::Mat image = cv::imread(image_filename, CV_LOAD_IMAGE_GRAYSCALE);   // Read the file
 
+    cv::Mat viz(image.rows, image.cols, CV_8UC3, cv::Scalar(0, 0, 0));
+    for(int y = 0; y < image.rows; ++y)
+    {
+        for(int x = 0; x < image.cols; ++x)
+        {
+            unsigned char v = image.at<unsigned char>(y, x);
+            viz.at<cv::Vec3b>(y, x) = cv::Vec3b(v, v, v);
+        }
+    }
+
     if (image.data)
     {
         std::cout << "Successfully loaded" << std::endl;
 
-        int dx[8] = {1, 1, 0, -1, -1, -1,  0,  1 };
-        int dy[8] = {0, 1, 1,  1,  0, -1, -1, -1 };
+        int dx[4] = {1,  0, -1,  0 };
+        int dy[4] = {0,  1,  0, -1 };
 
         for(int y = 0; y < image.rows; ++y)
         {
             for(int x = 0; x < image.cols; ++x)
             {
                 unsigned char v = image.at<unsigned char>(y, x);
+
+                viz.at<cv::Vec3b>(y, x) = cv::Vec3b(v, v, v);
 
                 if (v == 0)
                 {
@@ -42,9 +54,9 @@ int main(int argc, char **argv)
                     while (true)
                     {
                         bool found = false;
-                        int d = (d_current + 6) % 8; // check going left first
+                        int d = (d_current + 3) % 4; // check going left first
 
-                        for(int i = 0; i < 8; ++i)
+                        for(int i = 0; i < 4; ++i)
                         {
                             if (image.at<unsigned char>(y2 + dy[d], x2 + dx[d]) == 0)
                             {
@@ -52,7 +64,7 @@ int main(int argc, char **argv)
                                 break;
                             }
 
-                            d = (d + 1) % 8;
+                            d = (d + 1) % 4;
                         }
 
                         if (!found)
@@ -62,8 +74,6 @@ int main(int argc, char **argv)
                         {
                             xs.push_back(x2);
                             ys.push_back(y2);
-                            image.at<unsigned char>(y2, x2) = 128;
-
                         }
 
                         x2 = x2 + dx[d];
@@ -73,13 +83,17 @@ int main(int argc, char **argv)
                             break;
 
                         d_current = d;
-
-//                        std::cout << x2 << ", " << y2 << std::endl;
-
-//                        image.at<unsigned char>(y2, x2) = 128;
                     }
 
-                    cv::imshow("image", image);
+                    for(unsigned int i = 0; i < xs.size(); ++i)
+                    {
+                        int k = (i + 1) % xs.size();
+                        cv::line(viz, cv::Point(xs[i], ys[i]), cv::Point(xs[k], ys[k]), cv::Scalar(0, 0, 255));
+                    }
+
+                    std::cout << std::endl << "Total polygon size: " << xs.size() << std::endl;
+
+                    cv::imshow("image", viz);
                     cv::waitKey();
 
                     TPPLPoly poly;
@@ -95,7 +109,7 @@ int main(int argc, char **argv)
                     std::list<TPPLPoly> testpolys, result;
                     testpolys.push_back(poly);
 
-                    if (!pp.Triangulate_EC(&testpolys, &result))
+                    if (!pp.Triangulate_EC(&poly, &result))
                     {
                         std::cout << "Error" << std::endl;
                         return 1;
@@ -103,27 +117,17 @@ int main(int argc, char **argv)
 
                     std::cout << "Number of triangles: " << result.size() << std::endl << std::endl;
 
-                    int i = 0;
                     for(std::list<TPPLPoly>::iterator it = result.begin(); it != result.end(); ++it)
                     {
-                        std::cout << "Triangle " << i << std::endl;
-                        TPPLPoly& triangle = *it;
-
-                        cv::line(image, cv::Point(triangle[0].x, triangle[0].y), cv::Point(triangle[1].x, triangle[1].y), 128);
-                        cv::line(image, cv::Point(triangle[1].x, triangle[1].y), cv::Point(triangle[2].x, triangle[2].y), 128);
-                        cv::line(image, cv::Point(triangle[2].x, triangle[2].y), cv::Point(triangle[0].x, triangle[0].y), 128);
-
-                        for(unsigned int j = 0; j < triangle.GetNumPoints(); ++j)
+                        TPPLPoly& convex_poly = *it;
+                        for(unsigned j = 0; j < convex_poly.GetNumPoints(); ++j)
                         {
-                            std::cout << "    " << triangle[j].x << ", " << triangle[j].y << std::endl;
+                            int k = (j + 1) % convex_poly.GetNumPoints();
+                            cv::line(viz, cv::Point(convex_poly[j].x, convex_poly[j].y), cv::Point(convex_poly[k].x, convex_poly[k].y), cv::Scalar(0, 0, 255));
                         }
-
-                        std::cout << std::endl;
-
-                        ++i;
                     }
 
-                    cv::imshow("image", image);
+                    cv::imshow("image", viz);
                     cv::waitKey();
                     return 0;
                 }

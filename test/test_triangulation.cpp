@@ -1,6 +1,7 @@
 #include "polypartition/src/polypartition.h"
 
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include <iostream>
 
@@ -122,9 +123,6 @@ int main(int argc, char **argv)
 
                     std::cout << std::endl << "Total polygon size: " << xs.size() << std::endl;
 
-                    cv::imshow("image", viz);
-                    cv::waitKey();
-
                     TPPLPoly poly;
                     poly.Init(xs.size());
 
@@ -156,12 +154,13 @@ int main(int argc, char **argv)
                         }
                     }
 
-                    cv::imshow("image", viz);
-                    cv::waitKey();
-                    return 0;
+                    cv::floodFill(image, cv::Point(x, y), 255);
                 }
             }
         }
+
+        cv::imshow("image", viz);
+        cv::waitKey();
     }
     else
     {

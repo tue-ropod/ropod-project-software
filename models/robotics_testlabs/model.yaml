@@ -219,7 +219,7 @@ composition:
       pose: { x: 3.13, y: 0.665, z: 0 }
     - type: "waypoint"
       id: "exit_1_rips"
-      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }      
+      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
     - type: "waypoint"
       id: "exit_2_rips"
       pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
@@ -247,3 +247,21 @@ composition:
     - type: "waypoint"
       id: "what_did_you_say_start"
       pose: { x: 0.347, y: -0.665, z: 0, rz: 1.008 }
+
+# - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
+
+    - type: "waypoint"
+      id: "person_rec_learning"
+      pose: { x: 2.545, y: 4.346, z: 0, rz:  3.141}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_1"
+      pose: { x: 2.684, y: 1.969, z: 0, rz: -1.560}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_2"
+      pose: { x: 2.482, y: -0.639, z: 0, rz: 3.136}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_3"
+      pose: { x: 0.317, y: -0.618,, z: 0, rz: 1.076}

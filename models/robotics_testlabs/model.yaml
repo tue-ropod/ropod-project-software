@@ -164,6 +164,9 @@ composition:
           X: 0
           Y: 0
           Z: 0
+    - type: robotics_testlab_B.plastic_cabinet
+      id: plastic_cabinet
+      pose: { x: 2.848, y: 2.763, z: 0, Z: 1.57 }
     - type: "waypoint"
       id: "living_room"
       pose:

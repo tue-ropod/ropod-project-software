@@ -32,5 +32,8 @@ composition:
     - id: theses
       type: tue.library/theses
       pose: {x: 21.65, y: 16.7, z: 0}
+    - id: cartographics
+      type: tue.library/cartographics
+      pose: {x: 21.65, y: -15.29, z: 0}
 
 

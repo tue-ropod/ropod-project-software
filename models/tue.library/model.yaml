@@ -5,6 +5,9 @@ composition:
           x: 0
           y: 0
           z: 0
+    - id: walls
+      type: tue.library/walls
+      pose: {x: 0, y: 0, z: 0}
     - id: desks-support
       type: tue.library.desks.support
       pose: {x: 0, y: 0, z: 0}
@@ -13,14 +16,14 @@ composition:
       pose: {x: 0, y: 0, z: 0.7}
     - id: relax-room-1
       type: tue.library/relax_room
-      pose: {x: -27.835, y: 3.212, z: 0}
+      pose: {x: -27.97, y: 3.212, z: 0}
     - id: relax-room-2
       type: tue.library/relax_room
-      pose: {x: -27.835, y: -2.652, z: 0}
+      pose: {x: -27.97, y: -2.652, z: 0}
     - id: relax-room-3
       type: tue.library/relax_room
-      pose: {x: 21.75, y: 3.212, z: 0}
+      pose: {x: 21.65, y: 3.212, z: 0}
     - id: relax-room-4
       type: tue.library/relax_room
-      pose: {x: 21.75, y: -2.652, z: 0}
+      pose: {x: 21.65, y: -2.652, z: 0}
 

@@ -35,5 +35,8 @@ composition:
     - id: cartographics
       type: tue.library/cartographics
       pose: {x: 21.65, y: -15.29, z: 0}
+    - id: journals
+      type: tue.library/journals
+      pose: {x: -27.97, y: -15.97, z: 0}
 
 

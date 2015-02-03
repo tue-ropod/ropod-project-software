@@ -73,4 +73,6 @@ add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_generate_messages_cpp)
 # )
 # target_link_libraries(exec_name ${catkin_LIBRARIES})
 
+add_executable(ed_rviz_publisher tools/rviz_publisher.cpp)
+target_link_libraries(ed_rviz_publisher ${catkin_LIBRARIES})
 

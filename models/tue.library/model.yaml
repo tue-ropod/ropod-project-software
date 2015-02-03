@@ -13,7 +13,7 @@ composition:
       pose: {x: 0, y: 0, z: 0}
     - id: desks-top
       type: tue.library.desks.top
-      pose: {x: 0, y: 0, z: 0.7}
+      pose: {x: 0, y: 0, z: 0.695}
     - id: relax-room-1
       type: tue.library/relax_room
       pose: {x: -27.97, y: 3.212, z: 0}

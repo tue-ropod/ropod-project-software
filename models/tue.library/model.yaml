@@ -62,6 +62,12 @@ composition:
     - id: base_station
       type: cup
       pose: {x: -4.5, y: 3.0, z: 1.0}
+    - id: amigo_case
+      type: amigo_case
+      pose: {x: -3.7, y: 7.3, z: 0.0, Z: 1.57}
+    - id: laptop_case
+      type: laptop_case
+      pose: {x: -2.7, y: 7.3, z: 0.0, Z: 1.57}
     
 
 

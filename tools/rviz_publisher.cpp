@@ -88,27 +88,10 @@ void initMarker(const std::string& id, const EntityViz& entity_viz, visualizatio
 
 // ----------------------------------------------------------------------------------------------------
 
-void deserializeMesh(const std::string& id, const ed_gui_server::Mesh& mesh)
+void meshToMarker(const ed_gui_server::Mesh& mesh, visualization_msgs::Marker& m)
 {
-    std::map<std::string, EntityViz>::iterator it = entities.find(id);
-    if (it == entities.end())
-        return;
-
-    EntityViz& entity_viz = it->second;
-    visualization_msgs::Marker& m = entity_viz.marker;
-
     m.type = visualization_msgs::Marker::TRIANGLE_LIST;
     m.scale.x = m.scale.y = m.scale.z = 1.0;
-    m.color.a = 1;
-    m.id = entity_viz.num_id;
-    m.lifetime = ros::Duration(0.2);
-    m.action = visualization_msgs::Marker::ADD;
-    m.header.frame_id = "/map";
-
-    int i_color = djb2(id) % 27;
-    m.color.r = COLORS[i_color][0];
-    m.color.g = COLORS[i_color][1];
-    m.color.b = COLORS[i_color][2];
 
     m.points.resize(mesh.vertices.size() / 3);
     for(unsigned int i = 0; i < m.points.size(); ++i )
@@ -118,8 +101,6 @@ void deserializeMesh(const std::string& id, const ed_gui_server::Mesh& mesh)
         m.points[i].y = mesh.vertices[i3 + 1];
         m.points[i].z = mesh.vertices[i3 + 2];
     }
-
-    entity_viz.mesh_revision = mesh.revision;
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -174,7 +155,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         const ed_gui_server::EntityInfo& info = msg->entities[i];
 
         if (info.id.size() >= 5 && info.id.substr(info.id.size() - 5) == "floor")
-            continue; // Filter floor;
+            continue; // Filter floor
 
         EntityViz* entity_viz;
 
@@ -253,8 +234,16 @@ int main(int argc, char **argv)
 
                 for(unsigned int i = 0; i < query_meshes_srv.response.meshes.size(); ++i)
                 {
-                    deserializeMesh(query_meshes_srv.response.entity_ids[i],
-                                    query_meshes_srv.response.meshes[i]);
+                    const std::string& id = query_meshes_srv.response.entity_ids[i];
+                    const ed_gui_server::Mesh& mesh = query_meshes_srv.response.meshes[i];
+
+                    std::map<std::string, EntityViz>::iterator it = entities.find(id);
+                    if (it == entities.end())
+                        continue;
+
+                    meshToMarker(mesh, it->second.marker);
+
+                    it->second.mesh_revision = mesh.revision;
                 }
             }
             else

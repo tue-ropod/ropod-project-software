@@ -43,13 +43,13 @@ composition:
       pose: {x: -10.5, y: 8.0, z: 0}
     - id: lecture_room_1
       type: tue.library/door
-      pose: {x: -6.5, y: 8.0, z: 0}
+      pose: {x: -6.8, y: 8.0, z: 0}
     - id: lecture_room_2
       type: tue.library/door
       pose: {x: 0.5, y: 8.0, z: 0}
     - id: copier
       type: tue.library/door
-      pose: {x: 4.5, y: 8.0, z: 0}
+      pose: {x: 4.2, y: 8.0, z: 0}
     - id: stairway
       type: tue.library/door
       pose: {x: -1.0, y: 0.10, z: 0, Z: 1.57}

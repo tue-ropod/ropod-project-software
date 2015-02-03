@@ -72,47 +72,18 @@ unsigned int djb2(const std::string& str)
 
 // ----------------------------------------------------------------------------------------------------
 
-void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
+void initMarker(const std::string& id, const EntityViz& entity_viz, visualization_msgs::Marker& m)
 {
-    for(unsigned int i = 0; i < msg->entities.size(); ++i)
-    {
-        const ed_gui_server::EntityInfo& info = msg->entities[i];
+    m.color.a = 1;
+    m.id = entity_viz.num_id;
+    m.lifetime = ros::Duration(0.2);
+    m.action = visualization_msgs::Marker::ADD;
+    m.header.frame_id = "/map";
 
-        if (info.id.size() >= 5 && info.id.substr(info.id.size() - 5) == "floor")
-            continue; // Filter floor;
-
-        EntityViz* entity_viz;
-
-        std::map<std::string, EntityViz>::iterator it = entities.find(info.id);
-        if (it == entities.end())
-        {
-            entity_viz = &entities[info.id];
-            entity_viz->num_id = entities.size() - 1;
-        }
-        else
-            entity_viz = &it->second;
-
-        if (info.mesh_revision > entity_viz->mesh_revision)
-        {
-            query_meshes_srv.request.entity_ids.push_back(info.id);
-        }
-        else if (info.mesh_revision > 0)
-        {
-            marker_msg.markers.push_back(entity_viz->marker);
-
-            // Set the pose
-            visualization_msgs::Marker& m = marker_msg.markers.back();
-            m.pose = info.pose;
-            m.header.stamp = ros::Time::now();
-
-            if (info.color.a != 0)
-            {
-                m.color.r = (float)info.color.r / 255;
-                m.color.g = (float)info.color.g / 255;
-                m.color.b = (float)info.color.b / 255;
-            }
-        }
-    }
+    int i_color = djb2(id) % 27;
+    m.color.r = COLORS[i_color][0];
+    m.color.g = COLORS[i_color][1];
+    m.color.b = COLORS[i_color][2];
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -149,6 +120,101 @@ void deserializeMesh(const std::string& id, const ed_gui_server::Mesh& mesh)
     }
 
     entity_viz.mesh_revision = mesh.revision;
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+void polygonToMarker(const ed_gui_server::EntityInfo& e, visualization_msgs::Marker& m)
+{
+    m.type = visualization_msgs::Marker::LINE_LIST;
+    m.scale.x = 0.01;
+
+    for(unsigned int i = 0; i < e.polygon.xs.size(); ++i)
+    {
+        int j = (i + 1) % e.polygon.xs.size();
+
+        float x1 = e.polygon.xs[i];
+        float x2 = e.polygon.xs[j];
+
+        float y1 = e.polygon.ys[i];
+        float y2 = e.polygon.ys[j];
+
+
+        geometry_msgs::Point p;
+
+        // low line
+        p.x = x1; p.y = y1; p.z = e.polygon.z_min;
+        m.points.push_back(p);
+
+        p.x = x2; p.y = y2; p.z = e.polygon.z_min;
+        m.points.push_back(p);
+
+        // high line
+        p.x = x1; p.y = y1; p.z = e.polygon.z_max;
+        m.points.push_back(p);
+
+        p.x = x2; p.y = y2; p.z = e.polygon.z_max;
+        m.points.push_back(p);
+
+        // vertical line
+        p.x = x1; p.y = y1; p.z = e.polygon.z_min;
+        m.points.push_back(p);
+
+        p.x = x1; p.y = y1; p.z = e.polygon.z_max;
+        m.points.push_back(p);
+    }
+}
+
+// ----------------------------------------------------------------------------------------------------
+
+void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
+{
+    for(unsigned int i = 0; i < msg->entities.size(); ++i)
+    {
+        const ed_gui_server::EntityInfo& info = msg->entities[i];
+
+        if (info.id.size() >= 5 && info.id.substr(info.id.size() - 5) == "floor")
+            continue; // Filter floor;
+
+        EntityViz* entity_viz;
+
+        std::map<std::string, EntityViz>::iterator it = entities.find(info.id);
+        if (it == entities.end())
+        {
+            entity_viz = &entities[info.id];
+            entity_viz->num_id = entities.size() - 1;
+            initMarker(info.id, *entity_viz, entity_viz->marker);
+        }
+        else
+            entity_viz = &it->second;
+
+        if (info.mesh_revision > entity_viz->mesh_revision)
+        {
+            query_meshes_srv.request.entity_ids.push_back(info.id);
+            continue;
+        }
+
+        marker_msg.markers.push_back(entity_viz->marker);
+        visualization_msgs::Marker& m = marker_msg.markers.back();
+
+        // Set the pose and timestamp
+        m.pose = info.pose;
+        m.header.stamp = ros::Time::now();
+
+        // Set the color
+        if (info.color.a != 0)
+        {
+            m.color.r = (float)info.color.r / 255;
+            m.color.g = (float)info.color.g / 255;
+            m.color.b = (float)info.color.b / 255;
+        }
+
+        if (info.mesh_revision == 0)
+        {
+            // Update polygon
+            polygonToMarker(info, m);
+        }
+    }
 }
 
 // ----------------------------------------------------------------------------------------------------

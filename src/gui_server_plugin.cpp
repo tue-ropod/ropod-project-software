@@ -67,6 +67,15 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
         }
         config.endGroup();
     }
+
+    // HACK! Way of coding that this is a human
+    if (e->type() == "human")
+    {
+        msg.color.a = 1;
+        msg.color.r = 2;
+        msg.color.g = 3;
+        msg.color.b = 4;
+    }
 }
 
 // ----------------------------------------------------------------------------------------------------

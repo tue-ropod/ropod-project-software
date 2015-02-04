@@ -25,6 +25,8 @@ ed_gui_server::QueryMeshes query_meshes_srv;
 
 visualization_msgs::MarkerArray marker_msg;
 
+double RATE = 4;
+
 // ----------------------------------------------------------------------------------------------------
 
 float COLORS[27][3] = { { 0.6, 0.6, 0.6},
@@ -76,7 +78,7 @@ void initMarker(const std::string& id, const EntityViz& entity_viz, visualizatio
 {
     m.color.a = 1;
     m.id = entity_viz.num_id;
-    m.lifetime = ros::Duration(0.2);
+    m.lifetime = ros::Duration(1.0 / RATE * 4);
     m.action = visualization_msgs::Marker::ADD;
     m.header.frame_id = "/map";
 
@@ -169,6 +171,29 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         else
             entity_viz = &it->second;
 
+        // HACK!: Check if this is a human
+        if (info.color.a == 1 && info.color.r == 2 && info.color.g == 3 && info.color.b == 4)
+        {
+            // This is a human
+            marker_msg.markers.push_back(visualization_msgs::Marker());
+            visualization_msgs::Marker& m = marker_msg.markers.back();
+
+            initMarker(info.id, *entity_viz, m);
+
+            m.header.stamp = ros::Time::now();
+            m.type = visualization_msgs::Marker::CYLINDER;
+
+            m.color.a = 1.0;
+            m.color.r = 0.2; m.color.g = 0.7; m.color.b = 1.0;
+
+            m.pose = info.pose;
+            m.pose.position.z = .5;
+
+            m.scale.x = 0.3; m.scale.y = 0.3; m.scale.z = 1.0;
+
+            continue;
+        }
+
         if (info.mesh_revision > entity_viz->mesh_revision)
         {
             query_meshes_srv.request.entity_ids.push_back(info.id);
@@ -208,6 +233,9 @@ int main(int argc, char **argv)
     if (argc > 1)
         pub_topic = argv[1];
 
+    if (argc > 2)
+        RATE = atof(argv[2]);
+
     ros::NodeHandle nh;
     ros::Subscriber sub = nh.subscribe("/ed/gui/entities", 1, entityCallback);
 
@@ -215,7 +243,7 @@ int main(int argc, char **argv)
 
     ros::Publisher pub = nh.advertise<visualization_msgs::MarkerArray>(pub_topic, 1);
 
-    ros::Rate r(10);
+    ros::Rate r(RATE);
     while(ros::ok())
     {
         query_meshes_srv.request.entity_ids.clear();

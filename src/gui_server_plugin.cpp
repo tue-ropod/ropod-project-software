@@ -26,13 +26,16 @@
 
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
+    // check if e is NULL, theres a bug somewhere
+    if (!e) return;
+
     msg.id = e->id().str();
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
 
     if (!e->shape() && !e->convexHull().chull.empty())
     {
-        const ed::ConvexHull2D& ch = e->convexHull();        
+        const ed::ConvexHull2D& ch = e->convexHull();
 
         msg.polygon.z_min = ch.min_z;
         msg.polygon.z_max = ch.max_z;
@@ -150,8 +153,9 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
     entities_msg.entities.resize(world_model_->numEntities());
 
     unsigned int i = 0;
-    for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
+    for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it){
         entityToMsg(*it, entities_msg.entities[i++]);
+    }
 
     robot_.getEntities(entities_msg.entities);
 

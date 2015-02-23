@@ -267,4 +267,4 @@ composition:
 
     - type: "waypoint"
       id: "person_rec_living_room_3"
-      pose: { x: 0.317, y: -0.618,, z: 0, rz: 1.076}
+      pose: { x: 0.317, y: -0.618, z: 0, rz: 1.076}

@@ -112,7 +112,7 @@ void GUIServerPlugin::initialize()
 
     ros::AdvertiseServiceOptions opt_srv_entities =
             ros::AdvertiseServiceOptions::create<ed_gui_server::QueryEntities>(
-                "/ed/gui/query_entities", boost::bind(&GUIServerPlugin::srvQueryEntities, this, _1, _2),
+                "ed/gui/query_entities", boost::bind(&GUIServerPlugin::srvQueryEntities, this, _1, _2),
                 ros::VoidPtr(), &cb_queue_);
 
     srv_query_entities_ = nh.advertiseService(opt_srv_entities);
@@ -120,26 +120,26 @@ void GUIServerPlugin::initialize()
 
     ros::AdvertiseServiceOptions opt_srv_meshes =
             ros::AdvertiseServiceOptions::create<ed_gui_server::QueryMeshes>(
-                "/ed/gui/query_meshes", boost::bind(&GUIServerPlugin::srvQueryMeshes, this, _1, _2),
+                "ed/gui/query_meshes", boost::bind(&GUIServerPlugin::srvQueryMeshes, this, _1, _2),
                 ros::VoidPtr(), &cb_queue_);
 
     srv_query_meshes_ = nh.advertiseService(opt_srv_meshes);
 
     ros::AdvertiseServiceOptions opt_srv_get_entity_info =
             ros::AdvertiseServiceOptions::create<ed_gui_server::GetEntityInfo>(
-                "/ed/gui/get_entity_info", boost::bind(&GUIServerPlugin::srvGetEntityInfo, this, _1, _2),
+                "ed/gui/get_entity_info", boost::bind(&GUIServerPlugin::srvGetEntityInfo, this, _1, _2),
                 ros::VoidPtr(), &cb_queue_);
 
     srv_get_entity_info_ = nh.advertiseService(opt_srv_get_entity_info);
 
     ros::AdvertiseServiceOptions opt_srv_interact =
             ros::AdvertiseServiceOptions::create<ed_gui_server::Interact>(
-                "/ed/gui/interact", boost::bind(&GUIServerPlugin::srvInteract, this, _1, _2),
+                "ed/gui/interact", boost::bind(&GUIServerPlugin::srvInteract, this, _1, _2),
                 ros::VoidPtr(), &cb_queue_);
 
     srv_interact_ = nh.advertiseService(opt_srv_interact);
 
-    pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("/ed/gui/entities", 1);
+    pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("ed/gui/entities", 1);
 }
 
 // ----------------------------------------------------------------------------------------------------

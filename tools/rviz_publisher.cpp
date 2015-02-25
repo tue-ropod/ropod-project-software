@@ -229,7 +229,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "ed_rviz_publisher");
 
-    std::string pub_topic = "/ed/rviz";
+    std::string pub_topic = "ed/rviz";
     if (argc > 1)
         pub_topic = argv[1];
 
@@ -237,9 +237,9 @@ int main(int argc, char **argv)
         RATE = atof(argv[2]);
 
     ros::NodeHandle nh;
-    ros::Subscriber sub = nh.subscribe("/ed/gui/entities", 1, entityCallback);
+    ros::Subscriber sub = nh.subscribe("ed/gui/entities", 1, entityCallback);
 
-    ros::ServiceClient client = nh.serviceClient<ed_gui_server::QueryMeshes>("/ed/gui/query_meshes");
+    ros::ServiceClient client = nh.serviceClient<ed_gui_server::QueryMeshes>("ed/gui/query_meshes");
 
     ros::Publisher pub = nh.advertise<visualization_msgs::MarkerArray>(pub_topic, 1);
 

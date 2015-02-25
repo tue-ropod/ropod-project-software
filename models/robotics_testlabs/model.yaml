@@ -167,6 +167,9 @@ composition:
     - type: robotics_testlab_B.plastic_cabinet
       id: plastic_cabinet
       pose: { x: 2.848, y: 2.763, z: 0, Z: 1.57 }
+    - type: beer
+      id: beer1
+      pose: { x: 2.848, y: 2.763, z: 1.15, Z: 1.57 }
     - type: "waypoint"
       id: "living_room"
       pose:

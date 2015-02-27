@@ -268,3 +268,15 @@ composition:
     - type: "waypoint"
       id: "person_rec_living_room_3"
       pose: { x: 0.257, y: -0.648, z: 0, rz: 0.858}
+
+# - - - - - - ROOMS - - - - - - -
+
+    - type: "room"
+      id: "living_room"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x:  0.0, y:  0.0, z: 0 }
+                max: { x:  2.7, y:  2.7, z: 0 }

@@ -272,38 +272,47 @@ composition:
 # - - - - - - ROOMS - - - - - - -
 
     - type: "room"
-      id: "living_room"
+      id: "room_living_room"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x:  -0.3, y: -1.5, z: 0 }
-                max: { x:  3.1, y:  3.1, z: 0 }
+                min: { x:  0.1, y: -0.9, z: 0 }
+                max: { x:  2.6, y:  2.7, z: 0 }
     - type: "room"
-      id: "kitchen"
+      id: "room_kitchen"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x:  1.4, y:  3.4, z: 0 }
-                max: { x:  3.1, y:  5.5, z: 0 }
+                min: { x:  1.8, y:  3.7, z: 0 }
+                max: { x:  2.7, y:  5.0, z: 0 }
     - type: "room"
-      id: "workshop"
+      id: "room_bedroom"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x: -3.9, y: -1.5, z: 0 }
-                max: { x: -0.6, y:  0.6, z: 0 }
+                min: { x: -2.4, y: -1.0, z: 0 }
+                max: { x: -0.9, y:  0.2, z: 0 }
     - type: "room"
-      id: "hallway"
+      id: "room_workshop"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x: -1.2, y:  3.4, z: 0 }
+                min: { x: -4.0, y:  1.2, z: 0 }
+                max: { x: -1.1, y:  4.9, z: 0 }
+    - type: "room"
+      id: "room_hallway"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x: -1.14, y:  3.7, z: 0 }
                 max: { x:  1.0, y:  5.5, z: 0 }

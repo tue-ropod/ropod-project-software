@@ -22,3 +22,5 @@ areas:
       - box:
             min: { x: -0.325, y: -0.21, z: 0 }
             max: { x:  0.325, y:  0.21, z: 1.76 }
+  - name: near
+    offset: 0.2

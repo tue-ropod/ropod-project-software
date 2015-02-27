@@ -1,3 +1,6 @@
 type: cabinet
 shape:
     path: shape/shape.xml
+areas:
+  - name: near
+    offset: 0.7

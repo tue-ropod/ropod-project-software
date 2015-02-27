@@ -255,7 +255,7 @@ composition:
 
     - type: "waypoint"
       id: "person_rec_learning"
-      pose: { x: 2.545, y: 4.346, z: 0, rz:  3.141}
+      pose: { x: 2.386, y: 4.271, z: 0, rz: 3.134}
 
     - type: "waypoint"
       id: "person_rec_living_room_1"

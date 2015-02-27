@@ -259,12 +259,12 @@ composition:
 
     - type: "waypoint"
       id: "person_rec_living_room_1"
-      pose: { x: 2.684, y: 1.969, z: 0, rz: -1.560}
+      pose: { x: 2.277, y: 1.916, z: 0, rz: -2.462}
 
     - type: "waypoint"
       id: "person_rec_living_room_2"
-      pose: { x: 2.482, y: -0.639, z: 0, rz: 3.136}
+      pose: { x: 2.055, y: -0.693, z: 0, rz: 2.602}
 
     - type: "waypoint"
       id: "person_rec_living_room_3"
-      pose: { x: 0.317, y: -0.618, z: 0, rz: 1.076}
+      pose: { x: 0.257, y: -0.648, z: 0, rz: 0.858}

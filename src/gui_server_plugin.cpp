@@ -6,6 +6,8 @@
 #include <ed/world_model.h>
 #include <ed/entity.h>
 #include <ed/measurement.h>
+#include <ed/io/filesystem/write.h>
+#include <ed/error_context.h>
 
 #include <rgbd/Image.h>
 
@@ -18,7 +20,6 @@
 
 #include <ed_gui_server/EntityInfos.h>
 
-#include <ed/io/filesystem/write.h>
 
 #include <boost/filesystem.hpp>
 
@@ -26,6 +27,8 @@
 
 void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
+    ed::ErrorContext errc("entityToMsg");
+
     // check if e is NULL, theres a bug somewhere
     if (!e) return;
 
@@ -97,6 +100,8 @@ GUIServerPlugin::~GUIServerPlugin()
 
 void GUIServerPlugin::configure(tue::Configuration config)
 {
+    ed::ErrorContext errc("configure");
+
     std::string robot_name;
     if (config.value("robot_name", robot_name, tue::OPTIONAL))
     {
@@ -108,6 +113,8 @@ void GUIServerPlugin::configure(tue::Configuration config)
 
 void GUIServerPlugin::initialize()
 {
+    ed::ErrorContext errc("initialize");
+
     ros::NodeHandle nh;
 
     ros::AdvertiseServiceOptions opt_srv_entities =
@@ -146,6 +153,8 @@ void GUIServerPlugin::initialize()
 
 void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& req)
 {
+    ed::ErrorContext errc("process");
+
     world_model_ = &world;
     cb_queue_.callAvailable();
 

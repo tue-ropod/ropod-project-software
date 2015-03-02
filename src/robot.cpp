@@ -11,6 +11,8 @@
 #include <geolib/ros/msg_conversions.h>
 #include <geolib/Box.h>
 
+#include <ed/error_context.h>
+
 namespace gui
 {
 
@@ -30,6 +32,8 @@ Robot::~Robot()
 
 void Robot::initialize(const std::string& name)
 {
+    ed::ErrorContext errc("Robot::initialize; robot =", name.c_str());
+
     name_ = name;
 
     // Initialize TF listener
@@ -217,6 +221,8 @@ geo::ShapeConstPtr Robot::getShape(const std::string& id) const
 
 void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const
 {
+    ed::ErrorContext errc("Robot::getEntities; robot =", name_.c_str());
+
     for(ShapeMap::const_iterator it = shapes_.begin(); it != shapes_.end(); ++it)
     {
         ed_gui_server::EntityInfo e;

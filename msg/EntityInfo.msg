@@ -1,4 +1,5 @@
 string id
+string type
 geometry_msgs/Pose pose
 
 # Number indicating the revision of the mesh. If this number

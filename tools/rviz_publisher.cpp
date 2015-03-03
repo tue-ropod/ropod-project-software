@@ -16,7 +16,9 @@ struct EntityViz
 
     unsigned int mesh_revision;
     visualization_msgs::Marker marker;
+    visualization_msgs::Marker text_marker;
     unsigned int num_id;
+    unsigned int text_num_id;
 
 };
 
@@ -74,10 +76,9 @@ unsigned int djb2(const std::string& str)
 
 // ----------------------------------------------------------------------------------------------------
 
-void initMarker(const std::string& id, const EntityViz& entity_viz, visualization_msgs::Marker& m)
+void initMarker(const std::string& id, visualization_msgs::Marker& m)
 {
     m.color.a = 1;
-    m.id = entity_viz.num_id;
     m.lifetime = ros::Duration(1.0 / RATE * 4);
     m.action = visualization_msgs::Marker::ADD;
     m.header.frame_id = "/map";
@@ -165,8 +166,14 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         if (it == entities.end())
         {
             entity_viz = &entities[info.id];
-            entity_viz->num_id = entities.size() - 1;
-            initMarker(info.id, *entity_viz, entity_viz->marker);
+            entity_viz->num_id = (entities.size() - 1) * 2;
+            entity_viz->text_num_id = entity_viz->num_id + 1;
+
+            initMarker(info.id, entity_viz->marker);
+            entity_viz->marker.id = entity_viz->num_id;
+
+            initMarker(info.id, entity_viz->text_marker);
+            entity_viz->text_marker.id = entity_viz->text_num_id;
         }
         else
             entity_viz = &it->second;
@@ -178,7 +185,8 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             marker_msg.markers.push_back(visualization_msgs::Marker());
             visualization_msgs::Marker& m = marker_msg.markers.back();
 
-            initMarker(info.id, *entity_viz, m);
+            initMarker(info.id, m);
+            m.id = entity_viz->num_id;
 
             m.header.stamp = ros::Time::now();
             m.type = visualization_msgs::Marker::CYLINDER;
@@ -220,6 +228,31 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             // Update polygon
             polygonToMarker(info, m);
         }
+
+        // Add text
+        marker_msg.markers.push_back(entity_viz->text_marker);
+        visualization_msgs::Marker& m_text = marker_msg.markers.back();
+
+        m_text.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
+
+        m_text.scale.x = m_text.scale.y = m_text.scale.z = 0.1;
+
+        m_text.color.r = 0.8;
+        m_text.color.g = 0.2;
+        m_text.color.b = 0.2;
+
+        m_text.pose = m.pose;
+        m_text.pose.position.z += 0.1;
+        m_text.header = m.header;
+
+//        if (type == "")
+//            m.text = type + "(" + name.str().substr(0,4) +  ")";
+//        else
+//            m.text = name.str() + "(" + type.substr(0,4) +  ")";
+
+        m_text.text = info.id.substr(0, 4);
+        if (!info.type.empty())
+            m_text.text += " (" + info.type.substr(0, 4) + ")";
     }
 }
 

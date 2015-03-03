@@ -33,6 +33,7 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
     if (!e) return;
 
     msg.id = e->id().str();
+    msg.type = e->type();
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
 

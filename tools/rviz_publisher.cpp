@@ -198,6 +198,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             m.pose.position.z = .5;
 
             m.scale.x = 0.3; m.scale.y = 0.3; m.scale.z = 1.0;
+            m.ns = "entities";
 
             continue;
         }
@@ -214,6 +215,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         // Set the pose and timestamp
         m.pose = info.pose;
         m.header.stamp = ros::Time::now();
+        m.ns = "entities";
 
         // Set the color
         if (info.color.a != 0)
@@ -244,6 +246,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         m_text.pose = m.pose;
         m_text.pose.position.z += 0.1;
         m_text.header = m.header;
+        m_text.ns = "labels";
 
 //        if (type == "")
 //            m.text = type + "(" + name.str().substr(0,4) +  ")";

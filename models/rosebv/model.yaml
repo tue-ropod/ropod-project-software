@@ -20,4 +20,21 @@ composition:
           X: 0
           Y: 0
           Z: 0
-
+    - type: "table_ahrend_180x90x75_with_drawers"
+      id: "desk1"
+      pose:
+          x: 0 
+          y: 1.50
+          z: 0
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_ahrend_180x90x75_with_drawers"
+      id: "desk2"
+      pose:
+          x: 0 
+          y: 3.30
+          z: 0
+          X: 0
+          Y: 0
+          Z: 0

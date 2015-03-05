@@ -24,7 +24,7 @@ composition:
       id: "desk1"
       pose:
           x: 0 
-          y: 1.50
+          y: 1.5
           z: 0
           X: 0
           Y: 0
@@ -33,7 +33,25 @@ composition:
       id: "desk2"
       pose:
           x: 0 
-          y: 3.30
+          y: 3.3
+          z: 0
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_2legs_180x80x76"
+      id: "desk3"
+      pose:
+          x: 2 
+          y: 3.3
+          z: 0
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_2legs_180x80x76"
+      id: "desk4"
+      pose:
+          x: 2.8
+          y: 3.3
           z: 0
           X: 0
           Y: 0

@@ -1,7 +1,7 @@
 <model name="table_ahrend_180x90x75_with_drawers">
     <box>
-        <xyz>0 0 0</xyz>
-        <size>1.80 0.90 0.5</size>
+        <xyz>0 0 0.725</xyz>
+        <size>1.80 0.90 0.05</size>
     </box>
 
     <box>
@@ -25,7 +25,7 @@
     </box>
     
     <box>
-        <xyz>0.705 0.09 -0.015</xyz>
+        <xyz>0.705 0.09 0.465</xyz>
         <size>0.39 0.72 0.53</size>
     </box>
 </model>

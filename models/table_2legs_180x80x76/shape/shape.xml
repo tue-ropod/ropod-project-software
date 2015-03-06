@@ -1,7 +1,7 @@
 <model name="table_2legs_180x80x76">
     <box>
-        <xyz>0 0 0</xyz>
-        <size>1.80 0.90 0.5</size>
+        <xyz>0 0 0.785</xyz>
+        <size>1.80 0.90 0.05</size>
     </box>
 
     <box>
@@ -15,12 +15,12 @@
     </box>
 
     <box>
-        <xyz>0.90 0.0 -0.73</xyz>
+        <xyz>0.90 0.0 -0.0</xyz>
         <size>0.05 0.76 0.06</size>
     </box>
 
     <box>
-        <xyz>-0.90 0.0 -0.73</xyz>
+        <xyz>-0.90 0.0 -0.0</xyz>
         <size>0.05 0.76 0.06</size>
     </box> 
 </model>

@@ -11,5 +11,9 @@ affordances:
     navigate-to:
         position_constraint:
             constraint: "x^2 + y^2 < 0.64^2"
+
+areas:
+  - name: near
+    offset: 0.7
     
 

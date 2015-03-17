@@ -11,20 +11,11 @@ composition:
           x: 0
           y: 0
           z: 0
-    - type: "robotics_testlab_B.pico_case"
-      id: "pico_case"
-      pose:
-          x: 2.7
-          y: 0.4
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.57
     - type: "ddw.salon"
       id: "couchtable"
       pose:
-          x: 3.11
-          y: 1.95
+          x: 3.2
+          y: 1.5
           z: 0
           X: 0
           Y: 0
@@ -32,84 +23,84 @@ composition:
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet1"
       pose:
-          x: 2.9
+          x: 2.95
           y: -1.42
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet2"
       pose:
-          x: 1.98
+          x: 2.03
           y: -1.42
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet3"
       pose:
-          x: 1.06
+          x: 1.11
           y: -1.42
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet4"
       pose:
-          x: 0.14
+          x: 0.19
           y: -1.42
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet5"
       pose:
-          x: -0.97
+          x: -0.92
           y: -1.42
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "ddw.table"
       id: "corridor_table"
       pose:
-          x: 3.6
-          y: 5.9
-          z: 0.02
+          x: 2.65
+          y: 0.3
+          z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "ddw.couch"
       id: "hallway_couch"
       pose:
-          x: 0.5
-          y: 3.55
+          x: 0.72
+          y: 3.45
           z: 0.02
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "robotics_testlab_B.corridor_cabinet"
       id: "corridor_cabinet"
       pose:
-          x: 3.15
+          x: 3.30
           y: 4.35
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "ddw.chair"
       id: "corridor_chair"
       pose:
-          x: 1.9
-          y: 5.4
+          x: 2.0
+          y: 5.3
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "robotics_testlab_B.bed_cabinet"
       id: "bed_cabinet"
       pose:
@@ -118,7 +109,7 @@ composition:
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "bed"
       id: "bed"
       pose:
@@ -127,12 +118,12 @@ composition:
           z: 0
           X: 0
           Y: 0
-          Z: 1.57
+          Z: 1.5707963267948966
     - type: "table_120x80x76"
       id: "operator_table1"
       pose:
-          x: -2.1
-          y: 4.02
+          x: -2.0
+          y: 3.85
           z: 0.05
           X: 0
           Y: 0
@@ -140,8 +131,8 @@ composition:
     - type: "table_120x80x76"
       id: "operator_table2"
       pose:
-          x: -3.3
-          y: 4.02
+          x: -3.2
+          y: 3.85
           z: 0.05
           X: 0
           Y: 0
@@ -149,7 +140,7 @@ composition:
     - type: "table_120x80x76"
       id: "dinner_table"
       pose:
-          x: 0.16
+          x: 0.4
           y: 1.92
           z: 0.05
           X: 0
@@ -158,15 +149,24 @@ composition:
     - type: "table_120x80x76"
       id: "workbench"
       pose:
-          x: -2.5
-          y: 3.2
+          x: -2.35
+          y: 3.05
           z: 0.05
           X: 0
           Y: 0
           Z: 0
+    - type: "table_120x80x76"
+      id: "workbench2"
+      pose:
+          x: -3.35
+          y: 2.85
+          z: 0.05
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
     - type: robotics_testlab_B.plastic_cabinet
       id: plastic_cabinet
-      pose: { x: 2.848, y: 2.763, z: 0, Z: 1.57 }
+      pose: { x: 3.18, y: 2.713, z: 0, Z: 1.5707963267948966 }
     - type: "waypoint"
       id: "living_room"
       pose:

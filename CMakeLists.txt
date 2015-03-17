@@ -3,6 +3,7 @@ project(ed_gui_server)
 
 find_package(catkin REQUIRED COMPONENTS
     ed
+    ed_sensor_integration
     message_generation
     urdf
 )

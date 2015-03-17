@@ -8,6 +8,8 @@
 #include <ed_gui_server/Interact.h>
 #include <ed_gui_server/GetEntityInfo.h>
 
+#include <ed_sensor_integration/properties/convex_hull.h>
+
 #include <ros/callback_queue.h>
 #include <ros/service_server.h>
 #include <ros/publisher.h>
@@ -23,13 +25,19 @@ public:
 
     virtual ~GUIServerPlugin();
 
-    void configure(tue::Configuration config);
-
-    void initialize();
+    void initialize(ed::InitData& init);
 
     void process(const ed::WorldModel& world, ed::UpdateRequest& req);
 
 private:
+
+    // Properties
+
+    ed::PropertyKey<ConvexHull> k_convex_hull_;
+    ed::PropertyKey<geo::Pose3D> k_pose_;
+
+
+    //
 
     const ed::WorldModel* world_model_;
 
@@ -60,6 +68,10 @@ private:
                           ed_gui_server::Interact::Response& ros_res);
 
     void storeMeasurement(const std::string& id, const std::string& type);
+
+
+    void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg);
+
 };
 
 #endif

@@ -25,7 +25,7 @@
 
 #include <opencv2/highgui/highgui.hpp>
 
-void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
+void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
 {
     ed::ErrorContext errc("entityToMsg");
 
@@ -37,26 +37,52 @@ void entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::EntityInfo& msg)
     msg.mesh_revision = e->shapeRevision();
     geo::convert(e->pose(), msg.pose);
 
-    if (!e->shape() && !e->convexHull().chull.empty())
+    if (!e->shape())
     {
-        const ed::ConvexHull2D& ch = e->convexHull();
-
-        msg.polygon.z_min = ch.min_z;
-        msg.polygon.z_max = ch.max_z;
-
-        unsigned int size = ch.chull.size();
-        msg.polygon.xs.resize(size);
-        msg.polygon.ys.resize(size);
-
-        msg.pose.position.x = ch.center_point.x;
-        msg.pose.position.y = ch.center_point.y;
-
-        for(unsigned int i = 0; i < size; ++i)
+        if (!e->convexHull().chull.empty())
         {
-            msg.polygon.xs[i] = ch.chull[i].x - msg.pose.position.x;
-            msg.polygon.ys[i] = ch.chull[i].y - msg.pose.position.y;
-//            msg.polygon.xs[i] = ch.chull[i].x + ch.center_point.x - msg.pose.position.x;
-//            msg.polygon.ys[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
+            const ed::ConvexHull2D& ch = e->convexHull();
+
+            msg.polygon.z_min = ch.min_z;
+            msg.polygon.z_max = ch.max_z;
+
+            unsigned int size = ch.chull.size();
+            msg.polygon.xs.resize(size);
+            msg.polygon.ys.resize(size);
+
+            msg.pose.position.x = ch.center_point.x;
+            msg.pose.position.y = ch.center_point.y;
+
+            for(unsigned int i = 0; i < size; ++i)
+            {
+                msg.polygon.xs[i] = ch.chull[i].x - msg.pose.position.x;
+                msg.polygon.ys[i] = ch.chull[i].y - msg.pose.position.y;
+                //            msg.polygon.xs[i] = ch.chull[i].x + ch.center_point.x - msg.pose.position.x;
+                //            msg.polygon.ys[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
+            }
+        }
+        else
+        {
+            const geo::Pose3D* pose = e->property(k_pose_);
+            const ConvexHull* ch = e->property(k_convex_hull_);
+
+            if (pose && ch)
+            {
+                geo::convert(*pose, msg.pose);
+
+                msg.polygon.z_min = ch->z_min;
+                msg.polygon.z_max = ch->z_max;
+
+                unsigned int size = ch->points.size();
+                msg.polygon.xs.resize(size);
+                msg.polygon.ys.resize(size);
+
+                for(unsigned int i = 0; i < size; ++i)
+                {
+                    msg.polygon.xs[i] = ch->points[i].x;
+                    msg.polygon.ys[i] = ch->points[i].y;
+                }
+            }
         }
     }
 
@@ -99,22 +125,17 @@ GUIServerPlugin::~GUIServerPlugin()
 
 // ----------------------------------------------------------------------------------------------------
 
-void GUIServerPlugin::configure(tue::Configuration config)
+void GUIServerPlugin::initialize(ed::InitData& init)
 {
-    ed::ErrorContext errc("configure");
+    ed::ErrorContext errc("initialize");
+
+    tue::Configuration& config = init.config;
 
     std::string robot_name;
     if (config.value("robot_name", robot_name, tue::OPTIONAL))
     {
         robot_.initialize(robot_name);
     }
-}
-
-// ----------------------------------------------------------------------------------------------------
-
-void GUIServerPlugin::initialize()
-{
-    ed::ErrorContext errc("initialize");
 
     ros::NodeHandle nh;
 
@@ -148,6 +169,10 @@ void GUIServerPlugin::initialize()
     srv_interact_ = nh.advertiseService(opt_srv_interact);
 
     pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("ed/gui/entities", 1);
+
+    // Register properties
+    init.properties.registerProperty("convex_hull", k_convex_hull_);
+    init.properties.registerProperty("pose", k_pose_);
 }
 
 // ----------------------------------------------------------------------------------------------------

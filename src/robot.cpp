@@ -240,6 +240,7 @@ void Robot::getEntities(std::vector<ed_gui_server::EntityInfo>& entities) const
             pose = pose * it->second.offset;
 
             geo::convert(pose, e.pose);
+            e.has_pose = true;
 
             e.color = it->second.color;
 

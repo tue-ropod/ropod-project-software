@@ -29,13 +29,19 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
 {
     ed::ErrorContext errc("entityToMsg");
 
-    // check if e is NULL, theres a bug somewhere
-    if (!e) return;
-
     msg.id = e->id().str();
     msg.type = e->type();
     msg.mesh_revision = e->shapeRevision();
-    geo::convert(e->pose(), msg.pose);
+
+    if (e->has_pose())
+    {
+        geo::convert(e->pose(), msg.pose);
+        msg.has_pose = true;
+    }
+    else
+    {
+        msg.has_pose = false;
+    }
 
     if (!e->shape())
     {
@@ -43,8 +49,8 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
         {
             const ed::ConvexHull2D& ch = e->convexHull();
 
-            msg.polygon.z_min = ch.min_z;
-            msg.polygon.z_max = ch.max_z;
+            msg.polygon.z_min = ch.min_z - msg.pose.position.z;
+            msg.polygon.z_max = ch.max_z - msg.pose.position.z;
 
             unsigned int size = ch.chull.size();
             msg.polygon.xs.resize(size);

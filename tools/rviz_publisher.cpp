@@ -160,6 +160,9 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         if (info.id.size() >= 5 && info.id.substr(info.id.size() - 5) == "floor")
             continue; // Filter floor
 
+        if (!info.has_pose)
+            continue;
+
         EntityViz* entity_viz;
 
         std::map<std::string, EntityViz>::iterator it = entities.find(info.id);

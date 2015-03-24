@@ -75,6 +75,7 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
             if (pose && ch)
             {
                 geo::convert(*pose, msg.pose);
+                msg.has_pose = true;
 
                 msg.polygon.z_min = ch->z_min;
                 msg.polygon.z_max = ch->z_max;

@@ -1,0 +1,17 @@
+<model name="expedit">
+    <box><!--Bottom-->
+        <xyz>0 0 0.0</xyz>
+        <size>0.40 0.79 0.05</size>
+    </box>
+    
+    <box><!--Middle-->
+        <xyz>0 0 0.385</xyz>
+        <size>0.40 0.79 0.02</size>
+    </box>
+    
+    <box><!--Top-->
+        <xyz>0 0 0.74</xyz>
+        <size>0.40 0.79 0.05</size>
+    </box>
+
+</model>

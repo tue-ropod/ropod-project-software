@@ -11,10 +11,11 @@ composition:
   - type: expedit
     id: expedit
     pose:
-        x: 1.0
-        y: 1.0
+        x: 1.495
+        y: 1.2
         z: 0.0
         X: 0.0
         Y: 0.0
         Z: 1.57
   
+#1+0.395+0.1

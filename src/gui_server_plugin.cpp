@@ -192,6 +192,10 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
     cb_queue_.callAvailable();
 
     ed_gui_server::EntityInfos entities_msg;
+
+    entities_msg.header.stamp = ros::Time::now();
+    entities_msg.header.frame_id = "/map";
+
     entities_msg.entities.resize(world_model_->numEntities());
 
     unsigned int i = 0;

@@ -1,0 +1,10 @@
+<library path="lib/librviz_plugins">
+  <class name="rviz_plugins/WorldModel"
+         type="rviz_plugins::WorldModelDisplay"
+         base_class_type="rviz::Display">
+    <description>
+      Displays world model ED
+    </description>
+    <message_type>ed_gui_server/EntityInfos</message_type>
+  </class>
+</library>

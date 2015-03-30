@@ -1,4 +1,4 @@
-<model name="expedit">
+<model>
     <!--Bottom-->
     <box>
         <xyz>0 0 0.025</xyz>

@@ -210,10 +210,21 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
                                        ed_gui_server::QueryEntities::Response& ros_res)
 {
     for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
-    {
+    {       
         const ed::EntityConstPtr& e = *it;
-        float pos_x = e->pose().t.x;
-        float pos_y = e->pose().t.y;
+
+        const geo::Pose3D* pose = 0;
+        if (e->has_pose())
+            pose = &e->pose();
+        else
+            pose = e->property(k_pose_);
+
+        if (!pose)
+            continue;
+
+        float pos_x = pose->t.x;
+        float pos_y = pose->t.y;
+
         if (ros_req.area_min.x < pos_x && pos_x < ros_req.area_max.x
                 && ros_req.area_min.y < pos_y && pos_y < ros_req.area_max.y)
         {
@@ -222,7 +233,7 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
 
             info.id = e->id().str();
             info.mesh_revision = e->shapeRevision();
-            geo::convert(e->pose(), info.pose);
+            geo::convert(*pose, info.pose);
         }
     }
 
@@ -287,10 +298,19 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
     ros_res.affordances.push_back("pick-up");
     ros_res.affordances.push_back("place");
 
-    std::stringstream ss_pose;
-    ss_pose << "(" << e->pose().t.x << ", " << e->pose().t.y << ", " << e->pose().t.z << ")";
-    ros_res.property_names.push_back("position");
-    ros_res.property_values.push_back(ss_pose.str());
+    const geo::Pose3D* pose = 0;
+    if (e->has_pose())
+        pose = &e->pose();
+    else
+        pose = e->property(k_pose_);
+
+    if (pose)
+    {
+        std::stringstream ss_pose;
+        ss_pose << "(" << pose->t.x << ", " << pose->t.y << ", " << pose->t.z << ")";
+        ros_res.property_names.push_back("position");
+        ros_res.property_values.push_back(ss_pose.str());
+    }
 
 //    std::stringstream ss_creationTime;
 //    ss_creationTime << e->creationTime();

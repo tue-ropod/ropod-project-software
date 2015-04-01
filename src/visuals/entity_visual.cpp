@@ -4,7 +4,7 @@
 
 #include "entity_visual.h"
 
-namespace rviz_plugins
+namespace ed_rviz_plugins
 {
 
 EntityVisual::EntityVisual( Ogre::SceneManager* scene_manager, Ogre::SceneNode* parent_node )

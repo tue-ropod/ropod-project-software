@@ -1,8 +1,8 @@
 <package>
-  <name>rviz_plugins</name>
+  <name>ed_rviz_plugins</name>
   <version>0.9.1</version>
   <description>
-     Plugins for RViz.
+     ED plugins for RViz.
   </description>
   <maintainer email="reinzor@gmail.com">Rein Appeldoorn</maintainer>
   <license>MIT</license>

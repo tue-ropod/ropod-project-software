@@ -19,7 +19,7 @@ class FloatProperty;
 class IntProperty;
 }
 
-namespace rviz_plugins
+namespace ed_rviz_plugins
 {
 
 class EntityVisual;

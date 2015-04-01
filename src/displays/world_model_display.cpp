@@ -59,7 +59,7 @@ unsigned int djb2(const std::string& str)
 
 // ----------------------------------------------------------------------------------------------------
 
-namespace rviz_plugins
+namespace ed_rviz_plugins
 {
 
 WorldModelDisplay::WorldModelDisplay()
@@ -188,4 +188,4 @@ void WorldModelDisplay::processMessage(const ed_gui_server::EntityInfos::ConstPt
 }
 
 #include <pluginlib/class_list_macros.h>
-PLUGINLIB_EXPORT_CLASS(rviz_plugins::WorldModelDisplay,rviz::Display )
+PLUGINLIB_EXPORT_CLASS(ed_rviz_plugins::WorldModelDisplay,rviz::Display )

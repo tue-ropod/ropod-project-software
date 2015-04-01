@@ -15,7 +15,7 @@ class Quaternion;
 class ColorValue;
 }
 
-namespace rviz_plugins
+namespace ed_rviz_plugins
 {
 
 class EntityVisual

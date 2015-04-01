@@ -3,7 +3,7 @@
 ##
 ## First start with some standard catkin stuff.
 cmake_minimum_required(VERSION 2.8.3)
-project(rviz_plugins)
+project(ed_rviz_plugins)
 find_package(catkin REQUIRED COMPONENTS rviz)
 catkin_package()
 include_directories(${catkin_INCLUDE_DIRS})

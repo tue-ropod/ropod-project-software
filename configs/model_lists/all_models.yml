@@ -1,4 +1,6 @@
 models:
+    - name: crowd
+    - name: human
     - name: cup
     - name: beer
     - name: cola

@@ -54,19 +54,19 @@ model:
               - purple: 0.124068
               - white: 0.492328
     size: 
-        - height: 0.102197
+        - height: 0.072197
           width: 0.115665
-        - height: 0.101691
+        - height: 0.071691
           width: 0.0863771
-        - height: 0.104884
+        - height: 0.074884
           width: 0.0967672
-        - height: 0.101691
+        - height: 0.071691
           width: 0.0863771
-        - height: 0.102489
+        - height: 0.072489
           width: 0.117355
-        - height: 0.102605
+        - height: 0.072605
           width: 0.11132
         - height: 0.0738762
           width: 0.0937402
-        - height: 0.101685
+        - height: 0.071685
           width: 0.0912531

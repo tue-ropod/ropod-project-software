@@ -54,17 +54,17 @@ model:
               - red: 0.0075
               - white: 0.11025
     size: 
-        - height: 0.185038
+        - height: 0.135038
           width: 0.129395
-        - height: 0.177942
+        - height: 0.147942
           width: 0.120596
-        - height: 0.184102
+        - height: 0.144102
           width: 0.123306
-        - height: 0.172724
+        - height: 0.142724
           width: 0.135951
-        - height: 0.179114
+        - height: 0.149114
           width: 0.103246
-        - height: 0.177942
+        - height: 0.147942
           width: 0.120596
-        - height: 0.179293
+        - height: 0.149293
           width: 0.144861

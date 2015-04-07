@@ -164,9 +164,12 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: robotics_testlab_B.plastic_cabinet
-      id: plastic_cabinet
-      pose: { x: 3.18, y: 2.713, z: 0, Z: 1.5707963267948966 }
+    - type: robotics_testlab_B.plastic_cabinet.shelf
+      id: plastic_cabinet_shelf_1
+      pose: { x: 3.18, y: 2.713, z: 1.065, Z: 1.5707963267948966 }
+    - type: robotics_testlab_B.plastic_cabinet.shelf
+      id: plastic_cabinet_shelf_2
+      pose: { x: 3.18, y: 2.713, z: 0.715, Z: 1.5707963267948966 }
     - type: "waypoint"
       id: "living_room"
       pose:

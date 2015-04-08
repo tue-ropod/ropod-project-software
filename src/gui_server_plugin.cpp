@@ -431,24 +431,16 @@ void GUIServerPlugin::storeMeasurement(const std::string& id, const std::string&
     ed::EntityConstPtr e = world_model_->getEntity(id);
     if (e)
     {
-        ed::MeasurementConstPtr msr = e->lastMeasurement();
-        if (msr)
+        char const* home = getenv("HOME");
+        if (home)
         {
-            char const* home = getenv("HOME");
-            if (home)
-            {
-                boost::filesystem::path dir(std::string(home) + "/.ed/measurements/" + type);
-                boost::filesystem::create_directories(dir);
+            boost::filesystem::path dir(std::string(home) + "/.ed/measurements/" + type);
+            boost::filesystem::create_directories(dir);
 
-                std::string filename = dir.string() + "/" + ed::Entity::generateID().str();
-                ed::write(filename, *msr);
+            std::string filename = dir.string() + "/" + ed::Entity::generateID().str();
+            ed::write(filename, *e);
 
-                std::cout << "Writing measurement to '" << filename << "'." << std::endl;
-            }
-        }
-        else
-        {
-            std::cout << "Entity '" + id << "' does not have any measurements." << std::endl;
+            std::cout << "Writing entity info to '" << filename << "'." << std::endl;
         }
     }
     else

@@ -47,6 +47,33 @@ composition:
           X: 0
           Y: 0
           Z: 0
+    - type: "rgo2015/tv_stand"
+      id: "tv_stand"
+      pose: 
+          x: 9.25          # 9.45 - 0.4/2
+          y: 5.9          # 8.5 - 2.0 - 1.2/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/couch_table"
+      id: "couch_table"
+      pose: 
+          x: 8.345          # 9.45 - 0.55/2 - 0.83
+          y: 6.18          # 8.5 - 1.87 - 0.9/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/couch"
+      id: "couch"
+      pose: 
+          x: 7.3875          # 9.45 - 0.865/2 - 1.63
+          y: 6.18          # 8.5 - 1.28 - 1.8/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
     # - type: "rgo2015/tv"
     #   id: "tv"
     #   pose: 

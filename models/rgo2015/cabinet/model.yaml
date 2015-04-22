@@ -5,3 +5,40 @@ composition:
           x: 0
           y: 0
           z: 0
+    - type: "rgo2015/shelf"
+      id: "shelf1"
+      pose:
+          x: 0
+          y: 0
+          z: 0.08
+    - type: "rgo2015/shelf"
+      id: "shelf2"
+      pose:
+          x: 0
+          y: 0
+          z: 0.335
+    - type: "rgo2015/shelf"
+      id: "shelf3"
+      pose:
+          x: 0
+          y: 0
+          z: 0.685
+    - type: "rgo2015/shelf"
+      id: "shelf4"
+      pose:
+          x: 0
+          y: 0
+          z: 1.04
+    - type: "rgo2015/shelf"
+      id: "shelf5"
+      pose:
+          x: 0
+          y: 0
+          z: 1.36
+    - type: "rgo2015/shelf"
+      id: "shelf6"
+      pose:
+          x: 0
+          y: 0
+          z: 2.00
+    

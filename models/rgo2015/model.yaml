@@ -38,12 +38,39 @@ composition:
           X: 0
           Y: 0
           Z: 0
-    - type: "rgo2015/kitchen_counter"
-      id: "kitchen_counter"
+    # - type: "rgo2015/kitchen_counter"
+    #   id: "kitchen_counter"
+    #   pose: 
+    #       x: 5.87          # 5.525 + 0.69/2
+    #       y: 2.3425          # 1.55 + 0.19 + 1.205/2
+    #       z: 0 
+    #       X: 0
+    #       Y: 0
+    #       Z: 0
+    - type: "rgo2015/fridge"
+      id: "fridge"
       pose: 
           x: 5.87          # 5.525 + 0.69/2
-          y: 2.3425          # 1.55 + 0.19 + 1.205/2
+          y: 2.6425          # 1.55 + 0.19 + 3*0.6/2
           z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/stove"
+      id: "stove"
+      pose: 
+          x: 5.9          # 5.525 + 0.12 + 0.51/2
+          y: 2.695          # 1.55 + 1.0 + 0.29/2
+          z: 1.02 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/sink"
+      id: "sink"
+      pose: 
+          x: 5.85          # 5.525 + 0.12 + 0.5/2
+          y: 2.14          # 1.55 + 0.29 + 0.6/2
+          z: 1.02 
           X: 0
           Y: 0
           Z: 0

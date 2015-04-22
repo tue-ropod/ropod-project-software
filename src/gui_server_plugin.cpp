@@ -31,6 +31,7 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
 
     msg.id = e->id().str();
     msg.type = e->type();
+    msg.existence_probability = e->existenceProbability();
     msg.mesh_revision = e->shapeRevision();
 
     if (e->has_pose())

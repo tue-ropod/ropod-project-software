@@ -1,5 +1,6 @@
 string id
 string type
+float32 existence_probability
 bool has_pose
 geometry_msgs/Pose pose
 

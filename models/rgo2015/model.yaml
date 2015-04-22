@@ -21,7 +21,7 @@ composition:
           Y: 0
           Z: 0
     - type: "rgo2015/bedstand"
-      id: "bedstand1"
+      id: "left_bedside_table"
       pose: 
           x: 0.695          # 0.525 + 0.34/2
           y: 0.7775          # 0.4 + 0.16 + 0.435/2
@@ -30,10 +30,19 @@ composition:
           Y: 0
           Z: 0
     - type: "rgo2015/bedstand"
-      id: "bedstand2"
+      id: "right_bedside_table"
       pose: 
           x: 0.695          # 0.525 + 0.34/2
           y: 2.9775          # 0.4 + 2.36 + 0.435/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/coathanger"
+      id: "coathanger"
+      pose: 
+          x: 1.525          # 0.525 + 1
+          y: -1.0
           z: 0 
           X: 0
           Y: 0

@@ -55,7 +55,7 @@ composition:
           z: 0 
           X: 0
           Y: 0
-          Z: 0
+          Z: 3.1415
     - type: "rgo2015/couch_table"
       id: "couch_table"
       pose: 
@@ -70,6 +70,33 @@ composition:
       pose: 
           x: 7.3875          # 9.45 - 0.865/2 - 1.63
           y: 6.18          # 8.5 - 1.28 - 1.8/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/cupboard"
+      id: "cupboard"
+      pose: 
+          x: 5.955          # 9.45 - 3.12 - 0.75/2
+          y: 8.34          # 8.5 - 0.32/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: -1.57
+    - type: "rgo2015/cabinet"
+      id: "cabinet1"
+      pose: 
+          x: 0.665          # 0.525 + 0.28/2
+          y: 6.3         # 8.5 - 0.8/2 - 1.8
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/cabinet"
+      id: "cabinet2"
+      pose: 
+          x: 0.665          # 0.525 + 0.28/2
+          y: 5.5         # 8.5 - 0.8/2 - 1.8 - 0.8
           z: 0 
           X: 0
           Y: 0

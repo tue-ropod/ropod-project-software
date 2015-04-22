@@ -8,8 +8,8 @@
     
     <!-- Pole -->
     <box>
-        <xyz>-0 0 0.85</xyz>
-        <size>0.12 0.12 1.7</size>
+        <xyz>-0 0 0.55</xyz>
+        <size>0.12 0.12 1.1</size>
     </box>
     
 </model>

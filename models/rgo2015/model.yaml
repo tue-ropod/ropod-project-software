@@ -101,6 +101,33 @@ composition:
           X: 0
           Y: 0
           Z: 0
+    - type: "rgo2015/kitchen_table" 
+      id: "kitchen_table"
+      pose: 
+          x: 3.56          # 0.525 + 1.17/2 + 2.45
+          y: 6.49         # 8.5 - 0.78/2 - 1.62
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 1.57
+    - type: "rgo2015/table" 
+      id: "desk1"
+      pose: 
+          x: 1.76         # 0.525 + 0.8/2 + 0.835
+          y: 4.4          # 3.6 + 1.6/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "rgo2015/table" 
+      id: "desk2"
+      pose: 
+          x: 4.675          # 5.475 -1.6/2
+          y: 4.0         # 3.6 + 0.8/2
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 1.57
     # - type: "rgo2015/tv"
     #   id: "tv"
     #   pose: 

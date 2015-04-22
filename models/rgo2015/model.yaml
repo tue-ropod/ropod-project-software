@@ -1,0 +1,321 @@
+composition:
+    - type: "rgo2015/walls"
+      id: "walls"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+    - type: "floor"
+      id: "floor"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+    - type: "ddw.salon"
+      id: "couchtable"
+      pose:
+          x: 3.2
+          y: 1.5
+          z: 0
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet1"
+      pose:
+          x: 2.95
+          y: -1.42
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet2"
+      pose:
+          x: 2.03
+          y: -1.42
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet3"
+      pose:
+          x: 1.11
+          y: -1.42
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet4"
+      pose:
+          x: 0.19
+          y: -1.42
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "robotics_testlab_B.black_cabinet"
+      id: "black_cabinet5"
+      pose:
+          x: -0.92
+          y: -1.42
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "ddw.table"
+      id: "corridor_table"
+      pose:
+          x: 2.65
+          y: 0.3
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "ddw.couch"
+      id: "hallway_couch"
+      pose:
+          x: 0.72
+          y: 3.45
+          z: 0.02
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "robotics_testlab_B.corridor_cabinet"
+      id: "corridor_cabinet"
+      pose:
+          x: 3.30
+          y: 4.35
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "ddw.chair"
+      id: "corridor_chair"
+      pose:
+          x: 2.0
+          y: 5.3
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "robotics_testlab_B.bed_cabinet"
+      id: "bed_cabinet"
+      pose:
+          x: -1.92
+          y: -1.42
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "bed"
+      id: "bed"
+      pose:
+          x: -2.725
+          y: -0.35
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: "table_120x80x76"
+      id: "operator_table1"
+      pose:
+          x: -2.0
+          y: 3.85
+          z: 0.05
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_120x80x76"
+      id: "operator_table2"
+      pose:
+          x: -3.2
+          y: 3.85
+          z: 0.05
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_120x80x76"
+      id: "dinner_table"
+      pose:
+          x: 0.4
+          y: 1.92
+          z: 0.05
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_120x80x76"
+      id: "workbench"
+      pose:
+          x: -2.35
+          y: 3.05
+          z: 0.05
+          X: 0
+          Y: 0
+          Z: 0
+    - type: "table_120x80x76"
+      id: "workbench2"
+      pose:
+          x: -3.35
+          y: 2.85
+          z: 0.05
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
+    - type: robotics_testlab_B.plastic_cabinet.shelf
+      id: plastic_cabinet_shelf_1
+      pose: { x: 3.18, y: 2.713, z: 1.065, Z: 1.5707963267948966 }
+    - type: robotics_testlab_B.plastic_cabinet.shelf
+      id: plastic_cabinet_shelf_2
+      pose: { x: 3.18, y: 2.713, z: 0.715, Z: 1.5707963267948966 }
+    - type: "waypoint"
+      id: "living_room"
+      pose:
+          x: 1.8
+          y: .6
+          z: 0
+    - type: "waypoint"
+      id: "corridor"
+      pose:
+          x: 2.7
+          y: 5
+          z: 0
+    - type: "waypoint"
+      id: "hallway"
+      pose:
+          x: 0
+          y: 5.5
+          z: 0
+    - type: "waypoint"
+      id: "bedroom"
+      pose:
+          x: -2.0
+          y: -1.0
+          z: 0
+    - type: "waypoint"
+      id: "battery_point"
+      pose:
+          x: -2.8
+          y: 2.0
+          z: 0
+
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    - type: "waypoint"
+      id: "initial_pose"
+      pose: { x: 0.586, y: 4.259, z: 0, rz: 0 }
+    - type: "waypoint"
+      id: "entry_point"
+      pose: { x: 1.897, y: 4.295, z: 0, rz: 0 }
+    - type: "waypoint"
+      id: "exit"
+      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
+
+# - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
+
+    - type: "waypoint"
+      id: "registration_table1"
+    - type: "waypoint"
+      id: "registration_table2"
+      pose: { x: 3.13, y: 0.665, z: 0 }
+    - type: "waypoint"
+      id: "registration_table3"
+      pose: { x: 3.13, y: 0.665, z: 0 }
+    - type: "waypoint"
+      id: "exit_1_rips"
+      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
+    - type: "waypoint"
+      id: "exit_2_rips"
+      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
+    - type: "waypoint"
+      id: "exit_3_rips"
+      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
+    - type: "waypoint"
+      id: "exit_4_rips"
+      pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
+
+# - - - - - - CHALLENGE BASIC FUNCTIONALITIES - - - - - - -
+
+    - type: "waypoint"
+      id: "avoid_that_start"
+      pose: { x: 2.2, y: 2.2, z: 0, rz: -2.459 }
+    - type: "waypoint"
+      id: "avoid_that_wp1"
+      pose: { x: 2.648, y: -0.579, z: 0, rz: -3.137 }
+    - type: "waypoint"
+      id: "avoid_that_wp2"
+      pose: { x: 0.347, y: -0.665, z: 0, rz: 1.008 }
+    - type: "waypoint"
+      id: "avoid_that_wp3"
+      pose: { x: 2.648, y: -0.579, z: 0, rz: -3.137 }
+    - type: "waypoint"
+      id: "what_did_you_say_start"
+      pose: { x: 0.347, y: -0.665, z: 0, rz: 1.008 }
+
+# - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
+
+    - type: "waypoint"
+      id: "person_rec_learning"
+      pose: { x: 2.162, y: 4.228, z: 0, rz: 3.117}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_1"
+      pose: { x: 2.059, y: 1.946, z: 0, rz: -2.251}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_2"
+      pose: { x: 1.840, y: -0.600, z: 0, rz: 2.167}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_3"
+      pose: { x: 0.320, y: -0.495, z: 0, rz: 1.105}
+
+# - - - - - - ROOMS - - - - - - -
+
+    - type: "room"
+      id: "room_living_room"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x:  0.1, y: -0.9, z: 0 }
+                max: { x:  2.6, y:  2.7, z: 0 }
+    - type: "room"
+      id: "room_kitchen"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x:  1.8, y:  3.7, z: 0 }
+                max: { x:  2.7, y:  5.0, z: 0 }
+    - type: "room"
+      id: "room_bedroom"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x: -2.4, y: -1.0, z: 0 }
+                max: { x: -0.9, y:  0.2, z: 0 }
+    - type: "room"
+      id: "room_workshop"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x: -4.0, y:  1.2, z: 0 }
+                max: { x: -1.1, y:  4.9, z: 0 }
+    - type: "room"
+      id: "room_hallway"
+      pose: { x: 0, y: 0, z: 0 }
+      areas:
+        - name: in
+          shape:
+            - box:
+                min: { x: -1.14, y:  3.7, z: 0 }
+                max: { x:  1.0, y:  5.5, z: 0 }

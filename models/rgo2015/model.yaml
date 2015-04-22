@@ -268,24 +268,6 @@ composition:
       id: "exit_3_rips"
       pose: { x: 3.0, y: 3.0, z: 0, rz: 1.57 }
 
-# - - - - - - CHALLENGE BASIC FUNCTIONALITIES - - - - - - -
-
-    - type: "waypoint"
-      id: "avoid_that_start"
-      pose: { x: 2.2, y: 2.2, z: 0, rz: -2.459 }
-    - type: "waypoint"
-      id: "avoid_that_wp1"
-      pose: { x: 2.648, y: -0.579, z: 0, rz: -3.137 }
-    - type: "waypoint"
-      id: "avoid_that_wp2"
-      pose: { x: 0.347, y: -0.665, z: 0, rz: 1.008 }
-    - type: "waypoint"
-      id: "avoid_that_wp3"
-      pose: { x: 2.648, y: -0.579, z: 0, rz: -3.137 }
-    - type: "waypoint"
-      id: "what_did_you_say_start"
-      pose: { x: 0.347, y: -0.665, z: 0, rz: 1.008 }
-
 # - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
 
     - type: "waypoint"

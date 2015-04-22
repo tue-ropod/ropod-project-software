@@ -1,0 +1,7 @@
+composition:
+    - type: "rgo2015/cabinet_frame"
+      id: "cabinet_frame"
+      pose:
+          x: 0
+          y: 0
+          z: 0

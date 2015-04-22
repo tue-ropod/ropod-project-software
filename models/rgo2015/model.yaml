@@ -55,7 +55,7 @@ composition:
           z: 0 
           X: 0
           Y: 0
-          Z: 3.1415
+          Z: 0
     - type: "rgo2015/couch_table"
       id: "couch_table"
       pose: 
@@ -74,11 +74,11 @@ composition:
           X: 0
           Y: 0
           Z: 0
-    - type: "rgo2015/cupboard"
-      id: "cupboard"
+    - type: "rgo2015/tv"
+      id: "tv"
       pose: 
-          x: 5.955          # 9.45 - 3.12 - 0.75/2
-          y: 8.34          # 8.5 - 0.32/2
+          x: 6.025          # 5.525 + 1.0/2
+          y: 4.08         
           z: 0 
           X: 0
           Y: 0
@@ -128,15 +128,15 @@ composition:
           X: 0
           Y: 0
           Z: 1.57
-    # - type: "rgo2015/tv"
-    #   id: "tv"
-    #   pose: 
-    #       x: 6.025          # 5.525 + 1.0/2
-    #       y: 3.55          # 1.55 + 1.5 + 1.0/2 # ToDo: update
-    #       z: 0 
-    #       X: 0
-    #       Y: 0
-    #       Z: 0      
+    - type: "rgo2015/tv"
+      id: "tv"
+      pose: 
+          x: 6.025          # 5.525 + 1.0/2
+          y: 3.55          # 1.55 + 1.5 + 1.0/2 # ToDo: update
+          z: 0 
+          X: 0
+          Y: 0
+          Z: 0      
     # - type: "ddw.salon"
     #   id: "couchtable"
     #   pose:

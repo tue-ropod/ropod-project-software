@@ -1,0 +1,9 @@
+models:
+    - name: crowd
+    - name: human
+    - name: apple
+    - name: beer
+    - name: cola
+    - name: orange_juice
+    - name: paper_towels
+    - name: purple_cup

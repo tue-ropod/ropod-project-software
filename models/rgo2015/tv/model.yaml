@@ -1,8 +1,22 @@
-type: walls
-shape:
-    path: shape/disc.pgm
-    blockheight: 0.1
-    resolution: 0.025000
-    origin_x: -0.5
-    origin_y: -0.5
-    origin_z:  0.000000
+composition:
+    - type: "rgo2015/tv/foot"
+      id: "foot"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+    - type: "rgo2015/tv/pole"
+      id: "pole"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+    - type: "rgo2015/tv/tv"
+      id: "tv"
+      pose:
+          x: 0.23
+          y: 0
+          z: 1.67
+          X: 0
+          Y: 0.1
+          Z: 0

@@ -11,195 +11,240 @@ composition:
           x: 0
           y: 0
           z: 0
-    - type: "ddw.salon"
-      id: "couchtable"
-      pose:
-          x: 3.2
-          y: 1.5
-          z: 0
-          X: 0
-          Y: 0
-          Z: 0
-    - type: "robotics_testlab_B.black_cabinet"
-      id: "black_cabinet1"
-      pose:
-          x: 2.95
-          y: -1.42
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
-      id: "black_cabinet2"
-      pose:
-          x: 2.03
-          y: -1.42
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
-      id: "black_cabinet3"
-      pose:
-          x: 1.11
-          y: -1.42
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
-      id: "black_cabinet4"
-      pose:
-          x: 0.19
-          y: -1.42
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
-      id: "black_cabinet5"
-      pose:
-          x: -0.92
-          y: -1.42
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "ddw.table"
-      id: "corridor_table"
-      pose:
-          x: 2.65
-          y: 0.3
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "ddw.couch"
-      id: "hallway_couch"
-      pose:
-          x: 0.72
-          y: 3.45
-          z: 0.02
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.corridor_cabinet"
-      id: "corridor_cabinet"
-      pose:
-          x: 3.30
-          y: 4.35
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "ddw.chair"
-      id: "corridor_chair"
-      pose:
-          x: 2.0
-          y: 5.3
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.bed_cabinet"
-      id: "bed_cabinet"
-      pose:
-          x: -1.92
-          y: -1.42
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "bed"
+    - type: "rgo2015/bed"
       id: "bed"
-      pose:
-          x: -2.725
-          y: -0.35
+      pose: 
+          x: 1.555          # 0.525 + 2.06/2
+          y: 1.975          # 0.4 + 0.8 + 1.55/2
           z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: "table_120x80x76"
-      id: "operator_table1"
-      pose:
-          x: -2.0
-          y: 3.85
-          z: 0.05
           X: 0
           Y: 0
           Z: 0
-    - type: "table_120x80x76"
-      id: "operator_table2"
-      pose:
-          x: -3.2
-          y: 3.85
-          z: 0.05
+    - type: "rgo2015/bedstand"
+      id: "bedstand1"
+      pose: 
+          x: 0.695          # 0.525 + 0.34/2
+          y: 0.8475          # 0.4 + 0.23 + 0.435/2
+          z: 0 # 23 170
           X: 0
           Y: 0
           Z: 0
-    - type: "table_120x80x76"
-      id: "dinner_table"
-      pose:
-          x: 0.4
-          y: 1.92
-          z: 0.05
+    - type: "rgo2015/bedstand"
+      id: "bedstand2"
+      pose: 
+          x: 0.695          # 0.525 + 0.34/2
+          y: 2.9825          # 0.4 + 0.23 + 0.435/2 + 1.7 + 0.435
+          z: 0 
           X: 0
           Y: 0
           Z: 0
-    - type: "table_120x80x76"
-      id: "workbench"
-      pose:
-          x: -2.35
-          y: 3.05
-          z: 0.05
+    - type: "rgo2015/kitchen_counter"
+      id: "kitchen_counter"
+      pose: 
+          x: 5.87          # 5.525 + 0.69/2
+          y: 2.3425          # 1.55 + 0.19 + 1.205/2
+          z: 0 
           X: 0
           Y: 0
           Z: 0
-    - type: "table_120x80x76"
-      id: "workbench2"
-      pose:
-          x: -3.35
-          y: 2.85
-          z: 0.05
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
-    - type: robotics_testlab_B.plastic_cabinet.shelf
-      id: plastic_cabinet_shelf_1
-      pose: { x: 3.18, y: 2.713, z: 1.065, Z: 1.5707963267948966 }
-    - type: robotics_testlab_B.plastic_cabinet.shelf
-      id: plastic_cabinet_shelf_2
-      pose: { x: 3.18, y: 2.713, z: 0.715, Z: 1.5707963267948966 }
-    - type: "waypoint"
-      id: "living_room"
-      pose:
-          x: 1.8
-          y: .6
-          z: 0
-    - type: "waypoint"
-      id: "corridor"
-      pose:
-          x: 2.7
-          y: 5
-          z: 0
-    - type: "waypoint"
-      id: "hallway"
-      pose:
-          x: 0
-          y: 5.5
-          z: 0
-    - type: "waypoint"
-      id: "bedroom"
-      pose:
-          x: -2.0
-          y: -1.0
-          z: 0
-    - type: "waypoint"
-      id: "battery_point"
-      pose:
-          x: -2.8
-          y: 2.0
-          z: 0
+    # - type: "rgo2015/tv"
+    #   id: "tv"
+    #   pose: 
+    #       x: 6.025          # 5.525 + 1.0/2
+    #       y: 3.55          # 1.55 + 1.5 + 1.0/2 # ToDo: update
+    #       z: 0 
+    #       X: 0
+    #       Y: 0
+    #       Z: 0      
+    # - type: "ddw.salon"
+    #   id: "couchtable"
+    #   pose:
+    #       x: 3.2
+    #       y: 1.5
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 0
+    # - type: "robotics_testlab_B.black_cabinet"
+    #   id: "black_cabinet1"
+    #   pose:
+    #       x: 2.95
+    #       y: -1.42
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "robotics_testlab_B.black_cabinet"
+    #   id: "black_cabinet2"
+    #   pose:
+    #       x: 2.03
+    #       y: -1.42
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "robotics_testlab_B.black_cabinet"
+    #   id: "black_cabinet3"
+    #   pose:
+    #       x: 1.11
+    #       y: -1.42
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "robotics_testlab_B.black_cabinet"
+    #   id: "black_cabinet4"
+    #   pose:
+    #       x: 0.19
+    #       y: -1.42
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "robotics_testlab_B.black_cabinet"
+    #   id: "black_cabinet5"
+    #   pose:
+    #       x: -0.92
+    #       y: -1.42
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "ddw.table"
+    #   id: "corridor_table"
+    #   pose:
+    #       x: 2.65
+    #       y: 0.3
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "ddw.couch"
+    #   id: "hallway_couch"
+    #   pose:
+    #       x: 0.72
+    #       y: 3.45
+    #       z: 0.02
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "robotics_testlab_B.corridor_cabinet"
+    #   id: "corridor_cabinet"
+    #   pose:
+    #       x: 3.30
+    #       y: 4.35
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "ddw.chair"
+    #   id: "corridor_chair"
+    #   pose:
+    #       x: 2.0
+    #       y: 5.3
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "robotics_testlab_B.bed_cabinet"
+    #   id: "bed_cabinet"
+    #   pose:
+    #       x: -1.92
+    #       y: -1.42
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "bed"
+    #   id: "bed"
+    #   pose:
+    #       x: -2.725
+    #       y: -0.35
+    #       z: 0
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: "table_120x80x76"
+    #   id: "operator_table1"
+    #   pose:
+    #       x: -2.0
+    #       y: 3.85
+    #       z: 0.05
+    #       X: 0
+    #       Y: 0
+    #       Z: 0
+    # - type: "table_120x80x76"
+    #   id: "operator_table2"
+    #   pose:
+    #       x: -3.2
+    #       y: 3.85
+    #       z: 0.05
+    #       X: 0
+    #       Y: 0
+    #       Z: 0
+    # - type: "table_120x80x76"
+    #   id: "dinner_table"
+    #   pose:
+    #       x: 0.4
+    #       y: 1.92
+    #       z: 0.05
+    #       X: 0
+    #       Y: 0
+    #       Z: 0
+    # - type: "table_120x80x76"
+    #   id: "workbench"
+    #   pose:
+    #       x: -2.35
+    #       y: 3.05
+    #       z: 0.05
+    #       X: 0
+    #       Y: 0
+    #       Z: 0
+    # - type: "table_120x80x76"
+    #   id: "workbench2"
+    #   pose:
+    #       x: -3.35
+    #       y: 2.85
+    #       z: 0.05
+    #       X: 0
+    #       Y: 0
+    #       Z: 1.5707963267948966
+    # - type: robotics_testlab_B.plastic_cabinet.shelf
+    #   id: plastic_cabinet_shelf_1
+    #   pose: { x: 3.18, y: 2.713, z: 1.065, Z: 1.5707963267948966 }
+    # - type: robotics_testlab_B.plastic_cabinet.shelf
+    #   id: plastic_cabinet_shelf_2
+    #   pose: { x: 3.18, y: 2.713, z: 0.715, Z: 1.5707963267948966 }
+    # - type: "waypoint"
+    #   id: "living_room"
+    #   pose:
+    #       x: 1.8
+    #       y: .6
+    #       z: 0
+    # - type: "waypoint"
+    #   id: "corridor"
+    #   pose:
+    #       x: 2.7
+    #       y: 5
+    #       z: 0
+    # - type: "waypoint"
+    #   id: "hallway"
+    #   pose:
+    #       x: 0
+    #       y: 5.5
+    #       z: 0
+    # - type: "waypoint"
+    #   id: "bedroom"
+    #   pose:
+    #       x: -2.0
+    #       y: -1.0
+    #       z: 0
+    # - type: "waypoint"
+    #   id: "battery_point"
+    #   pose:
+    #       x: -2.8
+    #       y: 2.0
+    #       z: 0
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

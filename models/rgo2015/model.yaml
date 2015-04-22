@@ -342,8 +342,8 @@ composition:
             - box:
                 min: { x: 1.0, y:  0.0, z: 0 }
                 max: { x: 5.0, y:  3.0, z: 0 }
-    - type: "room_hall"
-      id: "room_"
+    - type: "room"
+      id: "room_hall"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in

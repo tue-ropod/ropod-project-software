@@ -1,0 +1,94 @@
+model: 
+    name: apple
+    color: 
+        - set: 
+              - black: 0.00977512
+              - blue: 0.00607694
+              - brown: 0.192876
+              - green: 0.020165
+              - grey: 0.020586
+              - orange: 0.191227
+              - pink: 0.106884
+              - purple: 0.0684143
+              - red: 0.200591
+              - white: 0.0050101
+              - yellow: 0.178394
+        - set: 
+              - black: 0.0100902
+              - blue: 0.00574788
+              - brown: 0.205585
+              - green: 0.0207089
+              - grey: 0.0205484
+              - orange: 0.205725
+              - pink: 0.0888096
+              - purple: 0.0610879
+              - red: 0.193706
+              - white: 0.00476204
+              - yellow: 0.183229
+        - set: 
+              - black: 0.00895606
+              - blue: 0.00503002
+              - brown: 0.0935452
+              - green: 0.0127657
+              - grey: 0.0140305
+              - orange: 0.12535
+              - pink: 0.1065
+              - purple: 0.0841948
+              - red: 0.441076
+              - white: 0.00548732
+              - yellow: 0.103064
+        - set: 
+              - black: 0.00581022
+              - blue: 0.00883067
+              - brown: 0.120402
+              - green: 0.00969058
+              - grey: 0.00735281
+              - orange: 0.324245
+              - pink: 0.0206321
+              - purple: 0.041354
+              - red: 0.219131
+              - white: 0.00173972
+              - yellow: 0.240812
+        - set: 
+              - black: 0.00882758
+              - blue: 0.00735261
+              - brown: 0.162729
+              - green: 0.0144657
+              - grey: 0.0191099
+              - orange: 0.226505
+              - pink: 0.0985153
+              - purple: 0.0579476
+              - red: 0.189683
+              - white: 0.00749284
+              - yellow: 0.207371
+        - set: 
+              - black: 0.00923905
+              - blue: 0.00504509
+              - brown: 0.129984
+              - green: 0.0148631
+              - grey: 0.0162829
+              - orange: 0.14876
+              - pink: 0.0802387
+              - purple: 0.0792354
+              - red: 0.425006
+              - white: 0.00423893
+              - yellow: 0.0871065
+    size: 
+        - area: 0.259396
+          height: 0.079862
+          width: 0
+        - area: 0.259396
+          height: 0.077562
+          width: 0
+        - area: 0.259396
+          height: 0.07734
+          width: 0
+        - area: 0.259396
+          height: 0.077378
+          width: 0
+        - area: 0.259396
+          height: 0.079148
+          width: 0
+        - area: 0.259396
+          height: 0.074255
+          width: 0

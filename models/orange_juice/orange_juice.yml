@@ -1,0 +1,109 @@
+model: 
+    name: orange_juice
+    color: 
+        - set: 
+              - black: 0.0119205
+              - blue: 0.00893246
+              - brown: 0.143521
+              - green: 0.021299
+              - grey: 0.0161165
+              - orange: 0.221292
+              - pink: 0.030124
+              - purple: 0.0412936
+              - red: 0.256005
+              - white: 0.00444774
+              - yellow: 0.245049
+        - set: 
+              - black: 0.0190302
+              - blue: 0.0207223
+              - brown: 0.121797
+              - green: 0.0911855
+              - grey: 0.0257854
+              - orange: 0.112054
+              - pink: 0.0384802
+              - purple: 0.0545113
+              - red: 0.117113
+              - white: 0.00709057
+              - yellow: 0.39223
+        - set: 
+              - black: 0.0158744
+              - blue: 0.011419
+              - brown: 0.10285
+              - green: 0.0355982
+              - grey: 0.0131055
+              - orange: 0.179371
+              - pink: 0.0268009
+              - purple: 0.0364592
+              - red: 0.113799
+              - white: 0.00521393
+              - yellow: 0.45951
+        - set: 
+              - black: 0.0160252
+              - blue: 0.0126667
+              - brown: 0.112986
+              - green: 0.0455903
+              - grey: 0.0180413
+              - orange: 0.160178
+              - pink: 0.0386288
+              - purple: 0.0470341
+              - red: 0.120649
+              - white: 0.00629091
+              - yellow: 0.42191
+        - set: 
+              - black: 0.0193174
+              - blue: 0.0181113
+              - brown: 0.198787
+              - green: 0.137597
+              - grey: 0.0298038
+              - orange: 0.131489
+              - pink: 0.0303438
+              - purple: 0.0608725
+              - red: 0.122391
+              - white: 0.00486055
+              - yellow: 0.246426
+        - set: 
+              - black: 0.0155962
+              - blue: 0.0132573
+              - brown: 0.141452
+              - green: 0.0420701
+              - grey: 0.0285645
+              - orange: 0.123197
+              - pink: 0.0773051
+              - purple: 0.0759131
+              - red: 0.232908
+              - white: 0.00709517
+              - yellow: 0.242641
+        - set: 
+              - black: 0.0166596
+              - blue: 0.0142659
+              - brown: 0.126284
+              - green: 0.0512083
+              - grey: 0.0236286
+              - orange: 0.139956
+              - pink: 0.0486366
+              - purple: 0.0518138
+              - red: 0.15467
+              - white: 0.00749657
+              - yellow: 0.36538
+    size: 
+        - area: 0.00333926
+          height: 0.260865
+          width: 0
+        - area: 0.00333926
+          height: 0.260593
+          width: 0
+        - area: 0.00333926
+          height: 0.259623
+          width: 0
+        - area: 0.225714
+          height: 0.263504
+          width: 0
+        - area: 0.225714
+          height: 0.255168
+          width: 0
+        - area: 0.225714
+          height: 0.281133
+          width: 0
+        - area: 0.00333926
+          height: 0.301932
+          width: 0

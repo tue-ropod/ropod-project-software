@@ -1,0 +1,13 @@
+models:
+    - name: crowd
+    - name: human
+    - name: coffee
+    - name: coffeepads
+    - name: coke
+    - name: fanta
+    - name: fresh_milk
+    - name: ice_tea
+    - name: meadow_milk
+    - name: red_bull
+    - name: twine
+    - name: wd40

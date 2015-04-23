@@ -260,7 +260,7 @@ composition:
       pose: { x: 4.0, y: 2.5, z: 0, rz: 1.57 }
     - type: "waypoint"
       id: "exit_1_rips"
-      pose: { x: 2.0, y: 10.0, z: 0, rz: 1.57 }
+      pose: { x: 2.0, y: 10.5, z: 0, rz: 1.57 }
     - type: "waypoint"
       id: "exit_2_rips"
       pose: { x: 2.0, y: 8.0, z: 0, rz: 1.57 }

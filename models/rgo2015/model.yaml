@@ -285,11 +285,19 @@ composition:
 
     - type: "waypoint"
       id: "person_rec_living_room_2"
-      pose: { x: 9.109, y: 2.427, z: 0, rz: 2.511}
+      pose: { x: 6.702, y: 2.846, z: 0, rz: 0.171}
+
+    # - type: "waypoint"
+    #   id: "person_rec_living_room_2"
+    #   pose: { x: 9.109, y: 2.427, z: 0, rz: 2.511}
 
     - type: "waypoint"
       id: "person_rec_living_room_3"
-      pose: { x: 6.498, y: 8.026, z: 0, rz: -1.578}
+      pose: { x: 6.457, y: 5.738, z: 0, rz: 0.678}
+
+    # - type: "waypoint"
+    #   id: "person_rec_living_room_3"
+    #   pose: { x: 6.498, y: 8.026, z: 0, rz: -1.578}
 
 # - - - - - - ROOMS - - - - - - -
 

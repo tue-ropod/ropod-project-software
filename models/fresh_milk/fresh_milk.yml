@@ -1,0 +1,124 @@
+model: 
+    name: fresh_milk
+    color: 
+        - set: 
+              - black: 0.0276889
+              - blue: 0.425529
+              - brown: 0.030176
+              - green: 0.0139155
+              - grey: 0.0397633
+              - orange: 0.0355796
+              - pink: 0.0594326
+              - purple: 0.182039
+              - red: 0.038873
+              - white: 0.115098
+              - yellow: 0.0319057
+        - set: 
+              - black: 0.0268835
+              - blue: 0.427848
+              - brown: 0.026412
+              - green: 0.0131447
+              - grey: 0.0390141
+              - orange: 0.0350515
+              - pink: 0.0592517
+              - purple: 0.189981
+              - red: 0.037451
+              - white: 0.113673
+              - yellow: 0.0312892
+        - set: 
+              - black: 0.0258459
+              - blue: 0.454477
+              - brown: 0.0219984
+              - green: 0.0118975
+              - grey: 0.0286438
+              - orange: 0.0356117
+              - pink: 0.0480071
+              - purple: 0.17917
+              - red: 0.034629
+              - white: 0.128244
+              - yellow: 0.0314757
+        - set: 
+              - black: 0.0277446
+              - blue: 0.443621
+              - brown: 0.0292712
+              - green: 0.0131012
+              - grey: 0.0327491
+              - orange: 0.0343443
+              - pink: 0.0469179
+              - purple: 0.17793
+              - red: 0.0382278
+              - white: 0.124115
+              - yellow: 0.0319786
+        - set: 
+              - black: 0.0295488
+              - blue: 0.434765
+              - brown: 0.0276828
+              - green: 0.0141944
+              - grey: 0.0419198
+              - orange: 0.0342262
+              - pink: 0.0560218
+              - purple: 0.168436
+              - red: 0.0376464
+              - white: 0.124283
+              - yellow: 0.0312764
+        - set: 
+              - black: 0.0245815
+              - blue: 0.471755
+              - brown: 0.0247591
+              - green: 0.0111984
+              - grey: 0.0298197
+              - orange: 0.0350368
+              - pink: 0.0508804
+              - purple: 0.177493
+              - red: 0.0358921
+              - white: 0.108399
+              - yellow: 0.0301856
+        - set: 
+              - black: 0.0252512
+              - blue: 0.456746
+              - brown: 0.0247425
+              - green: 0.0111915
+              - grey: 0.029044
+              - orange: 0.0351711
+              - pink: 0.053814
+              - purple: 0.18666
+              - red: 0.0396938
+              - white: 0.108538
+              - yellow: 0.0291479
+        - set: 
+              - black: 0.0259234
+              - blue: 0.449495
+              - brown: 0.024608
+              - green: 0.0114485
+              - grey: 0.0325723
+              - orange: 0.0335455
+              - pink: 0.0566386
+              - purple: 0.192662
+              - red: 0.0394002
+              - white: 0.104261
+              - yellow: 0.0294445
+    size: 
+        - area: 0.0159754
+          height: 0.162935
+          width: 0
+        - area: 0.0149451
+          height: 0.162855
+          width: 0
+        - area: 0.00791587
+          height: 0.160868
+          width: 0
+        - area: 0.00719481
+          height: 0.166977
+          width: 0
+        - area: 0.00979447
+          height: 0.163771
+          width: 0
+        - area: 0.0105524
+          height: 0.161514
+          width: 0
+        - area: 0.0111911
+          height: 0.161058
+          width: 0
+        - area: 0.0122008
+          height: 0.161068
+          width: 0

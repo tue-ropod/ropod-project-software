@@ -70,25 +70,26 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
         }
         else
         {
-            const geo::Pose3D* pose = e->property(k_pose_);
-            const ConvexHull* ch = e->property(k_convex_hull_);
+            const ed::ConvexHull& ch = e->convexHullNew();
 
-            if (pose && ch)
+            if (!ch.points.empty() && e->has_pose())
             {
-                geo::convert(*pose, msg.pose);
+                const geo::Pose3D& pose = e->pose();
+
+                geo::convert(pose, msg.pose);
                 msg.has_pose = true;
 
-                msg.polygon.z_min = ch->z_min;
-                msg.polygon.z_max = ch->z_max;
+                msg.polygon.z_min = ch.z_min;
+                msg.polygon.z_max = ch.z_max;
 
-                unsigned int size = ch->points.size();
+                unsigned int size = ch.points.size();
                 msg.polygon.xs.resize(size);
                 msg.polygon.ys.resize(size);
 
                 for(unsigned int i = 0; i < size; ++i)
                 {
-                    msg.polygon.xs[i] = ch->points[i].x;
-                    msg.polygon.ys[i] = ch->points[i].y;
+                    msg.polygon.xs[i] = ch.points[i].x;
+                    msg.polygon.ys[i] = ch.points[i].y;
                 }
             }
         }
@@ -177,10 +178,6 @@ void GUIServerPlugin::initialize(ed::InitData& init)
     srv_interact_ = nh.advertiseService(opt_srv_interact);
 
     pub_entities_ = nh.advertise<ed_gui_server::EntityInfos>("ed/gui/entities", 1);
-
-    // Register properties
-    init.properties.registerProperty("convex_hull", k_convex_hull_);
-    init.properties.registerProperty("pose", k_pose_);
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -224,8 +221,6 @@ bool GUIServerPlugin::srvQueryEntities(const ed_gui_server::QueryEntities::Reque
         const geo::Pose3D* pose = 0;
         if (e->has_pose())
             pose = &e->pose();
-        else
-            pose = e->property(k_pose_);
 
         if (!pose)
             continue;
@@ -309,8 +304,6 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
     const geo::Pose3D* pose = 0;
     if (e->has_pose())
         pose = &e->pose();
-    else
-        pose = e->property(k_pose_);
 
     if (pose)
     {

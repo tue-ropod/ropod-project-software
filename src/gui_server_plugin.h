@@ -8,8 +8,6 @@
 #include <ed_gui_server/Interact.h>
 #include <ed_gui_server/GetEntityInfo.h>
 
-#include <ed_sensor_integration/properties/convex_hull.h>
-
 #include <ros/callback_queue.h>
 #include <ros/service_server.h>
 #include <ros/publisher.h>
@@ -30,12 +28,6 @@ public:
     void process(const ed::WorldModel& world, ed::UpdateRequest& req);
 
 private:
-
-    // Properties
-
-    ed::PropertyKey<ConvexHull> k_convex_hull_;
-    ed::PropertyKey<geo::Pose3D> k_pose_;
-
 
     //
 

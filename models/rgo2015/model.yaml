@@ -239,7 +239,12 @@ composition:
     #       z: 0
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
-
+    - type: "waypoint"
+      id: "initial_pose_door_A"
+      pose: { x: 0.0, y: 0.0, z: 0, rz: 0 }
+    - type: "waypoint"
+      id: "initial_pose_door_B"
+      pose: { x: 2.0, y: 8.9, z: 0, rz: -1.57 }
     - type: "waypoint"
       id: "initial_pose"
       pose: { x: 0.0, y: 0.0, z: 0, rz: 0 }
@@ -254,10 +259,10 @@ composition:
 
     - type: "waypoint"
       id: "rips1"
-      pose: { x: 4.0, y: 0.5, z: 0, rz: 1.57 }
+      pose: { x: 4.0, y: 0.5, z: 0, rz: -1.57 }
     - type: "waypoint"
       id: "rips2"
-      pose: { x: 4.0, y: 2.5, z: 0, rz: 1.57 }
+      pose: { x: 4.0, y: 2.5, z: 0, rz: -1.57 }
     - type: "waypoint"
       id: "exit_1_rips"
       pose: { x: 2.0, y: 10.5, z: 0, rz: 1.57 }
@@ -267,6 +272,16 @@ composition:
     - type: "waypoint"
       id: "exit_3_rips"
       pose: { x: 3.0, y: 3.0, z: 0, rz: 1.57 }
+    - type: "waypoint"
+      id: "exit_1_A"
+      pose: { x: -1.0, y: 0.0, z: 0, rz: 3.14 }
+    - type: "waypoint"
+      id: "exit_2_A"
+      pose: { x: 1.0, y: 0.0, z: 0, rz: 3.14 }
+    - type: "waypoint"
+      id: "exit_3_A"
+      pose: { x: 1.0, y: 0.0, z: 0, rz: 3.14 }
+
 
 # - - - - - - CHALLENGE MANIPULATION - - - - - - - - - -
     - type: "waypoint"

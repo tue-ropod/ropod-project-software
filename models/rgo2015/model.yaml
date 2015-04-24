@@ -315,6 +315,10 @@ composition:
       id: "person_rec_living_room_3"
       pose: { x: 1.801, y: 0.151, z: 0, rz: -0.110}
 
+# - - - - - - CHALLENGE OPEN - - - - - - - - - -
+    - type: "waypoint"
+      id: "open_challenge_start"
+      pose: { x: 6.0, y: 7.0, z: 0, rz: 0.0}
 
 # - - - - - - CHALLENGE GPSR - - - - - - - - - -
     - type: "waypoint"

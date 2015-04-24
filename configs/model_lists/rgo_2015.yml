@@ -1,13 +1,27 @@
 models:
     - name: crowd
     - name: human
-    - name: coffee
+    - name: beer
+    - name: chocolate_cereals
+    - name: cigarettes
     - name: coffeepads
+    - name: deodorant
+    - name: filler
+    - name: ice_tea
+    - name: muesli_cereals
+    - name: oblates
+    - name: pringles
+    - name: twine
+    - name: wd40
+    - name: brush
+    - name: chocosticks
+    - name: coffee
     - name: coke
     - name: fanta
     - name: fresh_milk
-    - name: ice_tea
     - name: meadow_milk
+    - name: noodles
+    - name: peanut
     - name: red_bull
-    - name: twine
-    - name: wd40
+    - name: tape
+    - name: yellow_candle

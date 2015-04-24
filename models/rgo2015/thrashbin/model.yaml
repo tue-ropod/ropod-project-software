@@ -4,3 +4,6 @@ color:
     red: 0.8
     green: 0.8
     blue: 0.8
+areas:
+- name: near
+  offset: 0.4

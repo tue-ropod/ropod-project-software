@@ -11,4 +11,6 @@ composition:
           x: 0
           y: 0
           z: 0
-
+areas:
+  - name: near
+    offset: 0.8

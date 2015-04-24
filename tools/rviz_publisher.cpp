@@ -27,7 +27,7 @@ ed_gui_server::QueryMeshes query_meshes_srv;
 
 visualization_msgs::MarkerArray marker_msg;
 
-double RATE = 4;
+double RATE = 10;
 
 // ----------------------------------------------------------------------------------------------------
 

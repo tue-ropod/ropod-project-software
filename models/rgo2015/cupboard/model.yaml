@@ -32,3 +32,8 @@ composition:
 areas:
 - name: near
   offset: 0.8
+- name: in_front_of
+  shape:
+    - box:
+          min: { x: -1.0, y: -2.0, z: 0 }
+          max: { x:  1.0, y:  0.0, z: 1 }

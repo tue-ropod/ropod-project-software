@@ -292,27 +292,19 @@ composition:
 
     - type: "waypoint"
       id: "person_rec_learning"
-      pose: { x: 4.504, y: 0.552, z: 0, rz: 1.586}
+      pose: { x: 7.069, y: 1.045, z: 0, rz: 0.000}
 
     - type: "waypoint"
       id: "person_rec_living_room_1"
-      pose: { x: 6.612, y: -0.356, z: 0, rz: 0.784}
+      pose: { x: 6.304, y: 0.607, z: 0, rz: -2.719}
 
     - type: "waypoint"
       id: "person_rec_living_room_2"
-      pose: { x: 6.702, y: 2.846, z: 0, rz: 0.171}
-
-    # - type: "waypoint"
-    #   id: "person_rec_living_room_2"
-    #   pose: { x: 9.109, y: 2.427, z: 0, rz: 2.511}
+      pose: { x: 4.041, y: 1.935, z: 0, rz: -1.585}
 
     - type: "waypoint"
       id: "person_rec_living_room_3"
-      pose: { x: 6.457, y: 5.738, z: 0, rz: 0.678}
-
-    # - type: "waypoint"
-    #   id: "person_rec_living_room_3"
-    #   pose: { x: 6.498, y: 8.026, z: 0, rz: -1.578}
+      pose: { x: 1.801, y: 0.151, z: 0, rz: -0.110}
 
 # - - - - - - ROOMS - - - - - - -
 

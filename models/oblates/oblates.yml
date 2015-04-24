@@ -1,0 +1,124 @@
+model: 
+    name: oblates
+    color: 
+        - set: 
+              - black: 0.0274623
+              - blue: 0.171828
+              - brown: 0.0769347
+              - green: 0.0210032
+              - grey: 0.0968485
+              - orange: 0.0427944
+              - pink: 0.21934
+              - purple: 0.160913
+              - red: 0.0693107
+              - white: 0.0814526
+              - yellow: 0.032112
+        - set: 
+              - black: 0.0239137
+              - blue: 0.208258
+              - brown: 0.0861973
+              - green: 0.0190212
+              - grey: 0.0953203
+              - orange: 0.057476
+              - pink: 0.169509
+              - purple: 0.186564
+              - red: 0.0809588
+              - white: 0.0363167
+              - yellow: 0.0364654
+        - set: 
+              - black: 0.0189261
+              - blue: 0.213989
+              - brown: 0.0883259
+              - green: 0.0158727
+              - grey: 0.0861064
+              - orange: 0.0357528
+              - pink: 0.202388
+              - purple: 0.205788
+              - red: 0.0796089
+              - white: 0.0214232
+              - yellow: 0.0318189
+        - set: 
+              - black: 0.0219304
+              - blue: 0.162973
+              - brown: 0.078507
+              - green: 0.0206247
+              - grey: 0.0772557
+              - orange: 0.0545717
+              - pink: 0.252643
+              - purple: 0.150834
+              - red: 0.0754572
+              - white: 0.0742626
+              - yellow: 0.0309408
+        - set: 
+              - black: 0.024003
+              - blue: 0.230794
+              - brown: 0.0824878
+              - green: 0.0195413
+              - grey: 0.106489
+              - orange: 0.0355539
+              - pink: 0.189799
+              - purple: 0.179088
+              - red: 0.0711633
+              - white: 0.0275501
+              - yellow: 0.0335302
+        - set: 
+              - black: 0.021269
+              - blue: 0.159465
+              - brown: 0.0718599
+              - green: 0.0192176
+              - grey: 0.0765977
+              - orange: 0.0514645
+              - pink: 0.267381
+              - purple: 0.156321
+              - red: 0.0766675
+              - white: 0.0707791
+              - yellow: 0.0289771
+        - set: 
+              - black: 0.0248401
+              - blue: 0.203732
+              - brown: 0.0888548
+              - green: 0.0192992
+              - grey: 0.0966998
+              - orange: 0.0582173
+              - pink: 0.172414
+              - purple: 0.182014
+              - red: 0.0816187
+              - white: 0.0358207
+              - yellow: 0.0364891
+        - set: 
+              - black: 0.0166861
+              - blue: 0.155229
+              - brown: 0.132807
+              - green: 0.0213753
+              - grey: 0.0685312
+              - orange: 0.058197
+              - pink: 0.214519
+              - purple: 0.171895
+              - red: 0.0988972
+              - white: 0.0270902
+              - yellow: 0.0347729
+    size: 
+        - area: 0.0059912
+          height: 0.167319
+          width: 0
+        - area: 0.00296402
+          height: 0.146504
+          width: 0
+        - area: 0.00288113
+          height: 0.141399
+          width: 0
+        - area: 0.00276633
+          height: 0.156347
+          width: 0
+        - area: 0.00303659
+          height: 0.156529
+          width: 0
+        - area: 0.00285054
+          height: 0.156347
+          width: 0
+        - area: 0.00286696
+          height: 0.146877
+          width: 0
+        - area: 0.00430406
+          height: 0.045297
+          width: 0

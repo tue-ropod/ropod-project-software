@@ -2,6 +2,18 @@ model:
     name: wd40
     color: 
         - set: 
+              - black: 0.00966201
+              - blue: 0.145953
+              - brown: 0.0426396
+              - green: 0.00798867
+              - grey: 0.0202022
+              - orange: 0.102849
+              - pink: 0.0736882
+              - purple: 0.242789
+              - red: 0.229777
+              - white: 0.00502736
+              - yellow: 0.119424
+        - set: 
               - black: 0.0260439
               - blue: 0.242734
               - brown: 0.0331355
@@ -26,6 +38,54 @@ model:
               - white: 0.0697373
               - yellow: 0.0787053
         - set: 
+              - black: 0.0200294
+              - blue: 0.126648
+              - brown: 0.0645157
+              - green: 0.0117443
+              - grey: 0.023594
+              - orange: 0.0748587
+              - pink: 0.0567187
+              - purple: 0.258309
+              - red: 0.253495
+              - white: 0.00608203
+              - yellow: 0.104005
+        - set: 
+              - black: 0.0101179
+              - blue: 0.0793023
+              - brown: 0.0238963
+              - green: 0.00719599
+              - grey: 0.040797
+              - orange: 0.0718935
+              - pink: 0.221163
+              - purple: 0.261666
+              - red: 0.254322
+              - white: 0.0131687
+              - yellow: 0.0164771
+        - set: 
+              - black: 0.00931645
+              - blue: 0.138863
+              - brown: 0.0375438
+              - green: 0.00771288
+              - grey: 0.0199805
+              - orange: 0.104592
+              - pink: 0.0801024
+              - purple: 0.25436
+              - red: 0.229384
+              - white: 0.00519868
+              - yellow: 0.112946
+        - set: 
+              - black: 0.010069
+              - blue: 0.11273
+              - brown: 0.0440491
+              - green: 0.00816059
+              - grey: 0.0237599
+              - orange: 0.0851182
+              - pink: 0.0919319
+              - purple: 0.293417
+              - red: 0.207278
+              - white: 0.00591289
+              - yellow: 0.117573
+        - set: 
               - black: 0.0297723
               - blue: 0.198843
               - brown: 0.0370367
@@ -37,6 +97,18 @@ model:
               - red: 0.213384
               - white: 0.0755687
               - yellow: 0.0373511
+        - set: 
+              - black: 0.0127486
+              - blue: 0.0898961
+              - brown: 0.034111
+              - green: 0.00941931
+              - grey: 0.0580136
+              - orange: 0.0670513
+              - pink: 0.166517
+              - purple: 0.234804
+              - red: 0.297834
+              - white: 0.010458
+              - yellow: 0.0191477
         - set: 
               - black: 0.0214542
               - blue: 0.264173
@@ -50,6 +122,18 @@ model:
               - white: 0.0340643
               - yellow: 0.0887308
         - set: 
+              - black: 0.012822
+              - blue: 0.17944
+              - brown: 0.0428745
+              - green: 0.0103888
+              - grey: 0.0260546
+              - orange: 0.113903
+              - pink: 0.0543801
+              - purple: 0.210098
+              - red: 0.264255
+              - white: 0.00641318
+              - yellow: 0.0793718
+        - set: 
               - black: 0.030989
               - blue: 0.196598
               - brown: 0.0369984
@@ -61,6 +145,30 @@ model:
               - red: 0.220237
               - white: 0.0733282
               - yellow: 0.0373418
+        - set: 
+              - black: 0.0129388
+              - blue: 0.104077
+              - brown: 0.050372
+              - green: 0.00938117
+              - grey: 0.0250871
+              - orange: 0.0995148
+              - pink: 0.0766432
+              - purple: 0.268048
+              - red: 0.218925
+              - white: 0.00504153
+              - yellow: 0.129972
+        - set: 
+              - black: 0.0137943
+              - blue: 0.117759
+              - brown: 0.0531359
+              - green: 0.0101694
+              - grey: 0.0258646
+              - orange: 0.0975271
+              - pink: 0.0706657
+              - purple: 0.250653
+              - red: 0.217885
+              - white: 0.0052329
+              - yellow: 0.137314
         - set: 
               - black: 0.0216716
               - blue: 0.273793
@@ -86,20 +194,47 @@ model:
               - white: 0.0789065
               - yellow: 0.0349846
     size: 
+        - area: 0.00104107
+          height: 0.119103
+          width: 0
         - area: 0.00286702
           height: 0.133741
           width: 0
         - area: 0.00212122
           height: 0.131887
           width: 0
+        - area: 0.00127089
+          height: 0.108313
+          width: 0
+        - area: 0.000989952
+          height: 0.119409
+          width: 0
+        - area: 0.00100608
+          height: 0.120169
+          width: 0
+        - area: 0.00118379
+          height: 0.126874
+          width: 0
         - area: 0.00210726
           height: 0.131605
+          width: 0
+        - area: 0.00123852
+          height: 0.11425
           width: 0
         - area: 0.00181561
           height: 0.132576
           width: 0
+        - area: 0.00118264
+          height: 0.127614
+          width: 0
         - area: 0.0015424
           height: 0.132118
+          width: 0
+        - area: 0.00101918
+          height: 0.119996
+          width: 0
+        - area: 0.00102524
+          height: 0.121808
           width: 0
         - area: 0.00168428
           height: 0.130417

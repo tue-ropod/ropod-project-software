@@ -1,0 +1,364 @@
+model: 
+    name: cigarettes
+    color: 
+        - set: 
+              - black: 0.0212363
+              - blue: 0.344149
+              - brown: 0.0177904
+              - green: 0.0117241
+              - grey: 0.0472021
+              - orange: 0.0374233
+              - pink: 0.0810927
+              - purple: 0.282587
+              - red: 0.106771
+              - white: 0.0111227
+              - yellow: 0.038902
+        - set: 
+              - black: 0.0356133
+              - blue: 0.142055
+              - brown: 0.0233794
+              - green: 0.0161668
+              - grey: 0.0340869
+              - orange: 0.0350557
+              - pink: 0.168771
+              - purple: 0.180081
+              - red: 0.11062
+              - white: 0.228356
+              - yellow: 0.0258159
+        - set: 
+              - black: 0.0366515
+              - blue: 0.099741
+              - brown: 0.0209901
+              - green: 0.0138311
+              - grey: 0.0252461
+              - orange: 0.03599
+              - pink: 0.186983
+              - purple: 0.167675
+              - red: 0.131063
+              - white: 0.257243
+              - yellow: 0.0245859
+        - set: 
+              - black: 0.0355008
+              - blue: 0.119676
+              - brown: 0.0236578
+              - green: 0.0149319
+              - grey: 0.0332902
+              - orange: 0.0344044
+              - pink: 0.186771
+              - purple: 0.166141
+              - red: 0.121663
+              - white: 0.238446
+              - yellow: 0.0255178
+        - set: 
+              - black: 0.037418
+              - blue: 0.114973
+              - brown: 0.0245974
+              - green: 0.0162806
+              - grey: 0.0352729
+              - orange: 0.0353587
+              - pink: 0.174956
+              - purple: 0.166455
+              - red: 0.117109
+              - white: 0.25142
+              - yellow: 0.0261593
+        - set: 
+              - black: 0.0316348
+              - blue: 0.177899
+              - brown: 0.022813
+              - green: 0.0165066
+              - grey: 0.0425738
+              - orange: 0.0337479
+              - pink: 0.148876
+              - purple: 0.20803
+              - red: 0.13238
+              - white: 0.159463
+              - yellow: 0.0260764
+        - set: 
+              - black: 0.0204547
+              - blue: 0.360977
+              - brown: 0.0203413
+              - green: 0.0148788
+              - grey: 0.0628657
+              - orange: 0.0153183
+              - pink: 0.0742608
+              - purple: 0.325295
+              - red: 0.0458554
+              - white: 0.0109868
+              - yellow: 0.0487659
+        - set: 
+              - black: 0.0385074
+              - blue: 0.0903907
+              - brown: 0.0258038
+              - green: 0.0169394
+              - grey: 0.0287038
+              - orange: 0.0388569
+              - pink: 0.160917
+              - purple: 0.131773
+              - red: 0.161776
+              - white: 0.281293
+              - yellow: 0.0250396
+        - set: 
+              - black: 0.0413209
+              - blue: 0.0684043
+              - brown: 0.0231847
+              - green: 0.0162746
+              - grey: 0.0212696
+              - orange: 0.0386872
+              - pink: 0.21503
+              - purple: 0.135881
+              - red: 0.0935684
+              - white: 0.321373
+              - yellow: 0.0250066
+        - set: 
+              - black: 0.0314189
+              - blue: 0.299161
+              - brown: 0.0295743
+              - green: 0.0113557
+              - grey: 0.0567517
+              - orange: 0.03878
+              - pink: 0.0867712
+              - purple: 0.2852
+              - red: 0.114378
+              - white: 0.0103893
+              - yellow: 0.0362203
+        - set: 
+              - black: 0.0332584
+              - blue: 0.0836888
+              - brown: 0.024041
+              - green: 0.0132385
+              - grey: 0.0310594
+              - orange: 0.0336277
+              - pink: 0.213304
+              - purple: 0.14893
+              - red: 0.168404
+              - white: 0.22931
+              - yellow: 0.0211372
+        - set: 
+              - black: 0.0223745
+              - blue: 0.359577
+              - brown: 0.0210276
+              - green: 0.0159407
+              - grey: 0.0689112
+              - orange: 0.0150883
+              - pink: 0.0732164
+              - purple: 0.31853
+              - red: 0.0446755
+              - white: 0.0119317
+              - yellow: 0.0487265
+        - set: 
+              - black: 0.0439581
+              - blue: 0.072547
+              - brown: 0.0264749
+              - green: 0.018643
+              - grey: 0.0266237
+              - orange: 0.0414875
+              - pink: 0.17683
+              - purple: 0.112777
+              - red: 0.117348
+              - white: 0.336874
+              - yellow: 0.0264368
+        - set: 
+              - black: 0.0438727
+              - blue: 0.07391
+              - brown: 0.0266489
+              - green: 0.0187522
+              - grey: 0.027231
+              - orange: 0.041556
+              - pink: 0.175014
+              - purple: 0.114393
+              - red: 0.11722
+              - white: 0.334912
+              - yellow: 0.0264908
+        - set: 
+              - black: 0.0459174
+              - blue: 0.303333
+              - brown: 0.0394642
+              - green: 0.0221297
+              - grey: 0.0896021
+              - orange: 0.0246504
+              - pink: 0.0688931
+              - purple: 0.258624
+              - red: 0.089688
+              - white: 0.0107946
+              - yellow: 0.0469035
+        - set: 
+              - black: 0.0343456
+              - blue: 0.0741818
+              - brown: 0.023423
+              - green: 0.0135694
+              - grey: 0.0288491
+              - orange: 0.0340258
+              - pink: 0.226693
+              - purple: 0.155317
+              - red: 0.143344
+              - white: 0.24495
+              - yellow: 0.0213024
+        - set: 
+              - black: 0.0491789
+              - blue: 0.126495
+              - brown: 0.0298024
+              - green: 0.0215057
+              - grey: 0.0400599
+              - orange: 0.0410672
+              - pink: 0.12966
+              - purple: 0.116727
+              - red: 0.0571708
+              - white: 0.359153
+              - yellow: 0.0291811
+        - set: 
+              - black: 0.040994
+              - blue: 0.0648972
+              - brown: 0.0239606
+              - green: 0.0158685
+              - grey: 0.0209704
+              - orange: 0.0396688
+              - pink: 0.195226
+              - purple: 0.112987
+              - red: 0.137756
+              - white: 0.322737
+              - yellow: 0.0249349
+        - set: 
+              - black: 0.0345087
+              - blue: 0.335767
+              - brown: 0.0300521
+              - green: 0.0204818
+              - grey: 0.0788345
+              - orange: 0.023738
+              - pink: 0.0697314
+              - purple: 0.263455
+              - red: 0.0858091
+              - white: 0.0105176
+              - yellow: 0.0471048
+        - set: 
+              - black: 0.0416294
+              - blue: 0.0720553
+              - brown: 0.0234507
+              - green: 0.0165614
+              - grey: 0.0224571
+              - orange: 0.0387557
+              - pink: 0.214364
+              - purple: 0.132007
+              - red: 0.0921185
+              - white: 0.32111
+              - yellow: 0.0254901
+        - set: 
+              - black: 0.0429889
+              - blue: 0.0984932
+              - brown: 0.0240893
+              - green: 0.0168469
+              - grey: 0.0231144
+              - orange: 0.0410786
+              - pink: 0.165579
+              - purple: 0.119672
+              - red: 0.111926
+              - white: 0.328596
+              - yellow: 0.027616
+        - set: 
+              - black: 0.038567
+              - blue: 0.103897
+              - brown: 0.0245464
+              - green: 0.0160638
+              - grey: 0.0306927
+              - orange: 0.0367076
+              - pink: 0.183425
+              - purple: 0.154222
+              - red: 0.112422
+              - white: 0.273743
+              - yellow: 0.0257137
+        - set: 
+              - black: 0.0252305
+              - blue: 0.31048
+              - brown: 0.0183541
+              - green: 0.0131953
+              - grey: 0.0467908
+              - orange: 0.0358207
+              - pink: 0.0903392
+              - purple: 0.262066
+              - red: 0.129727
+              - white: 0.0327559
+              - yellow: 0.0352409
+        - set: 
+              - black: 0.0423809
+              - blue: 0.101332
+              - brown: 0.0247114
+              - green: 0.0173815
+              - grey: 0.0231447
+              - orange: 0.0411522
+              - pink: 0.161585
+              - purple: 0.11969
+              - red: 0.119549
+              - white: 0.321545
+              - yellow: 0.0275281
+    size: 
+        - area: 0.0106643
+          height: 0.096249
+          width: 0
+        - area: 0.00591859
+          height: 0.229786
+          width: 0
+        - area: 0.00831052
+          height: 0.089386
+          width: 0
+        - area: 0.0143829
+          height: 0.094098
+          width: 0
+        - area: 0.0142558
+          height: 0.098002
+          width: 0
+        - area: 0.0243037
+          height: 0.10642
+          width: 0
+        - area: 0.00594575
+          height: 0.223284
+          width: 0
+        - area: 0.00548946
+          height: 0.230764
+          width: 0
+        - area: 0.00816006
+          height: 0.088139
+          width: 0
+        - area: 0.0103602
+          height: 0.096005
+          width: 0
+        - area: 0.00650431
+          height: 0.094097
+          width: 0
+        - area: 0.00574553
+          height: 0.223284
+          width: 0
+        - area: 0.0055167
+          height: 0.23065
+          width: 0
+        - area: 0.00555992
+          height: 0.230578
+          width: 0
+        - area: 0.00639305
+          height: 0.2145
+          width: 0
+        - area: 0.0128675
+          height: 0.095398
+          width: 0
+        - area: 0.00604439
+          height: 0.229573
+          width: 0
+        - area: 0.0103907
+          height: 0.092571
+          width: 0
+        - area: 0.00636506
+          height: 0.214787
+          width: 0
+        - area: 0.00758354
+          height: 0.088174
+          width: 0
+        - area: 0.010521
+          height: 0.092176
+          width: 0
+        - area: 0.0146505
+          height: 0.095459
+          width: 0
+        - area: 0.0304912
+          height: 0.109744
+          width: 0
+        - area: 0.0117398
+          height: 0.094786
+          width: 0

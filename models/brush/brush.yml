@@ -1,0 +1,109 @@
+model: 
+    name: brush
+    color: 
+        - set: 
+              - black: 0.0101137
+              - blue: 0.0115702
+              - brown: 0.253389
+              - green: 0.0349477
+              - grey: 0.0226889
+              - orange: 0.232489
+              - pink: 0.091625
+              - purple: 0.0530742
+              - red: 0.0970137
+              - white: 0.0232651
+              - yellow: 0.169823
+        - set: 
+              - black: 0.0157423
+              - blue: 0.0198078
+              - brown: 0.223511
+              - green: 0.0306031
+              - grey: 0.0492759
+              - orange: 0.180498
+              - pink: 0.140134
+              - purple: 0.0757819
+              - red: 0.0852743
+              - white: 0.0412133
+              - yellow: 0.138158
+        - set: 
+              - black: 0.00594283
+              - blue: 0.00446453
+              - brown: 0.260462
+              - green: 0.0121337
+              - grey: 0.0219796
+              - orange: 0.25265
+              - pink: 0.145071
+              - purple: 0.0690826
+              - red: 0.158567
+              - white: 0.00879605
+              - yellow: 0.0608501
+        - set: 
+              - black: 0.0062847
+              - blue: 0.00819033
+              - brown: 0.154789
+              - green: 0.0218798
+              - grey: 0.0184281
+              - orange: 0.311539
+              - pink: 0.0815203
+              - purple: 0.0696786
+              - red: 0.0720249
+              - white: 0.0088285
+              - yellow: 0.246837
+        - set: 
+              - black: 0.00919969
+              - blue: 0.0106967
+              - brown: 0.255798
+              - green: 0.0310058
+              - grey: 0.0225574
+              - orange: 0.247458
+              - pink: 0.0930435
+              - purple: 0.0533749
+              - red: 0.092998
+              - white: 0.0210504
+              - yellow: 0.162817
+        - set: 
+              - black: 0.00617947
+              - blue: 0.00682477
+              - brown: 0.215753
+              - green: 0.0223809
+              - grey: 0.0176612
+              - orange: 0.303602
+              - pink: 0.0745955
+              - purple: 0.0612515
+              - red: 0.073112
+              - white: 0.00731951
+              - yellow: 0.21132
+        - set: 
+              - black: 0.00749279
+              - blue: 0.0126842
+              - brown: 0.190397
+              - green: 0.0277859
+              - grey: 0.0191575
+              - orange: 0.319831
+              - pink: 0.0862747
+              - purple: 0.0608312
+              - red: 0.0967481
+              - white: 0.0213641
+              - yellow: 0.157433
+    size: 
+        - area: 0.00580936
+          height: 0.041032
+          width: 0
+        - area: 0.00223827
+          height: 0.036369
+          width: 0
+        - area: 0.00139389
+          height: 0.023655
+          width: 0
+        - area: 0.00167188
+          height: 0.024953
+          width: 0
+        - area: 0.00573015
+          height: 0.04103
+          width: 0
+        - area: 0.000781329
+          height: 0.025173
+          width: 0
+        - area: 0.00274849
+          height: 0.02621
+          width: 0

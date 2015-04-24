@@ -1,0 +1,94 @@
+model: 
+    name: twine_backup
+    color: 
+        - set: 
+              - black: 0.0342462
+              - blue: 0.568124
+              - brown: 0.0242392
+              - green: 0.0352274
+              - grey: 0.0466071
+              - orange: 0.0272673
+              - pink: 0.0319635
+              - purple: 0.0693335
+              - red: 0.028293
+              - white: 0.0832799
+              - yellow: 0.0514188
+        - set: 
+              - black: 0.0310812
+              - blue: 0.65527
+              - brown: 0.0214718
+              - green: 0.0381854
+              - grey: 0.0376661
+              - orange: 0.0229762
+              - pink: 0.0145442
+              - purple: 0.0688384
+              - red: 0.0222847
+              - white: 0.0303885
+              - yellow: 0.0572933
+        - set: 
+              - black: 0.0302983
+              - blue: 0.635839
+              - brown: 0.0205194
+              - green: 0.033207
+              - grey: 0.0371867
+              - orange: 0.0253349
+              - pink: 0.0182079
+              - purple: 0.0684174
+              - red: 0.0248694
+              - white: 0.0512213
+              - yellow: 0.0548983
+        - set: 
+              - black: 0.027363
+              - blue: 0.666244
+              - brown: 0.0198102
+              - green: 0.0288997
+              - grey: 0.0258791
+              - orange: 0.0296168
+              - pink: 0.0150718
+              - purple: 0.0708517
+              - red: 0.0237343
+              - white: 0.0403578
+              - yellow: 0.0521714
+        - set: 
+              - black: 0.0296654
+              - blue: 0.62676
+              - brown: 0.0202378
+              - green: 0.0292695
+              - grey: 0.0310445
+              - orange: 0.0256065
+              - pink: 0.0225275
+              - purple: 0.0755541
+              - red: 0.0241124
+              - white: 0.0649839
+              - yellow: 0.0502383
+        - set: 
+              - black: 0.026349
+              - blue: 0.67332
+              - brown: 0.0192149
+              - green: 0.0284896
+              - grey: 0.0257016
+              - orange: 0.0268717
+              - pink: 0.0169811
+              - purple: 0.0759163
+              - red: 0.0228731
+              - white: 0.0360294
+              - yellow: 0.0482531
+    size: 
+        - area: 0.00193851
+          height: 0.048302
+          width: 0
+        - area: 0.000862961
+          height: 0.031197
+          width: 0
+        - area: 0.000859892
+          height: 0.060399
+          width: 0
+        - area: 0.00202605
+          height: 0.031433
+          width: 0
+        - area: 0.00155164
+          height: 0.063569
+          width: 0
+        - area: 0.00293912
+          height: 0.074665
+          width: 0

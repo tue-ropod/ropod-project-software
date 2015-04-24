@@ -1,0 +1,139 @@
+model: 
+    name: tape
+    color: 
+        - set: 
+              - black: 0.0196921
+              - blue: 0.0543783
+              - brown: 0.212048
+              - green: 0.0322112
+              - grey: 0.0393842
+              - orange: 0.1242
+              - pink: 0.161007
+              - purple: 0.0745312
+              - red: 0.132104
+              - white: 0.0656474
+              - yellow: 0.0847968
+        - set: 
+              - black: 0.0172547
+              - blue: 0.0575333
+              - brown: 0.20447
+              - green: 0.0298728
+              - grey: 0.0368487
+              - orange: 0.127333
+              - pink: 0.168376
+              - purple: 0.0784715
+              - red: 0.137571
+              - white: 0.0617625
+              - yellow: 0.0805063
+        - set: 
+              - black: 0.00463086
+              - blue: 0.106137
+              - brown: 0.0193837
+              - green: 0.00379402
+              - grey: 0.0144243
+              - orange: 0.0243522
+              - pink: 0.37362
+              - purple: 0.140018
+              - red: 0.282754
+              - white: 0.0108701
+              - yellow: 0.0200146
+        - set: 
+              - black: 0.0358087
+              - blue: 0.0925149
+              - brown: 0.0499943
+              - green: 0.023441
+              - grey: 0.128525
+              - orange: 0.0222799
+              - pink: 0.221198
+              - purple: 0.250993
+              - red: 0.0716692
+              - white: 0.0775255
+              - yellow: 0.0260509
+        - set: 
+              - black: 0.00627206
+              - blue: 0.110485
+              - brown: 0.027457
+              - green: 0.00583509
+              - grey: 0.0183909
+              - orange: 0.0380277
+              - pink: 0.320703
+              - purple: 0.126524
+              - red: 0.310744
+              - white: 0.0132243
+              - yellow: 0.0223368
+        - set: 
+              - black: 0.0332933
+              - blue: 0.0837968
+              - brown: 0.0853143
+              - green: 0.0263142
+              - grey: 0.125711
+              - orange: 0.035445
+              - pink: 0.235489
+              - purple: 0.176573
+              - red: 0.0922398
+              - white: 0.0776814
+              - yellow: 0.0281429
+        - set: 
+              - black: 0.0659243
+              - blue: 0.152191
+              - brown: 0.043303
+              - green: 0.0403355
+              - grey: 0.212669
+              - orange: 0.0172911
+              - pink: 0.103492
+              - purple: 0.185627
+              - red: 0.0557825
+              - white: 0.0829514
+              - yellow: 0.0404331
+        - set: 
+              - black: 0.0642245
+              - blue: 0.151498
+              - brown: 0.0429663
+              - green: 0.0409026
+              - grey: 0.200956
+              - orange: 0.0189466
+              - pink: 0.106871
+              - purple: 0.177382
+              - red: 0.0589049
+              - white: 0.0969336
+              - yellow: 0.0404153
+        - set: 
+              - black: 0.00761592
+              - blue: 0.0836035
+              - brown: 0.103557
+              - green: 0.0187268
+              - grey: 0.0204345
+              - orange: 0.173365
+              - pink: 0.213
+              - purple: 0.110785
+              - red: 0.145257
+              - white: 0.0173384
+              - yellow: 0.106317
+    size: 
+        - area: 0.0150843
+          height: 0.10909
+          width: 0
+        - area: 0.0121428
+          height: 0.112254
+          width: 0
+        - area: 0.00319865
+          height: 0.04546
+          width: 0
+        - area: 0.00620218
+          height: 0.100364
+          width: 0
+        - area: 0.00436657
+          height: 0.049755
+          width: 0
+        - area: 0.00667566
+          height: 0.099142
+          width: 0
+        - area: 0.00422871
+          height: 0.089803
+          width: 0
+        - area: 0.0042592
+          height: 0.088444
+          width: 0
+        - area: 0.0065582
+          height: 0.049335
+          width: 0

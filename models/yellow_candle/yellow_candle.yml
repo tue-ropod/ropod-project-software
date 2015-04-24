@@ -1,0 +1,49 @@
+model: 
+    name: yellow_candle
+    color: 
+        - set: 
+              - black: 0.0188881
+              - blue: 0.0634708
+              - brown: 0.124713
+              - green: 0.017257
+              - grey: 0.0856731
+              - orange: 0.234828
+              - pink: 0.0953747
+              - purple: 0.15434
+              - red: 0.050858
+              - white: 0.00924619
+              - yellow: 0.145352
+        - set: 
+              - black: 0.0122356
+              - blue: 0.0327591
+              - brown: 0.142808
+              - green: 0.0150768
+              - grey: 0.0518072
+              - orange: 0.320629
+              - pink: 0.0682892
+              - purple: 0.0972473
+              - red: 0.0518684
+              - white: 0.00586873
+              - yellow: 0.20141
+        - set: 
+              - black: 0.0185981
+              - blue: 0.0994956
+              - brown: 0.0617139
+              - green: 0.0150735
+              - grey: 0.0815322
+              - orange: 0.193615
+              - pink: 0.0999107
+              - purple: 0.204212
+              - red: 0.0431862
+              - white: 0.012583
+              - yellow: 0.17008
+    size: 
+        - area: 0.00637817
+          height: 0.134951
+          width: 0
+        - area: 0.00332362
+          height: 0.127029
+          width: 0
+        - area: 0.00131651
+          height: 0.105204
+          width: 0

@@ -42,21 +42,55 @@ composition:
 
 # - - - - - - CHALLENGE FINAL - - - - - - -
 
+#part 1
     - type: "waypoint"
       id: "final_cupboard"
       pose: { x: 5.797, y: 7.241, z: 0, rz: 1.35}
     - type: "waypoint"
-      id: "final_dinnertable_1"
-      pose: { x: 5.076, y: 6.410, z: 0, rz: 3.14}
+      id: "final_dinnertable"
+      pose: { x: 3.940, y: 6.553, z: 0, rz: 1.54},
     - type: "waypoint"
-      id: "final_dinnertable_2"
-      pose: { x: 1.844, y: 6.512, z: 0, rz: 0.0}
+      id: "final_desk"
+      pose: { x: 3.372, y: 7.000, z: 0, rz: -0.892}
+
+#location to ask operator
     - type: "waypoint"
-      id: "final_bookcase"
-      pose: { x: 1.844, y: 6.512, z: 0, rz: 3.14}
+      id: "task_location_sergio"
+      pose: { x: 7.982, y: 5.026, z: 0, rz: 2.854}
+
+#part 2
+    - type: "waypoint"  
+      id: "final_tv"
+      pose: { x: 7.702, y: 4.224, z: 0, rz: 3.14}
     - type: "waypoint"
-      id: "final_counter"
-      pose: { x: 1.972, y: 6.352, z: 0, rz: -1.6}
+      id: "final_kitchencounter"
+      pose: { x: 7.633, y: 2.257, z: 0, rz: 3.127}
+    - type: "waypoint"
+      id: "final_cabinet"
+      pose: { x: 7.255, y: 1.284, z: 0, rz: 0.768}
+    - type: "waypoint"
+      id: "final_bartable"
+      pose: { x: 7.496, y: 0.436, z: 0, rz: -0.8}
+    - type: "waypoint"
+      id: "final_small_table_1"
+      pose: { x: 4.069, y: 0.891, z: 0, rz: -1.078}
+    - type: "waypoint"
+      id: "final_small_table_2"
+      pose: { x: 4.069, y: 0.891, z: 0, rz: -1.819}
+    - type: "waypoint"
+      id: "final_coathanger"
+      pose: { x: 2.886, y: 0.256, z: 0, rz: -2.367}
+    - type: "waypoint"
+      id: "final_left_bedside_table"
+      pose: { x: 2.153, y: -0.252, z: 0, rz: 2.328}
+    - type: "waypoint"
+      id: "final_right_bedside_table"
+      pose: { x: 3.107, y: 3.042, z: 0, rz: -3.125}
+
+#final position for sergio
+    - type: "waypoint"
+      id: "final_last_position_sergio"
+      pose: { x: 8.594, y: 1.053, z: 0, rz: -1.987}
 
 
 # - - - - - - ROOMS - - - - - - -

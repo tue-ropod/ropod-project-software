@@ -48,7 +48,7 @@ composition:
       pose: { x: 5.797, y: 7.241, z: 0, rz: 1.35}
     - type: "waypoint"
       id: "final_dinnertable"
-      pose: { x: 3.940, y: 6.553, z: 0, rz: 1.54},
+      pose: { x: 3.940, y: 6.553, z: 0, rz: 1.54}
     - type: "waypoint"
       id: "final_desk"
       pose: { x: 3.372, y: 7.000, z: 0, rz: -0.892}

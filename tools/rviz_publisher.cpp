@@ -240,7 +240,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
 
         m_text.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
 
-        m_text.scale.x = m_text.scale.y = m_text.scale.z = 0.1;
+        m_text.scale.x = m_text.scale.y = m_text.scale.z = 0.2;
 
         m_text.color.r = 0.8;
         m_text.color.g = 0.2;
@@ -256,9 +256,15 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
 //        else
 //            m.text = name.str() + "(" + type.substr(0,4) +  ")";
 
-        m_text.text = info.id.substr(0, 4);
-        if (!info.type.empty())
-            m_text.text += " (" + info.type.substr(0, 4) + ")";
+        if (info.type != "unknown" && info.type != "UNKNOWN")
+            m_text.text = info.type;
+        else
+            m_text.text = "";
+
+
+//        m_text.text = info.id.substr(0, 4);
+//        if (!info.type.empty())
+//            m_text.text += " (" + info.type.substr(0, 4) + ")";
     }
 }
 

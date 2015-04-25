@@ -3,5 +3,4 @@ models:
     - name: human
     - name: coke
     - name: bubblemint
-    - name: deodorant
     - name: mints

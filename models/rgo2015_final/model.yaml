@@ -40,6 +40,25 @@ composition:
       id: "exit_door_B"
       pose: { x: 2.0, y: 10.5, z: 0, rz: 1.57 }
 
+# - - - - - - CHALLENGE FINAL - - - - - - -
+
+    - type: "waypoint"
+      id: "final_cupboard"
+      pose: { x: 5.797, y: 7.241, z: 0, rz: 1.35}
+    - type: "waypoint"
+      id: "final_dinnertable_1"
+      pose: { x: 5.076, y: 6.410, z: 0, rz: 3.14}
+    - type: "waypoint"
+      id: "final_dinnertable_2"
+      pose: { x: 1.844, y: 6.512, z: 0, rz: 0.0}
+    - type: "waypoint"
+      id: "final_bookcase"
+      pose: { x: 1.844, y: 6.512, z: 0, rz: 3.14}
+    - type: "waypoint"
+      id: "final_counter"
+      pose: { x: 1.972, y: 6.352, z: 0, rz: -1.6}
+
+
 # - - - - - - ROOMS - - - - - - -
 
     - type: "room"

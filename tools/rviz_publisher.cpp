@@ -256,7 +256,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
 //        else
 //            m.text = name.str() + "(" + type.substr(0,4) +  ")";
 
-        if (info.type != "unknown" && info.type != "UNKNOWN")
+        if (info.id.size() == 32 && info.type != "unknown" && info.type != "UNKNOWN")
             m_text.text = info.type;
         else
             m_text.text = "";

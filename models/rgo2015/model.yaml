@@ -306,6 +306,25 @@ composition:
       id: "person_rec_living_room_3"
       pose: { x: 1.801, y: 0.151, z: 0, rz: -0.110}
 
+
+# - - - - - - CHALLENGE WAKE ME UP - - - - - - -
+
+    - type: "waypoint"
+      id: "wakemeup_bedside_1"
+      pose: { x: 1.771, y: 0.244, z: 0, rz: 2.27}
+
+    - type: "waypoint"
+      id: "wakemeup_bedside_2"
+      pose: { x: 2.749, y: 0.333, z: 0, rz: 2.48}
+
+    - type: "waypoint"
+      id: "wakemeup_bedside_3"
+      pose: { x: 3.509, y: 1.065, z: 0, rz: 3.006}
+
+    - type: "waypoint"
+      id: "wakemeup_bedside_4"
+      pose: { x: 3.364, y: 2.344, z: 0, rz: -2.919}
+
 # - - - - - - CHALLENGE OPEN - - - - - - - - - -
     - type: "waypoint"
       id: "open_challenge_start"
@@ -380,6 +399,7 @@ composition:
     - type: "waypoint"
       id: "robonurse_granny_loc"
       pose: { x: 6.033, y: 7.437, z: 0, rz: 0.0}
+
 
 
 # - - - - - - ROOMS - - - - - - -

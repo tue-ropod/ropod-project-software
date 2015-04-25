@@ -25,3 +25,8 @@ models:
     - name: red_bull
     - name: tape
     - name: yellow_candle
+    - name: lemon
+    - name: mandarine
+    - name: mints
+    - name: bubblemint
+    - name: bowl

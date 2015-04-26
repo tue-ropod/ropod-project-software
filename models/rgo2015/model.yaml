@@ -186,7 +186,7 @@ composition:
       id: "dinnertable"
       pose: 
           x: 3.56          # 0.525 + 1.17/2 + 2.45
-          y: 6.49         # 8.5 - 0.78/2 - 1.62
+          y: 8.0 #(final) 6.49(competition)        # 8.5 - 0.78/2 - 1.62
           z: 0 
           X: 0
           Y: 0
@@ -195,7 +195,7 @@ composition:
       id: "counter"
       pose: 
           x: 1.76         # 0.525 + 0.8/2 + 0.835
-          y: 4.4          # 3.6 + 1.6/2
+          y: 5.6#(final) 4.4(competition)          # 3.6 + 1.6/2
           z: 0 
           X: 0
           Y: 0

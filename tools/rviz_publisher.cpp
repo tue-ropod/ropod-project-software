@@ -228,6 +228,8 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             m.color.b = (float)info.color.b / 255;
         }
 
+        m.color.a = info.existence_probability;
+
         if (info.mesh_revision == 0)
         {
             // Update polygon
@@ -240,11 +242,11 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
 
         m_text.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
 
-        m_text.scale.x = m_text.scale.y = m_text.scale.z = 0.2;
+        m_text.scale.x = m_text.scale.y = m_text.scale.z = 0.1;
 
-        m_text.color.r = 0.8;
-        m_text.color.g = 0.2;
-        m_text.color.b = 0.2;
+        m_text.color.r = 0.9;
+        m_text.color.g = 0.9;
+        m_text.color.b = 0.9;
 
         m_text.pose = m.pose;
         m_text.pose.position.z += 0.1;
@@ -256,15 +258,24 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
 //        else
 //            m.text = name.str() + "(" + type.substr(0,4) +  ")";
 
-        if (info.id.size() == 32 && info.type != "unknown" && info.type != "UNKNOWN")
-            m_text.text = info.type;
-        else
-            m_text.text = "";
-
-
-//        m_text.text = info.id.substr(0, 4);
+//        std::stringstream ss_text;
+//        ss_text << info.id.substr(0, 4);
 //        if (!info.type.empty())
-//            m_text.text += " (" + info.type.substr(0, 4) + ")";
+//            ss_text << " (" << info.type.substr(0, 4) << ")";
+
+//        ss_text.precision(2);
+//        ss_text << std::fixed << " (" << info.existence_probability << ")";
+
+        if (info.type != "" && (!info.polygon.xs.empty() || info.mesh_revision > 0))
+        {
+            std::stringstream ss_text;
+            ss_text << info.type;
+            m_text.text = ss_text.str();
+        }
+        else
+        {
+            m_text.text = "";
+        }
     }
 }
 

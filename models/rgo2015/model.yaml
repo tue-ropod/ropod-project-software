@@ -195,7 +195,7 @@ composition:
       id: "counter"
       pose: 
           x: 1.76         # 0.525 + 0.8/2 + 0.835
-          y: 5.6#(final) 4.4(competition)          # 3.6 + 1.6/2
+          y: 4.4          # 3.6 + 1.6/2
           z: 0 
           X: 0
           Y: 0
@@ -204,7 +204,7 @@ composition:
       id: "desk"
       pose: 
           x: 4.675          # 5.475 -1.6/2
-          y: 4.0         # 3.6 + 0.8/2
+          y: 5.2 #(final) 4.0(competition)         # 3.6 + 0.8/2
           z: 0 
           X: 0
           Y: 0

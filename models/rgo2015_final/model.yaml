@@ -48,10 +48,10 @@ composition:
       pose: { x: 6.0, y: 7.0, z: 0, rz: 1.57}
     - type: "waypoint"
       id: "final_dinnertable"
-      pose: { x: 3.6, y: 7.0, z: 0, rz: 1.54}
+      pose: { x: 3.6, y: 6.5, z: 0, rz: 1.54}
     - type: "waypoint"
       id: "final_desk"
-      pose: { x: 4.6, y: 6.300, z: 0, rz: -1.57}
+      pose: { x: 4.6, y: 6.800, z: 0, rz: -1.57}
 
 #location to ask operator
     - type: "waypoint"

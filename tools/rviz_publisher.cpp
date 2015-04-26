@@ -176,7 +176,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             entity_viz->marker.id = entity_viz->num_id;
 
             initMarker(info.id, entity_viz->text_marker);
-            entity_viz->text_marker.id = entity_viz->text_num_id;
+            entity_viz->text_marker.id = entity_viz->text_num_id * 1000;
         }
         else
             entity_viz = &it->second;
@@ -249,7 +249,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         m_text.pose = m.pose;
         m_text.pose.position.z += 0.1;
         m_text.header = m.header;
-        m_text.ns = "labels";
+        m_text.ns = "entities";
 
 //        if (type == "")
 //            m.text = type + "(" + name.str().substr(0,4) +  ")";

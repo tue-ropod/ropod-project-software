@@ -1,6 +1,35 @@
 localizable: 1.0
-shape:
-    path: shape/shape.xml
+composition:
+    - type: "rgo2015/cupboard/frame"
+      id: "frame"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+    - type: "rgo2015/cupboard/shelf"
+      id: "shelf1"
+      pose:
+          x: 0
+          y: 0
+          z: 0.91
+    - type: "rgo2015/cupboard/shelf"
+      id: "shelf2"
+      pose:
+          x: 0
+          y: 0
+          z: 1.265
+    - type: "rgo2015/cupboard/shelf"
+      id: "shelf3"
+      pose:
+          x: 0
+          y: 0
+          z: 1.555
+    - type: "rgo2015/cupboard/shelf"
+      id: "shelf4"
+      pose:
+          x: 0
+          y: 0
+          z: 1.795
 color:
     red: 0.05
     green: 0.05
@@ -14,13 +43,13 @@ affordances:
 areas:
   - name: in_front_of
     shape:
-      - box:
-            min: { x: -0.325, y: 0.5, z: 0 }
-            max: { x:  0.325, y: 1.0, z: 1.76 }
+      - box:  
+            min: { x: 0.9, y: -0.25, z: 0 }
+            max: { x: 1.5, y: 0.25, z: 1 }
   - name: in
     shape:
       - box:
             min: { x: -0.325, y: -0.21, z: 0 }
             max: { x:  0.325, y:  0.21, z: 1.76 }
   - name: near
-    offset: 0.2
+    offset: 0.8

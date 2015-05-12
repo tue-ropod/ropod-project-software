@@ -84,7 +84,7 @@ composition:
           Y: 0
           Z: 1.5707963267948966
     - type: "robotics_testlab_B.corridor_cabinet"
-      id: "corridor_cabinet"
+      id: "cabinet"
       pose:
           x: 3.30
           y: 4.35
@@ -93,7 +93,7 @@ composition:
           Y: 0
           Z: 1.5707963267948966
     - type: "ddw.chair"
-      id: "corridor_chair"
+      id: "chair"
       pose:
           x: 2.0
           y: 5.3
@@ -120,7 +120,7 @@ composition:
           Y: 0
           Z: 1.5707963267948966
     - type: "table_120x80x76"
-      id: "operator_table1"
+      id: "operator_table"
       pose:
           x: -2.0
           y: 3.85
@@ -138,7 +138,7 @@ composition:
           Y: 0
           Z: 0
     - type: "table_120x80x76"
-      id: "dinner_table"
+      id: "dinnertable"
       pose:
           x: 0.4
           y: 1.92
@@ -164,9 +164,20 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
+# <<<<<<< HEAD
     - type: robotics_testlab_B.plastic_cabinet
       id: plastic_cabinet
       pose: { x: 3.18, y: 2.713, z: 0, Z: 0 }
+# =======
+    - type: robotics_testlab_B.plastic_cabinet.shelf
+      # Erik: i have updated id names for gpsr so that they can be used in speech. Please do not change.
+      id: bookshelf
+      pose: { x: 3.18, y: 2.713, z: 1.065, Z: 1.5707963267948966 }
+    - type: robotics_testlab_B.plastic_cabinet.shelf
+      # Erik: i have updated id names for gpsr so that they can be used in speech. Please do not change.
+      id: bookcase
+      pose: { x: 3.18, y: 2.713, z: 0.715, Z: 1.5707963267948966 }
+# >>>>>>> 7708e58003117ebbc726b0a351ad20d6e137b0dc
     - type: "waypoint"
       id: "living_room"
       pose:
@@ -274,8 +285,15 @@ composition:
 
 # - - - - - - ROOMS - - - - - - -
 
+## Locations inside room:
+#rooms_detailed = {  'kitchen':['chair','cabinet'],
+#                    'hallway':['hallway_couch'],
+#                    'living_room':['couchtable','dinnertable','corridor_table','bookcase','bookshelf'],
+#                    'bedroom':['bed','bed_cabinet'],
+#                    'workshop':['operator_table','workbench']}
+
     - type: "room"
-      id: "room_living_room"
+      id: "living_room"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
@@ -284,38 +302,38 @@ composition:
                 min: { x:  0.1, y: -0.9, z: 0 }
                 max: { x:  2.6, y:  2.7, z: 0 }
     - type: "room"
-      id: "room_kitchen"
+      id: "kitchen"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
                 min: { x:  1.8, y:  3.7, z: 0 }
-                max: { x:  2.7, y:  5.0, z: 0 }
+                max: { x:  3.0, y:  5.0, z: 0 }
     - type: "room"
-      id: "room_bedroom"
+      id: "bedroom"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x: -2.4, y: -1.0, z: 0 }
-                max: { x: -0.9, y:  0.2, z: 0 }
+                min: { x: -2.2, y: -1.0, z: 0 }
+                max: { x: -0.7, y:  0.2, z: 0 }
     - type: "room"
-      id: "room_workshop"
+      id: "workshop"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x: -4.0, y:  1.2, z: 0 }
-                max: { x: -1.1, y:  4.9, z: 0 }
+                min: { x: -2.8, y:  1.2, z: 0 }
+                max: { x: -0.8, y:  5.0, z: 0 }
     - type: "room"
-      id: "room_hallway"
+      id: "hallway"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
           shape:
             - box:
-                min: { x: -1.14, y:  3.7, z: 0 }
-                max: { x:  1.0, y:  5.5, z: 0 }
+                min: { x:-0.5, y: 3.5, z: 0 }
+                max: { x: 1.1, y: 5.3, z: 0 }

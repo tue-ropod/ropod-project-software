@@ -30,6 +30,7 @@ composition:
           Y: 0
           Z: 0
 # - - - - - - - - - - - - - - - - - - - - - - - - -
+
     - type: "waypoint"
       id: "initial_pose_door_A"
       pose: { x: 0.0, y: 0.0, z: 0, rz: 0 }
@@ -96,10 +97,13 @@ composition:
       id: "final_right_bedside_table"
       pose: { x: 3.107, y: 3.042, z: 0, rz: -3.125}
 
-#final position for sergio
+#final position for sergio and amigo
     - type: "waypoint"
       id: "final_last_position_sergio"
-      pose: { x: 8.594, y: 1.053, z: 0, rz: -1.987}
+      pose: { x: 7.667, y: 0.894, z: 0, rz: 0.478}
+    - type: "waypoint"
+      id: "final_last_position_amigo"
+      pose: { x: 7.290, y: 2.139, z: 0, rz: 0.195}
 
 
 # - - - - - - ROOMS - - - - - - -

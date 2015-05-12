@@ -284,7 +284,7 @@ composition:
 #                    'workshop':['operator_table','workbench']}
 
     - type: "room"
-      id: "room_living_room"
+      id: "living_room"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
@@ -293,7 +293,7 @@ composition:
                 min: { x:  0.1, y: -0.9, z: 0 }
                 max: { x:  2.6, y:  2.7, z: 0 }
     - type: "room"
-      id: "room_kitchen"
+      id: "kitchen"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
@@ -302,7 +302,7 @@ composition:
                 min: { x:  1.8, y:  3.7, z: 0 }
                 max: { x:  3.0, y:  5.0, z: 0 }
     - type: "room"
-      id: "room_bedroom"
+      id: "bedroom"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
@@ -311,7 +311,7 @@ composition:
                 min: { x: -2.2, y: -1.0, z: 0 }
                 max: { x: -0.7, y:  0.2, z: 0 }
     - type: "room"
-      id: "room_workshop"
+      id: "workshop"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in
@@ -320,7 +320,7 @@ composition:
                 min: { x: -2.8, y:  1.2, z: 0 }
                 max: { x: -0.8, y:  5.0, z: 0 }
     - type: "room"
-      id: "room_hallway"
+      id: "hallway"
       pose: { x: 0, y: 0, z: 0 }
       areas:
         - name: in

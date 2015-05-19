@@ -164,20 +164,9 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-# <<<<<<< HEAD
     - type: robotics_testlab_B.plastic_cabinet
-      id: plastic_cabinet
-      pose: { x: 3.18, y: 2.713, z: 0, Z: 0 }
-# =======
-    - type: robotics_testlab_B.plastic_cabinet.shelf
-      # Erik: i have updated id names for gpsr so that they can be used in speech. Please do not change.
-      id: bookshelf
-      pose: { x: 3.18, y: 2.713, z: 1.065, Z: 1.5707963267948966 }
-    - type: robotics_testlab_B.plastic_cabinet.shelf
-      # Erik: i have updated id names for gpsr so that they can be used in speech. Please do not change.
       id: bookcase
-      pose: { x: 3.18, y: 2.713, z: 0.715, Z: 1.5707963267948966 }
-# >>>>>>> 7708e58003117ebbc726b0a351ad20d6e137b0dc
+      pose: { x: 3.18, y: 2.713, z: 0, Z: 0 }
     - type: "waypoint"
       id: "living_room"
       pose:

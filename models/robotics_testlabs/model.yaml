@@ -207,6 +207,9 @@ composition:
       id: "robonurse_initial"
       pose: { x: 0.586, y: 4.259, z: 0, rz: 0 }
     - type: "waypoint"
+      id: "bookcase_waypoint"
+      pose: { x: 2.58, y: 2.66, z: 0, rz: 0 }
+    - type: "waypoint"
       id: "entry_point"
       pose: { x: 1.897, y: 4.295, z: 0, rz: 0 }
     - type: "waypoint"

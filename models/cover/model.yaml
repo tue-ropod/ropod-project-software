@@ -38,11 +38,11 @@ composition:
   - type: coffee_table
     id: coffee_table
     pose:
-        x: 1.8 # 1.2
+        x: 2.0 # 1.8 # 1.2
         y: -1.3
         z: 0.0
         X: 0.0
         Y: 0.0
-        Z: 0.0
+        Z: 1.5708
   
 #1+0.395+0.1

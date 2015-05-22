@@ -270,11 +270,11 @@ composition:
 
     - type: "waypoint"
       id: "person_rec_learning"
-      pose: { x: 2.162, y: 4.228, z: 0, rz: 3.117}
+      pose: { x: 2.661, y: 4.052, z: 0, rz: 3.139}
 
     - type: "waypoint"
       id: "person_rec_living_room_1"
-      pose: { x: 2.059, y: 1.946, z: 0, rz: -2.251}
+      pose: { x: 2.016, y:  3.025, z: 0, rz: -1.572}
 
     - type: "waypoint"
       id: "person_rec_living_room_2"

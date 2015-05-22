@@ -1,0 +1,12 @@
+<model name="robotics_testlab_B.bed">
+    <box>
+        <xyz>0 0 0.60</xyz>
+        <size>2.10 0.90 0.20</size>
+    </box> 
+
+    <box>
+        <xyz>0 0 0.14</xyz>
+        <size>1.42 0.65 0.28</size>
+    </box> 
+
+</model>

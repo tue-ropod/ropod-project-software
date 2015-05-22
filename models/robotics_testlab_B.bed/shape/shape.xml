@@ -9,4 +9,14 @@
         <size>1.42 0.65 0.28</size>
     </box> 
 
+    <box>
+        <xyz>-1.53 0 0.70</xyz>
+        <size>0.06 1.0 0.45</size>
+    </box> 
+
+    <box>
+        <xyz>1.53 0 0.70</xyz>
+        <size>0.06 1.0 0.45</size>
+    </box> 
+
 </model>

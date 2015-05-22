@@ -110,11 +110,11 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "bed"
+    - type: "robotics_testlab_B.bed"
       id: "bed"
       pose:
           x: -2.725
-          y: -0.35
+          y: -0.52
           z: 0
           X: 0
           Y: 0

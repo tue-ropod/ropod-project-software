@@ -46,51 +46,26 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
 
     if (!e->shape())
     {
-        if (!e->convexHull().chull.empty())
+        const ed::ConvexHull& ch = e->convexHull();
+
+        if (!ch.points.empty() && e->has_pose())
         {
-            const ed::ConvexHull2D& ch = e->convexHull();
+            const geo::Pose3D& pose = e->pose();
 
-            msg.polygon.z_min = ch.min_z - msg.pose.position.z;
-            msg.polygon.z_max = ch.max_z - msg.pose.position.z;
+            geo::convert(pose, msg.pose);
+            msg.has_pose = true;
 
-            unsigned int size = ch.chull.size();
+            msg.polygon.z_min = ch.z_min;
+            msg.polygon.z_max = ch.z_max;
+
+            unsigned int size = ch.points.size();
             msg.polygon.xs.resize(size);
             msg.polygon.ys.resize(size);
 
-            msg.pose.position.x = ch.center_point.x;
-            msg.pose.position.y = ch.center_point.y;
-
             for(unsigned int i = 0; i < size; ++i)
             {
-                msg.polygon.xs[i] = ch.chull[i].x - msg.pose.position.x;
-                msg.polygon.ys[i] = ch.chull[i].y - msg.pose.position.y;
-                //            msg.polygon.xs[i] = ch.chull[i].x + ch.center_point.x - msg.pose.position.x;
-                //            msg.polygon.ys[i] = ch.chull[i].y + ch.center_point.y - msg.pose.position.y;
-            }
-        }
-        else
-        {
-            const ed::ConvexHull& ch = e->convexHullNew();
-
-            if (!ch.points.empty() && e->has_pose())
-            {
-                const geo::Pose3D& pose = e->pose();
-
-                geo::convert(pose, msg.pose);
-                msg.has_pose = true;
-
-                msg.polygon.z_min = ch.z_min;
-                msg.polygon.z_max = ch.z_max;
-
-                unsigned int size = ch.points.size();
-                msg.polygon.xs.resize(size);
-                msg.polygon.ys.resize(size);
-
-                for(unsigned int i = 0; i < size; ++i)
-                {
-                    msg.polygon.xs[i] = ch.points[i].x;
-                    msg.polygon.ys[i] = ch.points[i].y;
-                }
+                msg.polygon.xs[i] = ch.points[i].x;
+                msg.polygon.ys[i] = ch.points[i].y;
             }
         }
     }

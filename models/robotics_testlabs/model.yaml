@@ -119,6 +119,15 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
+    - type: "robotics_testlab_B.tubing"
+      id: "tubing"
+      pose:
+          x: -3.40
+          y: -0.34
+          z: 0
+          X: 0
+          Y: 0
+          Z: 1.5707963267948966
     - type: "table_120x80x76"
       id: "operator_table"
       pose:

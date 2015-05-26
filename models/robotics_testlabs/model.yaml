@@ -284,6 +284,11 @@ composition:
       id: "person_rec_living_room_3"
       pose: { x: 1.510, y: 2.220, z: 0, rz: -0.971}
 
+# - - - - - - CHALLENGE GPSR - - - - - - - - - -
+    - type: "waypoint"
+      id: "gpsr_meeting_point"
+      pose: { x: 2.4, y: 4.4, z: 0, rz: -1.9}
+
 # - - - - - - ROOMS - - - - - - -
 
 ## Locations inside room:

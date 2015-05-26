@@ -1,5 +1,5 @@
 models:
-    - name: crowd
+    # - name: crowd
     - name: human
     - name: beer
     - name: chocolate_cereals

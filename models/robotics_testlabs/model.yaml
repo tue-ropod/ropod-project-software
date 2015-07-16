@@ -291,6 +291,10 @@ composition:
       
 # - - - - - - CHALLENGE OPEN - - - - - - - - - -
     - type: "waypoint"
+      id: "operator_pose"
+      pose: { x: 0.0, y: 0.0, z: 0, rz: 0.0}
+      
+    - type: "waypoint"
       id: "explore1"
       pose: { x: 2.0, y: 4.0, z: 0, rz: 0.0}
       

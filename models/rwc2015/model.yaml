@@ -72,3 +72,9 @@ composition:
       pose:
           x: 10.0
           y: -2.5
+    - type: "rwc2015/large_table"
+      id: "livingroom_table"
+      pose:
+          x: 8.0
+          y: 0.5
+          Z: 1.571

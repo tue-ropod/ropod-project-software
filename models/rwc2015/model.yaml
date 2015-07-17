@@ -137,7 +137,7 @@ composition:
     - type: "waypoint"
       id: "bookcase_waypoint"
       pose: { x: 2.285, y: -8.014, z: 0, rz: 0 }
-,
+
 ##### ROOMS #####
     - type: "room"
       id: "kitchen"

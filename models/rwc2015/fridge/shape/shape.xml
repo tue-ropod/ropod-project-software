@@ -2,8 +2,8 @@
     
     <!-- Block -->
     <box>
-        <xyz>0 0 0.51</xyz>
-        <size>0.69 0.6 1.02</size>
+        <xyz>0 0 0.6975</xyz>
+        <size>0.545 0.495 1.395</size>
     </box> 
     
 </model>

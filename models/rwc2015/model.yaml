@@ -90,3 +90,24 @@ composition:
           x: 1.0
           y: 2.0
           Z: 1.571
+          
+##### Waypoints #####
+# # # General   # # #
+    - type: "waypoint"
+      id: "initial_pose_door_A"
+      pose: {x: 0, y: 0, z: 0, Z: 0}
+    - type: "waypoint"
+      id: "initial_pose_door_B"
+      pose: { x: 0, y: -6.15, z: 0, rz: 0.0 }
+    - type: "waypoint"
+      id: "exit_door_A"
+      pose: { x: -0.5, y: 0, z: 0, rz: 3.1415 }
+    - type: "waypoint"
+      id: "exit_door_B"
+      pose: { x: -0.5, y: -6.15, z: 0, rz: 3.1415 }
+    - type: "waypoint"
+      id: "entry_point_A"
+      pose: { x: 1.0, y: 0, z: 0, rz: 0 }
+    - type: "waypoint"
+      id: "entry_point_B"
+      pose: { x: 1.0, y: -6.15, z: 0, rz: 0 }

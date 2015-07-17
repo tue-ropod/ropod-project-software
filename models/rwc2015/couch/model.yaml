@@ -5,6 +5,11 @@ color:
     red: 0.1
     green: 0.1
     blue: 0.1
-#areas:
-#- name: near
-#  offset: 0.8
+areas:
+  - name: near
+    offset: 0.7
+  - name: in_front_of
+    shape:
+      - box:
+            min: { x:  -2.4, y: -0.6, z: 0 }
+            max: { x:  -1.4, y: 0.6, z: 1 }

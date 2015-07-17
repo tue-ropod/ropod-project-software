@@ -4,28 +4,38 @@ composition:
       pose:
           x: 0
           y: 0
-          z: 0
     - type: "floor"
       id: "floor"
       pose:
           x: 0
           y: 0
-          z: 0
     - type: "rwc2015/cabinet"
       id: "cabinet"
       pose:
           x: 1.0
           y: -8.0
-          z: 0.0
     - type: "rwc2015/table"
       id: "dinner_table"
       pose:
           x: 3.0
           y: -5.0
-          z: 0.0
     - type: "rwc2015/table"
       id: "kitchen_table"
       pose:
           x: 3.0
           y: -2.0
-          z: 0.0
+    - type: "rwc2015/bedstand"
+      id: "left_bedstand"
+      pose:
+          x: 11.0
+          y: -7.0
+    - type: "rwc2015/bedstand"
+      id: "right_bedstand"
+      pose:
+          x: 11.0
+          y: -9.0
+    - type: "rwc2015/bed"
+      id: "bed"
+      pose:
+          x: 10.0
+          y: -8.0

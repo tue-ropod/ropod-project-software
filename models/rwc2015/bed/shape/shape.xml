@@ -1,6 +1,13 @@
 <model>
+    <!-- Matras -->
     <box>
-        <xyz>0 0 0.225</xyz>
-        <size>2.06 1.55 0.45</size>
+        <xyz>0 0 0.4075</xyz>
+        <size>2.18 1.50 0.205</size>
+    </box>
+    
+    <!-- Footboard -->
+    <box>
+        <xyz>-1.075 0 0.255</xyz>
+        <size>0.03 1.50 0.51</size>
     </box> 
 </model>

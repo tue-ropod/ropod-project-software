@@ -46,7 +46,7 @@ composition:
           y: -9.5
           Z: 1.571
     - type: "rwc2015/small_table"
-      id: "kitchen_table"
+      id: "kitchen_table2"
       pose:
           x: 2.5
           y: 2.0

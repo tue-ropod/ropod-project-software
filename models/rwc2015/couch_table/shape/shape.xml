@@ -1,32 +1,8 @@
 <model>
     
-    <!-- Top -->
     <box>
-        <xyz>0 0 0.425</xyz>
-        <size>0.55 0.90 0.05</size>
+        <xyz>0 0 0.21</xyz>
+        <size>0.6 1.2 0.42</size>
     </box>
-    
-    <!-- Leg -->
-    <box>
-        <xyz>-0.25 -0.425 0.225</xyz>
-        <size>0.05 0.05 0.45</size>
-    </box> 
-    
-    <!-- Leg -->
-    <box>
-        <xyz>-0.25 0.425 0.225</xyz>
-        <size>0.05 0.05 0.45</size>
-    </box> 
-    
-    <!-- Leg -->
-    <box>
-        <xyz>0.25 -0.425 0.225</xyz>
-        <size>0.05 0.05 0.45</size>
-    </box> 
-    
-    <!-- Leg -->
-    <box>
-        <xyz>0.25 0.425 0.225</xyz>
-        <size>0.05 0.05 0.45</size>
-    </box> 
+
 </model>

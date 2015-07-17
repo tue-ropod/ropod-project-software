@@ -85,6 +85,12 @@ composition:
           x: 1.1425    # 0.626 + 0.27 + 0.495/2
           y: 2.1025    # 2.45 - 0.545/2 -0.075 (meas)
           Z: 1.571
+    - type: "rwc2015/thrashbin"
+      id: "thrashbin"
+      pose:
+          x: 5.15      # 5.35 - 0.05 (meas) - 0.3/2
+          y: -1.375    # -1.25 - 0.05 (meas) - 0.15/2
+          Z: 0.0
 
 ##### Waypoints #####
 # # # General   # # #

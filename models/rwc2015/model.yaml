@@ -57,3 +57,13 @@ composition:
           x: 5.5
           y: -2.0
           Z: 3.1415
+    - type: "rwc2015/couch"
+      id: "left_couch"
+      pose:
+          x: 11.0
+          y: -1.5
+    - type: "rwc2015/couch"
+      id: "right_couch"
+      pose:
+          x: 11.0
+          y: -3.3

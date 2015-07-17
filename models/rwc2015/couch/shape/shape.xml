@@ -1,6 +1,21 @@
 <model>
+    
+    <!-- Bottom part -->
     <box>
-        <xyz>0 0 0.335</xyz>
-        <size>0.865 1.80 0.67</size>
+        <xyz>0 0 0.15</xyz>
+        <size>0.72 1.25 0.08</size>
+    </box>
+    
+    <!-- Seating part -->
+    <box>
+        <xyz>0 0 0.2775</xyz>
+        <size>0.72 1.80 0.175</size>
+    </box>
+    
+    <!-- Back part -->
+    <box>
+        <xyz>0.29 0 0.605</xyz>
+        <size>0.17 1.80 0.48</size>
     </box> 
 </model>
+ 

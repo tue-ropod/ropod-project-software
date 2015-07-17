@@ -5,9 +5,15 @@ color:
     red: 0.9
     green: 0.9
     blue: 0.9
-#areas:
-#  - name: in_front_of
-#    shape:
-#      - box:
-#            min: { x:  0.79, y: -0.4, z: 0 }
-#            max: { x:  0.89, y: 0.4, z: 1 }
+areas:
+  - name: in_front_of
+    shape:
+      - box:
+            min: { x: 0.835, y: -0.325, z: 0}
+            max: { x: 0.985, y: 0.325,  z: 1.76 }
+  - name: in
+    shape:
+      - box:
+            min: { x: -0.3, y: -0.8, z: 0 }
+            max: { x:  0.3, y:  0.8, z: 0.2 }
+

@@ -1,19 +1,13 @@
 <model>
-    <!-- Box -->
-    <!--<box>
-        <xyz>0 0 1.01</xyz>
-        <size>0.28 0.8 2.02</size>
-    </box>-->
-    
     <!-- Left plank -->
     <box>
-        <xyz>0 -0.39 1.01</xyz>
-        <size>0.28 0.02 2.02</size>
+        <xyz>0 -0.87 1.0</xyz>
+        <size>0.60 0.05 2.0</size>
     </box>
     
     <!-- Right plank -->    
     <box>
-        <xyz>0 0.39 1.01</xyz>
-        <size>0.28 0.02 2.02</size>
+        <xyz>0 0.87 1.0</xyz>
+        <size>0.60 0.05 2.0</size>
     </box> 
 </model>

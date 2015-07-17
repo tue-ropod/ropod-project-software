@@ -11,3 +11,9 @@ composition:
           x: 0
           y: 0
           z: 0
+    - type: "rwc2015/cabinet"
+      id: "cabinet"
+      pose:
+          x: 1.0
+          y: -8.0
+          z: 0.0

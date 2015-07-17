@@ -17,8 +17,8 @@ composition:
     - type: "rwc2015/table"
       id: "hallwaytable"
       pose:
-          x: 3.0      
-          y: -5.0
+          x: 3.12     # 5.35 - 1.88 (meas) - 0.7/2
+          y: -5.25    # -4.75 - 1.2/2
     - type: "rwc2015/table"
       id: "kitchentable"
       pose:
@@ -70,8 +70,8 @@ composition:
     - type: "rwc2015/large_table"
       id: "dinnertable"
       pose:
-          x: 8.0
-          y: 0.5
+          x: 8.185      # 5.4 + 1.87 (meas) + 1.83/2
+          y: 0.6825     # 2.45 - 1.31 (meas) - 0.915/2
           Z: 1.571
     - type: "rwc2015/kitchen_counter"
       id: "cupboard"
@@ -83,7 +83,7 @@ composition:
       id: "fridge"
       pose:
           x: 1.1425    # 0.626 + 0.27 + 0.495/2
-          y: 2.1775    # 2.45 - 0.545/2
+          y: 2.1025    # 2.45 - 0.545/2 -0.075 (meas)
           Z: 1.571
 
 ##### Waypoints #####

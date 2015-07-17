@@ -17,3 +17,15 @@ composition:
           x: 1.0
           y: -8.0
           z: 0.0
+    - type: "rwc2015/table"
+      id: "dinner_table"
+      pose:
+          x: 3.0
+          y: -5.0
+          z: 0.0
+    - type: "rwc2015/table"
+      id: "kitchen_table"
+      pose:
+          x: 3.0
+          y: -2.0
+          z: 0.0

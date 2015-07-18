@@ -301,10 +301,28 @@ bool GUIServerPlugin::srvGetEntityInfo(const ed_gui_server::GetEntityInfo::Reque
 
         cv::Mat rgb_image_masked(rgb_image.rows, rgb_image.cols, CV_8UC3, cv::Scalar(0, 0, 0));
 
+        cv::Point min(rgb_image.cols, rgb_image.rows);
+        cv::Point max(0, 0);
         for(ed::ImageMask::const_iterator it = image_mask.begin(rgb_image.cols); it != image_mask.end(); ++it)
-            rgb_image_masked.at<cv::Vec3b>(*it) = rgb_image.at<cv::Vec3b>(*it);
+        {
+            const cv::Point2i& p =*it;
+            rgb_image_masked.at<cv::Vec3b>(p) = rgb_image.at<cv::Vec3b>(p);
+
+            min.x = std::min(min.x, p.x);
+            min.y = std::min(min.y, p.y);
+            max.x = std::max(max.x, p.x);
+            max.y = std::max(max.y, p.y);
+        }
 
         imageToBinary(rgb_image_masked, ros_res.measurement_image, IMAGE_COMPRESSION_JPG);
+
+        // Add border to roi
+        min.x = std::max(0, min.x - ros_req.measurement_image_border);
+        min.y = std::max(0, min.y - ros_req.measurement_image_border);
+        max.x = std::min(rgb_image.cols - 1, max.x + ros_req.measurement_image_border);
+        max.y = std::min(rgb_image.rows - 1, max.y + ros_req.measurement_image_border);
+
+        imageToBinary(rgb_image(cv::Rect(min, max)), ros_res.measurement_image_unmasked, IMAGE_COMPRESSION_JPG);
     }
 
     return true;

@@ -107,7 +107,7 @@ composition:
       id: "plant_bedroom_high"
       pose:
           x: 5.7      # 5.4 + 0.3 (meas)
-          y: -5.0    # -4.75 + 0.25 (meas)
+          y: -6.35    # -6.10 - 0.25 (meas)
           Z: 0.0
     - type: "rwc2015/plant_livingroom_low"
       id: "plant_livingroom_low"

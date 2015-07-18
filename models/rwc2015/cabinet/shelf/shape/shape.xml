@@ -1,8 +1,15 @@
 <model>
 
-    <box>
+	<!-- Entire width -->
+    <!--<box>
         <xyz>0 0 0</xyz>
         <size>0.6 1.69 0.05</size>
+    </box>-->
+
+    <!-- Half width -->
+    <box>
+        <xyz>0 0 0</xyz>
+        <size>0.6 0.845 0.05</size>
     </box>
 
 </model>

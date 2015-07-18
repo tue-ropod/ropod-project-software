@@ -7,7 +7,7 @@ color:
     blue: 0.9
 areas:
   - name: near
-    offset: 1.0
+    offset: 0.8
   - name: in_front_of
     shape:
       - box:

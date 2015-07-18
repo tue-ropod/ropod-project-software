@@ -1,8 +1,16 @@
 models:
     - name: human
     - name: barbecue_chips
+    - name: beer
     - name: biscuits
+    - name: coco_balls
     - name: coconut_cereals
+    - name: egg_stars
     - name: gram_soup
     - name: green_tea
+    - name: honey_chips
+    - name: lotion
+    - name: papaya_milk
+    - name: pure_milk
+    - name: tomato_chips
     - name: tooth_paste

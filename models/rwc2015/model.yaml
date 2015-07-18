@@ -19,7 +19,7 @@ composition:
       pose:
           x: 3.12     # 5.35 - 1.88 (meas) - 0.7/2
           y: -5.25    # -4.75 - 1.2/2
-    - type: "rwc2015/table"
+    - type: "rwc2015/kitchentable"
       id: "kitchentable"
       pose:
           x: 3.055    # 0.625 + 2.08 (meas) + 0.7/2
@@ -86,7 +86,7 @@ composition:
           y: 2.1025    # 2.45 - 0.545/2 -0.075 (meas)
           Z: 1.571
     - type: "rwc2015/thrashbin"
-      id: "thrashbin"
+      id: "trashbin"
       pose:
           x: 5.15      # 5.35 - 0.05 (meas) - 0.3/2
           y: -1.375    # -1.25 - 0.05 (meas) - 0.15/2

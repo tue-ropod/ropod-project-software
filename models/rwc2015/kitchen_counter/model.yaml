@@ -11,5 +11,5 @@ areas:
   - name: in_front_of
     shape:
       - box:
-            min: { x:  -0.8, y: -0.3, z: 0 }
-            max: { x:  -0.3, y: 0.3, z: 1 }
+            min: { x:  -0.8, y: -0.15, z: 0 }
+            max: { x:  -0.3, y: 0.15, z: 1 }

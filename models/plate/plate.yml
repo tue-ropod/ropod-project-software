@@ -1,0 +1,94 @@
+model: 
+    name: plate
+    color: 
+        - set: 
+              - black: 0.0440455
+              - blue: 0.116901
+              - brown: 0.0327772
+              - green: 0.0230242
+              - grey: 0.0847022
+              - orange: 0.0322052
+              - pink: 0.200482
+              - purple: 0.158569
+              - red: 0.0599542
+              - white: 0.218909
+              - yellow: 0.0284311
+        - set: 
+              - black: 0.0440539
+              - blue: 0.101395
+              - brown: 0.0352942
+              - green: 0.0210924
+              - grey: 0.0635399
+              - orange: 0.0374619
+              - pink: 0.193698
+              - purple: 0.132704
+              - red: 0.0656449
+              - white: 0.273006
+              - yellow: 0.0321099
+        - set: 
+              - black: 0.0402622
+              - blue: 0.107653
+              - brown: 0.0316083
+              - green: 0.0197386
+              - grey: 0.0718896
+              - orange: 0.0327393
+              - pink: 0.226814
+              - purple: 0.177132
+              - red: 0.0626971
+              - white: 0.202294
+              - yellow: 0.0271714
+        - set: 
+              - black: 0.0412283
+              - blue: 0.111007
+              - brown: 0.0315696
+              - green: 0.0209885
+              - grey: 0.0808098
+              - orange: 0.0315427
+              - pink: 0.223023
+              - purple: 0.175312
+              - red: 0.0612121
+              - white: 0.197742
+              - yellow: 0.0255637
+        - set: 
+              - black: 0.0437808
+              - blue: 0.10013
+              - brown: 0.0336757
+              - green: 0.0193557
+              - grey: 0.0598875
+              - orange: 0.0371795
+              - pink: 0.199286
+              - purple: 0.1318
+              - red: 0.0675664
+              - white: 0.282726
+              - yellow: 0.024612
+        - set: 
+              - black: 0.0380295
+              - blue: 0.105233
+              - brown: 0.0345217
+              - green: 0.0216571
+              - grey: 0.0909413
+              - orange: 0.0317752
+              - pink: 0.252531
+              - purple: 0.189639
+              - red: 0.0596619
+              - white: 0.149056
+              - yellow: 0.0269538
+    size: 
+        - area: 0.00874917
+          height: 0.0188443
+          width: 0
+        - area: 0.0133872
+          height: 0.0202343
+          width: 0
+        - area: 0.010887
+          height: 0.0155128
+          width: 0
+        - area: 0.00637056
+          height: 0.0154971
+          width: 0
+        - area: 0.00606223
+          height: 0.0202492
+          width: 0
+        - area: 0.00814529
+          height: 0.0199826
+          width: 0

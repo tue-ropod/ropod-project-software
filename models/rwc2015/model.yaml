@@ -129,7 +129,23 @@ composition:
       id: "entry_point_A"
       pose: { x: 1.0, y: -6.15, z: 0, rz: 0 }
 
+# # # NAVIGATION      # # #
+    - type: "waypoint"
+      id: "navigation1"
+      pose: { x: 6.4, y: -5, z: 0, rz: 0.7 }
+
+    - type: "waypoint"
+      id: "navigation2"
+      pose: { x: 9.8, y: 0.65, z: 0, Z: 3.1415 }
+
+    - type: "waypoint"
+      id: "navigation3"
+      pose: { x: 5.39, y: 0, z: 0, Z: 3.1415 }
+
 # # # RIPS      # # #
+    - type: "waypoint"
+      id: "rips1"
+      pose: { x: 8.0, y: -1.5, z: 0, rz: -1.57 }
     - type: "waypoint"
       id: "rips2"
       pose: { x: 8.0, y: -1.5, z: 0, rz: 1.57 }

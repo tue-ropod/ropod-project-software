@@ -129,7 +129,23 @@ composition:
       id: "entry_point_A"
       pose: { x: 1.0, y: -6.15, z: 0, rz: 0 }
 
+# # # NAVIGATION      # # #
+    - type: "waypoint"
+      id: "navigation1"
+      pose: { x: 7.696, y: -4.840, z: 0, rz: 1.582}
+
+    - type: "waypoint"
+      id: "navigation2"
+      pose: { x: 9.8, y: 0.65, z: 0, Z: 3.1415 }
+
+    - type: "waypoint"
+      id: "navigation3"
+      pose: { x: 5.39, y: 0, z: 0, Z: 3.1415 }
+
 # # # RIPS      # # #
+    - type: "waypoint"
+      id: "rips1"
+      pose: { x: 8.0, y: -1.5, z: 0, rz: -1.57 }
     - type: "waypoint"
       id: "rips2"
       pose: { x: 8.0, y: -1.5, z: 0, rz: 1.57 }
@@ -158,8 +174,8 @@ composition:
         - name: in
           shape:
             - box:
-                min: { x: -2.35, y: -2.4, z: 0 }
-                max: { x:  2.35, y:  2.4, z: 0 }
+                min: { x: -2.05, y: -2.1, z: 0 }
+                max: { x:  2.05, y:  2.1, z: 0 }
     - type: "room"
       id: "livingroom"
       pose: { x: 8.5, y: -1.825, z: 0 }
@@ -167,8 +183,8 @@ composition:
         - name: in
           shape:
             - box:
-                min: { x:  3.1, y:  4.225, z: 0 }
-                max: { x: -3.1, y: -4.225, z: 0 }
+                min: { x:  2.8, y:  3.925, z: 0 }
+                max: { x: -2.8, y: -3.925, z: 0 }
     - type: "room"
       id: "bedroom"
       pose: { x: 8.5, y: -7.825, z: 0 }
@@ -176,8 +192,8 @@ composition:
         - name: in
           shape:
             - box:
-                min: { x: -3.1, y: -1.725, z: 0 }
-                max: { x:  3.1, y:  1.725, z: 0 }
+                min: { x: -2.8, y: -1.425, z: 0 }
+                max: { x:  2.8, y:  1.425, z: 0 }
     - type: "room"
       id: "hallway"
       pose: { x: 2.975, y: -6.175, z: 0 }
@@ -185,8 +201,8 @@ composition:
         - name: in
           shape:
             - box:
-                min: { x: -2.375, y: -3.775, z: 0 }
-                max: { x:  2.375, y:  3.775, z: 0 }
+                min: { x: -2.075, y: -3.475, z: 0 }
+                max: { x:  2.075, y:  3.475, z: 0 }
 
 # - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
 

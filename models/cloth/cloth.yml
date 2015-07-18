@@ -1,0 +1,79 @@
+model: 
+    name: cloth
+    color: 
+        - set: 
+              - black: 0.0077505
+              - blue: 0.00364827
+              - brown: 0.0194331
+              - green: 0.0029404
+              - grey: 0.0124909
+              - orange: 0.0066846
+              - pink: 0.430195
+              - purple: 0.450488
+              - red: 0.0601915
+              - white: 0.00208767
+              - yellow: 0.00409022
+        - set: 
+              - black: 0.0114848
+              - blue: 0.014414
+              - brown: 0.032995
+              - green: 0.00783469
+              - grey: 0.0473594
+              - orange: 0.0116499
+              - pink: 0.452426
+              - purple: 0.327538
+              - red: 0.0720462
+              - white: 0.0133636
+              - yellow: 0.00888831
+        - set: 
+              - black: 0.00456009
+              - blue: 0.0028855
+              - brown: 0.00734314
+              - green: 0.00191041
+              - grey: 0.00896893
+              - orange: 0.00380039
+              - pink: 0.488118
+              - purple: 0.424538
+              - red: 0.0511426
+              - white: 0.00335342
+              - yellow: 0.00337868
+        - set: 
+              - black: 0.00449581
+              - blue: 0.00287116
+              - brown: 0.00859227
+              - green: 0.00188192
+              - grey: 0.00879345
+              - orange: 0.00407709
+              - pink: 0.479726
+              - purple: 0.430268
+              - red: 0.0529217
+              - white: 0.0030234
+              - yellow: 0.00334979
+        - set: 
+              - black: 0.00781457
+              - blue: 0.00960155
+              - brown: 0.0223918
+              - green: 0.00554525
+              - grey: 0.0295483
+              - orange: 0.00834834
+              - pink: 0.456972
+              - purple: 0.39186
+              - red: 0.0530702
+              - white: 0.00843362
+              - yellow: 0.00641484
+    size: 
+        - area: 0.0166053
+          height: 0.0718216
+          width: 0
+        - area: 0.00775864
+          height: 0.0457091
+          width: 0
+        - area: 0.00914965
+          height: 0.0738727
+          width: 0
+        - area: 0.011306
+          height: 0.072981
+          width: 0
+        - area: 0.0114101
+          height: 0.0702848
+          width: 0

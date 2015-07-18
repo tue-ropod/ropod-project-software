@@ -1,12 +1,5 @@
 shape:
-    path: shape/shape.xml
-composition:
-  - type: "rwc2015/kitchentable/top"
-    id: "top"
-    pose:
-        x: 0
-        y: 0
-        z: 0.76
+    path: shape.xml
 color:
     red: 0.9
     green: 0.9
@@ -18,4 +11,5 @@ areas:
     shape:
       - box:
             min: { x:  -0.24, y: -0.25, z: 0 }
-            max: { x:  0.24, y: 1.3, z: 1 }
+            max: { x:  0.24,  y: 1.3,   z: 1 }
+    

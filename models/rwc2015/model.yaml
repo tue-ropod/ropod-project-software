@@ -132,7 +132,7 @@ composition:
 # # # NAVIGATION      # # #
     - type: "waypoint"
       id: "navigation1"
-      pose: { x: 7.696, y: -4.840, z: 0, rz: 1.582}
+      pose: { x: 6.8, y: -5, z: 0, Z: 1.582}
 
     - type: "waypoint"
       id: "navigation2"
@@ -141,6 +141,10 @@ composition:
     - type: "waypoint"
       id: "navigation3"
       pose: { x: 5.39, y: 0, z: 0, Z: 3.1415 }
+
+    - type: "waypoint"
+      id: "navigation4"
+      pose: { x: 4.6, y: 0, z: 0, Z: 0 }
 
 # # # RIPS      # # #
     - type: "waypoint"

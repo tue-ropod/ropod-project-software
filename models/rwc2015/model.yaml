@@ -185,3 +185,20 @@ composition:
                 min: { x: -2.375, y: -3.775, z: 0 }
                 max: { x:  2.375, y:  3.775, z: 0 }
 
+# - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
+
+    - type: "waypoint"
+      id: "person_rec_learning"
+      pose: { x: 7.335, y: 6.795, z: 0, rz: -1.555}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_1"
+      pose: { x: 7.696, y: -4.840, z: 0, rz: 1.582}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_2"
+      pose: { x: 9.191, y: -4.154, z: 0, rz: 2.052}
+
+    - type: "waypoint"
+      id: "person_rec_living_room_3"
+      pose: { x: 6.690, y: -4.448, z: 0, rz: 1.222}

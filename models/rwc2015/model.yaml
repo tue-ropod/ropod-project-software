@@ -94,44 +94,58 @@ composition:
 
 ##### Waypoints #####
 # # # General   # # #
+
     - type: "waypoint"
-      id: "initial_pose_door_A"
+      id: "initial_pose"
       pose: {x: 0, y: 0, z: 0, Z: 0}
     - type: "waypoint"
       id: "initial_pose_door_B"
+      pose: {x: 0, y: 0, z: 0, Z: 0}
+    - type: "waypoint"
+      id: "initial_pose_door_A"
       pose: { x: 0, y: -6.15, z: 0, rz: 0.0 }
     - type: "waypoint"
-      id: "exit_door_A1"
+      id: "exit_door_B1"
       pose: { x: -1.0, y: 0, z: 0, rz: 3.1415 }
     - type: "waypoint"
-      id: "exit_door_A2"
+      id: "exit_door_B2"
       pose: { x: -2.0, y: 0, z: 0, rz: 3.1415 }
     - type: "waypoint"
-      id: "exit_door_A3"
+      id: "exit_door_B3"
       pose: { x: 1.0, y: 0, z: 0, rz: 3.1415 }
     - type: "waypoint"
-      id: "exit_door_B1"
+      id: "exit_door_A1"
       pose: { x: -1.0, y: -6.15, z: 0, rz: 3.1415 }
     - type: "waypoint"
-      id: "exit_door_B2"
+      id: "exit_door_A2"
       pose: { x: -2.0, y: -6.15, z: 0, rz: 3.1415 }
     - type: "waypoint"
-      id: "exit_door_B3"
+      id: "exit_door_A3"
       pose: { x: 1.0, y: -6.15, z: 0, rz: 3.1415 }
     - type: "waypoint"
-      id: "entry_point_A"
+      id: "entry_point_B"
       pose: { x: 1.0, y: 0, z: 0, rz: 0 }
     - type: "waypoint"
-      id: "entry_point_B"
+      id: "entry_point_A"
       pose: { x: 1.0, y: -6.15, z: 0, rz: 0 }
 
 # # # RIPS      # # #
     - type: "waypoint"
-      id: "rips1"
-      pose: { x: 8.0, y: -1.5, z: 0, rz: -1.57 }
-    - type: "waypoint"
       id: "rips2"
-      pose: { x: 8.0, y: -3.5, z: 0, rz: -1.57 }
+      pose: { x: 8.0, y: -1.5, z: 0, rz: 1.57 }
+    - type: "waypoint"
+      id: "rips1"
+      pose: { x: 8.0, y: -3.5, z: 0, rz: 1.57 }
+
+##### RoboNurse ####
+    - type: "waypoint"
+      id: "bookcase_waypoint"
+      pose: { x: 2.285, y: -8.014, z: 0, rz: 0 }
+
+# - - - - - - CHALLENGE GPSR - - - - - - - - - -
+    - type: "waypoint"
+      id: "gpsr_meeting_point"
+      pose: { x: 2.107, y: 0.488, z: 0, rz: -1.55}
 
 ##### ROOMS #####
     - type: "room"

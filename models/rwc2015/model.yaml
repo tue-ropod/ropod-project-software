@@ -91,6 +91,36 @@ composition:
           x: 5.15      # 5.35 - 0.05 (meas) - 0.3/2
           y: -1.375    # -1.25 - 0.05 (meas) - 0.15/2
           Z: 0.0
+    - type: "rwc2015/plant_hallway"
+      id: "plant_hallway"
+      pose:
+          x: 5.05      # 5.35 - 0.3 (meas)
+          y: -2.775    # -2.425 - 0.35 (meas)
+          Z: 0.0
+    - type: "rwc2015/plant_bedroom_low"
+      id: "plant_bedroom_low"
+      pose:
+          x: 5.7      # 5.4 + 0.3 (meas)
+          y: -9.65    # -9.95 + 0.3 (meas)
+          Z: 0.0
+    - type: "rwc2015/plant_bedroom_high"
+      id: "plant_bedroom_high"
+      pose:
+          x: 5.7      # 5.4 + 0.3 (meas)
+          y: -5.0    # -4.75 + 0.25 (meas)
+          Z: 0.0
+    - type: "rwc2015/plant_livingroom_low"
+      id: "plant_livingroom_low"
+      pose:
+          x: 11.125      # 11.625 -0.5 (meas)
+          y: -5.55    # -6.05 + 0.5 (meas)
+          Z: 0.0
+    - type: "rwc2015/plant_livingroom_high"
+      id: "plant_livingroom_high"
+      pose:
+          x: 5.75      # 5.4 + 0.35 (meas)
+          y: 2.1    # 2.45 -0.3 (meas)
+          Z: 0.0
 
 ##### Waypoints #####
 # # # General   # # #

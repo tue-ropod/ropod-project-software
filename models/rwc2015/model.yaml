@@ -217,8 +217,8 @@ composition:
         - name: in
           shape:
             - box:
-                min: { x:  2.8, y:  3.925, z: 0 }
-                max: { x: -2.8, y: -3.925, z: 0 }
+                min: { x: -2.8, y: -3.925, z: 0 }
+                max: { x:  2.8, y:  3.925, z: 0 }
     - type: "room"
       id: "bedroom"
       pose: { x: 8.5, y: -7.825, z: 0 }

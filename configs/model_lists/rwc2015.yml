@@ -11,6 +11,7 @@ models:
     - name: chocolates
     - name: gram_soup
     - name: orange_juice
+    - name: pear
     - name: toilet_paper
     - name: beer
     - name: cloth

@@ -6,6 +6,8 @@ color:
     green: 0.9
     blue: 0.9
 areas:
+  - name: near
+    offset: 0.5
   - name: in_front_of
     shape:
       - box:

@@ -182,7 +182,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             entity_viz = &it->second;
 
         // HACK!: Check if this is a human
-        if (info.color.a == 1 && info.color.r == 2 && info.color.g == 3 && info.color.b == 4)
+        if (info.color.a == 1 && info.color.r == 2 && info.color.g == 3 && (info.color.b == 4 || info.color.b == 5))
         {
             // This is a human
             marker_msg.markers.push_back(visualization_msgs::Marker());
@@ -195,7 +195,15 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             m.type = visualization_msgs::Marker::CYLINDER;
 
             m.color.a = 1.0;
-            m.color.r = 0.2; m.color.g = 0.7; m.color.b = 1.0;
+
+            if (info.color.b == 4)
+            {
+                m.color.r = 0.2; m.color.g = 0.7; m.color.b = 1.0;  // human
+            }
+            else
+            {
+                m.color.r = 1.0; m.color.g = 0.7; m.color.b = 0.2;  // possible human (based on laser)
+            }
 
             m.pose = info.pose;
             m.pose.position.z = .5;

@@ -91,7 +91,11 @@ void GUIServerPlugin::entityToMsg(const ed::EntityConstPtr& e, ed_gui_server::En
         msg.color.a = 1;
         msg.color.r = 2;
         msg.color.g = 3;
-        msg.color.b = 4;
+
+        if (e->type() == "human")
+            msg.color.b = 4;  // human
+        else
+            msg.color.b = 5;  // possible human (based on laser)
     }
 }
 

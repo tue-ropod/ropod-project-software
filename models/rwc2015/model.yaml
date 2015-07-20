@@ -19,8 +19,8 @@ composition:
       id: "bookcase"
       pose:
           x: 0.925    # 0.625 + 0.6/2
-          y: -7.965   # -9.995 + 1.09 (meas) + 0.05 - 1.69/2 (ARENA B)
-          # y: -4.74    # -2.425 - 1.42 (meas) - 0.05 - 1.69/2 (ARENA B)
+          # y: -7.965   # -9.995 + 1.09 (meas) + 0.05 - 1.69/2 (ARENA B)
+          y: -4.74    # -2.425 - 1.42 (meas) - 0.05 - 1.69/2 (ARENA A)
     # - type: "rwc2015/table"
     #   id: "hallwaytable"
     #   pose:

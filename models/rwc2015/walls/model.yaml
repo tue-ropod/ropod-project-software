@@ -1,6 +1,7 @@
 type: walls
 shape:
-    path: shape/heightmap.pgm
+    # path: shape/heightmap.pgm
+    path: shape/heightmap_arenaa.pgm
     blockheight: 2.48
     resolution: 0.025000
     origin_x: -17.000000

@@ -9,13 +9,24 @@ composition:
       pose:
           x: 0
           y: 0
-    - type: "rwc2015/cabinet"
+    # - type: "rwc2015/cabinet"
+    #   id: "bookcase"
+    #   pose:
+    #       x: 0.925    # 0.625 + 0.6/2
+    #       y: -7.965   # -9.995 + 1.09 (meas) + 0.05 - 1.69/2 (ARENA B)
+    #       # y: -4.74    # -2.425 - 1.42 (meas) - 0.05 - 1.69/2 (ARENA B)
+    - type: "rwc2015/bookcase"
       id: "bookcase"
       pose:
           x: 0.925    # 0.625 + 0.6/2
           y: -7.965   # -9.995 + 1.09 (meas) + 0.05 - 1.69/2 (ARENA B)
           # y: -4.74    # -2.425 - 1.42 (meas) - 0.05 - 1.69/2 (ARENA B)
-    - type: "rwc2015/table"
+    # - type: "rwc2015/table"
+    #   id: "hallwaytable"
+    #   pose:
+    #       x: 3.12     # 5.35 - 1.88 (meas) - 0.7/2
+    #       y: -5.25    # -4.75 - 1.2/2
+    - type: "rwc2015/hallwaytable"
       id: "hallwaytable"
       pose:
           x: 3.12     # 5.35 - 1.88 (meas) - 0.7/2
@@ -40,41 +51,81 @@ composition:
       pose:
           x: 10.535     # 11.625 - 2.18/2
           y: -8.15      # -9.95 + 0.58 (meas) + 0.47 + 1.5/2
-    - type: "rwc2015/small_table"
+    # - type: "rwc2015/small_table"
+    #   id: "desk"
+    #   pose:
+    #       x: 6.875      # 5.4 + 0.925 (meas) + 1.1/2
+    #       y: -9.675    # -9.95 + 0.55/2
+    #       Z: 1.571
+    - type: "rwc2015/desk"
       id: "desk"
       pose:
           x: 6.875      # 5.4 + 0.925 (meas) + 1.1/2
           y: -9.675    # -9.95 + 0.55/2
           Z: 1.571
-    - type: "rwc2015/small_table"
+    # - type: "rwc2015/small_table"
+    #   id: "kitchencounter"
+    #   pose:
+    #       x: 2.555    # 0.625 + 1.38 (meas) + 1.1/2
+    #       y: 2.175    # 2.45 - 0.55/2
+    #       Z: -1.571
+    - type: "rwc2015/kitchencounter"
       id: "kitchencounter"
       pose:
           x: 2.555    # 0.625 + 1.38 (meas) + 1.1/2
           y: 2.175    # 2.45 - 0.55/2
           Z: -1.571
-    - type: "rwc2015/cupboard"
+    # - type: "rwc2015/cupboard" # CUPBOARD HAS EEN UPDATED, do not uncomment 
+    #   id: "bar"
+    #   pose:
+    #       x: 5.57     # 5.4 + 0.34/2
+    #       y: -2.315   # -0.85 - 0.72 (meas) - 1.49/2
+    #       Z: 3.1415
+    - type: "rwc2015/bar"
       id: "bar"
       pose:
           x: 5.57     # 5.4 + 0.34/2
           y: -2.315   # -0.85 - 0.72 (meas) - 1.49/2
           Z: 3.1415
-    - type: "rwc2015/couch"
+    # - type: "rwc2015/couch"
+    #   id: "sofa"
+    #   pose:
+    #       x: 11.265     # 11.625 - 0.72/2
+    #       y: -2.48      # -6.05 + 1.77 (meas) + 3.6/2
+    - type: "rwc2015/sofa"
       id: "sofa"
       pose:
           x: 11.265     # 11.625 - 0.72/2
           y: -2.48      # -6.05 + 1.77 (meas) + 3.6/2
-    - type: "rwc2015/couch_table"
+    # - type: "rwc2015/couch_table"
+    #   id: "couchtable"
+    #   pose:
+    #       x: 10.135     # 11.625 - 0.72 - 0.47 (meas) - 0.6/2
+    #       y: -2.48      # -6.05 + 1.77 (meas) + 3.6/2
+    - type: "rwc2015/couchtable"
       id: "couchtable"
       pose:
           x: 10.135     # 11.625 - 0.72 - 0.47 (meas) - 0.6/2
           y: -2.48      # -6.05 + 1.77 (meas) + 3.6/2
-    - type: "rwc2015/large_table"
+    # - type: "rwc2015/large_table"
+    #   id: "dinnertable"
+    #   pose:
+    #       x: 8.185      # 5.4 + 1.87 (meas) + 1.83/2
+    #       y: 0.6825     # 2.45 - 1.31 (meas) - 0.915/2
+    #       Z: 1.571
+    - type: "rwc2015/dinnertable"
       id: "dinnertable"
       pose:
           x: 8.185      # 5.4 + 1.87 (meas) + 1.83/2
           y: 0.6825     # 2.45 - 1.31 (meas) - 0.915/2
           Z: 1.571
-    - type: "rwc2015/kitchen_counter"
+    # - type: "rwc2015/kitchen_counter"
+    #   id: "cupboard"
+    #   pose: 
+    #       x: 3.875      # 5.35 - 0.73 (meas) - 1.49/2
+    #       y: 2.28       # 2.45 - 0.34/2
+    #       Z: 1.571
+    - type: "rwc2015/cupboard"
       id: "cupboard"
       pose: 
           x: 3.875      # 5.35 - 0.73 (meas) - 1.49/2
@@ -86,7 +137,7 @@ composition:
           x: 1.1425    # 0.626 + 0.27 + 0.495/2
           y: 2.1025    # 2.45 - 0.545/2 -0.075 (meas)
           Z: 1.571
-    - type: "rwc2015/thrashbin"
+    - type: "rwc2015/trashbin"
       id: "trashbin"
       pose:
           x: 5.15      # 5.35 - 0.05 (meas) - 0.3/2

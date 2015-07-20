@@ -19,9 +19,9 @@
     </box>
     
     <!-- Back part -->
-    <box>
+    <!--<box>
         <xyz>0.29 0 0.605</xyz>
         <size>0.17 3.6 0.48</size>
-    </box> 
+    </box>--> 
 </model>
  

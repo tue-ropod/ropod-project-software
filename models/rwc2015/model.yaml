@@ -242,7 +242,7 @@ composition:
 ##### RoboNurse ####
     - type: "waypoint"
       id: "bookcase_waypoint"
-      pose: { x: 2.285, y: -8.014, z: 0, rz: 0 }
+      pose: { x: 2.285, y: -8.414, z: 0, rz: 0 }
     - type: "waypoint"
       id: "dinnertable_waypoint"
       pose: { x: 6.271, y:  0.613, z: 0, rz: 0 }

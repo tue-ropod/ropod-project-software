@@ -252,6 +252,9 @@ composition:
     - type: "waypoint"
       id: "dinnertable_waypoint"
       pose: { x: 6.271, y:  0.613, z: 0, rz: 0 }
+    - type: "waypoint"
+      id: "granny_waypoint"
+      pose: { x: 3.062, y: -5.214, z: 0, rz: -1.57}
 
 # - - - - - - CHALLENGE GPSR - - - - - - - - - -
     - type: "waypoint"

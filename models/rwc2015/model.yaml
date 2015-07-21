@@ -30,7 +30,8 @@ composition:
       id: "hallwaytable"
       pose:
           x: 3.12     # 5.35 - 1.88 (meas) - 0.7/2
-          y: -5.25    # -4.75 - 1.2/2
+          # y: -5.25    # -4.75 - 1.2/2 # Arena B
+          y: -6.725    # -2.425 - 3.78 (meas) - 1.2/2 # Arena A
     - type: "rwc2015/kitchentable"
       id: "kitchentable"
       pose:

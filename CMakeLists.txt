@@ -5,56 +5,43 @@ find_package(catkin REQUIRED COMPONENTS
     ed
     ed_sensor_integration
     message_generation
+    rgbd
+    tf
     urdf
+    visualization_msgs
 )
 
-# find_package(Boost REQUIRED COMPONENTS system program_options)
-# find_package(PCL REQUIRED)
-# find_package(OpenCV REQUIRED)
+find_package(Boost REQUIRED COMPONENTS filesystem)
 
-# ------------------------------------------------------------------------------------------------
-#                                     ROS MESSAGES AND SERVICES
-# ------------------------------------------------------------------------------------------------
-
-# Add messages
 add_message_files(
     FILES
-    Mesh.msg
+    Color.msg
     EntityInfo.msg
     EntityInfos.msg
+    Mesh.msg
     Polygon.msg
-	Color.msg
 )
 
-# Add services
 add_service_files(
    FILES
+    GetEntityInfo.srv
+    Interact.srv
     QueryEntities.srv
     QueryMeshes.srv
-    Interact.srv
-	GetEntityInfo.srv
 )
 
-# Generate added messages and services with any dependencies listed here
 generate_messages(
    DEPENDENCIES
    geometry_msgs
 )
 
-# ------------------------------------------------------------------------------------------------
-#                                          CATKIN EXPORT
-# ------------------------------------------------------------------------------------------------
-
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES bla
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
+  # INCLUDE_DIRS include
+  # LIBRARIES bla
+  # CATKIN_DEPENDS other_catkin_pkg
+  # DEPENDS system_lib
+  CATKIN_DEPENDS ed message_runtime rgbd tf urdf visualization_msgs
 )
-
-# ------------------------------------------------------------------------------------------------
-#                                              BUILD
-# ------------------------------------------------------------------------------------------------
 
 include_directories(
     ${catkin_INCLUDE_DIRS}
@@ -65,14 +52,8 @@ add_library(ed_gui_server_plugin
     src/robot.cpp
 )
 target_link_libraries(ed_gui_server_plugin ${catkin_LIBRARIES})
-add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_generate_messages_cpp)
-
-# add_executable(exec_name
-#     src/source_file1.cpp
-#     ...
-# )
-# target_link_libraries(exec_name ${catkin_LIBRARIES})
+add_dependencies(ed_gui_server_plugin ${catkin_EXPORTED_TARGETS})
 
 add_executable(ed_rviz_publisher tools/rviz_publisher.cpp)
 target_link_libraries(ed_rviz_publisher ${catkin_LIBRARIES})
-
+add_dependencies(ed_rviz_publisher ${catkin_EXPORTED_TARGETS})

@@ -3,7 +3,6 @@ project(ed_gui_server)
 
 find_package(catkin REQUIRED COMPONENTS
     ed
-    ed_sensor_integration
     message_generation
     rgbd
     tf
@@ -37,10 +36,10 @@ generate_messages(
 
 catkin_package(
   # INCLUDE_DIRS include
-  # LIBRARIES bla
-  # CATKIN_DEPENDS other_catkin_pkg
-  # DEPENDS system_lib
-  CATKIN_DEPENDS ed message_runtime rgbd tf urdf visualization_msgs
+ # LIBRARIES bla
+ # CATKIN_DEPENDS other_catkin_pkg
+ # DEPENDS system_lib
+ CATKIN_DEPENDS ed message_runtime rgbd tf urdf visualization_msgs
 )
 
 include_directories(

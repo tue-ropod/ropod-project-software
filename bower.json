@@ -1,7 +1,10 @@
 {
   "name": "ed-gui-server-git",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "three.js": "threejs#*",
+    "robot-api": "~0.2.2"
+  },
   "devDependencies": {
     "chai": "~3.3.0",
     "mocha": "~2.3.3"

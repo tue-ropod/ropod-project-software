@@ -34,7 +34,7 @@ var rosUrl = 'ws://' + ros_host + ':9090';
 ros = new ROSLIB.Ros({ url : rosUrl });
 
 // Construct client for requesting meshes
-clientED = new ROSLIB.Service({
+var clientED = new ROSLIB.Service({
     ros : ros,
     name : 'ed/query',
     serviceType : 'ed/Query'
@@ -50,7 +50,7 @@ var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-// Lights           
+// Lights
 scene.add( new THREE.AmbientLight( 0x404040 ) );
 var light = new THREE.DirectionalLight( 0xffffff );
 light.position.set( 3, 12, 8 );
@@ -137,12 +137,12 @@ clientED.callService(req, function(result) {
             // Construct mesh
             for(var j = 0; j < e.mesh.vertices.length; j++) {
                 var v = e.mesh.vertices[j];
-                geometry.vertices.push(new THREE.Vector3(v.x, v.y, v.z));            
+                geometry.vertices.push(new THREE.Vector3(v.x, v.y, v.z));
             }
 
             for(var j = 0; j < e.mesh.triangles.length; j++) {
                 var t = e.mesh.triangles[j];
-                geometry.faces.push( new THREE.Face3(t.i1, t.i2, t.i3));            
+                geometry.faces.push( new THREE.Face3(t.i1, t.i2, t.i3));
             }
 
             // Compute normals

@@ -332,7 +332,13 @@ composition:
       
     - type: "waypoint"
       id: "explore10"
-      pose: { x: 0.5, y: 4.5, z: 0, rz: -1.57}                                                
+      pose: { x: 0.5, y: 4.5, z: 0, rz: -1.57}
+
+# - - - - - - CHALLENGE TEST - - - - - - - - - -
+
+    - type: "waypoint"
+      id: "wp_test_nav1"
+      pose: { x: 2.080, y: 1.554, z: 0, rz: -1.540}
 
 # - - - - - - ROOMS - - - - - - -
 

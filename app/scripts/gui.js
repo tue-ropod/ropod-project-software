@@ -1,3 +1,5 @@
+/*global THREE, console, ROSLIB */
+
 var ros;
 var entities = []
 
@@ -15,19 +17,19 @@ var COLORS = [0x999999, 0x999966, 0x999933,
 
 // --------
 
-var stringToColor = function(str) {
+var stringToColor = function (str) {
   for (var i = 0, hash = 5381; i < str.length; hash = ((hash << 5) + hash) + str.charCodeAt(i++)) ;
 
   if (hash < 0)
     hash = -hash;
 
-  var i = hash % COLORS.length;
+  i = hash % COLORS.length;
   return COLORS[i];
 }
 
 // --------
 
-var ros_host = "localhost";
+var ros_host = 'localhost';
 var rosUrl = 'ws://' + ros_host + ':9090';
 ros = new ROSLIB.Ros({
   url: rosUrl
@@ -86,7 +88,7 @@ cameraControls.enableZoom = true;
 cameraControls.rotateSpeed = 0.1;
 
 
-var render = function() {
+var render = function () {
   var delta = clock.getDelta();
 
   requestAnimationFrame(render);
@@ -104,7 +106,7 @@ var req = new ROSLIB.ServiceRequest({
   // id: selectedEntity.id
 });
 
-clientED.callService(req, function(result) {
+clientED.callService(req, function (result) {
   console.time('JSON.parse');
   var update = JSON.parse(result.human_readable);
   console.timeEnd('JSON.parse');

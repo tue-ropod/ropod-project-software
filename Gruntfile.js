@@ -1,4 +1,4 @@
-// Generated on 2015-10-06 using
+// Generated on 2015-10-07 using
 // generator-webapp 1.1.0
 'use strict';
 
@@ -36,9 +36,9 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-      babel: {
+      js: {
         files: ['<%= config.app %>/scripts/{,*/}*.js'],
-        tasks: ['babel:dist']
+        tasks: ['eslint']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
             '<%= config.app %>/{,*/}*.html',
             '.tmp/styles/{,*/}*.css',
             '<%= config.app %>/images/{,*/}*',
-            '.tmp/scripts/{,*/}*.js'
+            '<%= config.app %>/scripts/{,*/}*.js'
           ],
           port: 9000,
           server: {
@@ -97,20 +97,13 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
 
-    // Compiles ES6 with Babel
-    babel: {
-      options: {
-        sourceMap: true
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.app %>/scripts',
-          src: '{,*/}*.js',
-          dest: '.tmp/scripts',
-          ext: '.js'
-        }]
-      }
+    // Make sure code styles are up to par and there are no obvious mistakes
+    eslint: {
+      target: [
+        'Gruntfile.js',
+        '<%= config.app %>/scripts/{,*/}*.js',
+        '!<%= config.app %>/scripts/vendor/*'
+      ]
     },
 
     postcss: {
@@ -277,11 +270,9 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
-        'babel:dist',
         'copy:styles'
       ],
       dist: [
-        'babel',
         'copy:styles',
         'imagemin',
         'svgmin'
@@ -327,6 +318,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'newer:eslint',
     'build'
   ]);
 };

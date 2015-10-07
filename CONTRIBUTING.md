@@ -14,8 +14,8 @@ Build Setup
    * `sudo -H npm install -g grunt-cli bower`
  3. Install other dependencies
    * `sudo apt-get install libgif-dev`
- 4. For each gui, install their dependencies
-   * `roscd tue_mobile_ui/(FOLDER)`
+ 4. For the gui, install its dependencies
+   * `roscd ed_gui_server/html`
    * `npm install`
    * `bower install`
 
@@ -25,9 +25,9 @@ Before proceeding, please confirm you have installed the dependencies above.
 
 To run the build tasks:
 
- 1. `roscd tue_mobile_ui/(FOLDER)/`
+ 1. `roscd ed_gui_server/html`
  2. `grunt build`
 
-`grunt build` will build the app in the build directory. It will also run the linter and test cases.
+`grunt build` will build the app in the dist/ directory. It will also run the linter and test cases.
 
-`grunt serve` will watch for any changes to any of the src/ files and automatically build the files. This is ideal for those developing as you should only have to run `grunt serve` once.
+`grunt serve` will watch for any changes to any of the app/ files and automatically build the files. This is ideal for those developing as you should only have to run `grunt serve` once.

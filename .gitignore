@@ -1,4 +1,3 @@
-node_modules
-dist
-.tmp
-bower_components
+html/node_modules/
+html/app/bower_components/
+html/.tmp

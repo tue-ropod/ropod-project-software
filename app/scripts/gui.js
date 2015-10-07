@@ -1,5 +1,3 @@
-console.log("BLAAA")
-
 var ros;
 var entities = []
 
@@ -105,9 +103,11 @@ var req = new ROSLIB.ServiceRequest({
 });
 
 clientED.callService(req, function(result) {
-    update = JSON.parse(result.human_readable);
-    console.log(update)
+    console.time('JSON.parse');
+    var update = JSON.parse(result.human_readable);
+    console.timeEnd('JSON.parse');
 
+    console.time('generate meshes');
     for(var i = 0; i < update.entities.length; i++) {
         var e = update.entities[i];
 
@@ -157,6 +157,7 @@ clientED.callService(req, function(result) {
             obj.quaternion.set(e.pose.qx, e.pose.qy, e.pose.qz, e.pose.qw);
         }
     }
+    console.timeEnd('generate meshes');
 
     render();
 

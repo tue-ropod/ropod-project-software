@@ -1,4 +1,17 @@
-The ed_gui_server already runs out-of-the-box. When you've started ED you should be able to listen to
+# ED GUI server [![Build Status](https://travis-ci.org/tue-robotics/ed_gui_server.svg?branch=master)](https://travis-ci.org/tue-robotics/ed_gui_server)
+The ed_gui_server already runs out-of-the-box when you've started ED.
+
+## Web GUI
+open `html/dist/index.html` in your browser to use the GUI
+
+## Web GUI developement
+Pre-built files can be found in each `dist` folder and the source files can be found in the `app` folder.
+
+See the [documentation for contributors](CONTRIBUTING.md).
+
+## ROS API
+
+ When you've started ED you should be able to listen to
 
     /amigo/ed/gui/entities
 

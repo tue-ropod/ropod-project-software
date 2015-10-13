@@ -29,7 +29,7 @@ var stringToColor = function (str) {
 
 // --------
 
-var ros_host = 'localhost';
+var ros_host = location.hostname || 'localhost';
 var rosUrl = 'ws://' + ros_host + ':9090';
 ros = new ROSLIB.Ros({
   url: rosUrl
@@ -67,6 +67,7 @@ if (webglAvailable()) {
   renderer = new THREE.CanvasRenderer();
 }
 
+renderer.setClearColor( 0xf0f0f0 );
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 

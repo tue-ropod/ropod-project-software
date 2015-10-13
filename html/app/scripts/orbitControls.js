@@ -206,8 +206,6 @@
       var lastPosition = new THREE.Vector3();
       var lastQuaternion = new THREE.Quaternion();
 
-      console.log(object.up)
-
       return function () {
 
         var position = this.object.position;

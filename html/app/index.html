@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>ed_gui_server</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -27,10 +27,13 @@
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/roslib/build/roslib.js"></script>
     <script src="bower_components/robot-api/dist/bundle.js"></script>
+    <script src="bower_components/stats.js/build/stats.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="scripts/renderers/CanvasRenderer.js"></script>
+    <script src="scripts/renderers/Projector.js"></script>
     <script src="scripts/orbitControls.js"></script>
     <script src="scripts/gui.js"></script>
     <!-- endbuild -->

@@ -1,7 +1,4 @@
-/*global THREE, console, ROSLIB */
-
-var ros;
-var entities = []
+/*global THREE, API */
 
 var cameraControls;
 
@@ -26,21 +23,6 @@ var stringToColor = function (str) {
   i = hash % COLORS.length;
   return COLORS[i];
 }
-
-// --------
-
-var ros_host = location.hostname || 'localhost';
-var rosUrl = 'ws://' + ros_host + ':9090';
-ros = new ROSLIB.Ros({
-  url: rosUrl
-});
-
-// Construct client for requesting meshes
-var clientED = new ROSLIB.Service({
-  ros: ros,
-  name: 'ed/query',
-  serviceType: 'ed/Query'
-});
 
 // --------
 
@@ -115,77 +97,51 @@ var render = function () {
   cameraControls.update(delta);
 
   renderer.render(scene, camera);
-// stats.update();
+  // stats.update();
 };
 
 // ---------
 
-// Send Entity Info request
-var req = new ROSLIB.ServiceRequest({
-  // id: selectedEntity.id
-});
+var r = new API.Robot();
+r.connect();
 
-clientED.callService(req, function (result) {
-  console.time('JSON.parse');
-  var update = JSON.parse(result.human_readable);
-  console.timeEnd('JSON.parse');
+r.ed.query(function (entities) {
 
-  console.time('generate meshes');
-  for (var i = 0; i < update.entities.length; i++) {
-    var e = update.entities[i];
+  console.time('create BufferGeometry');
+  entities.forEach(function (entity, id) {
 
-    var obj = entities[e.idx];
-
-    if (!obj) {
-      // Does not yet exist
-
-      if (('mesh' in e) && ('pose' in e)) {
-        var material = new THREE.MeshPhongMaterial({
-          shading: THREE.SmoothShading
-        })
-        material.color.setHex(stringToColor(e.id));
-
-        var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
-
-        obj = new THREE.Mesh(geometry, material);
-
-        scene.add(obj);
-        entities[e.idx] = obj;
-      } else {
-        continue;
-      }
+    if (!entity.vertices) {
+      return;
     }
 
-    if ('mesh' in e) {
-      var geometry = new THREE.Geometry();
+    // create the geometry
+    var geometry = new THREE.BufferGeometry();
 
-      // Construct mesh
-      for (var j = 0; j < e.mesh.vertices.length; j++) {
-        var v = e.mesh.vertices[j];
-        geometry.vertices.push(new THREE.Vector3(v.x, v.y, v.z));
-      }
+    var vertices = Float32Array.from(entity.vertices);
+    geometry.addAttribute('position', new THREE.BufferAttribute(vertices, 3));
 
-      for (var j = 0; j < e.mesh.triangles.length; j++) {
-        var t = e.mesh.triangles[j];
-        geometry.faces.push(new THREE.Face3(t.i1, t.i2, t.i3));
-      }
+    var indices = Uint32Array.from(entity.faces);
+    geometry.setIndex( new THREE.BufferAttribute(indices, 3));
 
-      // Compute normals
-      geometry.computeFaceNormals();
-      // geometry.computeBoundingSphere();
+    geometry.computeVertexNormals();
 
-      obj.geometry = geometry;
+    // create the material
+    var material = new THREE.MeshLambertMaterial({
+      color: stringToColor(id)
+    });
+
+    var obj = new THREE.Mesh(geometry, material);
+
+    if (entity.position) {
+      obj.position.fromArray(entity.position);
+    }
+    if (entity.quaternion) {
+      obj.quaternion.fromArray(entity.quaternion);
     }
 
-    if ('pose' in e) {
-      obj.position.set(e.pose.x, e.pose.y, e.pose.z);
-      obj.quaternion.set(e.pose.qx, e.pose.qy, e.pose.qz, e.pose.qw);
-    }
-  }
-  console.timeEnd('generate meshes');
+    scene.add(obj);
+  });
+  console.timeEnd('create BufferGeometry');
 
   render();
-
 });
-
-// ---------

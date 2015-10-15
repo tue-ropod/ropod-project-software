@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "three.js": "threejs#*",
-    "robot-api": "~0.2.2",
+    "robot-api": "~0.3.0",
     "stats.js": "*"
   }
 }

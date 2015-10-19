@@ -104,44 +104,46 @@ var render = function () {
 
 var r = new API.Robot();
 r.connect();
+queryEdOnce();
 
-r.ed.query(function (entities) {
+function queryEdOnce(callback) {
+  r.ed.query(function (entities) {
+    console.time('ed.update.geometries');
+    entities.forEach(function (entity, id) {
 
-  console.time('create BufferGeometry');
-  entities.forEach(function (entity, id) {
+      if (!entity.vertices) {
+        return;
+      }
 
-    if (!entity.vertices) {
-      return;
-    }
+      // create the geometry
+      var geometry = new THREE.BufferGeometry();
 
-    // create the geometry
-    var geometry = new THREE.BufferGeometry();
+      var vertices = Float32Array.from(entity.vertices);
+      geometry.addAttribute('position', new THREE.BufferAttribute(vertices, 3));
 
-    var vertices = Float32Array.from(entity.vertices);
-    geometry.addAttribute('position', new THREE.BufferAttribute(vertices, 3));
+      var indices = Uint32Array.from(entity.faces);
+      geometry.setIndex( new THREE.BufferAttribute(indices, 3));
 
-    var indices = Uint32Array.from(entity.faces);
-    geometry.setIndex( new THREE.BufferAttribute(indices, 3));
+      geometry.computeVertexNormals();
 
-    geometry.computeVertexNormals();
+      // create the material
+      var material = new THREE.MeshLambertMaterial({
+        color: stringToColor(id)
+      });
 
-    // create the material
-    var material = new THREE.MeshLambertMaterial({
-      color: stringToColor(id)
+      var obj = new THREE.Mesh(geometry, material);
+
+      if (entity.position) {
+        obj.position.fromArray(entity.position);
+      }
+      if (entity.quaternion) {
+        obj.quaternion.fromArray(entity.quaternion);
+      }
+
+      scene.add(obj);
     });
+    console.timeEnd('ed.update.geometries');
 
-    var obj = new THREE.Mesh(geometry, material);
-
-    if (entity.position) {
-      obj.position.fromArray(entity.position);
-    }
-    if (entity.quaternion) {
-      obj.quaternion.fromArray(entity.quaternion);
-    }
-
-    scene.add(obj);
+    render();
   });
-  console.timeEnd('create BufferGeometry');
-
-  render();
-});
+}

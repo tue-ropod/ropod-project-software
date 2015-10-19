@@ -104,46 +104,48 @@ var render = function () {
 
 var r = new API.Robot();
 r.connect();
+
+r.ed.watch({
+  add: function (obj) {
+    // console.log('add', obj);
+    var geometry = new THREE.Geometry();
+
+    for (var i = 0; i < obj.vertices.length; i++) {
+      geometry.vertices.push(
+        (new THREE.Vector3()).fromArray(obj.vertices[i])
+      );
+    }
+
+    for (var j = 0; j < obj.faces.length; j++) {
+      var face = obj.faces[j];
+      geometry.faces.push(new THREE.Face3(face[0], face[1], face[2]));
+    }
+
+    geometry.computeFaceNormals();
+    geometry.computeVertexNormals(true);
+
+    var material = new THREE.MeshLambertMaterial({
+      color: stringToColor(obj.id)
+    });
+
+    var mesh = new THREE.Mesh(geometry, material);
+
+    mesh.position.fromArray(obj.position);
+    mesh.quaternion.fromArray(obj.quaternion);
+
+    scene.add(mesh);
+  },
+  update: function (newObj, oldObj) {
+    console.log('update', newObj, oldObj);
+  },
+  remove: function (obj) {
+    console.log('remove', obj);
+  }
+});
+
 queryEdOnce();
 
+render();
 function queryEdOnce(callback) {
-  r.ed.query(function (entities) {
-    console.time('ed.update.geometries');
-    entities.forEach(function (entity, id) {
-
-      if (!entity.vertices) {
-        return;
-      }
-
-      // create the geometry
-      var geometry = new THREE.BufferGeometry();
-
-      var vertices = Float32Array.from(entity.vertices);
-      geometry.addAttribute('position', new THREE.BufferAttribute(vertices, 3));
-
-      var indices = Uint32Array.from(entity.faces);
-      geometry.setIndex( new THREE.BufferAttribute(indices, 3));
-
-      geometry.computeVertexNormals();
-
-      // create the material
-      var material = new THREE.MeshLambertMaterial({
-        color: stringToColor(id)
-      });
-
-      var obj = new THREE.Mesh(geometry, material);
-
-      if (entity.position) {
-        obj.position.fromArray(entity.position);
-      }
-      if (entity.quaternion) {
-        obj.quaternion.fromArray(entity.quaternion);
-      }
-
-      scene.add(obj);
-    });
-    console.timeEnd('ed.update.geometries');
-
-    render();
-  });
+  r.ed.query(callback);
 }

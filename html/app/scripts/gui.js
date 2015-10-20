@@ -110,16 +110,8 @@ r.ed.watch({
     // console.log('add', obj);
     var geometry = new THREE.Geometry();
 
-    for (var i = 0; i < obj.vertices.length; i++) {
-      geometry.vertices.push(
-        (new THREE.Vector3()).fromArray(obj.vertices[i])
-      );
-    }
-
-    for (var j = 0; j < obj.faces.length; j++) {
-      var face = obj.faces[j];
-      geometry.faces.push(new THREE.Face3(face[0], face[1], face[2]));
-    }
+    convertVertices(obj.vertices, geometry.vertices);
+    convertFaces(obj.faces, geometry.faces);
 
     geometry.computeFaceNormals();
     geometry.computeVertexNormals(true);
@@ -134,12 +126,39 @@ r.ed.watch({
     mesh.quaternion.fromArray(obj.quaternion);
 
     scene.add(mesh);
+    obj.userdata = mesh;
   },
   update: function (newObj, oldObj) {
-    console.log('update', newObj, oldObj);
+    var mesh = newObj.userdata = oldObj.userdata;
+    var geometry = mesh.geometry;
+
+    var vupdate = newObj.vertices !== oldObj.vertices;
+    var fupdate = newObj.faces !== oldObj.faces
+
+    if (vupdate) {
+      console.log('update vertices', newObj, oldObj);
+      geometry.vertices = [];
+      convertVertices(newObj.vertices, geometry.vertices);
+    }
+    if (fupdate) {
+      console.log('update faces', newObj, oldObj);
+      geometry.faces = [];
+      convertFaces(newObj.faces, geometry.faces);
+    }
+
+    if (vupdate || fupdate) {
+      geometry.computeFaceNormals(); // modifies .faces
+      geometry.computeVertexNormals(true); // modifies .normals
+
+      geometry.verticesNeedUpdate = true;
+      geometry.elementsNeedUpdate = true;
+      geometry.normalsNeedUpdate = true;
+    }
   },
   remove: function (obj) {
     console.log('remove', obj);
+    var mesh = obj.userdata;
+    scene.remove(mesh);
   }
 });
 
@@ -148,4 +167,19 @@ queryEdOnce();
 render();
 function queryEdOnce(callback) {
   r.ed.query(callback);
+}
+
+function convertVertices(vertices, threeVertices) {
+  for (var i = 0; i < vertices.length; i++) {
+    threeVertices.push(
+      (new THREE.Vector3()).fromArray(vertices[i])
+    );
+  }
+}
+
+function convertFaces(faces, threeFaces) {
+  for (var j = 0; j < faces.length; j++) {
+    var face = faces[j];
+    threeFaces.push(new THREE.Face3(face[0], face[1], face[2]));
+  }
 }

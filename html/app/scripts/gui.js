@@ -30,28 +30,19 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 var clock = new THREE.Clock();
 
-function webglAvailable() {
-  try {
-    var canvas = document.createElement( 'canvas' );
-    return !!( window.WebGLRenderingContext && (
-      canvas.getContext( 'webgl' ) ||
-      canvas.getContext( 'experimental-webgl' ) )
-    );
-  } catch ( e ) {
-    return false;
-  }
-}
+var canvas = document.getElementById("viewer-canvas")
 
-var renderer;
-if (webglAvailable()) {
-  renderer = new THREE.WebGLRenderer();
-} else {
-  renderer = new THREE.CanvasRenderer();
-}
+var width = canvas.offsetWidth;
+var height = canvas.offsetHeight;
+
+// Set the correct canvas width
+canvas.width = width;
+canvas.height = height;
+
+var renderer = new THREE.WebGLRenderer({ canvas: canvas });
+renderer.setSize(width, height);
 
 renderer.setClearColor( 0xf0f0f0 );
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
 
 // Lights
 scene.add(new THREE.AmbientLight(0x404040));

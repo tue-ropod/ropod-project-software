@@ -4,6 +4,7 @@
   "dependencies": {
     "three.js": "threejs#*",
     "robot-api": "~0.4.0",
+    "bootstrap": "~3.3.5",	
     "stats.js": "*"
   }
 }

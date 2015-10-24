@@ -5,6 +5,7 @@
     <title>ed_gui_server</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -13,100 +14,62 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body class="noselect">
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Environment Descriptor Graphical User Interface</a>
-        </div>
-        <ul class="nav navbar-nav pull-right">
-<!--             <li>
-                <button class="btn navbar-btn" type="button" id="reset-world-model">Reset</button>
-            </li> -->
-        </ul>
-      </div>
-    </div>
+  <body ng-app="EdGuiApp" class="noselect">
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-9 col-md-9 main" id="viewer">
-            <canvas id="viewer-canvas">
-            </canvas>
-        </div>
-        <div id="sidebar" class="col-sm-3 col-md-3 sidebar">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Robot top-kinect view</h3>
-                </div>
-                <div class="panel-body">
-                    <img src="http://assets.thecreatorsproject.com/blog_article_images/images/000/029/233/Screen_Shot_2012-05-30_at_2_21_24_PM_detail_em.jpg?1338404764" alt="..." style="width: 100%">
-                    <button type="button" class="btn btn-default" id="make-snapshot"><span class="glyphicon glyphicon-save"></span></span> Snapshot</button>
-                </div>
-            </div>
-            <ul id="myTab" class="nav nav-tabs">
-               <li class="active"><a href="#action-server" data-toggle="tab">Action Server</a></li>
-               <li><a href="#teleop-base" data-toggle="tab">Teleop base</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane fade in active" id="action-server">
+    <div class="header">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Actions</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="entity-info-affordances-alert">
-                            </div>
-                            <div class="input-group">
-                                <select class="form-control" id="entity-info-affordances">
-                                </select>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" type="button" id="entity-info-affordances-go" onclick='r.actionServer.doAction("omg", "omg  ");'>Go!</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade in" id="teleop-base">
+          <div class="navbar-header">
+            <a ng-controller="ConnectionCtrl" class="navbar-brand" href="#/">{{connection}}</a>
+          </div>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Teleop base</h3>
-                        </div>
-                        <div class="panel-body">
-                            <canvas id="teleop-base-canvas"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
       </div>
     </div>
 
-    <!-- build:js(app) scripts/vendor.js -->
+    <div class="main-view" ng-include="'views/main.html'" ng-controller="MainCtrl">
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/three.js/build/three.js"></script>
-    <script src="bower_components/eventemitter2/lib/eventemitter2.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/console-polyfill/index.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/ngDraggable/ngDraggable.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/eventemitter2/lib/eventemitter2.js"></script>
     <script src="bower_components/roslib/build/roslib.js"></script>
     <script src="bower_components/robot-api/dist/bundle.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/three.js/build/three.js"></script>
     <script src="bower_components/stats.js/build/stats.min.js"></script>
     <!-- endbower -->
-
     <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/orbitControls.js"></script>
-    <script src="scripts/gui.js"></script>
-    <!-- endbuild -->
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/orbitControls.js"></script>
+
+        <script src="scripts/app.js"></script>
+        <script src="scripts/run.js"></script>
+
+        <script src="scripts/services/robot.js"></script>
+
+        <script src="scripts/directives/ngwebgl.js"></script>
+
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/connection.js"></script>
+        <!-- endbuild -->
 
   </body>
 </html>

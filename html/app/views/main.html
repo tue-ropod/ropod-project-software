@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div 
+      class="col-sm-9 col-md-9 main"
+      id="webglContainer" 
+      ng-webgl
+    ></div>
+    <div id="sidebar" class="col-sm-3 col-md-3 sidebar">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Robot top-kinect view</h3>
+        </div>
+        <div class="panel-body">
+          <img src="http://assets.thecreatorsproject.com/blog_article_images/images/000/029/233/Screen_Shot_2012-05-30_at_2_21_24_PM_detail_em.jpg?1338404764" alt="..." style="width: 100%">
+          <button type="button" class="btn btn-default" id="make-snapshot"><span class="glyphicon glyphicon-save"></span></span> Snapshot</button>
+        </div>
+      </div>
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#action-server" data-toggle="tab">Action Server</a></li>
+        <li><a href="#teleop-base" data-toggle="tab">Teleop base</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="action-server">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Actions</h3>
+              </div>
+              <div class="panel-body">
+                <div id="entity-info-affordances-alert">
+                </div>
+                <div class="input-group">
+                  <select class="form-control" id="entity-info-affordances">
+                  </select>
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" id="entity-info-affordances-go" onclick='r.actionServer.doAction("omg", "omg  ");'>Go!</button>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="teleop-base">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Teleop base</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="teleop-base-canvas"></canvas>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

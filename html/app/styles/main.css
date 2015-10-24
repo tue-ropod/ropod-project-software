@@ -61,22 +61,15 @@ body {
 .main {
   bottom: 0;
   position: fixed;
+
+  padding-left: 0px;
+  height: 100%  ;
 }
 
-#viewer {
-  padding: 0px;
-  height: 100%;
-}
-
-#viewer-canvas {
+/*#viewer-canvas {
   height: 100%;
   width: 100%;
-}
-
-#make-snapshot
-{
-  width: 100%;
-}
+}*/
 
 .noselect {
     -webkit-touch-callout: none;

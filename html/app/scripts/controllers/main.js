@@ -5,7 +5,7 @@ angular.module('EdGuiApp')
 
 	$scope.scene = null;
 	$scope.camera = null;
-    $scope.selectedEntity = null;
+    $scope.selectedSceneObjectId = null;
     
 	console.log("querying ed");
 	robot.ed.query();

@@ -1,4 +1,5 @@
 {
+  "name" : "EdGuiApp",
   "private": true,
   "version": "0.0.0",
   "dependencies": {
@@ -12,6 +13,7 @@
     "angular-bootstrap": "~0.13.0",
     "robot-api": "~0.4.0",
     "three.js": "threejs#*",
+    "angular-circular-navigation": "*",
     "stats.js": "*"
   },
   "appPath": "app",

@@ -1,5 +1,7 @@
 'use strict';
 
 angular
-  .module('EdGuiApp', [
+  .module('EdGuiApp', ['angularCircularNavigation'
   ]);
+
+

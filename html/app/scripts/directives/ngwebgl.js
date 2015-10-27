@@ -39,23 +39,6 @@ angular.module('EdGuiApp')
           }
         }
 
-        function getEntityFromSceneObjectId(id) {
-          var e;
-          robot.ed.entities.forEach(function(v, k) {
-            if (v.userdata && v.userdata.id == id)
-              e = v;
-          });
-          return e;
-        }
-
-        $scope.$watch('selectedSceneObjectId', function(newValue, oldValue) {
-          if (newValue)
-          {
-            var entity = getEntityFromSceneObjectId(newValue);
-            console.log(entity);
-          }
-        }, true);
-
         robot.ed.watch({
           add: function (obj) {
             //console.log('add', obj);
@@ -114,7 +97,7 @@ angular.module('EdGuiApp')
         });
       },
       scope: {
-        'selectedSceneObjectId': '='
+        'selectedSceneObject': '&onSelect'
       },
       link: function postLink(scope, element, attrs) {
 
@@ -205,15 +188,8 @@ angular.module('EdGuiApp')
           var intersects = raycaster.intersectObjects( scope.scene.children );
 
           if ( intersects.length > 0 ) {
-
-            scope.$apply(function(){
-              if (scope.selectedSceneObjectId != intersects[0].object.id) {
-                scope.selectedSceneObjectId = intersects[0].object.id;
-              } else {
-                scope.selectedSceneObjectId = null;
-              }
-            });
-  
+            console.log(scope);
+            scope.selectedSceneObject({id:intersects[0].object.id});
           }
 
         };
@@ -256,30 +232,30 @@ angular.module('EdGuiApp')
         // Watches scope
         // -----------------------------------
 
-        scope.$watch('selectedSceneObjectId', function(newValue, oldValue) {
-            // Highlight the entity in the scene
-            if (newValue != oldValue && newValue)
-            {
-              if (oldValue) {
-                var oldObj = scope.scene.getObjectById(oldValue);
+        // scope.$watch('selectedSceneObjectId', function(newValue, oldValue) {
+        //     // Highlight the entity in the scene
+        //     if (newValue != oldValue && newValue)
+        //     {
+        //       if (oldValue) {
+        //         var oldObj = scope.scene.getObjectById(oldValue);
 
-                // Restore the default material
-                oldObj.material = oldObj.default_material;
-              }
-              var newObj = scope.scene.getObjectById(newValue);
+        //         // Restore the default material
+        //         oldObj.material = oldObj.default_material;
+        //       }
+        //       var newObj = scope.scene.getObjectById(newValue);
 
-              // Store the default color
-              newObj.default_material = new THREE.MeshLambertMaterial({color: newObj.material.color});
+        //       // Store the default color
+        //       newObj.default_material = new THREE.MeshLambertMaterial({color: newObj.material.color});
 
-              // Set the color
-              newObj.material.color.setRGB(1, 0, 0);
-            } else if (newValue === null) {
-              var oldObj = scope.scene.getObjectById(oldValue);
+        //       // Set the color
+        //       newObj.material.color.setRGB(1, 0, 0);
+        //     } else if (newValue === null) {
+        //       var oldObj = scope.scene.getObjectById(oldValue);
 
-              // Restore the default material
-              oldObj.material = oldObj.default_material;
-            }
-        }, true);
+        //       // Restore the default material
+        //       oldObj.material = oldObj.default_material;
+        //     }
+        // }, true);
 
         // Begin
         scope.init();

@@ -196,16 +196,10 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseBooleanAttributes: true,
           collapseWhitespace: true,
           conservativeCollapse: true,
-          removeAttributeQuotes: true,
-          removeCommentsFromCDATA: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true,
-          // true would impact styles with attribute selectors
-          removeRedundantAttributes: false,
-          useShortDoctype: true
+          collapseBooleanAttributes: true,
+          removeCommentsFromCDATA: true
         },
         files: [{
           expand: true,
@@ -215,18 +209,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care
-    // of minification.
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= config.dist %>/scripts/scripts.js': [
-    //         '<%= config.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -239,7 +221,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
-            '{,*/}*.html',
+            '*.html',
             'styles/fonts/{,*/}*.*'
           ]
         }]
@@ -281,11 +263,6 @@ module.exports = function (grunt) {
       'browserSync:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run([target ? ('serve:' + target) : 'serve']);
   });
 
   grunt.registerTask('build', [

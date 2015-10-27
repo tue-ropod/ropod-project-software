@@ -1,0 +1,6 @@
+modules:
+- lib: libcolor_matcher.so
+  parameters:
+    color_margin: 0.1
+
+classification_model_path: $(file .)

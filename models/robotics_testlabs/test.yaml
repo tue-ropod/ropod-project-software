@@ -1,0 +1,4 @@
+modules:
+- lib: libcolor_matcher.so
+
+classification_model_path: $(file .)

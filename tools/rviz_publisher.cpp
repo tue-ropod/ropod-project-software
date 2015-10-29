@@ -209,7 +209,7 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
             m.pose.position.z = .5;
 
             m.scale.x = 0.3; m.scale.y = 0.3; m.scale.z = 1.0;
-            m.ns = "entities";
+            m.ns = "humans";
 
             continue;
         }
@@ -259,12 +259,12 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
         m_text.pose = m.pose;
         m_text.pose.position.z += 0.1;
         m_text.header = m.header;
-        m_text.ns = "entities";
+        m_text.ns = "labels";
 
-//        if (type == "")
-//            m.text = type + "(" + name.str().substr(0,4) +  ")";
-//        else
-//            m.text = name.str() + "(" + type.substr(0,4) +  ")";
+        m_text.text = info.id.substr(0,4);
+
+        if (!info.type.empty())
+            m_text.text += " (" + info.type + ")";
 
 //        std::stringstream ss_text;
 //        ss_text << info.id.substr(0, 4);
@@ -274,16 +274,18 @@ void entityCallback(const ed_gui_server::EntityInfos::ConstPtr& msg)
 //        ss_text.precision(2);
 //        ss_text << std::fixed << " (" << info.existence_probability << ")";
 
-        if (info.type != "" && (!info.polygon.xs.empty() || info.mesh_revision > 0))
-        {
-            std::stringstream ss_text;
-            ss_text << info.type;
-            m_text.text = ss_text.str();
-        }
-        else
-        {
-            m_text.text = "";
-        }
+
+
+//        if (info.type != "" && (!info.polygon.xs.empty() || info.mesh_revision > 0))
+//        {
+//            std::stringstream ss_text;
+//            ss_text << info.type;
+//            m_text.text = ss_text.str();
+//        }
+//        else
+//        {
+//            m_text.text = "";
+//        }
     }
 }
 

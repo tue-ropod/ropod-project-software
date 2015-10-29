@@ -1,0 +1,36 @@
+models:
+  - height_max: 0.428209
+    height_min: 0.121616
+    name: bifrutas
+    width_max: 0.753688
+    width_min: 0.0693646
+  - height_max: 0.223817
+    height_min: 0.196921
+    name: coffee_pads
+    width_max: 0.233115
+    width_min: 0.0944037
+  - height_max: 0.453909
+    height_min: 0.0947718
+    name: coke
+    width_max: 0.767246
+    width_min: 0.0669688
+  - height_max: 0.428209
+    height_min: 0.141632
+    name: deodorant
+    width_max: 0.753688
+    width_min: 0.0459577
+  - height_max: 0.124684
+    height_min: 0.103996
+    name: fanta
+    width_max: 0.0758004
+    width_min: 0.0591578
+  - height_max: 0.43812
+    height_min: 0.0658022
+    name: pills
+    width_max: 0.767246
+    width_min: 0.0495255
+  - height_max: 0.468178
+    height_min: 0.164013
+    name: tea
+    width_max: 0.840032
+    width_min: 0.0833768

@@ -1,9 +1,8 @@
 {
-  "name": "ed-gui-server-git",
+  "name" : "EdGuiApp",
   "private": true,
   "version": "0.0.0",
   "dependencies": {
-    "angular": "^1.3.0",
     "bootstrap": "~3.3.5",
     "angular-animate": "^1.3.0",
     "angular-touch": "^1.3.0",
@@ -14,10 +13,8 @@
     "angular-bootstrap": "~0.13.0",
     "robot-api": "~0.4.0",
     "three.js": "threejs#*",
+    "angular-circular-navigation": "*",
     "stats.js": "*"
-  },
-  "devDependencies": {
-    "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
   "moduleName": "EdGuiApp",
@@ -29,5 +26,8 @@
         "dist/js/bootstrap.js"
       ]
     }
+  },
+  "resolutions": {
+    "angular": "1.4.7"
   }
 }

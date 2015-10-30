@@ -1,6 +1,6 @@
 'use strict';
 
-/* global Robot */
+/* global API */
 
 angular.module('EdGuiApp')
   .provider('robot', function () {

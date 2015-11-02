@@ -1,247 +1,492 @@
 color_margin: 0.1
 models:
+  - name: beer
+    colors:
+      - color: black
+        max: 0.0726646
+        min: 0.0137058
+      - color: blue
+        max: 0.0212893
+        min: 0.00983083
+      - color: brown
+        max: 0.264628
+        min: 0.196137
+      - color: grey
+        max: 0.0470779
+        min: 0.0304455
+      - color: green
+        max: 0.0460703
+        min: 0.0156762
+      - color: orange
+        max: 0.27407
+        min: 0.161306
+      - color: pink
+        max: 0.145213
+        min: 0.0789966
+      - color: purple
+        max: 0.0964649
+        min: 0.0578468
+      - color: red
+        max: 0.122144
+        min: 0.071303
+      - color: white
+        max: 0.0860714
+        min: 0.0205454
+      - color: yellow
+        max: 0.210594
+        min: 0.0844585
   - name: bifrutas
     colors:
       - color: black
-        max: 0.0752184
-        min: 0.0165049
+        max: 0.0446988
+        min: 0.0183052
       - color: blue
-        max: 0.441398
-        min: 0.0867597
+        max: 0.554458
+        min: 0.320573
       - color: brown
-        max: 0.0843139
-        min: 0.0226136
+        max: 0.0698817
+        min: 0.017553
       - color: grey
-        max: 0.116109
-        min: 0.0254119
+        max: 0.0858864
+        min: 0.0222241
       - color: green
-        max: 0.0455841
-        min: 0.00897941
+        max: 0.0244247
+        min: 0.0101148
       - color: orange
-        max: 0.0883793
-        min: 0.0346004
+        max: 0.0728939
+        min: 0.034542
       - color: pink
-        max: 0.183862
-        min: 0.045282
+        max: 0.0999213
+        min: 0.0574859
       - color: purple
-        max: 0.183869
-        min: 0.115036
+        max: 0.195539
+        min: 0.13907
       - color: red
-        max: 0.0656889
-        min: 0.0415082
+        max: 0.0631412
+        min: 0.0375591
       - color: white
-        max: 0.316474
-        min: 0.0289264
+        max: 0.0760828
+        min: 0.0286964
       - color: yellow
-        max: 0.0577388
-        min: 0.0284058
+        max: 0.0421489
+        min: 0.0275549
   - name: coffee_pads
     colors:
       - color: black
-        max: 0.15753
-        min: 0.0468785
+        max: 0.074491
+        min: 0.0259224
       - color: blue
-        max: 0.101137
-        min: 0.0232083
+        max: 0.0691998
+        min: 0.0209893
       - color: brown
-        max: 0.186524
-        min: 0.077318
+        max: 0.209246
+        min: 0.0343383
       - color: grey
-        max: 0.120617
-        min: 0.0824043
+        max: 0.123387
+        min: 0.0349042
       - color: green
-        max: 0.445065
-        min: 0.153896
+        max: 0.627409
+        min: 0.167398
       - color: orange
-        max: 0.0438874
-        min: 0.0213131
+        max: 0.0411767
+        min: 0.0154361
       - color: pink
-        max: 0.107376
-        min: 0.0494156
+        max: 0.109567
+        min: 0.051931
       - color: purple
-        max: 0.143837
-        min: 0.0865682
+        max: 0.150589
+        min: 0.0809994
       - color: red
-        max: 0.0816782
-        min: 0.0464877
+        max: 0.0905026
+        min: 0.0434154
       - color: white
-        max: 0.0404628
-        min: 0.0119355
+        max: 0.0417502
+        min: 0.00794422
       - color: yellow
-        max: 0.0644483
-        min: 0.0437906
+        max: 0.0632275
+        min: 0.0423348
   - name: coke
     colors:
       - color: black
-        max: 0.0606851
-        min: 0.00805752
+        max: 0.0115323
+        min: 0.00819828
       - color: blue
-        max: 0.0884986
-        min: 0.0131776
+        max: 0.0207173
+        min: 0.00961701
       - color: brown
-        max: 0.0694125
-        min: 0.0116159
+        max: 0.0180294
+        min: 0.0125828
       - color: grey
-        max: 0.082855
-        min: 0.0127513
+        max: 0.0206304
+        min: 0.0105425
       - color: green
-        max: 0.0236839
-        min: 0.0037377
+        max: 0.00497823
+        min: 0.00311175
       - color: orange
-        max: 0.103604
-        min: 0.037543
+        max: 0.0807171
+        min: 0.0489896
       - color: pink
-        max: 0.36034
-        min: 0.11333
+        max: 0.3249
+        min: 0.242104
       - color: purple
-        max: 0.17234
-        min: 0.0925309
+        max: 0.112091
+        min: 0.0934255
       - color: red
-        max: 0.468886
-        min: 0.0559497
+        max: 0.462825
+        min: 0.371202
       - color: white
-        max: 0.316474
-        min: 0.0153204
+        max: 0.0700856
+        min: 0.0406603
       - color: yellow
-        max: 0.0305166
-        min: 0.0119132
+        max: 0.0125689
+        min: 0.0109818
   - name: deodorant
     colors:
       - color: black
-        max: 0.0531626
-        min: 0.00397944
+        max: 0.0201115
+        min: 0.00538139
       - color: blue
-        max: 0.0867597
-        min: 0.00322441
+        max: 0.0131131
+        min: 0.0069914
       - color: brown
-        max: 0.0485606
-        min: 0.00376038
+        max: 0.0156107
+        min: 0.00467246
       - color: grey
-        max: 0.116109
-        min: 0.00409285
+        max: 0.0289613
+        min: 0.0092672
       - color: green
-        max: 0.0250055
-        min: 0.00152782
+        max: 0.0048388
+        min: 0.0021922
       - color: orange
-        max: 0.0346004
-        min: 0.00588134
+        max: 0.0149672
+        min: 0.00557987
       - color: pink
-        max: 0.616818
-        min: 0.183862
+        max: 0.539977
+        min: 0.298153
       - color: purple
-        max: 0.545503
-        min: 0.153293
+        max: 0.505634
+        min: 0.324457
       - color: red
-        max: 0.127512
-        min: 0.0191245
+        max: 0.0987636
+        min: 0.0339655
       - color: white
-        max: 0.204585
-        min: 0.00889955
+        max: 0.0272543
+        min: 0.00336446
       - color: yellow
-        max: 0.0284058
-        min: 0.00619522
+        max: 0.0102727
+        min: 0.00591046
   - name: fanta
     colors:
       - color: black
-        max: 0.0308303
-        min: 0.010374
+        max: 0.0172633
+        min: 0.0112516
       - color: blue
-        max: 0.103516
-        min: 0.0223362
+        max: 0.08826
+        min: 0.0202658
       - color: brown
-        max: 0.147311
-        min: 0.0363177
+        max: 0.101989
+        min: 0.0167368
       - color: grey
-        max: 0.0654316
-        min: 0.0145746
+        max: 0.0394847
+        min: 0.0147439
       - color: green
-        max: 0.0396165
-        min: 0.0172108
+        max: 0.0297215
+        min: 0.00512887
       - color: orange
-        max: 0.275995
-        min: 0.125055
+        max: 0.255342
+        min: 0.138798
       - color: pink
-        max: 0.216427
-        min: 0.0766948
+        max: 0.202919
+        min: 0.110444
       - color: purple
-        max: 0.158182
-        min: 0.0806156
+        max: 0.143195
+        min: 0.0961749
       - color: red
-        max: 0.298851
-        min: 0.16131
+        max: 0.364074
+        min: 0.149883
       - color: white
-        max: 0.083792
-        min: 0.0197599
+        max: 0.0871883
+        min: 0.0295403
       - color: yellow
-        max: 0.0649578
-        min: 0.0363317
-  - name: pills
+        max: 0.0500787
+        min: 0.0230016
+  - name: ice_tea
     colors:
       - color: black
-        max: 0.0573625
-        min: 0.034054
+        max: 0.0238472
+        min: 0.0195058
       - color: blue
-        max: 0.0884986
-        min: 0.0315694
+        max: 0.0969921
+        min: 0.0473807
       - color: brown
-        max: 0.0726415
-        min: 0.0355524
+        max: 0.139416
+        min: 0.0977166
       - color: grey
-        max: 0.144618
-        min: 0.0696935
+        max: 0.0433431
+        min: 0.0300411
       - color: green
-        max: 0.469063
-        min: 0.0223578
+        max: 0.0669336
+        min: 0.0385677
       - color: orange
-        max: 0.037543
-        min: 0.0132221
+        max: 0.101828
+        min: 0.0695799
       - color: pink
-        max: 0.183862
-        min: 0.0394199
+        max: 0.0979906
+        min: 0.0507014
       - color: purple
-        max: 0.153293
-        min: 0.0671158
+        max: 0.0993558
+        min: 0.0705721
       - color: red
-        max: 0.0656889
-        min: 0.04167
+        max: 0.0852854
+        min: 0.0389115
       - color: white
-        max: 0.302664
-        min: 0.0250916
+        max: 0.0474201
+        min: 0.0277982
       - color: yellow
-        max: 0.0876607
-        min: 0.0284058
+        max: 0.435958
+        min: 0.278576
+  - name: mentos
+    colors:
+      - color: black
+        max: 0.0173142
+        min: 0.0148085
+      - color: blue
+        max: 0.53149
+        min: 0.496047
+      - color: brown
+        max: 0.0152488
+        min: 0.0129038
+      - color: grey
+        max: 0.0194019
+        min: 0.0132794
+      - color: green
+        max: 0.00900042
+        min: 0.00715095
+      - color: orange
+        max: 0.0363871
+        min: 0.0326367
+      - color: pink
+        max: 0.0652286
+        min: 0.0379785
+      - color: purple
+        max: 0.229545
+        min: 0.213106
+      - color: red
+        max: 0.0355282
+        min: 0.0302646
+      - color: white
+        max: 0.0653449
+        min: 0.0526447
+      - color: yellow
+        max: 0.0382052
+        min: 0.0342996
+  - name: sprite
+    colors:
+      - color: black
+        max: 0.0572906
+        min: 0.0484274
+      - color: blue
+        max: 0.427359
+        min: 0.332709
+      - color: brown
+        max: 0.0311786
+        min: 0.0220414
+      - color: grey
+        max: 0.0766017
+        min: 0.0560771
+      - color: green
+        max: 0.153806
+        min: 0.0783608
+      - color: orange
+        max: 0.0188068
+        min: 0.0117472
+      - color: pink
+        max: 0.0484524
+        min: 0.0285044
+      - color: purple
+        max: 0.193503
+        min: 0.168917
+      - color: red
+        max: 0.0328121
+        min: 0.0272905
+      - color: white
+        max: 0.0518657
+        min: 0.0326228
+      - color: yellow
+        max: 0.0854439
+        min: 0.0444282
   - name: tea
     colors:
       - color: black
-        max: 0.108278
-        min: 0.0311401
+        max: 0.0398684
+        min: 0.0149714
       - color: blue
-        max: 0.18009
-        min: 0.0779504
+        max: 0.379507
+        min: 0.128833
       - color: brown
-        max: 0.134578
-        min: 0.0355524
+        max: 0.149957
+        min: 0.0243077
       - color: grey
-        max: 0.116109
-        min: 0.0547866
+        max: 0.0778247
+        min: 0.0355985
       - color: green
-        max: 0.0817663
-        min: 0.0216966
+        max: 0.0456699
+        min: 0.0128938
       - color: orange
-        max: 0.122516
-        min: 0.0346004
+        max: 0.152312
+        min: 0.0187751
       - color: pink
-        max: 0.183862
-        min: 0.0637444
+        max: 0.118402
+        min: 0.0795151
       - color: purple
-        max: 0.182373
-        min: 0.115036
+        max: 0.326004
+        min: 0.193242
       - color: red
-        max: 0.0903251
-        min: 0.0559497
+        max: 0.104482
+        min: 0.0307708
       - color: white
-        max: 0.316474
-        min: 0.0183798
+        max: 0.0412478
+        min: 0.00952854
       - color: yellow
-        max: 0.142852
-        min: 0.0283999
+        max: 0.0807593
+        min: 0.0320689
+  - name: teddy_bear
+    colors:
+      - color: black
+        max: 0.0965769
+        min: 0.0394827
+      - color: blue
+        max: 0.0259332
+        min: 0.0179437
+      - color: brown
+        max: 0.218962
+        min: 0.160309
+      - color: grey
+        max: 0.0570221
+        min: 0.0336515
+      - color: green
+        max: 0.0390121
+        min: 0.0196382
+      - color: orange
+        max: 0.393996
+        min: 0.219017
+      - color: pink
+        max: 0.0684523
+        min: 0.0549045
+      - color: purple
+        max: 0.0969169
+        min: 0.0697933
+      - color: red
+        max: 0.103478
+        min: 0.0796835
+      - color: white
+        max: 0.0305036
+        min: 0.0129414
+      - color: yellow
+        max: 0.110548
+        min: 0.0851125
+  - name: water
+    colors:
+      - color: black
+        max: 0.028754
+        min: 0.0235436
+      - color: blue
+        max: 0.432544
+        min: 0.349437
+      - color: brown
+        max: 0.0203265
+        min: 0.0156991
+      - color: grey
+        max: 0.0463805
+        min: 0.0331231
+      - color: green
+        max: 0.0161542
+        min: 0.0113249
+      - color: orange
+        max: 0.0337406
+        min: 0.0287966
+      - color: pink
+        max: 0.106187
+        min: 0.0787235
+      - color: purple
+        max: 0.267251
+        min: 0.184412
+      - color: red
+        max: 0.0403762
+        min: 0.0346288
+      - color: white
+        max: 0.0877997
+        min: 0.0736402
+      - color: yellow
+        max: 0.0485502
+        min: 0.0410624
+  - name: xylit24_spearmint
+    colors:
+      - color: black
+        max: 0.0407483
+        min: 0.033025
+      - color: blue
+        max: 0.0563987
+        min: 0.0389915
+      - color: brown
+        max: 0.0426768
+        min: 0.0325625
+      - color: grey
+        max: 0.120487
+        min: 0.0842869
+      - color: green
+        max: 0.403706
+        min: 0.344136
+      - color: orange
+        max: 0.0237848
+        min: 0.022334
+      - color: pink
+        max: 0.0787259
+        min: 0.0630586
+      - color: purple
+        max: 0.0645728
+        min: 0.0578011
+      - color: red
+        max: 0.0522235
+        min: 0.0383572
+      - color: white
+        max: 0.123608
+        min: 0.0919563
+      - color: yellow
+        max: 0.112486
+        min: 0.0874593
+  - name: xylit24_white
+    colors:
+      - color: black
+        max: 0.0443225
+        min: 0.0415838
+      - color: blue
+        max: 0.18984
+        min: 0.140078
+      - color: brown
+        max: 0.0283999
+        min: 0.0257098
+      - color: grey
+        max: 0.0596387
+        min: 0.0479813
+      - color: green
+        max: 0.0194459
+        min: 0.0170371
+      - color: orange
+        max: 0.0358823
+        min: 0.0339835
+      - color: pink
+        max: 0.158512
+        min: 0.119746
+      - color: purple
+        max: 0.177615
+        min: 0.144466
+      - color: red
+        max: 0.0658774
+        min: 0.0524777
+      - color: white
+        max: 0.277619
+        min: 0.248539
+      - color: yellow
+        max: 0.0352027
+        min: 0.0302714

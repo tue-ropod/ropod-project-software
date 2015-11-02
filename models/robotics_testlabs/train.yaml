@@ -1,7 +1,7 @@
 modules:
 - lib: libcolor_matcher.so
   parameters:
-    color_margin: 0.1
+    color_margin: 0.01
 - lib: libsize_matcher.so
 
 classification_model_path: $(file .)

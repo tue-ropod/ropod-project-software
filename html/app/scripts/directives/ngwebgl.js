@@ -11,12 +11,9 @@ angular.module('EdGuiApp')
       },
       controllerAs: 'vm',
       controller: function ($scope) {
-        console.log('scope:', $scope);
       },
 
       link: function postLink(scope, element) {
-        console.log('linking', scope);
-
         element.on('$destroy', function () {
           console.log('ngWebgl: element is destroyed')
         });
@@ -46,7 +43,7 @@ angular.module('EdGuiApp')
           var x = (e.clientX / canvas.innerWidth()) * 2 - 1;
           var y = - (e.clientY / canvas.innerHeight()) * 2 + 1;
           var obj = renderer.pickingRay(x, y);
-          console.log('pickingRay(', x, ',', y,'):', obj);
+          // console.log('pickingRay(', x, ',', y,'):', obj);
           if (obj) {
             scope.entitySelection({entity: obj, event: e});
           }

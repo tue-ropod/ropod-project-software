@@ -57,6 +57,5 @@ angular.module('EdGuiApp')
       ]
     };
 
-    console.log('querying ed');
     robot.ed.query();
   });

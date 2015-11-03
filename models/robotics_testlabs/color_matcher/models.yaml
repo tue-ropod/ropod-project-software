@@ -1,4 +1,3 @@
-color_margin: 0.01
 models:
   - name: beer
     colors:

@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid" ontouchmove="alert('a');" >
   <div class="row">
-    <div class="col-sm-9 col-md-9 main">
+    <div class="col-xs-9 col-sm-9 col-md-9 main">
       <ng-webgl on-entity-selection="entitySelection({entity: entity, event: event})" />
     </div>
     <div ng-controller="CircularmenuCtrl">
@@ -9,7 +9,7 @@
       </circular>
     </div>
 
-    <div id="sidebar" class="col-sm-3 col-md-3 sidebar">
+    <div id="sidebar" class="col-xs-3 col-sm-3 col-md-3 sidebar">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Robot top-kinect view</h3>

@@ -106,5 +106,6 @@ table.buttons .btn {
 }
 
 #action-menu {
-  transition: opacity .25s ease-in-out;
+  opacity: 0;
+  z-index: -1;
 }

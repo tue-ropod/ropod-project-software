@@ -9,6 +9,10 @@
 
 (function () {
 
+  // Added timer for longpress
+  var longpressDuration = 500;
+  var longpressTimer;
+
   function OrbitConstraint(object) {
 
     this.object = object;
@@ -658,6 +662,11 @@
 
     function touchstart(event) {
 
+      var longpressEvent = new CustomEvent('onlongpress', { 'detail': event.touches[0] });
+      longpressTimer = setTimeout(function() {
+        window.dispatchEvent(longpressEvent);
+      }, longpressDuration); 
+
       if (scope.enabled === false) return;
 
       switch (event.touches.length) {
@@ -703,6 +712,8 @@
     }
 
     function touchmove(event) {
+
+      if (longpressTimer) clearTimeout(longpressTimer); 
 
       if (scope.enabled === false) return;
 
@@ -782,6 +793,8 @@
     }
 
     function touchend( /* event */ ) {
+
+      if (longpressTimer) clearTimeout(longpressTimer); 
 
       if (scope.enabled === false) return;
 

@@ -2,59 +2,45 @@
 
 angular.module('EdGuiApp')
   .controller('CircularmenuCtrl', function ($scope, robot) {
-    console.log("CircularmenuCtrl");
 
-      $scope.$watch('selectedEntityAction', function (action) {
-      var menu = document.getElementById('action-menu');
-      menu.style.opacity = 1.0;
+    $scope.actionList = ['inspect','grab','look_at'];
 
-      menu.style.left = action.event.offsetX + 'px';
-      menu.style.top = action.event.offsetY + 'px';
+    $scope.options = { items: [] };
 
-      menu.children[0].innerHTML = action.entity.id;
+    $scope.$watch('selectedEntityEvent', function (entityEvent) {
 
-      // Options for the circular menu
+      console.log(entityEvent);
+      
+      $scope.options.isOpen = true;
+
+      var menuElement = document.getElementById('action-menu');
+
+      // At deselection, hide the menu
+      if (!entityEvent.entity) {
+         $scope.options.isOpen = false;
+         menuElement.style.opacity = 0.0;
+         menuElement.style.zIndex = -1;
+         return;
+      }
+      
+      menuElement.style.left = entityEvent.event.pageX + 'px';
+      menuElement.style.top = entityEvent.event.pageY + 'px';
+      menuElement.style.opacity = 1.0;
+      menuElement.style.zIndex = 1;
+
+      $scope.options.content = entityEvent.entity.id;
+
+      $scope.options.items = _.map($scope.actionList, function(action) {
+        return {
+          content: action,
+          onclick: function(event) {
+            robot.actionServer.doAction(action, entityEvent.entity.id);
+            $scope.entitySelection({event: event, entity: null});
+          }
+        }; 
+      });
     });
 
-    $scope.options = {
-      content: 'Menu',
-      isOpen: false,
-      toggleOnClick: true,
-      items: [
-        {
-          content: 'Inspect',
-          onclick: function () {
-            console.log('Inspecting ....');
+    
 
-            var elm = document.getElementById('action-menu');
-
-            robot.actionServer.doAction('inspect', elm.children[0].innerHTML);
-
-            elm.style.opacity = 0;
-          }
-        }, {
-          content: 'Grab',
-          onclick: function () {
-            console.log('Grabbing ....');
-
-            var elm = document.getElementById('action-menu');
-
-            robot.actionServer.doAction('grab', elm.children[0].innerHTML);
-
-            elm.style.opacity = 0;
-          }
-        }, {
-          content: 'Look at',
-          onclick: function () {
-            console.log('Looking at.. ....');
-
-            var elm = document.getElementById('action-menu');
-
-            robot.actionServer.doAction('look_at', elm.children[0].innerHTML);
-
-            elm.style.opacity = 0;
-          }
-        }
-      ]
-    };
   });

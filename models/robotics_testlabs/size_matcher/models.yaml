@@ -1,71 +1,71 @@
 models:
-  - height_max: 0.174538
-    height_min: 0.0676493
+  - height_max: 0.186522
+    height_min: 0.086566
     name: beer
     width_max: 0.0620034
-    width_min: 0.0269944
-  - height_max: 0.124988
-    height_min: 0.107918
+    width_min: 0.0254533
+  - height_max: 0.141323
+    height_min: 0.132451
     name: bifrutas
-    width_max: 0.0783045
+    width_max: 0.0759921
     width_min: 0.0631154
-  - height_max: 0.215888
-    height_min: 0.175594
+  - height_max: 0.240746
+    height_min: 0.198409
     name: coffee_pads
-    width_max: 0.16455
+    width_max: 0.170763
     width_min: 0.0723966
-  - height_max: 0.111732
-    height_min: 0.0848567
+  - height_max: 0.129731
+    height_min: 0.112176
     name: coke
-    width_max: 0.0751733
-    width_min: 0.0691047
-  - height_max: 0.158613
-    height_min: 0.127217
+    width_max: 0.0736845
+    width_min: 0.0683633
+  - height_max: 0.17742
+    height_min: 0.150289
     name: deodorant
     width_max: 0.0566548
-    width_min: 0.0483091
-  - height_max: 0.113031
-    height_min: 0.0890093
+    width_min: 0.0484756
+  - height_max: 0.130835
+    height_min: 0.113538
     name: fanta
-    width_max: 0.0782095
+    width_max: 0.0778008
     width_min: 0.0682108
-  - height_max: 0.101618
-    height_min: 0.0777268
+  - height_max: 0.127918
+    height_min: 0.106837
     name: ice_tea
     width_max: 0.0769769
     width_min: 0.0681742
-  - height_max: 0.0636492
-    height_min: 0.0563471
+  - height_max: 0.0879231
+    height_min: 0.0803611
     name: mentos
-    width_max: 0.0701849
-    width_min: 0.0621705
-  - height_max: 0.101484
-    height_min: 0.0764744
+    width_max: 0.0696058
+    width_min: 0.0625096
+  - height_max: 0.126172
+    height_min: 0.103883
     name: sprite
     width_max: 0.0740851
-    width_min: 0.0648328
-  - height_max: 0.165475
-    height_min: 0.139906
+    width_min: 0.0669104
+  - height_max: 0.184684
+    height_min: 0.164003
     name: tea
-    width_max: 0.116076
-    width_min: 0.0793047
-  - height_max: 0.235991
-    height_min: 0.166286
+    width_max: 0.145831
+    width_min: 0.0784618
+  - height_max: 0.254718
+    height_min: 0.191991
     name: teddy_bear
-    width_max: 0.176789
-    width_min: 0.15081
-  - height_max: 0.0894045
-    height_min: 0.0702748
+    width_max: 0.17472
+    width_min: 0.154929
+  - height_max: 0.105528
+    height_min: 0.0848298
     name: water
-    width_max: 0.0815381
-    width_min: 0.0610022
-  - height_max: 0.069001
-    height_min: 0.0631209
+    width_max: 0.0802736
+    width_min: 0.0610493
+  - height_max: 0.0942015
+    height_min: 0.0829236
     name: xylit24_spearmint
-    width_max: 0.0568376
-    width_min: 0.0518281
-  - height_max: 0.0693899
-    height_min: 0.0550355
+    width_max: 0.0570161
+    width_min: 0.0517109
+  - height_max: 0.0896024
+    height_min: 0.0800078
     name: xylit24_white
     width_max: 0.056992
-    width_min: 0.0490512
+    width_min: 0.0494232

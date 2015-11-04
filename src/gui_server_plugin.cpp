@@ -179,7 +179,7 @@ void GUIServerPlugin::process(const ed::WorldModel& world, ed::UpdateRequest& re
     for(ed::WorldModel::const_iterator it = world_model_->begin(); it != world_model_->end(); ++it)
     {
         const ed::EntityConstPtr& e = *it;
-//        if (e->existenceProbability() > 0.95)
+        if (!e->hasFlag("self"))
             entityToMsg(e, entities_msg.entities[i++]);
     }
 

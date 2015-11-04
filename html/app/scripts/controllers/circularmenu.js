@@ -15,17 +15,17 @@ angular.module('EdGuiApp')
     $scope.$watch('selectedEntityEvent', function (entityEvent) {
 
       console.log(entityEvent);
-      
+
       var menuElement = document.getElementById('action-menu');
 
       // At deselection, hide the menu
       if (!entityEvent.entity) {
-         $scope.options.isOpen = false;
-         menuElement.style.opacity = 0.0;
-         menuElement.style.zIndex = -1;
-         return;
+        $scope.options.isOpen = false;
+        menuElement.style.opacity = 0.0;
+        menuElement.style.zIndex = -1;
+        return;
       }
-      
+
       menuElement.style.left = entityEvent.event.pageX + 'px';
       menuElement.style.top = entityEvent.event.pageY + 'px';
       menuElement.style.opacity = 1.0;
@@ -33,21 +33,21 @@ angular.module('EdGuiApp')
 
       $scope.options.content = entityEvent.entity.id;
 
-      $scope.options.items = _.map($scope.actionList, function(action) {
+      $scope.options.items = $scope.actionList.map(function(action) {
         return {
-          cssClass: 'fa fa-'+action.icon,
+          cssClass: 'fa fa-' + action.icon,
           background: action.color,
           onclick: function(event) {
             robot.actionServer.doAction(action.name, entityEvent.entity.id);
             $scope.entitySelection({event: event, entity: null});
           }
-        }; 
+        };
       });
 
       $scope.options.isOpen = true;
 
     });
 
-    
+
 
   });

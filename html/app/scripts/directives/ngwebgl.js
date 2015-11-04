@@ -10,9 +10,8 @@ angular.module('EdGuiApp')
         'entitySelection': '&onEntitySelection'
       },
       controllerAs: 'vm',
-      controller: function ($scope) {
+      controller: function () {
       },
-
       link: function postLink(scope, element) {
 
         function entitySelection(e) {

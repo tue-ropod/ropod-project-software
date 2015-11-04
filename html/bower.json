@@ -1,5 +1,5 @@
 {
-  "name" : "EdGuiApp",
+  "name": "EdGuiApp",
   "private": true,
   "version": "0.0.0",
   "dependencies": {
@@ -25,6 +25,11 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "roslib": {
+      "dependencies": {
+        "bson": "rayman/js-bson#add-as-bower-package"
+      }
     }
   },
   "resolutions": {

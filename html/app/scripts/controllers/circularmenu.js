@@ -3,7 +3,12 @@
 angular.module('EdGuiApp')
   .controller('CircularmenuCtrl', function ($scope, robot) {
 
-    $scope.actionList = ['inspect','grab','look_at'];
+    $scope.actionList = [
+      {name: 'inspect', icon: 'camera', color: 'red'},
+      {name: 'grab', icon: 'hand-grab-o', color: 'blue'},
+      {name: 'navigate-to', icon: 'arrows-alt', color: 'green'},
+      {name: 'place', icon: 'hand-lizard-o', color: 'red'}
+    ];
 
     $scope.options = { items: [] };
 
@@ -11,8 +16,6 @@ angular.module('EdGuiApp')
 
       console.log(entityEvent);
       
-      $scope.options.isOpen = true;
-
       var menuElement = document.getElementById('action-menu');
 
       // At deselection, hide the menu
@@ -32,13 +35,17 @@ angular.module('EdGuiApp')
 
       $scope.options.items = _.map($scope.actionList, function(action) {
         return {
-          content: action,
+          cssClass: 'fa fa-'+action.icon,
+          background: action.color,
           onclick: function(event) {
-            robot.actionServer.doAction(action, entityEvent.entity.id);
+            robot.actionServer.doAction(action.name, entityEvent.entity.id);
             $scope.entitySelection({event: event, entity: null});
           }
         }; 
       });
+
+      $scope.options.isOpen = true;
+
     });
 
     

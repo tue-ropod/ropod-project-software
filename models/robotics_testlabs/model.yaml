@@ -11,6 +11,12 @@ composition:
           x: 0
           y: 0
           z: 0
+    - type: "robotics_testlabs/plant"
+      id: "plant"
+      pose:
+          x: 3.26
+          y: 5.19
+          z: 0
     - type: "ddw.salon"
       id: "couchtable"
       pose:
@@ -92,15 +98,15 @@ composition:
           X: 0
           Y: 0
           Z: 0
-    - type: "ddw.chair"
-      id: "chair"
-      pose:
-          x: 2.0
-          y: 5.3
-          z: 0
-          X: 0
-          Y: 0
-          Z: 1.5707963267948966
+#    - type: "ddw.chair"
+#      id: "chair"
+#      pose:
+#          x: 2.0
+#          y: 5.3
+#          z: 0
+#          X: 0
+#          Y: 0
+#          Z: 1.5707963267948966
     - type: "robotics_testlab_B.bed_cabinet"
       id: "bed_cabinet"
       pose:

@@ -123,6 +123,17 @@
         mesh.userData = newObj;
         var geometry = mesh.geometry;
 
+        // position update
+
+        if (newObj.position !== oldObj.position) {
+          mesh.position.fromArray(newObj.position);
+        }
+        if (newObj.quaternion !== oldObj.quaternion) {
+          mesh.quaternion.fromArray(newObj.quaternion)
+        }
+
+        // geometry update
+
         var vupdate = newObj.vertices !== oldObj.vertices;
         var fupdate = newObj.faces !== oldObj.faces
 

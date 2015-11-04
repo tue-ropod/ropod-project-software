@@ -8,9 +8,11 @@ angular.module('EdGuiApp')
       $scope.$digest();
     }
 
-    // query ed with 1 sec interval
-    $interval(function() {
-      robot.ed.query();
-    }, 1000);
-
+    // query ed with 100 ms interval
+    function updateEd() {
+      setTimeout(function () {
+        robot.ed.query(updateEd);
+      }, 100);
+    }
+    robot.ed.query(updateEd);
   });

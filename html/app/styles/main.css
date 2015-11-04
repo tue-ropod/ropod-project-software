@@ -109,3 +109,22 @@ table.buttons .btn {
   opacity: 0;
   z-index: -1;
 }
+
+#sidebar {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  display: block;
+  padding: 5px  ;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #222;
+  border-right: 1px solid #222;
+}
+
+
+#kinect-view .panel-body {
+  padding: 5px;
+}

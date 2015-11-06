@@ -1,9 +1,9 @@
 models:
   - height_max: 0.186522
-    height_min: 0.0903813
+    height_min: 0.086566
     name: beer
     width_max: 0.0620034
-    width_min: 0.0403167
+    width_min: 0.0254533
   - height_max: 0.142019
     height_min: 0.128695
     name: bifrutas
@@ -13,7 +13,7 @@ models:
     height_min: 0.198409
     name: coffee_pads
     width_max: 0.164178
-    width_min: 0.0791636
+    width_min: 0.0723966
   - height_max: 0.132836
     height_min: 0.112297
     name: coke

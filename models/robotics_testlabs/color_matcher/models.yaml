@@ -2,7 +2,7 @@ models:
   - name: beer
     colors:
       - color: black
-        max: 0.0711396
+        max: 0.076667
         min: 0.0214306
       - color: blue
         max: 0.0215363
@@ -14,25 +14,25 @@ models:
         max: 0.0477312
         min: 0.0330458
       - color: green
-        max: 0.0453587
+        max: 0.05901
         min: 0.0157282
       - color: orange
         max: 0.267109
-        min: 0.160029
+        min: 0.15148
       - color: pink
         max: 0.137284
-        min: 0.0799282
+        min: 0.0534895
       - color: purple
         max: 0.0991708
         min: 0.0672125
       - color: red
         max: 0.114921
-        min: 0.0701633
+        min: 0.0616091
       - color: white
         max: 0.0793502
-        min: 0.0177578
+        min: 0.00624075
       - color: yellow
-        max: 0.216672
+        max: 0.234076
         min: 0.0886059
   - name: bifrutas
     colors:
@@ -73,34 +73,34 @@ models:
     colors:
       - color: black
         max: 0.0751986
-        min: 0.025413
+        min: 0.0235519
       - color: blue
         max: 0.0648351
-        min: 0.0200407
+        min: 0.0175816
       - color: brown
         max: 0.209566
-        min: 0.0327072
+        min: 0.0287577
       - color: grey
         max: 0.122673
-        min: 0.0326008
+        min: 0.0286406
       - color: green
-        max: 0.635631
+        max: 0.652735
         min: 0.165097
       - color: orange
         max: 0.0419097
         min: 0.0152681
       - color: pink
         max: 0.107911
-        min: 0.0506966
+        min: 0.0477053
       - color: purple
         max: 0.152276
-        min: 0.0790519
+        min: 0.0785026
       - color: red
         max: 0.0914108
-        min: 0.0423579
+        min: 0.0407593
       - color: white
         max: 0.0396861
-        min: 0.00773742
+        min: 0.00662614
       - color: yellow
         max: 0.065664
         min: 0.0422762
@@ -134,7 +134,7 @@ models:
         max: 0.489114
         min: 0.345131
       - color: white
-        max: 0.0942182
+        max: 0.103338
         min: 0.0116241
       - color: yellow
         max: 0.0210335
@@ -160,11 +160,11 @@ models:
         max: 0.0276937
         min: 0.00407812
       - color: pink
-        max: 0.541314
+        max: 0.567292
         min: 0.233135
       - color: purple
         max: 0.500716
-        min: 0.30638
+        min: 0.303188
       - color: red
         max: 0.220109
         min: 0.0333728

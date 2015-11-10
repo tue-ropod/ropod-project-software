@@ -2,7 +2,7 @@
 
 angular.module('EdGuiApp')
   .directive('ngWebgl', function (robot) {
-    /*globals EdRenderer*/
+    /*globals SceneRenderer*/
     return {
       restrict: 'E',
       template: '<canvas></canvas>',
@@ -45,7 +45,7 @@ angular.module('EdGuiApp')
         var canvas = element.children();
         var parent = element.parent();
 
-        var renderer = new EdRenderer({
+        var renderer = new SceneRenderer({
           canvas: canvas.get(0),
           robot: robot
         });

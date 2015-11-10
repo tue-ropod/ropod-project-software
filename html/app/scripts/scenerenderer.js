@@ -1,8 +1,8 @@
 (function (root, factory) {
-  root.EdRenderer = factory(root.THREE);
+  root.SceneRenderer = factory(root.THREE);
 }(this, function (THREE) {
 
-  function EdRenderer(options) {
+  function SceneRenderer(options) {
     if (!options || !options.canvas || !options.robot) {
       throw new Error('Unspecified canvas or robot');
     }
@@ -10,10 +10,10 @@
     this.canvas = options.canvas;
     this.robot = options.robot;
 
-    window.edRenderer = this; // TODO: remove this debug statement
+    window.SceneRenderer = this; // TODO: remove this debug statement
   }
 
-  EdRenderer.prototype.init = function () {
+  SceneRenderer.prototype.init = function () {
     var contW = this.canvas.offsetWidth;
     var contH = this.canvas.offsetHeight;
 
@@ -69,14 +69,14 @@
     window.addEventListener('resize', this.onWindowResize, false);
   };
 
-  EdRenderer.prototype.setSize = function(width, height) {
+  SceneRenderer.prototype.setSize = function(width, height) {
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(width, height);
   };
 
-  EdRenderer.prototype.pickingRay = function(x, y) {
+  SceneRenderer.prototype.pickingRay = function(x, y) {
     this.raycaster.setFromCamera(new THREE.Vector2(x, y), this.camera);
     var intersects = this.raycaster.intersectObjects(this.scene.children);
 
@@ -89,7 +89,7 @@
     return obj;
   };
 
-  EdRenderer.prototype.start = function () {
+  SceneRenderer.prototype.start = function () {
     var self = this;
     var scene = this.scene;
 
@@ -104,8 +104,11 @@
         geometry.computeFaceNormals();
         geometry.computeVertexNormals(true);
 
-        var material = new THREE.MeshLambertMaterial({
-          color: stringToColor(obj.id)
+        var material = new THREE.MeshPhongMaterial({
+          color: stringToColor(obj.id),
+          shading: THREE.FlatShading,
+          shininess: 0,
+          emissive: 0x020202
         });
 
         var mesh = new THREE.Mesh(geometry, material);
@@ -172,7 +175,7 @@
     render();
   }
 
-  EdRenderer.prototype.stop = function() {
+  SceneRenderer.prototype.stop = function() {
     cancelAnimationFrame(this._token);
   };
 
@@ -215,5 +218,5 @@
     }
   }
 
-  return EdRenderer;
+  return SceneRenderer;
 }));

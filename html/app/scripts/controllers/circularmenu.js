@@ -5,7 +5,7 @@ angular.module('EdGuiApp')
 
     $scope.actionList = [
       {name: 'inspect', icon: 'camera', color: 'red'},
-      {name: 'grab', icon: 'hand-grab-o', color: 'blue'},
+      {name: 'pick-up', icon: 'hand-grab-o', color: 'blue'},
       {name: 'navigate-to', icon: 'arrows-alt', color: 'green'},
       {name: 'place', icon: 'hand-lizard-o', color: 'red'}
     ];

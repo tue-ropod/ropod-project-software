@@ -141,12 +141,12 @@
         var fupdate = newObj.faces !== oldObj.faces
 
         if (vupdate) {
-          console.log('update vertices', newObj, oldObj);
+          // console.log('update vertices', newObj, oldObj);
           geometry.vertices = [];
           convertVertices(newObj.vertices, geometry.vertices);
         }
         if (fupdate) {
-          console.log('update faces', newObj, oldObj);
+          // console.log('update faces', newObj, oldObj);
           geometry.faces = [];
           convertFaces(newObj.faces, geometry.faces);
         }

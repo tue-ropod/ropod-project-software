@@ -55,7 +55,7 @@ body {
 }
 
 /*
- * main 
+ * main
  */
 
 .main {
@@ -138,7 +138,7 @@ table.buttons .btn {
 }
 
 .tab-pane {
-  background-color: #fff !important;
+  background-color: #fff;
   padding: 5px;
   height: 100%;
 }
@@ -167,4 +167,12 @@ table.buttons .btn {
 
 #teleop-body button {
   margin-top: 5px;
+}
+
+#teleop-base, #teleop-head
+{
+  background-image: url("move-icon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80%;
 }

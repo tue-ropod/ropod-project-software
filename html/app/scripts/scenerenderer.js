@@ -92,6 +92,59 @@
   SceneRenderer.prototype.start = function () {
     var self = this;
     var scene = this.scene;
+    var robot = this.robot;
+
+    /* START RENDER KINECT */
+
+    var texture = new THREE.Texture();
+
+    var geometry = new THREE.Geometry();
+    var width = 640, height = 480;
+    var nearClipping = 850/*850*/, farClipping = 4000/*4000*/;
+    for ( var i = 0, l = width * height; i < l; i ++ ) {
+
+      var position = new THREE.Vector3();
+      position.x = ( i % width );
+      position.y = Math.floor( i / width );
+
+      geometry.vertices.push( new THREE.Vector3( position ) );
+
+    }
+
+    var material = new THREE.ShaderMaterial( {
+
+      uniforms: {
+
+        "map": { type: "t", value: 0, texture: texture },
+        "width": { type: "f", value: width },
+        "height": { type: "f", value: height },
+        "nearClipping": { type: "f", value: nearClipping },
+        "farClipping": { type: "f", value: farClipping }
+
+      },
+      vertexShader: document.getElementById( 'vs' ).textContent,
+      fragmentShader: document.getElementById( 'fs' ).textContent,
+      depthWrite: false
+
+    } );
+
+    var mesh = new THREE.Points( geometry, material );
+    mesh.position.x = 0;
+    mesh.position.y = 0;
+    mesh.position.z = 10;
+    scene.add( mesh );
+
+    setInterval(function() {
+      robot.head.getImage(640, function(rgb, depth) {
+        var texture_image = new Image();
+        texture_image.src = depth;
+
+        texture.image = texture_image;
+        texture.needsUpdate = true;
+      });
+    }, 100);
+
+    /* END RENDER KINECT */
 
     this.robot.ed.watch({
       add: function (obj) {

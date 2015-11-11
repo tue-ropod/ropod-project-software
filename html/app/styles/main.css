@@ -112,19 +112,59 @@ table.buttons .btn {
 
 #sidebar {
   position: fixed;
-  top: 50px;
   bottom: 0;
   right: 0;
   z-index: 1000;
   display: block;
-  padding: 5px  ;
+  padding: 0px  ;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   background-color: #222;
   border-right: 1px solid #222;
+  height: 100%;
 }
 
+#main-tabs {
+  position: absolute;
+  width: 100%;
+}
 
-#kinect-view .panel-body {
+#sidebar > .tab-content {
+  height: 100%;
+}
+
+#sidebar h5 {
+  font-weight: bold;
+}
+
+.tab-pane {
+  background-color: #fff !important;
   padding: 5px;
+  height: 100%;
+}
+
+.panel {
+  margin-bottom: 5px;
+}
+
+.nav-tabs li a {
+  padding: 10px;
+}
+
+/* TELEOP TAB */
+
+.tab {
+  margin-top: 42px;
+}
+
+#teleop .panel-body {
+  padding: 5px;
+}
+
+#teleop-speech button {
+  margin-top: 5px;
+}
+
+#teleop-body button {
+  margin-top: 5px;
 }

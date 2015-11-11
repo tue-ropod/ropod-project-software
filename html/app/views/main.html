@@ -1,4 +1,4 @@
-<div class="container-fluid" ontouchmove="alert('a');" >
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-9 col-sm-9 col-md-9 main">
       <ng-webgl on-entity-selection="entitySelection({entity: entity, event: event})" />
@@ -10,17 +10,30 @@
     </div>
 
     <div id="sidebar" class="col-xs-3 col-sm-3 col-md-3 sidebar" ng-controller="SidebarCtrl">
-      <div class="panel panel-default" id="kinect-view">
-        <div class="panel-body">
-          <img src="{{kinect_image}}" alt="..." style="width: 100%">
-        </div>
+
+      <!-- Nav tabs -->
+      <div id="main-tabs">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active">
+              <a href="#teleop" role="tab" data-toggle="tab">
+                  <icon class="fa fa-arrows"></icon> Teleop
+              </a>
+          </li>
+          <li><a href="#editor" role="tab" data-toggle="tab">
+              <i class="fa fa-building"></i> Editor
+              </a>
+          </li>
+        </ul>
       </div>
-      <div class="panel panel-default" id="action-panel">
-        <div class="panel-heading">
-          <h3 class="panel-title">Action panel</h3>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="teleop">
+          <div ng-include="'views/tabs/teleop.html'" class="tab">
+          </div>
         </div>
-        <div class="panel-body">
-          
+        <div class="tab-pane" id="editor">
+          <div ng-include="'views/tabs/editor.html'" class="tab">
+          </div>
         </div>
       </div>
     </div>

@@ -14,7 +14,8 @@
     "robot-api": "~0.4.0",
     "three.js": "threejs#*",
     "angular-circular-navigation": "*",
-    "stats.js": "*"
+    "stats.js": "*",
+    "angular-bootstrap-slider": "~0.1.18"
   },
   "appPath": "app",
   "moduleName": "EdGuiApp",

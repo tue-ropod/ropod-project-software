@@ -1,4 +1,10 @@
 composition:
+    - id: "operator"
+      pose: {x: -2.798, y: -1.499, z: 1.0}
+#      shape:
+#          cylinder:
+#              height: 0.6
+#              radius: 0.1
     - type: "robotics_testlabs.walls"
       id: "walls"
       pose:

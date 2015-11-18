@@ -24,6 +24,10 @@ shape:
             # Shelf
             pose: {x: 0, y: 0, z: 0.395}
             size: {x: 0.395, y: 0.02, z: 0.69}
+color:
+    red: 0.1
+    green: 0.1
+    blue: 0.1
 
 areas:
   - name: near

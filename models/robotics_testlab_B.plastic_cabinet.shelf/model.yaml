@@ -2,9 +2,9 @@ localizable: 1.0
 shape:
     path: shape/shape.xml
 color:
-    red: 0.05
-    green: 0.05
-    blue: 0.05
+    red: 0.6
+    green: 0.6
+    blue: 0.6
 affordances:
     place:
         height: 0.0

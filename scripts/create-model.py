@@ -39,7 +39,7 @@ def read_float(message, default = None):
 class ShapeCreator:
 
     def __init__(self):
-        self.f = open("model.yaml", "w")        
+        self.f = open("model.yaml", "w")
         self.f.write("shape:\n")
         self.f.write("    compound:\n")
         self.indent = "    "
@@ -55,7 +55,7 @@ class ShapeCreator:
 
 def main():
     model_type = read_option("Model type: ", ["table", "cabinet"])
-    
+
     if model_type == "table":
 
         print ""
@@ -85,7 +85,7 @@ def main():
         s.add_box(lt, lt, lh,  lx,  ly, lz, "Leg")
 
     elif model_type == "cabinet":
-        
+
         print ""
         height = read_float("Height: ")
         width  = read_float("Width:  ")
@@ -116,7 +116,7 @@ def main():
         s.add_box(pl_depth, pl_width, thickness, pl_x, 0, height - (thickness / 2), "Top")
 
         for shelf_height in shelf_heights:
-            s.add_box(pl_depth, pl_width, shelf_thickness, pl_x, 0, shelf_height - (shelf_thickness / 2), "Shelf")    
+            s.add_box(pl_depth, pl_width, shelf_thickness, pl_x, 0, shelf_height - (shelf_thickness / 2), "Shelf")
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -2,18 +2,18 @@ cmake_minimum_required(VERSION 2.8.3)
 project(ed_gui_server)
 
 find_package(catkin REQUIRED COMPONENTS
-    ed
-    message_generation
-    rgbd
-    tf
-    urdf
-    visualization_msgs
+  ed
+  message_generation
+  rgbd
+  tf
+  urdf
+  visualization_msgs
 )
 
 find_package(Boost REQUIRED COMPONENTS filesystem)
 
 add_message_files(
-    FILES
+  FILES
     Color.msg
     EntityInfo.msg
     EntityInfos.msg
@@ -22,7 +22,7 @@ add_message_files(
 )
 
 add_service_files(
-   FILES
+  FILES
     GetEntityInfo.srv
     Interact.srv
     QueryEntities.srv
@@ -30,25 +30,25 @@ add_service_files(
 )
 
 generate_messages(
-   DEPENDENCIES
-   geometry_msgs
+  DEPENDENCIES
+    geometry_msgs
 )
 
 catkin_package(
   # INCLUDE_DIRS include
- # LIBRARIES bla
- # CATKIN_DEPENDS other_catkin_pkg
- # DEPENDS system_lib
- CATKIN_DEPENDS ed message_runtime rgbd tf urdf visualization_msgs
+  # LIBRARIES bla
+  # CATKIN_DEPENDS other_catkin_pkg
+  # DEPENDS system_lib
+  CATKIN_DEPENDS ed message_runtime rgbd tf urdf visualization_msgs
 )
 
 include_directories(
-    ${catkin_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
 )
 
 add_library(ed_gui_server_plugin
-    src/gui_server_plugin.cpp
-    src/robot.cpp
+  src/gui_server_plugin.cpp
+  src/robot.cpp
 )
 target_link_libraries(ed_gui_server_plugin ${catkin_LIBRARIES})
 add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_generate_messages_cpp)

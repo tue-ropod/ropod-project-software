@@ -3,6 +3,7 @@ project(ed_gui_server)
 
 find_package(catkin REQUIRED COMPONENTS
   ed
+  geometry_msgs
   message_generation
   rgbd
   tf
@@ -39,7 +40,7 @@ catkin_package(
   # LIBRARIES bla
   # CATKIN_DEPENDS other_catkin_pkg
   # DEPENDS system_lib
-  CATKIN_DEPENDS ed message_runtime rgbd tf urdf visualization_msgs
+  CATKIN_DEPENDS ed geometry_msgs message_runtime rgbd tf urdf visualization_msgs
 )
 
 include_directories(
@@ -51,8 +52,10 @@ add_library(ed_gui_server_plugin
   src/robot.cpp
 )
 target_link_libraries(ed_gui_server_plugin ${catkin_LIBRARIES})
+add_dependencies(ed_gui_server_plugin ${catkin_EXPORTED_TARGETS})
 add_dependencies(ed_gui_server_plugin ${PROJECT_NAME}_generate_messages_cpp)
 
 add_executable(ed_rviz_publisher tools/rviz_publisher.cpp)
 target_link_libraries(ed_rviz_publisher ${catkin_LIBRARIES})
+add_dependencies(ed_rviz_publisher ${catkin_EXPORTED_TARGETS})
 add_dependencies(ed_rviz_publisher ${PROJECT_NAME}_generate_messages_cpp)

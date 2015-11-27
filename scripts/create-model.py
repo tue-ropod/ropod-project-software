@@ -9,17 +9,22 @@ import getopt
 
 # ----------------------------------------------------------------------------------------------------
 
-def read_option(message, options = [], default = None):
+def read_option(message, options = [], default = None, help = None):
     while True:
         option = raw_input(message)
-        if options and option in options:
+        if option == "?":
+            if help:
+                print help
+            else:
+                print "Possible options: %s" % options
+        elif options and option in options:
             return option
         elif not option:
             print "Please specify an option"
         else:
             print "Unknown option. Options are: {}".format(options)
 
-def read_float(message, default = None):
+def read_float(message, default = None, help = None):
     while True:
         option = raw_input(message)
         if not option:
@@ -27,6 +32,11 @@ def read_float(message, default = None):
                 return default
             else:
                 print "Please provide a value."
+        elif option == "?":
+            if help:
+                print help
+            else:
+                print "Please provide a number"
         else:
             try:
                 return float(option)
@@ -54,22 +64,31 @@ class ShapeCreator:
 # ----------------------------------------------------------------------------------------------------
 
 def main():
+
+    print ""
+    print """Answer the questions given. If you do not understand, give '?' as input. 
+A 'model.yaml' file will be created which can be used as ED model.
+All lengths / distances are in meters, unless specified otherwise."""
+    print ""
+
     model_type = read_option("Model type: ", ["table", "cabinet"])
     
     if model_type == "table":
 
         print ""
-        height = read_float("Height: ")
-        length = read_float("Length: ")
-        width  = read_float("Width:  ")
+        height = read_float("Height: ", help = "Distance from ground to top of the table")
+        length = read_float("Length: ", help = "Table length")
+        width  = read_float("Width:  ", help = "Table width")
 
         print ""
         table_top_thickness = read_float("Table top thickness: ")
 
         print ""
-        lt = read_float("Leg thickness: ")
-        lx_offset = read_float("[ Leg offset (length) ]: ", 0)
-        ly_offset = read_float("[ Leg offset (width) ]:  ", lx_offset)
+        lt = read_float("Leg thickness: ", help = "We assume square legs. How wide / thick are the legs?")
+        lx_offset = read_float("Optional: Leg offset (length): ", 0,
+            help = "(Optional) How far are the legs places inwards w.r.t. the table top (in the length direction)")
+        ly_offset = read_float("Optional: Leg offset (width):  ", lx_offset,
+            help = "(Optional) How far are the legs places inwards w.r.t. the table top (in the width direction)")
 
         s = ShapeCreator()
         s.add_box(length, width, table_top_thickness, 0, 0, height - table_top_thickness / 2, "Table top")
@@ -87,22 +106,23 @@ def main():
     elif model_type == "cabinet":
         
         print ""
-        height = read_float("Height: ")
-        width  = read_float("Width:  ")
-        depth  = read_float("Depth:  ")
-        thickness = read_float("Frame thickness: ")
+        height = read_float("Height: ", help = "Distance from ground to top of the cabinet (including frame)")
+        width  = read_float("Width:  ", help = "Cabinet width (including frame)")
+        depth  = read_float("Depth:  ", help = "Cabinet depth (including frame)")
+        thickness = read_float("Frame thickness: ", help = "How thick are the panels that define the cabinet frame (not the shelves)?")
 
         print ""
         shelf_heights = []
         while True:
-            shelf_height = read_float("Shelf %s, height: " % (len(shelf_heights) + 1), 0)
+            shelf_height = read_float("Shelf %s, height: " % (len(shelf_heights) + 1), 0,
+                help = "Distance from ground to top of shelf. Leave empty if all shelves have been entered")
             if shelf_height == 0:
                 break
             shelf_heights += [shelf_height]
 
         shelf_thickness = 0
         if shelf_heights:
-            shelf_thickness = read_float("Shelf thickness: ")
+            shelf_thickness = read_float("Shelf thickness: ", help = "How thick are the shelves?")
 
         s = ShapeCreator()
         s.add_box(depth, thickness, height, 0, -(width - thickness) / 2, height / 2, "Left side")

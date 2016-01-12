@@ -24,8 +24,8 @@ areas:
             max: { x:  0.325, y:  0.21, z: 1.76 }
   - name: near
     offset: 0.2
-  - name: on_top_off
+  - name: on_top_of
     shape:
       - box:  #<size>0.39 0.65 0.04</size>
-            min: { x: -0.19, y: -0.3, z: 0.02 }
-            max: { x: 0.19, y: 0.3, z: 0.35 }
+            min: { x: -0.19, y: -0.275, z: 0.05 }
+            max: { x: 0.15, y: 0.275, z: 0.3 }

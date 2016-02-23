@@ -139,10 +139,30 @@ void WorldModelDisplay::processMessage(const ed_gui_server::EntityInfos::ConstPt
         else if (info.mesh_revision == 0)
             visual->setConvexHull( info.polygon ); // Convex hull
 
-        int i_color = djb2(info.id) % 27;
-        visual->setColor ( Ogre::ColourValue(COLORS[i_color][0], COLORS[i_color][1], COLORS[i_color][2], 1.0 ));
+        // Set the color
+        double r,g,b;
+        if (info.color.a != 0) // If a color specified, take color from the info
+        {
+            r = (float)info.color.r / 255;
+            g = (float)info.color.g / 255;
+            b = (float)info.color.b / 255;
+        }
+        else // random color
+        {
+            int i_color = djb2(info.id) % 27;
+            r = COLORS[i_color][0];
+            g = COLORS[i_color][1];
+            b = COLORS[i_color][2];
+        }
+        visual->setColor ( Ogre::ColourValue(r, g, b, 1.0f) );
 
-        visual->setLabel( info.id );
+        std::string label;
+        label = info.id.substr(0, 6);
+
+        if (!info.type.empty())
+            label += " (" + info.type + ")";
+
+        visual->setLabel(label);
 
         alive_ids.push_back(info.id);
     }

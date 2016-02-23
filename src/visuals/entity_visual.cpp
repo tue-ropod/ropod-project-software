@@ -38,7 +38,6 @@ void EntityVisual::setMesh(const ed_gui_server::Mesh& mesh)
     for(unsigned int i = 0; i < mesh.vertices.size() / 3 / 3; ++i )
     {
         unsigned int i9 = 9 * i;
-        unsigned int i3 = 3 * i;
 
         Ogre::Vector3 v1, v2, v3, n;
 

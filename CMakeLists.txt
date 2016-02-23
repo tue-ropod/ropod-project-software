@@ -19,17 +19,18 @@ add_definitions(-DQT_NO_KEYWORDS)
 
 ## Here we specify which header files need to be run through "moc",
 ## Qt's meta-object compiler.
-qt4_wrap_cpp(MOC_FILES
-  src/displays/world_model_display.h
-)
+#qt4_wrap_cpp(MOC_FILES
+#  src/displays/world_model_display.h
+#) NOTE: WE DO THIS MANUALLY moc-qt5 header.h > header_moc.h
 
 ## Here we specify the list of source files, including the output of
 ## the previous command which is stored in ``${MOC_FILES}``.
+
 set(SOURCE_FILES
   src/displays/world_model_display.cpp
+  src/displays/world_model_display_moc.cxx # autogen file with moc-qt4
 
   src/visuals/entity_visual.cpp
-  ${MOC_FILES}
 )
 
 ## An rviz plugin is just a shared library, so here we declare the

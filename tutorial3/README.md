@@ -56,3 +56,5 @@ So, what does this say? Note that this format looks *a lot* like the world descr
 The 'type' field specifies we should instantiate an entity of the given model, 'table' in our case. What will happen under the hood is that ED starts looking for a directory called 'table' inside the model directories, and if it finds it, inspects the 'model.yaml' file. Then the entities 'table1' and 'table2' *inherit* all properties that are specified in the 'model.yaml'.
 
 When you run visualization (you know how) you should see two tables. Neat!
+
+![2tables](img/2tables.png)

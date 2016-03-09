@@ -60,7 +60,7 @@ Per entity, You'll receive a list of vertices and a list of triangles referring 
 
 ### ED Rviz Markerarray publisher
 
-rosrun ed_gui_server ed_rviz_publisher
+    rosrun ed_gui_server ed_rviz_publisher
 
 Now start RViz, and listen to the Marker topic '/ed/rviz'. You should see two blocks appearing: the blocks you specified in the configuration file. Or use the rviz_plugin from the ed_rviz_plugins package to visualize.
 

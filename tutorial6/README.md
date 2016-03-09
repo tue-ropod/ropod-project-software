@@ -71,3 +71,5 @@ If the above doesn't work, make sure that:
 * The laser topic is correctly specified in the configuration file
 * The frame_id specified in the Range Finder messages are correct (i.e., there is a valid transformation from the odometry frame to this frame)
 * The TF frames in the configuration file are correct
+
+![localization](img/localization.png)

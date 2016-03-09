@@ -6,6 +6,7 @@
 - https://github.com/tue-robotics/ed_gui_server.git
 - https://github.com/tue-robotics/ed_rviz_plugins.git
 - https://github.com/tue-robotics/ed_navigation.git
+- https://github.com/tue-robotics/ed_localization.git
 
 - Up and running move base configured for a static map on topic /ed/navigation/map
 

@@ -48,3 +48,5 @@ To visualize the world model specified in the config file above, simply run ED a
     rosrun ed_gui_server ed_rviz_publisher
     
 You can also use the rviz plugin: Start rviz and add the ed_rviz_plugins/WorldModel display. Configure the service for querying the meshes and the ED entities topic, e.g. /ed/gui/entities and /ed/gui/query_meshes
+
+![plugin](img/illustration.png)

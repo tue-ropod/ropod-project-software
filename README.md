@@ -1,8 +1,11 @@
 ED Tutorials
 ======
 
-## [Tutorial 1) Running ED with a configuration file](tutorial1)
-Basics of ED, how it works, what environment variables it needs etc.
+Tutorials for the Environment Descriptor ED. The explaination of the ED package can be found here: https://github.com/tue-robotics/ed
+
+- [Tutorial 1) Running ED with a configuration file](tutorial1)
+  Basics of ED, how it works, what environment variables it needs etc.
+- [Tutorial 2) Specifying a more complex world](tutorial2)
 
 
 

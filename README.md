@@ -1,4 +1,4 @@
-ED RVIZ Plugins [![Build Status](https://travis-ci.org/tue-robotics/ed.svg?branch=master)](https://travis-ci.org/tue-robotics/ed)
+ED RVIZ Plugins [![Build Status](https://travis-ci.org/tue-robotics/ed.svg?branch=master)](https://travis-ci.org/tue-robotics/ed_rviz_plugins)
 ======
 
 ## Introduction

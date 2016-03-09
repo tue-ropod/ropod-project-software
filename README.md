@@ -69,3 +69,7 @@ Now start RViz, and listen to the Marker topic '/ed/rviz'. You should see two bl
 Located in the https://github.com/tue-robotics/ed_rviz_plugins.git package:
 
 Start rviz and add the ed_rviz_plugins/WorldModel display. Configure the service for querying the meshes and the ED entities topic, e.g. /ed/gui/entities and /ed/gui/query_meshes
+
+## Tutorial
+
+All ED tutorials can be found in the ed_tutorials package: https://github.com/tue-robotics/ed_tutorials

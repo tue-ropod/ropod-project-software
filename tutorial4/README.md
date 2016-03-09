@@ -30,3 +30,5 @@ Don't forget to put the 'my-walls.pgm' in the 'robot-lab' model directory! Now w
         lib: libed_gui_server_plugin.so
 
 Run ED and visualize the world model. You should see two tables and some walls, as specified by your heightmap.
+
+![robot_lab](img/robot_lab.png)

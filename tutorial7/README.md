@@ -1,12 +1,17 @@
-### Navigation: ED and [ROS' Move Base](http://wiki.ros.org/move_base)
+# Tutorial 7) Navigation: ED and [ROS' Move Base](http://wiki.ros.org/move_base)
 
-... Under Construction ...
+## Prerequisites
 
-ED can be used in combination with ROS' Move Base. The [ED navigation plugin](https://github.com/tue-robotics/ed_navigation) projects all world model entities down to an occupancy grid which is published and can be used to fill a costmap in Move Base. This can then in turn be used to navigate the robot.
+- https://github.com/tue-robotics/ed.git
+- https://github.com/tue-robotics/ed_gui_server.git
+- https://github.com/tue-robotics/ed_rviz_plugins.git
+- https://github.com/tue-robotics/ed_navigation.git
 
-Requirements:
-* Installed ED and ED Navigation
-* Have Move Base up and running
+- Up and running move base configured for a static map on topic /map
+
+## Tutorial
+
+ED can be used in combination with ROS' Move Base or another base navigation framework that accepts a `nav_msgs/OccupancyGrid`. The [ED navigation plugin](https://github.com/tue-robotics/ed_navigation) projects all world model entities down to an occupancy grid which is published. In Move Base, the `static map layer` can be used to integrate this occupancy grid in the costmap.. This can then in turn be used to navigate the robot.
 
 **Add** the following to the **list of plugins** in your configuration file:
 

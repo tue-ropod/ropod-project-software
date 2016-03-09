@@ -1,4 +1,12 @@
-### Creating re-usable models
+# Tutorial 3) Creating re-usable models
+
+## Prerequisites
+
+- https://github.com/tue-robotics/ed.git
+- https://github.com/tue-robotics/ed_gui_server.git
+- https://github.com/tue-robotics/ed_rviz_plugins.git
+
+## Tutorial
 
 Imagine you just took some time describing the shape of a certain table, but the robots' environment contains multiple instances of that table. It would be nice to create a model, and simply re-use that model multiple times within your environment description, or maybe even in other environment descriptions you have.
 

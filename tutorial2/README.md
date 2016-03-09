@@ -1,4 +1,11 @@
-### Specifying a more complex world
+# Tutorial 2) Specifying a more complex world
+
+## Prerequisites
+- https://github.com/tue-robotics/ed.git
+- https://github.com/tue-robotics/ed_gui_server.git
+- https://github.com/tue-robotics/ed_rviz_plugins.git
+
+## Tutorial
 
 So far, we have created a configuration file which tells ED to create a world consisting of two blocks, and running a plugin which helps visualizing this world in RViz. That's nice, but not very useful. We need to create a model of the world the robot is living in, and that will be a bit more work than just adding a couple of boxes. Fortunately, ED allows you to use quite some powerful expressions to create the shapes you need. On of those is particularly useful if you already have a 2D map of the robots' environment: the height map. If you have used some sort of SLAM method (e.g., http://wiki.ros.org/gmapping) to create a 2D occupancy map of the environment, then you can almost directly use this map to specify the shape of an entity in ED.
 

@@ -1,20 +1,28 @@
-### Creating re-usable models
+# Tutorial 3) Creating re-usable models
+
+## Prerequisites
+
+- https://github.com/tue-robotics/ed.git
+- https://github.com/tue-robotics/ed_gui_server.git
+- https://github.com/tue-robotics/ed_rviz_plugins.git
+
+## Tutorial
 
 Imagine you just took some time describing the shape of a certain table, but the robots' environment contains multiple instances of that table. It would be nice to create a model, and simply re-use that model multiple times within your environment description, or maybe even in other environment descriptions you have.
 
 Well, you can! Before we start, let's create a directory which will hold these models:
 
-    mkdir ~/my-model-dir
+    mkdir my-model-dir
 
 You have to let ED know where it will be able to find the models. You can do this by setting the ED_MODEL_PATH variable.
 
-    export ED_MODEL_PATH=~/my-model-dir
+    export ED_MODEL_PATH=`pwd`/my-model-dir
 
 You can specify multiple paths by separating them with colons (':').
 
 Let's say we want to create an object model called 'table'. Create a directory with this name inside the model directory
 
-    cd ~/my-model-dir
+    cd my-model-dir
     mkdir table
 
 A model specification should always contain at least a file called 'model.yaml'. This will contain the description of the model. Of course you are free to add any other files that have something to do with the model, ''e.g.'', heightmap images, mesh binaries, etc. Inside the 'model.yaml' you can specify the shape of the model and some other properties such as color. So, inside the table directory create a file called 'model.yaml' with the following content:

@@ -5,7 +5,6 @@
 - https://github.com/tue-robotics/ed_gui_server.git
 - https://github.com/tue-robotics/ed_rviz_plugins.git
 - https://github.com/tue-robotics/ed_localization.git
-
 - 2D Range Finder (http://wiki.ros.org/Sensors) on the robot which scans in a plane parallel to the floor
 - [TF tree](wiki.ros.org/tf) containing transforms from the robots' odometry frame to the 2D Range Finder frame
 - Knowledge about TF and robot localization. Have a look at the [AMCL wiki page](http://wiki.ros.org/amcl) if not.

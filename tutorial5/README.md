@@ -14,3 +14,5 @@ We already know that we can visualize the world model by adding a certain plugin
     rosrun ed ed_view_model --model robot-lab
 
 That also works! And even better, you don't have to restart the viewer if you've made a change. Simply press 'r' and the model and visualization will reload. Now if you need to create or edit a model, all you have to do is fire up your favorite editor and run the model viewer, and you can instantly see your changes!
+
+![visualization](img/visualization.png)

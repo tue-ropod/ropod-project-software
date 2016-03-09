@@ -1,8 +1,6 @@
 ED RVIZ Plugins [![Build Status](https://travis-ci.org/tue-robotics/ed_rviz_plugins.svg?branch=master)](https://travis-ci.org/tue-robotics/ed_rviz_plugins)
 ======
 
-## Introduction
-
 Visualizes the ed_gui_server output in RVIZ.
 
 ## Installation
@@ -20,3 +18,7 @@ And compile
 
     cd <your_catkin_workspace>:
     catkin_make
+    
+## Tutorial
+
+All ED tutorials can be found in the ed_tutorials package: https://github.com/tue-robotics/ed_tutorials

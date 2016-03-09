@@ -20,3 +20,7 @@ And compile
 
     cd <your_catkin_workspace>:
     catkin_make
+    
+## Tutorial
+
+All ED tutorials can be found in the ed_tutorials package: https://github.com/tue-robotics/ed_tutorials

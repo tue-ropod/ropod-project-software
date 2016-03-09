@@ -1,8 +1,11 @@
 # Tutorial 1) Running ED with a configuration file
 
-Requirements:
-* Installed ED, ED localization and ED visualization (see above)
+## Prerequisites
+- https://github.com/tue-robotics/ed.git
+- https://github.com/tue-robotics/ed_gui_server.git
+- https://github.com/tue-robotics/ed_rviz_plugins.git
 
+## Tutorial
 ED strongly relies on plugins to integrate sensor data, estimate object positions, recognize objects, etc. Before you can start ED, you have to specify the location of these plugins using the environment variable ED_PLUGIN_PATH. For example, for a ROS Catkin workspace, the variable should be set to something like:
 
     export ED_PLUGIN_PATH=<your_catkin_workspace>/devel/lib
@@ -50,6 +53,6 @@ You probably won't see a lot happening. But ED *is* running. To visualize the wo
 
     rosrun ed_gui_server ed_rviz_publisher
 
-Now start RViz, and listen to the Marker topic '/ed/rviz'. You should see two blocks appearing: the blocks you specified in the configuration file. Or use the rviz_plugin from the ed_rviz_plugins package to visualize.
+Now start RViz, and listen to the Marker topic `/ed/rviz`. You should see two blocks appearing: the blocks you specified in the configuration file. Or use the rviz_plugin from the `ed_rviz_plugins` package to visualize.
 
-You can also use the rviz plugin: Start rviz and add the ed_rviz_plugins/WorldModel display. Configure the service for querying the meshes and the ED entities topic, e.g. /ed/gui/entities and /ed/gui/query_meshes
+You can also use the rviz plugin: Start rviz and add the `ed_rviz_plugins/WorldModel` display. Configure the service for querying the meshes and the ED entities topic, e.g. `/ed/gui/entities` and `/ed/gui/query_meshes`.

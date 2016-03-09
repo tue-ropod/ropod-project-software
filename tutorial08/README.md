@@ -5,81 +5,52 @@
 - https://github.com/tue-robotics/ed.git
 - https://github.com/tue-robotics/ed_gui_server.git
 - https://github.com/tue-robotics/ed_rviz_plugins.git
+- https://github.com/tue-robotics/ed_localization.git
 - https://github.com/tue-robotics/ed_sensor_integration.git
 
 ## Tutorial
 
+If we want to track obstacles in the scene, we have to integrate the sensor
+data of the robot into the world model. This can be done with use of the
+sensor_integration plugins. 
+
+The first sensor integration plugin that will be used is the laserscan plugin.
+This plugin integrates laser data readings into the world model
+(`sensor_msgs/Laserscan`). The plugin tries to associate all measuremed points
+with existing entities in the world model, if point cannot be associated,
+clusters will be created and these clusters will be tracked over time. This
+allows us to follow for example a person.
+
+In this tutorial, the config will be updated with two different plugins:
+- Laser integration plugin (responsible for adding and updating newly detected
+  clusters)
+- Entity clearer plugin (responsible for removing clusters if they are not
+  detected for a specific amount of time)
+
+The following configuration should be added to the world_model configuration
+file:
+
 <pre>
-- name: navigation
-  lib: libed_navigation_plugin.so
+- name: laser_integration
+  lib: libed_laser_plugin.so
+  frequency: 40
   parameters:
-    occupancy_grid_publisher:
-      resolution: 0.05       # Grid cell size in meters
-      frame_id: /map         # Frame id of the occupancy grid
-      min_z: 0.025           # All entities below min_z and above max_z are not
-      max_z: 1.8             # Projected onto the occupancy grid
-      default_offset: 0.7    # <-- not used for ROS' Move Base, but needs
-                             # to be specified
+      laser_topic: /amigo/torso_laser/scan
+      min_segment_size_pixels: 10
+      world_association_distance: 0.4
+      segment_depth_threshold: 0.2
+      min_cluster_size: 0.2
+      max_cluster_size: 1.0
+      max_gap_size: 10
+- name: entity_clearer
+  lib: libed_clearer_plugin.so
+  enabled: 1
+  parameters:
+      entity_timeout: 1.0
 </pre>
 
-Running ed with this configuration results in the following occupancy grid if
-we enable the occupancy grid viewer in RVIZ.
+As can be seen, the plugin will add entities to the scene and track these
+entities over time. In this particular example, it is a block that is not
+present in the world model specified by the .model file:
 
-![map](img/map.png)
-
-Now we need to configure the costmaps in Move Base to take this occupancy grid
-as an input. [This tutorial](http://wiki.ros.org/costmap_2d/Tutorials/Configuring%20Layered%20Costmaps) shows how to configure the layered costmaps that are used from hydro+.
-
-An example global costmap configuration:
-
-<pre>
-plugins:
-    # Obstacles
-    - {name: ed_occupancy_grid,                 type: "costmap_2d::StaticLayer"}
-    - {name: robot_footprint,                   type: "costmap_2d::FootprintLayer"}
-    - {name: configuration_space,               type: "costmap_2d::InflationLayer"}
-
-# Ed World model layer
-ed_occupancy_grid:
-    map_topic: /ed/navigation/map
-    track_unknown_space: false
-
-# Workspace to configuration space
-configuration_space:
-    use_footprint: false
-    target_cell_value: 254
-    dilation_cell_value: 253
-    dilation_radius: 0.37 # 2cm margin
-    inflation_radius: 0.6
-</pre>
-
-![global](img/global.png)
-
-An example local costmap configuration:
-
-<pre>
-plugins:
-    - {name: ed_occupancy_grid,                 type: "costmap_2d::StaticLayer"}
-    - {name: robot_footprint,                   type: "costmap_2d::FootprintLayer"}
-    - {name: configuration_space,               type: "costmap_2d::InflationLayer"}
-
-
-# LAYER CONFIGURATION
-
-ed_occupancy_grid:
-    map_topic: /ed/navigation/map
-    track_unknown_space: true
-    use_maximum: true
-    lethal_cost_threshold: 99
-
-# Workspace to configuration space
-configuration_space:
-    use_footprint: false
-    target_cell_value: 254
-    dilation_cell_value: 253
-    dilation_radius: 0.35 # inscribed radius
-    inflation_radius: 1.0 # optimization
-    cost_scaling_factor: 5.0
-</pre>
-
-![global](img/local.png)
+![laser_integration](img/laser_integration.png)

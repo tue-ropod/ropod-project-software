@@ -1,4 +1,9 @@
-### Visualizing models
+# Tutorial 5) Visualizing models
+
+## Prerequisites
+- https://github.com/tue-robotics/ed.git
+
+## Tutorial
 
 We already know that we can visualize the world model by adding a certain plugin to the configuration file, running ED, running some proxy program and starting RViz. But it takes a lot of time starting and restarting these programs if we are working on a model. Fortunately, there is a faster way to visualize models. Try:
 

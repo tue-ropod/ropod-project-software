@@ -1,11 +1,18 @@
-### ED Localization
+# Tutorial 6) Localization
 
-So far we've created a world model using heightmaps, primitives and other models, and we were able to visualize it. However, a world model on its own is not very useful. Let's start using it to make a robot behave autonomously! The package [ed_localization](https://github.com/tue-robotics/ed_localization) allows your robot to localize itself in the ED world model, using the robot's odometry and 2D Range Finder. Before we can do so, make sure you:
+## Prerequisites
+- https://github.com/tue-robotics/ed.git
+- https://github.com/tue-robotics/ed_gui_server.git
+- https://github.com/tue-robotics/ed_rviz_plugins.git
+- https://github.com/tue-robotics/ed_localization.git
 
-* installed ED and ED Localization (see above)
-* have a 2D Range Finder (http://wiki.ros.org/Sensors) on the robot which scans in a plane parallel to the floor
-* have a [TF tree](wiki.ros.org/tf) containing transforms from the robots' odometry frame to the 2D Range Finder frame
-* have basic knowledge about TF and robot localization. Have a look at the [AMCL wiki page](http://wiki.ros.org/amcl) if not.
+- 2D Range Finder (http://wiki.ros.org/Sensors) on the robot which scans in a plane parallel to the floor
+- [TF tree](wiki.ros.org/tf) containing transforms from the robots' odometry frame to the 2D Range Finder frame
+- Knowledge about TF and robot localization. Have a look at the [AMCL wiki page](http://wiki.ros.org/amcl) if not.
+
+## Tutorial
+
+So far we've created a world model using heightmaps, primitives and other models, and we were able to visualize it. However, a world model on its own is not very useful. Let's start using it to make a robot behave autonomously! The package [ed_localization](https://github.com/tue-robotics/ed_localization) allows your robot to localize itself in the ED world model, using the robot's odometry and 2D Range Finder. 
 
 The ED localization is largely based on ROS' [AMCL-module](http://wiki.ros.org/amcl), which in turn uses several algorithms from the book 'Probabilistic Robotics' by Thrun, Burgard, and Fox. It is a particle filter implementation which uses the robot's odometry for the *prediction* step, and the 2D Range Finder scan for the *update*. The main difference with AMCL is that ED localization does not operate on an occupancy grid given by the user, but on the 3D world model contained in ED. And by using a technique based on GPU rasterization methods instead of ray casting the sensor data for each particle, the ED localization module is quite a bit more efficient than AMCL! But let's not get too technical. How do we use it?!
 

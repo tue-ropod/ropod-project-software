@@ -13,6 +13,7 @@ Tutorials for the Environment Descriptor ED. The explaination of the ED package 
 7. [Navigation](tutorial07) Using ED to publish an occupancy grid for your favourite navigation stack, e.g. Move Base
 8. [Laser sensor integration](tutorial08) Integrate laserscanner data into ED
 9. [RGBD sensor integration](tutorial09) Integrate RGBD data into ED
-10. [Querying the world model](tutorial11) Different query interfaces of ED
-11. [Classification](tutorial10) Use the world model to classify objects in the world(model)
-12. [Manipulation](tutorial12) How to use ED for grasping, tossing and placing objects with your robot
+10. [Querying the world model](tutorial10) Different query interfaces of ED
+11. [Classification](tutorial11) Use the world model to classify objects in the world(model)
+12. [Publishing transforms](tutorial12) Publish entity transforms on the /tf topic 
+13. [Manipulation](tutorial13) How to use ED for grasping, tossing and placing objects with your robot

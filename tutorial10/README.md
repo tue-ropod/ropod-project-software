@@ -626,8 +626,8 @@ It is also possible to query for specific properties or entity ids.
 
     rosservice call /ed/update "request: '{\"entities\": [{\"id\": \"cabinet\", \"pose\": {\"x\": 3.3, \"y\": 5.35, \"z\": 0}}]}'"
     
-    ![segment_result](img/update1.png)
+![update1](img/update1.png)
     
     rosservice call /ed/update "request: '{\"entities\": [{\"id\": \"cabinet\", \"pose\": {\"x\": 3.3, \"y\": 4.3, \"z\": 0}}]}'" 
     
-    ![segment_result](img/update2.png)
+![update2](img/update2.png)

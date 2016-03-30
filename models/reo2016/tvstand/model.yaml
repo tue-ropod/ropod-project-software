@@ -1,0 +1,6 @@
+type: table
+shape:
+    compound:
+      - box:
+            pose: {x: 0.0, y: 0.0, z: 0.2525}
+            size: {x: 0.4, y: 1.8, z: 0.485}

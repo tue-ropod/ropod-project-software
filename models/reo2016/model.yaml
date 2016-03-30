@@ -11,6 +11,9 @@ composition:
 - type: "reo2016/cabinet"
   id: "cabinet"
   pose: {x: 0.793, y: -4.412, z: 0.0, X: 0.0, Y: 0.0, Z: 3.7}  
+- type: "reo2016/tvstand"
+  id: "tvstand"
+  pose: {x: 3.278, y: -1.37, z: 0.0, Z: 1.57075}  # x: 5.398 - 1.22 - 1.8/2 , y: -1,173 - 0.4/2
 - type: "reo2016/kitchen_counter"
   id: "kitchen_counter"
   pose: {x: 5.105, y: 3.052, z: 0.0}  # x: 5.4 - 0.59/2, y: 5.207 -0.655 - 3.0/2

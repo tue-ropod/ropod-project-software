@@ -1,0 +1,46 @@
+shape:
+    compound:
+      - box:
+            # Left side
+            pose: {x: 0, y: -0.391, z: 1.0125}
+            size: {x: 0.28, y: 0.018, z: 2.025}
+      - box:
+            # Right side
+            pose: {x: 0, y: 0.391, z: 1.0125}
+            size: {x: 0.28, y: 0.018, z: 2.025}
+      - box:
+            # Back side
+            pose: {x: 0.131, y: 0, z: 1.0125}
+            size: {x: 0.018, y: 0.8, z: 2.025}
+      - box:
+            # Top
+            pose: {x: -0.009, y: 0, z: 2.016}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 0.081}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 0.408}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 0.729}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 1.053}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 1.368}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 1.689}
+            size: {x: 0.262, y: 0.764, z: 0.018}
+      - box:
+            # Shelf
+            pose: {x: -0.009, y: 0, z: 2.013}
+            size: {x: 0.262, y: 0.764, z: 0.018}

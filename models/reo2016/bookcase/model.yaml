@@ -56,7 +56,7 @@ areas:
         #       max: { x:  0.13, y:  0.35, z: 0.69 }
         - box: # Shelf 3
               min: { x: -0.13, y: -0.35, z: 0.77 }
-              max: { x:  0.13, y:  0.35, z: 1.02 }
+              max: { x:  0.1, y:  0.35, z: 1.02 }
         # - box: # Shelf 4
         #       min: { x: -0.13, y: -0.35, z: 1.09 }
         #       max: { x:  0.13, y:  0.35, z: 1.34 }
@@ -69,12 +69,40 @@ areas:
       # - box: # Shelf 6
       #       min: { x: -0.13, y: -0.35, z: 0.12 }
       #       max: { x:  0.13, y:  0.35, z: 0.37 }
-
-
+  - name: shelf1
+    shape:
+      - box: # Shelf 1
+            min: { x: -0.13, y: -0.35, z: 0.12 }
+            max: { x:  0.1, y:  0.35, z: 0.37 }
+  - name: shelf2
+    shape:
+      - box: # Shelf 2
+            min: { x: -0.13, y: -0.35, z: 0.44 }
+            max: { x:  0.1, y:  0.35, z: 0.69 }
+  - name: shelf3
+    shape:
+      - box: # Shelf 3
+            min: { x: -0.13, y: -0.35, z: 0.77 }
+            max: { x:  0.1, y:  0.35, z: 1.02 }
+  - name: shelf4
+    shape:
+      - box: # Shelf 4
+            min: { x: -0.13, y: -0.35, z: 1.09 }
+            max: { x:  0.1, y:  0.35, z: 1.34 }
+  - name: shelf5
+    shape:
+      - box: # Shelf 5
+            min: { x: -0.13, y: -0.35, z: 1.41 }
+            max: { x:  0.1, y:  0.35, z: 1.66 }
+  - name: shelf6
+    shape:
+      - box: # Shelf 6
+            min: { x: -0.13, y: -0.35, z: 1.73 }
+            max: { x:  0.1, y:  0.35, z: 1.98 }      
   - name: in_front_of
     shape:
       - box:
-            min: { x: -1.0, y: -0.3, z: 0.0 }
-            max: { x: -0.8, y:  0.3, z: 0.01 }
+            min: { x: -0.93, y: -0.3, z: 0.0 }
+            max: { x: -0.73, y:  0.3, z: 0.01 }
   - name: near
     offset: 0.7

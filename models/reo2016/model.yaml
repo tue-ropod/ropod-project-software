@@ -2,3 +2,18 @@ composition:
 - type: "reo2016/walls"
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
+- type: "reo2016/dinnertable"
+  id: "dinnertable"
+  pose: {x: 4.192, y: -5.189, z: 0.0}  # x: 5.397 - 2.41/2, y: −7.139+ 1.46+0.98÷2
+- type: "reo2016/cupboard"
+  id: "cupboard"
+  pose: {x: 5.202, y: -3.1665, z: 0.0}  # x: 5.397 - 0.39/2, y: -7.139 + 1.46 + 0.98 + 0.8 + 1.465/2
+- type: "reo2016/kitchen_counter"
+  id: "kitchen_counter"
+  pose: {x: 5.105, y: 3.052, z: 0.0}  # x: 5.4 - 0.59/2, y: 5.207 -0.655 - 3.0/2
+- type: "reo2016/fridge"
+  id: "fridge"
+  pose: {x: 3.92, y: 4.872, z: 0.0}  # x: 5.4 - 1.18 - 0.6/2, y: 5.207 - 0.67/2
+# Bedroom
+
+# Waypoints

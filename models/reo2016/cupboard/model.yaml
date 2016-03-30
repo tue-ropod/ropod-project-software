@@ -1,0 +1,6 @@
+type: cabinet
+shape:
+    compound:
+      - box:
+            pose: {x: 0.0, y: 0.0,  z: 0.3875}
+            size: {x: 0.39, y: 1.465,  z: 0.795}

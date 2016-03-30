@@ -1,0 +1,15 @@
+type: cabinet
+shape:
+    compound:
+      - box:  # Bottom
+            pose: {x: 0.0, y: 0.0, z: 0.235}
+            size: {x: 1.6, y: 0.7, z: 0.47}
+      - box:  # Back
+            pose: {x: 0.0, y: 0.285, z: 0.655}  # y: 0.7/2 - 0.13/2 , z: 0.47 + 0.37/2
+            size: {x: 1.6, y: 0.13, z: 0.37}
+      - box:  # Left
+            pose: {x: -0.735, y: 0.0, z: 0.655}  # x: 1.6/2 - 0.13/2
+            size: {x: 0.13, y: 0.7, z: 0.37}
+      - box:  # Right
+            pose: {x: 0.735, y: 0.0, z: 0.655}  # x: 1.6/2 - 0.13/2
+            size: {x: 0.13, y: 0.7, z: 0.37}

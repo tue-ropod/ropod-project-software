@@ -14,6 +14,9 @@ composition:
 - type: "reo2016/tvstand"
   id: "tvstand"
   pose: {x: 3.278, y: -1.37, z: 0.0, Z: 1.57075}  # x: 5.398 - 1.22 - 1.8/2 , y: -1,173 - 0.4/2
+- type: "reo2016/couch"
+  id: "couch"
+  pose: {x: 3.151, y: -3.216, z: 0.0, Z: 3.1415}  # x: 2.351 + 1.6/2, y:  -2.866 - 0.7/2
 - type: "reo2016/kitchen_counter"
   id: "kitchen_counter"
   pose: {x: 5.105, y: 3.052, z: 0.0}  # x: 5.4 - 0.59/2, y: 5.207 -0.655 - 3.0/2
@@ -73,3 +76,13 @@ composition:
 - type: "waypoint"
   id: "rips3"
   pose: { x: 1.5, y: -4.0, z: 0, rz: 0.0 }
+
+# - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
+
+- type: "waypoint"
+  id: "person_rec_learning"
+  pose: { x: 3.5, y: -2.2, z: 0, rz: 0.0}
+
+- type: "waypoint"
+  id: "person_rec_living_room_1"
+  pose: { x: 3.5, y: -2.2, z: 0, rz: -2.79}

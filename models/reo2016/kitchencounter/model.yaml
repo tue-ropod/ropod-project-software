@@ -1,4 +1,3 @@
-type: table
 shape:
     compound:
       - box:
@@ -11,6 +10,16 @@ areas:
       - box:
             min: { x: -0.29, y: -1.5, z: 0.99 }
             max: { x:  0.29, y:  1.5, z: 1.30 }
+  - name: left_of_sink
+    shape:
+      - box:
+            min: { x: -0.29, y: 0.5, z: 0.99 }
+            max: { x:  0.29, y: 1.25, z: 1.31 }
+  - name: rightt_of_sink
+    shape:
+      - box:
+            min: { x: -0.29, y: -1.25, z: 0.99 }
+            max: { x:  0.29, y: -0.5, z: 1.31 }
   - name: in_front_of
     shape:
       - box:

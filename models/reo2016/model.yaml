@@ -51,3 +51,14 @@ composition:
 - type: "waypoint"
   id: "exit_door_B3"
   pose: { x: 0.5, y: -1.85, z: 0, rz: 3.1415 }
+
+# # # RIPS      # # #
+- type: "waypoint"
+  id: "rips1"
+  pose: { x: 4.0, y: -4.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "rips2"
+  pose: { x: 4.5, y: -2.0, z: 0, rz: 1.57 }
+- type: "waypoint"
+  id: "rips3"
+  pose: { x: 1.5, y: -4.0, z: 0, rz: 0.0 }

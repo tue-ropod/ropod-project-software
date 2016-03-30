@@ -16,4 +16,38 @@ composition:
   pose: {x: 3.92, y: 4.872, z: 0.0}  # x: 5.4 - 1.18 - 0.6/2, y: 5.207 - 0.67/2
 # Bedroom
 
-# Waypoints
+##### Waypoints #####
+# # # General   # # #
+- type: "waypoint"
+  id: "initial_pose"
+  pose: {x: -0.5, y: 0, z: 0, Z: 0}
+- type: "waypoint"
+  id: "initial_pose_door_A"
+  pose: {x: -0.5, y: 0, z: 0, Z: 0}  
+- type: "waypoint"
+  id: "initial_pose_door_B"
+  pose: {x: -0.485, y: -1,85, z: 0, Z: 0}
+- type: "waypoint"
+  id: "entry_point_A"
+  pose: { x: 1.0, y: 0.0, z: 0, rz: 0 } 
+- type: "waypoint"
+  id: "entry_point_B"
+  pose: { x: 1.0, y: -2.0, z: 0, rz: 0 }  
+- type: "waypoint"
+  id: "exit_door_A1"
+  pose: { x: -0.5, y: 0.0, z: 0, rz: 3.1415 } 
+- type: "waypoint"
+  id: "exit_door_A2"
+  pose: { x: -2.0, y: 0.5, z: 0, rz: 3.1415 } # Arena A
+- type: "waypoint"
+  id: "exit_door_A3"
+  pose: { x: 0.5, y: 0.0, z: 0, rz: 3.1415 } # Arena A  
+- type: "waypoint"
+  id: "exit_door_B1"
+  pose: { x: -0.5, y: -1.85, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "exit_door_B2"
+  pose: { x: -0.5, y: -2.35, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "exit_door_B3"
+  pose: { x: 0.5, y: -1.85, z: 0, rz: 3.1415 }

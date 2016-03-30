@@ -1,4 +1,3 @@
-type: cabinet
 shape:
     compound:
       - box:  # Bottom
@@ -13,3 +12,17 @@ shape:
       - box:  # Right
             pose: {x: 0.735, y: 0.0, z: 0.655}  # x: 1.6/2 - 0.13/2
             size: {x: 0.13, y: 0.7, z: 0.37}
+
+areas:
+  - name: on_top_of
+    shape:
+      - box:
+            min: { x: -0.7, y: -0.35, z: 0.51 }
+            max: { x:  0.7, y: 0.25, z: 0.76 }
+  - name: in_front_of
+    shape:
+      - box:
+            min: { x: -0.5, y: -1.15, z: 0.0 }
+            max: { x:  0.5, y:  -0.95, z: 0.01 }
+  - name: near
+    offset: 0.7

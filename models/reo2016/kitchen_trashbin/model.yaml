@@ -3,3 +3,6 @@ shape:
     - cylinder:
             height: 0.71
             radius: 0.17
+areas:
+  - name: near
+    offset: 0.7            

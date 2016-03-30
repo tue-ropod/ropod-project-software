@@ -28,3 +28,17 @@ shape:
             # Back plate
             pose: {x: 0.0, y: 0.289, z: 1.0475}
             size: {x: 1.00, y: 0.022, z: 2.095}
+
+areas:
+  - name: on_top_of
+    shape:
+      - box:
+            min: { x: -0.5, y: -0.25, z: 1.035 }
+            max: { x:  0.5, y:  0.30, z: 1.25 }
+  - name: in_front_of
+    shape:
+      - box:
+            min: { x: -0.5, y: -1.1, z: 0.0 }
+            max: { x:  0.5, y:  -0.9, z: 0.01 }
+  - name: near
+    offset: 0.7

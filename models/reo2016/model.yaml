@@ -38,7 +38,7 @@ composition:
   pose: { x: 1.0, y: -2.0, z: 0, rz: 0 }  
 - type: "waypoint"
   id: "exit_door_A1"
-  pose: { x: -0.5, y: 0.0, z: 0, rz: 3.1415 } 
+  pose: { x: -1.0, y: 0.0, z: 0, rz: 3.1415 } 
 - type: "waypoint"
   id: "exit_door_A2"
   pose: { x: -2.0, y: 0.5, z: 0, rz: 3.1415 } # Arena A
@@ -47,10 +47,10 @@ composition:
   pose: { x: 0.5, y: 0.0, z: 0, rz: 3.1415 } # Arena A  
 - type: "waypoint"
   id: "exit_door_B1"
-  pose: { x: -0.5, y: -1.85, z: 0, rz: 3.1415 }
+  pose: { x: -1.0, y: -1.85, z: 0, rz: 3.1415 }
 - type: "waypoint"
   id: "exit_door_B2"
-  pose: { x: -0.5, y: -2.35, z: 0, rz: 3.1415 }
+  pose: { x: -1.0, y: -2.35, z: 0, rz: 3.1415 }
 - type: "waypoint"
   id: "exit_door_B3"
   pose: { x: 0.5, y: -1.85, z: 0, rz: 3.1415 }

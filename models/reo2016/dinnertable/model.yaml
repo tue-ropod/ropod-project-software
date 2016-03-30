@@ -1,6 +1,22 @@
-type: table
 shape:
     compound:
       - box:
-            pose: {x: 0.0, y: 0.0,  z: 0.75}
-            size: {x: 2.41, y: 0.98,  z: 0.02}
+            # Table top
+            pose: {x: 0, y: 0, z: 0.745}
+            size: {x: 2.41, y: 0.98, z: 0.03}
+      - box:
+            # Leg
+            pose: {x: -1.1035, y: -0.4275, z: 0.365}
+            size: {x: 0.085, y: 0.085, z: 0.73}
+      - box:
+            # Leg
+            pose: {x: 1.1035, y: -0.4275, z: 0.365}
+            size: {x: 0.085, y: 0.085, z: 0.73}
+      - box:
+            # Leg
+            pose: {x: -1.1035, y: 0.4275, z: 0.365}
+            size: {x: 0.085, y: 0.085, z: 0.73}
+      - box:
+            # Leg
+            pose: {x: 1.1035, y: 0.4275, z: 0.365}
+            size: {x: 0.085, y: 0.085, z: 0.73}

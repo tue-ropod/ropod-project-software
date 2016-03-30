@@ -1,0 +1,111 @@
+models:
+  - height_max: 0.0747677
+    height_min: 0.0656809
+    name: apple
+    width_max: 0.0726221
+    width_min: 0.0668943
+  - height_max: 0.0749135
+    height_min: 0.0585589
+    name: avocado
+    width_max: 0.0943142
+    width_min: 0.0599536
+  - height_max: 0.130029
+    height_min: 0.122974
+    name: chocolate_sprinkles
+    width_max: 0.0902484
+    width_min: 0.0752672
+  - height_max: 0.24832
+    height_min: 0.150826
+    name: cloth
+    width_max: 0.253167
+    width_min: 0.173218
+  - height_max: 0.0827021
+    height_min: 0.0652431
+    name: dishwashing_soap
+    width_max: 0.063148
+    width_min: 0.038965
+  - height_max: 0.145409
+    height_min: 0.112951
+    name: kinder_coke
+    width_max: 0.0572522
+    width_min: 0.0549988
+  - height_max: 0.076495
+    height_min: 0.067818
+    name: lemon
+    width_max: 0.0757748
+    width_min: 0.0600538
+  - height_max: 0.191669
+    height_min: 0.154252
+    name: licorice
+    width_max: 0.127852
+    width_min: 0.0646025
+  - height_max: 0.201113
+    height_min: 0.183381
+    name: little_bananas
+    width_max: 0.155651
+    width_min: 0.0661955
+  - height_max: 0.176895
+    height_min: 0.146181
+    name: macaroni
+    width_max: 0.097336
+    width_min: 0.0524778
+  - height_max: 0.122613
+    height_min: 0.114585
+    name: milk
+    width_max: 0.0597271
+    width_min: 0.0464554
+  - height_max: 0.113344
+    height_min: 0.0428979
+    name: paprika
+    width_max: 0.0725848
+    width_min: 0.0380879
+  - height_max: 0.185154
+    height_min: 0.136918
+    name: pineapple_cookies
+    width_max: 0.134752
+    width_min: 0.0555703
+  - height_max: 0.197667
+    height_min: 0.16904
+    name: rice
+    width_max: 0.100568
+    width_min: 0.0429995
+  - height_max: 0.147069
+    height_min: 0.0654687
+    name: smoothie
+    width_max: 0.0540232
+    width_min: 0.0484915
+  - height_max: 0.0957082
+    height_min: 0.0833957
+    name: soap
+    width_max: 0.0613381
+    width_min: 0.0351938
+  - height_max: 0.180457
+    height_min: 0.135638
+    name: strawberry_cookies
+    width_max: 0.138801
+    width_min: 0.059273
+  - height_max: 0.15642
+    height_min: 0.0957431
+    name: tea
+    width_max: 0.138284
+    width_min: 0.0737085
+  - height_max: 0.151172
+    height_min: 0.132008
+    name: toilet_paper
+    width_max: 0.129581
+    width_min: 0.106111
+  - height_max: 0.167751
+    height_min: 0.0750845
+    name: tuc
+    width_max: 0.142317
+    width_min: 0.0740809
+  - height_max: 0.167058
+    height_min: 0.0655844
+    name: wafer
+    width_max: 0.109074
+    width_min: 0.0566786
+  - height_max: 0.0445345
+    height_min: 0.0394976
+    name: water
+    width_max: 0.0490426
+    width_min: 0.0339283

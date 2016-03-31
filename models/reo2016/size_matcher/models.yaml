@@ -1,6 +1,6 @@
 models:
   - height_max: 0.094814
-    height_min: 0.0697107
+    height_min: 0.0539406
     name: apple
     width_max: 0.0852282
     width_min: 0.0661691
@@ -9,16 +9,16 @@ models:
     name: avocado
     width_max: 0.0979164
     width_min: 0.0565087
-  - height_max: 0.125998
+  - height_max: 0.12959
     height_min: 0.0909666
     name: chocolate_sprinkles
-    width_max: 0.0907824
+    width_max: 0.0990483
     width_min: 0.06479
-  - height_max: 0.235733
+  - height_max: 0.270783
     height_min: 0.107095
     name: cloth
     width_max: 0.222309
-    width_min: 0.172704
+    width_min: 0.0842436
   - height_max: 0.0912066
     height_min: 0.0489628
     name: dishwashing_soap
@@ -30,10 +30,10 @@ models:
     width_max: 0.0705716
     width_min: 0.0573197
   - height_max: 0.0685456
-    height_min: 0.0595674
+    height_min: 0.0562612
     name: lemon
     width_max: 0.081626
-    width_min: 0.0598117
+    width_min: 0.0569485
   - height_max: 0.184196
     height_min: 0.140187
     name: licorice
@@ -54,7 +54,7 @@ models:
     name: milk
     width_max: 0.0710811
     width_min: 0.0203465
-  - height_max: 0.0900369
+  - height_max: 0.12977
     height_min: 0.0296839
     name: paprika
     width_max: 0.097341
@@ -64,7 +64,7 @@ models:
     name: pineapple_cookies
     width_max: 0.138166
     width_min: 0.0679722
-  - height_max: 0.193835
+  - height_max: 0.198666
     height_min: 0.065108
     name: rice
     width_max: 0.172244
@@ -95,7 +95,7 @@ models:
     width_max: 0.106641
     width_min: 0.0718218
   - height_max: 0.127953
-    height_min: 0.102053
+    height_min: 0.100569
     name: toilet_paper
     width_max: 0.155664
     width_min: 0.118324

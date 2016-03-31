@@ -124,8 +124,8 @@ composition:
 
 - type: "waypoint"
   id: "person_rec_learning"
-  pose: { x: 3.5, y: -2.2, z: 0, rz: 0.0}
+  pose: { x: 3.6, y: -3.6, z: 0, rz: 0.0}
 
 - type: "waypoint"
   id: "person_rec_living_room_1"
-  pose: { x: 3.5, y: -2.2, z: 0, rz: -2.79}
+  pose: { x: 3.6, y: -3.6, z: 0, rz: 3.1415}

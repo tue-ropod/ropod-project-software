@@ -77,8 +77,8 @@ areas:
   - name: shelf2
     shape:
       - box: # Shelf 2
-            min: { x: -0.13, y: -0.35, z: 0.44 }
-            max: { x:  0.1, y:  0.35, z: 0.69 }
+            min: { x: -0.13, y: -0.25, z: 0.44 }
+            max: { x:  0.0, y:  0.25, z: 0.69 }
   - name: shelf3
     shape:
       - box: # Shelf 3
@@ -102,7 +102,7 @@ areas:
   - name: in_front_of
     shape:
       - box:
-            min: { x: -0.93, y: -0.3, z: 0.0 }
-            max: { x: -0.73, y:  0.3, z: 0.01 }
+            min: { x: -0.93, y: -0.2, z: 0.0 }
+            max: { x: -0.73, y:  0.2, z: 0.01 }
   - name: near
     offset: 0.7

@@ -111,13 +111,13 @@ composition:
 # # # RIPS      # # #
 - type: "waypoint"
   id: "rips1"
-  pose: { x: 4.4, y: -2.3, z: 0, rz: 0,79 }
+  pose: { x: 4.4, y: -2.3, z: 0, Z: 0.0 }
 - type: "waypoint"
   id: "rips2"
-  pose: { x: 2.5, y: -2.25, z: 0, rz: 0.0 }
+  pose: { x: 2.5, y: -2.25, z: 0, Z: 0.0 }
 - type: "waypoint"
   id: "rips3"
-  pose: { x: 2.5, y: 0.0, z: 0, rz: 3.14 }
+  pose: { x: 2.5, y: 0.0, z: 0, Z: 3.14 }
 
 # - - - - - - CHALLENGE PERSON RECOGNITION - - - - - - -
 

@@ -10,7 +10,7 @@ composition:
   pose: {x: 5.202, y: -3.1665, z: 0.0}  # x: 5.397 - 0.39/2, y: -7.139 + 1.46 + 0.98 + 0.8 + 1.465/2
 - type: "reo2016/bookcase"
   id: "bookcase"
-  pose: {x: 0.893, y: -4.712, z: 0.0, X: 0.0, Y: 0.0, Z: 3.75}  
+  pose: {x: 0.893, y: -4.712, z: 0.0, X: 0.0, Y: 0.0, Z: 3.75}
 - type: "reo2016/tv_stand"
   id: "tv_stand"
   pose: {x: 3.278, y: -1.37, z: 0.0, Z: 1.57075}  # x: 5.398 - 1.22 - 1.8/2 , y: -1,173 - 0.4/2
@@ -75,29 +75,38 @@ composition:
 ##### Waypoints #####
 # # # General   # # #
 - type: "waypoint"
+  id: "navigation_waypoint_1"
+  pose: {x: 2.45, y: -5.22, z: 0, Z: 0}
+- type: "waypoint"
+  id: "navigation_waypoint_2"
+  pose: {x: 4.36, y: 3.91, z: 0, Z: 0}
+- type: "waypoint"
+  id: "navigation_waypoint_3"
+  pose: {x: 0.507, y: -1.84, z: 0, Z: 3.1415}
+- type: "waypoint"
   id: "initial_pose"
   pose: {x: -0.5, y: 0, z: 0, Z: 0}
 - type: "waypoint"
   id: "initial_pose_door_A"
-  pose: {x: -0.5, y: 0, z: 0, Z: 0}  
+  pose: {x: -0.5, y: 0, z: 0, Z: 0}
 - type: "waypoint"
   id: "initial_pose_door_B"
   pose: {x: -0.485, y: -1.85, z: 0, Z: 0}
 - type: "waypoint"
   id: "entry_point_A"
-  pose: { x: 1.0, y: 0.0, z: 0, rz: 0 } 
+  pose: { x: 1.0, y: 0.0, z: 0, rz: 0 }
 - type: "waypoint"
   id: "entry_point_B"
-  pose: { x: 1.0, y: -2.0, z: 0, rz: 0 }  
+  pose: { x: 1.0, y: -2.0, z: 0, rz: 0 }
 - type: "waypoint"
   id: "exit_door_A1"
-  pose: { x: -1.0, y: 0.0, z: 0, rz: 3.1415 } 
+  pose: { x: -1.0, y: 0.0, z: 0, rz: 3.1415 }
 - type: "waypoint"
   id: "exit_door_A2"
   pose: { x: -2.0, y: 0.5, z: 0, rz: 3.1415 } # Arena A
 - type: "waypoint"
   id: "exit_door_A3"
-  pose: { x: 0.5, y: 0.0, z: 0, rz: 3.1415 } # Arena A  
+  pose: { x: 0.5, y: 0.0, z: 0, rz: 3.1415 } # Arena A
 - type: "waypoint"
   id: "exit_door_B1"
   pose: { x: -1.0, y: -1.85, z: 0, rz: 3.1415 }

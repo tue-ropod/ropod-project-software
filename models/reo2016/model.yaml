@@ -50,16 +50,16 @@ composition:
     - name: in
       shape:
         - box:
-            min: { x: -1.0, y: -2.5, z: 0 }
+            min: { x: -1.0, y: -3.0, z: 0 }
             max: { x:  1.0, y:  2.5, z: 0.01 }  # ToDo: check right side
 - type: "room"
   id: "livingroom"
-  pose: { x: 3.0, y: -4.0, z: 0.0 }
+  pose: { x: 4.0, y: -4.0, z: 0.0 }
   areas:
     - name: in
       shape:
         - box:
-            min: { x: -4.0, y: -3.0, z: 0 }
+            min: { x: -3.0, y: -2.5, z: 0 }
             max: { x:  1.5, y:  3.0, z: 0.01 }
 - type: "room"
   id: "bedroom"
@@ -68,7 +68,7 @@ composition:
     - name: in
       shape:
         - box:
-            min: { x: -2.0, y: -3.0, z: 0 }
+            min: { x: -1.5, y: -3.0, z: 0 }
             max: { x:  1.5, y:  2.0, z: 0.01 }
 
 

@@ -41,6 +41,9 @@ composition:
 - type: "reo2016/hallway_trashbin"
   id: "hallway_trashbin"
   pose: {x: 5.131, y: 1.033, z: 0.0}
+- type: "reo2016/suitcase"
+  id: "suitcase"
+  pose: {x: 0.437, y: -1.21, z: 0.0}
 
 ##### ROOMS #####
 - type: "room"

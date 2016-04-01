@@ -62,8 +62,8 @@ composition:
     - name: in
       shape:
         - box:
-            min: { x: -3.0, y: -2.5, z: 0 }
-            max: { x:  1.5, y:  3.0, z: 0.01 }
+            min: { x: -4.0, y: -3.1, z: 0 }
+            max: { x:  1.5, y:  2.5, z: 0.01 }
 - type: "room"
   id: "bedroom"
   pose: { x: 2.0, y: 2.0, z: 0 }
@@ -71,7 +71,7 @@ composition:
     - name: in
       shape:
         - box:
-            min: { x: -1.5, y: -3.0, z: 0 }
+            min: { x: -1.5, y: -1.0, z: 0 }
             max: { x:  1.5, y:  2.0, z: 0.01 }
 - type: "room"
   id: "entrance"
@@ -161,3 +161,8 @@ composition:
 - type: "waypoint"
   id: "person_rec_living_room_1"
   pose: { x: 3.6, y: -3.6, z: 0, rz: 3.1415}
+
+# - - - - - - CHALLENGE GPSR - - - - - - -
+- type: "waypoint"
+  id: "gpsr_starting_pose"
+  pose: { x: 1.755, y: 1.4386, z: 0, rz: -1.57}

@@ -71,7 +71,7 @@ composition:
     - name: in
       shape:
         - box:
-            min: { x: -1.5, y: -1.0, z: 0 }
+            min: { x: -1.5, y: -2.0, z: 0 }
             max: { x:  1.5, y:  2.0, z: 0.01 }
 - type: "room"
   id: "entrance"

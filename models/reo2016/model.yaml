@@ -166,3 +166,9 @@ composition:
 - type: "waypoint"
   id: "gpsr_starting_pose"
   pose: { x: 1.755, y: 1.4386, z: 0, rz: -1.57}
+
+
+# - - - - - - CHALLENGE EEGPSR - - - - - - -
+- type: "waypoint"
+  id: "eegpsr_starting_pose"
+  pose: { x: 0.760, y: -3.526, z: 0, rz: 1.57}

@@ -524,41 +524,41 @@ models:
   #     - color: yellow
   #       max: 0.0664032
   #       min: 0.0189247
-  - name: smoothie
-    colors:
-      - color: black
-        max: 0.30342
-        min: 0.0155142
-      - color: blue
-        max: 0.343256
-        min: 0.0189435
-      - color: brown
-        max: 0.159532
-        min: 0.00680548
-      - color: grey
-        max: 0.149988
-        min: 0.0142325
-      - color: green
-        max: 0.130893
-        min: 0.00417871
-      - color: orange
-        max: 0.0834763
-        min: 0.0143515
-      - color: pink
-        max: 0.272327
-        min: 0.0519346
-      - color: purple
-        max: 0.569997
-        min: 0.124906
-      - color: red
-        max: 0.299063
-        min: 0.0193281
-      - color: white
-        max: 0.101455
-        min: 0.0021407
-      - color: yellow
-        max: 0.10827
-        min: 0.00906558
+  # - name: smoothie
+  #   colors:
+  #     - color: black
+  #       max: 0.30342
+  #       min: 0.0155142
+  #     - color: blue
+  #       max: 0.343256
+  #       min: 0.0189435
+  #     - color: brown
+  #       max: 0.159532
+  #       min: 0.00680548
+  #     - color: grey
+  #       max: 0.149988
+  #       min: 0.0142325
+  #     - color: green
+  #       max: 0.130893
+  #       min: 0.00417871
+  #     - color: orange
+  #       max: 0.0834763
+  #       min: 0.0143515
+  #     - color: pink
+  #       max: 0.272327
+  #       min: 0.0519346
+  #     - color: purple
+  #       max: 0.569997
+  #       min: 0.124906
+  #     - color: red
+  #       max: 0.299063
+  #       min: 0.0193281
+  #     - color: white
+  #       max: 0.101455
+  #       min: 0.0021407
+  #     - color: yellow
+  #       max: 0.10827
+  #       min: 0.00906558
   # - name: soap
   #   colors:
   #     - color: black

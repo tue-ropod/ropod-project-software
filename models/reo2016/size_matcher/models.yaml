@@ -74,11 +74,11 @@ models:
   #   name: rice
   #   width_max: 0.172244
   #   width_min: 0.0223672
-  - height_max: 0.309254
-    height_min: 0.0585849
-    name: smoothie
-    width_max: 0.0909862
-    width_min: 0.0237295
+  # - height_max: 0.309254
+  #   height_min: 0.0585849
+  #   name: smoothie
+  #   width_max: 0.0909862
+  #   width_min: 0.0237295
   # - height_max: 0.0957082
   #   height_min: 0.0590014
   #   name: soap

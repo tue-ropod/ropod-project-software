@@ -8,7 +8,6 @@ import sys
 import getopt
 import yaml
 import os
-import sys
 
 ROOT=os.environ['ED_MODEL_PATH']
 DEFAULT_BOTTOM_CLEARANCE = 0.02  # The 'onTopOff' area will start DEFAULT_BOTTOM_CLEARANCE above an object

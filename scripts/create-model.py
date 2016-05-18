@@ -11,8 +11,13 @@ import os
 
 ROOT=os.environ['ED_MODEL_PATH']
 DEFAULT_BOTTOM_CLEARANCE = 0.02  # The 'onTopOff' area will start DEFAULT_BOTTOM_CLEARANCE above an object
-DEFAULT_SIDE_CLEARANCE = 0.0  # The 'onTopOff' area will start DEFAULT_SIDE_CLEARANCE above an object
+DEFAULT_SIDE_CLEARANCE = 0.03  # The 'onTopOff' area will start DEFAULT_SIDE_CLEARANCE above an object
 ON_TOP_OFF_HEIGHT = 0.3 # Height of an 'onTopOff' box
+DEFAULT_IN_FRONT_SIDE_CLEARANCE = 0.1 # The ' inFrontOf' area will be DEFAULT_IN_FRONT_SIDE_CLEARANCE smaller on each side
+DEFAULT_IN_FRONT_DISTANCE = 0.4 # Distance from object to start 'inFrontOf' area
+DEFAULT_IN_FRONT_SIZE = 0.2 # Size of 'inFrontOf' area
+ROUND_LEVEL=4; # Level of rounding
+
 
 # ----------------------------------------------------------------------------------------------------
 
@@ -101,7 +106,19 @@ Continu with creating your model"""
     def add_area(self):
         pass
 
-    def add_on_top_off(self, bottom_clearance=DEFAULT_BOTTOM_CLEARANCE,
+    def add_in_front_of(self,depth,width,side_clearance=DEFAULT_IN_FRONT_SIDE_CLEARANCE,distance=DEFAULT_IN_FRONT_DISTANCE,size=DEFAULT_IN_FRONT_SIZE):
+
+        boxmin = {'x': round(depth/2 + distance,ROUND_LEVEL),
+                  'y': round(-width/2 + side_clearance,ROUND_LEVEL),
+                  'z': 0.0}
+        boxmax = {'x': round(depth/2 + distance+size,ROUND_LEVEL),
+                  'y': round(width/2 - side_clearance,ROUND_LEVEL),
+                  'z': 0.01}
+
+        self.data['areas'].append({'name': 'in_front_of',
+                                   'shape': [{'box': {'min': boxmin, 'max': boxmax}}]})
+
+    def add_on_top_of(self, name="",bottom_clearance=DEFAULT_BOTTOM_CLEARANCE,
                              side_clearance=DEFAULT_SIDE_CLEARANCE,
                              height=ON_TOP_OFF_HEIGHT):
         """ Adds an on_top_off_area to the model. This must be called right after the element w.r.t.
@@ -110,6 +127,9 @@ Continu with creating your model"""
         :param side_clearance: float with the clearance between the sides of the model and the on_top_off_box
         :param height: float with the height of the box
         """
+
+        if not name:
+            name='on_top_of'
         if len(self.data['shape']['compound']) == 0:
             print "No shapes yet, cannot add ontopoff"
             return
@@ -122,13 +142,13 @@ Continu with creating your model"""
         pose = shape['box']['pose']
         size = shape['box']['size']
 
-        boxmin = {'x': pose['x'] - size['x']/2.0 + side_clearance,
-                  'y': pose['y'] - size['y']/2.0 + side_clearance,
-                  'z': pose['z'] + size['z']/2.0 + bottom_clearance}
-        boxmax = {'x': pose['x'] + size['x']/2.0 - side_clearance,
-                  'y': pose['y'] + size['y']/2.0 - side_clearance,
-                  'z': pose['z'] + size['z']/2.0 + bottom_clearance + height}
-        self.data['areas'].append({'name': 'on_top_off',
+        boxmin = {'x': round(pose['x'] - size['x']/2.0 + side_clearance,ROUND_LEVEL),
+                  'y': round(pose['y'] - size['y']/2.0 + side_clearance,ROUND_LEVEL),
+                  'z': round(pose['z'] + size['z']/2.0 + bottom_clearance,ROUND_LEVEL)}
+        boxmax = {'x': round(pose['x'] + size['x']/2.0 - side_clearance,ROUND_LEVEL),
+                  'y': round(pose['y'] + size['y']/2.0 - side_clearance,ROUND_LEVEL),
+                  'z': round(pose['z'] + size['z']/2.0 + bottom_clearance + height,ROUND_LEVEL)}
+        self.data['areas'].append({'name': name,
                                    'shape': [{'box': {'min': boxmin, 'max': boxmax}}]})
 
     def add_near(self, offset=0.7):
@@ -151,7 +171,7 @@ All lengths / distances are in meters, unless specified otherwise."""
     model_name = read_option("Model name: ")
 
     s = ShapeCreator(room,model_name)
-    #s.set_type(model_type)
+    s.set_type(model_type)
 
     if model_type == "table":
 
@@ -171,29 +191,31 @@ All lengths / distances are in meters, unless specified otherwise."""
             help = "(Optional) How far are the legs places inwards w.r.t. the table top (in the width direction)")
 
         s.add_near()
-        s.add_box(length, width, table_top_thickness, 0, 0, round(height - table_top_thickness / 2,3), "Table top")
-        s.add_on_top_off()
+        s.add_box(length, width, table_top_thickness, 0, 0, round(height - table_top_thickness / 2,ROUND_LEVEL), "Table top")
+        s.add_on_top_of()
 
-        lx = round((length - lt) / 2 - lx_offset,3)
-        ly = round((width  - lt) / 2 - ly_offset,3)
-        lh = round(height - table_top_thickness,3)
-        lz = round(lh / 2,3)
+        lx = round((length - lt) / 2 - lx_offset,ROUND_LEVEL)
+        ly = round((width  - lt) / 2 - ly_offset,ROUND_LEVEL)
+        lh = round(height - table_top_thickness,ROUND_LEVEL)
+        lz = round(lh / 2,ROUND_LEVEL)
 
         s.add_box(lt, lt, lh, -lx, -ly, lz, "Leg")
         s.add_box(lt, lt, lh,  lx, -ly, lz, "Leg")
         s.add_box(lt, lt, lh, -lx,  ly, lz, "Leg")
         s.add_box(lt, lt, lh,  lx,  ly, lz, "Leg")
+        s.add_in_front_of(length,width)
 
     elif model_type == "square":
 
         print ""
         height = read_float("Height [m]: ", help = "Distance from ground to top of the box object")
         width = read_float("Width [m]: ", help = "Box width")
-        depth = read_float("Width [m]: ", help = "Box depth")
+        depth = read_float("Depth [m]: ", help = "Box depth")
 
         s.add_near()
         s.add_box(depth, width, height, 0, 0, round(height / 2,3), "Main object")
-        s.add_on_top_off()
+        s.add_on_top_of()
+        s.add_in_front_of(depth, width)
 
     elif model_type == "cabinet":
 
@@ -213,7 +235,7 @@ All lengths / distances are in meters, unless specified otherwise."""
             shelf_heights += [shelf_height]
 
         shelf_thickness = shelf_heights[:]
-        for shelf_i in range(0,len(shelf_heights)):
+        for shelf_i in range(0,len(shelf_thickness)):
             shelf_thickness[shelf_i] = read_float("Thickness of shelf %s: " %(shelf_i+1))
         #if shelf_heights:
         #    shelf_thickness = read_float("Shelf thickness: ", help = "How thick are the shelves?")
@@ -228,25 +250,26 @@ All lengths / distances are in meters, unless specified otherwise."""
             verticals += [vertical]
 
         vertical_thickness = verticals[:]
-        for vertical_i in range(0,len(verticals)):
+        for vertical_i in range(0,len(vertical_thickness)):
             vertical_thickness[vertical_i] = read_float("Thickness of vertical %s: " %(vertical_i+1))
 
-        s.add_box(depth, thickness, height, 0, round(-(width - thickness) / 2,3), round(height / 2,3), "Left side")
-        s.add_box(depth, thickness, height, 0, round((width - thickness) / 2,3), round(height / 2,3), "Right side")
-        s.add_box(thickness, width, height,  round(-(depth - thickness) / 2,3), 0, height / 2, "Back side")
+        s.add_box(depth, thickness, height, 0, round(-(width - thickness) / 2,ROUND_LEVEL), round(height / 2,ROUND_LEVEL), "Left side")
+        s.add_box(depth, thickness, height, 0, round((width - thickness) / 2,ROUND_LEVEL), round(height / 2,ROUND_LEVEL), "Right side")
+        s.add_box(thickness, width, height,  round(-(depth - thickness) / 2,ROUND_LEVEL), 0, round(height / 2,ROUND_LEVEL), "Back side")
+        s.add_in_front_of(depth, width)
 
-        pl_depth = round(depth - thickness,3)
-        pl_width = round((width - (thickness * 2)),3)
-        pl_height = round(height - thickness-shelf_heights[0],3)
-        pl_x = round((thickness / 2),3)
+        pl_depth = round(depth - thickness,ROUND_LEVEL)
+        pl_width = round((width - (thickness * 2)),ROUND_LEVEL)
+        pl_height = round(height - thickness-shelf_heights[0]-shelf_thickness[0],ROUND_LEVEL)
+        pl_x = round((thickness / 2),ROUND_LEVEL)
 
-        s.add_box(pl_depth, pl_width, thickness, pl_x, 0, round(height - (thickness / 2),3), "Top")
+        s.add_box(pl_depth, pl_width, thickness, pl_x, 0, round(height - (thickness / 2),ROUND_LEVEL), "Top")
 
         for shelf_i in range(0,len(shelf_heights)):
-            s.add_box(pl_depth, pl_width, shelf_thickness[shelf_i], pl_x, 0, round(shelf_heights[shelf_i] + (shelf_thickness[shelf_i] / 2),3), "Shelf %s" % (shelf_i+1))
-            s.add_on_top_off()
+            s.add_box(pl_depth, pl_width, shelf_thickness[shelf_i], pl_x, 0, round(shelf_heights[shelf_i] + (shelf_thickness[shelf_i] / 2),ROUND_LEVEL), "Shelf %s" % (shelf_i+1))
+            s.add_on_top_of("shelf %s" % (shelf_i+1) )
         for vertical_i in range(0,len(verticals)):
-            s.add_box(pl_depth, vertical_thickness[vertical_i], pl_height, pl_x, round(-width / 2 + verticals[vertical_i] + vertical_thickness[vertical_i] / 2,3), round(pl_height / 2,3), "vertical %s" % (vertical_i+1))
+            s.add_box(pl_depth, vertical_thickness[vertical_i], pl_height, pl_x, round(-width / 2 + verticals[vertical_i] + vertical_thickness[vertical_i] / 2,ROUND_LEVEL), round(shelf_thickness[0]+(pl_height / 2),ROUND_LEVEL), "vertical %s" % (vertical_i+1))
 
     s.write()
 

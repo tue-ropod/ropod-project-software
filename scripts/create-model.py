@@ -147,11 +147,11 @@ All lengths / distances are in meters, unless specified otherwise."""
     print ""
 
     room = read_option("Room: ")
-    model_type = read_option("Model type: ", ["table", "cabinet", "box"])
+    model_type = read_option("Model type: ", ["table", "cabinet", "square"])
     model_name = read_option("Model name: ")
 
     s = ShapeCreator(room,model_name)
-    s.set_type(model_type)
+    #s.set_type(model_type)
 
     if model_type == "table":
 
@@ -184,15 +184,15 @@ All lengths / distances are in meters, unless specified otherwise."""
         s.add_box(lt, lt, lh, -lx,  ly, lz, "Leg")
         s.add_box(lt, lt, lh,  lx,  ly, lz, "Leg")
 
-    elif model_type == "box":
+    elif model_type == "square":
 
         print ""
         height = read_float("Height [m]: ", help = "Distance from ground to top of the box object")
         width = read_float("Width [m]: ", help = "Box width")
-        width = read_float("Width [m]: ", help = "Box depth")
+        depth = read_float("Width [m]: ", help = "Box depth")
 
         s.add_near()
-        s.add_box(depth, width, height, 0, 0, round(height / 2,3), "Main box")
+        s.add_box(depth, width, height, 0, 0, round(height / 2,3), "Main object")
         s.add_on_top_off()
 
     elif model_type == "cabinet":
@@ -206,13 +206,13 @@ All lengths / distances are in meters, unless specified otherwise."""
         print ""
         shelf_heights = []
         while True:
-            shelf_height = read_float("Shelf %s, height [m]: " % (len(shelf_heights) + 1), 0,
+            shelf_height = read_float("Shelf %s, height [m]: " % (len(shelf_heights) + 1), -1,
                 help = "Distance from ground to bottom of shelf. Leave empty if all shelves have been entered")
-            if shelf_height == 0:
+            if shelf_height == -1:
                 break
-            shelf_heights += [shelf_height]      
+            shelf_heights += [shelf_height]
 
-        shelf_thickness = shelf_heights
+        shelf_thickness = shelf_heights[:]
         for shelf_i in range(0,len(shelf_heights)):
             shelf_thickness[shelf_i] = read_float("Thickness of shelf %s: " %(shelf_i+1))
         #if shelf_heights:
@@ -221,15 +221,15 @@ All lengths / distances are in meters, unless specified otherwise."""
         verticals = []
         while True:
             print "Enter distance from left side of the cabinet to the left side of the vertical"
-            vertical = read_float("Position of vertical %s: " % len(verticals) + 1), 0,
+            vertical = read_float("Position of vertical %s: " % (len(verticals) + 1), -1,
                 help = "Distance from left side of the cabinet to the left side of the vertical. Leave empty is all verticals have been entered")
-            if vertical == 0:
+            if vertical == -1:
                 break
             verticals += [vertical]
 
-        vertical_thickness = verticals
+        vertical_thickness = verticals[:]
         for vertical_i in range(0,len(verticals)):
-            vertical_thickness[vertical_i] = read_float("Thickness of vertical %s: " %(vertical_+1))
+            vertical_thickness[vertical_i] = read_float("Thickness of vertical %s: " %(vertical_i+1))
 
         s.add_box(depth, thickness, height, 0, round(-(width - thickness) / 2,3), round(height / 2,3), "Left side")
         s.add_box(depth, thickness, height, 0, round((width - thickness) / 2,3), round(height / 2,3), "Right side")
@@ -243,10 +243,10 @@ All lengths / distances are in meters, unless specified otherwise."""
         s.add_box(pl_depth, pl_width, thickness, pl_x, 0, round(height - (thickness / 2),3), "Top")
 
         for shelf_i in range(0,len(shelf_heights)):
-            s.add_box(pl_depth, pl_width, shelf_thickness[shelf_i], pl_x, 0, round(shelf_heights[shelf_i] + (shelf_thickness / 2),3), "Shelf %s" % (shelf_i+1)
+            s.add_box(pl_depth, pl_width, shelf_thickness[shelf_i], pl_x, 0, round(shelf_heights[shelf_i] + (shelf_thickness[shelf_i] / 2),3), "Shelf %s" % (shelf_i+1))
             s.add_on_top_off()
         for vertical_i in range(0,len(verticals)):
-            s.add_box(pl_depth, vertical_thickness[vertical_i], pl_height, pl_x, round(-width / 2 + verticals[vertical_i] + vertical_thickness[vertical_i] / 2,3), round(pl_height / 2,3), "vertical %s" % (vertical_i+1)
+            s.add_box(pl_depth, vertical_thickness[vertical_i], pl_height, pl_x, round(-width / 2 + verticals[vertical_i] + vertical_thickness[vertical_i] / 2,3), round(pl_height / 2,3), "vertical %s" % (vertical_i+1))
 
     s.write()
 

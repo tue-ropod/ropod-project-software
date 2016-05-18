@@ -80,18 +80,18 @@ Continu with creating your model"""
         #self.f.write("    compound:\n")
         #self.indent = "    "
 
-        self.data = {'type': '', 'shape': {'compound': []},
+        self.data = {'shape': {'compound': []},
                      'color': {'red': 0.75, 'green': 0.75, 'blue': 0.75},
                      'areas': []}
 
     def write(self):
         self.f.write(yaml.safe_dump(self.data, default_flow_style=False, indent=4))
 
-    def set_type(self, t):
-        """ Sets the type of the model
-        :param t: string with the type of the model
-        """
-        self.data['type'] = t
+    #def set_type(self, t):
+    #    """ Sets the type of the model
+    #    :param t: string with the type of the model
+    #    """
+    #    self.data['type'] = t
 
     def add_box(self, l, w, h, x, y, z, comment = ""):
         self.data['shape']['compound'].append({'box': {'#': comment,'pose': {'x': x, 'y': y, 'z': z},
@@ -167,11 +167,11 @@ All lengths / distances are in meters, unless specified otherwise."""
     print ""
 
     room = read_option("Room: ")
-    model_type = read_option("Model type: ", ["table", "cabinet", "square"])
+    model_type = read_option("Model type: ", ["table", "cabinet", "box"])
     model_name = read_option("Model name: ")
 
     s = ShapeCreator(room,model_name)
-    s.set_type(model_type)
+    #s.set_type(model_type)
 
     if model_type == "table":
 
@@ -205,7 +205,7 @@ All lengths / distances are in meters, unless specified otherwise."""
         s.add_box(lt, lt, lh,  lx,  ly, lz, "Leg")
         s.add_in_front_of(length,width)
 
-    elif model_type == "square":
+    elif model_type == "box":
 
         print ""
         height = read_float("Height [m]: ", help = "Distance from ground to top of the box object")

@@ -40,7 +40,7 @@ composition:
               pose: {x: 0, y: 0, z: 0.4}
       color: {red: 0.4, green: 0.3, blue: 0.2}
     - type: "ddw.salon"
-      id: "couchtable"
+      id: "couch_table"
       pose:
           x: 3.2
           y: 1.5
@@ -175,7 +175,7 @@ composition:
           Y: 0
           Z: 0
     - type: "table_120x80x76"
-      id: "dinnertable"
+      id: "dinner_table"
       pose:
           x: 0.4
           y: 1.92
@@ -371,13 +371,6 @@ composition:
       pose: { x: 2.032, y: 1.030, z: 0, rz: 3.138}
 
 # - - - - - - ROOMS - - - - - - -
-
-## Locations inside room:
-#rooms_detailed = {  'kitchen':['chair','cabinet'],
-#                    'hallway':['hallway_couch'],
-#                    'living_room':['couchtable','dinnertable','corridor_table','bookcase','bookshelf'],
-#                    'bedroom':['bed','bed_cabinet'],
-#                    'workshop':['operator_table','workbench']}
 
     - type: "room"
       id: "livingroom"

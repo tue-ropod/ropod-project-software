@@ -12,7 +12,7 @@ import os
 ROOT=os.environ['ED_MODEL_PATH']
 DEFAULT_BOTTOM_CLEARANCE = 0.02  # The 'onTopOff' area will start DEFAULT_BOTTOM_CLEARANCE above an object
 DEFAULT_SIDE_CLEARANCE = 0.03  # The 'onTopOff' area will start DEFAULT_SIDE_CLEARANCE above an object
-ON_TOP_OFF_HEIGHT = 0.3 # Height of an 'onTopOff' box
+ON_TOP_OFF_HEIGHT = 0.25 # Height of an 'onTopOff' box
 DEFAULT_IN_FRONT_SIDE_CLEARANCE = 0.1 # The ' inFrontOf' area will be DEFAULT_IN_FRONT_SIDE_CLEARANCE smaller on each side
 DEFAULT_IN_FRONT_DISTANCE = 0.4 # Distance from object to start 'inFrontOf' area
 DEFAULT_IN_FRONT_SIZE = 0.2 # Size of 'inFrontOf' area
@@ -172,6 +172,7 @@ All lengths / distances are in meters, unless specified otherwise."""
 
     s = ShapeCreator(room,model_name)
     #s.set_type(model_type)
+    s.add_near()
 
     if model_type == "table":
 
@@ -190,7 +191,6 @@ All lengths / distances are in meters, unless specified otherwise."""
         ly_offset = read_float("Optional: Leg offset (width) [m]:  ", lx_offset,
             help = "(Optional) How far are the legs places inwards w.r.t. the table top (in the width direction)")
 
-        s.add_near()
         s.add_box(length, width, table_top_thickness, 0, 0, round(height - table_top_thickness / 2,ROUND_LEVEL), "Table top")
         s.add_on_top_of()
 
@@ -212,7 +212,6 @@ All lengths / distances are in meters, unless specified otherwise."""
         width = read_float("Width [m]: ", help = "Box width")
         depth = read_float("Depth [m]: ", help = "Box depth")
 
-        s.add_near()
         s.add_box(depth, width, height, 0, 0, round(height / 2,3), "Main object")
         s.add_on_top_of()
         s.add_in_front_of(depth, width)
@@ -224,6 +223,7 @@ All lengths / distances are in meters, unless specified otherwise."""
         width  = read_float("Width [m]:  ", help = "Cabinet width (including frame)")
         depth  = read_float("Depth [m]:  ", help = "Cabinet depth (including frame)")
         thickness = read_float("Frame thickness: ", help = "How thick are the panels that define the cabinet frame (not the shelves)?")
+        top_thickness = read_float("Top Frame thickness: ", help = "Thickness of the top of the cabinet frame")
 
         print ""
         shelf_heights = []
@@ -263,7 +263,7 @@ All lengths / distances are in meters, unless specified otherwise."""
         pl_height = round(height - thickness-shelf_heights[0]-shelf_thickness[0],ROUND_LEVEL)
         pl_x = round((thickness / 2),ROUND_LEVEL)
 
-        s.add_box(pl_depth, pl_width, thickness, pl_x, 0, round(height - (thickness / 2),ROUND_LEVEL), "Top")
+        s.add_box(pl_depth, pl_width, top_thickness, pl_x, 0, round(height - (top_thickness / 2),ROUND_LEVEL), "Top")
 
         for shelf_i in range(0,len(shelf_heights)):
             s.add_box(pl_depth, pl_width, shelf_thickness[shelf_i], pl_x, 0, round(shelf_heights[shelf_i] + (shelf_thickness[shelf_i] / 2),ROUND_LEVEL), "Shelf %s" % (shelf_i+1))

@@ -201,9 +201,9 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: robotics_testlab_B.plastic_cabinet
+    - type: robotics_testlabs/plastic_cabinet
       id: bookcase
-      pose: { x: 3.18, y: 2.713, z: 0, Z: 0 }
+      pose: { x: 3.18, y: 2.713, z: 0, Z: 3.1415 }
     - type: "waypoint"
       id: "corridor"
       pose:

@@ -270,6 +270,14 @@ composition:
       id: "exit_4_rips"
       pose: { x: -1.480, y: -0.031, z: 0, rz: 3.1415 }
 
+# - - - - - - NAVIGATION - - - - - - -
+
+    - type: "waypoint"
+      id: "door_navigation"
+      pose: { x: -0.168, y: 6.216, z: 0, rz: -1.5708 }
+
+      # -0,168, 6,216
+
 # - - - - - - CHALLENGE BASIC FUNCTIONALITIES - - - - - - -
 
     - type: "waypoint"

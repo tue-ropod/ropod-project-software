@@ -94,7 +94,7 @@ composition:
           Y: 0
           Z: 1.5707963267948966
     - type: "ddw.table"
-      id: "corridor_table"
+      id: "bar"
       pose:
           x: 2.65
           y: 0.3
@@ -103,7 +103,7 @@ composition:
           Y: 0
           Z: 1.5707963267948966
     - type: "ddw.couch"
-      id: "hallway_couch"
+      id: "hallway_table"
       pose:
           x: 0.72
           y: 3.45
@@ -130,7 +130,7 @@ composition:
 #          Y: 0
 #          Z: 1.5707963267948966
     - type: "robotics_testlab_B.bed_cabinet"
-      id: "bed_cabinet"
+      id: "nightstand"
       pose:
           x: -1.92
           y: -1.42
@@ -204,12 +204,6 @@ composition:
     - type: robotics_testlab_B.plastic_cabinet
       id: bookcase
       pose: { x: 3.18, y: 2.713, z: 0, Z: 0 }
-    - type: "waypoint"
-      id: "livingroom"
-      pose:
-          x: 1.8
-          y: .6
-          z: 0
     - type: "waypoint"
       id: "corridor"
       pose:
@@ -378,7 +372,7 @@ composition:
 #                    'workshop':['operator_table','workbench']}
 
     - type: "room"
-      id: "living_room"
+      id: "livingroom"
       pose: { x: 1.5, y: 1.0, z: 0.0 } #Center of room (z should be 0.0)
       areas:
         - name: in

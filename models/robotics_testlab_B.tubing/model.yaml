@@ -1,4 +1,4 @@
-type: tubing
+#type: tubing
 shape:
     path: shape/shape.xml
 color:

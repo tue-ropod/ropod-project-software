@@ -7,6 +7,20 @@ composition:
           x: 0
           y: 0
           z: 0
+    - type: "robotics_testlabs/blue_door"
+      id: "door1"
+      pose:
+          x: 1.32
+          y: 5.55
+          z: 0
+          Z: 1.57
+    - type: "robotics_testlabs/blue_door"
+      id: "door2"
+      pose:
+          x: -0.576
+          y: 5.55
+          z: 0
+          Z: -1.57
     - type: "floor"
       id: "floor"
       pose:

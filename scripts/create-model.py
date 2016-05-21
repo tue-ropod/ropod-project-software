@@ -67,7 +67,7 @@ class ShapeCreator:
         filepath=os.path.join(folderpath, 'model.yaml')
         if os.path.exists(filepath):
             print "Model name already used in this room"
-            #sys.exit()
+            sys.exit()
         if not os.path.exists(folderpath):
             os.makedirs(folderpath)
         else:

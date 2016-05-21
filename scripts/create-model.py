@@ -267,7 +267,7 @@ All lengths / distances are in meters, unless specified otherwise."""
 
         for shelf_i in range(0,len(shelf_heights)):
             s.add_box(pl_depth, pl_width, shelf_thickness[shelf_i], pl_x, 0, round(shelf_heights[shelf_i] + (shelf_thickness[shelf_i] / 2),ROUND_LEVEL), "Shelf %s" % (shelf_i+1))
-            if not verticals
+            if not verticals:
                 s.add_on_top_of("shelf %s" % (shelf_i+1) )
         for vertical_i in range(0,len(verticals)):
             s.add_box(pl_depth, vertical_thickness[vertical_i], pl_height, pl_x, round(-width / 2 + verticals[vertical_i] + vertical_thickness[vertical_i] / 2,ROUND_LEVEL), round(shelf_thickness[0]+(pl_height / 2),ROUND_LEVEL), "vertical %s" % (vertical_i+1))

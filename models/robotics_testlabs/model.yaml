@@ -7,20 +7,20 @@ composition:
           x: 0
           y: 0
           z: 0
-    - type: "robotics_testlabs/blue_door"
+    - type: "robotics_testlabs/blue_door_left"
       id: "door1"
       pose:
-          x: 1.32
-          y: 5.55
+          x: -0.58
+          y: 5.545
           z: 0
-          Z: 1.57
-    - type: "robotics_testlabs/blue_door"
+          Z: -1.5707963267948966
+    - type: "robotics_testlabs/blue_door_right"
       id: "door2"
       pose:
-          x: -0.576
-          y: 5.55
+          x: 1.31
+          y: 5.545
           z: 0
-          Z: -1.57
+          Z: -1.5707963267948966
     - type: "floor"
       id: "floor"
       pose:
@@ -61,7 +61,7 @@ composition:
           z: 0
           X: 0
           Y: 0
-          Z: 0
+          Z: 3.14159265359
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet1"
       pose:
@@ -133,7 +133,7 @@ composition:
           z: 0
           X: 0
           Y: 0
-          Z: 0
+          Z: 3.14159265359
 #    - type: "ddw.chair"
 #      id: "chair"
 #      pose:

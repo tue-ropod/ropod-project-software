@@ -11,14 +11,14 @@ composition:
       id: "door1"
       pose:
           x: -0.58
-          y: 5.545
+          y: 5.585
           z: 0
           Z: -1.5707963267948966
     - type: "robotics_testlabs/blue_door_right"
       id: "door2"
       pose:
           x: 1.31
-          y: 5.545
+          y: 5.585
           z: 0
           Z: -1.5707963267948966
     - type: "floor"

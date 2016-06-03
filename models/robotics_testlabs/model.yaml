@@ -14,10 +14,6 @@ composition:
           y: 5.585
           z: 0
           Z: -1.5707963267948966
-      push_start_waypoint:
-        door_opening_left_start
-      push_destination_waypoint:
-        door_opening_left_dest
     - type: "robotics_testlabs/blue_door_right"
       id: "door2"
       pose:
@@ -25,10 +21,6 @@ composition:
           y: 5.585
           z: 0
           Z: -1.5707963267948966
-      push_start_waypoint:
-        door_opening_right_start
-      push_destination_waypoint:
-        door_opening_right_dest
     - type: "floor"
       id: "floor"
       pose:
@@ -297,19 +289,6 @@ composition:
     - type: "waypoint"
       id: "door_navigation"
       pose: { x: -0.168, y: 6.216, z: 0, rz: -1.5708 }
-
-    - type: "waypoint"
-      id: "door_opening_left"_dest
-      pose: { x: -0.168, y: 6.216, z: 0, rz: 1.5708 }
-    - type: "waypoint"
-      id: "door_opening_right"_dest
-      pose: { x: 0.862, y: 6.216, z: 0, rz: 1.5708 }
-    - type: "waypoint"
-      id: "door_openin_left_start"
-      pose: { x: -0.168, y: 4.8, z: 0, rz: 1.5708 }
-    - type: "waypoint"
-      id: "door_opening_right_start"
-      pose: { x: 0.862, y: 4.8, z: 0, rz: 1.5708 }
 
       # -0,168, 6,216
 

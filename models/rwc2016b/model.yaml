@@ -5,6 +5,28 @@ composition:
 - type: "rwc2016b/walls"
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
+- id: cabinet_2doors
+  type: 
+  pose: { x: 7.20064872224, y: 3.07295793463, z: 0.0, Z: 3.097 }
+- id: plant_small_bedroom
+  type: rwc2016/plant
+  pose: { x: 3.44435067195, y: 5.07663793686, z: 0.0, Z: -0.156 }
+- id: plant_small_hall_1
+  type: rwc2016/plant
+  pose: { x: 7.34685494228, y: -0.0256348198448, z: 0.0, Z: -2.614 }
+- id: table_bureau_bedroom
+  type: rwc2016/table_bureau
+  pose: { x: 3.35034620424, y: 1.71274535127, z: 0.0, Z: 1.432 }
+- id: kitchen_counter
+  type: rwc2016/kitchen_counter
+  pose: { x: 7.79068520743, y: 2.35834741039, z: 0.0, Z: 0.005 }
+- id: cabinet_2slides_kitchen
+  type: rwc2016/cabinet_2slides
+  pose: { x: 9.50542128925, y: 5.24257608022, z: 0.0, Z: -1.573 }
+- id: bookcase_noback_kitchen
+  type: rwc2016/bookcase_noback
+  pose: { x: 7.6934243492, y: 3.89551713301, z: 0.0, Z: -0.013 }
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

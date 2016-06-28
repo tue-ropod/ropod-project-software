@@ -39,6 +39,35 @@ composition:
   type: rwc2016/cabinet_2doors
   pose: { x: 10.6916059274, y: 2.94276122472, z: 0.0, Z: 3.135 }
 
+- id: cabinet_open_small_living
+  type: rwc2016/cabinet_open_small
+  pose: { x: 13.1903262722, y: -1.69042668679, z: 0.0, Z: 1.566 }
+- id: bookcase_noback_living_1
+  type: rwc2016/bookcase_noback
+  pose: { x: 11.1550522416, y: 0.774564068452, z: 0.0, Z: -0.048 }
+- id: table_black_living
+  type: rwc2016/table_black
+  pose: { x: 12.9102134488, y: 3.18796543195, z: 0.0, Z: 3.101 }
+- id: table_salon_living
+  type: rwc2016/table_salon
+  pose: { x: 14.0825558178, y: 0.667104863721, z: 0.0, Z: 3.108 }
+- id: armchair_2
+  type: rwc2016/armchair
+  pose: { x: 13.3417845051, y: 0.771842854116, z: 0.0, Z: -2.574 }
+- id: bookcase_noback_living_2
+  type: rwc2016/bookcase_noback
+  pose: { x: 15.6208693, y: 3.02103140814, z: 0.0, Z: 3.135 }
+- id: couch
+  type: rwc2016/couch
+  pose: { x: 15.3149248356, y: 1.01020513342, z: 0.0, Z: -3.127 }
+- id: armchair_1
+  type: rwc2016/armchair
+  pose: { x: 14.227633929, y: -0.312892022787, z: 0.0, Z: 3.056 }
+- id: cabinet_open_small_living_3
+  type: rwc2016/cabinet_open_small
+  pose: { x: 12.4391104512, y: 5.21299446298, z: 0.0, Z: -1.527 }
+
+
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -

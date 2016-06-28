@@ -1,8 +1,8 @@
 composition:
-    - type: "floor"
-      id: "floor"
-      pose:
-          x: 0
-          y: 0
-          z: 0
+- type: "floor"
+  id: "floor"
+  pose: { x: 0, y: 0, z: 0 }
+- type: "rwc2016a/walls"
+  id: "walls"
+  pose: { x: 0, y: 0, z: 0 }
 

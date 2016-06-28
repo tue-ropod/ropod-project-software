@@ -122,3 +122,36 @@ composition:
 - type: "waypoint"
   id: "exit_4_rips"
   pose: { x: 14.7, y: 7.5, z: 0, rz: 1.57 }
+
+# - - - - - - CHALLENGE_NAVIGATION WAYPOINTS - - - - - - -
+
+- type: "waypoint"
+  id: "navigation_target1"
+  pose: { x: 9.5, y: -0.5, z: 0, rz: -1.57 }
+- type: "waypoint"
+  id: "navigation_target2_pre"
+  pose: { x: 12.0, y: -0.6, z: 0, rz: -0.87 }
+- type: "waypoint"
+  id: "navigation_target2"
+  pose: { x: 13.2, y: -1.0, z: 0, rz: -1.57 }
+- type: "waypoint"
+  id: "navigation_target3"
+  pose: { x: 2.0, y: 1.5, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "navigation_door"
+  pose: { x: -0.5, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_target4"
+  pose: { x: 2.0, y: 1.5, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_exit1"
+  pose: { x: -1.0, y: 0.0, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "navigation_exit2"
+  pose: { x: -1.0, y: 3.0, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "navigation_exit3"
+  pose: { x: -2.0, y: 4.5, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "navigation_exit4"
+  pose: { x: -2.0, y: -1.0, z: 0, rz: 3.1415 }

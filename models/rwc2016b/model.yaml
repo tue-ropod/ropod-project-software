@@ -29,6 +29,13 @@ composition:
 - id: bookcase_noback_kitchen
   type: rwc2016/bookcase_noback
   pose: { x: 7.6934243492, y: 3.89551713301, z: 0.0, Z: -0.013 }
+- id: cabinet_2doors_hall
+  type: rwc2016/cabinet_2doors
+  pose: { x: 4.03141751655, y: 0.320342320845, z: 0.0, Z: -1.626 }
+- id: plant_small_hall_2
+  type: rwc2016/plant
+  pose: { x: 2.843662104, y: 0.322526422217, z: 0.0, Z: 0.084 }
+
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -

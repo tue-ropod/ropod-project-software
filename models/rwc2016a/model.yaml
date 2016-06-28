@@ -59,6 +59,15 @@ composition:
 - id: plant_small_2
   type: rwc2016/plant
   pose: { x: 5.18986582633, y: -1.13721106556, z: 0.0, Z: 0.869 }
+- id: armchair_1
+  type: rwc2016/armchair
+  pose: { x: 14.2507327613, y: 1.50372431334, z: 0.0, Z: -0.473 }
+- id: armchair_3
+  type: rwc2016/armchair
+  pose: { x: 12.7034840389, y: -0.11283179921, z: 0.0, Z: 2.820 }
+- id: armchair_2
+  type: rwc2016/armchair
+  pose: { x: 12.5876395892, y: 1.47201037758, z: 0.0, Z: 1.197 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

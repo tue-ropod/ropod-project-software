@@ -6,3 +6,57 @@ composition:
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
 
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- type: "waypoint"
+  id: "initial_pose_door_a"
+  pose: { x: -0.5, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "initial_pose_door_b"
+  pose: { x: -0.5, y: 3.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "initial_pose_door_c"
+  pose: { x: 12.44, y: 6.5, z: 0, rz: -1.57 }
+- type: "waypoint"
+  id: "entry_door_a"
+  pose: { x: 1.0, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "entry_door_b"
+  pose: { x: 1.0, y: 2.5, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "entry_door_c"
+  pose: { x: 12.45, y: 4.9, z: 0, rz: -1.57 }
+
+- type: "waypoint"
+  id: "exit_door_a"
+  pose: { x: -1.5, y: 0.0, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "exit_door_b"
+  pose: { x: -1.5, y: 3.0, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "exit_door_c"
+  pose: { x: 12.5, y: 7.5, z: 0, rz: 1.57 }
+
+# - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
+
+- type: "waypoint"
+  id: "registration_table1"
+  pose: { x: 13.0, y: 0.0, z: 0, rz: 0.78 }
+- type: "waypoint"
+  id: "registration_table2"
+  pose: { x: 13.0, y: 2.0, z: 0, rz: 0 }
+- type: "waypoint"
+  id: "registration_table3"
+  pose: { x: 13.0, y: 4.0, z: 0, rz: -0.78 }
+- type: "waypoint"
+  id: "exit_1_rips"
+  pose: { x: 12.45, y: 7.5, z: 0, rz: 1.57 }
+- type: "waypoint"
+  id: "exit_2_rips"
+  pose: { x: 12.45, y: 8.5, z: 0, rz: 1.57 }
+- type: "waypoint"
+  id: "exit_3_rips"
+  pose: { x: 12.45, y: 6.5, z: 0, rz: 1.57 }
+- type: "waypoint"
+  id: "exit_4_rips"
+  pose: { x: 12.45, y: 7.5, z: 0, rz: 1.57 }

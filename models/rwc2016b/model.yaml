@@ -6,3 +6,27 @@ composition:
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
 
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- type: "waypoint"
+  id: "initial_pose"
+  pose: { x: 0.0, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "entry_door_a"
+  pose: { x: 2.0, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "entry_door_b"
+  pose: { x: 2.0, y: 2.5, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "entry_door_c"
+  pose: { x: 15.0, y: 4.0, z: 0, rz: -1.57 }
+
+- type: "waypoint"
+  id: "exit_door_a"
+  pose: { x: -1.0, y: 0.0, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "exit_door_b"
+  pose: { x: -1.0, y: 3.0, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "exit_door_c"
+  pose: { x: 15.0, y: 7.0, z: 0, rz: 1.57 }

@@ -50,6 +50,15 @@ composition:
 - id: bookcase_noback-3
   type: rwc2016/bookcase_noback
   pose: { x: 9.40963771231, y: 5.78810856047, z: 0.0, Z: -1.617 }
+- id: plant_large
+  type: rwc2016/plant_large
+  pose: { x: 3.89536812137, y: 5.36803348769, z: 0.0, Z: -0.833 }
+- id: plant_small_1
+  type: rwc2016/plant
+  pose: { x: 7.01406275975, y: 0.90587587781, z: 0.0, Z: 0.845 }
+- id: plant_small_2
+  type: rwc2016/plant
+  pose: { x: 5.18986582633, y: -1.13721106556, z: 0.0, Z: 0.869 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

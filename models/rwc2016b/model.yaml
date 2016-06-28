@@ -5,8 +5,8 @@ composition:
 - type: "rwc2016b/walls"
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
-- id: cabinet_2doors
-  type: 
+- id: cabinet_2doors_bedroom
+  type: rwc2016/cabinet_2doors
   pose: { x: 7.20064872224, y: 3.07295793463, z: 0.0, Z: 3.097 }
 - id: plant_small_bedroom
   type: rwc2016/plant

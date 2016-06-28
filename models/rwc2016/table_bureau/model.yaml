@@ -1,0 +1,101 @@
+areas:
+-   name: near
+    offset: 0.7
+-   name: on_top_of
+    shape:
+    -   box:
+            max:
+                x: 0.57
+                y: 0.2705
+                z: 0.994
+            min:
+                x: -0.57
+                y: -0.2705
+                z: 0.744
+-   name: in_front_of
+    shape:
+    -   box:
+            max:
+                x: 1.2
+                y: 0.2005
+                z: 0.01
+            min:
+                x: 1.0
+                y: -0.2005
+                z: 0.0
+color:
+    blue: 0.75
+    green: 0.75
+    red: 0.75
+shape:
+    compound:
+    -   box:
+            '#': Table top
+            pose:
+                x: 0
+                y: 0
+                z: 0.7115
+            size:
+                x: 1.2
+                y: 0.601
+                z: 0.025
+    -   box:
+            '#': Leg
+            pose:
+                x: -0.5545
+                y: -0.06
+                z: 0.3495
+            size:
+                x: 0.031
+                y: 0.031
+                z: 0.699
+    -   box:
+            '#': Leg
+            pose:
+                x: 0.5545
+                y: -0.06
+                z: 0.3495
+            size:
+                x: 0.031
+                y: 0.031
+                z: 0.699
+    -   box:
+            '#': Leg
+            pose:
+                x: -0.5545
+                y: 0.06
+                z: 0.3495
+            size:
+                x: 0.031
+                y: 0.031
+                z: 0.699
+    -   box:
+            '#': Leg
+            pose:
+                x: 0.5545
+                y: 0.06
+                z: 0.3495
+            size:
+                x: 0.031
+                y: 0.031
+                z: 0.699
+    -   box:
+            '#': Leg_floor
+            pose:
+                y: 0.0
+                x: 0.555
+                z: 0.0225
+            size:
+                y: 0.603
+                x: 0.036
+                z: 0.045
+    -   box:
+            '#': Leg_floor
+            pose:
+                y: 0.0
+                x: -0.555
+                z: 0.0225
+            size:
+                y: 0.603
+                x: 0.036
+                z: 0.045

@@ -1,0 +1,101 @@
+models:
+  - height_max: 0.0805693
+    height_min: 0.0625617
+    name: apple
+    width_max: 0.0823051
+    width_min: 0.0672333
+  - height_max: 0.130384
+    height_min: 0.0980211
+    name: baby_sweets
+    width_max: 0.0604632
+    width_min: 0.0329263
+  - height_max: 0.179076
+    height_min: 0.125097
+    name: beer
+    width_max: 0.0785939
+    width_min: 0.0673049
+  - height_max: 0.162399
+    height_min: 0.0955925
+    name: biscuits
+    width_max: 0.188155
+    width_min: 0.0778861
+  - height_max: 0.149221
+    height_min: 0.0985871
+    name: bowl
+    width_max: 0.204167
+    width_min: 0.173026
+  - height_max: 0.222295
+    height_min: 0.0788235
+    name: chips
+    width_max: 0.280771
+    width_min: 0.163717
+  - height_max: 0.212318
+    height_min: 0.203582
+    name: choco_syrup
+    width_max: 0.0736165
+    width_min: 0.0362204
+  - height_max: 0.140377
+    height_min: 0.0571747
+    name: cloth
+    width_max: 0.242259
+    width_min: 0.134005
+  - height_max: 0.117912
+    height_min: 0.107487
+    name: coconut_milk
+    width_max: 0.0880125
+    width_min: 0.0492513
+  - height_max: 0.152051
+    height_min: 0.1347
+    name: coke
+    width_max: 0.0840349
+    width_min: 0.0616575
+  - height_max: 0.058495
+    height_min: 0.058495
+    name: egg
+    width_max: 0.0572475
+    width_min: 0.0572475
+  - height_max: 0.101105
+    height_min: 0.0607541
+    name: paprika
+    width_max: 0.102249
+    width_min: 0.0581519
+  - height_max: 0.117535
+    height_min: 0.0759019
+    name: plate
+    width_max: 0.21797
+    width_min: 0.200809
+  - height_max: 0.146878
+    height_min: 0.0232345
+    name: pretzels
+    width_max: 0.224501
+    width_min: 0.105713
+  - height_max: 0.257765
+    height_min: 0.200207
+    name: pringles
+    width_max: 0.104168
+    width_min: 0.0810114
+  - height_max: 0.111036
+    height_min: 0.107515
+    name: pumper_nickel
+    width_max: 0.044462
+    width_min: 0.0442109
+  - height_max: 0.205378
+    height_min: 0.119708
+    name: shampoo
+    width_max: 0.0745788
+    width_min: 0.0313608
+  - height_max: 0.107901
+    height_min: 0.0621732
+    name: soap
+    width_max: 0.108271
+    width_min: 0.0480982
+  - height_max: 0.141286
+    height_min: 0.0567881
+    name: tea
+    width_max: 0.167082
+    width_min: 0.0343104
+  - height_max: 0.0760039
+    height_min: 0.0360983
+    name: tray
+    width_max: 0.155767
+    width_min: 0.047125

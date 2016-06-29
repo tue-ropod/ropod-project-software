@@ -71,6 +71,9 @@ composition:
 - id: armchair_2
   type: rwc2016/armchair
   pose: { x: 12.5876395892, y: 1.47201037758, z: 0.0, Z: 0.840 }
+- id: ikea_table_high
+  type: rwc2016/ikea_table_black
+  pose: { x: 11.3, y: -0.9, z: 0.0, Z: 1.57079632679}
   
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

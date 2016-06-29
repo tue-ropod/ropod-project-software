@@ -8,7 +8,7 @@ composition:
 - id: bed
   type: rwc2016/bed_frame
   pose: { x: 4.2350414095, y: 3.61956635071, z: 0.0, Z: -1.57079632679 }
-- id: cabinet_2doors_bedroom
+- id: bedside
   type: rwc2016/cabinet_2doors
   pose: { x: 7.20064872224, y: 3.07295793463, z: 0.0, Z: 3.14159265359 }
 - id: plant_small_bedroom
@@ -17,43 +17,43 @@ composition:
 - id: plant_small_hall_1
   type: rwc2016/plant
   pose: { x: 7.34685494228, y: -0.0256348198448, z: 0.0, Z: 0.0 }
-- id: table_bureau_bedroom
+- id: desk
   type: rwc2016/table_bureau
   pose: { x: 3.35034620424, y: 1.71274535127, z: 0.0, Z: 1.57079632679 }
-- id: kitchen_counter
+- id: sink
   type: rwc2016/kitchen_counter
   pose: { x: 7.79068520743, y: 2.35834741039, z: 0.0, Z: 0.0 }
-- id: cabinet_2slides_kitchen
+- id: cupboard
   type: rwc2016/cabinet_2slides
   pose: { x: 9.50542128925, y: 5.24257608022, z: 0.0, Z: -1.57079632679 }
-- id: bookcase_noback_kitchen
+- id: bar
   type: rwc2016/bookcase_noback
   pose: { x: 7.6934243492, y: 3.89551713301, z: 0.0, Z: 0.0 }
-- id: cabinet_2doors_hall
+- id: cabinet
   type: rwc2016/cabinet_2doors
   pose: { x: 4.03141751655, y: 0.320342320845, z: 0.0, Z: -1.57079632679 }
 - id: plant_small_hall_2
   type: rwc2016/plant
   pose: { x: 2.843662104, y: 0.322526422217, z: 0.0, Z: 0.0 }
-- id: cabinet_2doors_kitchen
+- id: sideshelf
   type: rwc2016/cabinet_2doors
   pose: { x: 10.6916059274, y: 2.94276122472, z: 0.0, Z: 3.14159265359 }
-- id: cabinet_open_small_living
+- id: drawer
   type: rwc2016/cabinet_open_small
   pose: { x: 13.1903262722, y: -1.69042668679, z: 0.0, Z: 1.57079632679 }
-- id: bookcase_noback_living_1
+- id: living_shelf
   type: rwc2016/bookcase_noback
   pose: { x: 11.1550522416, y: 0.774564068452, z: 0.0, Z: 0.0 }
-- id: table_black_living
+- id: dining_table
   type: rwc2016/table_black
   pose: { x: 12.9102134488, y: 3.18796543195, z: 0.0, Z: 3.14159265359 }
-- id: table_salon_living
+- id: living_table
   type: rwc2016/table_salon
   pose: { x: 14.265, y: 0.9, z: 0.0, Z: 1.57079632679 }
 - id: armchair_2
   type: rwc2016/armchair
   pose: { x: 13.3417845051, y: 0.771842854116, z: 0.0, Z: 3.14159265359 }
-- id: bookcase_noback_living_2
+- id: bookcase
   type: rwc2016/bookcase_noback
   pose: { x: 15.6208693, y: 3.02103140814, z: 0.0, Z: 3.14159265359 }
 - id: couch
@@ -62,7 +62,7 @@ composition:
 - id: armchair_1
   type: rwc2016/armchair
   pose: { x: 14.227633929, y: -0.312892022787, z: 0.0, Z: 3.14159265359 }
-- id: cabinet_open_small_living_3
+- id: tv_stand
   type: rwc2016/cabinet_open_small
   pose: { x: 12.4391104512, y: 5.21299446298, z: 0.0, Z: -1.57079632679 }
 

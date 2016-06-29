@@ -5,49 +5,49 @@ composition:
 - type: "rwc2016a/walls"
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
-- id: cabinet_2slides
+- id: sideshelf
   type: rwc2016/cabinet_2slides
   pose: { x: 9.59961999631, y: 2.06445025401, z: 0.0, Z: 0.0 }
-- id: cabinet_open_large
+- id: living_shelf
   type: rwc2016/cabinet_open_large
   pose: { x: 15.6340824996, y: 3.45558782257, z: 0.0, Z: 3.14159265359 }
-- id: bookcase_noback
+- id: bedside
   type: rwc2016/bookcase_noback
   pose: { x: 3.73294564725, y: 3.89240622111, z: 0.0, Z: 0.0 }
-- id: cabinet_open_small
+- id: tv_stand
   type: rwc2016/cabinet_open_small
   pose: { x: 14.3957248256, y: 5.65555181602, z: 0.0, Z: -1.57079632679 }
 - id: couch
   type: rwc2016/couch
   pose: { x: 14.1010391014, y: 0.15676969619, z: 0.0, Z: 2.409 }
-- id: kitchen_counter
+- id: sink
   type: rwc2016/kitchen_counter
   pose: { x: 8.9216065439, y: 1.83933155327, z: 0.0, Z: 1.57079632679 }
-- id: table_salon
+- id: living_table
   type: rwc2016/table_salon
   pose: { x: 13.3500255193, y: 0.826244757613, z: 0.0, Z: 0.840 }
-- id: table_black
+- id: dining_table
   type: rwc2016/table_black
   pose: { x: 10.7336615904, y: 3.82007082986, z: 0.0, Z: 3.14159265359 }
-- id: cabinet_2doors
+- id: cupboard
   type: rwc2016/cabinet_2doors
   pose: { x: 7.9878231138, y: 1.79059577037, z: 0.0, Z: 1.57079632679 }
-- id: table_bureau
+- id: desk
   type: rwc2016/table_bureau
   pose: { x: 3.13492099795, y: 5.2123293588, z: 0.0, Z: -1.57079632679 }
-- id: bed_frame
+- id: bed
   type: rwc2016/bed_frame
   pose: { x: 5.54312696294, y: 4.87689963252, z: 0.0, Z: -3.14159265359 }
-- id: bookcase_noback-2
+- id: bar
   type: rwc2016/bookcase_noback
   pose: { x: 7.2199743991, y: 4.46354844791, z: 0.0, Z: 0.0 }
-- id: cabinet_open_small-2
+- id: cabinet
   type: rwc2016/cabinet_open_small
   pose: { x: 4.35563859545, y: -1.23109049803, z: 0.0, Z: 1.57079632679 }
-- id: cabinet_2doors-2
+- id: drawer
   type: rwc2016/cabinet_2doors
   pose: { x: 0.22226426908, y: 4.60318484157, z: 0.0, Z: 0.0 }
-- id: bookcase_noback-3
+- id: bookcase
   type: rwc2016/bookcase_noback
   pose: { x: 9.40963771231, y: 5.78810856047, z: 0.0, Z: -1.57079632679 }
 - id: plant_large

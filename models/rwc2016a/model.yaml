@@ -46,7 +46,7 @@ composition:
   pose: { x: 7.2199743991, y: 4.46354844791, z: 0.0, Z: 0.0 }
 - id: cabinet
   type: rwc2016/cabinet_open_small
-  pose: { x: 4.35563859545, y: -1.23109049803, z: 0.0, Z: 1.57079632679 }
+  pose: { x: 4.5, y: -1.23109049803, z: 0.0, Z: 1.57079632679 }
 - id: drawer
   type: rwc2016/cabinet_2doors
   pose: { x: 0.22226426908, y: 4.60318484157, z: 0.0, Z: 0.0 }
@@ -137,10 +137,10 @@ composition:
   pose: { x: 5.0, y: 2.6, z: 0, rz: 3.14 }
 - type: "waypoint"
   id: "navigation_target2_pre"
-  pose: { x: 4.3, y: 0.6, z: 0, rz: -1.57 }
+  pose: { x: 4.4, y: 0.6, z: 0, rz: -1.57 }
 - type: "waypoint"
   id: "navigation_target2"
-  pose: { x: 4.4, y: -0.5, z: 0, rz: -1.57 }
+  pose: { x: 4.5, y: -0.5, z: 0, rz: -1.57 }
 - type: "waypoint"
   id: "navigation_target3"
   pose: { x: 2.0, y: 1.0, z: 0, rz: 3.14 }

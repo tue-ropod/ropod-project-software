@@ -69,7 +69,7 @@ composition:
   type: rwc2016/armchair
   pose: { x: 12.5876395892, y: 1.47201037758, z: 0.0, Z: 0.840 }
 - type: "robotics_testlabs/blue_door_left"
-  id: "door1"
+  id: "navigation_door"
   pose: {x: 0, y: 0.0, z: -5, Z: -1.5707963267948966}
   push_start_waypoint: door_opening_start
   push_destination_waypoint: door_opening_dest

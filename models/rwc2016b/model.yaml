@@ -66,7 +66,7 @@ composition:
   type: rwc2016/cabinet_open_small
   pose: { x: 12.4391104512, y: 5.21299446298, z: 0.0, Z: -1.57079632679 }
 - type: "robotics_testlabs/blue_door_left"
-  id: "door1"
+  id: "navigation_door"
   pose: {x: 0, y: 0.0, z: -5, Z: -1.5707963267948966}
   push_start_waypoint: door_opening_start
   push_destination_waypoint: door_opening_dest

@@ -38,6 +38,9 @@ composition:
 - id: bed
   type: rwc2016/bed_frame
   pose: { x: 5.54312696294, y: 4.87689963252, z: 0.0, Z: -3.14159265359 }
+- id: night_stand
+  type: rwc2016/ikea_table_red
+  pose: { x: 6.45, y: 5.70, z: 0.0, Z: -1.57079632679}
 - id: bar
   type: rwc2016/bookcase_noback
   pose: { x: 7.2199743991, y: 4.46354844791, z: 0.0, Z: 0.0 }

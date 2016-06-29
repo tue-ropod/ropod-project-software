@@ -59,6 +59,9 @@ composition:
 - id: couch
   type: rwc2016/couch
   pose: { x: 15.3149248356, y: 1.01020513342, z: 0.0, Z: 3.14159265359 }
+- id: couch_table
+  type: rwc2016/ikea_table_red
+  pose: { x: 15.4, y: 0.0, z: 0.0, Z: 1.57079632679 }
 - id: armchair_1
   type: rwc2016/armchair
   pose: { x: 14.227633929, y: -0.312892022787, z: 0.0, Z: 3.14159265359 }

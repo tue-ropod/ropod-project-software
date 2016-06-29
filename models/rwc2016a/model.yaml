@@ -115,13 +115,13 @@ composition:
 
 - type: "waypoint"
   id: "registration_table1"
-  pose: { x: 13.0, y: 0.0, z: 0, rz: 0.78 }
+  pose: { x: 9.7, y: -0.6, z: 0, rz: 0 }
 - type: "waypoint"
   id: "registration_table2"
-  pose: { x: 13.0, y: 2.0, z: 0, rz: 0 }
+  pose: { x: 9.0, y: -1.4, z: 0, rz: 0 }
 - type: "waypoint"
   id: "registration_table3"
-  pose: { x: 13.0, y: 4.0, z: 0, rz: -0.78 }
+  pose: { x: 8.4, y: -0.6, z: 0, rz: 0 }
 - type: "waypoint"
   id: "exit_1_rips"
   pose: { x: 12.45, y: 7.5, z: 0, rz: 1.57 }
@@ -134,3 +134,36 @@ composition:
 - type: "waypoint"
   id: "exit_4_rips"
   pose: { x: 12.45, y: 7.5, z: 0, rz: 1.57 }
+
+# - - - - - - CHALLENGE_NAVIGATION WAYPOINTS - - - - - - -
+
+- type: "waypoint"
+  id: "navigation_target1"
+  pose: { x: 5.0, y: 2.6, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "navigation_target2_pre"
+  pose: { x: 4.3, y: 0.6, z: 0, rz: -1.57 }
+- type: "waypoint"
+  id: "navigation_target2"
+  pose: { x: 4.4, y: -0.5, z: 0, rz: -1.57 }
+- type: "waypoint"
+  id: "navigation_target3"
+  pose: { x: 2.0, y: 1.0, z: 0, rz: 3.14 }
+- type: "waypoint"
+  id: "navigation_door"
+  pose: { x: -0.5, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_target4"
+  pose: { x: 2.0, y: 1.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_exit1"
+  pose: { x: -1.0, y: 0.0, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "navigation_exit2"
+  pose: { x: -1.0, y: 2.5, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "navigation_exit3"
+  pose: { x: -2.0, y: 4.0, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "navigation_exit4"
+  pose: { x: -2.0, y: -1.0, z: 0, rz: 3.1415 }

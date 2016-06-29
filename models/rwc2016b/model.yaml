@@ -65,13 +65,6 @@ composition:
 - id: cabinet_open_small_living_3
   type: rwc2016/cabinet_open_small
   pose: { x: 12.4391104512, y: 5.21299446298, z: 0.0, Z: -1.57079632679 }
-- type: "robotics_testlabs/blue_door_left"
-  id: "navigation_door"
-  pose: {x: 0, y: 0.0, z: -5, Z: -1.5707963267948966}
-  push_start_waypoint: door_opening_start
-  push_destination_waypoint: door_opening_dest
-
-
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -103,12 +96,6 @@ composition:
 - type: "waypoint"
   id: "exit_door_c"
   pose: { x: 14.7, y: 6.5, z: 0, rz: 1.57 }
-- type: "waypoint"
-  id: "door_opening_start"
-  pose: { x: -0.78, y: 0.0, z: 0, rz: 0 }
-- type: "waypoint"
-  id: "door_opening_dest"
-  pose: { x: 0.65, y: 0.0, z: 0, rz: 0 }
 
 # - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
 
@@ -150,7 +137,7 @@ composition:
   pose: { x: 2.0, y: 1.5, z: 0, rz: 3.14 }
 - type: "waypoint"
   id: "navigation_door"
-  pose: { x: -0.5, y: 0.0, z: 0, rz: 0.0 }
+  pose: { x: -0.7, y: 0.0, z: 0, rz: 0.0 }
 - type: "waypoint"
   id: "navigation_target4"
   pose: { x: 2.0, y: 1.5, z: 0, rz: 0.0 }
@@ -166,3 +153,9 @@ composition:
 - type: "waypoint"
   id: "navigation_exit4"
   pose: { x: -2.0, y: -1.0, z: 0, rz: 3.1415 }
+- type: "waypoint"
+  id: "door_opening_start"
+  pose: { x: -0.5, y: 0.0, z: 0, rz: 0 }
+- type: "waypoint"
+  id: "door_opening_dest"
+  pose: { x: 0.65, y: 0.0, z: 0, rz: 0 }

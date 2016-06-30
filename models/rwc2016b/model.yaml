@@ -40,7 +40,7 @@ composition:
   pose: { x: 10.6916059274, y: 2.94276122472, z: 0.0, Z: 3.14159265359 }
 - id: drawer
   type: rwc2016/cabinet_open_small
-  pose: { x: 13.1903262722, y: -1.69042668679, z: 0.0, Z: 1.57079632679 }
+  pose: { x: 13.0, y: -1.69042668679, z: 0.0, Z: 1.57079632679 }
 - id: living_shelf
   type: rwc2016/bookcase_noback
   pose: { x: 11.1550522416, y: 0.774564068452, z: 0.0, Z: 0.0 }
@@ -134,7 +134,7 @@ composition:
   pose: { x: 12.0, y: -0.6, z: 0, rz: -0.87 }
 - type: "waypoint"
   id: "navigation_target2"
-  pose: { x: 12.8, y: -1.0, z: 0, rz: -1.57 }
+  pose: { x: 13.0, y: -1.0, z: 0, rz: -1.57 }
 - type: "waypoint"
   id: "navigation_target3"
   pose: { x: 2.0, y: 1.5, z: 0, rz: 3.14 }

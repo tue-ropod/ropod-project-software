@@ -1,0 +1,20 @@
+corridor; min; -0,009; -1,449
+corridor; max; 7,997; 3,471
+corridor; center; 2,162; 0,218
+
+office; min; 0,005; 3,532
+office; max; 3,418; 5,962
+office; center; 1,734; 4,740
+
+bedroom; min; 3,433; 1,535
+bedroom; max; 6,936; 5,947
+bedroom; center; 5,162; 2,608
+
+kitchen; min; 6,936; 1,520
+kitchen; max; 11,810; 5,932
+kitchen; center; 8,530; 4,009
+
+living_room; min; 6,936; -1,476
+living_room; max; 15,819; 5,947
+living_room; center; 10,885; 1,043
+

@@ -74,6 +74,60 @@ composition:
 - id: ikea_table_high
   type: rwc2016/ikea_table_black
   pose: { x: 11.3, y: -0.9, z: 0.0, Z: 1.57079632679}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- type: "room"
+  id: "kitchen"
+  pose: { x: 8.53, y: 4.01, z: 0 }
+  areas:
+  - name: in
+    shape:
+    - box:
+        min: { x: -1.59, y: -2.49, z: 0 }
+        max: { x: 3.28, y: 1.92, z: 0.01 }
+- type: "room"
+  id: "living_room"
+  pose: { x: 10.88, y: 1.04, z: 0 }
+  areas:
+  - name: in
+    shape:
+    - box:
+        min: { x: -3.95, y: -2.52, z: 0 }
+        max: { x: 4.93, y: 0.48, z: 0.01 }
+    - box:
+        min: { x: 0.93, y: -2.52, z: 0 }
+        max: { x: 4.93, y: 4.90, z: 0.01 }
+- type: "room"
+  id: "office"
+  pose: { x: 1.73, y: 4.74, z: 0 }
+  areas:
+  - name: in
+    shape:
+    - box:
+        min: { x: -1.73, y: -1.21, z: 0 }
+        max: { x: 1.68, y: 1.22, z: 0.01 }
+- type: "room"
+  id: "corridor"
+  pose: { x: 2.16, y: 0.22, z: 0 }
+  areas:
+  - name: in
+    shape:
+    - box:
+        min: { x: -2.17, y: -1.67, z: 0 }
+        max: { x: 1.27, y: 3.25, z: 0.01 }
+    - box:
+        min: { x: -2.17, y: -1.67, z: 0 }
+        max: { x: 5.83, y: 1.32, z: 0.01 }
+- type: "room"
+  id: "bedroom"
+  pose: { x: 5.16, y: 2.61, z: 0 }
+  areas:
+  - name: in
+    shape:
+    - box:
+        min: { x: -1.73, y: -1.07, z: 0 }
+        max: { x: 1.77, y: 3.34, z: 0.01 }
   
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

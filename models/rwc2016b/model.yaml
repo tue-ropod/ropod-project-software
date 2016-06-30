@@ -142,6 +142,18 @@ composition:
   id: "navigation_door"
   pose: { x: -0.7, y: 0.0, z: 0, rz: 0.0 }
 - type: "waypoint"
+  id: "navigation_door_1"
+  pose: { x: -0.7, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_door_2"
+  pose: { x: -0.7, y: 3.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_reentrance_door_1"
+  pose: { x: 0.0, y: 0.0, z: 0, rz: 0.0 }
+- type: "waypoint"
+  id: "navigation_reentrance_door_2"
+  pose: { x: 0.0, y: 3.0, z: 0, rz: 0.0 }
+- type: "waypoint"
   id: "navigation_target4"
   pose: { x: 2.0, y: 1.5, z: 0, rz: 0.0 }
 - type: "waypoint"
@@ -157,8 +169,14 @@ composition:
   id: "navigation_exit4"
   pose: { x: -2.0, y: -1.0, z: 0, rz: 3.1415 }
 - type: "waypoint"
-  id: "door_opening_start"
+  id: "door_opening_start_1"
   pose: { x: -0.5, y: 0.0, z: 0, rz: 0 }
 - type: "waypoint"
-  id: "door_opening_dest"
-  pose: { x: 0.65, y: 0.0, z: 0, rz: 0 }
+  id: "door_opening_dest_1"
+  pose: { x: 0.90, y: 0.0, z: 0, rz: 0 }
+- type: "waypoint"
+  id: "door_opening_start_2"
+  pose: { x: -0.5, y: 3.0, z: 0, rz: 0 }
+- type: "waypoint"
+  id: "door_opening_dest_2"
+  pose: { x: 0.90, y: 3.0, z: 0, rz: 0 }

@@ -6,11 +6,11 @@ areas:
     -   box:
             max:
                 x: 0.775
-                y: 0.3
+                y: 0.1
                 z: 0.01
             min:
                 x: 0.575
-                y: -0.3
+                y: -0.1
                 z: 0.0
 -   name: shelf1
     shape:

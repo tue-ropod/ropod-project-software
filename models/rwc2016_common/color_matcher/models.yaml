@@ -2,34 +2,34 @@ models:
   - name: apple
     colors:
       - color: black
-        max: 0.00613742
+        max: 0.0106174
         min: 0.00200566
       - color: blue
         max: 0.0114219
         min: 0.00355691
       - color: brown
-        max: 0.109971
+        max: 0.152252
         min: 0.0246096
       - color: grey
-        max: 0.00994464
+        max: 0.0196118
         min: 0.00684196
       - color: green
-        max: 0.00918582
+        max: 0.0438177
         min: 0.00179341
       - color: orange
         max: 0.468771
         min: 0.155143
       - color: pink
-        max: 0.0601547
+        max: 0.0890291
         min: 0.0207235
       - color: purple
-        max: 0.0714078
+        max: 0.0850065
         min: 0.0246554
       - color: red
         max: 0.661612
         min: 0.11855
       - color: white
-        max: 0.00950285
+        max: 0.0104838
         min: 0.00223331
       - color: yellow
         max: 0.392338
@@ -417,7 +417,7 @@ models:
         max: 0.0135193
         min: 0.00587166
       - color: yellow
-        max: 0.149403
+        max: 0.16123
         min: 0.0176614
   - name: plate
     colors:
@@ -562,11 +562,11 @@ models:
   - name: shampoo
     colors:
       - color: black
-        max: 0.0259612
+        max: 0.0307531
         min: 0.00746525
       - color: blue
-        max: 0.431296
-        min: 0.240324
+        max: 0.445957
+        min: 0.22515
       - color: brown
         max: 0.0390203
         min: 0.00933179
@@ -574,7 +574,7 @@ models:
         max: 0.0743587
         min: 0.0211261
       - color: green
-        max: 0.0174197
+        max: 0.0194732
         min: 0.00554426
       - color: orange
         max: 0.0280523
@@ -583,51 +583,16 @@ models:
         max: 0.114129
         min: 0.0467664
       - color: purple
-        max: 0.442087
-        min: 0.293329
+        max: 0.45573
+        min: 0.29064
       - color: red
-        max: 0.0800506
+        max: 0.0807546
         min: 0.0251323
       - color: white
         max: 0.0230681
         min: 0.00395693
       - color: yellow
         max: 0.0508241
-        min: 0.0350592
-  - name: smampoo
-    colors:
-      - color: black
-        max: 0.0109709
-        min: 0.0109709
-      - color: blue
-        max: 0.22515
-        min: 0.22515
-      - color: brown
-        max: 0.0224694
-        min: 0.0224694
-      - color: grey
-        max: 0.0422818
-        min: 0.0422818
-      - color: green
-        max: 0.00840906
-        min: 0.00840906
-      - color: orange
-        max: 0.0112355
-        min: 0.0112355
-      - color: pink
-        max: 0.10352
-        min: 0.10352
-      - color: purple
-        max: 0.45573
-        min: 0.45573
-      - color: red
-        max: 0.0807546
-        min: 0.0807546
-      - color: white
-        max: 0.00553334
-        min: 0.00553334
-      - color: yellow
-        max: 0.0339512
         min: 0.0339512
   - name: soap
     colors:

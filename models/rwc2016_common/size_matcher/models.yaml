@@ -54,7 +54,7 @@ models:
     name: egg
     width_max: 0.0615082
     width_min: 0.0543376
-  - height_max: 0.0709047
+  - height_max: 0.0855721
     height_min: 0.0410727
     name: paprika
     width_max: 0.0925414
@@ -84,11 +84,6 @@ models:
     name: shampoo
     width_max: 0.0801072
     width_min: 0.0376267
-  - height_max: 0.193483
-    height_min: 0.193483
-    name: smampoo
-    width_max: 0.0750765
-    width_min: 0.0750765
   - height_max: 0.112648
     height_min: 0.0486453
     name: soap

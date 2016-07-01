@@ -74,9 +74,6 @@ composition:
 - id: ikea_table_high
   type: rwc2016/ikea_table_black
   pose: { x: 11.3, y: -0.9, z: 0.0, Z: 1.57079632679}
-- id: door1
-  type: rwc2016/door_left
-  pose: { x: 2, y: 3.5, z: 0.0, Z: -2}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

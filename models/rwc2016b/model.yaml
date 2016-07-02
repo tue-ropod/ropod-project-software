@@ -17,9 +17,6 @@ composition:
 - id: plant_small_hall_1
   type: rwc2016/plant
   pose: { x: 7.34685494228, y: -0.0256348198448, z: 0.0, Z: 0.0 }
-- id: desk
-  type: rwc2016/table_bureau
-  pose: { x: 3.35034620424, y: 1.71274535127, z: 0.0, Z: 1.57079632679 }
 - id: sink
   type: rwc2016/kitchen_counter
   pose: { x: 7.79068520743, y: 2.35834741039, z: 0.0, Z: 0.0 }
@@ -38,36 +35,22 @@ composition:
 - id: sideshelf
   type: rwc2016/cabinet_2doors
   pose: { x: 10.6916059274, y: 2.94276122472, z: 0.0, Z: 3.14159265359 }
-- id: drawer
+
+
+#---------- final---------------------
+
+- id: table1
+  type: rwc2016/table_bureau
+  pose: { x: 14.8, y: 3.1, z: 0.0, Z: 3.14159265359 }
+- id: table2
+  type: rwc2016/table_bureau
+  pose: { x: 14.8, y: 0.2, z: 0.0, Z: 3.14159265359 }
+- id: table3
+  type: rwc2016/table_bureau
+  pose: { x: 12.0, y: -1.0, z: 0.0, Z: 1.57079632679 }
+- id: bar
   type: rwc2016/cabinet_open_small
-  pose: { x: 13.0, y: -1.69042668679, z: 0.0, Z: 1.57079632679 }
-- id: living_shelf
-  type: rwc2016/bookcase_noback
-  pose: { x: 11.1550522416, y: 0.774564068452, z: 0.0, Z: 0.0 }
-- id: dining_table
-  type: rwc2016/table_black
-  pose: { x: 12.9102134488, y: 3.18796543195, z: 0.0, Z: 3.14159265359 }
-- id: living_table
-  type: rwc2016/table_salon
-  pose: { x: 14.265, y: 0.9, z: 0.0, Z: 1.57079632679 }
-- id: armchair_2
-  type: rwc2016/armchair
-  pose: { x: 13.3417845051, y: 0.771842854116, z: 0.0, Z: 3.14159265359 }
-- id: bookcase
-  type: rwc2016/bookcase_noback
-  pose: { x: 15.6208693, y: 3.02103140814, z: 0.0, Z: 3.14159265359 }
-- id: couch
-  type: rwc2016/couch
-  pose: { x: 15.3149248356, y: 1.01020513342, z: 0.0, Z: 3.14159265359 }
-- id: couch_table
-  type: rwc2016/ikea_table_red
-  pose: { x: 15.4, y: 0.0, z: 0.0, Z: 1.57079632679 }
-- id: armchair_1
-  type: rwc2016/armchair
-  pose: { x: 14.227633929, y: -0.312892022787, z: 0.0, Z: 3.14159265359 }
-- id: tv_stand
-  type: rwc2016/cabinet_open_small
-  pose: { x: 12.4391104512, y: 5.21299446298, z: 0.0, Z: -1.57079632679 }
+  pose: { x: 12.0, y: 5.21299446298, z: 0.0, Z: -1.57079632679 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 

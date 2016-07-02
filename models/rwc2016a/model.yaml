@@ -248,4 +248,4 @@ composition:
 
 - type: "waypoint"
   id: "gpsr_meeting_point"
-  pose: { x: 15.236, 2.356, z: 0, rz: 3.14 }
+  pose: { x: 15.236, y: 2.356, z: 0, rz: 3.14 }

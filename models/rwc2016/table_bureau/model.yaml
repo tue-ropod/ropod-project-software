@@ -1,6 +1,6 @@
 areas:
 -   name: near
-    offset: 0.7
+    offset: 0.8
 -   name: on_top_of
     shape:
     -   box:
@@ -16,11 +16,11 @@ areas:
     shape:
     -   box:
             max:
-                x: 1.0
+                x: 1.1
                 y: 0.45
                 z: 0.01
             min:
-                x: 0.65
+                x: 0.62
                 y: -0.45
                 z: 0.0
 color:

@@ -74,7 +74,7 @@ composition:
           z: 0
           X: 0
           Y: 0
-          Z: 1.5707963267948966
+          Z: -1.5707963267948966
     - type: "robotics_testlab_B.black_cabinet"
       id: "black_cabinet2"
       pose:

@@ -3,6 +3,7 @@
 ## Prerequisites
 
 - Tutorial 09
+- The perception models must be trained using the [ed_perception tutorial](https://github.com/tue-robotics/ed_perception).
 
 ## Tutorial
 

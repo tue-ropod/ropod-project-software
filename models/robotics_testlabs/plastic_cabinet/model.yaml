@@ -45,6 +45,18 @@ areas:
                 x: -0.134
                 y: -0.252
                 z: 0.742
+
+-   name: on_top_of
+    shape:
+    -   box:
+            max:
+                x: 0.177
+                y: 0.252
+                z: 1.012
+            min:
+                x: -0.134
+                y: -0.252
+                z: 0.742
 -   name: shelf4
     shape:
     -   box:

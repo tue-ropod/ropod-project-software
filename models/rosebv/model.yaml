@@ -1,5 +1,5 @@
 composition:
-    - type: "rosebv.walls"
+    - type: "rosebv/walls"
       id: "walls"
       pose:
           x: 0
@@ -32,7 +32,7 @@ composition:
     - type: "table_ahrend_180x90x75_with_drawers"
       id: "desk2"
       pose:
-          x: -0.2 
+          x: -0.2
           y: -2.9
           z: 0
           X: 0

@@ -1,5 +1,5 @@
 composition:
-    - type: "robotics_testlab_B.walls"
+    - type: "robotics_testlab_B/walls"
       id: "walls"
       pose:
           x: 0
@@ -11,55 +11,55 @@ composition:
           x: 0
           y: 0
           z: 0
-    - type: "robotics_testlab_B.pico_case"
+    - type: "robotics_testlab_B/pico_case"
       id: "pico_case"
       pose:
           x: 4.05
           y: 2
           z: 0
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet1"
       pose:
           x: 6.6
           y: 2.2
           z: 0
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet2"
       pose:
           x: 6.6
           y: 1.27
           z: 0
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet3"
       pose:
           x: 6.6
           y: 0.34
           z: 0
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet4"
       pose:
           x: 6.6
           y: -0.59
           z: 0
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet5"
       pose:
           x: 6.6
           y: -1.77
           z: 0
-    - type: "robotics_testlab_B.hallway_cabinet"
+    - type: "robotics_testlab_B/hallway_cabinet"
       id: "hallway_cabinet"
       pose:
           x: 1.55
           y: 0.05
           z: 0
-    - type: "robotics_testlab_B.corridor_cabinet"
+    - type: "robotics_testlab_B/corridor_cabinet"
       id: "corridor_cabinet"
       pose:
           x: .7
           y: 2.4
           z: 0
-    - type: "robotics_testlab_B.bed_cabinet"
+    - type: "robotics_testlab_B/bed_cabinet"
       id: "bed_cabinet"
       pose:
           x: 6.6
@@ -146,7 +146,7 @@ composition:
     - type: "waypoint"
       id: "wait"
       pose:
-          x: 2.638 
+          x: 2.638
           y: 1.951
           z: 0
 

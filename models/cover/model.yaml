@@ -7,7 +7,7 @@ composition:
         z: 0
   - id: wall
     pose: {x: 0.0, y: 0.0, z: 0}
-    type: cover.walls
+    type: cover/walls
   - type: expedit
     id: expedit
     pose:
@@ -44,5 +44,5 @@ composition:
         X: 0.0
         Y: 0.0
         Z: 1.5708
-  
+
 #1+0.395+0.1

@@ -1,5 +1,5 @@
 composition:
-    - type: "rein_experiment.walls"
+    - type: "rein_experiment/walls"
       id: "walls"
     - type: "floor"
       id: "floor"

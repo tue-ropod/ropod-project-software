@@ -1,5 +1,5 @@
 composition:
-    - type: "wonderland.walls"
+    - type: "wonderland/walls"
       id: "walls"
     - type: "floor"
       id: "floor"

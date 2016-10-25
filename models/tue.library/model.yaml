@@ -9,10 +9,10 @@ composition:
       type: tue.library/walls
       pose: {x: 0, y: 0, z: 0}
     - id: desks-support
-      type: tue.library.desks.support
+      type: tue.library/desks.support
       pose: {x: 0, y: 0, z: 0}
     - id: desks-top
-      type: tue.library.desks.top
+      type: tue.library/desks.top
       pose: {x: 0, y: 0, z: 0.695}
     - id: relax-room-1
       type: tue.library/relax_room
@@ -59,15 +59,12 @@ composition:
     - id: meeting_room_4
       type: tue.library/door
       pose: {x: -15.5, y: -16.5, z: 0, Z: 1.57}
-    - id: base_station
-      type: cup
-      pose: {x: -4.5, y: 3.0, z: 1.0}
     - id: amigo_case
       type: amigo_case
       pose: {x: -3.7, y: 7.3, z: 0.0, Z: 1.57}
     - id: laptop_case
       type: laptop_case
       pose: {x: -2.7, y: 7.3, z: 0.0, Z: 1.57}
-    
+
 
 

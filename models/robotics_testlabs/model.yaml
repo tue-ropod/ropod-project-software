@@ -1,7 +1,7 @@
 composition:
     - id: "operator"
       pose: {x: -2.798, y: -1.499, z: 1.0}
-    - type: "robotics_testlabs.walls"
+    - type: "robotics_testlabs/walls"
       id: "walls"
       pose:
           x: 0
@@ -57,7 +57,7 @@ composition:
               size: {x: 0.75, y: 0.665, z: 0.8}
               pose: {x: 0, y: 0, z: 0.4}
       color: {red: 0.4, green: 0.3, blue: 0.2}
-    - type: "ddw.salon"
+    - type: "ddw/salon"
       id: "couch_table"
       pose:
           x: 3.2
@@ -66,7 +66,7 @@ composition:
           X: 0
           Y: 0
           Z: 3.14159265359
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet1"
       pose:
           x: 2.95
@@ -75,7 +75,7 @@ composition:
           X: 0
           Y: 0
           Z: -1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet2"
       pose:
           x: 2.03
@@ -84,7 +84,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet3"
       pose:
           x: 1.11
@@ -93,7 +93,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet4"
       pose:
           x: 0.19
@@ -102,7 +102,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "robotics_testlab_B.black_cabinet"
+    - type: "robotics_testlab_B/black_cabinet"
       id: "black_cabinet5"
       pose:
           x: -0.92
@@ -111,7 +111,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "ddw.table"
+    - type: "ddw/table"
       id: "bar"
       pose:
           x: 2.65
@@ -120,7 +120,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "ddw.couch"
+    - type: "ddw/couch"
       id: "hallway_table"
       pose:
           x: 0.72
@@ -129,7 +129,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "robotics_testlab_B.corridor_cabinet"
+    - type: "robotics_testlab_B/corridor_cabinet"
       id: "cabinet"
       pose:
           x: 3.30
@@ -138,7 +138,7 @@ composition:
           X: 0
           Y: 0
           Z: 3.14159265359
-#    - type: "ddw.chair"
+#    - type: "ddw/chair"
 #      id: "chair"
 #      pose:
 #          x: 2.0
@@ -147,7 +147,7 @@ composition:
 #          X: 0
 #          Y: 0
 #          Z: 1.5707963267948966
-    - type: "robotics_testlab_B.bed_cabinet"
+    - type: "robotics_testlab_B/bed_cabinet"
       id: "nightstand"
       pose:
           x: -1.92
@@ -156,7 +156,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "robotics_testlab_B.bed"
+    - type: "robotics_testlab_B/bed"
       id: "bed"
       pose:
           x: -2.725
@@ -165,7 +165,7 @@ composition:
           X: 0
           Y: 0
           Z: 1.5707963267948966
-    - type: "robotics_testlab_B.tubing"
+    - type: "robotics_testlab_B/tubing"
       id: "tubing"
       pose:
           x: -3.40

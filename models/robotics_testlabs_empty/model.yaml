@@ -1,5 +1,5 @@
 composition:
-    - type: "robotics_testlabs.walls"
+    - type: "robotics_testlabs/walls"
       id: "walls"
       pose:
           x: 0
@@ -50,4 +50,4 @@ composition:
       pose: { x: -0.5, y: 4.0, z: 0, rz: 3.14}
     - type: "waypoint"
       id: "explore10"
-      pose: { x: 0.5, y: 4.5, z: 0, rz: -1.57}   
+      pose: { x: 0.5, y: 4.5, z: 0, rz: -1.57}

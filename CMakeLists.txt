@@ -9,27 +9,26 @@ catkin_package()
 include_directories(${catkin_INCLUDE_DIRS})
 link_directories(${catkin_LIBRARY_DIRS})
 
-## This plugin includes Qt widgets, so we must include Qt like so:
-find_package(Qt4 COMPONENTS QtCore QtGui REQUIRED)
-include(${QT_USE_FILE})
+# Enable automoc for generating QT moc files
+set(CMAKE_AUTOMOC ON)
+## This plugin includes Qt widgets, so we must include Qt.
+## We'll use the version that rviz used so they are compatible.
+if(rviz_QT_VERSION VERSION_LESS "5")
+    message(STATUS "Using Qt4 based on the rviz_QT_VERSION: ${rviz_QT_VERSION}")
+    find_package(Qt4 ${rviz_QT_VERSION} EXACT REQUIRED QtCore QtGui)
+    ## pull in all required include dirs, define QT_LIBRARIES, etc.
+    include(${QT_USE_FILE})
+else()
+    message(STATUS "Using Qt5 based on the rviz_QT_VERSION: ${rviz_QT_VERSION}")
+    find_package(Qt5 ${rviz_QT_VERSION} EXACT REQUIRED Core Widgets)
+    ## make target_link_libraries(${QT_LIBRARIES}) pull in all required dependencies
+    set(QT_LIBRARIES Qt5::Widgets)
+endif()
 
-## I prefer the Qt signals and slots to avoid defining "emit", "slots",
-## etc because they can conflict with boost signals, so define QT_NO_KEYWORDS here.
 add_definitions(-DQT_NO_KEYWORDS)
-
-## Here we specify which header files need to be run through "moc",
-## Qt's meta-object compiler.
-#qt4_wrap_cpp(MOC_FILES
-#  src/displays/world_model_display.h
-#) NOTE: WE DO THIS MANUALLY moc-qt5 header.h > header_moc.h
-
-## Here we specify the list of source files, including the output of
-## the previous command which is stored in ``${MOC_FILES}``.
 
 set(SOURCE_FILES
   src/displays/world_model_display.cpp
-  src/displays/world_model_display_moc.cxx # autogen file with moc-qt4
-
   src/visuals/entity_visual.cpp
 )
 

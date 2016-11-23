@@ -32,6 +32,8 @@ set(SOURCE_FILES
   src/visuals/entity_visual.cpp
 )
 
+set (CMAKE_CXX_STANDARD 11)
+
 ## An rviz plugin is just a shared library, so here we declare the
 ## library to be called ``${PROJECT_NAME}`` (which is
 ## "rviz_plugins", or whatever your version of this project

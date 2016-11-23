@@ -5,7 +5,7 @@
 #include <rviz/ogre_helpers/billboard_line.h>
 #include <rviz/ogre_helpers/movable_text.h>
 
-#include <ed_gui_server/Mesh.h>
+#include <ed_gui_server/EntityMeshAndAreas.h>
 #include <ed_gui_server/Polygon.h>
 
 namespace Ogre
@@ -28,11 +28,11 @@ public:
     virtual ~EntityVisual();
 
     // Configure the visual to show the data in the message.
-    void setMesh(const ed_gui_server::Mesh& mesh );
+    void setEntityMeshAndAreas(const ed_gui_server::EntityMeshAndAreas& mesh_and_areas);
     void setConvexHull ( const ed_gui_server::Polygon& polygon );
     void setLabel (const std::string& label );
 
-    void setColor ( const Ogre::ColourValue& c );
+    void setColor (Ogre::ColourValue c, double entity_label_opacity, double area_opacity, double area_label_opacity);
 
     // Set the pose of the coordinate frame the message refers to.
     void setFramePosition( const Ogre::Vector3& position );
@@ -44,6 +44,8 @@ public:
 private:
     // The actual scene objects
     boost::shared_ptr<rviz::MeshShape> mesh_;
+    std::vector<boost::shared_ptr<rviz::MeshShape> > area_meshes_;
+    std::vector<boost::shared_ptr<rviz::MovableText> > area_labels_;
     unsigned int mesh_revision_;
 
     boost::shared_ptr<rviz::BillboardLine> convex_hull_;

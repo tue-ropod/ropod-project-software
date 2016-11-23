@@ -37,7 +37,7 @@ protected:
     virtual void reset();
 
 private Q_SLOTS:
-    void initializeService();
+    void updateProperties();
 
 private:
     void processMessage( const ed_gui_server::EntityInfos::ConstPtr& msg );
@@ -49,6 +49,9 @@ private:
 
     // User-editable property variables.
     rviz::StringProperty* service_name_property_;
+    rviz::FloatProperty* entity_label_opacity_property_;
+    rviz::FloatProperty* entity_area_label_opacity_property_;
+    rviz::FloatProperty* entity_area_opacity_property_;
 };
 
 }

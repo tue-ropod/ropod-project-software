@@ -64,12 +64,16 @@ namespace ed_rviz_plugins
 
 WorldModelDisplay::WorldModelDisplay()
 {
-    service_name_property_ = new rviz::StringProperty( "Mesh query service name", "ed/query/meshes", "Service name for querying meshes", this, SLOT( initializeService() ));
+    service_name_property_ = new rviz::StringProperty( "Mesh query service name", "ed/query/meshes", "Service name for querying meshes", this, SLOT( updateProperties() ));
 
-    initializeService();
+    entity_label_opacity_property_ = new rviz::FloatProperty("Entity label opacity", 1.0, "Opacity of entity label", this, SLOT(updateProperties()));
+    entity_area_label_opacity_property_ = new rviz::FloatProperty("Entity Area label opacity", 0.4, "Opacity of entity label", this, SLOT(updateProperties()));
+    entity_area_opacity_property_ = new rviz::FloatProperty("Entity Area opacity", 0.2, "Opacity of entity label", this, SLOT(updateProperties()));
+
+    updateProperties();
 }
 
-void WorldModelDisplay::initializeService()
+void WorldModelDisplay::updateProperties()
 {
     if (service_client_.exists())
         service_client_.shutdown();
@@ -85,6 +89,10 @@ void WorldModelDisplay::onInitialize()
 
 WorldModelDisplay::~WorldModelDisplay()
 {
+  delete service_name_property_;
+  delete entity_label_opacity_property_;
+  delete entity_area_label_opacity_property_;
+  delete entity_area_opacity_property_;
 }
 
 void WorldModelDisplay::reset()
@@ -154,7 +162,8 @@ void WorldModelDisplay::processMessage(const ed_gui_server::EntityInfos::ConstPt
             g = COLORS[i_color][1];
             b = COLORS[i_color][2];
         }
-        visual->setColor ( Ogre::ColourValue(r, g, b, 1.0f) );
+        visual->setColor ( Ogre::ColourValue(r, g, b, 1.0f), entity_label_opacity_property_->getFloat(),
+                           entity_area_opacity_property_->getFloat(), entity_area_label_opacity_property_->getFloat());
 
         std::string label;
         label = info.id.substr(0, 6);
@@ -184,15 +193,14 @@ void WorldModelDisplay::processMessage(const ed_gui_server::EntityInfos::ConstPt
     {
         if (service_client_.call(query_meshes_srv_))
         {
-            for(unsigned int i = 0; i < query_meshes_srv_.response.meshes.size(); ++i)
+            for(unsigned int i = 0; i < query_meshes_srv_.response.entity_geometries.size(); ++i)
             {
-                const std::string& id = query_meshes_srv_.response.entity_ids[i];
-                const ed_gui_server::Mesh& mesh = query_meshes_srv_.response.meshes[i];
+                const std::string& id = query_meshes_srv_.response.entity_geometries[i].id;
 
                 if (visuals_.find(id) == visuals_.end())
                     continue;
 
-                visuals_[id]->setMesh( mesh );
+                visuals_[id]->setEntityMeshAndAreas( query_meshes_srv_.response.entity_geometries[i] );
             }
         }
         else

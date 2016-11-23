@@ -19,6 +19,8 @@ add_message_files(
     EntityInfo.msg
     EntityInfos.msg
     Mesh.msg
+    Area.msg
+    EntityMeshAndAreas.msg
     Polygon.msg
 )
 

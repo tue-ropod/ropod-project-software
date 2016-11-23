@@ -19,6 +19,7 @@
 #include <tue/config/reader.h>
 
 #include <ed_gui_server/EntityInfos.h>
+#include <ed/serialization/serialization.h>
 
 
 #include <boost/filesystem.hpp>
@@ -344,9 +345,10 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
         geo::ShapeConstPtr shape = robot_.getShape(id);
         int shape_revision = 1;
 
+        ed::EntityConstPtr e;
         if (!shape)
         {
-            ed::EntityConstPtr e = world_model_->getEntity(id);
+            e = world_model_->getEntity(id);
             if (e)
             {
                 shape = e->shape();
@@ -358,19 +360,19 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
 
         if (shape)
         {
-            ros_res.entity_ids.push_back(id);
+            ros_res.entity_geometries.push_back(ed_gui_server::EntityMeshAndAreas());
+            ed_gui_server::EntityMeshAndAreas& entity_geometry = ros_res.entity_geometries.back();
 
-            ros_res.meshes.push_back(ed_gui_server::Mesh());
-            ed_gui_server::Mesh& mesh_msg = ros_res.meshes.back();
+            entity_geometry.id = id;
 
             // Mesh revision
-            mesh_msg.revision = shape_revision;
+            entity_geometry.mesh.revision = shape_revision;
 
             const std::vector<geo::Vector3>& vertices = shape->getMesh().getPoints();
 
             // Triangles
             const std::vector<geo::TriangleI>& triangles = shape->getMesh().getTriangleIs();
-            mesh_msg.vertices.resize(triangles.size() * 9);
+            entity_geometry.mesh.vertices.resize(triangles.size() * 9);
             for(unsigned int i = 0; i < triangles.size(); ++i)
             {
                 const geo::TriangleI& t = triangles[i];
@@ -380,39 +382,69 @@ bool GUIServerPlugin::srvQueryMeshes(const ed_gui_server::QueryMeshes::Request& 
 
                 unsigned int i9 = i * 9;
 
-                mesh_msg.vertices[i9] = v1.x;
-                mesh_msg.vertices[i9 + 1] = v1.y;
-                mesh_msg.vertices[i9 + 2] = v1.z;
-                mesh_msg.vertices[i9 + 3] = v2.x;
-                mesh_msg.vertices[i9 + 4] = v2.y;
-                mesh_msg.vertices[i9 + 5] = v2.z;
-                mesh_msg.vertices[i9 + 6] = v3.x;
-                mesh_msg.vertices[i9 + 7] = v3.y;
-                mesh_msg.vertices[i9 + 8] = v3.z;
+                entity_geometry.mesh.vertices[i9] = v1.x;
+                entity_geometry.mesh.vertices[i9 + 1] = v1.y;
+                entity_geometry.mesh.vertices[i9 + 2] = v1.z;
+                entity_geometry.mesh.vertices[i9 + 3] = v2.x;
+                entity_geometry.mesh.vertices[i9 + 4] = v2.y;
+                entity_geometry.mesh.vertices[i9 + 5] = v2.z;
+                entity_geometry.mesh.vertices[i9 + 6] = v3.x;
+                entity_geometry.mesh.vertices[i9 + 7] = v3.y;
+                entity_geometry.mesh.vertices[i9 + 8] = v3.z;
             }
 
+            // Render areas if e
+            if (e)
+            {
+                geo::Shape area_shape;
+                tue::config::Reader r(e->data());
 
-            //                // Vertices
-            //                const std::vector<geo::Vector3>& vertices = e->shape()->getMesh().getPoints();
-            //                mesh_msg.vertices.resize(vertices.size() * 3);
-            //                for(unsigned int i = 0; i < vertices.size(); ++i)
-            //                {
-            //                    mesh_msg.vertices[i * 3] = vertices[i].x;
-            //                    mesh_msg.vertices[i * 3 + 1] = vertices[i].y;
-            //                    mesh_msg.vertices[i * 3 + 2] = vertices[i].z;
-            //                }
+                if (r.readArray("areas"))
+                {
+                    while(r.nextArrayItem())
+                    {
+                        std::string a_name;
+                        if (!r.value("name", a_name))
+                            continue;
 
-            //                // Triangles
-            //                const std::vector<geo::TriangleI>& triangles = e->shape()->getMesh().getTriangleIs();
-            //                mesh_msg.triangles.resize(triangles.size() * 3);
-            //                for(unsigned int i = 0; i < triangles.size(); ++i)
-            //                {
-            //                    const geo::TriangleI& t = triangles[i];
-            //                    mesh_msg.triangles[i * 3] = t.i1_;
-            //                    mesh_msg.triangles[i * 3 + 1] = t.i2_;
-            //                    mesh_msg.triangles[i * 3 + 2] = t.i3_;
-            //                }
-        }
+                        if (ed::deserialize(r, "shape", area_shape))
+                        {
+                            entity_geometry.areas.push_back(ed_gui_server::Area());
+                            ed_gui_server::Area& entity_area = entity_geometry.areas.back();
+
+                            entity_area.name = a_name;
+
+                            const std::vector<geo::Vector3>& vertices = area_shape.getMesh().getPoints();
+
+                            // Triangles
+
+                            const std::vector<geo::TriangleI>& triangles = area_shape.getMesh().getTriangleIs();
+                            entity_area.mesh.vertices.resize(triangles.size() * 9);
+                            for(unsigned int i = 0; i < triangles.size(); ++i)
+                            {
+                                const geo::TriangleI& t = triangles[i];
+                                const geo::Vector3& v1 = vertices[t.i1_];
+                                const geo::Vector3& v2 = vertices[t.i2_];
+                                const geo::Vector3& v3 = vertices[t.i3_];
+
+                                unsigned int i9 = i * 9;
+
+                                entity_area.mesh.vertices[i9] = v1.x;
+                                entity_area.mesh.vertices[i9 + 1] = v1.y;
+                                entity_area.mesh.vertices[i9 + 2] = v1.z;
+                                entity_area.mesh.vertices[i9 + 3] = v2.x;
+                                entity_area.mesh.vertices[i9 + 4] = v2.y;
+                                entity_area.mesh.vertices[i9 + 5] = v2.z;
+                                entity_area.mesh.vertices[i9 + 6] = v3.x;
+                                entity_area.mesh.vertices[i9 + 7] = v3.y;
+                                entity_area.mesh.vertices[i9 + 8] = v3.z;
+                            }
+                        }
+                    }
+                    r.endArray();
+                }
+            }
+        }        
     }
 
     return true;

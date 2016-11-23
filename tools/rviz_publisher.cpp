@@ -326,10 +326,10 @@ int main(int argc, char **argv)
             if (client.call(query_meshes_srv))
             {
 
-                for(unsigned int i = 0; i < query_meshes_srv.response.meshes.size(); ++i)
+                for(unsigned int i = 0; i < query_meshes_srv.response.entity_geometries.size(); ++i)
                 {
-                    const std::string& id = query_meshes_srv.response.entity_ids[i];
-                    const ed_gui_server::Mesh& mesh = query_meshes_srv.response.meshes[i];
+                    const std::string& id = query_meshes_srv.response.entity_geometries[i].id;
+                    const ed_gui_server::Mesh& mesh = query_meshes_srv.response.entity_geometries[i].mesh;
 
                     std::map<std::string, EntityViz>::iterator it = entities.find(id);
                     if (it == entities.end())

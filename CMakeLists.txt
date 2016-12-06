@@ -26,13 +26,12 @@ else()
 endif()
 
 add_definitions(-DQT_NO_KEYWORDS)
+add_definitions(-std=c++11)
 
 set(SOURCE_FILES
   src/displays/world_model_display.cpp
   src/visuals/entity_visual.cpp
 )
-
-set (CMAKE_CXX_STANDARD 11)
 
 ## An rviz plugin is just a shared library, so here we declare the
 ## library to be called ``${PROJECT_NAME}`` (which is

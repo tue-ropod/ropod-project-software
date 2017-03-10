@@ -1,0 +1,16 @@
+color:
+    blue: 0.75
+    green: 0.75
+    red: 0.75
+shape:
+    compound:
+    -   box:
+            '#': Main object
+            pose:
+                x: 0
+                y: -0.9925
+                z: 0.06
+            size:
+                x: 0.065
+                y: 7.07
+                z: 0.12

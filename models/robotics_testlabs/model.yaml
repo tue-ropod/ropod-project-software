@@ -227,7 +227,7 @@ composition:
       pose: { x: -3.72 , y: 2.96, z: 0.94, Z: 0}
     - type: robotics_testlabs/electro_bar_2
       id: electro_bar_2
-      pose: { x: 3.52 , y: 2.96, z: 0.94, Z: 0}
+      pose: { x: 3.50 , y: 2.96, z: 0.94, Z: 0}
     - type: "waypoint"
       id: "corridor"
       pose:

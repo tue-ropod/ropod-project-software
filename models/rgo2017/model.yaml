@@ -5,3 +5,56 @@ composition:
 - type: "rgo2017/walls"
   id: "walls"
   pose: { x: 0, y: 0, z: 0 }
+- id: dinner_table
+  type: rgo2017/table_dinner
+  pose: { x: 2.447, y: 1.1695, z: 0.0, Z: 3.141592 }
+- id: cabinet
+  type: rgo2017/bookcase
+  pose: { x: 2.271, y: -1.258, z: 0.0, Z: 1.570796 }
+- id: bookshelf
+  type: rgo2017/bookcase
+  pose: { x: 0.144, y: 3.574, z: 0.0, Z: 0 }
+- id: sofa
+  type: rgo2017/couch
+  pose: { x: 0.44, y: 6.18, z: 0.0, Z: 0 }
+- id: couch_table
+  type: rgo2017/table_salon_double
+  pose: { x: 1.688, y: 6.230, z: 0.0, Z: -1.570796 }
+- id: armchair1
+  type: rgo2017/armchair
+  pose: { x: 2.649, y: 6.955, z: 0.0, Z: -1 }
+- id: armchair2
+  type: rgo2017/armchair
+  pose: { x: 2.649, y: 5.650, z: 0.0, Z: -2 }
+- id: armchair3
+  type: rgo2017/armchair
+  pose: { x: 9.331, y: 3.696, z: 0.0, Z: -2 }
+- id: side_table
+  type: rgo2017/table_salon
+  pose: { x: 4.206, y: 7.097, z: 0.0, Z: -1.570796 }
+- id: stove
+  type: rgo2017/kitchen_sink
+  pose: { x: 4.955, y: 3.903, z: 0.0, Z: 1.570796 }
+- id: kitchencounter
+  type: rgo2017/kitchen_counter
+  pose: { x: 3.447, y: 3.903, z: 0.0, Z: 1.570796 }
+- id: closet
+  type: rgo2017/bookcase
+  pose: { x: 6.562, y: -1.252, z: 0.0, Z: 1.570796 }
+- id: bar
+  type: rgo2017/table_party
+  pose: { x: 8.545, y: 6.759, z: 0.0, Z: -2 }
+- id: table_bedroom
+  type: rgo2017/table_salon
+  pose: { x: 5.352, y: -1.146, z: 0.0, Z: 0 }
+- id: bed
+  type: rgo2017/bed_frame
+  pose: { x: 6.209, y: 2.175, z: 0.0, Z: -1.570796 }
+- id: desk
+  type: rgo2017/table_bureau
+  pose: { x: 9.331, y: 4.896, z: 0.0, Z: 3.141592 }
+- id: tv
+  type: rgo2017/tv
+  pose: { x: 6.720, y: 4.08, z: 0.0, Z: 1.570796 }
+
+

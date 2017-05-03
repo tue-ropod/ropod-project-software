@@ -1,0 +1,7 @@
+composition:
+- type: "floor"
+  id: "floor"
+  pose: { x: 0, y: 0, z: 0 }
+- type: "rgo2017/walls"
+  id: "walls"
+  pose: { x: 0, y: 0, z: 0 }

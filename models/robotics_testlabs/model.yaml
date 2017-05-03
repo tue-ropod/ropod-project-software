@@ -278,6 +278,7 @@ composition:
 
     - type: "waypoint"
       id: "registration_table1"
+      pose: { x: 3.13, y: 0.665, z: 0 }
     - type: "waypoint"
       id: "registration_table2"
       pose: { x: 3.13, y: 0.665, z: 0 }

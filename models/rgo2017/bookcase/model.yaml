@@ -6,11 +6,11 @@ areas:
     -   box:
             max:
                 x: 0.74
-                y: 0.299
+                y: 0.20
                 z: 0.01
             min:
                 x: 0.54
-                y: -0.299
+                y: -0.20
                 z: 0.0
 -   name: on_top_of
     shape:

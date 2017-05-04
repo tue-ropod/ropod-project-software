@@ -106,13 +106,13 @@ composition:
 
 - type: "waypoint"
   id: "registration_table1"
-  pose: { x: 3.00, y: 2.50, z: 0 }
-- type: "waypoint"
-  id: "registration_table2"
   pose: { x: 2.50, y: 2.50, z: 0 }
 - type: "waypoint"
-  id: "registration_table3"
+  id: "registration_table2"
   pose: { x: 2.00, y: 2.50, z: 0 }
+- type: "waypoint"
+  id: "registration_table3"
+  pose: { x: 2.00, y: 3.00, z: 0 }
 - type: "waypoint"
   id: "exit_1_rips"
   pose: { x: 8.450, y: -2.80, z: 0, Z: -1.571 }

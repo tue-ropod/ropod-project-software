@@ -76,13 +76,13 @@ composition:
   pose: { x: 2.00, y: 2.50, z: 0 }
 - type: "waypoint"
   id: "exit_1_rips"
-  pose: { x: 8.450, y: -2.40, z: 0, rz: -1.571 }
+  pose: { x: 8.450, y: -2.80, z: 0, Z: -1.571 }
 - type: "waypoint"
   id: "exit_2_rips"
-  pose: { x: 8.450, y: -1.84, z: 0, rz: -1.571 }
+  pose: { x: 8.450, y: -2.24, z: 0, Z: -1.571 }
 - type: "waypoint"
   id: "exit_3_rips"
-  pose: { x: 8.450, y: -1.00, z: 0, rz: -1.571 }
+  pose: { x: 8.450, y: -1.40, z: 0, Z: -1.571 }
 - type: "waypoint"
   id: "exit_4_rips"
-  pose: { x: 8.450, y: 0.00, z: 0, rz: -1.571}
+  pose: { x: 8.450, y: 0.00, z: 0, Z: -1.571}

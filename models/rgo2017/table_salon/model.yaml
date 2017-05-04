@@ -23,6 +23,17 @@ areas:
                 x: 0.675
                 y: -0.175
                 z: 0.0
+-   name: large_in_front_of
+    shape:
+    -   box:
+            max:
+                x: 1.275
+                y: 0.175
+                z: 0.01
+            min:
+                x: 0.675
+                y: -0.175
+                z: 0.0                
 color:
     blue: 0.75
     green: 0.75

@@ -135,8 +135,8 @@ composition:
 
 - type: "waypoint"
   id: "gpsr_meeting_point_1"
-  pose: { x: 4.0, y: 6.0, z: 0, Z: 0 }
+  pose: { x: 1.70, y: 5.25, z: 0, Z: -1.571 }
 - type: "waypoint"
   id: "gpsr_exit_door_1"
-  pose: { x: 9.50, y: -2.00, z: 0, rz: 1.571 }
+  pose: { x: 8.45, y: -2.00, z: 0, Z: -1.571 }
   

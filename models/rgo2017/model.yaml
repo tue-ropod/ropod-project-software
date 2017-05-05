@@ -140,3 +140,15 @@ composition:
   id: "gpsr_exit_door_1"
   pose: { x: 9.50, y: -2.00, z: 0, rz: 1.571 }
   
+  # - - - - - - CHALLENGE_OPEN SPECIFIC THINGS - - - - - - -
+
+- type: "waypoint"
+  id: "challenge_open_ask_waypoint"
+  pose: { x: 4.0, y: 6.0, z: 0, Z: 3.1415 }
+
+- id: "trashbin"
+  pose: { x: 6.4, y: 7.15, z: 0 }
+  shape:
+    box:
+      min: { x: -0.215, y: -0.165, z: 0 }
+      max: { x: 0.215, y: 0.165, z: 0.33 }

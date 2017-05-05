@@ -102,6 +102,11 @@ composition:
   id: "initial_pose"
   pose: { x: -1.00, y: 0.00, z: 0, rz: 0 }
 
+# Alternate entrance
+- type: "waypoint"
+  id: "initial_pose_2"
+  pose: { x: 9.50, y: -2.00, z: 0, rz: 1.571 }
+
 # - - - - - - CHALLENGE_RIPS WAYPOINTS - - - - - - -
 
 - type: "waypoint"
@@ -124,4 +129,14 @@ composition:
   pose: { x: 8.450, y: -1.40, z: 0, Z: -1.571 }
 - type: "waypoint"
   id: "exit_4_rips"
-  pose: { x: 8.450, y: 0.00, z: 0, Z: -1.571}
+  pose: { x: 8.450, y: 0.00, z: 0, Z: -1.571 }
+
+# - - - - - - CHALLENGE_GPSR WAYPOINTS - - - - - - -
+
+- type: "waypoint"
+  id: "gpsr_meeting_point_1"
+  pose: { x: 4.0, y: 6.0, z: 0, Z: 0 }
+- type: "waypoint"
+  id: "gpsr_exit_door_1"
+  pose: { x: 9.50, y: -2.00, z: 0, rz: 1.571 }
+  

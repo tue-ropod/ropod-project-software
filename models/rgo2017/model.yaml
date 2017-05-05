@@ -138,7 +138,7 @@ composition:
   pose: { x: 1.70, y: 5.25, z: 0, Z: -1.571 }
 - type: "waypoint"
   id: "gpsr_exit_door_1"
-  pose: { x: 8.45, y: -2.00, z: 0, Z: -1.571 }
+  pose: { x: 8.45, y: -2.80, z: 0, Z: -1.571 }
 
   # - - - - - - CHALLENGE_OPEN SPECIFIC THINGS - - - - - - -
 

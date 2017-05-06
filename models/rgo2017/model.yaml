@@ -151,7 +151,7 @@ composition:
 
 - type: "waypoint"
   id: "gpsr_meeting_point_1"
-  pose: { x: 0.80, y: 4.50, z: 0, Z: -0.1745 }
+  pose: { x: 0.80, y: 2.60, z: 0, Z: -0.1745 }
 
   # - - - - - - CHALLENGE_OPEN SPECIFIC THINGS - - - - - - -
 

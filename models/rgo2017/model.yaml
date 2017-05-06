@@ -36,7 +36,7 @@ composition:
   type: rgo2017/kitchen_sink
   pose: { x: 4.955, y: 3.903, z: 0.0, Z: 1.570796 }
 - id: kitchencounter
-  type: rgo2017/kitchen_counter
+  type: rgo2017/kitchen_sink
   pose: { x: 3.447, y: 3.903, z: 0.0, Z: 1.570796 }
 - id: closet
   type: rgo2017/bookcase
@@ -46,7 +46,7 @@ composition:
   pose: { x: 8.545, y: 6.759, z: 0.0, Z: -2 }
 - id: table_bedroom
   type: rgo2017/table_salon
-  pose: { x: 5.352, y: -1.146, z: 0.0, Z: 0 }
+  pose: { x: 5.352, y: -1.146, z: 0.0, Z: 1.570796 }
 - id: bed
   type: rgo2017/bed_frame
   pose: { x: 6.209, y: 2.175, z: 0.0, Z: -1.570796 }

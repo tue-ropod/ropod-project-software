@@ -16,11 +16,11 @@ areas:
     shape:
     -   box:
             max:
-                x: 1.1
+                x: 1.4
                 y: 0.45
                 z: 0.01
             min:
-                x: 0.62
+                x: 1.2
                 y: -0.45
                 z: 0.0
 color:

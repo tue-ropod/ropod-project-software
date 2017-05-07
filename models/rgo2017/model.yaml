@@ -165,3 +165,9 @@ composition:
     box:
       min: { x: -0.215, y: -0.165, z: 0 }
       max: { x: 0.215, y: 0.165, z: 0.33 }
+
+# - - - - - - CHALLENGE_EEGPSR WAYPOINTS - - - - - -
+
+- type: "waypoint"
+  id: "final_meeting_point"
+  pose: { x: 5.0, y: 7.0, z: 0, Z: -1.57 }

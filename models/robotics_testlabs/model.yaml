@@ -7,15 +7,15 @@ composition:
           x: 0
           y: 0
           z: 0
-    - type: "robotics_testlabs/blue_door_left"
-      id: "door1"
-      pose:
-          x: -0.58
-          y: 5.585
-          z: 0
-          Z: -1.5707963267948966
-      push_start_waypoint: door_opening_left_start
-      push_destination_waypoint: door_opening_left_dest
+    #- type: "robotics_testlabs/blue_door_left"
+    #  id: "door1"
+    #  pose:
+    #      x: -0.58
+    #      y: 5.585
+    #      z: 0
+    #      Z: -1.5707963267948966
+    #  push_start_waypoint: door_opening_left_start
+    #  push_destination_waypoint: door_opening_left_dest
     - type: "robotics_testlabs/blue_door_right"
       id: "door2"
       pose:

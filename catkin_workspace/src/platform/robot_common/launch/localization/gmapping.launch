@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="robot" />
+    <arg name="sensor" />
+    <arg name="machine" default="localhost"/>
+    <include file="$(env ROBOT_BRINGUP_PATH)/machines/$(arg machine).machine" />
+
+    <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen">
+       <rosparam command="load" file="$(env ROBOT_BRINGUP_PATH)/parameters/localization/gmapping.yaml" /> 
+         <remap from="scan" to="$(arg robot)/$(arg sensor)/scan" />
+         <remap from="map" to="$(arg robot)/map" /> 
+         <param name="odom_frame" value="$(arg robot)/odom" />
+         <param name="base_frame" value="$(arg robot)/base_link" />
+    </node>
+
+</launch>

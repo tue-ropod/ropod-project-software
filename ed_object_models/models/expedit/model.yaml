@@ -1,0 +1,7 @@
+type: cabinet
+shape:
+    path: shape/shape.xml
+color:
+    red: 0.4 #0.545
+    green: 0.2 #0.271
+    blue: 0.0745

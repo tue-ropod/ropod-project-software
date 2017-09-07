@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Pose
 from std_msgs.msg import Int32
 from nav_msgs.msg import Odometry
-from emc_system.msg import motorCurrent
+from pico_base_controller.msg import motorCurrent
 from math import sin, cos
 import re
 #from tf.broadcaster import TransformBroadcaster

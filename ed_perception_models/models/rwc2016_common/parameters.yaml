@@ -1,0 +1,7 @@
+modules:
+    - lib: libcolor_matcher.so
+      classification:
+        color_margin: 0.02
+    - lib: libsize_matcher.so
+      classification:
+        size_margin: 0.01

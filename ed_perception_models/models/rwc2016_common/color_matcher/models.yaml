@@ -1,0 +1,106 @@
+models:
+  - name: pringles
+    colors:
+      - color: black
+        max: 0.0621443
+        min: 0.0268342
+      - color: blue
+        max: 0.0286332
+        min: 0.0145348
+      - color: brown
+        max: 0.259823
+        min: 0.184561
+      - color: grey
+        max: 0.0597284
+        min: 0.0313857
+      - color: green
+        max: 0.059202
+        min: 0.0313973
+      - color: orange
+        max: 0.27362
+        min: 0.18688
+      - color: pink
+        max: 0.0831043
+        min: 0.0307863
+      - color: purple
+        max: 0.118703
+        min: 0.0533064
+      - color: red
+        max: 0.117665
+        min: 0.0430539
+      - color: white
+        max: 0.00820403
+        min: 0.00310587
+      - color: yellow
+        max: 0.226538
+        min: 0.0965519
+  - name: sponge
+    colors:
+      - color: black
+        max: 0.0543329
+        min: 0.029808
+      - color: blue
+        max: 0.383099
+        min: 0.127805
+      - color: brown
+        max: 0.115963
+        min: 0.0288345
+      - color: grey
+        max: 0.190688
+        min: 0.0619419
+      - color: green
+        max: 0.378203
+        min: 0.088517
+      - color: orange
+        max: 0.0286521
+        min: 0.00823859
+      - color: pink
+        max: 0.155979
+        min: 0.0428071
+      - color: purple
+        max: 0.0870985
+        min: 0.03837
+      - color: red
+        max: 0.0714893
+        min: 0.0537821
+      - color: white
+        max: 0.0722099
+        min: 0.0359036
+      - color: yellow
+        max: 0.0610351
+        min: 0.0456979
+  - name: tea
+    colors:
+      - color: black
+        max: 0.0285584
+        min: 0.0244995
+      - color: blue
+        max: 0.0288702
+        min: 0.024011
+      - color: brown
+        max: 0.152744
+        min: 0.0930015
+      - color: grey
+        max: 0.080687
+        min: 0.0465757
+      - color: green
+        max: 0.378483
+        min: 0.263171
+      - color: orange
+        max: 0.0600403
+        min: 0.0392591
+      - color: pink
+        max: 0.0477291
+        min: 0.0335632
+      - color: purple
+        max: 0.0743346
+        min: 0.0613356
+      - color: red
+        max: 0.055267
+        min: 0.0487148
+      - color: white
+        max: 0.0197267
+        min: 0.010377
+      - color: yellow
+        max: 0.241229
+        min: 0.196535

@@ -1,0 +1,16 @@
+models:
+  - height_max: 0.236164
+    height_min: 0.156016
+    name: pringles
+    width_max: 0.0878748
+    width_min: 0.0706936
+  - height_max: 0.152781
+    height_min: 0.0731573
+    name: sponge
+    width_max: 0.079713
+    width_min: 0.0359315
+  - height_max: 0.140381
+    height_min: 0.0653882
+    name: tea
+    width_max: 0.085865
+    width_min: 0.0505722

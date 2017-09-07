@@ -1,0 +1,17 @@
+modules:
+- lib: libcolor_matcher.so
+  classification:  
+    color_margin: 0.02
+- lib: libsize_matcher.so
+  classification:
+    size_margin: 0.01
+#- lib: libface_detector.so
+#  classification:
+#    cascade_front_files_path: $(rospkg ed_perception_models)/general/face/haarcascade_frontalface_default.xml
+#    cascade_profile_front_path: $(rospkg ed_perception_models)/general/face/haarcascade_profileface.xml
+#    classifier_front_scale_factor: 1.2
+#    classifier_front_min_neighbours: 3
+#    classifier_profile_scale_factor: 1.2
+#    classifier_profile_min_neighbours: 3
+#    debug_mode: 0
+#    debug_folder: /tmp/face_detector

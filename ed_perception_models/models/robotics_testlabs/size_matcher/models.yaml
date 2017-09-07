@@ -1,0 +1,71 @@
+models:
+  - height_max: 0.186522
+    height_min: 0.086566
+    name: beer
+    width_max: 0.0620034
+    width_min: 0.0254533
+  - height_max: 0.142019
+    height_min: 0.128695
+    name: bifrutas
+    width_max: 0.0875192
+    width_min: 0.0583644
+  - height_max: 0.240746
+    height_min: 0.198409
+    name: coffee_pads
+    width_max: 0.164178
+    width_min: 0.0723966
+  - height_max: 0.132836
+    height_min: 0.112297
+    name: coke
+    width_max: 0.0920101
+    width_min: 0.0627858
+  - height_max: 0.175263
+    height_min: 0.120186
+    name: deodorant
+    width_max: 0.0578974
+    width_min: 0.0388871
+  - height_max: 0.135286
+    height_min: 0.113538
+    name: fanta
+    width_max: 0.0778008
+    width_min: 0.066931
+  - height_max: 0.132334
+    height_min: 0.106837
+    name: ice_tea
+    width_max: 0.0904312
+    width_min: 0.0536546
+  - height_max: 0.0925265
+    height_min: 0.0793382
+    name: mentos
+    width_max: 0.0758879
+    width_min: 0.0594857
+  - height_max: 0.126172
+    height_min: 0.101784
+    name: sprite
+    width_max: 0.0740851
+    width_min: 0.0612339
+  - height_max: 0.185116
+    height_min: 0.163905
+    name: tea
+    width_max: 0.145831
+    width_min: 0.0784618
+  - height_max: 0.253817
+    height_min: 0.193908
+    name: teddy_bear
+    width_max: 0.184886
+    width_min: 0.150841
+  - height_max: 0.105528
+    height_min: 0.0848298
+    name: water
+    width_max: 0.0802736
+    width_min: 0.063498
+  - height_max: 0.0942015
+    height_min: 0.0829236
+    name: xylit24_spearmint
+    width_max: 0.0570161
+    width_min: 0.0517109
+  - height_max: 0.0896024
+    height_min: 0.0820574
+    name: xylit24_white
+    width_max: 0.056992
+    width_min: 0.0436905

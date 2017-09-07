@@ -1,0 +1,11 @@
+world:
+- id: table1
+  type: table_120x80x76
+  pose: { x: 2, y: 0, z: 0 }
+- id: table2
+  type: table_200x100x76
+  pose: { x: 3, y: 2, z: 0, Z: 1.54 }
+
+plugins:
+  - name: gui_server
+    lib: libed_gui_server_plugin.so

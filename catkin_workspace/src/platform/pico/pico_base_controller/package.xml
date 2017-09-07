@@ -6,10 +6,6 @@
 
   <maintainer email="whoutman@tue.nl"> </maintainer>
   <license>BSD</license>
- <!-- <depend package="std_msgs"/>
-  <depend package="roscpp"/>
-  <depend package="tf"/>
--->
 
   <buildtool_depend>catkin</buildtool_depend>
 

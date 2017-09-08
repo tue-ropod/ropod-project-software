@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
+
 <launch>
     <arg name="robot"/>
     <arg name="laser1"/>
     <arg name="depth_camera"/>
     <arg name="depth_camera_name" />
 
-    <node pkg="tf" type="static_transform_publisher" name="map2frame" args="0 0 0 0 0 0 /my_frame $(arg robot)/map 100" /> 
+    <node pkg="tf" type="static_transform_publisher" name="map2frame" args="0 0 0 0 0 0 /my_frame /map 100" /> 
     <node pkg="tf" type="static_transform_publisher" name="base2LRF" args="0.04 0 0.37 0 0 0 $(arg robot)/base_link /$(arg robot)/$(arg laser1) 100" /> 
     <node pkg="tf" type="static_transform_publisher" name="base2depthCamera" args="0 0 0.87 0 1.57 0 $(arg robot)/base_link xtion_pro 100" /> 
 

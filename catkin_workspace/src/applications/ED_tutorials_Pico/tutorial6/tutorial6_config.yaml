@@ -1,5 +1,5 @@
 world:
-- type: robotics_testlab_B 
+- type: robotics_testlabs
   pose: { x: 0, y: 0, z: 0 }
 
 plugins:
@@ -8,7 +8,7 @@ plugins:
   - name: localization
     lib: libed_localization_plugin.so
     parameters:
-      robot_name: robot    # the robot will also be in the world model. This is the
+      robot_name: pico    # the robot will also be in the world model. This is the
                            # id the robot entity will get in ED
       initial_pose_topic: /initialpose
       num_particles: 500   # maximum number of particles to use

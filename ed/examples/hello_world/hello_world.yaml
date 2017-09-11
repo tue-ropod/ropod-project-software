@@ -1,7 +1,0 @@
-plugins:
-  - name: hello_world
-    lib: libed_hello_world_plugin.so
-    frequency: 20
-    parameters:
-        text: "hello world"
-

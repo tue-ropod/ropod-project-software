@@ -5,3 +5,4 @@ catkin_workspace/devel/
 catkin_workspace/.catkin_workspace
 
 catkin_workspace/src/CMakeLists.txt
+/.project

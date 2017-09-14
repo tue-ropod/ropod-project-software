@@ -1,0 +1,21 @@
+<launch>
+	% Launch simulator
+ 	<node pkg="emc_simulator" type="pico_simulator" name="pico_simulator" args="$(find ed_tutorial6sim)/config/shape/heightmap.pgm ">
+	</node>
+
+	% Launch tf broadcaster for pico robot
+	<node pkg="ed_tutorial6sim" type="tf_broadcaster_edtut6" name="tf_broadcaster_edtut6">
+	</node>
+
+	% Launch ED
+	<node pkg="ed" type="ed" name="ed" args="$(find ed_tutorial6sim)/config/model-test-localiz.yaml">
+	</node>
+
+	% Launch ED GUI server
+	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">
+	</node>
+
+	% Launch RVIZ
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find ed_tutorial6sim)/config/rviz-config-edtut6.rviz">
+	</node>
+</launch>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- we 'import' the macro definition from that file -->
+  <xacro:include filename="$(find robot_common)/urdf/asus_camera.urdf.xacro"/>
+
+  <!-- this could be anything, but you need a 'parent' link -->
+  <link name="$(arg robot)/asusxtion" />
+
+  <!-- here we 'call' the macro and supply it with the required arguments -->
+  <xacro:asus_camera_model parent="$(arg robot)/asusxtion" name="asusxtion">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </xacro:asus_camera_model>
+</robot>

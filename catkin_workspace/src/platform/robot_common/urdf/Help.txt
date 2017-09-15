@@ -1,0 +1,2 @@
+To create a URDF-file from .xacro.urdf, use the following command:
+rosrun xacro xacro --inorder -o asus_camera_pico.urdf asus_camera.xacro robot:=pico

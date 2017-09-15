@@ -1,64 +1,74 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
-    <arg name="robotName" default="pico"/>   
-    <arg name="laser" default="true"/>
-    <arg name="laser1_name" value ="laser"/>
-    <arg name="asus_cam" default="true"/> 
-    <arg name="asus_cam_name" value="asusxtion"/>
-    <arg name="gmapping" default="false"/>
+	<arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
+	<arg name="robotName" default="pico"/>   
+	<arg name="laser" default="true"/>
+	<arg name="laser1_name" value ="laser"/>
+	<arg name="asus_cam" default="true"/> 
+	<arg name="asus_cam_name" value="asusxtion"/>
+	<arg name="asus_cam_calibration" default="false"/>
+	<arg name="gmapping" default="false"/>
  
-    <group ns="$(arg robotName)">
-        <!-- Do for both: Simulator and Real Robot -->
-    
-        <!-- Start gmapping if required-->
-        <group if="$(arg gmapping)">
-            <include file="$(find robot_common)/launch/localization/gmapping.launch">
-                <arg name="robot" value="$(arg robotName)" />
-                <arg name="sensor" value="$(arg laser1_name)"/>
-            </include>
-        </group>
+	<group ns="$(arg robotName)">
+	<!-- Do for both: Simulator and Real Robot -->
+	    
+		<!-- Start gmapping if required-->
+		<group if="$(arg gmapping)">
+			<include file="$(find robot_common)/launch/localization/gmapping.launch">
+				<arg name="robot" value="$(arg robotName)" />
+				<arg name="sensor" value="$(arg laser1_name)"/>
+			</include>
+		</group>
 
-        <group if="$(arg ROBOT_REAL)">
-            <!-- REAL ROBOT -->
-            
-            <!-- Odometry publishing -->
-            <node pkg="$(arg robotName)_base_controller" type="omnibase.py" name="odometry_publisher" output="screen">
-                <param name="base_frame" value="$(arg robotName)/base_link"/>
-                <param name="frame_id" value="$(arg robotName)/$(arg laser1_name)"/>
-            </node>
+		<group if="$(arg ROBOT_REAL)">
+		<!-- REAL ROBOT -->
 
-	    <!-- Laser publishing -->
-            <group if="$(arg laser)">
-                 <include file="$(find robot_common)/launch/hardware/hokuyo_laser.launch">
-                     <arg name="name" value="$(arg laser1_name)"/>
-                     <arg name="robot" value="$(arg robotName)"/>
-                 </include>
-             </group>
+		<!-- Odometry publishing -->
+		<node pkg="$(arg robotName)_base_controller" type="omnibase.py" name="odometry_publisher" output="screen">
+			<param name="base_frame" value="$(arg robotName)/base_link"/>
+			<param name="frame_id" value="$(arg robotName)/$(arg laser1_name)"/>
+		</node>
 
-            <!-- Asus RGBD camera -->
-            <group if="$(arg asus_cam)">
-                <include file="$(find robot_common)/launch/hardware/asusxtion.launch">
-                    <arg name="robot" value="$(arg robotName)" />
-                    <arg name="camera" value="$(arg asus_cam_name)"/>
-                </include>
-            </group>
+		<!-- Laser publishing -->
+		<group if="$(arg laser)">
+			<include file="$(find robot_common)/launch/hardware/hokuyo_laser.launch">
+				<arg name="name" value="$(arg laser1_name)"/>
+				<arg name="robot" value="$(arg robotName)"/>
+			</include>
+		</group>
 
-	    <!-- Specify transforms -->
-             <include file="$(env ROBOT_BRINGUP_PATH)/parameters/hardware/static_tf.launch">
-                 <arg name="robot" value="$(arg robotName)" />
-                 <arg name="laser1" value="$(arg laser1_name)"/>
-                 <arg name="depth_camera" value="$(arg asus_cam)"/>
-                 <arg name="depth_camera_name" value="$(arg asus_cam_name)"/>
-            </include> 
+		<!-- Asus RGBD camera -->
+		<group if="$(arg asus_cam)">
+			<include file="$(find robot_common)/launch/hardware/asusxtion.launch">
+				<arg name="robot" value="$(arg robotName)" />
+				<arg name="camera" value="$(arg asus_cam_name)"/>
+				<arg name="rgb_camera_info_url"
+				     value="file://$(find pico_bringup)/parameters/hardware/$(arg asus_cam_name)_calibration/rgb_PS1080_PrimeSense.yaml"/>
+				<arg name="depth_camera_info_url"
+				     value="file://$(find pico_bringup)/parameters/hardware/$(arg asus_cam_name)_calibration/depth_PS1080_PrimeSense.yaml" />
+			</include>
+		
+			<arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find pico_model)/urdf/asus_camera_$(arg robotName).urdf'" />
+			<param name="robot_description" command="$(arg urdf_file)" />
+			<node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" />
+		</group>
 
-        </group>
+		<!-- Specify transforms -->
+		<include file="$(env ROBOT_BRINGUP_PATH)/parameters/hardware/static_tf.launch">
+			<arg name="robot" value="$(arg robotName)" />
+			<arg name="laser1" value="$(arg laser1_name)"/>
+			<arg name="depth_camera" value="$(arg asus_cam)"/>
+			<arg name="depth_camera_name" value="$(arg asus_cam_name)"/>
+			<arg name="calibration" value="$(arg asus_cam_calibration)"/>
+		</include> 
 
-        <group unless="$(arg ROBOT_REAL)">
-        <!-- SIMULATION -->
-        
-        </group>
+	</group>
+
+	<group unless="$(arg ROBOT_REAL)">
+	<!-- SIMULATION -->
+		
+	</group>
 
     </group>
 

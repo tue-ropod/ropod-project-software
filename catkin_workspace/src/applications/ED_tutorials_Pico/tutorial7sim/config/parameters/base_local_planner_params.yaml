@@ -1,8 +1,8 @@
 TrajectoryPlannerROS:
-  max_vel_x: 0.45
+  max_vel_x: 0.5
   min_vel_x: 0.1
-  max_vel_theta: 1.0
-  min_in_place_vel_theta: 0.4
+  max_vel_theta: 0.2
+  min_in_place_vel_theta: 0.1
 
   acc_lim_theta: 3.2
   acc_lim_x: 2.5
@@ -11,6 +11,6 @@ TrajectoryPlannerROS:
 
   holonomic_robot: true
   
-controller_frequency: 5.0
+controller_frequency: 10.0
 robot_base_frame: /pico/base_link
 global_frame: /map  

@@ -9,6 +9,6 @@
 
     <node pkg="tf" type="static_transform_publisher" name="map2frame" args="0 0 0 0 0 0 /my_frame /map 100" /> 
     <node pkg="tf" type="static_transform_publisher" name="base2LRF" args="0.04 0 0.37 0 0 0 $(arg robot)/base_link /$(arg robot)/$(arg laser1) 100" /> 
-    <node pkg="tf" type="static_transform_publisher" name="base2depthCamera" args="0 0 0.87 0 1.57 0 $(arg robot)/base_link $(arg robot)/asusxtion 100" /> 
+    <node pkg="tf" type="static_transform_publisher" name="base2depthCamera" args="0.12 0 0.87 0 0 0 $(arg robot)/base_link $(arg robot)/asusxtion 100" /> 
 
 </launch>

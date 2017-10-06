@@ -36,7 +36,7 @@ int main(int argc, char** argv){
   odommsg.pose.pose.orientation.z = 0;
   odommsg.pose.pose.orientation.w = 0;
 
-  ros::Rate r(30);
+  ros::Rate r(200);
 
   tf::TransformBroadcaster broadcaster;
 

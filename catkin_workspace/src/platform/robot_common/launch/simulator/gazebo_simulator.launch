@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<env name="GAZEBO_MODEL_PATH" value="$(find robot_common)/simulator/models:$(optenv GAZEBO_MODEL_PATH)"/>
+<env name="GAZEBO_RESOURCE_PATH" value="$(find robot_common)/simulator:$(optenv GAZEBO_RESOURCE_PATH)"/>
+<env name="GAZEBO_PLUGIN_PATH" value="$(find robot_common)/simulator/gazebo_plugins/odometry/build:$(find robot_common)/simulator/gazebo_plugins/laser/build:$(optenv GAZEBO_PLUGIN_PATH)"/>
+
+
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="models/pico/pico.world"/>    
+
+  </include>
+
+<node name="throttle" pkg="topic_tools" type="throttle" args="messages /pico/laser_sim 20.0 /pico/laser" />  
+
+</launch>

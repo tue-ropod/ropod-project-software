@@ -18,9 +18,9 @@ plugins:
       initial_pose_topic: /initialpose
       num_particles: 100   # maximum number of particles to use
       initial_pose:        # where does the robot start (in map frame)?
-        x: 0
+        x: 3
         y: 0
-        rz: 1.57             # rotation
+        rz: 0.0             # rotation
       laser_model:
         topic: /pico/laser   # Laser topic
         num_beams: 100         # Max number of beams used per particle (evenly spread)
@@ -51,3 +51,20 @@ plugins:
         min_z: 0.025           # All entities below min_z and above max_z are not
         max_z: 1.8             # Projected onto the occupancy grid
         default_offset: 0.7    # <-- not used for ROS' Move Base, but needs to be specified
+        
+  - name: laser_integration
+    lib: libed_laser_plugin.so
+    frequency: 10
+    parameters:
+        laser_topic: /pico/laser
+        min_segment_size_pixels: 3
+        world_association_distance: 0.1
+        segment_depth_threshold: 0.2
+        min_cluster_size: 0.01
+        max_cluster_size: 10.0
+        max_gap_size: 1
+  - name: entity_clearer
+    lib: libed_clearer_plugin.so
+    enabled: 1
+    parameters:
+        entity_timeout: 1.0        

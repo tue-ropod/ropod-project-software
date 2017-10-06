@@ -8,6 +8,8 @@ project(ropod_demo_dec_2017)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  move_base_msgs
+  actionlib
   geometry_msgs
   nav_msgs
   roscpp
@@ -202,3 +204,6 @@ include_directories(
 
 add_executable(tf_broadcaster_ropod_dd17 src/tf_broadcaster_ropod_dd17.cpp)
 target_link_libraries(tf_broadcaster_ropod_dd17 ${catkin_LIBRARIES})
+
+add_executable(route_navigation src/route_navigation.cpp)
+target_link_libraries(route_navigation ${catkin_LIBRARIES})

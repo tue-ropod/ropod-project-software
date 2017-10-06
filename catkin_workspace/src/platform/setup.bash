@@ -17,3 +17,4 @@ alias clean_build="cd $CATKIN_WORKSPACE;
                    cd $CATKIN_WORKSPACE; 
                    catkin_make;"
 
+alias pstart='roslaunch pico_bringup start.launch'

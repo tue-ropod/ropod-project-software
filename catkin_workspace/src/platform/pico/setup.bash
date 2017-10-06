@@ -9,5 +9,3 @@ echo "pico-wireless"
 alias pico-wired="export ROS_MASTER_URI=http://10.0.0.2:11311;
                   export ROS_IP=10.0.0.2;
                   export WIRED_CONNECTION=true"
-
-alias pstart='roslaunch pico_bringup start.launch'

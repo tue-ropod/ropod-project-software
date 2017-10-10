@@ -4,8 +4,8 @@ world:
       heightmap:
         image: $(file shape/heightmap.pgm)
         height: 2
-        resolution: 0.025
-        pose: { x: -10, y: -10, z: 0 }
+        resolution: 0.035
+        pose: { x: -14, y: -14, z: 0 }
 
 plugins:
   - name: gui_server

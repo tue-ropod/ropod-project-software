@@ -16,7 +16,7 @@
 		<geometry>
 			<mesh 
 				filename="package://ropod_demo_dec_2017/config/shape/heightmap_sim.stl"
-				scale="0.001 0.001 0.002"		
+				scale="0.0015 0.0015 0.002"		
 			/>
 		</geometry>
 	</visual>
@@ -26,7 +26,7 @@
 		<geometry>
 			<mesh 
 				filename="package://ropod_demo_dec_2017/config/shape/heightmap_sim.stl"
-				scale="0.001 0.001 0.002"		
+				scale="0.0015 0.0015 0.002"		
 			/>
 		</geometry>
 	</collision>   

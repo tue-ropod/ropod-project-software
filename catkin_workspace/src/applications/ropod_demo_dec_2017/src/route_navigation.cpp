@@ -78,6 +78,7 @@ class Route_navigation
 			}
 
 			return NAV_BUSY;
+			
 		}
 	
 
@@ -138,7 +139,7 @@ int main(int argc, char** argv){
 	
 	if (route_navigation.route_busy == true) {
       
-      nav_status = route_navigation.check_nav_status(ac.getState());
+	  nav_status = route_navigation.check_nav_status(ac.getState());
       
       if( nav_status == NAV_WAYPOINT_DONE || nav_status == NAV_NOTSTARTED){      		  
 	      //we'll send the the next goal to the robot

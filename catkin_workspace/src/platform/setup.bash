@@ -1,13 +1,13 @@
 #!/bin/bash
 
 export ROS_PACKAGE_PATH=~/ros/:$ROS_PACKAGE_PATH
-export CATKIN_WORKSPACE=~/ropod-project/catkin_workspace
+export CATKIN_WORKSPACE=/home/ropod/ropod-project-software/catkin_workspace
 
 export ED_PLUGIN_PATH=$CATKIN_WORKSPACE/devel/lib
 export ED_MODEL_PATH=$CATKIN_WORKSPACE/src/functionalities/ED/ed_object_models/models
 
 source /opt/ros/kinetic/setup.bash
-source /home/ropod/ropod-project/catkin_workspace/devel/setup.bash
+source $CATKIN_WORKSPACE/devel/setup.bash
 
 alias buildit="cd $CATKIN_WORKSPACE; catkin_make"
 alias clean_build="cd $CATKIN_WORKSPACE;
@@ -18,3 +18,8 @@ alias clean_build="cd $CATKIN_WORKSPACE;
                    catkin_make;"
 
 alias pstart='roslaunch pico_bringup start.launch'
+
+alias catkin_workspace="cd /home/ropod/ropod-project/catkin_workspace"
+alias applications="cd /home/ropod/ropod-project/catkin_workspace/src/applications"
+alias functionalities="cd /home/ropod/ropod-project/catkin_workspace/src/functionalitie    s"
+alias platform="cd /home/ropod/ropod-project/catkin_workspace/src/platform"

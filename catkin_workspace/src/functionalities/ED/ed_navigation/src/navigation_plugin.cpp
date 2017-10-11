@@ -7,6 +7,8 @@
 
 #include <iomanip>
 
+#include <ros/console.h>
+
 // ----------------------------------------------------------------------------------------------------
 
 void transformChull(const geo::Pose3D& pose, std::vector<geo::Vector3>& chull)
@@ -147,11 +149,14 @@ void NavigationPlugin::configure(tue::Configuration config)
                 ros::VoidPtr(), &cb_queue_);
 
     srv_get_goal_constraint_ = nh.advertiseService(opt_srv_get_goal_constraint);
+    
+    ROS_DEBUG("ED navigation configuration");
 
     // Configure the occupancy grid publisher
     if (config.readGroup("occupancy_grid_publisher"))
     {
-        double res, min_z, max_z, unknown_obstacle_inflation;
+        double res, min_z, max_z, unknown_obstacle_inflation, convex_hull_enabled_d;
+	bool convex_hull_enabled;
         std::string frame_id;
         config.value("frame_id", frame_id);
         config.value("resolution", res);
@@ -163,9 +168,14 @@ void NavigationPlugin::configure(tue::Configuration config)
 
         if (!config.value("unknown_obstacle_inflation", unknown_obstacle_inflation, tue::OPTIONAL))
             unknown_obstacle_inflation = 0;
+	
+	if (!config.value("convex_hull_enabled", convex_hull_enabled_d, tue::OPTIONAL))
+            convex_hull_enabled_d = 0;
+	convex_hull_enabled = (convex_hull_enabled_d!=0);
+		
 
         std::cout << "Using min max " << min_z << ", " << max_z << std::endl;
-        occupancy_grid_publisher_.configure(nh, config, res, min_z, max_z, frame_id, unknown_obstacle_inflation);
+        occupancy_grid_publisher_.configure(nh, config, res, min_z, max_z, frame_id, unknown_obstacle_inflation, convex_hull_enabled);
 
         config.endGroup();
     }

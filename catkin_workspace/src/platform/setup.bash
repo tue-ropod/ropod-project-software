@@ -19,7 +19,7 @@ alias clean_build="cd $CATKIN_WORKSPACE;
 
 alias pstart='roslaunch pico_bringup start.launch'
 
-alias catkin_workspace="cd /home/ropod/ropod-project/catkin_workspace"
-alias applications="cd /home/ropod/ropod-project/catkin_workspace/src/applications"
-alias functionalities="cd /home/ropod/ropod-project/catkin_workspace/src/functionalitie    s"
-alias platform="cd /home/ropod/ropod-project/catkin_workspace/src/platform"
+alias catkin_workspace="cd $CATKIN_WORKSPACE"
+alias applications="cd $CATKIN_WORKSPACE/src/applications"
+alias functionalities="cd $CATKIN_WORKSPACE/src/functionalities"
+alias platform="cd $CATKIN_WORKSPACE/src/platform"

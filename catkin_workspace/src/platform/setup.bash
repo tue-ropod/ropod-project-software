@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export ROS_PACKAGE_PATH=~/ros/:$ROS_PACKAGE_PATH
-export CATKIN_WORKSPACE=/home/ropod/ropod-project-software/catkin_workspace
+export CATKIN_WORKSPACE=~/ropod-project-software/catkin_workspace
 
 export ED_PLUGIN_PATH=$CATKIN_WORKSPACE/devel/lib
 export ED_MODEL_PATH=$CATKIN_WORKSPACE/src/functionalities/ED/ed_object_models/models
@@ -23,3 +22,4 @@ alias catkin_workspace="cd $CATKIN_WORKSPACE"
 alias applications="cd $CATKIN_WORKSPACE/src/applications"
 alias functionalities="cd $CATKIN_WORKSPACE/src/functionalities"
 alias platform="cd $CATKIN_WORKSPACE/src/platform"
+

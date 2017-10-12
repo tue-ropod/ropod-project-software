@@ -8,9 +8,10 @@ project(ropod_demo_dec_2017)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  move_base_msgs
-  actionlib
+  message_generation
   geometry_msgs
+  actionlib
+  move_base_msgs  
   nav_msgs
   roscpp
   tf

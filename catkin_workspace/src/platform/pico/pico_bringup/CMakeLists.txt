@@ -2,8 +2,13 @@ cmake_minimum_required(VERSION 2.8.3)
 project(pico_bringup)
 
 find_package(catkin REQUIRED COMPONENTS
-    robot_common
+    message_generation
+    geometry_msgs
+    nav_msgs
+    roscpp
+    tf
 )
+
 
 # find_package(Boost REQUIRED COMPONENTS system program_options)
 # find_package(PCL REQUIRED)
@@ -40,8 +45,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES bla
-#  CATKIN_DEPENDS other_catkin_pkg
+#  LIBRARIES pico_bringup
+#  CATKIN_DEPENDS geometry_msgs roscpp tf
 #  DEPENDS system_lib
 )
 
@@ -65,3 +70,6 @@ include_directories(
 #     ...
 # )
 # target_link_libraries(exec_name ${catkin_LIBRARIES})
+
+add_executable(tf_broadcaster_simulator src/tf_broadcaster_simulator.cpp)
+target_link_libraries(tf_broadcaster_simulator ${catkin_LIBRARIES})

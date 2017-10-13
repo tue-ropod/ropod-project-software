@@ -202,9 +202,5 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-
-add_executable(tf_broadcaster_ropod_dd17 src/tf_broadcaster_ropod_dd17.cpp)
-target_link_libraries(tf_broadcaster_ropod_dd17 ${catkin_LIBRARIES})
-
 add_executable(route_navigation src/route_navigation.cpp)
 target_link_libraries(route_navigation ${catkin_LIBRARIES})

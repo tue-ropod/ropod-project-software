@@ -19,9 +19,11 @@ alias clean_build="cd $CATKIN_WORKSPACE;
                    cd $CATKIN_WORKSPACE; 
                    catkin_make;"
 
-alias pstart='roslaunch pico_bringup start.launch'
 
 alias catkin_workspace="cd $CATKIN_WORKSPACE"
 alias applications="cd $CATKIN_WORKSPACE/src/applications"
 alias functionalities="cd $CATKIN_WORKSPACE/src/functionalities"
 alias platform="cd $CATKIN_WORKSPACE/src/platform"
+
+alias teleop='rosrun robot_common teleop.py'
+alias pstart='roslaunch pico_bringup start.launch'

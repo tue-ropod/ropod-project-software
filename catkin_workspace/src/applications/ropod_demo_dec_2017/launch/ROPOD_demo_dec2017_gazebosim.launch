@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-	% Launch simulator - (PICO loaded by default -  to be upgraded)
-	<include file="$(find robot_common)/launch/simulator/gazebo_simulator.launch" />
-		% Add floorplan. 
-	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
-		args="-file $(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo.urdf 
-		  -urdf -z 1 -model floorplan -x -3 -y 0 -z 0" 
-	/>
-
-
-	% Launch tf broadcaster for pico robot
-	<node pkg="ropod_demo_dec_2017" type="tf_broadcaster_ropod_dd17" name="tf_broadcaster_ropod_dd17">
-	</node>
-
+	
 	% Launch ED
 	<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml">
 	</node>
@@ -25,12 +13,9 @@
 	% Launch ED GUI server
 	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">
 	</node>
+	
 
 	% Launch navigation
 	<include file="$(find ropod_demo_dec_2017)/launch/move_base.launch" />
 	
-
-	% Launch RVIZ
-	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find ropod_demo_dec_2017)/config/rviz-config-rdd17.rviz">
-	</node>
 </launch>

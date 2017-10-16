@@ -1,11 +1,11 @@
 #!/bin/bash
 
-alias pico-wireless="export ROS_MASTER_URI=http://192.168.44.81:11311;
-                     export ROS_IP=192.168.44.81;
+alias pico-wireless="export ROS_MASTER_URI=http://$PICO_IP:11311;
+                     export ROS_IP=$PICO_IP;
                      export WIRED_CONNECTION=false;"
 
 echo "pico-wireless"
 
-alias pico-wired="export ROS_MASTER_URI=http://10.0.0.2:11311;
-                  export ROS_IP=10.0.0.2;
+alias pico-wired="export ROS_MASTER_URI=http://$PICO_IP_WIRED:11311;
+                  export ROS_IP=$PICO_IP_WIRED;
                   export WIRED_CONNECTION=true"

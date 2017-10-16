@@ -8,28 +8,25 @@
 	<arg name="asus_cam_name" value="asusxtion"/>
 	<arg name="asus_cam_calibration" default="false"/>
 	<arg name="gmapping" default="false"/>
+	<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/>
 
-<!--<arg name="ROBOT_REAL" value="true" />-->
 	<arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL)" />
-	<arg name="robot_bringup_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)/$(arg robotName)_bringup"/>
+	<arg name="robot_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)"/>
+	<arg name="robot_bringup_path" default="$(arg robot_path)/$(arg robotName)_bringup"/>
 
 	<group ns="$(arg robotName)">
 	<!-- Do for both: Simulator and Real Robot -->
 
-	<arg name="robot" value="$(arg robotName)"/>
-
-		<!-- Start gmapping if required-->
+	  <!-- Start gmapping if required-->
 		<group if="$(arg gmapping)">
 			<include file="$(find robot_common)/launch/localization/gmapping.launch">
 				<arg name="robot" value="$(arg robotName)" />
 				<arg name="sensor" value="$(arg laser1_name)"/>
 			</include>
 		</group>
-
+		
 		<group if="$(arg ROBOT_REAL)">
-		<!-- REAL ROBOT -->
-
-			<!-- Odometry publishing -->
+		  <!-- Odometry publishing -->
 			<node pkg="$(arg robotName)_base_controller" type="omnibase.py" name="odometry_publisher" output="screen">
 				<param name="base_frame" value="$(arg robotName)/base_link"/>
 				<param name="frame_id" value="$(arg robotName)/$(arg laser1_name)"/>
@@ -58,24 +55,37 @@
 				<arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find pico_model)/urdf/asus_camera_$(arg robotName).urdf'" />
 				<param name="robot_description" command="$(arg urdf_file)" />
 				<node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" />
-		</group>
+			</group>	
 
-		<!-- Specify transforms -->
-		<include file="$(arg robot_bringup_path)/parameters/hardware/static_tf.launch">
-			<arg name="robot" value="$(arg robotName)" />
-			<arg name="laser1" value="$(arg laser1_name)"/>
-			<arg name="depth_camera" value="$(arg asus_cam)"/>
-			<arg name="depth_camera_name" value="$(arg asus_cam_name)"/>
-			<arg name="calibration" value="$(arg asus_cam_calibration)"/>
-		</include> 
-
+			<!-- Specify transforms -->
+			<include file="$(arg robot_bringup_path)/parameters/hardware/static_tf.launch">
+				<arg name="robot" value="$(arg robotName)" />
+				<arg name="laser1" value="$(arg laser1_name)"/>
+				<arg name="depth_camera" value="$(arg asus_cam)"/>
+				<arg name="depth_camera_name" value="$(arg asus_cam_name)"/>
+				<arg name="calibration" value="$(arg asus_cam_calibration)"/>
+			</include> 
+		</group>	
 	</group>
 
 	<group unless="$(arg ROBOT_REAL)">
-	<!-- SIMULATION -->
-		
-	</group>
+	<!-- SIMULATION -->  
+	  
+		<include file="$(find robot_common)/launch/simulator/gazebo_simulator.launch" >
+			<arg name="robot" value="$(arg robotName)" />
+			<arg name="model_path" value="$(arg robot_path)/$(arg robotName)_model" />
+		</include>
 
-    </group>
+		<!-- Add floorplan. -->
+		<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+			args="-file $(arg floorplan).urdf -urdf -z 1 -model floorplan -x -3 -y 0 -z 0" 
+		/>
+
+		<!-- Launch tf broadcaster for pico robot -->
+		<node pkg="pico_bringup" type="tf_broadcaster_simulator" name="tf_broadcaster_simulator" />
+
+		<!-- Launch RVIZ -->
+		<include file="$(arg robot_bringup_path)/launch/tools/rviz.launch"/>
+	</group>
 
 </launch>

@@ -1,0 +1,65 @@
+composition:
+    - type: "floor"
+      id: "floor"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+
+    - type: "hospital_test/walls"
+      id: "walls"
+      pose:
+          x: 0
+          y: 0
+          z: 0     
+
+    - type: "hospital_test/corridor"
+      id: "crossing_test"
+      pose: { x: 3.74, y: -1.28, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.21, y: -5.65 }
+                    - { x: 1.3, y: -5.85 }
+                    - { x: 1.79, y: -0.24 }
+                  height: 0.1
+                  
+# - - - - - - Elevator - - - - - - -
+    - type: "hospital_test/door"
+      id: "door1"
+      pose: { x: -5.96, y: -2.31, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.05, y: -1.08 }
+                    - { x: 0.25, y: -1.10 }
+                    - { x: 0.26, y: 0.02 }
+                  height: 2.0
+    - type: "hospital_test/corridor"
+      id: "elevator"
+      pose: { x: -8.37, y: -2.15, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.01, y: -1.80 }
+                    - { x: 2.34, y: -1.80 }
+                    - { x: 2.38, y: 0.02 }
+                  height: 2.0
+    - type: "hospital_test/door"
+      id: "door2"
+      pose: { x: -8.61, y: -2.35, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.04, y: -0.99 }
+                    - { x: 0.18, y: -1.01 }
+                    - { x: 0.25, y: 0.01 }
+                  height: 2.0

@@ -1,0 +1,14 @@
+door1; center; -5.96; -2.31;
+door1; point1; -6.01; -3.39;
+door1; point2; -5.71; -3.41;
+door1; point3; -5.70; -2.29;
+
+door2; center; -8.61; -2.35;
+door2; point1; -8.65; -3.34;
+door2; point2; -8.43; -3.36;
+door2; point3; -8.36; -2.34;
+
+elevator; center; -8.37; -2.15;
+elevator; point1; -8.38; -3.95;
+elevator; point2; -6.03; -3.95;
+elevator; point3; -5.99; -2.13;

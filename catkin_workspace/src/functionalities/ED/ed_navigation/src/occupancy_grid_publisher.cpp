@@ -76,6 +76,11 @@ bool OccupancyGridPublisher::getMapData(const ed::WorldModel& world, std::vector
 
         //! Update the map bounds
         geo::ShapeConstPtr shape = e->shape();
+	bool nonLocalizable = e->hasFlag("non-localizable");
+
+	if(nonLocalizable)
+	  continue;
+	
         if (shape)  // Do shape
         {
             const std::vector<geo::Vector3>& vertices = shape->getMesh().getPoints();
@@ -139,6 +144,11 @@ void OccupancyGridPublisher::updateMap(const ed::EntityConstPtr& e, Map& map)
     int value = 100;
 
     geo::ShapeConstPtr shape = e->shape();
+    bool nonLocalizable = e->hasFlag("non-localizable");
+
+    if(nonLocalizable)
+      return;
+    
     if (shape)  // Do shape
     {
         const std::vector<geo::Triangle>& triangles = shape->getMesh().getTriangles();

@@ -1,12 +1,7 @@
 world:
-  - id: walls
-    shape:
-      heightmap:
-        image: $(file shape/heightmap.pgm)
-        height: 2
-        resolution: 0.035
-        pose: { x: -14, y: -14, z: 0 }
-
+- type: hospital_test
+  pose: { x: 0, y: 0, z: 0 }
+  
 plugins:
   - name: gui_server
     lib: libed_gui_server_plugin.so     

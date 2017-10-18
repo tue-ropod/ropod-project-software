@@ -202,9 +202,7 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(route_navigation src/route_navigation.cpp)
+add_executable(route_navigation src/route_navigation.cpp src/simplified_world_model.cpp src/corridor.cpp src/elevator.cpp)
 target_link_libraries(route_navigation ${catkin_LIBRARIES})
 
-add_executable(simplified_world_model src/simplified_world_model.cpp src/corridor.cpp src/elevator.cpp)
-target_link_libraries(simplified_world_model ${catkin_LIBRARIES})
 

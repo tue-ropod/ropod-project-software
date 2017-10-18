@@ -24,10 +24,10 @@ namespace wm
     
     public: void init( );
     private: std::vector<point_wm> convex_area_elev;
-    private: std::vector<point_wm> line_door;
-    private: point_wm wayp_elevator;
-    private: point_wm wayp_wait;
-    private: point_wm wayp_entrance;   
+    public: std::vector<point_wm> line_door;
+    public: pose_wm wayp_elevator;
+    public: pose_wm wayp_wait;
+    public: pose_wm wayp_entrance;   
 
 
 

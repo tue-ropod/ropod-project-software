@@ -24,23 +24,41 @@ namespace wm
       convex_area_elev.push_back(p3);
       convex_area_elev.push_back(p4);
       
-      p1.x = 0.0;
-      p1.y = 0.0;
-      p2.x = 0.0;
-      p2.y = 0.0;
+      p1.x = -8.5;
+      p1.y = 3.3;
+      p2.x = -8.5;
+      p2.y = 2.35;
       line_door.push_back(p1);
       line_door.push_back(p2);
       
-      wayp_elevator.x = 0.0;
-      wayp_elevator.y = 0.0;
+      wayp_elevator.position.x = -7.116;
+      wayp_elevator.position.y = -2.986;
+      wayp_elevator.position.z = 0.0;
+      wayp_elevator.orientation.x = 0.0;
+      wayp_elevator.orientation.y = 0.0;
+      wayp_elevator.orientation.z = 0.9999;
+      wayp_elevator.orientation.w = 0.012;
+
       
-      wayp_wait.x = 0.0;
-      wayp_wait.y = 0.0;
+      wayp_wait.position.x = 10.9;
+      wayp_wait.position.y = -2.708;
+      wayp_wait.position.z = 0.0;
+      wayp_wait.orientation.x = 0.0;
+      wayp_wait.orientation.y = 0.0;
+      wayp_wait.orientation.z = 0.001452;
+      wayp_wait.orientation.w = 0.999999;      
       
-      wayp_entrance.x = 0.0;
-      wayp_entrance.y = 0.0;
+   
+   
+      wayp_entrance.position.x = -9.6206;
+      wayp_entrance.position.y = -3.785478;
+      wayp_entrance.position.z = 0.0;
+      wayp_entrance.orientation.x = 0.0;
+      wayp_entrance.orientation.y = 0.0;
+      wayp_entrance.orientation.z = -0.7;
+      wayp_entrance.orientation.w = 0.713;        
       
-  
+ 
     };
     
     Elevator::~Elevator(){};

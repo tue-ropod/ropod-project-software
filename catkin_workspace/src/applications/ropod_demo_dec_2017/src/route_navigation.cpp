@@ -13,7 +13,7 @@
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
 #define WAYP_REACHED_DIST 0.5
-#define GOAL_REACHED_DIST 0.1
+#define GOAL_REACHED_DIST 0.2
 #define GOAL_REACHED_ANG  20.0*3.141592/180.0
 
 

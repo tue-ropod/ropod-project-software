@@ -4,14 +4,17 @@
     <arg name="robot" />
     <arg name="sensor" />
     <arg name="machine" default="localhost"/>
-    <include file="$(env ROBOT_BRINGUP_PATH)/machines/$(arg machine).machine" />
+    <include file="$(find pico_bringup)/machines/$(arg machine).machine" />
 
     <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen">
-       <rosparam command="load" file="$(env ROBOT_BRINGUP_PATH)/parameters/localization/gmapping.yaml" /> 
+       <rosparam command="load" file="$(find pico_bringup)/parameters/localization/gmapping.yaml" /> 
          <remap from="scan" to="$(arg robot)/$(arg sensor)/scan" />
          <remap from="map" to="$(arg robot)/map" /> 
          <param name="odom_frame" value="$(arg robot)/odom" />
          <param name="base_frame" value="$(arg robot)/base_link" />
     </node>
+    
+    <node pkg="tf" type="static_transform_publisher" name="maptf" args="0 0 0 0 0 0 /my_frame /map 100" /> 
+    <node pkg="tf" type="static_transform_publisher" name="map2LRF" args="0.04 0 0.37 0 0 0 /map /$(arg robot)/$(arg sensor) 100" /> 
 
 </launch>

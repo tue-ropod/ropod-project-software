@@ -6,3 +6,8 @@ shape:
     origin_x: -14.00000
     origin_y: -14.000000
     origin_z:  0.000000
+color:
+   red: 0.0
+   green: 0.5
+   blue: 1.0
+   alpha: 1.0

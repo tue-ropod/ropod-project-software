@@ -12,4 +12,15 @@ composition:
           x: 0
           y: 0
           z: 0     
-
+    - type: "malaga_test/door"
+      id: "door3"
+      pose: { x: 2.44, y: 2.76, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 0.82, y: 0.00 }
+                    - { x: 0.82, y: 0.20 }
+                    - { x: 0.00, y: 0.20 }
+                  height: 2.0

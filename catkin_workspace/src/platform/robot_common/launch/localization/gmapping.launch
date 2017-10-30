@@ -14,7 +14,4 @@
          <param name="base_frame" value="$(arg robot)/base_link" />
     </node>
     
-    <node pkg="tf" type="static_transform_publisher" name="maptf" args="0 0 0 0 0 0 /my_frame /map 100" /> 
-    <node pkg="tf" type="static_transform_publisher" name="map2LRF" args="0.04 0 0.37 0 0 0 /map /$(arg robot)/$(arg sensor) 100" /> 
-
 </launch>

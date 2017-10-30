@@ -7,7 +7,7 @@
 	<arg name="asus_cam" default="true"/> 
 	<arg name="asus_cam_name" value="asusxtion"/>
 	<arg name="asus_cam_calibration" default="false"/>
-	<arg name="gmapping" default="true"/>
+	<arg name="gmapping" default="false"/>
 	<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/>
 
 	<arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL)" />

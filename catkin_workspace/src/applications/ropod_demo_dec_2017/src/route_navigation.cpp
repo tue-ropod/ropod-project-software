@@ -7,8 +7,11 @@
 #include <actionlib/client/simple_action_client.h>
 #include <tf/transform_datatypes.h>
 #include <string>
-
 #include "simplified_world_model.h"
+#include <ed_sensor_integration/doorDetection.h>
+
+/* ROPOD ROS messages */
+#include <ropod_ros_msgs/sem_waypoint_cmd.h>
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
@@ -38,6 +41,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 
   
     nav_msgs::Path planned_route;
+    int planned_route_size;
     bool route_busy;
     bool nav_paused_req;
     int  waypoint_cnt;
@@ -64,11 +68,12 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
       base_position_.reset();};
       
       
-      void start_route_navigation(const nav_msgs::Path::ConstPtr& Pathmsg){
+      void start_route_navigation(nav_msgs::Path Pathmsg){
 	  reset_navigation();
 	  route_busy = true;
-	  planned_route = *Pathmsg;
-	  ROS_INFO("Route received: size: %d waypoints",(int)planned_route.poses.size());      	  		  	  
+	  planned_route = Pathmsg;
+	  planned_route_size =(int)planned_route.poses.size();
+	  ROS_INFO("Route received: size: %d waypoints",planned_route_size);      	  		  	  
 
 	return;
       }
@@ -127,7 +132,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 	v3temp = diff_tf.getOrigin();
 	qtemp = diff_tf.getRotation();
 	
-	if (waypoint_cnt < (int)planned_route.poses.size()){ // Check succced only by looking at distance to waypoint			
+	if (waypoint_cnt < planned_route_size){ // Check succced only by looking at distance to waypoint			
 	  if(pow( v3temp.x(),2) + pow(v3temp.y(),2) < pow(WAYP_REACHED_DIST,2) ){
 	    ROS_INFO("Hooray, Intermediate waypoint passed");
 	    return true;	  
@@ -142,7 +147,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
       }    
       
       bool is_last_waypoint(){
-	if (waypoint_cnt >= (int)planned_route.poses.size())
+	if (waypoint_cnt >= planned_route_size)
 	  return true;
 	else  
 	  return false;
@@ -151,7 +156,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
       
       
       geometry_msgs::Pose get_next_point(void){
-	if (waypoint_cnt < (int)planned_route.poses.size()){
+	if (waypoint_cnt < planned_route_size){
 	  waypoint_cnt = waypoint_cnt +1;
 	}
 	return planned_route.poses[waypoint_cnt-1].pose;			
@@ -249,6 +254,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
   public:
     
     nav_msgs::Path planned_route;
+    int planned_route_size;
     bool route_busy;
     bool nav_paused_req;
     int  waypoint_cnt;
@@ -343,11 +349,18 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 	  return false;					  
 	}         
       
-      bool check_door(){ // for now we assume the door will be open
-	return true;
+      bool check_door(ed_sensor_integration::doorDetection doorStatus){ 
+	if(doorStatus.undetectable)
+	  return false;
+	else if(doorStatus.closed)
+	  return false;
+	else if(doorStatus.open)
+	  return true;
+	else
+	return false;
       }
       
-      void navigation_state_machine(wm::Elevator elevator,ros::Publisher movbase_cancel_pub, move_base_msgs::MoveBaseGoal* goal_ptr, bool& sendgoal){
+      void navigation_state_machine(wm::Elevator elevator,ros::Publisher movbase_cancel_pub, move_base_msgs::MoveBaseGoal* goal_ptr, bool& sendgoal, ed_sensor_integration::doorDetection doorStatus){
 	sendgoal = false;
 	
 	switch(nav_state){
@@ -357,7 +370,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 	      break;
 	      
 	    case NAV_CHECKDOOR_IN: 	//we'll send the the next goal to the robot	 
-	      if(check_door()){
+	      if(check_door(doorStatus)){
 		goal.target_pose.pose.position.x=elevator.wayp_elevator.position.x;
 		goal.target_pose.pose.position.y=elevator.wayp_elevator.position.y;
 		goal.target_pose.pose.position.z=elevator.wayp_elevator.position.z;
@@ -368,7 +381,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 		//goal.target_pose.pose = 	
 		nav_next_state_wp = NAV_WAIT_FLOOR_CHANGE;
 		stamp_start = ros::Time::now();
-		stamp_wait = ros::Duration(10.0); // wait five seconds from the moment you want to enter to checl way out. This will be replaced by communication with elevator system 
+		stamp_wait = ros::Duration(20.0); // wait five seconds from the moment you want to enter to checl way out. This will be replaced by communication with elevator system 
 		nav_next_state = NAV_GOTOPOINT;
 	      }
 	      break;
@@ -398,7 +411,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 	      break;
 	      
 	    case NAV_CHECKDOOR_OUT: //  
-		if(check_door()){
+		if(check_door(doorStatus)){
 		  goal.target_pose.pose.position.x=elevator.wayp_entrance.position.x;
 		  goal.target_pose.pose.position.y=elevator.wayp_entrance.position.y;
 		  goal.target_pose.pose.position.z=elevator.wayp_entrance.position.z;
@@ -451,6 +464,8 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
   Route_navigation route_navigation;
   Elevator_navigation elevator_navigation;
   
+  ed_sensor_integration::doorDetection doorStatus;
+  
   
     enum{
     NAV_CORRIDOR = 0,
@@ -466,7 +481,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
     elevator_navigation.base_position_ = msg;    
   }
   
-  
+    
   void routetopicCallback(const nav_msgs::Path::ConstPtr& Pathmsg)
   {
     
@@ -479,25 +494,61 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
       }else if(Pathmsg->header.frame_id == "RESUME"){
 	  route_navigation.resume_route_navigation();
 	  elevator_navigation.resume_route_navigation();	
-      }else if(Pathmsg->header.frame_id == "ELEVATOR"){
+      }else if(Pathmsg->header.frame_id == "TAKE_ELEVATOR"){
 	  elevator_navigation.start_route_navigation();
 	  active_nav = NAV_ELEVATOR;
       }else{
-	  route_navigation.start_route_navigation(Pathmsg);
+	  route_navigation.start_route_navigation(*Pathmsg);
 	  active_nav = NAV_CORRIDOR;
       }
   
     
   }
   
+  void CCUcommandCallback(const ropod_ros_msgs::sem_waypoint_cmd::ConstPtr& Cmdmsg)
+  {
+    
+    ROS_INFO("CCU Command received. Behavior %s, %d primitives", Cmdmsg->primitive[0].behaviour.c_str(), (int) Cmdmsg->primitive.size());
+
+    nav_msgs::Path Pathmsg;
+    
+    
+    Pathmsg.poses = Cmdmsg->primitive[0].poses;
+    
+      if(Cmdmsg->primitive[0].behaviour == "PAUSE"){	
+	  route_navigation.pause_route_navigation();
+	  elevator_navigation.pause_route_navigation();
+      }else if(Cmdmsg->primitive[0].behaviour == "RESUME"){
+	  route_navigation.resume_route_navigation();
+	  elevator_navigation.resume_route_navigation();	
+      }else if(Cmdmsg->primitive[0].behaviour == "TAKE_ELEVATOR"){
+	  elevator_navigation.start_route_navigation();
+	  active_nav = NAV_ELEVATOR;
+      }else if(Cmdmsg->primitive[0].behaviour == "GOTO"){
+	  route_navigation.start_route_navigation(Pathmsg);
+	  active_nav = NAV_CORRIDOR;
+      }
+  
+    
+  }  
+  void doorDetectCallback(const ed_sensor_integration::doorDetection::ConstPtr& DoorStmsg)
+  {
+      doorStatus = *DoorStmsg;
+  }
   
   int main(int argc, char** argv){
     ros::init(argc, argv, "route_navigation");  
     ros::NodeHandle n;
     ros::Rate rate(5.0);
     
-    ros::Subscriber sub 		= 	n.subscribe<nav_msgs::Path>("/planned_route", 1, routetopicCallback);
-    ros::Subscriber submvfb = 	n.subscribe<move_base_msgs::MoveBaseActionFeedback>("/move_base/feedback", 1, move_base_fbCallback);
+    ros::Subscriber sub 		= 	n.subscribe<nav_msgs::Path>("/planned_route", 10, routetopicCallback);
+    ros::Subscriber submvfb = 	n.subscribe<move_base_msgs::MoveBaseActionFeedback>("/move_base/feedback", 10, move_base_fbCallback);
+    ros::Subscriber subCCUCommands = n.subscribe<ropod_ros_msgs::sem_waypoint_cmd>("waypoint_cmd", 10,CCUcommandCallback);
+    
+    ros::Subscriber subdoorStatus = n.subscribe<ed_sensor_integration::doorDetection>("door", 10, doorDetectCallback);
+    doorStatus.closed = false;
+    doorStatus.open = false;
+    doorStatus.undetectable = true;
     
     ros::Publisher movbase_cancel_pub = n.advertise<actionlib_msgs::GoalID>("move_base/cancel", 1);
    
@@ -507,10 +558,10 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
       //tell the action client that we want to spin a thread by default
       MoveBaseClient ac("move_base", true);
       //wait for the action server to come up
-      while(!ac.waitForServer(ros::Duration(5.0))){
+  //    while(!ac.waitForServer(ros::Duration(5.0))){
 	
-	ROS_INFO("Waiting for the move_base action server to come up");
-      }    
+//	ROS_INFO("Waiting for the move_base action server to come up");
+ //     }    
     
   
     move_base_msgs::MoveBaseGoal goal;
@@ -524,7 +575,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 	  route_navigation.navigation_state_machine(movbase_cancel_pub, &goal, sendgoal);
 	  break;
 	case NAV_ELEVATOR:
-	  elevator_navigation.navigation_state_machine(simple_wm.elevator1,movbase_cancel_pub, &goal, sendgoal);
+	  elevator_navigation.navigation_state_machine(simple_wm.elevator1,movbase_cancel_pub, &goal, sendgoal, doorStatus);
 	  break;
 	default:	  
 	  break;

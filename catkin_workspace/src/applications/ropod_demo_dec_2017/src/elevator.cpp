@@ -31,32 +31,32 @@ namespace wm
       line_door.push_back(p1);
       line_door.push_back(p2);
       
-      wayp_elevator.position.x = -7.116;
-      wayp_elevator.position.y = -2.986;
+      wayp_elevator.position.x = 2.86;
+      wayp_elevator.position.y = 3.31;
       wayp_elevator.position.z = 0.0;
       wayp_elevator.orientation.x = 0.0;
       wayp_elevator.orientation.y = 0.0;
-      wayp_elevator.orientation.z = 0.9999;
-      wayp_elevator.orientation.w = 0.012;
+      wayp_elevator.orientation.z = -0.72;
+      wayp_elevator.orientation.w = 0.69;
 
       
-      wayp_wait.position.x = 10.9;
-      wayp_wait.position.y = -2.708;
+      wayp_wait.position.x = 2.92;
+      wayp_wait.position.y = 1.32;
       wayp_wait.position.z = 0.0;
       wayp_wait.orientation.x = 0.0;
       wayp_wait.orientation.y = 0.0;
-      wayp_wait.orientation.z = 0.001452;
-      wayp_wait.orientation.w = 0.999999;      
+      wayp_wait.orientation.z = 0.72;
+      wayp_wait.orientation.w = 0.7;      
       
    
    
-      wayp_entrance.position.x = -9.6206;
-      wayp_entrance.position.y = -3.785478;
+      wayp_entrance.position.x = 3.85;
+      wayp_entrance.position.y = 2.35;
       wayp_entrance.position.z = 0.0;
       wayp_entrance.orientation.x = 0.0;
       wayp_entrance.orientation.y = 0.0;
-      wayp_entrance.orientation.z = -0.7;
-      wayp_entrance.orientation.w = 0.713;        
+      wayp_entrance.orientation.z = -0.01;
+      wayp_entrance.orientation.w = 1.0;        
       
  
     };

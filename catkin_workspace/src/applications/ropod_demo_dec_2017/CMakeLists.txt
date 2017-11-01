@@ -205,5 +205,4 @@ include_directories(
 
 add_executable(route_navigation src/route_navigation.cpp src/simplified_world_model.cpp src/corridor.cpp src/elevator.cpp)
 target_link_libraries(route_navigation ${catkin_LIBRARIES})
-
-
+add_dependencies(route_navigation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

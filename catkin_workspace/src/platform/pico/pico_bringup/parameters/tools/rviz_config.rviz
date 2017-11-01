@@ -26,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -48,24 +48,49 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Class: rviz/MarkerArray
+    - Class: ed_rviz_plugins/WorldModel
       Enabled: true
-      Marker Topic: /ed/rviz
-      Name: MarkerArray
-      Namespaces:
-        entities: true
-        labels: true
-      Queue Size: 100
+      Entity Area label opacity: 0.400000006
+      Entity Area opacity: 0.200000003
+      Entity label opacity: 1
+      Mesh query service name: ed/gui/query_meshes
+      Name: WorldModel
+      Topic: /ed/gui/entities
+      Unreliable: false
       Value: true
     - Angle Tolerance: 9.99999975e-05
       Class: rviz/Odometry
-      Color: 255; 25; 0
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.300000012
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
       Enabled: true
       Keep: 2
-      Length: 1
       Name: Odometry
       Position Tolerance: 0.00100000005
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.100000001
+        Color: 255; 25; 0
+        Head Length: 0.300000012
+        Head Radius: 0.100000001
+        Shaft Length: 1
+        Shaft Radius: 0.0500000007
+        Value: Arrow
       Topic: /pico/odom
+      Unreliable: false
       Value: true
     - Alpha: 1
       Arrow Length: 0.300000012
@@ -118,8 +143,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        map:
-          Value: true
         pico/base_link:
           Value: true
         pico/laser:
@@ -132,11 +155,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          pico/odom:
-            pico/base_link:
-              pico/laser:
-                {}
+        {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -155,6 +174,7 @@ Visualization Manager:
       Name: Ed Nav map
       Topic: /ed/navigation/map
       Unreliable: false
+      Use Timestamp: false
       Value: false
     - Alpha: 0.699999988
       Class: rviz/Map
@@ -164,6 +184,7 @@ Visualization Manager:
       Name: Global cost map
       Topic: /move_base/global_costmap/costmap
       Unreliable: false
+      Use Timestamp: false
       Value: false
     - Alpha: 0.699999988
       Class: rviz/Map
@@ -173,6 +194,7 @@ Visualization Manager:
       Name: Local cost map
       Topic: /move_base/local_costmap/costmap
       Unreliable: false
+      Use Timestamp: false
       Value: true
     - Alpha: 1
       Buffer Length: 1
@@ -189,6 +211,7 @@ Visualization Manager:
         X: 0
         Y: 0
         Z: 0
+      Pose Color: 255; 85; 255
       Pose Style: None
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
@@ -211,6 +234,7 @@ Visualization Manager:
         X: 0
         Y: 0
         Z: 0
+      Pose Color: 255; 85; 255
       Pose Style: None
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
@@ -242,24 +266,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 12.0336409
+      Distance: 11.030653
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.708963513
-        Y: -0.0447822921
-        Z: 0.427937984
+        X: 0.811518431
+        Y: 2.45180011
+        Z: -0.236297697
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
+      Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.54479635
+      Pitch: 1.16979671
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.75356913
+      Yaw: 2.01356483
     Saved: ~
 Window Geometry:
   Displays:
@@ -277,5 +302,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1855
-  X: 514
-  Y: 73
+  X: 65
+  Y: 24

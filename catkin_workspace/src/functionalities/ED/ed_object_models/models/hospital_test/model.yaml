@@ -27,7 +27,7 @@ composition:
                   height: 0.1
                   
 # - - - - - - Elevator - - - - - - -
-    - type: "hospital_test/door"
+    - type: "elevatordoor"
       id: "door1"
       pose: { x: -5.96, y: -2.31, z: 0, rz: 0 }
       shape:
@@ -51,7 +51,7 @@ composition:
                     - { x: 2.34, y: -1.80 }
                     - { x: 2.38, y: 0.02 }
                   height: 2.0
-    - type: "hospital_test/door"
+    - type: "elevatordoor"
       id: "door2"
       pose: { x: -8.61, y: -2.35, z: 0, rz: 0 }
       shape:

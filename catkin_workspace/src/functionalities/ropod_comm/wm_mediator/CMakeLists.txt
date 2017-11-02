@@ -39,7 +39,8 @@ catkin_package(
 
 add_executable(ropod_wm_mediator_demo ${PROJECT_SOURCE_DIR}/src/demo_mediator.cpp ${HEADER_FILES})
 target_link_libraries(ropod_wm_mediator_demo ${LIBS} ${catkin_LIBRARIES})
+add_dependencies(${PROJECT_NAME}_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}) # define executable not using any messages/services provided by this package
 
 add_executable(test_wm_mediator ${PROJECT_SOURCE_DIR}/src/test.cpp ${HEADER_FILES})
 target_link_libraries(test_wm_mediator ${LIBS} ${catkin_LIBRARIES})
-
+add_dependencies(test_wm_mediator ${${PROJECT_NAME}_EXPORTED_TARGETS}${catkin_EXPORTED_TARGETS}) # define executable not using any messages/services provided by this package

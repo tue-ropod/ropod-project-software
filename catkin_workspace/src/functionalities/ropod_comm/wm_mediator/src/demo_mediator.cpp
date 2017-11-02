@@ -52,7 +52,10 @@ void groundSemanticWaypoints(const ropod_ros_msgs::ropod_sem_waypoint sem_pt, ro
 		}
 	} else if (sem_pt.command == "TAKE_ELEVATOR"){
 		control_primitive.behaviour = "TAKE_ELEVATOR";
-		// put anything in the mean time
+		/* put anything in the mean time. The sequence of actions(and waypoints) 
+		 * to go in and out of the elevator is determined by the route navigation node. 
+		 * This in case communication is lost.
+		 */
 		pt.pose.position.x = 2.9;
 		pt.pose.position.y = 3.3;
 		pt.pose.position.z = 0;
@@ -62,15 +65,7 @@ void groundSemanticWaypoints(const ropod_ros_msgs::ropod_sem_waypoint sem_pt, ro
 		pt.pose.orientation.w = 0.70711;
 	        control_primitive.poses.push_back(pt);
 	} else if (sem_pt.command == "ENTER_ELEVATOR"){
-		control_primitive.behaviour = "TAKE_ELEVATOR";
-		// put anything in the mean time
-		pt.pose.position.x = 2.9;
-		pt.pose.position.y = 3.3;
-		pt.pose.position.z = 0;
-		pt.pose.orientation.x = 0.0;
-		pt.pose.orientation.y = 0.0;
-		pt.pose.orientation.z = -0.7;
-		pt.pose.orientation.w = 0.70711;
+		ROS_WARN("EXIT_ELEVATOR not implemented yet");
 	} else if (sem_pt.command == "EXIT_ELEVATOR"){
 		ROS_WARN("EXIT_ELEVATOR not implemented yet");
 	} else if (sem_pt.command == "PAUSE"){

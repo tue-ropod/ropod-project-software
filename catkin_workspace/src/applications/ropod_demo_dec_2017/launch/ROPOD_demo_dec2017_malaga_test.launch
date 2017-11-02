@@ -7,7 +7,7 @@
 
 	
 	% Launch route navigation
-	<node pkg="ropod_demo_dec_2017" type="route_navigation" name="route_navigation">
+	<node pkg="ropod_demo_dec_2017" type="demo_navigation" name="demo_navigation">
 	</node>	
 
 	% Launch ED GUI server

@@ -52,11 +52,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  doorDetection.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -73,10 +72,12 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   geometry_msgs
-# )
+generate_messages(
+   DEPENDENCIES
+   geometry_msgs
+)
+
+
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -110,7 +111,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ropod_demo_dec_2017
-  CATKIN_DEPENDS message_generation   geometry_msgs   actionlib  move_base_msgs    nav_msgs  ropod_ros_msgs  roscpp  tf
+  CATKIN_DEPENDS message_generation  geometry_msgs   actionlib  move_base_msgs    nav_msgs  ropod_ros_msgs  roscpp  tf
 #  DEPENDS system_lib
 )
 
@@ -203,7 +204,7 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(route_navigation src/route_navigation.cpp src/simplified_world_model.cpp src/corridor.cpp src/elevator.cpp)
-target_link_libraries(route_navigation ${catkin_LIBRARIES})
+add_executable(demo_navigation src/demo_navigation.cpp src/waypoint_navigation.cpp src/elevator_navigation.cpp src/simplified_world_model.cpp src/corridor.cpp src/elevator.cpp)
+target_link_libraries(demo_navigation ${catkin_LIBRARIES})
 
 

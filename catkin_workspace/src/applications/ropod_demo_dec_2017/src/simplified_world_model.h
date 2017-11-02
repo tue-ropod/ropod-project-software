@@ -5,6 +5,7 @@
 
 #include "corridor.h"
 #include "elevator.h"
+#include "datatypes_wm.h"
 
 namespace wm
 {

@@ -3,78 +3,42 @@
 
 namespace wm
 {
-    Elevator::Elevator(){
-      
-    };
-    void Elevator:: init( ){
-      point_wm p1;
-      p1.x = 0.0;
-      p1.y = 0.0;
-      point_wm p2;
-      p2.x = 0.0;
-      p2.y = 0.0;
-      point_wm p3;
-      p3.x = 0.0;
-      p3.y = 0.0;
-      point_wm p4;
-      p4.x = 0.0;
-      p4.y = 0.0;
-      convex_area_elev.push_back(p1);
-      convex_area_elev.push_back(p2);
-      convex_area_elev.push_back(p3);
-      convex_area_elev.push_back(p4);
-      
-      p1.x = -8.5;
-      p1.y = 3.3;
-      p2.x = -8.5;
-      p2.y = 2.35;
-      line_door.push_back(p1);
-      line_door.push_back(p2);
-      
-      wayp_elevator.position.x = 2.86;
-      wayp_elevator.position.y = 3.31;
-      wayp_elevator.position.z = 0.0;
-      wayp_elevator.orientation.x = 0.0;
-      wayp_elevator.orientation.y = 0.0;
-      wayp_elevator.orientation.z = -0.72;
-      wayp_elevator.orientation.w = 0.69;
+Elevator::Elevator() {
 
-      
-      wayp_wait.position.x = 2.92;
-      wayp_wait.position.y = 1.32;
-      wayp_wait.position.z = 0.0;
-      wayp_wait.orientation.x = 0.0;
-      wayp_wait.orientation.y = 0.0;
-      wayp_wait.orientation.z = 0.72;
-      wayp_wait.orientation.w = 0.7;      
-      
-   
-   
-      wayp_entrance.position.x = 3.85;
-      wayp_entrance.position.y = 2.35;
-      wayp_entrance.position.z = 0.0;
-      wayp_entrance.orientation.x = 0.0;
-      wayp_entrance.orientation.y = 0.0;
-      wayp_entrance.orientation.z = -0.01;
-      wayp_entrance.orientation.w = 1.0;        
-      
- 
-    };
-    
-    Elevator::~Elevator(){};
-      
-      
-      
-    bool Elevator:: is_entrance_detectable(){
-      return true; // for now we assume the robot is facing the door
-      
-    };
-    bool Elevator:: is_entrance_accesible(){
-      return true; // for now we assume the door is open, once the laser data is integrated this will be checked
-    };
-    void Elevator:: go_into(){};
-    void Elevator:: go_out(){};      
+};
+void Elevator:: init(std::vector<point_wm> convex_area_elev_, std::vector<point_wm> line_door_,
+                     pose_wm wayp_elevator_, pose_wm  wayp_wait_, pose_wm wayp_out_) {
+  
+    /* Elevator 1
+     * In this simplified model, an elevator is using these parameters
+     * convex_area_elev: Area inside the elevator. TODO: Use this to find a position iniside
+     * line_door:        Line describing the door position. TODO: Use this to know when the robot has crossed the door
+     * wayp_elevator:    Pose inside the elevator.
+     * wayp_wait:        Pose to wait for elevator. TODO: use in demo?
+     * wayp_out:         Pose to navbiate after going out of elevator. TODO: This can be depending on each floor?
+     */  
+    convex_area_elev = convex_area_elev_;
+    line_door = line_door_;
+    wayp_elevator = wayp_elevator_;
+    wayp_wait = wayp_wait_;
+    wayp_out = wayp_out_;
+};
+
+Elevator::~Elevator() {};
+
+
+
+bool Elevator:: is_entrance_detectable() {
+    return true; // TODO: for now we assume the robot is facing the door
+
+};
+bool Elevator:: is_entrance_accesible() {
+    return true; // TODO:for now we assume the door is open, once the laser data is integrated this will be checked
+};
+
+void Elevator:: go_into() {};
+void Elevator:: go_out() {};
 
 }
-  
-  
+
+

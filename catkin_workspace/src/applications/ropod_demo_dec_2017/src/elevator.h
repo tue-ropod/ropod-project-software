@@ -22,12 +22,13 @@ namespace wm
     public: void go_into();
     public: void go_out();
     
-    public: void init( );
+    public: void init(std::vector<point_wm> convex_area_elev_, std::vector<point_wm> line_door_, 
+		     pose_wm wayp_elevator_, pose_wm  wayp_wait_, pose_wm wayp_out_);
     private: std::vector<point_wm> convex_area_elev;
     public: std::vector<point_wm> line_door;
     public: pose_wm wayp_elevator;
     public: pose_wm wayp_wait;
-    public: pose_wm wayp_entrance;   
+    public: pose_wm wayp_out;   
 
 
 

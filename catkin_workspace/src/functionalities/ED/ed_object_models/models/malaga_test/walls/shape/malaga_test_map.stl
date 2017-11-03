@@ -1,0 +1,338 @@
+solid OpenSCAD_Model
+  facet normal 0 0 -1
+    outer loop
+      vertex 112.5 325 0
+      vertex -587.5 325 0
+      vertex 112.5 1250 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 937.5 1250 0
+      vertex 2137.5 350 0
+      vertex 937.5 350 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 2137.5 350 0
+      vertex 937.5 1250 0
+      vertex 2137.5 1300 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 112.5 1250 0
+      vertex 2137.5 1300 0
+      vertex 937.5 1250 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -587.5 1250 0
+      vertex 112.5 1250 0
+      vertex -587.5 325 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -587.5 1250 0
+      vertex 2137.5 1300 0
+      vertex 112.5 1250 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -2137.5 1300 0
+      vertex -587.5 1250 0
+      vertex -2137.5 1250 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -587.5 1250 0
+      vertex -2137.5 1300 0
+      vertex 2137.5 1300 0
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 2137.5 1300 1000
+      vertex 937.5 1250 1000
+      vertex 2137.5 350 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 2137.5 1300 1000
+      vertex 112.5 1250 1000
+      vertex 937.5 1250 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 112.5 1250 1000
+      vertex -587.5 1250 1000
+      vertex 112.5 325 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 2137.5 1300 1000
+      vertex -587.5 1250 1000
+      vertex 112.5 1250 1000
+    endloop
+  endfacet
+  facet normal -0 0 1
+    outer loop
+      vertex -2137.5 1300 1000
+      vertex -587.5 1250 1000
+      vertex 2137.5 1300 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -587.5 1250 1000
+      vertex -2137.5 1300 1000
+      vertex -2137.5 1250 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 2137.5 350 1000
+      vertex 937.5 1250 1000
+      vertex 937.5 350 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 112.5 325 1000
+      vertex -587.5 1250 1000
+      vertex -587.5 325 1000
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 937.5 350 0
+      vertex 2137.5 350 1000
+      vertex 937.5 350 1000
+    endloop
+  endfacet
+  facet normal 0 -1 -0
+    outer loop
+      vertex 2137.5 350 1000
+      vertex 937.5 350 0
+      vertex 2137.5 350 0
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 937.5 350 0
+      vertex 937.5 1250 1000
+      vertex 937.5 1250 0
+    endloop
+  endfacet
+  facet normal -1 -0 0
+    outer loop
+      vertex 937.5 1250 1000
+      vertex 937.5 350 0
+      vertex 937.5 350 1000
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 112.5 1250 0
+      vertex 937.5 1250 1000
+      vertex 112.5 1250 1000
+    endloop
+  endfacet
+  facet normal 0 -1 -0
+    outer loop
+      vertex 937.5 1250 1000
+      vertex 112.5 1250 0
+      vertex 937.5 1250 0
+    endloop
+  endfacet
+  facet normal 1 -0 0
+    outer loop
+      vertex 112.5 325 1000
+      vertex 112.5 1250 0
+      vertex 112.5 1250 1000
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 112.5 1250 0
+      vertex 112.5 325 1000
+      vertex 112.5 325 0
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -587.5 325 0
+      vertex 112.5 325 1000
+      vertex -587.5 325 1000
+    endloop
+  endfacet
+  facet normal 0 -1 -0
+    outer loop
+      vertex 112.5 325 1000
+      vertex -587.5 325 0
+      vertex 112.5 325 0
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -587.5 325 0
+      vertex -587.5 1250 1000
+      vertex -587.5 1250 0
+    endloop
+  endfacet
+  facet normal -1 -0 0
+    outer loop
+      vertex -587.5 1250 1000
+      vertex -587.5 325 0
+      vertex -587.5 325 1000
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -2137.5 1250 0
+      vertex -587.5 1250 1000
+      vertex -2137.5 1250 1000
+    endloop
+  endfacet
+  facet normal 0 -1 -0
+    outer loop
+      vertex -587.5 1250 1000
+      vertex -2137.5 1250 0
+      vertex -587.5 1250 0
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -2137.5 1250 0
+      vertex -2137.5 1300 1000
+      vertex -2137.5 1300 0
+    endloop
+  endfacet
+  facet normal -1 -0 0
+    outer loop
+      vertex -2137.5 1300 1000
+      vertex -2137.5 1250 0
+      vertex -2137.5 1250 1000
+    endloop
+  endfacet
+  facet normal 0 1 -0
+    outer loop
+      vertex 2137.5 1300 0
+      vertex -2137.5 1300 1000
+      vertex 2137.5 1300 1000
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex -2137.5 1300 1000
+      vertex 2137.5 1300 0
+      vertex -2137.5 1300 0
+    endloop
+  endfacet
+  facet normal 1 -0 0
+    outer loop
+      vertex 2137.5 350 1000
+      vertex 2137.5 1300 0
+      vertex 2137.5 1300 1000
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 2137.5 1300 0
+      vertex 2137.5 350 1000
+      vertex 2137.5 350 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -1062.5 -1300 0
+      vertex -162.5 -625 0
+      vertex -162.5 -1300 0
+    endloop
+  endfacet
+  facet normal -0 0 -1
+    outer loop
+      vertex -162.5 -625 0
+      vertex -1062.5 -1300 0
+      vertex -1062.5 -625 0
+    endloop
+  endfacet
+  facet normal 0 1 -0
+    outer loop
+      vertex -162.5 -625 0
+      vertex -1062.5 -625 1000
+      vertex -162.5 -625 1000
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex -1062.5 -625 1000
+      vertex -162.5 -625 0
+      vertex -1062.5 -625 0
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -1062.5 -1300 0
+      vertex -162.5 -1300 1000
+      vertex -1062.5 -1300 1000
+    endloop
+  endfacet
+  facet normal 0 -1 -0
+    outer loop
+      vertex -162.5 -1300 1000
+      vertex -1062.5 -1300 0
+      vertex -162.5 -1300 0
+    endloop
+  endfacet
+  facet normal 1 -0 0
+    outer loop
+      vertex -162.5 -1300 1000
+      vertex -162.5 -625 0
+      vertex -162.5 -625 1000
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex -162.5 -625 0
+      vertex -162.5 -1300 1000
+      vertex -162.5 -1300 0
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -1062.5 -1300 0
+      vertex -1062.5 -625 1000
+      vertex -1062.5 -625 0
+    endloop
+  endfacet
+  facet normal -1 -0 0
+    outer loop
+      vertex -1062.5 -625 1000
+      vertex -1062.5 -1300 0
+      vertex -1062.5 -1300 1000
+    endloop
+  endfacet
+  facet normal -0 0 1
+    outer loop
+      vertex -1062.5 -625 1000
+      vertex -162.5 -1300 1000
+      vertex -162.5 -625 1000
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -162.5 -1300 1000
+      vertex -1062.5 -625 1000
+      vertex -1062.5 -1300 1000
+    endloop
+  endfacet
+endsolid OpenSCAD_Model

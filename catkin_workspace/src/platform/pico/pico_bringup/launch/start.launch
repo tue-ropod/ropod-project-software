@@ -17,13 +17,13 @@
 
 
 	  <!-- Start gmapping if required-->
-	<group if="$(arg gmapping)">
+<!--	<group if="$(arg gmapping)">
 		<include file="$(find robot_common)/launch/localization/gmapping.launch">
 			<arg name="robot" value="$(arg robotName)" />
 			<arg name="sensor" value="$(arg laser1_name)"/>
 		</include>
 	</group>
-		
+-->		
 	<group ns="$(arg robotName)">
 	  	<!-- Do for both: Simulator and Real Robot -->
 

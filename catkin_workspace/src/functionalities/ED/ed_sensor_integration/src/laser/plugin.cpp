@@ -453,7 +453,9 @@ void LaserPlugin::update(const ed::WorldModel& world, const sensor_msgs::LaserSc
         }
     }
 
+          std::cout << "Check door status 0" << std::endl;
     if ( check_door_status_ ) {
+      std::cout << "Check door status" << std::endl;
         /* Points associated to door */
         std::vector<double> model_ranges_door ( num_beams, 0 );
         bool firstDoorFound = false;
@@ -463,7 +465,7 @@ void LaserPlugin::update(const ed::WorldModel& world, const sensor_msgs::LaserSc
 
             //std::cout << "BLA0 = " << e->hasType("hospital_test/door") << "type = " << e->type() << std::endl;
 
-            if ( e->hasType ( "hospital_test/door" ) && !firstDoorFound ) {
+            if ( e->hasType ( "malaga_test/door" ) && !firstDoorFound ) {
                 id = e->id();
                 //  std::cout << "id = " << e->id() << std::endl;
 
@@ -497,7 +499,7 @@ void LaserPlugin::update(const ed::WorldModel& world, const sensor_msgs::LaserSc
         ed_sensor_integration::doorDetection msg;
 
         msg.id = id.str();
-        msg.type = "hospital_test/door";
+        msg.type = "malaga_test/door";
         msg.open = 0;
         msg.closed = 0;
         msg.undetectable = 0;

@@ -7,8 +7,9 @@
 	<arg name="asus_cam" default="true"/> 
 	<arg name="asus_cam_name" value="asusxtion"/>
 	<arg name="asus_cam_calibration" default="false"/>
-	<arg name="gmapping" default="true"/>
-	<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/>
+	<arg name="gmapping" default="false"/>
+	<!--<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/> -->
+	<arg name="floorplan" default="$(find ed_object_models)/models/malaga_test/walls/shape/floorplan"/>
 
 	<arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL)" />
 	<arg name="robot_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)"/>

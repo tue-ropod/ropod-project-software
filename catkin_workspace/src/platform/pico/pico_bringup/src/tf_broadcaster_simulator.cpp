@@ -65,7 +65,7 @@ int main(int argc, char** argv){
     broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(q, tf::Vector3(0.0, 0.0, 0.3)),
-        ros::Time::now(),"/pico/base_link", "/pico/laser"));
+        ros::Time::now(),"/pico/base_link", "/pico/laser/scan"));
     /*broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(q2, tf::Vector3(0.0, 0.0, 0.0)),

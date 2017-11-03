@@ -15,7 +15,7 @@ plugins:
         y: 0
         rz: 3.1416             # rotation
       laser_model:
-        topic: /pico/laser   # Laser topic
+        topic: /pico/laser/scan   # Laser topic
         num_beams: 100         # Max number of beams used per particle (evenly spread)
         z_hit: 0.95            # \
         sigma_hit: 0.2         # |
@@ -50,7 +50,7 @@ plugins:
     lib: libed_laser_plugin.so
     frequency: 10
     parameters:
-        laser_topic: /pico/laser
+        laser_topic: /pico/laser/scan
         min_segment_size_pixels: 5
         world_association_distance: 0.1
         segment_depth_threshold: 0.2

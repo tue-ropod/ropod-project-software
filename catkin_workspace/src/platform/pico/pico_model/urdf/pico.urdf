@@ -112,7 +112,7 @@
       <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
 
 
-        <topicName>/pico/laser</topicName>
+        <topicName>/pico/laser/scan</topicName>
         <frameName>/pico/base_link</frameName>
         
       </plugin>

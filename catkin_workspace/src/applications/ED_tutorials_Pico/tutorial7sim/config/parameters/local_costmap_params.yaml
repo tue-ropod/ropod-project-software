@@ -26,7 +26,7 @@ recent_obstacles:
     occupied_to_default_time: 2.0
     # observation_sources: base_laser torso_laser top_kinect
     observation_sources: laser_scan_sensor
-    laser_scan_sensor: {sensor_frame: /pico/laser, data_type: LaserScan, topic: /pico/laser, marking: true, clearing: true}   
+    laser_scan_sensor: {sensor_frame: /pico/laser/scan, data_type: LaserScan, topic: /pico/laser/scan, marking: true, clearing: true}   
 
 local_costmap:
   map_topic: /ed/navigation/map

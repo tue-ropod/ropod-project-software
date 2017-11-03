@@ -142,7 +142,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.00999999978
       Style: Flat Squares
-      Topic: /pico/laser
+      Topic: /pico/laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -156,7 +156,7 @@ Visualization Manager:
           Value: true
         pico/base_link:
           Value: true
-        pico/laser:
+        pico/laser/scan:
           Value: true
         pico/odom:
           Value: true
@@ -169,7 +169,7 @@ Visualization Manager:
         map:
           pico/odom:
             pico/base_link:
-              pico/laser:
+              pico/laser/scan:
                 {}
       Update Interval: 0
       Value: true

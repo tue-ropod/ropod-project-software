@@ -22,7 +22,7 @@ plugins:
         y: 0
         rz: 1.57             # rotation
       laser_model:
-        topic: /pico/laser   # Laser topic
+        topic: /pico/laser/scan   # Laser topic
         num_beams: 1000         # Max number of beams used per particle (evenly spread)
         z_hit: 0.95            # \
         sigma_hit: 0.2         # |

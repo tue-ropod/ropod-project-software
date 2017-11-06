@@ -31,7 +31,7 @@
 		<!-- Odometry publishing -->
 			<node pkg="$(arg robotName)_base_controller" type="omnibase.py" name="odometry_publisher" output="screen">
 				<param name="base_frame" value="$(arg robotName)/base_link"/>
-				<param name="frame_id" value="$(arg robotName)/$(arg laser1_name)"/>
+				<param name="frame_id" value="$(arg robotName)/$(arg laser1_name)/scan"/>
 			</node>
 
 			<!-- Laser publishing -->

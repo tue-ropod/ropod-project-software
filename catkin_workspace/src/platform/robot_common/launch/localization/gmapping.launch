@@ -8,10 +8,10 @@
 
     <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen">
        <rosparam command="load" file="$(find pico_bringup)/parameters/localization/gmapping.yaml" /> 
-         <remap from="scan" to="$(arg robot)/$(arg sensor)/scan" />
-         <remap from="map" to="$(arg robot)/map" /> 
-         <param name="odom_frame" value="$(arg robot)/odom" />
-         <param name="base_frame" value="$(arg robot)/base_link" />
+         <remap from="scan" to="/$(arg robot)/$(arg sensor)/scan" />
+         <remap from="map" to="/$(arg robot)/map" /> 
+         <param name="odom_frame" value="/$(arg robot)/odom" />
+         <param name="base_frame" value="/$(arg robot)/base_link" />
     </node>
     
 </launch>

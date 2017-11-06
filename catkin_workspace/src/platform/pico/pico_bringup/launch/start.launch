@@ -4,7 +4,7 @@
 	<arg name="robotName" default="pico"/>   
 	<arg name="laser" default="true"/>
 	<arg name="laser1_name" value ="laser"/>
-	<arg name="asus_cam" default="true"/> 
+	<arg name="asus_cam" default="false"/> 
 	<arg name="asus_cam_name" value="asusxtion"/>
 	<arg name="asus_cam_calibration" default="false"/>
 	<arg name="gmapping" default="false"/>
@@ -16,19 +16,19 @@
 
 
 
-	  <!-- Start gmapping if required-->
-<!--	<group if="$(arg gmapping)">
-		<include file="$(find robot_common)/launch/localization/gmapping.launch">
-			<arg name="robot" value="$(arg robotName)" />
-			<arg name="sensor" value="$(arg laser1_name)"/>
-		</include>
-	</group>
--->		
 	<group ns="$(arg robotName)">
+		<!-- Start gmapping if required-->
+		<group if="$(arg gmapping)">
+			<include file="$(find robot_common)/launch/localization/gmapping.launch">
+				<arg name="robot" value="$(arg robotName)" />
+				<arg name="sensor" value="$(arg laser1_name)"/>
+			</include>
+		</group>
+		
+		<group if="$(arg ROBOT_REAL)">
 	  	<!-- Do for both: Simulator and Real Robot -->
-
-	  <group if="$(arg ROBOT_REAL)">
-		  <!-- Odometry publishing -->
+		
+		<!-- Odometry publishing -->
 			<node pkg="$(arg robotName)_base_controller" type="omnibase.py" name="odometry_publisher" output="screen">
 				<param name="base_frame" value="$(arg robotName)/base_link"/>
 				<param name="frame_id" value="$(arg robotName)/$(arg laser1_name)"/>

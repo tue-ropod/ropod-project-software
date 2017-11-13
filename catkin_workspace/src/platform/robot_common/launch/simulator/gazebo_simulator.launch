@@ -14,5 +14,5 @@
 		<arg name="world_name" value="$(arg model_path)/world/$(arg robot).world"/>    
 	</include>
 
-	<node name="throttle" pkg="topic_tools" type="throttle" args="messages /$(arg robot)/laser_sim 20.0 /$(arg robot)/laser" />  
+	<node name="throttle" pkg="topic_tools" type="throttle" args="messages /$(arg robot)/laser_sim 20.0 /$(arg robot)/laser/scan" />  
 </launch>

@@ -1,14 +1,29 @@
-door1; center; -5.96; -2.31;
-door1; point1; -6.01; -3.39;
-door1; point2; -5.71; -3.41;
-door1; point3; -5.70; -2.29;
+door1; center; 8.56; 5.13;
+door1; point1; 11.6; 4.68;
+door1; point2; 11.70; 5.26;
+door1; point3; 8.56; 5.68;
 
-door2; center; -8.61; -2.35;
-door2; point1; -8.65; -3.34;
-door2; point2; -8.43; -3.36;
-door2; point3; -8.36; -2.34;
+door2; center; 9.71; -7.28;
+door2; point1; 7.46; -7.01;
+door2; point2; 7.46; -7.06;
+door2; point3; 9.71; -7.33;
 
-elevator; center; -8.37; -2.15;
-elevator; point1; -8.38; -3.95;
-elevator; point2; -6.03; -3.95;
-elevator; point3; -5.99; -2.13;
+door3; center; -7.16; 0.732;
+door3; point1; -7.21; -0.506;
+door3; point2; -6.96; -0.515;
+door3; point3; -6.88; 0.734;
+
+door4; center; -3.85; 0.776;
+door4; point1; -3.9; -0.596;
+door4; point2; -3.53; -0.595;
+door4; point3; -3.53; 0.774;
+
+elevatordoor; center; -6.99; -0.506;
+elevatordoor; point1; -6.89; 0.73;
+elevatordoor; point2; -7.15; -0.731;
+elevatordoor; point3; -7.22; -0.506;
+
+testdoor; center; 8.4; -2.58;
+testdoor; point1; 7.55; -2.45;
+testdoor; point2; 7.24; -4.25;
+testdoor; point3; 8.12; -4.39;

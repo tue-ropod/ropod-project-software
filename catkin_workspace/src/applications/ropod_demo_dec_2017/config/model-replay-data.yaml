@@ -1,0 +1,54 @@
+world_name: hospital_test
+  
+plugins:
+  - name: gui_server
+    lib: libed_gui_server_plugin.so     
+  - name: localization
+    lib: libed_localization_plugin.so
+    parameters:
+      robot_name: robot    # the robot will also be in the world model. This is the
+                           # id the robot entity will get in ED
+      initial_pose_topic: /initialpose
+      num_particles: 500   # maximum number of particles to use
+      initial_pose:        # where does the robot start (in map frame)?
+        x: 12.4
+        y: 2.5
+        rz: 3.1416             # rotation
+      laser_model:
+        topic: /pico/laser/scan   # Laser topic
+        num_beams: 30         # Max number of beams used per particle (evenly spread)
+        z_hit: 0.50            # \
+        sigma_hit: 0.2         # |
+        z_short: 0.4           # |-- These are all parameters of the probabilistic laser
+        z_max: 0.05            # |    model. See 'Probabilistic Robotics' for more info.
+        z_rand: 0.05           # |
+        lambda_short: 0.1      # /
+        range_max: 5.0
+        min_particle_distance: 0.01            # Particles that are too close together will
+        min_particle_rotation_distance: 0.02   # be combined (resulting in less particles)
+      odom_model:
+        map_frame: map
+        odom_frame: /pico/odom
+        base_link_frame: /pico/base_link
+        alpha1: 7.0   # rot -> trans + strafe   # \
+        alpha2: 5.0    # trans -> rot            # |-- These are all parameters of the
+        alpha3: 5.0    # trans -> trans          # |   probabilistic odom model. See
+        alpha4: 5.0    # rot -> rot              # |   'Probabilistic Robotics' for more info
+        alpha5: 7.0    # trans -> strafe         # /        
+  - name: laser_integration
+    lib: libed_laser_plugin.so
+    frequency: 10
+    parameters:
+        laser_topic: /pico/laser/scan
+        min_segment_size_pixels: 5
+        world_association_distance: 0.1
+        segment_depth_threshold: 0.2
+        min_cluster_size: 0.05
+        max_cluster_size: 10.0
+        max_gap_size: 1
+        check_door_status: 1
+  - name: entity_clearer
+    lib: libed_clearer_plugin.so
+    enabled: 1
+    parameters:
+        entity_timeout: 1.0        

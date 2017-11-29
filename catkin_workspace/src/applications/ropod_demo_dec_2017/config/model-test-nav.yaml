@@ -11,8 +11,8 @@ plugins:
       initial_pose_topic: /initialpose
       num_particles: 100   # maximum number of particles to use
       initial_pose:        # where does the robot start (in map frame)?
-        x: 9.0
-        y: 0
+        x: 17.0
+        y: 3.0
         rz: 3.1416             # rotation
       laser_model:
         topic: /pico/laser/scan   # Laser topic

@@ -9,6 +9,14 @@ add_message_files(
    sem_waypoint_cmd.msg
    ropod_sem_waypoint.msg
    ropod_sem_waypoint_list.msg
+   ropod_demo_location.msg
+   ropod_demo_area.msg 
+   ropod_demo_plan.msg
+   ropod_demo_sem_location_list.msg
+   ropod_demo_sem_location.msg
+   ropod_demo_status.msg 
+   ropod_demo_status_update.msg 
+   ropod_demo_waypoint.msg
 )
 
 generate_messages(

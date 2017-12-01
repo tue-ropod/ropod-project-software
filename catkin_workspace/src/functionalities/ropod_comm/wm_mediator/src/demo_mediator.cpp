@@ -34,8 +34,8 @@ std::map<std::string, geometry_msgs::PoseStamped> readWaypoints(std::string wayp
         std::string name = it->begin()->first.as<std::string>();
         YAML::Node node = it->begin()->second;
 
-        std::vector<double> position = node["position"].as<std::vector<double>>();
-        std::vector<double> orientation = node["orientation"].as<std::vector<double>>();
+        std::vector<double> position = node["position"].as<std::vector<double> >();
+        std::vector<double> orientation = node["orientation"].as<std::vector<double> >();
 
         geometry_msgs::PoseStamped point;
         point.pose.position.x = position[0];

@@ -5,6 +5,8 @@ catkin_workspace/build/
 catkin_workspace/devel/
 catkin_workspace/.catkin_workspace
 
+dependencies/
+
 /.project
 
 catkin_workspace/doc/doxygen/ed/html

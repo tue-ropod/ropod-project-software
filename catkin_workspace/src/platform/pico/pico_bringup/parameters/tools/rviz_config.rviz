@@ -131,9 +131,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 3279
+      Max Intensity: 999999
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 999999
       Name: LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -153,10 +153,6 @@ Visualization Manager:
         All Enabled: true
         map:
           Value: true
-        my_frame:
-          Value: true
-        pico/asusxtion:
-          Value: true
         pico/base_link:
           Value: true
         pico/laser/scan:
@@ -169,14 +165,11 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        my_frame:
-          map:
-            pico/odom:
-              pico/base_link:
-                pico/asusxtion:
-                  {}
-                pico/laser/scan:
-                  {}
+        map:
+          pico/odom:
+            pico/base_link:
+              pico/laser/scan:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -273,6 +266,14 @@ Visualization Manager:
       Unreliable: false
       Use Timestamp: false
       Value: false
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /circle
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -297,7 +298,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 12.2732792
+      Distance: 42.6932106
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -312,10 +313,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.2847966
+      Pitch: 1.32479656
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.50357294
+      Yaw: 6.01857758
     Saved: ~
 Window Geometry:
   Displays:

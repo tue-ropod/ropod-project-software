@@ -29,7 +29,7 @@ composition:
 # - - - - - - Elevator - - - - - - -
     - type: "elevatordoor"
       id: "door1"
-      pose: { x: -5.96, y: -2.31, z: 0, rz: 0 }
+      pose: { x: -3.86, y: 0.73, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:
@@ -41,19 +41,19 @@ composition:
                   height: 2.0
     - type: "hospital_test/corridor"
       id: "elevator"
-      pose: { x: -8.37, y: -2.15, z: 0, rz: 0 }
+      pose: { x: -6.9, y: 0.73, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:
                   points:
                     - { x: 0, y: 0 }
                     - { x: -0.01, y: -1.80 }
-                    - { x: 2.34, y: -1.80 }
-                    - { x: 2.38, y: 0.02 }
+                    - { x: 2.9, y: -1.80 }
+                    - { x: 2.9, y: 0.02 }
                   height: 2.0
     - type: "elevatordoor"
       id: "door2"
-      pose: { x: -8.61, y: -2.35, z: 0, rz: 0 }
+      pose: { x: -7.1, y: 0.53, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:

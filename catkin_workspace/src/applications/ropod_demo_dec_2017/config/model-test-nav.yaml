@@ -52,11 +52,11 @@ plugins:
     parameters:
         laser_topic: /pico/laser/scan
         min_segment_size_pixels: 5
-        world_association_distance: 0.1
+        world_association_distance: 0.4
         segment_depth_threshold: 0.2
-        min_cluster_size: 0.05
-        max_cluster_size: 10.0
-        max_gap_size: 1
+        min_cluster_size: 0.2
+        max_cluster_size: 1.0
+        max_gap_size: 10
         check_door_status: 1
   - name: entity_clearer
     lib: libed_clearer_plugin.so

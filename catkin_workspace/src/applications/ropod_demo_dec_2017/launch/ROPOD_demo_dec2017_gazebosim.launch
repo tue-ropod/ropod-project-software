@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+        <arg name="DEBUG" default="false"/>  
+	
 	
 	% Launch ED
-	<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml">
-	</node>
+	<group if="$(arg DEBUG)">
+		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml" launch-prefix="xterm -e gdb --args"/>
+	</group>
+	
+	<group unless="$(arg DEBUG)">
+	  <node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml" />
+	</group>
 
 	% Launch ED GUI server
 	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">

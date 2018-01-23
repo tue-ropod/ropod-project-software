@@ -11,7 +11,7 @@
 
    
   <model name='pico'>      
-   <pose>14.0 0.0 0.0 0.0 0.0 3.1416</pose>      
+   <pose>-4.9 9.8 0.0 0.0 0.0 -1.54</pose>      
 
    <link name='base_link'>        
 	  <visual name='base_link_visual'>

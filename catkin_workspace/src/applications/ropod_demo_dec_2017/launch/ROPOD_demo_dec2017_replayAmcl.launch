@@ -16,9 +16,8 @@
 	<arg name="robot_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)"/>
 	<arg name="robot_bringup_path" default="$(arg robot_path)/$(arg robotName)_bringup"/>
 
-	 <arg name="map_file" default="$(find ropod_demo_dec_2017)/launch/map_hospital_amcl.yaml"/>
+	 <arg name="map_file" default="$(find ed_object_models)/models/hospital_test_amcl/walls/map_amcl.yaml"/>
 
-	
 	<!-- Launch replaying of bag-file -->
 	<param name="use_sim_time" value="true" />
         <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg folder)/$(arg file) --topics  $(arg topic1) $(arg topic2) $(arg topic3) $(arg topic4) $(arg topic5) $(arg topic6)"/>

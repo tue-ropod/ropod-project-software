@@ -8,18 +8,16 @@
 	<arg name="asus_cam_name" value="asusxtion"/>
 	<arg name="asus_cam_calibration" default="false"/>
 	<arg name="gmapping" default="false"/>
-	<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/>
-
+	<!--<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/>-->
+	<arg name="floorplan" default="$(find ed_object_models)/models/hospital_test_amcl/walls/shape/Floorplan_demo_ROPOD_amcl"/>
 	<arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL)" />
 	<arg name="robot_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)"/>
 	<arg name="robot_bringup_path" default="$(arg robot_path)/$(arg robotName)_bringup"/>
 
-
-
 	<group ns="$(arg robotName)">
 		<!-- Start gmapping if required-->
 		<group if="$(arg gmapping)">
-			<include file="$(find robot_common)/launch/localization/gmapping.launch">
+			  <include file="$(find robot_common)/launch/localization/gmapping.launch">
 				<arg name="robot" value="$(arg robotName)" />
 				<arg name="sensor" value="$(arg laser1_name)"/>
 			</include>
@@ -67,6 +65,50 @@
 				<arg name="depth_camera_name" value="$(arg asus_cam_name)"/>
 				<arg name="calibration" value="$(arg asus_cam_calibration)"/>
 			</include> 
+			
+			<!-- AMCL-localization -->
+			 <node pkg="amcl" type="amcl" name="amcl">
+				<remap from="scan" to="/$(arg robotName)/$(arg laser1_name)/scan"/>
+
+				<!--- Odometery model parameters  -->
+				<param name="odom_model_type" value="omni"/>
+				<param name="odom_alpha1" value="7.0"/>
+				<param name="odom_alpha2" value="5.0"/>
+				<param name="odom_alpha3" value="5.0"/>
+				<param name="odom_alpha4" value="5.0"/>
+				<param name="odom_alpha5" value="7.0"/>
+				<param name="odom_frame_id" value="$(arg robotName)/odom"/>
+				<param name="base_frame_id" value="$(arg robotName)/base_link"/>
+				<param name="global_frame_id" value="map"/>
+
+				<!-- Overall filter parameters -->
+				<param name="min_particles" value="100"/>
+				<param name="max_particles" value="2000"/>
+				<param name="kld_err" value="0.01"/>
+				<param name="kld_z" value="0.99"/>
+				<param name="update_min_d" value="0.05"/>
+				<param name="update_min_a" value="0.01"/>
+				<param name="resample_interval" value="2"/>
+				<param name="transform_tolerance" value="0.1" />
+				<param name="recovery_alpha_slow" value="0.0"/>
+				<param name="recovery_alpha_fast" value="0.0"/>
+				<param name="gui_publish_rate" value="-1"/>
+				<param name="use_map_topic" value="true"/>
+				<param name="first_map_only" value="true"/>
+
+				<!--Laser model parameters -->
+				<param name="laser_min_range" value="0.04"/>
+				<param name="laser_max_range" value="5.0"/>
+				<param name="laser_max_beams" value="30"/>
+				<param name="laser_z_hit" value="0.95"/>
+				<param name="laser_z_short" value="0.01"/>
+				<param name="laser_z_max" value="0.05"/>
+				<param name="laser_z_rand" value="0.05"/>
+				<param name="laser_sigma_hit" value="0.2"/>
+				<param name="laser_lambda_short" value="0.1"/>
+				<param name="laser_likelihood_max_dist" value="1.0"/>
+				<param name="laser_model_type" value="likelihood_field"/>
+			</node>
 		</group>	
 	</group>
 
@@ -80,7 +122,7 @@
 
 		<!-- Add floorplan. -->
 		<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
-			args="-file $(arg floorplan).urdf -urdf -z 1 -model floorplan -x -3 -y 0 -z 0" 
+			args="-file $(arg floorplan).urdf -urdf -z 1 -model floorplan -x -4.9 -y 9.8 -z 0 -Y -1.54" 
 		/>
 
 		<!-- Launch tf broadcaster for pico robot -->

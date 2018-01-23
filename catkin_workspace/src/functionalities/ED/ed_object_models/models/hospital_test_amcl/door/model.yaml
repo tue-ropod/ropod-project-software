@@ -1,0 +1,9 @@
+object_persistence: 10
+flags:
+- flag: "non-localizable"
+
+color:
+   red: 1.0
+   green: 0.0
+   blue: 1.0
+   alpha: 0.1

@@ -1,4 +1,4 @@
-world_name: hospital_test
+world_name: hospital_test_amcl
   
 plugins:
   - name: gui_server

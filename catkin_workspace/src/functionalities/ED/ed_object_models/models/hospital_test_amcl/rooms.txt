@@ -18,12 +18,27 @@ door4; point1; -3.9; -0.596;
 door4; point2; -3.53; -0.595;
 door4; point3; -3.53; 0.774;
 
-elevatordoor; center; -6.99; -0.506;
-elevatordoor; point1; -6.89; 0.73;
-elevatordoor; point2; -7.15; -0.731;
-elevatordoor; point3; -7.22; -0.506;
+elevatordoor; center; 8.84133911133; -3.63563370705;
+elevatordoor; point1; 8.85863876343; -4.00383996964;
+elevatordoor; point2; 10.1599988937; -3.62984704971;
+elevatordoor; point3; 10.0595378876; -3.30207705498;
+
+elevatordoor2; center; 8.30066108704; -1.16041278839;
+elevatordoor2; point1; 9.55640029907; -0.861312270164;
+elevatordoor2; point2; 9.52624893188; -0.576427578926;
+elevatordoor2; point3; 8.26539802551; -0.677862524986;  
 
 testdoor; center; 8.4; -2.58;
 testdoor; point1; 7.55; -2.45;
 testdoor; point2; 7.24; -4.25;
 testdoor; point3; 8.12; -4.39;
+
+corridor; center; 8.30996322632; -1.1586997509;
+corridor; point1; 8.84543132782; -3.6288421154;
+corridor; point2; 10.1795778275; -3.24528264999;
+corridor; point3; 9.77352619171; -0.881640315056;  
+
+corridor2; center; 4.72989463806; 12.963429451;
+corridor2; point1; 4.73876571655; 10.7205648422;
+corridor2; point2; 11.5605964661; 11.5663757324;
+corridor2; point3; 11.5259571075; 13.4870815277;  

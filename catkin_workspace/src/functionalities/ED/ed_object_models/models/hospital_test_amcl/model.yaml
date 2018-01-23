@@ -15,51 +15,53 @@ composition:
 
     - type: "hospital_test_amcl/corridor"
       id: "crossing_test"
-      pose: { x: 3.74, y: -1.28, z: 0, rz: 0 }
+      pose: { x: 4.73, y: 12.96, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:
                   points:
                     - { x: 0, y: 0 }
-                    - { x: -0.21, y: -5.65 }
-                    - { x: 1.3, y: -5.85 }
-                    - { x: 1.79, y: -0.24 }
-                  height: 0.1
+                    - { x: 0.01, y: -2.24 }
+                    - { x: 6.83, y: -1.40 }
+                    - { x: 6.80, y: 0.52 }
+                  height: 2.0
                   
 # - - - - - - Elevator - - - - - - -
     - type: "elevatordoor"
       id: "door1"
-      pose: { x: -3.86, y: 0.73, z: 0, rz: 0 }
+      pose: { x: 8.84, y: -3.64, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:
                   points:
                     - { x: 0, y: 0 }
-                    - { x: -0.05, y: -1.08 }
-                    - { x: 0.25, y: -1.10 }
-                    - { x: 0.26, y: 0.02 }
-                  height: 2.0
-    - type: "hospital_test_amcl/corridor"
-      id: "elevator"
-      pose: { x: -6.9, y: 0.73, z: 0, rz: 0 }
-      shape:
-          compound:
-            - polygon:
-                  points:
-                    - { x: 0, y: 0 }
-                    - { x: -0.01, y: -1.80 }
-                    - { x: 2.9, y: -1.80 }
-                    - { x: 2.9, y: 0.02 }
+                    - { x: 0.02, y: -0.37 }
+                    - { x: 1.32, y: 0.01 }
+                    - { x: 1.22, y: 0.33 }
                   height: 2.0
     - type: "elevatordoor"
       id: "door2"
-      pose: { x: -7.1, y: 0.53, z: 0, rz: 0 }
+      pose: { x: 8.30, y: -1.16, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:
                   points:
                     - { x: 0, y: 0 }
-                    - { x: -0.04, y: -0.99 }
-                    - { x: 0.18, y: -1.01 }
-                    - { x: 0.25, y: 0.01 }
+                    - { x: 1.26, y: 0.30 }
+                    - { x: 1.23, y: 0.58 }
+                    - { x: -0.04, y: 0.48 }
                   height: 2.0
+    - type: "hospital_test_amcl/corridor"
+      id: "elevator"
+      pose: { x: 8.31, y: -1.16, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 0.54, y: -2.47 }
+                    - { x: 1.87, y: -2.09 }
+                    - { x: 1.46, y: 0.28 }
+                  height: 2.0
+
+ 

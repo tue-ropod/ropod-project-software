@@ -27,17 +27,17 @@ composition:
                   height: 0.1
                   
 # - - - - - - Elevator - - - - - - -
-    - type: "elevatordoor"
-      id: "door1"
-      pose: { x: -3.86, y: 0.73, z: 0, rz: 0 }
+    - type: "door"
+      id: "elevatordoor"
+      pose: { x: -6.99, y: -0.51, z: 0, rz: 0 }
       shape:
           compound:
             - polygon:
                   points:
                     - { x: 0, y: 0 }
-                    - { x: -0.05, y: -1.08 }
-                    - { x: 0.25, y: -1.10 }
-                    - { x: 0.26, y: 0.02 }
+                    - { x: 0.10, y: 1.24 }
+                    - { x: -0.16, y: -0.22 }
+                    - { x: -0.23, y: 0.00 }
                   height: 2.0
     - type: "hospital_test/corridor"
       id: "elevator"

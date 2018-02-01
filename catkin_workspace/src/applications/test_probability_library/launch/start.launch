@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node pkg="test_probability_library" type="visualization" respawn="false" name="visualization" output="screen">     
+        <rosparam file="$(find test_probability_library)/config/detections.yaml" command="load" />
+    </node>
+
+</launch>

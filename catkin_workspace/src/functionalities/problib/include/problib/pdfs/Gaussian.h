@@ -65,7 +65,7 @@ public:
      * @param mean The mean vector of the Gaussian
      * @param cov The covariance matrix of the Gaussian
      */
-	Gaussian(const arma::vec& mean, const arma::mat& cov);
+	Gaussian(const Eigen::VectorXd& mean, const Eigen::MatrixXd& cov);
 
     /**
      * @brief Copy constructor
@@ -99,7 +99,7 @@ public:
      * @param max_mah_dist
      * @return The density of the Gaussian at point v.
      */
-	double getDensity(const arma::vec& v, double max_mah_dist = 0) const;
+	double getDensity(const Eigen::VectorXd& v, double max_mah_dist = 0) const;
 
 	double getDensity(const Gaussian& npdf, double max_mah_dist = 0) const;
 
@@ -116,31 +116,31 @@ public:
      * @param v The returned expected value
      * @return Always true
      */
-	bool getExpectedValue(arma::vec& v) const;
+	bool getExpectedValue(Eigen::VectorXd& v) const;
 
     /**
      * @brief Sets the mean of the Gaussian
      * @param mu The mean of the Gaussian
      */
-	void setMean(const arma::vec& mu);
+	void setMean(const Eigen::VectorXd& mu);
 
     /**
      * @brief Sets the covariance of the Gaussian
      * @param cov The covariance matrix of the Gaussian
      */
-	void setCovariance(const arma::mat& cov);
+	void setCovariance(const Eigen::MatrixXd& cov);
 
     /**
      * @brief Returns the mean of the Gaussian
      * @return The mean of the Gaussian
      */
-	const arma::vec& getMean() const;
+	const Eigen::VectorXd& getMean() const;
 
     /**
      * @brief Returns the covariance matrix of the Gaussian
      * @return The covariance matrix of the Gaussian
      */
-	const arma::mat& getCovariance() const;
+	const Eigen::MatrixXd& getCovariance() const;
 
     /**
      * @brief Represents the Gaussian as a string for easier console output
@@ -153,13 +153,13 @@ protected:
 
 	struct GaussianStruct {
 
-		arma::vec mu_;
+		Eigen::VectorXd mu_;
 
-		arma::mat cov_;
+		Eigen::MatrixXd cov_;
 
 		int n_ptrs_;
 
-		GaussianStruct(const arma::vec& mu, const arma::mat& cov) : mu_(mu) , cov_(cov), n_ptrs_(1) { }
+		GaussianStruct(const Eigen::VectorXd& mu, const Eigen::MatrixXd& cov) : mu_(mu) , cov_(cov), n_ptrs_(1) { }
 
 		GaussianStruct(const GaussianStruct& orig) : mu_(orig.mu_), cov_(orig.cov_), n_ptrs_(1) { }
 	};
@@ -168,7 +168,7 @@ protected:
 
 	void cloneStruct();
 
-	double getDensity(const arma::vec& v1, const arma::vec& v2, const arma::mat& S, double max_mah_dist = 0) const;
+	double getDensity(const Eigen::VectorXd& v1, const Eigen::VectorXd& v2, const Eigen::MatrixXd& S, double max_mah_dist = 0) const;
 
 #define CHECK_INITIALIZED assert_msg(ptr_, "Gaussian was not yet initialized.")
 

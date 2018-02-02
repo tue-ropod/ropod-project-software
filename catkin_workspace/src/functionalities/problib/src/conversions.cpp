@@ -182,12 +182,12 @@ void serialize_gaussian(const Gaussian& gauss, problib::PDF& msg) {
 	msg.type = problib::PDF::GAUSSIAN;
 	msg.data.push_back(msg.type);
 
-	const arma::vec& mu = gauss.getMean();
+	const Eigen::VectorXd& mu = gauss.getMean();
 	for(int i = 0; i < dimensions; ++i) {
 		msg.data.push_back(mu(i));
 	}
 
-	const arma::mat& cov = gauss.getCovariance();
+	const Eigen::MatrixXd& cov = gauss.getCovariance();
 	for(int i = 0; i < dimensions; ++i) {
 		for(int j = i; j < dimensions; ++j) {
 			msg.data.push_back(cov(i, j));
@@ -196,12 +196,12 @@ void serialize_gaussian(const Gaussian& gauss, problib::PDF& msg) {
 }
 
 Gaussian* deserialize_gaussian(const problib::PDF& msg, int& i_data) {
-	arma::vec mu(msg.dimensions);
+	Eigen::VectorXd mu(msg.dimensions);
 	for(unsigned int i = 0; i < msg.dimensions; ++i) {
 		mu(i) = msg.data[i_data++];
 	}
 
-	arma::mat cov(msg.dimensions, msg.dimensions);
+	Eigen::MatrixXd cov(msg.dimensions, msg.dimensions);
 	for(unsigned int i = 0; i < msg.dimensions; ++i) {
 		for(unsigned int j = i; j < msg.dimensions; ++j) {
 			cov(i, j) = msg.data[i_data];
@@ -317,11 +317,13 @@ PDF* deserialize_exact(const problib::PDF& msg) {
 	if (!msg.exact_value_vec.empty()) {
 		// vector value, so we ASSUME continuous
 		unsigned int dim = msg.exact_value_vec.size();
-		arma::vec mu(dim);
+		Eigen::VectorXd mu(dim);
 		for(unsigned int i = 0; i < dim; ++i) {
 			mu(i) = msg.exact_value_vec[i];
 		}
-		arma::mat cov = arma::zeros(dim, dim);
+		Eigen::MatrixXd cov;
+		cov.setZero(dim,dim);
+		
 		return new Gaussian(mu, cov);
 	} else if (msg.exact_value_str != "") {
 		// string value, so discrete

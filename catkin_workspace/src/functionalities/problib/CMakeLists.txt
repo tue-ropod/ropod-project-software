@@ -7,9 +7,22 @@ project(problib)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   roscpp
-  armadillo_matrix
   genmsg
 )
+
+#find_package(Armadillo REQUIRED)
+#include_directories(${ARMADILLO_INCLUDE_DIRS})
+
+#find_package(liblapack)
+
+#find_package(BLAS)
+#find_package(LAPACK)
+#if(LAPACK_FOUND AND BLAS_FOUND)
+#   set(lapackblas_libraries ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
+#endif()
+
+
+
 
 # Generate messages in the 'msg' folder
 add_message_files(
@@ -30,7 +43,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES problib
-  CATKIN_DEPENDS message_runtime armadillo_matrix
+  CATKIN_DEPENDS message_runtime #armadillo
 #  DEPENDS system_lib
 )
 
@@ -40,6 +53,7 @@ catkin_package(
 
 include_directories(
         ${catkin_INCLUDE_DIRS}
+        ${ARMADILLO_INCLUDE_DIRS}
         include
 )
 
@@ -62,10 +76,10 @@ add_library(problib
         include/${PROJECT_NAME}/pdfs/Mixture.h
         include/${PROJECT_NAME}/pdfs/Hybrid.h
         include/${PROJECT_NAME}/pdfs/PMF.h)
-target_link_libraries(problib ${catkin_LIBRARIES})
+target_link_libraries(problib ${lapackblas_libraries} ${catkin_LIBRARIES} ${ARMADILLO_LIBRARIES})
 add_dependencies(problib ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 
 # add test executable
-add_executable(problib_test src/test.cpp)
-target_link_libraries(problib_test problib)
+add_executable(problib_test src/test.cpp )
+target_link_libraries(problib_test problib ${ARMADILLO_LIBRARIES})

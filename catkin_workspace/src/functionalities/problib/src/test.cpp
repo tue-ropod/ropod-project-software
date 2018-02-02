@@ -40,12 +40,13 @@
 
 #include <iostream>
 
-#include <armadillo>
+//#define ARMA_DONT_USE_WRAPPER
+//#include <armadillo>
 
 #include <time.h>
 
 using namespace std;
-using namespace arma;
+using namespace Eigen;
 
 list<timespec> TIMERS;
 

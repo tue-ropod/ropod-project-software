@@ -45,7 +45,7 @@ Uniform::Uniform(int dim) : PDF(dim, PDF::UNIFORM), uniform_probability_(0), siz
 Uniform::Uniform(int dim, double density) : PDF(dim, PDF::UNIFORM), uniform_probability_(density), size_is_set_(false) {
 }
 
-Uniform::Uniform(pbl::Vector mean, pbl::Vector size) : PDF(mean.n_elem, PDF::UNIFORM), mean_(mean), size_(size), size_is_set_(true) {
+Uniform::Uniform(pbl::Vector mean, pbl::Vector size) : PDF(mean.size(), PDF::UNIFORM), mean_(mean), size_(size), size_is_set_(true) {
     calculateUniformDensity();
 }
 
@@ -78,14 +78,14 @@ double Uniform::getLikelihood(const PDF& pdf) const {
 
     if (size_is_set_) {
 
-        arma::vec my_min = mean_ - size_ / 2;
-        arma::vec my_max = mean_ + size_ / 2;
+        Eigen::VectorXd my_min = mean_ - size_ / 2;
+        Eigen::VectorXd my_max = mean_ + size_ / 2;
 
         if (pdf.type() == PDF::UNIFORM) {
             const Uniform* U = PDFtoUniform(pdf);
 
-            arma::vec other_min = U->mean_ - U->size_ / 2;
-            arma::vec other_max = U->mean_ + U->size_ / 2;
+            Eigen::VectorXd other_min = U->mean_ - U->size_ / 2;
+            Eigen::VectorXd other_max = U->mean_ + U->size_ / 2;
 
             double overlapping_volume = 1;
             for(int i = 0; i < dimensions(); ++i) {
@@ -100,7 +100,7 @@ double Uniform::getLikelihood(const PDF& pdf) const {
         } else if (pdf.type() == PDF::HYBRID) {
             return pdf.getLikelihood(*this);
         } else {
-            arma::vec other_mean;
+            Eigen::VectorXd other_mean;
             if (!pdf.getExpectedValue(other_mean)) {
                 std::cout << pdf.toString() << std::endl;
                 assert_msg(false, "Uniform likelihood calculation: cannot determine expected value of pdf.");
@@ -125,7 +125,7 @@ void Uniform::setDensity(const double& density) {
     size_is_set_ = false;
 }
 
-double Uniform::getDensity(const arma::vec& vec) const {
+double Uniform::getDensity(const Eigen::VectorXd& vec) const {
 	return uniform_probability_;
 }
 
@@ -144,7 +144,7 @@ void Uniform::setSize(const pbl::Vector size) {
 
 void Uniform::calculateUniformDensity() {
     double volume = 1;
-    for(unsigned int i = 0; i < size_.n_elem; ++i) {
+    for(unsigned int i = 0; i < size_.size(); ++i) {
         volume *= size_(i);
     }
     uniform_probability_ = 1.0 / volume;

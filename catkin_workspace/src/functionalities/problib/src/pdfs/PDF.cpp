@@ -61,6 +61,6 @@ bool PDF::getExpectedValue(std::string& v) const {
 	return false;
 }
 
-bool PDF::getExpectedValue(arma::vec& v) const {
+bool PDF::getExpectedValue(Eigen::VectorXd& v) const {
 	return false;
 }

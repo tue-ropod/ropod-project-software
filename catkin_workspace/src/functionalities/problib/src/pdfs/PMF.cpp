@@ -280,7 +280,7 @@ void PMF::normalize() {
 	ptr_->total_prob_ = 1;
 }
 
-double PMF::getDensity(const arma::vec& v) const {
+double PMF::getDensity(const Eigen::VectorXd& v) const {
 	assert_msg(false, "Cannot get density of a PMF");
 	return 0;
 }

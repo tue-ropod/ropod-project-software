@@ -39,7 +39,6 @@
 #include "problib/datatypes.h"
 
 #include <iostream>
-#include <armadillo>
 
 #include <time.h>
 

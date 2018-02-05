@@ -90,7 +90,6 @@ void Gaussian::cloneStruct() {
 
 double Gaussian::getLikelihood(const PDF& pdf) const {
 	CHECK_INITIALIZED
-
 	if (pdf.type() == PDF::GAUSSIAN) {
 		const Gaussian* G = static_cast<const pbl::Gaussian*>(&pdf);
 		return getDensity(*G);
@@ -100,6 +99,7 @@ double Gaussian::getLikelihood(const PDF& pdf) const {
 	}
 
 	assert_msg(false, "Gaussian: Likelihood can only be calculated with another Gaussian or Uniform pdf.");
+	
 	return 0;
 }
 
@@ -112,6 +112,7 @@ double Gaussian::getDensity(const Gaussian& G, double max_mah_dist) const {
 	CHECK_INITIALIZED
 	Eigen::MatrixXd S = G.getCovariance() + ptr_->cov_;
 	return getDensity(ptr_->mu_, G.getMean(), S);
+	
 }
 
 double Gaussian::getMaxDensity() const {
@@ -130,7 +131,6 @@ double Gaussian::getDensity(const Eigen::VectorXd& v1, const Eigen::VectorXd& v2
 	assert(v1.size() == v2.size()  && v1.size()  == S.rows());
 
 	double det = S.determinant();
-
 	// covariance should have non-zero determinant
 	assert(det != 0);
 
@@ -139,7 +139,6 @@ double Gaussian::getDensity(const Eigen::VectorXd& v1, const Eigen::VectorXd& v2
 
 	// calculate squared mahalanobis distance
 	double mahalanobis_dist_sq = diff.dot(S.inverse() * diff );
-
 	// mahalanobis distance should always be 0 or positive
 	assert(mahalanobis_dist_sq >= 0);
 
@@ -162,8 +161,9 @@ void Gaussian::setMean(const Eigen::VectorXd& mu) {
 	if (ptr_) {
 		cloneStruct();
 	} else {
-	  Eigen::VectorXd newMatrix;
-		ptr_ = new GaussianStruct(mu, newMatrix.setZero(mu.size(), mu.size()));
+	  int nElements = mu.rows()*mu.cols();
+	  Eigen::MatrixXd newMatrix(nElements, nElements);
+	  ptr_ = new GaussianStruct(mu, newMatrix.setZero());
 	}
 
 	ptr_->mu_ = mu;

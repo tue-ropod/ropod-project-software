@@ -39,9 +39,7 @@
 #include "problib/datatypes.h"
 
 #include <iostream>
-
-//#define ARMA_DONT_USE_WRAPPER
-//#include <armadillo>
+#include <armadillo>
 
 #include <time.h>
 
@@ -166,11 +164,11 @@ void test() {
 
 	cout << "Creating pmf ..." << endl;
 	PMF pmf;
-	pmf.setDomainSize(2);
+	pmf.setDomainSize(3);
 
 	PMF pmf2;
-	pmf2.setDomainSize(2);
-	pmf2.setProbability("A", 0.5);
+	pmf2.setDomainSize(3);
+	pmf2.setProbability("A", 0.25);
 	pmf2.setProbability("B", 0.5);
 	//pmf2.setProbability("C", 0.25);
 
@@ -181,20 +179,14 @@ void test() {
 	cout << pmf.toString() << endl << endl;
 
 	PMF pmf3;
-	pmf3.setDomainSize(2);
-	pmf3.setProbability("A", 0.6);
-	pmf3.setProbability("B", 0.2);
-	cout << "Input = " << pmf3.toString() << endl;
+	pmf3.setDomainSize(3);
+	pmf3.setProbability("C", 0.999);
 
 	cout << "Updating pmf ..." << endl;
 	pmf.update(pmf3);
 	cout << pmf.toString() << endl;
-	cout << "Input2 = " << pmf3.toString() << endl;
 
-	pmf.update(pmf3);
-	cout << pmf.toString() << endl;
 
-/*
 	PMF pmf_copy;
 	pmf_copy = pmf;
 
@@ -205,7 +197,7 @@ void test() {
 	pmf_copy.update(pmf3);
 	cout << pmf_copy.toString() << endl;
 	cout << pmf.toString() << endl;
-*/
+
 	cout << "Converting to msg ..." << endl << endl;
 	problib::PDF pmf_msg;
 	pbl::PDFtoMsg(pmf, pmf_msg);
@@ -235,11 +227,11 @@ void test() {
 	startTimer();
 
 	double d2;
-	for(int i = 0; i < 1000000; ++i) {
+	for(int i = 0; i < 10000; ++i) {
 		d2 = mix2.getLikelihood(*pdf_exact_real);
 	}
 
-	stopTimer("Likelihood on mixture", (double)1 / 1000000);
+	stopTimer("Likelihood on mixture", (double)1 / 10000);
 
 	cout << "Likelihood with mixture = " << mix2.getLikelihood(*pdf_exact_real) << endl << endl;
 
@@ -253,10 +245,10 @@ void test() {
 	mix2.clear();
 
 	cout << mix_copy.toString() << endl;
-
+	
 	double d3 = mix_copy.getLikelihood(*pdf_exact_real);
 	testOutput("Likelihood with mixture (copy)", d3, d2);
-
+	
 	delete pdf_exact_real;
 }
 
@@ -269,5 +261,4 @@ int main(int argc, char **argv) {
 	showTimerLog();
 	showOutputLog();
 }
-
 

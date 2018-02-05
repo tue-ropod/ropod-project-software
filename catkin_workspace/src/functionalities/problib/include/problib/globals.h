@@ -45,6 +45,7 @@
 #include <sstream>
 #include <stdio.h>
 #include <math.h>
+#include <iostream>
 
 #include "problib/pdfs/PDF.h"
 #include "problib/datatypes.h"

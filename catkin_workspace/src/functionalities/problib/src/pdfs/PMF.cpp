@@ -36,6 +36,11 @@
 
 #include "problib/pdfs/PMF.h"
 
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <limits>
+
 using namespace pbl;
 
 PMF::PMF(int domain_size) : PDF(1, PDF::DISCRETE), ptr_(new PMFStruct(domain_size)) {
@@ -186,11 +191,13 @@ double PMF::getLikelihood(const PMF& other) const {
 	// we have not yet matched all values in big_pmf with a total probability of 1, it means
 	// we still need to match the undetermined values in small_pmf and big_pmf. ASSUME a
 	// UNIFORM DISTRIBUTION over the undetermined values in both small_pmf and big_pmf
-	if (small_pmf->ptr_->total_prob_ < 1 - std::numeric_limits<double>::epsilon()  && big_p_total_match < 1 ) {
+	double eps = std::numeric_limits<float>::epsilon() ; // float taken here, because the precision is less when the probabilities are determined as floats
+	if (small_pmf->ptr_->total_prob_ < 1 - eps  && big_p_total_match < 1 - eps ) {
 		// determine the number of unmatched values. Since we used small_pmf as a basis for
 		// matching above (we matched all its determined values), the number of unmatched values
 		// equals the domain size MINUS the number of determined values
 		int num_unmatched_values = (domain_size - small_pmf->ptr_->pmf_.size());
+		
 		assert(num_unmatched_values > 0);
 
 		// determine the average probability of an unknown value in big_pmf, assuming

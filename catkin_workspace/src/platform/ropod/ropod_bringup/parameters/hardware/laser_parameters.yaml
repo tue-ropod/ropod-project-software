@@ -1,0 +1,3 @@
+angle_min: -2.22
+angle_max: 2.22
+serial_port: /dev/ttyLaser0

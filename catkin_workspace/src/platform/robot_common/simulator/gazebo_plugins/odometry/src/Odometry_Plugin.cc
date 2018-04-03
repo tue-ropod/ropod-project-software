@@ -27,14 +27,12 @@ namespace gazebo
 class OdometryPlugin : public ModelPlugin
 {
 ros::Duration updateRate;
+ros::Duration actualupdateRate;
 ros::Duration commandRate;
-ros::Time prevUpdateTime;
 ros::Time prevCommandTime;
-math::Vector3 prevEulAng;
-math::Vector3 prevPos;
+ros::Time prevUpdateTime;
 math::Vector3 cmd_linvel;
 math::Vector3 cmd_angvel;
-bool isprevPosValid;
 // parameters
 double updateRate_in;
 double updateRate_def = 20; // default
@@ -43,8 +41,7 @@ std::string odomtopicName;
 std::string robotBaseFrame;
 std::string odomFrame;
 /// \brief Constructor
-public: OdometryPlugin() {	
-	this->isprevPosValid = false;		
+public: OdometryPlugin() {		
 	this->updateRate_in  = updateRate_def;
 	this->veltopicName = std::string ("cmd_vel");
 	this->odomtopicName = std::string ("odom");
@@ -115,7 +112,7 @@ public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 	
 	
 	ros::NodeHandle n("gazebo_client");
-	//ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("/pico/odom", 50);
+	
 	this->odom_pub = n.advertise<nav_msgs::Odometry>(this->odomtopicName, 1);
 	
 	// set the update rate (you can also set it as a parameter from the sdf file)
@@ -165,30 +162,23 @@ public: void OnUpdate()
 		velangz_cmd = 0.0;	
 	}	
 	model->SetLinearVel( math::Vector3(velx_cmd,vely_cmd,0.0));  
-	model->SetAngularVel( math::Vector3(0.0,0.0,velangz_cmd));		
+	model->SetAngularVel( math::Vector3(0.0,0.0,velangz_cmd));
+	
+	this -> actualupdateRate = ros::Time::now() - this->prevUpdateTime;
 	
 	/* ******* publish odom data at desired rate **** */
-	if (ros::Time::now() - this->prevUpdateTime < this->updateRate)
+	if (this -> actualupdateRate < this->updateRate)
     return;
 	
-	
-	
-	if (isprevPosValid){					
 
-		Linvel = (p - this->prevPos)/this->updateRate.toSec();
-		Angvel = (AngPos - this->prevEulAng)/this->updateRate.toSec();
-		
-	}else{
-		Linvel = math::Vector3(0.0,0.0,0.0);
-		Angvel = math::Vector3(0.0,0.0,0.0);
-	}
-	this->prevEulAng = AngPos;
-    this->prevPos = p;
-    r = math::Quaternion(AngPos);
-	isprevPosValid = true;
+	r = math::Quaternion(AngPos);
+	       
+	Linvel = model->GetWorldLinearVel();
+	Angvel = model->GetWorldAngularVel();
+	vlinx =   Linvel.x*cos(AngPos.z) + Linvel.y*sin(AngPos.z);
+	vliny = - Linvel.x*sin(AngPos.z) + Linvel.y*cos(AngPos.z);
+		 
 	
-	vlinx=Linvel.x*cos(AngPos.z) - Linvel.y*sin(AngPos.z);
-	vliny=Linvel.x*sin(AngPos.z) + Linvel.y*cos(AngPos.z);
 	vlinz=0.0;
 	vangx=0.0;
 	vangy=0.0;

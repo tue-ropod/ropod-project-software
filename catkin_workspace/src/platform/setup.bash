@@ -8,6 +8,9 @@ export ED_MODEL_PATH=$CATKIN_WORKSPACE/src/functionalities/ED/ed_object_models/m
 export PICO_IP=192.168.44.81
 export PICO_IP_WIRED=10.0.0.2
 
+export ROPOD_IP=192.168.44.81
+export ROPOD_IP_WIRED=10.0.0.2
+
 source /opt/ros/kinetic/setup.bash
 source $CATKIN_WORKSPACE/devel/setup.bash
 
@@ -27,3 +30,7 @@ alias platform="cd $CATKIN_WORKSPACE/src/platform"
 
 alias teleop='rosrun robot_common teleop.py'
 alias pstart='roslaunch pico_bringup start.launch'
+alias rstart='roslaunch ropod_bringup start.launch LOAD_ATTACHED:="false"'
+alias rmstart='roslaunch ropod_bringup start.launch LOAD_ATTACHED:="true" loadName:="mobidik"'
+
+

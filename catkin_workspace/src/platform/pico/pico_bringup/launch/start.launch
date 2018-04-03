@@ -117,6 +117,7 @@
 	  
 		<include file="$(find robot_common)/launch/simulator/gazebo_simulator.launch" >
 			<arg name="robot" value="$(arg robotName)" />
+			<arg name="model_name" value="$(arg robotName)" />	
 			<arg name="model_path" value="$(arg robot_path)/$(arg robotName)_model" />
 		</include>
 

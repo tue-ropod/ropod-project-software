@@ -7,11 +7,12 @@
 	<!--<env name="GAZEBO_MODEL_DATABASE_URI" value="" /> THIS VARIABLE SHOULD BE CHANGED LOCALLY, 
 	see http://cstwiki.wtb.tue.nl/index.php?title=RoPod/Tutorials/GAZEBO_installation_and_interface_with_ROS/Faster statup of Gazebo -->
 	
-	<arg name="robot" default="pico"/> 
+	<arg name="robot" default="pico"/>
+	<arg name="model_name" default="pico"/> 
 	<arg name="model_path" />
 
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="$(arg model_path)/world/$(arg robot).world"/>    
+		<arg name="world_name" value="$(arg model_path)/world/$(arg model_name).world"/>    
 	</include>
 
 	<node name="throttle" pkg="topic_tools" type="throttle" args="messages /$(arg robot)/laser_sim 20.0 /$(arg robot)/laser/scan" />  

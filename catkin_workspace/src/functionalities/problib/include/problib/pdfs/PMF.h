@@ -38,6 +38,7 @@
 #define PROBLIB_PMF_H_
 
 #include "PDF.h"
+#include<sstream>
 
 namespace pbl {
 
@@ -164,9 +165,12 @@ public:
 	// obsolete
 
 	std::string getMostProbableValue() const;
+	
+	void serialize(std::string& serializedData) const;
+	
+	void deserialize (std::string& serializedData );
 
-
-protected:
+// protected:
 
 	struct PMFStruct {
 
@@ -188,6 +192,13 @@ protected:
 	void cloneStruct();
 
 };
+template <typename T>
+std::string ToString(T val)
+{
+    std::stringstream stream;
+    stream << val;
+    return stream.str();
+}
 
 }
 

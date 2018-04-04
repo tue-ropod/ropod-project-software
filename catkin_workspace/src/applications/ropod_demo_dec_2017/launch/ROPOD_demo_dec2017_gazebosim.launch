@@ -62,23 +62,23 @@
 	% Launch ED
 
 	<group if="$(arg DEBUG)">
-		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml" launch-prefix="xterm -e gdb --args"/>
+		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml" launch-prefix="xterm -e gdb --args" output="screen"/>
 	</group>
 
-	<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav-amcl.yaml">
-	</node>
+	<group unless="$(arg DEBUG)">
+		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav-amcl.yaml"/>
+	</group>
+	
 
 	% Launch ED GUI server
-	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">
-	</node>
+	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher"/>
 	
 	% Launch navigation
 	<include file="$(find ropod_demo_dec_2017)/launch/move_base.launch" />
 	
 
     % Launch route navigation
-	<node pkg="ropod_demo_dec_2017" type="demo_navigation" name="demo_navigation">
-	</node>		
+	<node pkg="ropod_demo_dec_2017" type="demo_navigation" name="demo_navigation"/>
 
 	
 </launch>

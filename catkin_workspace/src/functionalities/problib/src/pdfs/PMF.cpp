@@ -313,6 +313,80 @@ std::string PMF::toString(const std::string& indent) const {
 	return ss.str();
 }
 
+void PMF::serialize(std::string& serializedData) const
+{
+  serializedData.append( ToString( ptr_->domain_size_ ) );
+  serializedData.append( ToString( ptr_->total_prob_ ) );
+  serializedData.append( ToString( ptr_->n_ptrs_ ) );
+  
+    for ( std::map<std::string, double>::iterator it = ptr_->pmf_.begin(); it != ptr_->pmf_.end(); it++ ) 
+    {
+        std::string key = it->first;
+        double value = it->second;
+
+        int size = key.size();
+
+        serializedData.append ( ToString ( size ) );
+        serializedData.append ( ToString ( key ) );
+        serializedData.append ( ToString ( value ) );
+    }
+
+}
+
+void PMF::deserialize (std::string& serializedData )
+{
+    unsigned int iiStart = 0;
+    unsigned int iiEnd = sizeof ( int );
+    for ( unsigned int ii = iiStart; ii < iiEnd; ii++ ) 
+    {
+        ptr_->domain_size_ += ( int ) serializedData[ii];
+    }
+
+    iiStart = iiEnd + 1;
+    iiEnd += sizeof ( double );
+    for ( unsigned int ii = iiStart; ii < iiEnd; ii++ ) 
+    {
+        ptr_->total_prob_ += ( double ) serializedData[ii];
+    }
+
+    iiStart = iiEnd + 1;
+    iiEnd += sizeof ( int );
+    for ( unsigned int ii = iiStart; ii < iiEnd; ii++ ) 
+    {
+        ptr_->n_ptrs_ += ( int ) serializedData[ii];
+    }
+
+    for ( unsigned int jj = 0; jj < ptr_->domain_size_; jj++ ) 
+    {
+        iiStart = iiEnd + 1;
+        iiEnd += sizeof ( double );
+        int size;
+        for ( unsigned int ii = iiStart; ii < iiEnd; ii++ ) 
+        {
+            size += ( int ) serializedData[ii];
+        }
+
+        iiStart = iiEnd + 1;
+        iiEnd += size;
+        std::string key;
+        for ( unsigned int ii = iiStart; ii < iiEnd; ii++ ) 
+        {
+            key.push_back ( serializedData[ii] );
+        }
+
+        iiStart = iiEnd + 1;
+        iiEnd += sizeof ( double );
+        double value;
+        for ( unsigned int ii = iiStart; ii < iiEnd; ii++ ) 
+        {
+            value += ( double ) serializedData[ii];
+        }
+
+        ptr_->pmf_.insert ( ptr_->pmf_.end(), std::pair<std::string,double> ( key, value ) );
+    }
+  
+}
+
 /* * * * * * * * OBSOLETE * * * * * * * * */
 
 std::string PMF::getMostProbableValue() const {

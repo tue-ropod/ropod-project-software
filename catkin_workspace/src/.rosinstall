@@ -1,0 +1,16 @@
+# kinetic.rosinstall
+- setup-file: {local-name: /opt/ros/kinetic/setup.sh}
+
+# application repos
+
+
+# functionalities repos
+- git: {local-name: functionalities/ropod_comm/ropod_com_mediator, uri: 'git@git.ropod.org:ropod/communication/ropod_com_mediator.git', version: master}
+- git: {local-name: functionalities/ropod_comm/ropod_ros_msgs, uri: 'git@git.ropod.org:ropod/communication/ropod_ros_msgs.git', version: master}
+- git: {local-name: functionalities/ropod_comm/ropod_wm_mediator, uri: 'git@git.ropod.org:ropod/wm/ropod_wm_mediator.git', version: master}
+
+- git: {local-name: functionalities/ropod_nav/demo-december-2017, uri: 'git@git.ropod.org:ropod/navigation/demo-december-2017.git', version: master}
+
+
+# platform repos
+

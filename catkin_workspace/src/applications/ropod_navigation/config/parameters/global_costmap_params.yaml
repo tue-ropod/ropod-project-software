@@ -1,8 +1,0 @@
-global_costmap:
-  global_frame: /map
-  map_topic: /ed/navigation/map
-  robot_base_frame: /load/base_link
-  update_frequency: 2.0
-  static_map: true
-  track_unknown_space: false
-

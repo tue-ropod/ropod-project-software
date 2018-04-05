@@ -1,0 +1,28 @@
+<launch>
+	% Launch simulator
+ 	<node pkg="emc_simulator" type="pico_simulator" name="pico_simulator" args="$(find pico_navigation_test)/config/shape/heightmap_sim.pgm ">
+	</node>
+
+	% Launch tf broadcaster for pico robot
+	<node pkg="pico_navigation_test" type="tf_broadcaster_ropod_dd17" name="tf_broadcaster_ropod_dd17">
+	</node>
+
+	% Launch route navigation
+	<!-- <node pkg="pico_navigation_test" type="route_navigation" name="route_navigation">
+	</node>	-->
+
+	% Launch ED
+	<node pkg="ed" type="ed" name="ed" args="$(find pico_navigation_test)/config/model-test-nav.yaml">
+	</node>
+
+	% Launch ED GUI server
+	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">
+	</node>
+
+	% Launch navigation
+	<include file="$(find pico_navigation_test)/launch/move_base.launch" />
+
+	% Launch RVIZ
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find pico_navigation_test)/config/rviz-config-rdd17.rviz">
+	</node>
+</launch>

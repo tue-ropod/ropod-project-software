@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robotName" default="pico"/>  
+	<arg name="topic1" value="/$(arg robotName)/laser/scan"/>
+	<arg name="topic2" value="/$(arg robotName)/laser/urg_node/parameter_descriptions"/>
+	<arg name="topic3" value="/$(arg robotName)/laser/urg_node/parameter_updates"/>
+	<arg name="topic4" value="/$(arg robotName)/laser/diagnostics"/>
+	<arg name="topic5" value="/$(arg robotName)/cmd_vel"/>
+	<arg name="topic6" value="/$(arg robotName)/odom"/>
+	
+	<arg name="laser1_name" value ="laser"/>
+	
+	<arg name="file" value="2017-11-10-13-25-22.bag"/>
+	<arg name="folder" value="/home/wouter/Desktop/testdata/2017-11-10/"/>
+	<arg name="robot_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)"/>
+	<arg name="robot_bringup_path" default="$(arg robot_path)/$(arg robotName)_bringup"/>
+
+	 <arg name="map_file" default="$(find ed_object_models)/models/hospital_test_amcl/walls/map_amcl.yaml"/>
+
+	<!-- Launch replaying of bag-file -->
+	<param name="use_sim_time" value="true" />
+        <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg folder)/$(arg file) --topics  $(arg topic1) $(arg topic2) $(arg topic3) $(arg topic4) $(arg topic5) $(arg topic6)"/>
+	
+	<!-- Launch tf broadcaster for pico robot -->
+	<node pkg="pico_bringup" type="tf_broadcaster_simulator" name="tf_broadcaster_simulator" />
+
+	
+    <!-- Republish laser scan topics to a single topic -->
+    <!--<node pkg="topic_tools" type="relay" name="front_laser_scanner_repub" args="/scan_rear /scan_combined"/>
+    <node pkg="topic_tools" type="relay" name="rear_laser_scanner_repub" args="/scan_front /scan_combined"/>
+	-->
+    <node pkg="tf" type="static_transform_publisher" name="map_tf" args="0 0 0 0 0 0 map my_frame 10" /> 
+
+    <!-- Run the map server -->
+     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+	
+    <!--- Run AMCL -->
+    <node pkg="amcl" type="amcl" name="amcl">
+        <remap from="scan" to="/pico/laser/scan"/>
+
+        <!--- Odometery model parameters  -->
+        <param name="odom_model_type" value="omni"/>
+        <param name="odom_alpha1" value="7.0"/>
+        <param name="odom_alpha2" value="5.0"/>
+        <param name="odom_alpha3" value="5.0"/>
+        <param name="odom_alpha4" value="5.0"/>
+        <param name="odom_alpha5" value="7.0"/>
+        <param name="odom_frame_id" value="/pico/odom"/>
+        <param name="base_frame_id" value="/pico/base_link"/>
+        <param name="global_frame_id" value="map"/>
+
+        <!-- Overall filter parameters -->
+        <param name="min_particles" value="100"/>
+        <param name="max_particles" value="2000"/>
+        <param name="kld_err" value="0.01"/>
+        <param name="kld_z" value="0.99"/>
+        <param name="update_min_d" value="0.05"/>
+        <param name="update_min_a" value="0.01"/>
+        <param name="resample_interval" value="2"/>
+        <param name="transform_tolerance" value="0.1" />
+        <param name="recovery_alpha_slow" value="0.0"/>
+        <param name="recovery_alpha_fast" value="0.0"/>
+        <param name="gui_publish_rate" value="-1"/>
+        <param name="use_map_topic" value="true"/>
+        <param name="first_map_only" value="true"/>
+
+        <!--Laser model parameters -->
+        <param name="laser_min_range" value="0.04"/>
+        <param name="laser_max_range" value="5.0"/>
+        <param name="laser_max_beams" value="30"/>
+        <param name="laser_z_hit" value="0.95"/>
+        <param name="laser_z_short" value="0.01"/>
+        <param name="laser_z_max" value="0.05"/>
+        <param name="laser_z_rand" value="0.05"/>
+        <param name="laser_sigma_hit" value="0.2"/>
+        <param name="laser_lambda_short" value="0.1"/>
+        <param name="laser_likelihood_max_dist" value="1.0"/>
+        <param name="laser_model_type" value="likelihood_field"/>
+    </node>
+    
+    	<!-- Launch ED -->
+	<node pkg="ed" type="ed" name="ed" args="$(find pico_navigation_test)/config/model-replay-data-amcl.yaml"/>
+
+	% Launch ED GUI server
+	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher"/>
+	
+	
+    	<!-- Launch RVIZ -->
+	<include file="$(arg robot_bringup_path)/launch/tools/rviz.launch"/>
+
+</launch>

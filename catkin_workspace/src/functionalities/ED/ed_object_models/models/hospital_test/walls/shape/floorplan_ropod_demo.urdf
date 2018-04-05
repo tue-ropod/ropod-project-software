@@ -15,7 +15,7 @@
 		<origin rpy="0 0 0" xyz="0 0 0"/>
 		<geometry>
 			<mesh 
-				filename="package://ropod_demo_dec_2017/config/shape/heightmap_sim.stl"
+				filename="package://pico_navigation_test/config/shape/heightmap_sim.stl"
 				scale="0.0015 0.0015 0.002"		
 			/>
 		</geometry>
@@ -25,7 +25,7 @@
 		<origin rpy="0 0 0" xyz="0 0 0"/>	
 		<geometry>
 			<mesh 
-				filename="package://ropod_demo_dec_2017/config/shape/heightmap_sim.stl"
+				filename="package://pico_navigation_test/config/shape/heightmap_sim.stl"
 				scale="0.0015 0.0015 0.002"		
 			/>
 		</geometry>

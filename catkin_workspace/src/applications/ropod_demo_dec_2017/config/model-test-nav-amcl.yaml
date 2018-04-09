@@ -25,8 +25,5 @@ plugins:
         max_cluster_size: 2.5
         max_gap_size: 10
         check_door_status: 1
-  - name: entity_clearer
-    lib: libed_clearer_plugin.so
-    enabled: 1
-    parameters:
-        entity_timeout: 1.0        
+        entity_timeout: 1.0
+    

@@ -62,7 +62,7 @@
 	% Launch ED
 
 	<group if="$(arg DEBUG)">
-		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav.yaml" launch-prefix="xterm -e gdb --args" output="screen"/>
+		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav-amcl.yaml" launch-prefix="xterm -e gdb --args" output="screen"/>
 	</group>
 
 	<group unless="$(arg DEBUG)">

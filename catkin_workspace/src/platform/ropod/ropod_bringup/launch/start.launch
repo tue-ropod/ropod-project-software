@@ -36,28 +36,12 @@
 
 			<!-- Laser publishing -->
 			<group if="$(arg laser)">
-				<include file="$(find robot_common)/launch/hardware/hokuyo_laser.launch">
+				<include file="$(find robot_common)/launch/hardware/sick_laser.launch">
 					<arg name="bringup_path" value="$(arg robot_bringup_path)"/>
 					<arg name="name" value="$(arg laser1_name)"/>
 					<arg name="robot" value="$(arg robotName)"/>
 				</include>
 			</group>
-
-			<!-- Asus RGBD camera -->
-			<group if="$(arg asus_cam)">
-				<include file="$(find robot_common)/launch/hardware/asusxtion.launch">
-					<arg name="robot" value="$(arg robotName)" />
-					<arg name="camera" value="$(arg asus_cam_name)"/>
-					<arg name="rgb_camera_info_url"
-					     value="file://$(find ropod_bringup)/parameters/hardware/$(arg asus_cam_name)_calibration/rgb_PS1080_PrimeSense.yaml"/>
-					<arg name="depth_camera_info_url"
-					     value="file://$(find ropod_bringup)/parameters/hardware/$(arg asus_cam_name)_calibration/depth_PS1080_PrimeSense.yaml" />
-				</include>
-			
-				<arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find ropod_model)/urdf/asus_camera_$(arg robotName).urdf'" />
-				<param name="robot_description" command="$(arg urdf_file)" />
-				<node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" />
-			</group>	
 
 			<!-- Specify transforms -->
 			<include file="$(arg robot_bringup_path)/parameters/hardware/static_tf.launch">

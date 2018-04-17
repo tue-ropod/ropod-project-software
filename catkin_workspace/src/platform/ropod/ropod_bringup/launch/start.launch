@@ -47,9 +47,6 @@
 			<include file="$(arg robot_bringup_path)/parameters/hardware/static_tf.launch">
 				<arg name="robot" value="$(arg robotName)" />
 				<arg name="laser1" value="$(arg laser1_name)"/>
-				<arg name="depth_camera" value="$(arg asus_cam)"/>
-				<arg name="depth_camera_name" value="$(arg asus_cam_name)"/>
-				<arg name="calibration" value="$(arg asus_cam_calibration)"/>
 			</include> 
 			
 			<!-- AMCL-localization -->

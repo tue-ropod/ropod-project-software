@@ -32,6 +32,7 @@
 
       <rosparam command="load" file="$(arg bringup_path)/parameters/hardware/$(arg name)_parameters.yaml" />
       <remap from="/diagnostics" to="diagnostics"/>
+      <param name="frame_id" value="$(arg robot)/$(arg name)/scan" />
 
     </node>
   </group>

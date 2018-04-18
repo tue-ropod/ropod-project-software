@@ -28,11 +28,16 @@
 		<group if="$(arg ROBOT_REAL)">
 	  	<!-- Do for both: Simulator and Real Robot -->
 		
-		<!-- Odometry publishing -->
-			<node pkg="$(arg robotName)_base_controller" type="omnibase.py" name="odometry_publisher" output="screen">
-				<param name="base_frame" value="$(arg robotName)/base_link"/>
-				<param name="frame_id" value="$(arg robotName)/$(arg laser1_name)/scan"/>
-			</node>
+		        <!-- Kinematic Controller: Executes velocity commands and publishes Odometry  -->		  
+			<node pkg="ropod_4wheel_kinb_cntr" type="ropod_4wheel_kinb_cntr_node" name="ropod_4wheel_kinb_cntr_node" output="screen"/>
+	
+			<!-- tf broadcaster -->	
+			<group unless="$(arg LOAD_ATTACHED)">
+			    <node pkg="ropod_bringup" type="ropod_tf_broadcaster_simulator" name="ropod_tf_broadcaster_simulator" />			    
+			</group> 
+			<group if="$(arg LOAD_ATTACHED)">
+			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster_simulator" name="ropod_mobidik_tf_broadcaster_simulator" />
+			</group>
 
 			<!-- Laser publishing -->
 			<group if="$(arg laser)">
@@ -98,7 +103,7 @@
 	<group unless="$(arg ROBOT_REAL)">
 	<!-- SIMULATION -->  
 	
-	    <group unless="$(arg LOAD_ATTACHED)">	  
+	        <group unless="$(arg LOAD_ATTACHED)">	  
 			<include file="$(find robot_common)/launch/simulator/gazebo_simulator.launch" >
 				<arg name="robot" value="$(arg robotName)" />
 				<arg name="model_name" value="$(arg robotName)" />

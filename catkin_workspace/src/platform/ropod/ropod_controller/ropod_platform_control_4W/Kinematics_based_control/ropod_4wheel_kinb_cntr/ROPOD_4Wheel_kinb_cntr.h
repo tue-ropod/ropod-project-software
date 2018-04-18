@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.194
+// Model version                  : 1.202
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Tue Apr 17 15:42:21 2018
+// C/C++ source code generated on : Wed Apr 18 14:00:47 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -114,69 +114,74 @@
 typedef struct {
   SL_Bus_ROPOD_4Wheel_kinb_cntr_nav_msgs_Odometry BusAssignment;// '<S4>/Bus Assignment' 
   real_T dv0[45];
-  real_T SFunction[40];                // '<S33>/S-Function'
-  real_T SFunction_n[40];              // '<S34>/S-Function'
-  real_T SFunction_m[40];              // '<S35>/S-Function'
-  real_T SFunction_k[40];              // '<S36>/S-Function'
+  real_T SFunction[40];                // '<S41>/S-Function'
+  real_T SFunction_n[40];              // '<S42>/S-Function'
+  real_T SFunction_m[40];              // '<S43>/S-Function'
+  real_T SFunction_k[40];              // '<S44>/S-Function'
   real_T rtb_TmpSignalConversionAtSFun_m[24];
   real_T dv1[9];
   real_T TmpSignalConversionAtSelect[8];
-  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist In1;// '<S48>/In1'
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist In1;// '<S56>/In1'
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist b_varargout_2;
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment7;// '<S1>/Bus Assignment7' 
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment6;// '<S1>/Bus Assignment6' 
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment4;// '<S1>/Bus Assignment4' 
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment5;// '<S1>/Bus Assignment5' 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment3;// '<S1>/Bus Assignment3' 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment2;// '<S1>/Bus Assignment2' 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment1;// '<S1>/Bus Assignment1' 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist BusAssignment_h;// '<S1>/Bus Assignment' 
-  real_T Add[4];                       // '<S27>/Add'
+  real_T Add[4];                       // '<S35>/Add'
   char_T cv0[29];
   char_T cv1[26];
   char_T cv2[25];
   real_T TmpSignalConversionAtCoordi[3];
-  char_T cv3[22];
-  char_T cv4[21];
-  real_T command2;                     // '<S28>/Constant'
-  real_T command2_h;                   // '<S28>/Constant1'
-  real_T timestamp;                    // '<S28>/Constant10'
-  real_T command1;                     // '<S28>/Constant12'
-  real_T timestamp_d;                  // '<S28>/Constant2'
-  real_T command2_d;                   // '<S28>/Constant6'
-  real_T timestamp_i;                  // '<S28>/Constant7'
-  real_T timestamp_o;                  // '<S28>/Constant8'
-  real_T command2_j;                   // '<S28>/Constant9'
-  real_T limit1_p;                     // '<S28>/Gain'
-  real_T limit1_n;                     // '<S28>/Gain1'
-  real_T limit1_n_g;                   // '<S28>/Gain11'
-  real_T limit2_p;                     // '<S28>/Gain12'
-  real_T limit2_n;                     // '<S28>/Gain13'
-  real_T command1_o;                   // '<S28>/Gain8'
-  real_T command1_d;                   // '<S28>/Gain14'
-  real_T limit1_n_d;                   // '<S28>/Gain15'
-  real_T limit2_p_c;                   // '<S28>/Gain16'
-  real_T limit2_n_k;                   // '<S28>/Gain17'
-  real_T command1_e;                   // '<S28>/Gain18'
-  real_T limit1_p_b;                   // '<S28>/Gain19'
-  real_T limit2_p_i;                   // '<S28>/Gain2'
-  real_T limit2_n_f;                   // '<S28>/Gain3'
-  real_T limit1_p_o;                   // '<S28>/Gain4'
-  real_T limit1_n_m;                   // '<S28>/Gain5'
-  real_T limit2_p_l;                   // '<S28>/Gain6'
-  real_T limit2_n_j;                   // '<S28>/Gain7'
-  real_T limit1_p_f;                   // '<S28>/Gain9'
+  char_T cv3[23];
+  char_T cv4[22];
+  char_T cv5[21];
+  real_T command2;                     // '<S36>/Constant'
+  real_T command2_h;                   // '<S36>/Constant1'
+  real_T timestamp;                    // '<S36>/Constant10'
+  real_T command1;                     // '<S36>/Constant12'
+  real_T timestamp_d;                  // '<S36>/Constant2'
+  real_T command2_d;                   // '<S36>/Constant6'
+  real_T timestamp_i;                  // '<S36>/Constant7'
+  real_T timestamp_o;                  // '<S36>/Constant8'
+  real_T command2_j;                   // '<S36>/Constant9'
+  real_T limit1_p;                     // '<S36>/Gain'
+  real_T limit1_n;                     // '<S36>/Gain1'
+  real_T limit1_n_g;                   // '<S36>/Gain11'
+  real_T limit2_p;                     // '<S36>/Gain12'
+  real_T limit2_n;                     // '<S36>/Gain13'
+  real_T command1_o;                   // '<S36>/Gain8'
+  real_T command1_d;                   // '<S36>/Gain14'
+  real_T limit1_n_d;                   // '<S36>/Gain15'
+  real_T limit2_p_c;                   // '<S36>/Gain16'
+  real_T limit2_n_k;                   // '<S36>/Gain17'
+  real_T command1_e;                   // '<S36>/Gain18'
+  real_T limit1_p_b;                   // '<S36>/Gain19'
+  real_T limit2_p_i;                   // '<S36>/Gain2'
+  real_T limit2_n_f;                   // '<S36>/Gain3'
+  real_T limit1_p_o;                   // '<S36>/Gain4'
+  real_T limit1_n_m;                   // '<S36>/Gain5'
+  real_T limit2_p_l;                   // '<S36>/Gain6'
+  real_T limit2_n_j;                   // '<S36>/Gain7'
+  real_T limit1_p_f;                   // '<S36>/Gain9'
   real_T EnabledDelay;                 // '<S13>/Enabled Delay'
   real_T Gain1;                        // '<S13>/Gain1'
   real_T Gain;                         // '<S13>/Gain'
-  real_T DifferenceInputs2;            // '<S38>/Difference Inputs2'
+  real_T DifferenceInputs2;            // '<S46>/Difference Inputs2'
   real_T Gain3;                        // '<S13>/Gain3'
   real_T Gain2;                        // '<S13>/Gain2'
-  real_T DifferenceInputs2_n;          // '<S39>/Difference Inputs2'
+  real_T DifferenceInputs2_n;          // '<S47>/Difference Inputs2'
   real_T Gain5;                        // '<S13>/Gain5'
   real_T Gain4;                        // '<S13>/Gain4'
-  real_T DifferenceInputs2_g;          // '<S40>/Difference Inputs2'
+  real_T DifferenceInputs2_g;          // '<S48>/Difference Inputs2'
   real_T Product3[15];                 // '<S2>/Product3'
-  real_T setpoint2;                    // '<S28>/sign_convention'
-  real_T setpoint2_h;                  // '<S28>/sign_convention1'
-  real_T setpoint2_j;                  // '<S28>/sign_convention2'
-  real_T setpoint2_n;                  // '<S28>/sign_convention3'
+  real_T setpoint2;                    // '<S36>/sign_convention'
+  real_T setpoint2_h;                  // '<S36>/sign_convention1'
+  real_T setpoint2_j;                  // '<S36>/sign_convention2'
+  real_T setpoint2_n;                  // '<S36>/sign_convention3'
   real_T max_acc_xy;                   // '<S11>/Get Parameter'
   real_T max_vel_xy;                   // '<S11>/Get Parameter1'
   real_T max_acc_theta;                // '<S11>/Get Parameter2'
@@ -232,22 +237,22 @@ typedef struct {
   real_T Switch2_k;                    // '<S13>/Switch2'
   real_T Switch1;                      // '<S13>/Switch1'
   real_T Switch;                       // '<S13>/Switch'
-  real_T sampletime_a;                 // '<S40>/sample time'
-  real_T sampletime_o;                 // '<S39>/sample time'
-  real_T sampletime;                   // '<S38>/sample time'
-  real_T Switch2_a;                    // '<S47>/Switch2'
-  real_T Yk1_lf;                       // '<S40>/Delay Input2'
-  real_T Switch2_km;                   // '<S43>/Switch2'
-  real_T Yk1_l;                        // '<S39>/Delay Input2'
-  real_T Switch2_l;                    // '<S42>/Switch2'
-  real_T Yk1;                          // '<S38>/Delay Input2'
-  real_T Switch2;                      // '<S41>/Switch2'
+  real_T sampletime_a;                 // '<S48>/sample time'
+  real_T sampletime_o;                 // '<S47>/sample time'
+  real_T sampletime;                   // '<S46>/sample time'
+  real_T Switch2_a;                    // '<S55>/Switch2'
+  real_T Yk1_lf;                       // '<S48>/Delay Input2'
+  real_T Switch2_km;                   // '<S51>/Switch2'
+  real_T Yk1_l;                        // '<S47>/Delay Input2'
+  real_T Switch2_l;                    // '<S50>/Switch2'
+  real_T Yk1;                          // '<S46>/Delay Input2'
+  real_T Switch2;                      // '<S49>/Switch2'
   real_T t15_tmp;
   real_T t3_tmp;
   real_T t4_tmp;
   real_T t5_tmp;
   int32_T ECAT_Interface_e;            // '<S5>/ECAT_Interface'
-  boolean_T SourceBlock_o1;            // '<S44>/SourceBlock'
+  boolean_T SourceBlock_o1;            // '<S52>/SourceBlock'
 } B_ROPOD_4Wheel_kinb_cntr_T;
 
 // Block states (auto storage) for system '<Root>'
@@ -281,33 +286,37 @@ typedef struct {
   robotics_slros_internal_blo_n_T obj_c0;// '<S8>/Get Parameter9'
   robotics_slros_internal_blo_n_T obj_fc;// '<S8>/Get Parameter10'
   real_T EnabledDelay_DSTATE;          // '<S13>/Enabled Delay'
-  real_T DelayInput2_DSTATE;           // '<S38>/Delay Input2'
-  real_T DelayInput2_DSTATE_a;         // '<S39>/Delay Input2'
-  real_T DelayInput2_DSTATE_e;         // '<S40>/Delay Input2'
+  real_T DelayInput2_DSTATE;           // '<S46>/Delay Input2'
+  real_T DelayInput2_DSTATE_a;         // '<S47>/Delay Input2'
+  real_T DelayInput2_DSTATE_e;         // '<S48>/Delay Input2'
   real_T DiscreteTimeIntegrator_DSTATE[3];// '<S3>/Discrete-Time Integrator'
   real_T ECAT_Interface_RWORK[13];     // '<S5>/ECAT_Interface'
-  robotics_slros_internal_block_T obj_hz;// '<S26>/SinkBlock'
-  robotics_slros_internal_block_T obj_dq;// '<S21>/SinkBlock'
-  robotics_slros_internal_block_T obj_k1;// '<S20>/SinkBlock'
-  robotics_slros_internal_block_T obj_kt;// '<S19>/SinkBlock'
-  robotics_slros_internal_block_T obj_o2;// '<S18>/SinkBlock'
+  robotics_slros_internal_block_T obj_hz;// '<S34>/SinkBlock'
+  robotics_slros_internal_block_T obj_fm;// '<S29>/SinkBlock'
+  robotics_slros_internal_block_T obj_cx;// '<S28>/SinkBlock'
+  robotics_slros_internal_block_T obj_du;// '<S27>/SinkBlock'
+  robotics_slros_internal_block_T obj_k1;// '<S26>/SinkBlock'
+  robotics_slros_internal_block_T obj_dq;// '<S25>/SinkBlock'
+  robotics_slros_internal_block_T obj_k1w;// '<S24>/SinkBlock'
+  robotics_slros_internal_block_T obj_kt;// '<S23>/SinkBlock'
+  robotics_slros_internal_block_T obj_o2;// '<S22>/SinkBlock'
   robotics_slcore_internal_bloc_T obj_dx;// '<S4>/Coordinate Transformation Conversion' 
-  robotics_slros_internal_bl_nc_T obj_ja;// '<S44>/SourceBlock'
+  robotics_slros_internal_bl_nc_T obj_ja;// '<S52>/SourceBlock'
 } DW_ROPOD_4Wheel_kinb_cntr_T;
 
 // Parameters (auto storage)
 struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T SW_COM1_ENABLE1;              // Variable: SW_COM1_ENABLE1
-                                       //  Referenced by: '<S28>/Constant3'
+                                       //  Referenced by: '<S36>/Constant3'
 
   real_T SW_COM1_ENABLE2;              // Variable: SW_COM1_ENABLE2
-                                       //  Referenced by: '<S28>/Constant4'
+                                       //  Referenced by: '<S36>/Constant4'
 
   real_T SW_COM1_MODE_VELOCITY;        // Variable: SW_COM1_MODE_VELOCITY
-                                       //  Referenced by: '<S28>/Constant5'
+                                       //  Referenced by: '<S36>/Constant5'
 
   real_T SW_COM1_USE_TS;               // Variable: SW_COM1_USE_TS
-                                       //  Referenced by: '<S28>/Constant11'
+                                       //  Referenced by: '<S36>/Constant11'
 
   real_T Tsp;                          // Variable: Tsp
                                        //  Referenced by:
@@ -341,16 +350,16 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
                                        //    '<S11>/Get Parameter3'
 
   real_T CompareToConstant_const;      // Mask Parameter: CompareToConstant_const
-                                       //  Referenced by: '<S37>/Constant'
+                                       //  Referenced by: '<S45>/Constant'
 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_nav_msgs_Odometry Constant_Value;// Computed Parameter: Constant_Value
-                                                                 //  Referenced by: '<S25>/Constant'
+                                                                 //  Referenced by: '<S33>/Constant'
 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Out1_Y0;// Computed Parameter: Out1_Y0
-                                                            //  Referenced by: '<S48>/Out1'
+                                                            //  Referenced by: '<S56>/Out1'
 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_d;// Computed Parameter: Constant_Value_d
-                                                                     //  Referenced by: '<S44>/Constant'
+                                                                     //  Referenced by: '<S52>/Constant'
 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_d0;// Computed Parameter: Constant_Value_d0
                                                                       //  Referenced by: '<S14>/Constant'
@@ -363,6 +372,18 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
 
   SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_i;// Computed Parameter: Constant_Value_i
                                                                      //  Referenced by: '<S17>/Constant'
+
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_n;// Computed Parameter: Constant_Value_n
+                                                                     //  Referenced by: '<S18>/Constant'
+
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_i5;// Computed Parameter: Constant_Value_i5
+                                                                      //  Referenced by: '<S19>/Constant'
+
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_mu;// Computed Parameter: Constant_Value_mu
+                                                                      //  Referenced by: '<S20>/Constant'
+
+  SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist Constant_Value_h;// Computed Parameter: Constant_Value_h
+                                                                     //  Referenced by: '<S21>/Constant'
 
   real_T Constant2_Value;              // Expression: 0
                                        //  Referenced by: '<S13>/Constant2'
@@ -386,118 +407,118 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
                                        //  Referenced by: '<S5>/ECAT_Interface'
 
   real_T SFunction_P1_Size[2];         // Computed Parameter: SFunction_P1_Size
-                                       //  Referenced by: '<S33>/S-Function'
+                                       //  Referenced by: '<S41>/S-Function'
 
   real_T SFunction_P1;                 // Expression: link_id
-                                       //  Referenced by: '<S33>/S-Function'
+                                       //  Referenced by: '<S41>/S-Function'
 
   real_T SFunction_P1_Size_d[2];       // Computed Parameter: SFunction_P1_Size_d
-                                       //  Referenced by: '<S34>/S-Function'
+                                       //  Referenced by: '<S42>/S-Function'
 
   real_T SFunction_P1_g;               // Expression: link_id
-                                       //  Referenced by: '<S34>/S-Function'
+                                       //  Referenced by: '<S42>/S-Function'
 
   real_T SFunction_P1_Size_e[2];       // Computed Parameter: SFunction_P1_Size_e
-                                       //  Referenced by: '<S35>/S-Function'
+                                       //  Referenced by: '<S43>/S-Function'
 
   real_T SFunction_P1_j;               // Expression: link_id
-                                       //  Referenced by: '<S35>/S-Function'
+                                       //  Referenced by: '<S43>/S-Function'
 
   real_T SFunction_P1_Size_l[2];       // Computed Parameter: SFunction_P1_Size_l
-                                       //  Referenced by: '<S36>/S-Function'
+                                       //  Referenced by: '<S44>/S-Function'
 
   real_T SFunction_P1_i;               // Expression: link_id
-                                       //  Referenced by: '<S36>/S-Function'
+                                       //  Referenced by: '<S44>/S-Function'
 
   real_T shift_Gain;                   // Expression: 2
-                                       //  Referenced by: '<S28>/shift'
+                                       //  Referenced by: '<S36>/shift'
 
-  real_T Constant_Value_n;             // Expression: 0
-                                       //  Referenced by: '<S28>/Constant'
+  real_T Constant_Value_n3;            // Expression: 0
+                                       //  Referenced by: '<S36>/Constant'
 
   real_T Constant1_Value_g;            // Expression: 0
-                                       //  Referenced by: '<S28>/Constant1'
+                                       //  Referenced by: '<S36>/Constant1'
 
   real_T Constant10_Value;             // Expression: 0
-                                       //  Referenced by: '<S28>/Constant10'
+                                       //  Referenced by: '<S36>/Constant10'
 
   real_T Constant12_Value;             // Expression: 8
-                                       //  Referenced by: '<S28>/Constant12'
+                                       //  Referenced by: '<S36>/Constant12'
 
   real_T Constant2_Value_i;            // Expression: 0
-                                       //  Referenced by: '<S28>/Constant2'
+                                       //  Referenced by: '<S36>/Constant2'
 
   real_T Constant6_Value;              // Expression: 0
-                                       //  Referenced by: '<S28>/Constant6'
+                                       //  Referenced by: '<S36>/Constant6'
 
   real_T Constant7_Value;              // Expression: 0
-                                       //  Referenced by: '<S28>/Constant7'
+                                       //  Referenced by: '<S36>/Constant7'
 
   real_T Constant8_Value;              // Expression: 0
-                                       //  Referenced by: '<S28>/Constant8'
+                                       //  Referenced by: '<S36>/Constant8'
 
   real_T Constant9_Value;              // Expression: 0
-                                       //  Referenced by: '<S28>/Constant9'
+                                       //  Referenced by: '<S36>/Constant9'
 
   real_T Gain_Gain;                    // Expression: 1
-                                       //  Referenced by: '<S28>/Gain'
+                                       //  Referenced by: '<S36>/Gain'
 
   real_T Gain1_Gain;                   // Expression: -1
-                                       //  Referenced by: '<S28>/Gain1'
+                                       //  Referenced by: '<S36>/Gain1'
 
   real_T Gain11_Gain;                  // Expression: -1
-                                       //  Referenced by: '<S28>/Gain11'
+                                       //  Referenced by: '<S36>/Gain11'
 
   real_T Gain12_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S28>/Gain12'
+                                       //  Referenced by: '<S36>/Gain12'
 
   real_T Gain13_Gain;                  // Expression: -1
-                                       //  Referenced by: '<S28>/Gain13'
+                                       //  Referenced by: '<S36>/Gain13'
 
   real_T Gain8_Gain;                   // Expression: 1
-                                       //  Referenced by: '<S28>/Gain8'
+                                       //  Referenced by: '<S36>/Gain8'
 
   real_T Gain14_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S28>/Gain14'
+                                       //  Referenced by: '<S36>/Gain14'
 
   real_T Gain15_Gain;                  // Expression: -1
-                                       //  Referenced by: '<S28>/Gain15'
+                                       //  Referenced by: '<S36>/Gain15'
 
   real_T Gain16_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S28>/Gain16'
+                                       //  Referenced by: '<S36>/Gain16'
 
   real_T Gain17_Gain;                  // Expression: -1
-                                       //  Referenced by: '<S28>/Gain17'
+                                       //  Referenced by: '<S36>/Gain17'
 
   real_T Gain18_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S28>/Gain18'
+                                       //  Referenced by: '<S36>/Gain18'
 
   real_T Gain19_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S28>/Gain19'
+                                       //  Referenced by: '<S36>/Gain19'
 
   real_T Gain2_Gain;                   // Expression: 1
-                                       //  Referenced by: '<S28>/Gain2'
+                                       //  Referenced by: '<S36>/Gain2'
 
   real_T Gain3_Gain;                   // Expression: -1
-                                       //  Referenced by: '<S28>/Gain3'
+                                       //  Referenced by: '<S36>/Gain3'
 
   real_T Gain4_Gain;                   // Expression: 1
-                                       //  Referenced by: '<S28>/Gain4'
+                                       //  Referenced by: '<S36>/Gain4'
 
   real_T Gain5_Gain;                   // Expression: -1
-                                       //  Referenced by: '<S28>/Gain5'
+                                       //  Referenced by: '<S36>/Gain5'
 
   real_T Gain6_Gain;                   // Expression: 1
-                                       //  Referenced by: '<S28>/Gain6'
+                                       //  Referenced by: '<S36>/Gain6'
 
   real_T Gain7_Gain;                   // Expression: -1
-                                       //  Referenced by: '<S28>/Gain7'
+                                       //  Referenced by: '<S36>/Gain7'
 
   real_T Gain9_Gain;                   // Expression: 1
-                                       //  Referenced by: '<S28>/Gain9'
+                                       //  Referenced by: '<S36>/Gain9'
 
   real_T sampletime_WtEt;              // Computed Parameter: sampletime_WtEt
-                                       //  Referenced by: '<S38>/sample time'
+                                       //  Referenced by: '<S46>/sample time'
 
   real_T EnabledDelay_InitialCondition;// Expression: 0.0
                                        //  Referenced by: '<S13>/Enabled Delay'
@@ -506,46 +527,46 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
                                        //  Referenced by: '<S13>/Gain1'
 
   real_T DelayInput2_InitialCondition; // Expression: 0
-                                       //  Referenced by: '<S38>/Delay Input2'
+                                       //  Referenced by: '<S46>/Delay Input2'
 
   real_T Gain_Gain_g;                  // Expression: -1
                                        //  Referenced by: '<S13>/Gain'
 
   real_T sampletime_WtEt_n;            // Computed Parameter: sampletime_WtEt_n
-                                       //  Referenced by: '<S39>/sample time'
+                                       //  Referenced by: '<S47>/sample time'
 
   real_T Gain3_Gain_e;                 // Expression: -1
                                        //  Referenced by: '<S13>/Gain3'
 
   real_T DelayInput2_InitialCondition_e;// Expression: 0
-                                        //  Referenced by: '<S39>/Delay Input2'
+                                        //  Referenced by: '<S47>/Delay Input2'
 
   real_T Gain2_Gain_e;                 // Expression: -1
                                        //  Referenced by: '<S13>/Gain2'
 
   real_T sampletime_WtEt_e;            // Computed Parameter: sampletime_WtEt_e
-                                       //  Referenced by: '<S40>/sample time'
+                                       //  Referenced by: '<S48>/sample time'
 
   real_T Gain5_Gain_c;                 // Expression: -1
                                        //  Referenced by: '<S13>/Gain5'
 
   real_T DelayInput2_InitialCondition_eo;// Expression: 0
-                                         //  Referenced by: '<S40>/Delay Input2'
+                                         //  Referenced by: '<S48>/Delay Input2'
 
   real_T Gain4_Gain_c;                 // Expression: -1
                                        //  Referenced by: '<S13>/Gain4'
 
   real_T sign_convention_Gain;         // Expression: -1
-                                       //  Referenced by: '<S28>/sign_convention'
+                                       //  Referenced by: '<S36>/sign_convention'
 
   real_T sign_convention1_Gain;        // Expression: -1
-                                       //  Referenced by: '<S28>/sign_convention1'
+                                       //  Referenced by: '<S36>/sign_convention1'
 
   real_T sign_convention2_Gain;        // Expression: -1
-                                       //  Referenced by: '<S28>/sign_convention2'
+                                       //  Referenced by: '<S36>/sign_convention2'
 
   real_T sign_convention3_Gain;        // Expression: -1
-                                       //  Referenced by: '<S28>/sign_convention3'
+                                       //  Referenced by: '<S36>/sign_convention3'
 
   real_T Constant_Value_l;             // Expression: 1
                                        //  Referenced by: '<S1>/Constant'
@@ -623,7 +644,7 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
                                        //  Referenced by: '<S13>/Enabled Delay'
 
   uint16_T Gain10_Gain;                // Computed Parameter: Gain10_Gain
-                                       //  Referenced by: '<S28>/Gain10'
+                                       //  Referenced by: '<S36>/Gain10'
 
   uint8_T Gain6_Gain_a;                // Computed Parameter: Gain6_Gain_a
                                        //  Referenced by: '<S13>/Gain6'
@@ -846,23 +867,23 @@ extern "C" {
 //
 //  Block '<S5>/Display1' : Unused code path elimination
 //  Block '<S5>/Gain1' : Unused code path elimination
-//  Block '<S38>/FixPt Data Type Duplicate' : Unused code path elimination
-//  Block '<S45>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S45>/Data Type Propagation' : Unused code path elimination
-//  Block '<S39>/FixPt Data Type Duplicate' : Unused code path elimination
-//  Block '<S46>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S46>/Data Type Propagation' : Unused code path elimination
-//  Block '<S40>/FixPt Data Type Duplicate' : Unused code path elimination
-//  Block '<S47>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S47>/Data Type Propagation' : Unused code path elimination
-//  Block '<S41>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S41>/Data Type Propagation' : Unused code path elimination
-//  Block '<S42>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S42>/Data Type Propagation' : Unused code path elimination
-//  Block '<S43>/Data Type Duplicate' : Unused code path elimination
-//  Block '<S43>/Data Type Propagation' : Unused code path elimination
-//  Block '<S28>/Data Type Conversion' : Eliminate redundant data type conversion
-//  Block '<S28>/Data Type Conversion1' : Eliminate redundant data type conversion
+//  Block '<S46>/FixPt Data Type Duplicate' : Unused code path elimination
+//  Block '<S53>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S53>/Data Type Propagation' : Unused code path elimination
+//  Block '<S47>/FixPt Data Type Duplicate' : Unused code path elimination
+//  Block '<S54>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S54>/Data Type Propagation' : Unused code path elimination
+//  Block '<S48>/FixPt Data Type Duplicate' : Unused code path elimination
+//  Block '<S55>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S55>/Data Type Propagation' : Unused code path elimination
+//  Block '<S49>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S49>/Data Type Propagation' : Unused code path elimination
+//  Block '<S50>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S50>/Data Type Propagation' : Unused code path elimination
+//  Block '<S51>/Data Type Duplicate' : Unused code path elimination
+//  Block '<S51>/Data Type Propagation' : Unused code path elimination
+//  Block '<S36>/Data Type Conversion' : Eliminate redundant data type conversion
+//  Block '<S36>/Data Type Conversion1' : Eliminate redundant data type conversion
 
 
 //-
@@ -897,37 +918,45 @@ extern "C" {
 //  '<S15>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message1'
 //  '<S16>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message2'
 //  '<S17>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message3'
-//  '<S18>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish'
-//  '<S19>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish1'
-//  '<S20>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish2'
-//  '<S21>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish3'
-//  '<S22>'  : 'ROPOD_4Wheel_kinb_cntr/Inverse Kinematics 4SW/Gl_matrix'
-//  '<S23>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry and Measurement model 4SW/Jqwl_matrix'
-//  '<S24>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry and Measurement model 4SW/pos_rot_matrix'
-//  '<S25>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry publisher/Blank Message'
-//  '<S26>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry publisher/Publish'
-//  '<S27>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/ROPOD_4Wheel_sens'
-//  '<S28>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/ROPOD_4Wheel_vel_cmd'
-//  '<S29>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_1'
-//  '<S30>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2'
-//  '<S31>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3'
-//  '<S32>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_4'
-//  '<S33>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_1/ec_ROPOD_SmartWheel'
-//  '<S34>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2/ec_ROPOD_SmartWheel'
-//  '<S35>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3/ec_ROPOD_SmartWheel'
-//  '<S36>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_4/ec_ROPOD_SmartWheel'
-//  '<S37>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Compare To Constant'
-//  '<S38>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic'
-//  '<S39>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic1'
-//  '<S40>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic2'
-//  '<S41>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Saturation Dynamic'
-//  '<S42>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Saturation Dynamic1'
-//  '<S43>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Saturation Dynamic2'
-//  '<S44>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Subscribe1'
-//  '<S45>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic/Saturation Dynamic'
-//  '<S46>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic1/Saturation Dynamic'
-//  '<S47>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic2/Saturation Dynamic'
-//  '<S48>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Subscribe1/Enabled Subsystem'
+//  '<S18>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message4'
+//  '<S19>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message5'
+//  '<S20>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message6'
+//  '<S21>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Blank Message7'
+//  '<S22>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish'
+//  '<S23>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish1'
+//  '<S24>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish2'
+//  '<S25>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish3'
+//  '<S26>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish4'
+//  '<S27>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish5'
+//  '<S28>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish6'
+//  '<S29>'  : 'ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish7'
+//  '<S30>'  : 'ROPOD_4Wheel_kinb_cntr/Inverse Kinematics 4SW/Gl_matrix'
+//  '<S31>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry and Measurement model 4SW/Jqwl_matrix'
+//  '<S32>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry and Measurement model 4SW/pos_rot_matrix'
+//  '<S33>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry publisher/Blank Message'
+//  '<S34>'  : 'ROPOD_4Wheel_kinb_cntr/Odometry publisher/Publish'
+//  '<S35>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/ROPOD_4Wheel_sens'
+//  '<S36>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/ROPOD_4Wheel_vel_cmd'
+//  '<S37>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_1'
+//  '<S38>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2'
+//  '<S39>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3'
+//  '<S40>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_4'
+//  '<S41>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_1/ec_ROPOD_SmartWheel'
+//  '<S42>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2/ec_ROPOD_SmartWheel'
+//  '<S43>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3/ec_ROPOD_SmartWheel'
+//  '<S44>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_4/ec_ROPOD_SmartWheel'
+//  '<S45>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Compare To Constant'
+//  '<S46>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic'
+//  '<S47>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic1'
+//  '<S48>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic2'
+//  '<S49>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Saturation Dynamic'
+//  '<S50>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Saturation Dynamic1'
+//  '<S51>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Saturation Dynamic2'
+//  '<S52>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Subscribe1'
+//  '<S53>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic/Saturation Dynamic'
+//  '<S54>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic1/Saturation Dynamic'
+//  '<S55>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic2/Saturation Dynamic'
+//  '<S56>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Subscribe1/Enabled Subsystem'
 
 #endif                                 // RTW_HEADER_ROPOD_4Wheel_kinb_cntr_h_
 

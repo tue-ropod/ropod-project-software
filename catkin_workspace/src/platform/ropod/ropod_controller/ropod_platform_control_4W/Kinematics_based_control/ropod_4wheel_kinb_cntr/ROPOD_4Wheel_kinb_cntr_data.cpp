@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.194
+// Model version                  : 1.202
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Tue Apr 17 15:42:21 2018
+// C/C++ source code generated on : Wed Apr 18 14:00:47 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -22,22 +22,22 @@
 // Block parameters (auto storage)
 P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   // Variable: SW_COM1_ENABLE1
-  //  Referenced by: '<S28>/Constant3'
+  //  Referenced by: '<S36>/Constant3'
 
   1.0,
 
   // Variable: SW_COM1_ENABLE2
-  //  Referenced by: '<S28>/Constant4'
+  //  Referenced by: '<S36>/Constant4'
 
   2.0,
 
   // Variable: SW_COM1_MODE_VELOCITY
-  //  Referenced by: '<S28>/Constant5'
+  //  Referenced by: '<S36>/Constant5'
 
   8.0,
 
   // Variable: SW_COM1_USE_TS
-  //  Referenced by: '<S28>/Constant11'
+  //  Referenced by: '<S36>/Constant11'
 
   32768.0,
 
@@ -75,12 +75,12 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   1.0,
 
   // Mask Parameter: CompareToConstant_const
-  //  Referenced by: '<S37>/Constant'
+  //  Referenced by: '<S45>/Constant'
 
   0.5,
 
   // Computed Parameter: Constant_Value
-  //  Referenced by: '<S25>/Constant'
+  //  Referenced by: '<S33>/Constant'
 
   {
     {
@@ -170,7 +170,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S48>/Out1'
+  //  Referenced by: '<S56>/Out1'
 
   {
     {
@@ -187,7 +187,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   },
 
   // Computed Parameter: Constant_Value_d
-  //  Referenced by: '<S44>/Constant'
+  //  Referenced by: '<S52>/Constant'
 
   {
     {
@@ -271,6 +271,74 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
     }                                  // Angular
   },
 
+  // Computed Parameter: Constant_Value_n
+  //  Referenced by: '<S18>/Constant'
+
+  {
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    },                                 // Linear
+
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    }                                  // Angular
+  },
+
+  // Computed Parameter: Constant_Value_i5
+  //  Referenced by: '<S19>/Constant'
+
+  {
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    },                                 // Linear
+
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    }                                  // Angular
+  },
+
+  // Computed Parameter: Constant_Value_mu
+  //  Referenced by: '<S20>/Constant'
+
+  {
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    },                                 // Linear
+
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    }                                  // Angular
+  },
+
+  // Computed Parameter: Constant_Value_h
+  //  Referenced by: '<S21>/Constant'
+
+  {
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    },                                 // Linear
+
+    {
+      0.0,                             // X
+      0.0,                             // Y
+      0.0                              // Z
+    }                                  // Angular
+  },
+
   // Expression: 0
   //  Referenced by: '<S13>/Constant2'
 
@@ -307,192 +375,192 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   0.001,
 
   // Computed Parameter: SFunction_P1_Size
-  //  Referenced by: '<S33>/S-Function'
+  //  Referenced by: '<S41>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S33>/S-Function'
+  //  Referenced by: '<S41>/S-Function'
 
   1.0,
 
   // Computed Parameter: SFunction_P1_Size_d
-  //  Referenced by: '<S34>/S-Function'
+  //  Referenced by: '<S42>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S34>/S-Function'
+  //  Referenced by: '<S42>/S-Function'
 
   2.0,
 
   // Computed Parameter: SFunction_P1_Size_e
-  //  Referenced by: '<S35>/S-Function'
+  //  Referenced by: '<S43>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S35>/S-Function'
+  //  Referenced by: '<S43>/S-Function'
 
   3.0,
 
   // Computed Parameter: SFunction_P1_Size_l
-  //  Referenced by: '<S36>/S-Function'
+  //  Referenced by: '<S44>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S36>/S-Function'
+  //  Referenced by: '<S44>/S-Function'
 
   4.0,
 
   // Expression: 2
-  //  Referenced by: '<S28>/shift'
+  //  Referenced by: '<S36>/shift'
 
   2.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant'
+  //  Referenced by: '<S36>/Constant'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant1'
+  //  Referenced by: '<S36>/Constant1'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant10'
+  //  Referenced by: '<S36>/Constant10'
 
   0.0,
 
   // Expression: 8
-  //  Referenced by: '<S28>/Constant12'
+  //  Referenced by: '<S36>/Constant12'
 
   8.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant2'
+  //  Referenced by: '<S36>/Constant2'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant6'
+  //  Referenced by: '<S36>/Constant6'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant7'
+  //  Referenced by: '<S36>/Constant7'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant8'
+  //  Referenced by: '<S36>/Constant8'
 
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S28>/Constant9'
+  //  Referenced by: '<S36>/Constant9'
 
   0.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain'
+  //  Referenced by: '<S36>/Gain'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain1'
+  //  Referenced by: '<S36>/Gain1'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain11'
+  //  Referenced by: '<S36>/Gain11'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain12'
+  //  Referenced by: '<S36>/Gain12'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain13'
+  //  Referenced by: '<S36>/Gain13'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain8'
+  //  Referenced by: '<S36>/Gain8'
 
   1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain14'
+  //  Referenced by: '<S36>/Gain14'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain15'
+  //  Referenced by: '<S36>/Gain15'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain16'
+  //  Referenced by: '<S36>/Gain16'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain17'
+  //  Referenced by: '<S36>/Gain17'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain18'
+  //  Referenced by: '<S36>/Gain18'
 
   1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain19'
+  //  Referenced by: '<S36>/Gain19'
 
   1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain2'
+  //  Referenced by: '<S36>/Gain2'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain3'
+  //  Referenced by: '<S36>/Gain3'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain4'
+  //  Referenced by: '<S36>/Gain4'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain5'
+  //  Referenced by: '<S36>/Gain5'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain6'
+  //  Referenced by: '<S36>/Gain6'
 
   1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/Gain7'
+  //  Referenced by: '<S36>/Gain7'
 
   -1.0,
 
   // Expression: 1
-  //  Referenced by: '<S28>/Gain9'
+  //  Referenced by: '<S36>/Gain9'
 
   1.0,
 
   // Computed Parameter: sampletime_WtEt
-  //  Referenced by: '<S38>/sample time'
+  //  Referenced by: '<S46>/sample time'
 
   0.01,
 
@@ -507,7 +575,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   -1.0,
 
   // Expression: 0
-  //  Referenced by: '<S38>/Delay Input2'
+  //  Referenced by: '<S46>/Delay Input2'
 
   0.0,
 
@@ -517,7 +585,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   -1.0,
 
   // Computed Parameter: sampletime_WtEt_n
-  //  Referenced by: '<S39>/sample time'
+  //  Referenced by: '<S47>/sample time'
 
   0.01,
 
@@ -527,7 +595,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   -1.0,
 
   // Expression: 0
-  //  Referenced by: '<S39>/Delay Input2'
+  //  Referenced by: '<S47>/Delay Input2'
 
   0.0,
 
@@ -537,7 +605,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   -1.0,
 
   // Computed Parameter: sampletime_WtEt_e
-  //  Referenced by: '<S40>/sample time'
+  //  Referenced by: '<S48>/sample time'
 
   0.01,
 
@@ -547,7 +615,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   -1.0,
 
   // Expression: 0
-  //  Referenced by: '<S40>/Delay Input2'
+  //  Referenced by: '<S48>/Delay Input2'
 
   0.0,
 
@@ -557,22 +625,22 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/sign_convention'
+  //  Referenced by: '<S36>/sign_convention'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/sign_convention1'
+  //  Referenced by: '<S36>/sign_convention1'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/sign_convention2'
+  //  Referenced by: '<S36>/sign_convention2'
 
   -1.0,
 
   // Expression: -1
-  //  Referenced by: '<S28>/sign_convention3'
+  //  Referenced by: '<S36>/sign_convention3'
 
   -1.0,
 
@@ -702,7 +770,7 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   1U,
 
   // Computed Parameter: Gain10_Gain
-  //  Referenced by: '<S28>/Gain10'
+  //  Referenced by: '<S36>/Gain10'
 
   32768U,
 

@@ -18,6 +18,18 @@ SimulinkPublisher<geometry_msgs::Twist, SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_m
 // For Block ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish3
 SimulinkPublisher<geometry_msgs::Twist, SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist> Pub_ROPOD_4Wheel_kinb_cntr_994;
 
+// For Block ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish4
+SimulinkPublisher<geometry_msgs::Twist, SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist> Pub_ROPOD_4Wheel_kinb_cntr_1179;
+
+// For Block ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish5
+SimulinkPublisher<geometry_msgs::Twist, SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist> Pub_ROPOD_4Wheel_kinb_cntr_1185;
+
+// For Block ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish6
+SimulinkPublisher<geometry_msgs::Twist, SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist> Pub_ROPOD_4Wheel_kinb_cntr_1190;
+
+// For Block ROPOD_4Wheel_kinb_cntr/Debug SWs/Publish7
+SimulinkPublisher<geometry_msgs::Twist, SL_Bus_ROPOD_4Wheel_kinb_cntr_geometry_msgs_Twist> Pub_ROPOD_4Wheel_kinb_cntr_1206;
+
 // For Block ROPOD_4Wheel_kinb_cntr/Odometry publisher/Publish
 SimulinkPublisher<nav_msgs::Odometry, SL_Bus_ROPOD_4Wheel_kinb_cntr_nav_msgs_Odometry> Pub_ROPOD_4Wheel_kinb_cntr_349;
 

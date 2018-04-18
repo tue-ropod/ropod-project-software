@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.202
+// Model version                  : 1.203
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Apr 18 14:00:47 2018
+// C/C++ source code generated on : Wed Apr 18 17:04:04 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -142,7 +142,6 @@ typedef struct {
   real_T command2;                     // '<S36>/Constant'
   real_T command2_h;                   // '<S36>/Constant1'
   real_T timestamp;                    // '<S36>/Constant10'
-  real_T command1;                     // '<S36>/Constant12'
   real_T timestamp_d;                  // '<S36>/Constant2'
   real_T command2_d;                   // '<S36>/Constant6'
   real_T timestamp_i;                  // '<S36>/Constant7'
@@ -150,6 +149,7 @@ typedef struct {
   real_T command2_j;                   // '<S36>/Constant9'
   real_T limit1_p;                     // '<S36>/Gain'
   real_T limit1_n;                     // '<S36>/Gain1'
+  real_T command1;                     // '<S36>/Gain10'
   real_T limit1_n_g;                   // '<S36>/Gain11'
   real_T limit2_p;                     // '<S36>/Gain12'
   real_T limit2_n;                     // '<S36>/Gain13'
@@ -442,9 +442,6 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T Constant10_Value;             // Expression: 0
                                        //  Referenced by: '<S36>/Constant10'
 
-  real_T Constant12_Value;             // Expression: 8
-                                       //  Referenced by: '<S36>/Constant12'
-
   real_T Constant2_Value_i;            // Expression: 0
                                        //  Referenced by: '<S36>/Constant2'
 
@@ -571,7 +568,7 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T Constant_Value_l;             // Expression: 1
                                        //  Referenced by: '<S1>/Constant'
 
-  real_T Constant12_Value_g;           // Expression: 1
+  real_T Constant12_Value;             // Expression: 1
                                        //  Referenced by: '<S1>/Constant12'
 
   real_T Constant3_Value;              // Expression: 2

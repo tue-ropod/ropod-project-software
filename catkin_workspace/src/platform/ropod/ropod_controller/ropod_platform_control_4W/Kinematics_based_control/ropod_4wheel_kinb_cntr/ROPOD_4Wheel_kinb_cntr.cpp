@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.202
+// Model version                  : 1.203
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Apr 18 14:00:47 2018
+// C/C++ source code generated on : Wed Apr 18 17:04:04 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -102,7 +102,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S9>/Get Parameter1'
+    // Start for MATLABSystem: '<S9>/Get Parameter1'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_b.SampleTime ==
@@ -120,11 +120,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1130.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S9>/Get Parameter1'
     ROPOD_4Wheel_kinb_cntr_B.pivot_offs_sw1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S9>/Get Parameter1'
-
-    // MATLABSystem: '<S9>/Get Parameter3'
+    // Start for MATLABSystem: '<S9>/Get Parameter3'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_l.SampleTime ==
@@ -142,11 +142,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1132.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S9>/Get Parameter3'
     ROPOD_4Wheel_kinb_cntr_B.pivot_offs_sw2 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S9>/Get Parameter3'
-
-    // MATLABSystem: '<S9>/Get Parameter4'
+    // Start for MATLABSystem: '<S9>/Get Parameter4'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_c.SampleTime ==
@@ -164,11 +164,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1134.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S9>/Get Parameter4'
     ROPOD_4Wheel_kinb_cntr_B.pivot_offs_sw3 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S9>/Get Parameter4'
-
-    // MATLABSystem: '<S9>/Get Parameter5'
+    // Start for MATLABSystem: '<S9>/Get Parameter5'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_a.SampleTime ==
@@ -186,9 +186,9 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1136.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
-    ROPOD_4Wheel_kinb_cntr_B.pivot_offs_sw4 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S9>/Get Parameter5'
+    // MATLABSystem: '<S9>/Get Parameter5'
+    ROPOD_4Wheel_kinb_cntr_B.pivot_offs_sw4 = ROPOD_4Wheel_kinb_cntr_B.t10;
   }
 
   // S-Function (ec_ROPOD_SmartWheel): '<S41>/S-Function'
@@ -233,7 +233,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   ROPOD_4Wheel_kinb_cntr_B.Add[3] = ROPOD_4Wheel_kinb_cntr_B.SFunction_k[28] -
     ROPOD_4Wheel_kinb_cntr_B.pivot_offs_sw4;
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S9>/Get Parameter'
+    // Start for MATLABSystem: '<S9>/Get Parameter'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_f.SampleTime ==
@@ -266,6 +266,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // DataTypeConversion: '<S36>/Data Type Conversion4' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter'
+    //   MATLABSystem: '<S9>/Get Parameter'
 
     ROPOD_4Wheel_kinb_cntr_B.t5_tmp = floor(ROPOD_4Wheel_kinb_cntr_B.t10);
     if (rtIsNaN(ROPOD_4Wheel_kinb_cntr_B.t5_tmp) || rtIsInf
@@ -288,6 +289,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // DataTypeConversion: '<S36>/Data Type Conversion5' incorporates:
     //   Gain: '<S36>/shift'
+    //   MATLABSystem: '<S9>/Get Parameter'
     //   MATLABSystem: '<S9>/Get Parameter'
 
     t7_tmp = floor(ROPOD_4Wheel_kinb_cntr_P.shift_Gain *
@@ -351,9 +353,6 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   // Constant: '<S36>/Constant10'
   ROPOD_4Wheel_kinb_cntr_B.timestamp = ROPOD_4Wheel_kinb_cntr_P.Constant10_Value;
 
-  // Constant: '<S36>/Constant12'
-  ROPOD_4Wheel_kinb_cntr_B.command1 = ROPOD_4Wheel_kinb_cntr_P.Constant12_Value;
-
   // Constant: '<S36>/Constant2'
   ROPOD_4Wheel_kinb_cntr_B.timestamp_d =
     ROPOD_4Wheel_kinb_cntr_P.Constant2_Value_i;
@@ -372,7 +371,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   // Constant: '<S36>/Constant9'
   ROPOD_4Wheel_kinb_cntr_B.command2_j = ROPOD_4Wheel_kinb_cntr_P.Constant9_Value;
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S9>/Get Parameter2'
+    // Start for MATLABSystem: '<S9>/Get Parameter2'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_g.SampleTime ==
@@ -393,17 +392,25 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_p = ROPOD_4Wheel_kinb_cntr_P.Gain_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain1' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_n = ROPOD_4Wheel_kinb_cntr_P.Gain1_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
+    // Gain: '<S36>/Gain10'
+    ROPOD_4Wheel_kinb_cntr_B.command1 = (real_T)
+      ROPOD_4Wheel_kinb_cntr_P.Gain10_Gain * 3.0517578125E-5 * (real_T)
+      rtb_BitwiseOperator;
+
     // Gain: '<S36>/Gain11' incorporates:
+    //   MATLABSystem: '<S9>/Get Parameter2'
     //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_n_g = ROPOD_4Wheel_kinb_cntr_P.Gain11_Gain *
@@ -411,22 +418,21 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain12' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_p = ROPOD_4Wheel_kinb_cntr_P.Gain12_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain13' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_n = ROPOD_4Wheel_kinb_cntr_P.Gain13_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // Gain: '<S36>/Gain8' incorporates:
-    //   Gain: '<S36>/Gain10'
-
-    ROPOD_4Wheel_kinb_cntr_B.command1_o = (real_T)
-      ROPOD_4Wheel_kinb_cntr_P.Gain10_Gain * 3.0517578125E-5 * (real_T)
-      rtb_BitwiseOperator * ROPOD_4Wheel_kinb_cntr_P.Gain8_Gain;
+    // Gain: '<S36>/Gain8'
+    ROPOD_4Wheel_kinb_cntr_B.command1_o = ROPOD_4Wheel_kinb_cntr_P.Gain8_Gain *
+      ROPOD_4Wheel_kinb_cntr_B.command1;
 
     // Gain: '<S36>/Gain14'
     ROPOD_4Wheel_kinb_cntr_B.command1_d = ROPOD_4Wheel_kinb_cntr_P.Gain14_Gain *
@@ -434,17 +440,20 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain15' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_n_d = ROPOD_4Wheel_kinb_cntr_P.Gain15_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain16' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_p_c = ROPOD_4Wheel_kinb_cntr_P.Gain16_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain17' incorporates:
+    //   MATLABSystem: '<S9>/Get Parameter2'
     //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_n_k = ROPOD_4Wheel_kinb_cntr_P.Gain17_Gain *
@@ -456,11 +465,13 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain19' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_p_b = ROPOD_4Wheel_kinb_cntr_P.Gain19_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain2' incorporates:
+    //   MATLABSystem: '<S9>/Get Parameter2'
     //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_p_i = ROPOD_4Wheel_kinb_cntr_P.Gain2_Gain *
@@ -468,11 +479,13 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain3' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_n_f = ROPOD_4Wheel_kinb_cntr_P.Gain3_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain4' incorporates:
+    //   MATLABSystem: '<S9>/Get Parameter2'
     //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_p_o = ROPOD_4Wheel_kinb_cntr_P.Gain4_Gain *
@@ -480,11 +493,13 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain5' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_n_m = ROPOD_4Wheel_kinb_cntr_P.Gain5_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain6' incorporates:
+    //   MATLABSystem: '<S9>/Get Parameter2'
     //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_p_l = ROPOD_4Wheel_kinb_cntr_P.Gain6_Gain *
@@ -492,17 +507,19 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Gain: '<S36>/Gain7' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit2_n_j = ROPOD_4Wheel_kinb_cntr_P.Gain7_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
     // Gain: '<S36>/Gain9' incorporates:
     //   MATLABSystem: '<S9>/Get Parameter2'
+    //   MATLABSystem: '<S9>/Get Parameter2'
 
     ROPOD_4Wheel_kinb_cntr_B.limit1_p_f = ROPOD_4Wheel_kinb_cntr_P.Gain9_Gain *
       ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // MATLABSystem: '<S8>/Get Parameter'
+    // Start for MATLABSystem: '<S8>/Get Parameter'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_ft.SampleTime ==
@@ -520,11 +537,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1081.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter'
-
-    // MATLABSystem: '<S8>/Get Parameter11'
+    // Start for MATLABSystem: '<S8>/Get Parameter11'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_e.SampleTime ==
@@ -542,11 +559,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1082.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter11'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter11_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter11'
-
-    // MATLABSystem: '<S8>/Get Parameter12'
+    // Start for MATLABSystem: '<S8>/Get Parameter12'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_ps.SampleTime ==
@@ -564,11 +581,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1083.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter12'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter12_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter12'
-
-    // MATLABSystem: '<S8>/Get Parameter13'
+    // Start for MATLABSystem: '<S8>/Get Parameter13'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_h.SampleTime ==
@@ -586,11 +603,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1084.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter13'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter13_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter13'
-
-    // MATLABSystem: '<S8>/Get Parameter14'
+    // Start for MATLABSystem: '<S8>/Get Parameter14'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_k.SampleTime ==
@@ -608,11 +625,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1085.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter14'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter14_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter14'
-
-    // MATLABSystem: '<S8>/Get Parameter15'
+    // Start for MATLABSystem: '<S8>/Get Parameter15'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_kj.SampleTime ==
@@ -630,11 +647,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1086.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter15'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter15_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter15'
-
-    // MATLABSystem: '<S8>/Get Parameter16'
+    // Start for MATLABSystem: '<S8>/Get Parameter16'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_i.SampleTime ==
@@ -652,11 +669,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1087.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter16'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter16_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter16'
-
-    // MATLABSystem: '<S8>/Get Parameter17'
+    // Start for MATLABSystem: '<S8>/Get Parameter17'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_m.SampleTime ==
@@ -674,11 +691,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1088.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter17'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter17_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter17'
-
-    // MATLABSystem: '<S8>/Get Parameter1'
+    // Start for MATLABSystem: '<S8>/Get Parameter1'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_ei.SampleTime ==
@@ -696,11 +713,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1097.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter1'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter1_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter1'
-
-    // MATLABSystem: '<S8>/Get Parameter2'
+    // Start for MATLABSystem: '<S8>/Get Parameter2'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_j.SampleTime ==
@@ -718,11 +735,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1098.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter2'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter2_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter2'
-
-    // MATLABSystem: '<S8>/Get Parameter3'
+    // Start for MATLABSystem: '<S8>/Get Parameter3'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_is.SampleTime ==
@@ -740,11 +757,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1101.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter3'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter3_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter3'
-
-    // MATLABSystem: '<S8>/Get Parameter4'
+    // Start for MATLABSystem: '<S8>/Get Parameter4'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_kd.SampleTime ==
@@ -762,11 +779,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1102.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter4'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter4_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter4'
-
-    // MATLABSystem: '<S8>/Get Parameter5'
+    // Start for MATLABSystem: '<S8>/Get Parameter5'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_aa.SampleTime ==
@@ -784,11 +801,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1103.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter5'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter5_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter5'
-
-    // MATLABSystem: '<S8>/Get Parameter6'
+    // Start for MATLABSystem: '<S8>/Get Parameter6'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_m2.SampleTime ==
@@ -806,11 +823,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1104.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter6'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter6_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter6'
-
-    // MATLABSystem: '<S8>/Get Parameter7'
+    // Start for MATLABSystem: '<S8>/Get Parameter7'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_d.SampleTime ==
@@ -828,11 +845,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1110.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter7'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter7_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter7'
-
-    // MATLABSystem: '<S8>/Get Parameter8'
+    // Start for MATLABSystem: '<S8>/Get Parameter8'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_gc.SampleTime ==
@@ -850,11 +867,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1111.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter8'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter8_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter8'
-
-    // MATLABSystem: '<S8>/Get Parameter9'
+    // Start for MATLABSystem: '<S8>/Get Parameter9'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_c0.SampleTime ==
@@ -872,11 +889,11 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1112.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
+
+    // MATLABSystem: '<S8>/Get Parameter9'
     ROPOD_4Wheel_kinb_cntr_B.GetParameter9_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter9'
-
-    // MATLABSystem: '<S8>/Get Parameter10'
+    // Start for MATLABSystem: '<S8>/Get Parameter10'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_fc.SampleTime ==
@@ -894,9 +911,9 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_1109.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
-    ROPOD_4Wheel_kinb_cntr_B.GetParameter10_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S8>/Get Parameter10'
+    // MATLABSystem: '<S8>/Get Parameter10'
+    ROPOD_4Wheel_kinb_cntr_B.GetParameter10_o1 = ROPOD_4Wheel_kinb_cntr_B.t10;
   }
 
   // MATLAB Function: '<S2>/Gl_matrix' incorporates:
@@ -962,7 +979,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   ROPOD_4Wheel_kinb_cntr_B.t42 = ROPOD_4Wheel_kinb_cntr_B.t15_tmp *
     ROPOD_4Wheel_kinb_cntr_B.t38 * 0.5;
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S11>/Get Parameter'
+    // Start for MATLABSystem: '<S11>/Get Parameter'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj.SampleTime ==
@@ -980,9 +997,9 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_551.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
-    ROPOD_4Wheel_kinb_cntr_B.max_acc_xy = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S11>/Get Parameter'
+    // MATLABSystem: '<S11>/Get Parameter'
+    ROPOD_4Wheel_kinb_cntr_B.max_acc_xy = ROPOD_4Wheel_kinb_cntr_B.t10;
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -1005,7 +1022,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S11>/Get Parameter1'
+    // Start for MATLABSystem: '<S11>/Get Parameter1'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_p.SampleTime ==
@@ -1023,9 +1040,9 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_552.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
-    ROPOD_4Wheel_kinb_cntr_B.max_vel_xy = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S11>/Get Parameter1'
+    // MATLABSystem: '<S11>/Get Parameter1'
+    ROPOD_4Wheel_kinb_cntr_B.max_vel_xy = ROPOD_4Wheel_kinb_cntr_B.t10;
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -1040,6 +1057,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     // Delay: '<S13>/Enabled Delay' incorporates:
     //   Inport: '<S56>/In1'
+    //   MATLABSystem: '<S52>/SourceBlock'
     //   MATLABSystem: '<S52>/SourceBlock'
 
     if (ROPOD_4Wheel_kinb_cntr_B.SourceBlock_o1) {
@@ -1265,7 +1283,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S11>/Get Parameter2'
+    // Start for MATLABSystem: '<S11>/Get Parameter2'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_o.SampleTime ==
@@ -1283,9 +1301,9 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_664.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
-    ROPOD_4Wheel_kinb_cntr_B.max_acc_theta = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S11>/Get Parameter2'
+    // MATLABSystem: '<S11>/Get Parameter2'
+    ROPOD_4Wheel_kinb_cntr_B.max_acc_theta = ROPOD_4Wheel_kinb_cntr_B.t10;
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -1308,7 +1326,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLABSystem: '<S11>/Get Parameter3'
+    // Start for MATLABSystem: '<S11>/Get Parameter3'
     rtb_LowerRelop1_c = false;
     p = true;
     if (!(ROPOD_4Wheel_kinb_cntr_DW.obj_pq.SampleTime ==
@@ -1326,9 +1344,9 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
     ParamGet_ROPOD_4Wheel_kinb_cntr_665.get_parameter
       (&ROPOD_4Wheel_kinb_cntr_B.t10);
-    ROPOD_4Wheel_kinb_cntr_B.max_vel_theta = ROPOD_4Wheel_kinb_cntr_B.t10;
 
-    // End of MATLABSystem: '<S11>/Get Parameter3'
+    // MATLABSystem: '<S11>/Get Parameter3'
+    ROPOD_4Wheel_kinb_cntr_B.max_vel_theta = ROPOD_4Wheel_kinb_cntr_B.t10;
   }
 
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -1604,7 +1622,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_P.Constant_Value_l - 1];
   ROPOD_4Wheel_kinb_cntr_B.BusAssignment_h.Linear.Z =
     ROPOD_4Wheel_kinb_cntr_B.Add[(int32_T)
-    ROPOD_4Wheel_kinb_cntr_P.Constant12_Value_g - 1];
+    ROPOD_4Wheel_kinb_cntr_P.Constant12_Value - 1];
   ROPOD_4Wheel_kinb_cntr_B.BusAssignment_h.Angular.X =
     ROPOD_4Wheel_kinb_cntr_B.Product3[(int32_T)
     ROPOD_4Wheel_kinb_cntr_P.Constant3_Value + 6];
@@ -1615,7 +1633,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_P.Constant5_Value;
 
   // Outputs for Atomic SubSystem: '<S1>/Publish'
-  // MATLABSystem: '<S22>/SinkBlock'
+  // Start for MATLABSystem: '<S22>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_902.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment_h);
 
@@ -1651,7 +1669,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_P.Constant4_Value;
 
   // Outputs for Atomic SubSystem: '<S1>/Publish1'
-  // MATLABSystem: '<S23>/SinkBlock'
+  // Start for MATLABSystem: '<S23>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_959.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment1);
 
@@ -1687,7 +1705,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_P.Constant8_Value_c;
 
   // Outputs for Atomic SubSystem: '<S1>/Publish2'
-  // MATLABSystem: '<S24>/SinkBlock'
+  // Start for MATLABSystem: '<S24>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_983.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment2);
 
@@ -1723,7 +1741,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_P.Constant11_Value;
 
   // Outputs for Atomic SubSystem: '<S1>/Publish3'
-  // MATLABSystem: '<S25>/SinkBlock'
+  // Start for MATLABSystem: '<S25>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_994.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment3);
 
@@ -1744,7 +1762,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_B.SFunction[19];
 
   // Outputs for Atomic SubSystem: '<S1>/Publish4'
-  // MATLABSystem: '<S26>/SinkBlock'
+  // Start for MATLABSystem: '<S26>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_1179.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment5);
 
@@ -1765,7 +1783,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_B.SFunction_n[19];
 
   // Outputs for Atomic SubSystem: '<S1>/Publish5'
-  // MATLABSystem: '<S27>/SinkBlock'
+  // Start for MATLABSystem: '<S27>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_1185.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment4);
 
@@ -1786,7 +1804,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_B.SFunction_m[19];
 
   // Outputs for Atomic SubSystem: '<S1>/Publish6'
-  // MATLABSystem: '<S28>/SinkBlock'
+  // Start for MATLABSystem: '<S28>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_1190.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment6);
 
@@ -1807,7 +1825,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_B.SFunction_k[19];
 
   // Outputs for Atomic SubSystem: '<S1>/Publish7'
-  // MATLABSystem: '<S29>/SinkBlock'
+  // Start for MATLABSystem: '<S29>/SinkBlock'
   Pub_ROPOD_4Wheel_kinb_cntr_1206.publish
     (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment7);
 
@@ -1815,24 +1833,39 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
 
   // MATLABSystem: '<S4>/Coordinate Transformation Conversion' incorporates:
   //   Constant: '<S4>/Constant1'
+
+  ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[0] = sin
+    (ROPOD_4Wheel_kinb_cntr_P.Constant1_Value_gr / 2.0);
+
+  // Start for MATLABSystem: '<S4>/Coordinate Transformation Conversion' incorporates:
+  //   Constant: '<S4>/Constant1'
+
+  ROPOD_4Wheel_kinb_cntr_B.sampletime_a = cos
+    (ROPOD_4Wheel_kinb_cntr_P.Constant1_Value_gr / 2.0);
+
+  // MATLABSystem: '<S4>/Coordinate Transformation Conversion' incorporates:
+  //   Constant: '<S4>/Constant2'
+
+  ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[1] = sin
+    (ROPOD_4Wheel_kinb_cntr_P.Constant2_Value_g / 2.0);
+
+  // Start for MATLABSystem: '<S4>/Coordinate Transformation Conversion' incorporates:
   //   Constant: '<S4>/Constant2'
   //   DiscreteIntegrator: '<S3>/Discrete-Time Integrator'
   //   SignalConversion: '<S4>/TmpSignal ConversionAtCoordinate Transformation ConversionInport1'
 
-  ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[0] = sin
-    (ROPOD_4Wheel_kinb_cntr_P.Constant1_Value_gr / 2.0);
-  ROPOD_4Wheel_kinb_cntr_B.sampletime_a = cos
-    (ROPOD_4Wheel_kinb_cntr_P.Constant1_Value_gr / 2.0);
-  ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[1] = sin
-    (ROPOD_4Wheel_kinb_cntr_P.Constant2_Value_g / 2.0);
   ROPOD_4Wheel_kinb_cntr_B.Yk1_l = cos
     (ROPOD_4Wheel_kinb_cntr_P.Constant2_Value_g / 2.0);
   ROPOD_4Wheel_kinb_cntr_B.sampletime = cos
     (ROPOD_4Wheel_kinb_cntr_DW.DiscreteTimeIntegrator_DSTATE[2] / 2.0);
   ROPOD_4Wheel_kinb_cntr_B.Switch2_a = sin
     (ROPOD_4Wheel_kinb_cntr_DW.DiscreteTimeIntegrator_DSTATE[2] / 2.0);
+
+  // MATLABSystem: '<S4>/Coordinate Transformation Conversion'
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[2] =
     ROPOD_4Wheel_kinb_cntr_B.Switch2_a;
+
+  // Start for MATLABSystem: '<S4>/Coordinate Transformation Conversion'
   ROPOD_4Wheel_kinb_cntr_B.Switch = ROPOD_4Wheel_kinb_cntr_B.sampletime_a *
     ROPOD_4Wheel_kinb_cntr_B.Yk1_l;
   ROPOD_4Wheel_kinb_cntr_B.Yk1 =
@@ -1840,6 +1873,8 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[1];
   ROPOD_4Wheel_kinb_cntr_B.sampletime_a *=
     ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[1];
+
+  // MATLABSystem: '<S4>/Coordinate Transformation Conversion'
   ROPOD_4Wheel_kinb_cntr_B.Switch2 =
     ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtCoordi[0] *
     ROPOD_4Wheel_kinb_cntr_B.Yk1_l * ROPOD_4Wheel_kinb_cntr_B.sampletime +
@@ -2061,6 +2096,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   //   Constant: '<S4>/Constant5'
   //   DiscreteIntegrator: '<S3>/Discrete-Time Integrator'
   //   MATLABSystem: '<S4>/Coordinate Transformation Conversion'
+  //   MATLABSystem: '<S4>/Coordinate Transformation Conversion'
 
   ROPOD_4Wheel_kinb_cntr_B.BusAssignment =
     ROPOD_4Wheel_kinb_cntr_P.Constant_Value;
@@ -2096,7 +2132,7 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
   // RateTransition: '<S4>/Rate Transition'
   if (ROPOD_4Wheel_kinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
     // Outputs for Atomic SubSystem: '<S4>/Publish'
-    // MATLABSystem: '<S34>/SinkBlock'
+    // Start for MATLABSystem: '<S34>/SinkBlock'
     Pub_ROPOD_4Wheel_kinb_cntr_349.publish
       (&ROPOD_4Wheel_kinb_cntr_B.BusAssignment);
 
@@ -3828,33 +3864,33 @@ void ROPOD_4Wheel_kinb_cntr_terminate(void)
     sfcnTerminate(rts);
   }
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter1'
+  // Start for MATLABSystem: '<S9>/Get Parameter1'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_b.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_b.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S9>/Get Parameter1'
+  // End of Start for MATLABSystem: '<S9>/Get Parameter1'
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter3'
+  // Start for MATLABSystem: '<S9>/Get Parameter3'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_l.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_l.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S9>/Get Parameter3'
+  // End of Start for MATLABSystem: '<S9>/Get Parameter3'
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter4'
+  // Start for MATLABSystem: '<S9>/Get Parameter4'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_c.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_c.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S9>/Get Parameter4'
+  // End of Start for MATLABSystem: '<S9>/Get Parameter4'
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter5'
+  // Start for MATLABSystem: '<S9>/Get Parameter5'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_a.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_a.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S9>/Get Parameter5'
+  // End of Start for MATLABSystem: '<S9>/Get Parameter5'
 
   // Terminate for S-Function (ec_ROPOD_SmartWheel): '<S41>/S-Function'
   // Level2 S-Function Block: '<S41>/S-Function' (ec_ROPOD_SmartWheel)
@@ -3884,269 +3920,269 @@ void ROPOD_4Wheel_kinb_cntr_terminate(void)
     sfcnTerminate(rts);
   }
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter'
+  // Start for MATLABSystem: '<S9>/Get Parameter'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_f.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_f.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S9>/Get Parameter'
+  // End of Start for MATLABSystem: '<S9>/Get Parameter'
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter2'
+  // Start for MATLABSystem: '<S9>/Get Parameter2'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_g.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_g.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S9>/Get Parameter2'
+  // End of Start for MATLABSystem: '<S9>/Get Parameter2'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter'
+  // Start for MATLABSystem: '<S8>/Get Parameter'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_ft.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_ft.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter11'
+  // Start for MATLABSystem: '<S8>/Get Parameter11'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_e.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_e.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter11'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter11'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter12'
+  // Start for MATLABSystem: '<S8>/Get Parameter12'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_ps.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_ps.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter12'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter12'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter13'
+  // Start for MATLABSystem: '<S8>/Get Parameter13'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_h.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_h.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter13'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter13'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter14'
+  // Start for MATLABSystem: '<S8>/Get Parameter14'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_k.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_k.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter14'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter14'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter15'
+  // Start for MATLABSystem: '<S8>/Get Parameter15'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_kj.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_kj.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter15'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter15'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter16'
+  // Start for MATLABSystem: '<S8>/Get Parameter16'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_i.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_i.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter16'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter16'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter17'
+  // Start for MATLABSystem: '<S8>/Get Parameter17'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_m.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_m.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter17'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter17'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter1'
+  // Start for MATLABSystem: '<S8>/Get Parameter1'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_ei.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_ei.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter1'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter1'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter2'
+  // Start for MATLABSystem: '<S8>/Get Parameter2'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_j.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_j.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter2'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter2'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter3'
+  // Start for MATLABSystem: '<S8>/Get Parameter3'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_is.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_is.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter3'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter3'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter4'
+  // Start for MATLABSystem: '<S8>/Get Parameter4'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_kd.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_kd.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter4'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter4'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter5'
+  // Start for MATLABSystem: '<S8>/Get Parameter5'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_aa.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_aa.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter5'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter5'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter6'
+  // Start for MATLABSystem: '<S8>/Get Parameter6'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_m2.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_m2.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter6'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter6'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter7'
+  // Start for MATLABSystem: '<S8>/Get Parameter7'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_d.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_d.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter7'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter7'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter8'
+  // Start for MATLABSystem: '<S8>/Get Parameter8'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_gc.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_gc.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter8'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter8'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter9'
+  // Start for MATLABSystem: '<S8>/Get Parameter9'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_c0.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_c0.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter9'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter9'
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter10'
+  // Start for MATLABSystem: '<S8>/Get Parameter10'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_fc.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_fc.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S8>/Get Parameter10'
+  // End of Start for MATLABSystem: '<S8>/Get Parameter10'
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter'
+  // Start for MATLABSystem: '<S11>/Get Parameter'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S11>/Get Parameter'
+  // End of Start for MATLABSystem: '<S11>/Get Parameter'
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter1'
+  // Start for MATLABSystem: '<S11>/Get Parameter1'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_p.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_p.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S11>/Get Parameter1'
+  // End of Start for MATLABSystem: '<S11>/Get Parameter1'
 
   // Terminate for Atomic SubSystem: '<S13>/Subscribe1'
-  // Terminate for MATLABSystem: '<S52>/SourceBlock'
+  // Start for MATLABSystem: '<S52>/SourceBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_ja.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_ja.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S52>/SourceBlock'
+  // End of Start for MATLABSystem: '<S52>/SourceBlock'
   // End of Terminate for SubSystem: '<S13>/Subscribe1'
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter2'
+  // Start for MATLABSystem: '<S11>/Get Parameter2'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_o.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_o.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S11>/Get Parameter2'
+  // End of Start for MATLABSystem: '<S11>/Get Parameter2'
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter3'
+  // Start for MATLABSystem: '<S11>/Get Parameter3'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_pq.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_pq.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S11>/Get Parameter3'
+  // End of Start for MATLABSystem: '<S11>/Get Parameter3'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish'
-  // Terminate for MATLABSystem: '<S22>/SinkBlock'
+  // Start for MATLABSystem: '<S22>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_o2.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_o2.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S22>/SinkBlock'
+  // End of Start for MATLABSystem: '<S22>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish1'
-  // Terminate for MATLABSystem: '<S23>/SinkBlock'
+  // Start for MATLABSystem: '<S23>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_kt.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_kt.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S23>/SinkBlock'
+  // End of Start for MATLABSystem: '<S23>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish1'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish2'
-  // Terminate for MATLABSystem: '<S24>/SinkBlock'
+  // Start for MATLABSystem: '<S24>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_k1w.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_k1w.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S24>/SinkBlock'
+  // End of Start for MATLABSystem: '<S24>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish2'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish3'
-  // Terminate for MATLABSystem: '<S25>/SinkBlock'
+  // Start for MATLABSystem: '<S25>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_dq.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_dq.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S25>/SinkBlock'
+  // End of Start for MATLABSystem: '<S25>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish3'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish4'
-  // Terminate for MATLABSystem: '<S26>/SinkBlock'
+  // Start for MATLABSystem: '<S26>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_k1.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_k1.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S26>/SinkBlock'
+  // End of Start for MATLABSystem: '<S26>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish4'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish5'
-  // Terminate for MATLABSystem: '<S27>/SinkBlock'
+  // Start for MATLABSystem: '<S27>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_du.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_du.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S27>/SinkBlock'
+  // End of Start for MATLABSystem: '<S27>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish5'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish6'
-  // Terminate for MATLABSystem: '<S28>/SinkBlock'
+  // Start for MATLABSystem: '<S28>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_cx.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_cx.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S28>/SinkBlock'
+  // End of Start for MATLABSystem: '<S28>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish6'
 
   // Terminate for Atomic SubSystem: '<S1>/Publish7'
-  // Terminate for MATLABSystem: '<S29>/SinkBlock'
+  // Start for MATLABSystem: '<S29>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_fm.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_fm.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S29>/SinkBlock'
+  // End of Start for MATLABSystem: '<S29>/SinkBlock'
   // End of Terminate for SubSystem: '<S1>/Publish7'
 
-  // Terminate for MATLABSystem: '<S4>/Coordinate Transformation Conversion'
+  // Start for MATLABSystem: '<S4>/Coordinate Transformation Conversion'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_dx.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_dx.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S4>/Coordinate Transformation Conversion' 
+  // End of Start for MATLABSystem: '<S4>/Coordinate Transformation Conversion'
 
   // Terminate for Atomic SubSystem: '<S4>/Publish'
-  // Terminate for MATLABSystem: '<S34>/SinkBlock'
+  // Start for MATLABSystem: '<S34>/SinkBlock'
   if (ROPOD_4Wheel_kinb_cntr_DW.obj_hz.isInitialized == 1) {
     ROPOD_4Wheel_kinb_cntr_DW.obj_hz.isInitialized = 2;
   }
 
-  // End of Terminate for MATLABSystem: '<S34>/SinkBlock'
+  // End of Start for MATLABSystem: '<S34>/SinkBlock'
   // End of Terminate for SubSystem: '<S4>/Publish'
 }
 

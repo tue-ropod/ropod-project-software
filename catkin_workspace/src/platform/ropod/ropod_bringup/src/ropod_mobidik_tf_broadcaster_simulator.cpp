@@ -68,12 +68,12 @@ int main(int argc, char** argv){
   ros::init(argc, argv, "robot_tf_publisher");
   ros::NodeHandle n;
   
-  odommsg.pose.pose.position.x = 0;
-  odommsg.pose.pose.position.y = 0;
-  odommsg.pose.pose.orientation.x = 0;
-  odommsg.pose.pose.orientation.y = 0;
-  odommsg.pose.pose.orientation.z = 0;
-  odommsg.pose.pose.orientation.w = 0;
+  odommsg.pose.pose.position.x = 0.0;
+  odommsg.pose.pose.position.y = 0.0;
+  odommsg.pose.pose.orientation.x = 0.0;
+  odommsg.pose.pose.orientation.y = 0.0;
+  odommsg.pose.pose.orientation.z = 0.0;
+  odommsg.pose.pose.orientation.w = 0.0;
 
   ros::Rate r(30);
 

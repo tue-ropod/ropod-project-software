@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export CATKIN_WORKSPACE=~/ropod-project-software/catkin_workspace
 
 export ED_PLUGIN_PATH=$CATKIN_WORKSPACE/devel/lib

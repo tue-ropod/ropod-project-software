@@ -97,19 +97,18 @@ int main(int argc, char** argv){
   //ros::Subscriber sub = n.subscribe<geometry_msgs::PoseArray>("/ed/localization/particles", 1, poseCallback);
   
   while(n.ok()){
-	  // q2 = (tf::Quaternion) odommsg.pose.pose.orientation;
-    broadcaster.sendTransform(
+
+   /* broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(q, tf::Vector3(0.25, 0.0, 0.15)),
-        ros::Time::now(),"/ropod/base_link", "/ropod/laser/scan"));
+        ros::Time::now(),"/ropod/base_link", "/ropod/laser/scan"));*/ // This transformation is configured using static_tf.launch in ropod_bringup/parameters folder
     
-    /* In the future  this transformation needs to be adjusted based on an estimation of the real kinematics constraints*/
-    
+    /* In the future  this transformation needs to be adjusted based on an estimation of the real kinematics constraints*/    
    broadcaster.sendTransform(
       tf::StampedTransform(base2loadTF, ros::Time::now(),"/ropod/base_link", "/load/base_link"));
    
         
-    
+    /* odometry transform */
     broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(odommsg.pose.pose.orientation.x, odommsg.pose.pose.orientation.y, odommsg.pose.pose.orientation.z, odommsg.pose.pose.orientation.w), 

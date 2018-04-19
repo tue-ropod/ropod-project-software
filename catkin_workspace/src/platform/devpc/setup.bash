@@ -15,6 +15,6 @@ alias sshpico-wired="ssh ropod@$ROPOD_IP_WIRED"
 alias ropod-core="export ROS_MASTER_URI=http://$ROPOD_IP:11311"
 alias ropod-core-wired="export ROS_MASTER_URI=http://$ROPOD_IP_WIRED:11311"
 
-alias ropod-rviz="pico-core;roslaunch pico_bringup rviz.launch"
+alias ropod-rviz="ropod-core;roslaunch ropod_bringup rviz.launch"
 
 export ROBOT_REAL=false

@@ -7,6 +7,8 @@
 
 nav_msgs::Odometry odommsg;
 tf::Quaternion q3;
+tf::Transform base2loadTF; // Sending a zero transformation makes configuration easier. It also means there is no load.
+
 // /* 
 void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){	
   odommsg.pose.pose.position.x = msg->pose.pose.position.x;
@@ -56,20 +58,25 @@ int main(int argc, char** argv){
   
   q3.setRPY(0, 0, 0);  
   
+   base2loadTF = tf::Transform(q, tf::Vector3(0.0, 0.0, 0.0));
+  
   
    ros::Subscriber sub = n.subscribe<nav_msgs::Odometry>("/ropod/odom", 1, poseCallback);
   //ros::Subscriber sub = n.subscribe<geometry_msgs::PoseArray>("/ed/localization/particles", 1, poseCallback);
   
   while(n.ok()){
 	  // q2 = (tf::Quaternion) odommsg.pose.pose.orientation;
-    broadcaster.sendTransform(
-      tf::StampedTransform(
+    /* broadcaster.sendTransform(
+     tf::StampedTransform(
         tf::Transform(q, tf::Vector3(0.25, 0.0, 0.15)),
-        ros::Time::now(),"/ropod/base_link", "/ropod/laser/scan"));
-    /*broadcaster.sendTransform(
-      tf::StampedTransform(
-        tf::Transform(q2, tf::Vector3(0.0, 0.0, 0.0)),
-        ros::Time::now(),"map", "/ropod/odom")); */
+        ros::Time::now(),"/ropod/base_link", "/ropod/laser/scan"));*/ // This transformation is configured using static_tf.launch in ropod_bringup/parameters folder
+        
+    
+    
+    /* Sending a zero transformation makes configuration easier. It also means there is no load */    
+   broadcaster.sendTransform(
+      tf::StampedTransform(base2loadTF, ros::Time::now(),"/ropod/base_link", "/load/base_link"));
+    
 	broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(q3, tf::Vector3(odommsg.pose.pose.position.x, odommsg.pose.pose.position.y, 0.0)),        

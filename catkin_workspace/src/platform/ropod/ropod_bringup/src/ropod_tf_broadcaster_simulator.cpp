@@ -8,6 +8,7 @@
 nav_msgs::Odometry odommsg;
 tf::Quaternion q3;
 tf::Transform base2loadTF; // Sending a zero transformation makes configuration easier. It also means there is no load.
+ros::Publisher pub_ropod_odom;
 
 // /* 
 void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){	
@@ -18,6 +19,12 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   odommsg.pose.pose.orientation.z = msg->pose.pose.orientation.z;
   odommsg.pose.pose.orientation.w = msg->pose.pose.orientation.w;
   q3 = tf::Quaternion(odommsg.pose.pose.orientation.x, odommsg.pose.pose.orientation.y, odommsg.pose.pose.orientation.z, odommsg.pose.pose.orientation.w); 
+  odommsg.header.frame_id = "/ropod/odom";
+  odommsg.child_frame_id = "/ropod/base_link";
+  odommsg.header.stamp = ros::Time::now();
+  
+  pub_ropod_odom.publish(odommsg);     
+  
 }
 /* 
 */
@@ -60,8 +67,8 @@ int main(int argc, char** argv){
   
    base2loadTF = tf::Transform(q, tf::Vector3(0.0, 0.0, 0.0));
   
-  
-   ros::Subscriber sub = n.subscribe<nav_msgs::Odometry>("/ropod/odom", 1, poseCallback);
+   pub_ropod_odom = n.advertise<nav_msgs::Odometry>("/ropod/odom", 1);
+   ros::Subscriber sub = n.subscribe<nav_msgs::Odometry>("/ropod/odom_incomplete", 1, poseCallback);
   //ros::Subscriber sub = n.subscribe<geometry_msgs::PoseArray>("/ed/localization/particles", 1, poseCallback);
   
   while(n.ok()){
@@ -81,7 +88,7 @@ int main(int argc, char** argv){
       tf::StampedTransform(
         tf::Transform(q3, tf::Vector3(odommsg.pose.pose.position.x, odommsg.pose.pose.position.y, 0.0)),        
         //tf::Transform(q, tf::Vector3(0.0, 0.0, 0.3)),
-        ros::Time::now(),"/ropod/odom","/ropod/base_link"));      
+        ros::Time::now(),"/ropod/base_link","/ropod/odom"));      
     
      
     ros::spinOnce();           

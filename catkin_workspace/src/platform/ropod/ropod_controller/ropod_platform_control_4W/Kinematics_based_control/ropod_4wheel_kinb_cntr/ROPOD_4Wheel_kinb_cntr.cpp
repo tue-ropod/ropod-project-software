@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.203
+// Model version                  : 1.209
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Apr 18 17:04:04 2018
+// C/C++ source code generated on : Thu Apr 19 17:14:11 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -3051,7 +3051,8 @@ void ROPOD_4Wheel_kinb_cntr_initialize(void)
   }
 
   {
-    static const char_T tmp[5] = { '/', 'o', 'd', 'o', 'm' };
+    static const char_T tmp[16] = { '/', 'o', 'd', 'o', 'm', '_', 'i', 'n', 'c',
+      'o', 'm', 'p', 'l', 'e', 't', 'e' };
 
     static const char_T tmp_0[22] = { '/', 's', 'm', 'a', 'r', 't', 'w', '4',
       '_', 'v', 'o', 'l', 'c', 'u', 'r', 'r', '_', 'd', 'e', 'b', 'u', 'g' };
@@ -3186,10 +3187,9 @@ void ROPOD_4Wheel_kinb_cntr_initialize(void)
       'h', 'e', 'e', 'l', 's', '/', 'p', 'i', 'v', 'o', 't', '_', 'o', 'f', 'f',
       's', '_', 's', 'w', '1' };
 
-    char_T tmp_11[6];
+    char_T tmp_11[17];
     char_T tmp_12[15];
     char_T tmp_13[9];
-    char_T tmp_14[20];
     int32_T i;
 
     // Start for S-Function (ECAT_Interface): '<S5>/ECAT_Interface'
@@ -3429,11 +3429,11 @@ void ROPOD_4Wheel_kinb_cntr_initialize(void)
     ROPOD_4Wheel_kinb_cntr_DW.obj_ei.SampleTime = ROPOD_4Wheel_kinb_cntr_P.Tsp;
     ROPOD_4Wheel_kinb_cntr_DW.obj_ei.isInitialized = 1;
     for (i = 0; i < 19; i++) {
-      tmp_14[i] = tmp_m[i];
+      ROPOD_4Wheel_kinb_cntr_B.cv6[i] = tmp_m[i];
     }
 
-    tmp_14[19] = '\x00';
-    ParamGet_ROPOD_4Wheel_kinb_cntr_1097.initialize(tmp_14);
+    ROPOD_4Wheel_kinb_cntr_B.cv6[19] = '\x00';
+    ParamGet_ROPOD_4Wheel_kinb_cntr_1097.initialize(ROPOD_4Wheel_kinb_cntr_B.cv6);
     ParamGet_ROPOD_4Wheel_kinb_cntr_1097.initialize_error_codes(0U, 1U, 2U, 3U);
     ParamGet_ROPOD_4Wheel_kinb_cntr_1097.set_initial_value
       (ROPOD_ParameterInitialValue_nc4);
@@ -3445,11 +3445,11 @@ void ROPOD_4Wheel_kinb_cntr_initialize(void)
     ROPOD_4Wheel_kinb_cntr_DW.obj_j.SampleTime = ROPOD_4Wheel_kinb_cntr_P.Tsp;
     ROPOD_4Wheel_kinb_cntr_DW.obj_j.isInitialized = 1;
     for (i = 0; i < 19; i++) {
-      tmp_14[i] = tmp_l[i];
+      ROPOD_4Wheel_kinb_cntr_B.cv6[i] = tmp_l[i];
     }
 
-    tmp_14[19] = '\x00';
-    ParamGet_ROPOD_4Wheel_kinb_cntr_1098.initialize(tmp_14);
+    ROPOD_4Wheel_kinb_cntr_B.cv6[19] = '\x00';
+    ParamGet_ROPOD_4Wheel_kinb_cntr_1098.initialize(ROPOD_4Wheel_kinb_cntr_B.cv6);
     ParamGet_ROPOD_4Wheel_kinb_cntr_1098.initialize_error_codes(0U, 1U, 2U, 3U);
     ParamGet_ROPOD_4Wheel_kinb_cntr_1098.set_initial_value
       (ROPOD__ParameterInitialValue_nc);
@@ -3794,11 +3794,11 @@ void ROPOD_4Wheel_kinb_cntr_initialize(void)
     // Start for MATLABSystem: '<S34>/SinkBlock'
     ROPOD_4Wheel_kinb_cntr_DW.obj_hz.isInitialized = 0;
     ROPOD_4Wheel_kinb_cntr_DW.obj_hz.isInitialized = 1;
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 16; i++) {
       tmp_11[i] = tmp[i];
     }
 
-    tmp_11[5] = '\x00';
+    tmp_11[16] = '\x00';
     Pub_ROPOD_4Wheel_kinb_cntr_349.createPublisher(tmp_11,
       ROPOD_4Wheel_ki_MessageQueueLen);
 

@@ -88,7 +88,7 @@ int main(int argc, char** argv){
       tf::StampedTransform(
         tf::Transform(q3, tf::Vector3(odommsg.pose.pose.position.x, odommsg.pose.pose.position.y, 0.0)),        
         //tf::Transform(q, tf::Vector3(0.0, 0.0, 0.3)),
-        ros::Time::now(),"/ropod/base_link","/ropod/odom"));      
+        ros::Time::now(),"/ropod/odom","/ropod/base_link"));      
     
      
     ros::spinOnce();           

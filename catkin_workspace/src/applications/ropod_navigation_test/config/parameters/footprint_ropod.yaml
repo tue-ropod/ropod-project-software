@@ -1,0 +1,2 @@
+footprint: [[-0.33, 0.33], [0.33, 0.33], [0.33, -0.33], [-0.33, -0.33]] # for ropod alone
+robot_base_frame: /ropod/base_link

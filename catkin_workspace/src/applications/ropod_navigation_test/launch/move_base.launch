@@ -3,6 +3,8 @@
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <rosparam file="$(find ropod_navigation_test)/config/parameters/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find ropod_navigation_test)/config/parameters/costmap_common_params.yaml" command="load" ns="local_costmap" />    
+    <rosparam file="$(find ropod_navigation_test)/config/parameters/footprint_ropod.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ropod_navigation_test)/config/parameters/footprint_ropod.yaml" command="load" ns="local_costmap" />       
     <rosparam file="$(find ropod_navigation_test)/config/parameters/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find ropod_navigation_test)/config/parameters/local_costmap_params.yaml"  command="load"/>    
     <rosparam file="$(find ropod_navigation_test)/config/parameters/base_local_planner_params.yaml" command="load" />
@@ -10,14 +12,12 @@
     <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->
     
     
-    <!-- <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />  -->
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
     
 
-    <rosparam file="$(find ropod_navigation_test)/config/parameters/teb_local_planner_params.yaml" command="load" />
-    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
     
     
-    <remap from="cmd_vel" to="/load/cmd_vel"/>
+    <remap from="cmd_vel" to="/ropod/cmd_vel"/>
     <remap from="odom" to="/ropod/odom"/>
   </node>
 </launch>

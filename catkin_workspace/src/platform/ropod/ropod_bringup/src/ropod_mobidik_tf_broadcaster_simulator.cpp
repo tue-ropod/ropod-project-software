@@ -23,6 +23,9 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   odommsg.pose.pose.orientation.y = msg->pose.pose.orientation.y;
   odommsg.pose.pose.orientation.z = msg->pose.pose.orientation.z;
   odommsg.pose.pose.orientation.w = msg->pose.pose.orientation.w;
+  odommsg.twist.twist.linear.x = msg->twist.twist.linear.x;
+  odommsg.twist.twist.linear.y = msg->twist.twist.linear.y;
+  odommsg.twist.twist.linear.z = msg->twist.twist.linear.z;  
   odommsg.header.frame_id = "/ropod/odom";
   odommsg.child_frame_id = "/ropod/base_link";
   odommsg.header.stamp = ros::Time::now();

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.209
+// Model version                  : 1.210
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Thu Apr 19 17:14:11 2018
+// C/C++ source code generated on : Fri Apr 20 09:35:38 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -430,6 +430,18 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
 
   real_T SFunction_P1_i;               // Expression: link_id
                                        //  Referenced by: '<S44>/S-Function'
+
+  real_T signconvention_Gain;          // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention'
+
+  real_T signconvention1_Gain;         // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention1'
+
+  real_T signconvention2_Gain;         // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention2'
+
+  real_T signconvention3_Gain;         // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention3'
 
   real_T shift_Gain;                   // Expression: 2
                                        //  Referenced by: '<S36>/shift'

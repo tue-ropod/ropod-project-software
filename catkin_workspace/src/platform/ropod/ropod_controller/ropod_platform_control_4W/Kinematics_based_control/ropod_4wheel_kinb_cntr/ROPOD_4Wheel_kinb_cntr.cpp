@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.209
+// Model version                  : 1.210
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Thu Apr 19 17:14:11 2018
+// C/C++ source code generated on : Fri Apr 20 09:35:38 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -19,8 +19,8 @@
 #include "ROPOD_4Wheel_kinb_cntr.h"
 #include "ROPOD_4Wheel_kinb_cntr_private.h"
 #define ParameterInitialV_nc4bpmzdsyxjm (1.5)
-#define ParameterInitialVa_nc4bpmzdsyxj (0.19634954084936207)
-#define ParameterInitialVal_nc4bpmzdsyx (0.78539816339744828)
+#define ParameterInitialVa_nc4bpmzdsyxj (0.78539816339744828)
+#define ParameterInitialVal_nc4bpmzdsyx (1.5707963267948966)
 #define ParameterInitialValu_nc4bpmzdsy (1.0998)
 #define ParameterInitialValue_nc4bpmzd (3.507)
 #define ParameterInitialValue_nc4bpmzds (0.2956)
@@ -1585,22 +1585,31 @@ void ROPOD_4Wheel_kinb_cntr_step(void)
     ROPOD_4Wheel_kinb_cntr_P.sign_convention3_Gain *
     ROPOD_4Wheel_kinb_cntr_B.Product3[14];
 
-  // SignalConversion: '<S1>/TmpSignal ConversionAtSelector1Inport1'
+  // SignalConversion: '<S1>/TmpSignal ConversionAtSelector1Inport1' incorporates:
+  //   Gain: '<S35>/sign convention'
+  //   Gain: '<S35>/sign convention1'
+  //   Gain: '<S35>/sign convention2'
+  //   Gain: '<S35>/sign convention3'
+
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[0] =
     ROPOD_4Wheel_kinb_cntr_B.SFunction[5];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[1] =
+    ROPOD_4Wheel_kinb_cntr_P.signconvention_Gain *
     ROPOD_4Wheel_kinb_cntr_B.SFunction[17];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[2] =
     ROPOD_4Wheel_kinb_cntr_B.SFunction_n[5];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[3] =
+    ROPOD_4Wheel_kinb_cntr_P.signconvention1_Gain *
     ROPOD_4Wheel_kinb_cntr_B.SFunction_n[17];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[4] =
     ROPOD_4Wheel_kinb_cntr_B.SFunction_m[5];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[5] =
+    ROPOD_4Wheel_kinb_cntr_P.signconvention2_Gain *
     ROPOD_4Wheel_kinb_cntr_B.SFunction_m[17];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[6] =
     ROPOD_4Wheel_kinb_cntr_B.SFunction_k[5];
   ROPOD_4Wheel_kinb_cntr_B.TmpSignalConversionAtSelect[7] =
+    ROPOD_4Wheel_kinb_cntr_P.signconvention3_Gain *
     ROPOD_4Wheel_kinb_cntr_B.SFunction_k[17];
 
   // BusAssignment: '<S1>/Bus Assignment' incorporates:

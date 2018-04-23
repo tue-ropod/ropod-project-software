@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.203
+// Model version                  : 1.210
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Apr 18 17:04:04 2018
+// C/C++ source code generated on : Fri Apr 20 09:35:38 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -139,6 +139,7 @@ typedef struct {
   char_T cv3[23];
   char_T cv4[22];
   char_T cv5[21];
+  char_T cv6[20];
   real_T command2;                     // '<S36>/Constant'
   real_T command2_h;                   // '<S36>/Constant1'
   real_T timestamp;                    // '<S36>/Constant10'
@@ -429,6 +430,18 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
 
   real_T SFunction_P1_i;               // Expression: link_id
                                        //  Referenced by: '<S44>/S-Function'
+
+  real_T signconvention_Gain;          // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention'
+
+  real_T signconvention1_Gain;         // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention1'
+
+  real_T signconvention2_Gain;         // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention2'
+
+  real_T signconvention3_Gain;         // Expression: -1
+                                       //  Referenced by: '<S35>/sign convention3'
 
   real_T shift_Gain;                   // Expression: 2
                                        //  Referenced by: '<S36>/shift'

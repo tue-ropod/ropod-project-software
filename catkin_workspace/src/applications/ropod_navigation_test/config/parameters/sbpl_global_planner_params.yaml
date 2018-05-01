@@ -1,0 +1,10 @@
+SBPLLatticePlanner:
+  environment_type: XYThetaLattice
+  planner_type: ADPlanner #ARAPlanner
+  forward_search: True #False
+  allocated_time: 4.0
+  lethal_obstacle: 1000
+  primitive_filename: /home/cesar/ropod-project-software/catkin_workspace/src/applications/ropod_navigation_test/config/parameters/ropod.mprim
+
+
+

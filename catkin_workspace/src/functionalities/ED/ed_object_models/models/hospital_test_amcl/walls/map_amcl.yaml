@@ -1,4 +1,4 @@
-image: /home/wouter/ropod-project-software/catkin_workspace/src/functionalities/ED/ed_object_models/models/hospital_test_amcl/walls/shape/gmapping_cleaned_hospitalmap.png
+image: shape/gmapping_cleaned_hospitalmap.png
 resolution: 0.020000
 origin: [-14.000000, -14.000000, 0.000000]
 negate: 0

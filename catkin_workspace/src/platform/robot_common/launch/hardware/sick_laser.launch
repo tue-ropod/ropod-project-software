@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="name" />
+  <arg name="robot"/>
+  <arg name="IP_address" />
+  <arg name="bringup_path" />
+  <group ns="$(arg name)" >
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find sick_tim)/urdf/example.urdf.xacro'" />
+    <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" /-->
+
+    <node name="info" pkg="sick_tim" type="sick_tim551_2050001" respawn="false" output="screen">
+
+      <param name="intensity" type="bool" value="False" />
+      <!--
+        <param name="min_ang" type="double" value="-2.35619449019" />
+        <param name="max_ang" type="double" value="2.35619449019" />
+        <param name="skip" type="int" value="0" />
+        <param name="frame_id" type="str" value="laser" />
+        <param name="time_offset" type="double" value="-0.001" />
+        <param name="publish_datagram" type="bool" value="False" />
+        <param name="subscribe_datagram" type="bool" value="false" />
+        <param name="device_number" type="int" value="0" />
+        <param name="time_increment" type="double" value="0.000061722" />
+        <param name="range_min" type="double" value="0.05" />
+        <param name="range_max" type="double" value="10.0" />
+      -->
+
+      <!-- Uncomment this to enable TCP instead of USB connection; 'hostname' is the host name or IP address of the laser scanner
+      In cases where a race condition exists and the computer boots up before the TIM is ready, increase 'timelimit.'-->
+
+      <rosparam command="load" file="$(arg bringup_path)/parameters/hardware/$(arg name)_parameters.yaml" />
+      <remap from="/diagnostics" to="diagnostics"/>
+      <param name="frame_id" value="$(arg robot)/$(arg name)/scan" />
+
+    </node>
+  </group>
+</launch>

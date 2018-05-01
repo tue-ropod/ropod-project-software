@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	
+	% Launch ED
+	<node pkg="ed" type="ed" name="ed" args="$(find pico_navigation_test)/config/model-malaga-test-nav.yaml">
+	</node>
+
+	
+	% Launch route navigation
+	<!-- <node pkg="pico_navigation_test" type="demo_navigation" name="demo_navigation">
+	</node>	-->
+
+	% Launch ED GUI server
+	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">
+	</node>
+	
+
+	% Launch navigation
+	<include file="$(find pico_navigation_test)/launch/move_base.launch" />
+	
+</launch>

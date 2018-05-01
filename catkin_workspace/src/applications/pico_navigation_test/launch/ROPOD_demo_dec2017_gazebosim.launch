@@ -61,11 +61,11 @@
   
 	% Launch ED
 	<group if="$(arg DEBUG)">
-		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav-amcl.yaml" launch-prefix="xterm -e gdb --args" output="screen"/>
+		<node pkg="ed" type="ed" name="ed" args="$(find pico_navigation_test)/config/model-test-nav-amcl.yaml" launch-prefix="xterm -e gdb --args" output="screen"/>
 	</group>
 
 	<group unless="$(arg DEBUG)">
-		<node pkg="ed" type="ed" name="ed" args="$(find ropod_demo_dec_2017)/config/model-test-nav-amcl.yaml"/>
+		<node pkg="ed" type="ed" name="ed" args="$(find pico_navigation_test)/config/model-test-nav-amcl.yaml"/>
 	</group>
 	
 
@@ -75,9 +75,8 @@
 	% Launch navigation
 	<include file="$(find pico_navigation_test)/launch/move_base.launch" />
 	
-
+	|<!-- Here we get the error Failed to get param robotNameParameter  TODO
     % Launch route navigation
 	<node pkg="ropod_demo_dec_2017" type="demo_navigation" name="demo_navigation"/>
-
-	
+        -->
 </launch>

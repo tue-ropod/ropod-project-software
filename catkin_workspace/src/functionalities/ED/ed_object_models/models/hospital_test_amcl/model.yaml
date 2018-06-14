@@ -25,7 +25,20 @@ composition:
                     - { x: 6.83, y: -1.40 }
                     - { x: 6.80, y: 0.52 }
                   height: 2.0
-                  
+
+    - type: "hospital_test_amcl/MobiDikArea"
+      id: "MobiDikWaitingArea1"
+      pose: { x: 9.43, y: -7.62, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 4.27, y: 1.56 }
+                    - { x: 3.67, y: 3.13 }
+                    - { x: -0.41, y: 1.79 }
+                  height: 2.0
+
 # - - - - - - Elevator - - - - - - -
     - type: "elevatordoor"
       id: "door1"

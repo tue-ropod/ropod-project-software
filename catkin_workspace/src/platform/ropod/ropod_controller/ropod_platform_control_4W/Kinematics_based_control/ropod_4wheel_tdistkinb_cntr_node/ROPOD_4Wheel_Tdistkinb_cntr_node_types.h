@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr_node'.
 //
-// Model version                  : 1.254
+// Model version                  : 1.257
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Jun 13 17:10:27 2018
+// C/C++ source code generated on : Thu Jun 14 14:19:07 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -20,18 +20,6 @@
 #define RTW_HEADER_ROPOD_4Wheel_Tdistkinb_cntr_node_types_h_
 #include "rtwtypes.h"
 #include "zero_crossing_types.h"
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_geometry_msgs_Point_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_geometry_msgs_Point_
-
-// MsgType=geometry_msgs/Point
-typedef struct {
-  real_T X;
-  real_T Y;
-  real_T Z;
-} SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_geometry_msgs_Point;
-
-#endif
-
 #ifndef DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_
 #define DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_
 
@@ -69,6 +57,18 @@ typedef struct {
   // MsgType=ros_time/Time
   SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_ros_time_Time Stamp;
 } SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_std_msgs_Header;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_geometry_msgs_Point_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_geometry_msgs_Point_
+
+// MsgType=geometry_msgs/Point
+typedef struct {
+  real_T X;
+  real_T Y;
+  real_T Z;
+} SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_node_geometry_msgs_Point;
 
 #endif
 
@@ -223,7 +223,7 @@ typedef struct {
 
 #endif                                 //typedef_robotics_slros_internal_bl_kd_T
 
-// Custom Type definition for MATLAB Function: '<S43>/platform_forces_2_tau_dist_optimal' 
+// Custom Type definition for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal' 
 #ifndef struct_tag_scZlGNcmSdXsfgNftx2nQBF
 #define struct_tag_scZlGNcmSdXsfgNftx2nQBF
 

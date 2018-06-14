@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr_node'.
 //
-// Model version                  : 1.254
+// Model version                  : 1.257
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Jun 13 17:10:27 2018
+// C/C++ source code generated on : Thu Jun 14 14:19:07 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)

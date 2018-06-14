@@ -80,8 +80,8 @@ class OmniBase():
 			cmd[1] = f[1];
 			cmd[2] = f[2];
 			
-		self.ser.write("<%.1f,%.2f,%.2f,%.2f>\n"%(cntrmode.data, cmd[0], cmd[1], cmd[2]))
-		
+		#self.ser.write("<%.1f,%.2f,%.2f,%.2f>\n"%(cntrmode.data, cmd[0], cmd[1], cmd[2]))
+		self.ser.write("<%f,%f,%f>\n"%(v[0], v[1], a))
 
 	def __init__(self):
 		rospy.init_node("omni_base");

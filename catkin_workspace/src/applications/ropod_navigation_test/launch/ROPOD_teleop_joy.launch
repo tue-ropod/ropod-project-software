@@ -3,11 +3,13 @@
   
   	
 	% Launch joy
-	<node pkg="joy" type="joy_node" name="joy_node" ns="ropod">
+	<node pkg="joy" type="joy_node" name="joy_node">
 	</node>
 
 	% Launch teleop twist
-	<node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node" ns="ropod">
+	<node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node">
+   <param name="scale_linear" type="double" value="2.0" />
+   <param name="scale_angular" type="double" value="2.0" />
 	</node>
 	
 

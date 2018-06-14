@@ -42,3 +42,10 @@ corridor2; center; 4.72989463806; 12.963429451;
 corridor2; point1; 4.73876571655; 10.7205648422;
 corridor2; point2; 11.5605964661; 11.5663757324;
 corridor2; point3; 11.5259571075; 13.4870815277;  
+
+MobiDikWaitingArea1; center; 9.43; -7.62;
+MobiDikWaitingArea1; point1; 13.7; -6.06;
+MobiDikWaitingArea1; point2; 13.1; -4.49;  
+MobiDikWaitingArea1; point3; 9.02; -5.83;
+
+

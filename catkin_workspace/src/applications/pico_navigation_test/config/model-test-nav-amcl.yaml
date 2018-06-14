@@ -14,7 +14,7 @@ plugins:
         default_offset: 0.7    # <-- not used for ROS' Move Base, but needs to be specified
         convex_hull_enabled: 1 # Enable projecting unmodeled entities into navigation map
   - name: laser_integration
-    lib: libed_laser_plugin.so
+    lib: libed_laser_plugin_tracking.so
     frequency: 10
     parameters:
         laser_topic: /pico/laser/scan
@@ -25,6 +25,7 @@ plugins:
         max_cluster_size: 10.0
         max_gap_size: 1
         check_door_status: 1
+        nominal_corridor_width: 3
   - name: entity_clearer
     lib: libed_clearer_plugin.so
     enabled: 1

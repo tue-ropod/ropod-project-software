@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.210
+// Model version                  : 1.211
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Fri Apr 20 09:35:38 2018
+// C/C++ source code generated on : Tue May 15 14:42:18 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -114,10 +114,9 @@
 typedef struct {
   SL_Bus_ROPOD_4Wheel_kinb_cntr_nav_msgs_Odometry BusAssignment;// '<S4>/Bus Assignment' 
   real_T dv0[45];
-  real_T SFunction[40];                // '<S41>/S-Function'
-  real_T SFunction_n[40];              // '<S42>/S-Function'
-  real_T SFunction_m[40];              // '<S43>/S-Function'
-  real_T SFunction_k[40];              // '<S44>/S-Function'
+  real_T SFunction[40];                // '<S42>/S-Function'
+  real_T SFunction_n[40];              // '<S43>/S-Function'
+  real_T SFunction_m[40];              // '<S44>/S-Function'
   real_T rtb_TmpSignalConversionAtSFun_m[24];
   real_T dv1[9];
   real_T TmpSignalConversionAtSelect[8];
@@ -142,12 +141,10 @@ typedef struct {
   char_T cv6[20];
   real_T command2;                     // '<S36>/Constant'
   real_T command2_h;                   // '<S36>/Constant1'
-  real_T timestamp;                    // '<S36>/Constant10'
-  real_T timestamp_d;                  // '<S36>/Constant2'
+  real_T timestamp;                    // '<S36>/Constant2'
   real_T command2_d;                   // '<S36>/Constant6'
   real_T timestamp_i;                  // '<S36>/Constant7'
   real_T timestamp_o;                  // '<S36>/Constant8'
-  real_T command2_j;                   // '<S36>/Constant9'
   real_T limit1_p;                     // '<S36>/Gain'
   real_T limit1_n;                     // '<S36>/Gain1'
   real_T command1;                     // '<S36>/Gain10'
@@ -156,11 +153,6 @@ typedef struct {
   real_T limit2_n;                     // '<S36>/Gain13'
   real_T command1_o;                   // '<S36>/Gain8'
   real_T command1_d;                   // '<S36>/Gain14'
-  real_T limit1_n_d;                   // '<S36>/Gain15'
-  real_T limit2_p_c;                   // '<S36>/Gain16'
-  real_T limit2_n_k;                   // '<S36>/Gain17'
-  real_T command1_e;                   // '<S36>/Gain18'
-  real_T limit1_p_b;                   // '<S36>/Gain19'
   real_T limit2_p_i;                   // '<S36>/Gain2'
   real_T limit2_n_f;                   // '<S36>/Gain3'
   real_T limit1_p_o;                   // '<S36>/Gain4'
@@ -182,7 +174,6 @@ typedef struct {
   real_T setpoint2;                    // '<S36>/sign_convention'
   real_T setpoint2_h;                  // '<S36>/sign_convention1'
   real_T setpoint2_j;                  // '<S36>/sign_convention2'
-  real_T setpoint2_n;                  // '<S36>/sign_convention3'
   real_T max_acc_xy;                   // '<S11>/Get Parameter'
   real_T max_vel_xy;                   // '<S11>/Get Parameter1'
   real_T max_acc_theta;                // '<S11>/Get Parameter2'
@@ -408,28 +399,25 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
                                        //  Referenced by: '<S5>/ECAT_Interface'
 
   real_T SFunction_P1_Size[2];         // Computed Parameter: SFunction_P1_Size
-                                       //  Referenced by: '<S41>/S-Function'
+                                       //  Referenced by: '<S42>/S-Function'
 
   real_T SFunction_P1;                 // Expression: link_id
-                                       //  Referenced by: '<S41>/S-Function'
+                                       //  Referenced by: '<S42>/S-Function'
 
   real_T SFunction_P1_Size_d[2];       // Computed Parameter: SFunction_P1_Size_d
-                                       //  Referenced by: '<S42>/S-Function'
+                                       //  Referenced by: '<S43>/S-Function'
 
   real_T SFunction_P1_g;               // Expression: link_id
-                                       //  Referenced by: '<S42>/S-Function'
+                                       //  Referenced by: '<S43>/S-Function'
 
   real_T SFunction_P1_Size_e[2];       // Computed Parameter: SFunction_P1_Size_e
-                                       //  Referenced by: '<S43>/S-Function'
+                                       //  Referenced by: '<S44>/S-Function'
 
   real_T SFunction_P1_j;               // Expression: link_id
-                                       //  Referenced by: '<S43>/S-Function'
-
-  real_T SFunction_P1_Size_l[2];       // Computed Parameter: SFunction_P1_Size_l
                                        //  Referenced by: '<S44>/S-Function'
 
-  real_T SFunction_P1_i;               // Expression: link_id
-                                       //  Referenced by: '<S44>/S-Function'
+  real_T Constant20_Value;             // Expression: 0
+                                       //  Referenced by: '<S41>/Constant20'
 
   real_T signconvention_Gain;          // Expression: -1
                                        //  Referenced by: '<S35>/sign convention'
@@ -439,6 +427,9 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
 
   real_T signconvention2_Gain;         // Expression: -1
                                        //  Referenced by: '<S35>/sign convention2'
+
+  real_T Constant17_Value;             // Expression: 0
+                                       //  Referenced by: '<S41>/Constant17'
 
   real_T signconvention3_Gain;         // Expression: -1
                                        //  Referenced by: '<S35>/sign convention3'
@@ -452,9 +443,6 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T Constant1_Value_g;            // Expression: 0
                                        //  Referenced by: '<S36>/Constant1'
 
-  real_T Constant10_Value;             // Expression: 0
-                                       //  Referenced by: '<S36>/Constant10'
-
   real_T Constant2_Value_i;            // Expression: 0
                                        //  Referenced by: '<S36>/Constant2'
 
@@ -466,9 +454,6 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
 
   real_T Constant8_Value;              // Expression: 0
                                        //  Referenced by: '<S36>/Constant8'
-
-  real_T Constant9_Value;              // Expression: 0
-                                       //  Referenced by: '<S36>/Constant9'
 
   real_T Gain_Gain;                    // Expression: 1
                                        //  Referenced by: '<S36>/Gain'
@@ -490,21 +475,6 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
 
   real_T Gain14_Gain;                  // Expression: 1
                                        //  Referenced by: '<S36>/Gain14'
-
-  real_T Gain15_Gain;                  // Expression: -1
-                                       //  Referenced by: '<S36>/Gain15'
-
-  real_T Gain16_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S36>/Gain16'
-
-  real_T Gain17_Gain;                  // Expression: -1
-                                       //  Referenced by: '<S36>/Gain17'
-
-  real_T Gain18_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S36>/Gain18'
-
-  real_T Gain19_Gain;                  // Expression: 1
-                                       //  Referenced by: '<S36>/Gain19'
 
   real_T Gain2_Gain;                   // Expression: 1
                                        //  Referenced by: '<S36>/Gain2'
@@ -575,8 +545,26 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T sign_convention2_Gain;        // Expression: -1
                                        //  Referenced by: '<S36>/sign_convention2'
 
-  real_T sign_convention3_Gain;        // Expression: -1
-                                       //  Referenced by: '<S36>/sign_convention3'
+  real_T Constant11_Value;             // Expression: 0
+                                       //  Referenced by: '<S41>/Constant11'
+
+  real_T Constant24_Value;             // Expression: 0
+                                       //  Referenced by: '<S41>/Constant24'
+
+  real_T Constant25_Value;             // Expression: 0
+                                       //  Referenced by: '<S41>/Constant25'
+
+  real_T Constant29_Value;             // Expression: 0
+                                       //  Referenced by: '<S41>/Constant29'
+
+  real_T Constant5_Value;              // Expression: 0
+                                       //  Referenced by: '<S41>/Constant5'
+
+  real_T Constant6_Value_o;            // Expression: 0
+                                       //  Referenced by: '<S41>/Constant6'
+
+  real_T Constant7_Value_k;            // Expression: 0
+                                       //  Referenced by: '<S41>/Constant7'
 
   real_T Constant_Value_l;             // Expression: 1
                                        //  Referenced by: '<S1>/Constant'
@@ -587,7 +575,7 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T Constant3_Value;              // Expression: 2
                                        //  Referenced by: '<S1>/Constant3'
 
-  real_T Constant5_Value;              // Expression: 0
+  real_T Constant5_Value_g;            // Expression: 0
                                        //  Referenced by: '<S1>/Constant5'
 
   real_T Constant1_Value_j;            // Expression: 3
@@ -614,16 +602,16 @@ struct P_ROPOD_4Wheel_kinb_cntr_T_ {
   real_T Constant8_Value_c;            // Expression: 0
                                        //  Referenced by: '<S1>/Constant8'
 
-  real_T Constant9_Value_b;            // Expression: 7
+  real_T Constant9_Value;              // Expression: 7
                                        //  Referenced by: '<S1>/Constant9'
 
   real_T Constant15_Value;             // Expression: 4
                                        //  Referenced by: '<S1>/Constant15'
 
-  real_T Constant10_Value_c;           // Expression: 8
+  real_T Constant10_Value;             // Expression: 8
                                        //  Referenced by: '<S1>/Constant10'
 
-  real_T Constant11_Value;             // Expression: 0
+  real_T Constant11_Value_p;           // Expression: 0
                                        //  Referenced by: '<S1>/Constant11'
 
   real_T DiscreteTimeIntegrator_gainval;// Computed Parameter: DiscreteTimeIntegrator_gainval
@@ -687,15 +675,15 @@ struct tag_RTM_ROPOD_4Wheel_kinb_cntr_T {
   struct {
     RTWSfcnInfo sfcnInfo;
     time_T *taskTimePtrs[3];
-    SimStruct childSFunctions[5];
-    SimStruct *childSFunctionPtrs[5];
-    struct _ssBlkInfo2 blkInfo2[5];
-    struct _ssSFcnModelMethods2 methods2[5];
-    struct _ssSFcnModelMethods3 methods3[5];
-    struct _ssSFcnModelMethods4 methods4[5];
-    struct _ssStatesInfo2 statesInfo2[5];
-    ssPeriodicStatesInfo periodicStatesInfo[5];
-    struct _ssPortInfo2 inputOutputPortInfo2[5];
+    SimStruct childSFunctions[4];
+    SimStruct *childSFunctionPtrs[4];
+    struct _ssBlkInfo2 blkInfo2[4];
+    struct _ssSFcnModelMethods2 methods2[4];
+    struct _ssSFcnModelMethods3 methods3[4];
+    struct _ssSFcnModelMethods4 methods4[4];
+    struct _ssStatesInfo2 statesInfo2[4];
+    ssPeriodicStatesInfo periodicStatesInfo[4];
+    struct _ssPortInfo2 inputOutputPortInfo2[4];
     struct {
       time_T sfcnPeriod[1];
       time_T sfcnOffset[1];
@@ -746,19 +734,6 @@ struct tag_RTM_ROPOD_4Wheel_kinb_cntr_T {
       uint_T attribs[1];
       mxArray *params[1];
     } Sfcn3;
-
-    struct {
-      time_T sfcnPeriod[1];
-      time_T sfcnOffset[1];
-      int_T sfcnTsMap[1];
-      struct _ssPortInputs inputPortInfo[1];
-      struct _ssInPortUnit inputPortUnits[1];
-      real_T const *UPtrs0[9];
-      struct _ssPortOutputs outputPortInfo[1];
-      struct _ssOutPortUnit outputPortUnits[1];
-      uint_T attribs[1];
-      mxArray *params[1];
-    } Sfcn4;
   } NonInlinedSFcns;
 
   boolean_T zCCacheNeedsReset;
@@ -877,6 +852,45 @@ extern "C" {
 //
 //  Block '<S5>/Display1' : Unused code path elimination
 //  Block '<S5>/Gain1' : Unused code path elimination
+//  Block '<S36>/Constant10' : Unused code path elimination
+//  Block '<S36>/Constant9' : Unused code path elimination
+//  Block '<S36>/Gain15' : Unused code path elimination
+//  Block '<S36>/Gain16' : Unused code path elimination
+//  Block '<S36>/Gain17' : Unused code path elimination
+//  Block '<S36>/Gain18' : Unused code path elimination
+//  Block '<S36>/Gain19' : Unused code path elimination
+//  Block '<S36>/sign_convention3' : Unused code path elimination
+//  Block '<S41>/Constant' : Unused code path elimination
+//  Block '<S41>/Constant1' : Unused code path elimination
+//  Block '<S41>/Constant10' : Unused code path elimination
+//  Block '<S41>/Constant12' : Unused code path elimination
+//  Block '<S41>/Constant13' : Unused code path elimination
+//  Block '<S41>/Constant14' : Unused code path elimination
+//  Block '<S41>/Constant15' : Unused code path elimination
+//  Block '<S41>/Constant16' : Unused code path elimination
+//  Block '<S41>/Constant18' : Unused code path elimination
+//  Block '<S41>/Constant19' : Unused code path elimination
+//  Block '<S41>/Constant2' : Unused code path elimination
+//  Block '<S41>/Constant21' : Unused code path elimination
+//  Block '<S41>/Constant22' : Unused code path elimination
+//  Block '<S41>/Constant23' : Unused code path elimination
+//  Block '<S41>/Constant26' : Unused code path elimination
+//  Block '<S41>/Constant27' : Unused code path elimination
+//  Block '<S41>/Constant28' : Unused code path elimination
+//  Block '<S41>/Constant3' : Unused code path elimination
+//  Block '<S41>/Constant30' : Unused code path elimination
+//  Block '<S41>/Constant31' : Unused code path elimination
+//  Block '<S41>/Constant32' : Unused code path elimination
+//  Block '<S41>/Constant33' : Unused code path elimination
+//  Block '<S41>/Constant4' : Unused code path elimination
+//  Block '<S41>/Constant40' : Unused code path elimination
+//  Block '<S41>/Constant41' : Unused code path elimination
+//  Block '<S41>/Constant42' : Unused code path elimination
+//  Block '<S41>/Constant43' : Unused code path elimination
+//  Block '<S41>/Constant44' : Unused code path elimination
+//  Block '<S41>/Constant45' : Unused code path elimination
+//  Block '<S41>/Constant8' : Unused code path elimination
+//  Block '<S41>/Constant9' : Unused code path elimination
 //  Block '<S46>/FixPt Data Type Duplicate' : Unused code path elimination
 //  Block '<S53>/Data Type Duplicate' : Unused code path elimination
 //  Block '<S53>/Data Type Propagation' : Unused code path elimination
@@ -951,10 +965,10 @@ extern "C" {
 //  '<S38>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2'
 //  '<S39>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3'
 //  '<S40>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_4'
-//  '<S41>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_1/ec_ROPOD_SmartWheel'
-//  '<S42>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2/ec_ROPOD_SmartWheel'
-//  '<S43>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3/ec_ROPOD_SmartWheel'
-//  '<S44>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_4/ec_ROPOD_SmartWheel'
+//  '<S41>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/empywheel'
+//  '<S42>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_1/ec_ROPOD_SmartWheel'
+//  '<S43>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_2/ec_ROPOD_SmartWheel'
+//  '<S44>'  : 'ROPOD_4Wheel_kinb_cntr/ROPOD 4SW VELOCITY MODE/Smart_Wheel_3/ec_ROPOD_SmartWheel'
 //  '<S45>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Compare To Constant'
 //  '<S46>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic'
 //  '<S47>'  : 'ROPOD_4Wheel_kinb_cntr/Subscriber vel commands/Rate Limiter Dynamic1'

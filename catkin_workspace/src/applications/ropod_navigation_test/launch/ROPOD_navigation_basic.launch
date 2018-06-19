@@ -58,6 +58,10 @@
 	
     </node>
   
+    	% Launch ED
+	<node pkg="ed" type="ed" name="ed" args="$(find ropod_navigation_test)/config/model-test-nav-amcl.yaml">
+	</node>
+    
 	% Launch navigation
 	<include file="$(find ropod_navigation_test)/launch/move_base.launch" />
 	

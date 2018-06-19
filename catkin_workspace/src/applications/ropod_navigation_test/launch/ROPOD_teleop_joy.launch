@@ -8,8 +8,9 @@
 
 	% Launch teleop twist
 	<node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node">
-   <param name="scale_linear" type="double" value="2.0" />
-   <param name="scale_angular" type="double" value="2.0" />
+   <param name="scale_linear" type="double" value="0.5" />
+   <param name="scale_angular" type="double" value="0.5" />
+   <remap from="/cmd_vel" to="/ropod/cmd_vel"/>
 	</node>
 	
 

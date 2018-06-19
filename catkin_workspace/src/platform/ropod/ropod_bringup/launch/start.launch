@@ -29,7 +29,7 @@
 	  	<!-- Do for both: Simulator and Real Robot -->
 		
 		        <!-- Kinematic Controller: Executes velocity commands and publishes Odometry  -->		  
-			<node pkg="ropod_4wheel_tdistkinb_cntr_node" type="ropod_4wheel_tdistkinb_cntr_node_node" name="ropod_4wheel_kinb_cntr_node" output="screen">
+			<node pkg="ropod_4wheel_tdistkinb_cntr" type="ropod_4wheel_tdistkinb_cntr_node" name="ropod_4wheel_kinb_cntr_node" output="screen">
 			  <remap from="/cmd_vel" to="/$(arg robotName)/cmd_vel"/>
 			  <remap from="/odom_incomplete" to="/$(arg robotName)/odom_incomplete"/>
 			</node>

@@ -12,7 +12,7 @@
 - git: {local-name: functionalities/ropod_nav/demo_december_2017, uri: 'git@git.ropod.org:ropod/navigation/ropod_demo_december_2017.git', version: master}
 
 
-- git: {local-name: functionalities/ros_structured_nav, uri: 'https://github.com/tue-ropod/ros-structured-nav.git', version: master}
+- git: {local-name: functionalities/ros_structured_nav/ros_structured_nav, uri: 'https://github.com/tue-ropod/ros-structured-nav.git', version: master}
 
 # platform repos
 

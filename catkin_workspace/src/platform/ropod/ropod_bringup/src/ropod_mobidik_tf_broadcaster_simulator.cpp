@@ -3,6 +3,8 @@
 #include <nav_msgs/Odometry.h>
 #include <ros/console.h>
 #include <geometry_msgs/PoseArray.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <tf2_ros/transform_listener.h>
 
 
 
@@ -34,7 +36,25 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   odommsg.header.stamp = ros::Time::now();
   pub_ropod_odom.publish(odommsg);     
   
+  
+  
+  
+  // Computre load odometry using ropod odometry
   tf::Vector3 loadShift = base2loadTF.getOrigin();
+  double rx, ry, rz;
+  tf::Quaternion q(
+        msg->pose.pose.orientation.x,
+        msg->pose.pose.orientation.y,
+        msg->pose.pose.orientation.z,
+        msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  m.getRPY(rx,ry,rz);  
+  loadodommsg.pose.pose.position.x = msg->pose.pose.position.x-(-loadShift.x())*cos(rz);
+  loadodommsg.pose.pose.position.y = msg->pose.pose.position.y-(-loadShift.x())*sin(rz);
+  loadodommsg.pose.pose.orientation.x = msg->pose.pose.orientation.x;
+  loadodommsg.pose.pose.orientation.y = msg->pose.pose.orientation.y;
+  loadodommsg.pose.pose.orientation.z = msg->pose.pose.orientation.z;
+  loadodommsg.pose.pose.orientation.w = msg->pose.pose.orientation.w;  
   loadodommsg.twist.twist.linear.x = msg->twist.twist.linear.x;
   loadodommsg.twist.twist.linear.y = msg->twist.twist.linear.y -  msg->twist.twist.angular.z*(-loadShift.x());
   loadodommsg.twist.twist.linear.z = msg->twist.twist.linear.z;

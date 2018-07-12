@@ -22,7 +22,7 @@ DWAPlannerROS:
   acc_lim_x: 2.5
   acc_lim_y: 2.5
   acc_lim_th: 2.0
-  max_trans_vel: 2.0
+  max_trans_vel: 1.5
   min_trans_vel: 0.1
   max_vel_x: 1.5
   min_vel_x: 0.0
@@ -37,6 +37,7 @@ DWAPlannerROS:
   latch_xy_goal_tolerance: true
   
   path_distance_max: 0.2
+  forward_point_distance: 0.1
 
 
 global_frame: /map  

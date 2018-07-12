@@ -242,7 +242,7 @@
    <plugin name="Odometry_Plugin" filename="libOdometry_Plugin.so">
        <updateRate>30.0</updateRate>
        <veltopicName>/ropod/cmd_vel</veltopicName>       
-       <odomtopicName>/ropod/odom</odomtopicName>       
+       <odomtopicName>/ropod/odom_incomplete</odomtopicName>       
        <robotBaseFrame>/ropod/base_link</robotBaseFrame>
        <odomFrame>/ropod/odom</odomFrame>
       

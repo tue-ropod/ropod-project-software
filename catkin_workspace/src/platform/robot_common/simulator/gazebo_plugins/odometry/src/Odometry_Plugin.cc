@@ -156,13 +156,14 @@ public: void OnUpdate()
 		velx_cmd = this->cmd_linvel.x*cos(AngPos.z) - this->cmd_linvel.y*sin(AngPos.z);
 		vely_cmd = this->cmd_linvel.x*sin(AngPos.z) + this->cmd_linvel.y*cos(AngPos.z);	
 		velangz_cmd = this->cmd_angvel.z;
-	}else{
+                model->SetLinearVel( math::Vector3(velx_cmd,vely_cmd,0.0));  
+                model->SetAngularVel( math::Vector3(0.0,0.0,velangz_cmd));
+	}
+/*	else{
 		velx_cmd = 0.0;
 		vely_cmd = 0.0;
 		velangz_cmd = 0.0;	
-	}	
-	model->SetLinearVel( math::Vector3(velx_cmd,vely_cmd,0.0));  
-	model->SetAngularVel( math::Vector3(0.0,0.0,velangz_cmd));
+	}*/		
 	
 	this -> actualupdateRate = ros::Time::now() - this->prevUpdateTime;
 	

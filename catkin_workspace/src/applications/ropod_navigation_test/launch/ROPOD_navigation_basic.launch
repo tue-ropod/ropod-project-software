@@ -3,7 +3,8 @@
   
   	<arg name="robotName" default="ropod"/>  
 	<arg name="laser1_name" value ="laser"/>
-	<arg name="map_file" default="$(find ropod_navigation_test)/config/map/map.yaml"/>
+        <!--<arg name="map_file" default="$(find ed_object_models)/models/hospital_test_amcl/walls/map_amcl.yaml" />-->
+	<arg name="map_file" default="$(find ropod_navigation_test)/config/amk-f064/map.yaml"/>
 	
    <!-- Run the map server -->
      <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
@@ -63,7 +64,7 @@
 	</node>
     
 	% Launch navigation
-	<include file="$(find ropod_navigation_test)/launch/move_base_ropod_load.launch" />
+	<include file="$(find ropod_navigation_test)/launch/move_base.launch" />
 	
 
 

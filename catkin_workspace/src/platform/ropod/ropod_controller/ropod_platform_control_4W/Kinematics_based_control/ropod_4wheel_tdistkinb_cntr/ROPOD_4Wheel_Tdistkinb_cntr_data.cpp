@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.263
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Mon Jul 23 14:19:36 2018
+// C/C++ source code generated on : Mon Jul 23 15:41:53 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -31,7 +31,7 @@ P_ROPOD_4Wheel_Tdistkinb_cntr_T ROPOD_4Wheel_Tdistkinb_cntr_P = {
   //    '<S43>/Gain'
   //    '<S43>/Gain1'
 
-  80.0,
+  0.0,
 
   // Variable: SW_COM1_ENABLE1
   //  Referenced by: '<S21>/Constant3'

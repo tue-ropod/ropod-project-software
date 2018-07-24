@@ -48,7 +48,7 @@
 			    <node pkg="ropod_bringup" type="ropod_tf_broadcaster_simulator" name="ropod_tf_broadcaster_simulator" />			    
 			</group> 
 			<group if="$(arg LOAD_ATTACHED)">
-			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster_simulator" name="ropod_mobidik_tf_broadcaster_simulator" />
+			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster" name="ropod_mobidik_tf_broadcaster" />
 			</group>
 			
 			<!-- Specify static transforms -->

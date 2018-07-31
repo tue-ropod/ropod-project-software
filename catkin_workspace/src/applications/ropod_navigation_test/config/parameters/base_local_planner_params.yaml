@@ -1,6 +1,6 @@
 TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   max_vel_x: 1.0
-  min_vel_x: 0.1
+  min_vel_x: 0.2
   max_vel_theta: 1.0
   min_vel_theta: -1.0
   min_in_place_vel_theta: 0.4
@@ -8,7 +8,7 @@ TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   min_in_place_rotational_vel: 0.4
   max_rotational_vel: 1.0
 
-  acc_lim_theta: 1.0
+  acc_lim_theta: 0.5
   acc_lim_x: 0.2
   # acc_lim_y: 0.0
   meter_scoring: true
@@ -17,11 +17,11 @@ TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   pdist_scale: 10.0
   # gdist_scale: 1.5
   #occdist_scale: 0.02  
-  # heading_lookahead: 1.0
-  path_distance_max: 0.3
+  heading_lookahead: 1.0
+  path_distance_max: 0.2
   
   xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.15
+  yaw_goal_tolerance: 0.1
   latch_xy_goal_tolerance: true  
   
   holonomic_robot: false
@@ -50,7 +50,7 @@ DWAPlannerROS: # http://wiki.ros.org/dwa_local_planner
   # forward_point_distance: 0.325
   
   xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.05
   latch_xy_goal_tolerance: true
   
   path_distance_max: 0.2
@@ -62,7 +62,7 @@ DWAPlannerROS: # http://wiki.ros.org/dwa_local_planner
 # Move base parameters
 recovery_behavior_enabled: false
 clearing_rotation_allowed: false
-max_planning_retries: 1
+max_planning_retries: -1
 controller_frequency: 10.0
 global_frame: /map  
 

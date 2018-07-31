@@ -7,15 +7,15 @@
     <rosparam file="$(find ropod_navigation_test)/config/parameters/footprint_ropod_mobidik.yaml" command="load" ns="local_costmap" />       
     <rosparam file="$(find ropod_navigation_test)/config/parameters/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find ropod_navigation_test)/config/parameters/local_costmap_params.yaml"  command="load"/>    
-    <rosparam file="$(find ropod_navigation_test)/config/parameters/base_local_planner_params.yaml" command="load" />
+    
     
     
      
     <rosparam file="$(find ropod_navigation_test)/config/parameters/teb_local_planner_params.yaml" command="load" />
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
         
-<!--     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->
-    
+<!-- <rosparam file="$(find ropod_navigation_test)/config/parameters/base_local_planner_params.yaml" command="load" /> -->
+    <!--     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->    
 <!--     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" /> -->
     
      

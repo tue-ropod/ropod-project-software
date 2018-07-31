@@ -3,7 +3,7 @@ map_type: costmap           # default: "voxel"
 obstacle_range: 5.0
 raytrace_range: 10.0
 
-inflation_radius: 0.1
+inflation_radius: 0.01
 # robot_radius: 0.2
 
 

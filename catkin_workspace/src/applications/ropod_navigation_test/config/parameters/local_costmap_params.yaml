@@ -8,7 +8,7 @@ plugins:
 # LAYER CONFIGURATION
 
 ed_occupancy_grid:
-    map_topic: /ed/navigation/map
+    map_topic: /map #/ed/navigation/map
     track_unknown_space: true
     use_maximum: true
     lethal_cost_threshold: 99
@@ -29,7 +29,7 @@ recent_obstacles:
     laser_scan_sensor: {sensor_frame: /ropod/laser/scan, data_type: LaserScan, topic: /ropod/laser/scan, marking: true, clearing: true}   
 
 local_costmap:
-  map_topic: /ed/navigation/map
+  map_topic: /map # /ed/navigation/map
   global_frame: /map
   robot_base_frame: /load/base_link
   update_frequency: 5.0

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr'.
 //
-// Model version                  : 1.263
+// Model version                  : 1.266
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Mon Jul 23 15:41:53 2018
+// C/C++ source code generated on : Wed Aug  1 15:38:57 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -18,14 +18,14 @@
 //
 #include "ROPOD_4Wheel_Tdistkinb_cntr.h"
 #include "ROPOD_4Wheel_Tdistkinb_cntr_private.h"
-#define ParameterInitia_icsq3sbauzlauko (2.001)
-#define ParameterInitialV_icsq3sbauzlau (10.0)
+#define ParameterInitia_icsq3sbauzlauko (1.873)
+#define ParameterInitialV_icsq3sbauzlau (3.508)
 #define ParameterInitialVa_icsq3sbauzla (1.0)
 #define ParameterInitialVal_icsq3sbauzl (0.0525)
 #define ParameterInitialValu_icsq3sbauz (0.01)
 #define ParameterInitialValue_icsq3sba (0.21)
 #define ParameterInitialValue_icsq3sbau (0.08)
-#define ParameterInitial_icsq3sbauzlauk (3.508)
+#define ParameterInitial_icsq3sbauzlauk (2.001)
 #define ROPOD_4Wh_ParameterInitialValue (20.0)
 #define ROPOD_4Wheel_Td_MessageQueueLen (1)
 #define ROPOD_4Wheel__MessageQueueLen_i (5)
@@ -35,9 +35,8 @@
 #define ROPO_ParameterInitialValue_icsq (200.0)
 #define ROP_ParameterInitialValue_icsq3 (2.0)
 #define RO_ParameterInitialValue_icsq3s (0.05)
-#define R_ParameterInitia_i            (1.873)
-#define R_ParameterInitia_j            (2.21)
-#define R_ParameterInitia_o            (1.6)
+#define R_ParameterInitia_i            (2.21)
+#define R_ParameterInitia_j            (1.6)
 #define R_ParameterInitialValue_icsq3sb (-0.21)
 
 // Block signals (auto storage)
@@ -125,16 +124,16 @@ static void rate_scheduler(void)
 //
 // Output and update for atomic system:
 //    '<S53>/MATLAB Function'
-//    '<S62>/MATLAB Function'
-//    '<S71>/MATLAB Function'
-//    '<S91>/MATLAB Function'
-//    '<S100>/MATLAB Function'
-//    '<S109>/MATLAB Function'
-//    '<S118>/MATLAB Function'
-//    '<S127>/MATLAB Function'
-//    '<S136>/MATLAB Function'
-//    '<S145>/MATLAB Function'
+//    '<S63>/MATLAB Function'
+//    '<S73>/MATLAB Function'
+//    '<S94>/MATLAB Function'
+//    '<S104>/MATLAB Function'
+//    '<S114>/MATLAB Function'
+//    '<S124>/MATLAB Function'
+//    '<S134>/MATLAB Function'
+//    '<S144>/MATLAB Function'
 //    '<S154>/MATLAB Function'
+//    '<S164>/MATLAB Function'
 //
 void ROPOD_4Wheel_Tdi_MATLABFunction(real_T rtu_w, real_T rtu_tau, real_T *rty_g,
   real_T *rty_a)
@@ -157,29 +156,29 @@ static real_T ROPOD_4Wheel_Tdistkinb_cn_xnrm2(int32_T n, const real_T x[27],
   if (n == 1) {
     y = fabs(x[ix0 - 1]);
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.scale_l = 3.3121686421112381E-170;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.scale_p = 3.3121686421112381E-170;
     kend = (ix0 + n) - 1;
     for (k = ix0; k <= kend; k++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_j = fabs(x[k - 1]);
-      if (ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_j >
-          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_l) {
-        ROPOD_4Wheel_Tdistkinb_cntr_B.t_d =
-          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_l /
-          ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_j;
-        y = y * ROPOD_4Wheel_Tdistkinb_cntr_B.t_d *
-          ROPOD_4Wheel_Tdistkinb_cntr_B.t_d + 1.0;
-        ROPOD_4Wheel_Tdistkinb_cntr_B.scale_l =
-          ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_j;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_l = fabs(x[k - 1]);
+      if (ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_l >
+          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_p) {
+        ROPOD_4Wheel_Tdistkinb_cntr_B.t_j =
+          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_p /
+          ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_l;
+        y = y * ROPOD_4Wheel_Tdistkinb_cntr_B.t_j *
+          ROPOD_4Wheel_Tdistkinb_cntr_B.t_j + 1.0;
+        ROPOD_4Wheel_Tdistkinb_cntr_B.scale_p =
+          ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_l;
       } else {
-        ROPOD_4Wheel_Tdistkinb_cntr_B.t_d =
-          ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_j /
-          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_l;
-        y += ROPOD_4Wheel_Tdistkinb_cntr_B.t_d *
-          ROPOD_4Wheel_Tdistkinb_cntr_B.t_d;
+        ROPOD_4Wheel_Tdistkinb_cntr_B.t_j =
+          ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_l /
+          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_p;
+        y += ROPOD_4Wheel_Tdistkinb_cntr_B.t_j *
+          ROPOD_4Wheel_Tdistkinb_cntr_B.t_j;
       }
     }
 
-    y = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_l * sqrt(y);
+    y = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_p * sqrt(y);
   }
 
   return y;
@@ -193,26 +192,26 @@ static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_n(int32_T n, const real_T x[9],
   int32_T kend;
   int32_T k;
   y = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.scale_m = 3.3121686421112381E-170;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g = 3.3121686421112381E-170;
   kend = (ix0 + n) - 1;
   for (k = ix0; k <= kend; k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_n = fabs(x[k - 1]);
-    if (ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_n >
-        ROPOD_4Wheel_Tdistkinb_cntr_B.scale_m) {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t_p = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_m /
-        ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_n;
-      y = y * ROPOD_4Wheel_Tdistkinb_cntr_B.t_p *
-        ROPOD_4Wheel_Tdistkinb_cntr_B.t_p + 1.0;
-      ROPOD_4Wheel_Tdistkinb_cntr_B.scale_m =
-        ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_n;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_m = fabs(x[k - 1]);
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_m >
+        ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t_n = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g /
+        ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_m;
+      y = y * ROPOD_4Wheel_Tdistkinb_cntr_B.t_n *
+        ROPOD_4Wheel_Tdistkinb_cntr_B.t_n + 1.0;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g =
+        ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_m;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t_p = ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_n /
-        ROPOD_4Wheel_Tdistkinb_cntr_B.scale_m;
-      y += ROPOD_4Wheel_Tdistkinb_cntr_B.t_p * ROPOD_4Wheel_Tdistkinb_cntr_B.t_p;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t_n = ROPOD_4Wheel_Tdistkinb_cntr_B.absxk_m /
+        ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g;
+      y += ROPOD_4Wheel_Tdistkinb_cntr_B.t_n * ROPOD_4Wheel_Tdistkinb_cntr_B.t_n;
     }
   }
 
-  return ROPOD_4Wheel_Tdistkinb_cntr_B.scale_m * sqrt(y);
+  return ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g * sqrt(y);
 }
 
 // Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
@@ -1054,21 +1053,21 @@ static real_T ROPOD_4Wheel_Tdistkinb_xnrm2_ng(int32_T n, const real_T x[81],
     if (n == 1) {
       y = fabs(x[ix0 - 1]);
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g = 3.3121686421112381E-170;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.scale_d = 3.3121686421112381E-170;
       kend = (ix0 + n) - 1;
       for (k = ix0; k <= kend; k++) {
         absxk = fabs(x[k - 1]);
-        if (absxk > ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g) {
-          t = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g / absxk;
+        if (absxk > ROPOD_4Wheel_Tdistkinb_cntr_B.scale_d) {
+          t = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_d / absxk;
           y = y * t * t + 1.0;
-          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g = absxk;
+          ROPOD_4Wheel_Tdistkinb_cntr_B.scale_d = absxk;
         } else {
-          t = absxk / ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g;
+          t = absxk / ROPOD_4Wheel_Tdistkinb_cntr_B.scale_d;
           y += t * t;
         }
       }
 
-      y = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_g * sqrt(y);
+      y = ROPOD_4Wheel_Tdistkinb_cntr_B.scale_d * sqrt(y);
     }
   }
 
@@ -1164,15 +1163,15 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
   int32_T exitg1;
   boolean_T exitg2;
   memset(&ROPOD_4Wheel_Tdistkinb_cntr_B.work_b[0], 0, 9U * sizeof(real_T));
-  for (ROPOD_4Wheel_Tdistkinb_cntr_B.i_d = 0; ROPOD_4Wheel_Tdistkinb_cntr_B.i_d <
-       9; ROPOD_4Wheel_Tdistkinb_cntr_B.i_d++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.i_i = ROPOD_4Wheel_Tdistkinb_cntr_B.i_d * 9 +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.i_d;
-    if (ROPOD_4Wheel_Tdistkinb_cntr_B.i_d + 1 < 9) {
+  for (ROPOD_4Wheel_Tdistkinb_cntr_B.i_l = 0; ROPOD_4Wheel_Tdistkinb_cntr_B.i_l <
+       9; ROPOD_4Wheel_Tdistkinb_cntr_B.i_l++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.i_i = ROPOD_4Wheel_Tdistkinb_cntr_B.i_l * 9 +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.i_l;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.i_l + 1 < 9) {
       ROPOD_4Wheel_Tdistkinb_cntr_B.b_atmp = A[ROPOD_4Wheel_Tdistkinb_cntr_B.i_i];
       ROPOD_4Wheel_Tdistkinb_cntr_B.b = 0.0;
       ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm = ROPOD_4Wheel_Tdistkinb_xnrm2_ng(8 -
-        ROPOD_4Wheel_Tdistkinb_cntr_B.i_d, A, ROPOD_4Wheel_Tdistkinb_cntr_B.i_i
+        ROPOD_4Wheel_Tdistkinb_cntr_B.i_l, A, ROPOD_4Wheel_Tdistkinb_cntr_B.i_i
         + 2);
       if (ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm != 0.0) {
         ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm = rt_hypotd_snf
@@ -1188,15 +1187,15 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
           ROPOD_4Wheel_Tdistkinb_cntr_B.knt = 0;
           ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d =
             (ROPOD_4Wheel_Tdistkinb_cntr_B.i_i -
-             ROPOD_4Wheel_Tdistkinb_cntr_B.i_d) + 9;
+             ROPOD_4Wheel_Tdistkinb_cntr_B.i_l) + 9;
           do {
             ROPOD_4Wheel_Tdistkinb_cntr_B.knt++;
-            ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l =
+            ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d =
               ROPOD_4Wheel_Tdistkinb_cntr_B.i_i + 1;
-            while (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l + 1 <=
+            while (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d + 1 <=
                    ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d) {
-              A[ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l] *= 9.9792015476736E+291;
-              ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l++;
+              A[ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d] *= 9.9792015476736E+291;
+              ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d++;
             }
 
             ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm *= 9.9792015476736E+291;
@@ -1207,7 +1206,7 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
           ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm = rt_hypotd_snf
             (ROPOD_4Wheel_Tdistkinb_cntr_B.b_atmp,
              ROPOD_4Wheel_Tdistkinb_xnrm2_ng(8 -
-              ROPOD_4Wheel_Tdistkinb_cntr_B.i_d, A,
+              ROPOD_4Wheel_Tdistkinb_cntr_B.i_l, A,
               ROPOD_4Wheel_Tdistkinb_cntr_B.i_i + 2));
           if (ROPOD_4Wheel_Tdistkinb_cntr_B.b_atmp >= 0.0) {
             ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm =
@@ -1222,14 +1221,14 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
              ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm);
           ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d =
             (ROPOD_4Wheel_Tdistkinb_cntr_B.i_i -
-             ROPOD_4Wheel_Tdistkinb_cntr_B.i_d) + 9;
-          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l =
+             ROPOD_4Wheel_Tdistkinb_cntr_B.i_l) + 9;
+          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d =
             ROPOD_4Wheel_Tdistkinb_cntr_B.i_i + 1;
-          while (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l + 1 <=
+          while (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d + 1 <=
                  ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d) {
-            A[ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l] *=
+            A[ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d] *=
               ROPOD_4Wheel_Tdistkinb_cntr_B.b_atmp;
-            ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l++;
+            ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d++;
           }
 
           ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d = 1;
@@ -1249,7 +1248,7 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
             (A[ROPOD_4Wheel_Tdistkinb_cntr_B.i_i] -
              ROPOD_4Wheel_Tdistkinb_cntr_B.xnorm);
           ROPOD_4Wheel_Tdistkinb_cntr_B.knt = (ROPOD_4Wheel_Tdistkinb_cntr_B.i_i
-            - ROPOD_4Wheel_Tdistkinb_cntr_B.i_d) + 9;
+            - ROPOD_4Wheel_Tdistkinb_cntr_B.i_l) + 9;
           ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d =
             ROPOD_4Wheel_Tdistkinb_cntr_B.i_i + 1;
           while (ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d + 1 <=
@@ -1264,46 +1263,46 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
         }
       }
 
-      tau[ROPOD_4Wheel_Tdistkinb_cntr_B.i_d] = ROPOD_4Wheel_Tdistkinb_cntr_B.b;
+      tau[ROPOD_4Wheel_Tdistkinb_cntr_B.i_l] = ROPOD_4Wheel_Tdistkinb_cntr_B.b;
       A[ROPOD_4Wheel_Tdistkinb_cntr_B.i_i] =
         ROPOD_4Wheel_Tdistkinb_cntr_B.b_atmp;
       ROPOD_4Wheel_Tdistkinb_cntr_B.b_atmp = A[ROPOD_4Wheel_Tdistkinb_cntr_B.i_i];
       A[ROPOD_4Wheel_Tdistkinb_cntr_B.i_i] = 1.0;
-      ROPOD_4Wheel_Tdistkinb_cntr_B.knt = ((ROPOD_4Wheel_Tdistkinb_cntr_B.i_d +
-        1) * 9 + ROPOD_4Wheel_Tdistkinb_cntr_B.i_d) + 1;
-      if (tau[ROPOD_4Wheel_Tdistkinb_cntr_B.i_d] != 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.knt = ((ROPOD_4Wheel_Tdistkinb_cntr_B.i_l +
+        1) * 9 + ROPOD_4Wheel_Tdistkinb_cntr_B.i_l) + 1;
+      if (tau[ROPOD_4Wheel_Tdistkinb_cntr_B.i_l] != 0.0) {
         ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d = 9 -
-          ROPOD_4Wheel_Tdistkinb_cntr_B.i_d;
-        ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l =
-          (ROPOD_4Wheel_Tdistkinb_cntr_B.i_i - ROPOD_4Wheel_Tdistkinb_cntr_B.i_d)
+          ROPOD_4Wheel_Tdistkinb_cntr_B.i_l;
+        ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d =
+          (ROPOD_4Wheel_Tdistkinb_cntr_B.i_i - ROPOD_4Wheel_Tdistkinb_cntr_B.i_l)
           + 8;
         while ((ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d > 0) &&
-               (A[ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l] == 0.0)) {
+               (A[ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d] == 0.0)) {
           ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d--;
-          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l--;
+          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d--;
         }
 
-        ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l = 8 -
-          ROPOD_4Wheel_Tdistkinb_cntr_B.i_d;
+        ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d = 8 -
+          ROPOD_4Wheel_Tdistkinb_cntr_B.i_l;
         exitg2 = false;
-        while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l > 0)) {
-          ROPOD_4Wheel_Tdistkinb_cntr_B.coltop_o =
-            (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l - 1) * 9 +
+        while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d > 0)) {
+          ROPOD_4Wheel_Tdistkinb_cntr_B.coltop_l =
+            (ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d - 1) * 9 +
             ROPOD_4Wheel_Tdistkinb_cntr_B.knt;
-          ROPOD_4Wheel_Tdistkinb_cntr_B.ia_b =
-            ROPOD_4Wheel_Tdistkinb_cntr_B.coltop_o;
+          ROPOD_4Wheel_Tdistkinb_cntr_B.ia_o =
+            ROPOD_4Wheel_Tdistkinb_cntr_B.coltop_l;
           do {
             exitg1 = 0;
-            if (ROPOD_4Wheel_Tdistkinb_cntr_B.ia_b <=
-                (ROPOD_4Wheel_Tdistkinb_cntr_B.coltop_o +
+            if (ROPOD_4Wheel_Tdistkinb_cntr_B.ia_o <=
+                (ROPOD_4Wheel_Tdistkinb_cntr_B.coltop_l +
                  ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d) - 1) {
-              if (A[ROPOD_4Wheel_Tdistkinb_cntr_B.ia_b - 1] != 0.0) {
+              if (A[ROPOD_4Wheel_Tdistkinb_cntr_B.ia_o - 1] != 0.0) {
                 exitg1 = 1;
               } else {
-                ROPOD_4Wheel_Tdistkinb_cntr_B.ia_b++;
+                ROPOD_4Wheel_Tdistkinb_cntr_B.ia_o++;
               }
             } else {
-              ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l--;
+              ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d--;
               exitg1 = 2;
             }
           } while (exitg1 == 0);
@@ -1314,18 +1313,18 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
         }
       } else {
         ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d = 0;
-        ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l = 0;
+        ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d = 0;
       }
 
       if (ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d > 0) {
         ROPOD_4Wheel_Tdistkinb_cn_xgemv(ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d,
-          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l, A,
+          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d, A,
           ROPOD_4Wheel_Tdistkinb_cntr_B.knt, A,
           ROPOD_4Wheel_Tdistkinb_cntr_B.i_i + 1,
           ROPOD_4Wheel_Tdistkinb_cntr_B.work_b);
         ROPOD_4Wheel_Tdistkinb_cnt_xger(ROPOD_4Wheel_Tdistkinb_cntr_B.lastv_d,
-          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_l,
-          -tau[ROPOD_4Wheel_Tdistkinb_cntr_B.i_d],
+          ROPOD_4Wheel_Tdistkinb_cntr_B.lastc_d,
+          -tau[ROPOD_4Wheel_Tdistkinb_cntr_B.i_l],
           ROPOD_4Wheel_Tdistkinb_cntr_B.i_i + 1,
           ROPOD_4Wheel_Tdistkinb_cntr_B.work_b, A,
           ROPOD_4Wheel_Tdistkinb_cntr_B.knt);
@@ -1692,11 +1691,11 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
   boolean_T guard1 = false;
   boolean_T guard2 = false;
   cTolComputed = true;
-  for (ROPOD_4Wheel_Tdistkinb_cntr_B.k_l = 0; ROPOD_4Wheel_Tdistkinb_cntr_B.k_l <
-       27; ROPOD_4Wheel_Tdistkinb_cntr_B.k_l++) {
+  for (ROPOD_4Wheel_Tdistkinb_cntr_B.k_g = 0; ROPOD_4Wheel_Tdistkinb_cntr_B.k_g <
+       27; ROPOD_4Wheel_Tdistkinb_cntr_B.k_g++) {
     cTolComputed = (cTolComputed && ((!rtIsInf
-      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_B.k_l])) && (!rtIsNaN
-      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_B.k_l]))));
+      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_B.k_g])) && (!rtIsNaN
+      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_B.k_g]))));
   }
 
   ROPOD_4Wheel_Tdistkinb_cntr_svd(Aeq, ROPOD_4Wheel_Tdistkinb_cntr_B.dv2);
@@ -1720,14 +1719,14 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
     for (ROPOD_4Wheel_Tdistkinb_cntr_B.kDrop_tmp = 0;
          ROPOD_4Wheel_Tdistkinb_cntr_B.kDrop_tmp < 9;
          ROPOD_4Wheel_Tdistkinb_cntr_B.kDrop_tmp++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.k_l = ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart
+      ROPOD_4Wheel_Tdistkinb_cntr_B.k_g = ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart
         + 9 * ROPOD_4Wheel_Tdistkinb_cntr_B.kDrop_tmp;
-      ROPOD_4Wheel_Tdistkinb_cntr_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_B.k_l] =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_B.k_g] =
         0.0;
       for (ROPOD_4Wheel_Tdistkinb_cntr_B.U_tmp = 0;
            ROPOD_4Wheel_Tdistkinb_cntr_B.U_tmp < 9;
            ROPOD_4Wheel_Tdistkinb_cntr_B.U_tmp++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_B.k_l] =
+        ROPOD_4Wheel_Tdistkinb_cntr_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_B.k_g] =
           Linv[9 * ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart +
           ROPOD_4Wheel_Tdistkinb_cntr_B.U_tmp] * Linv[9 *
           ROPOD_4Wheel_Tdistkinb_cntr_B.kDrop_tmp +
@@ -1762,7 +1761,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
   ROPOD_4Wheel_Tdistkinb_cntr_B.b_b[18] = beq[0];
   ROPOD_4Wheel_Tdistkinb_cntr_B.b_b[19] = beq[1];
   ROPOD_4Wheel_Tdistkinb_cntr_B.b_b[20] = beq[2];
-  ROPOD_4Wheel_Tdistkinb_cntr_B.k_l = 1;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.k_g = 1;
   for (ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart = 0;
        ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart < 21;
        ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart++) {
@@ -1831,7 +1830,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
     ColdReset = false;
     do {
       exitg3 = 0;
-      if ((!DualFeasible) && (nA > 0) && (ROPOD_4Wheel_Tdistkinb_cntr_B.k_l <=
+      if ((!DualFeasible) && (nA > 0) && (ROPOD_4Wheel_Tdistkinb_cntr_B.k_g <=
            200)) {
         ROPOD_4Wheel_Tdistkinb_cntr_B.Xnorm0 = ROPOD_4Wheel_Tdistki_KWIKfactor
           (ROPOD_4Wheel_Tdistkinb_cntr_B.Ac, ROPOD_4Wheel_Tdistkinb_cntr_B.iC,
@@ -1994,8 +1993,8 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
             memcpy(&x[0], &ROPOD_4Wheel_Tdistkinb_cntr_B.Opt[0], 9U * sizeof
                    (real_T));
           } else {
-            ROPOD_4Wheel_Tdistkinb_cntr_B.k_l++;
-            if (ROPOD_4Wheel_Tdistkinb_cntr_B.k_l > q) {
+            ROPOD_4Wheel_Tdistkinb_cntr_B.k_g++;
+            if (ROPOD_4Wheel_Tdistkinb_cntr_B.k_g > q) {
               ROPOD_4Wheel_T_ResetToColdStart(ROPOD_4Wheel_Tdistkinb_cntr_B.iA,
                 ROPOD_4Wheel_Tdistkinb_cntr_B.iC);
               nA = 3;
@@ -2031,7 +2030,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
   if (guard1) {
     ROPOD_4Wheel_Tdistkinb_cntr_B.Xnorm0 = ROPOD_4Wheel_Tdistkinb_cnt_norm(x);
     exitg2 = false;
-    while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_B.k_l <= 200)) {
+    while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_B.k_g <= 200)) {
       ROPOD_4Wheel_Tdistkinb_cntr_B.cMin = -1.0E-6;
       kNext = 0;
       for (kDrop = 0; kDrop < 18; kDrop++) {
@@ -2124,7 +2123,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
       } else {
         do {
           exitg1 = 0;
-          if ((kNext > 0) && (ROPOD_4Wheel_Tdistkinb_cntr_B.k_l <= 200)) {
+          if ((kNext > 0) && (ROPOD_4Wheel_Tdistkinb_cntr_B.k_g <= 200)) {
             guard2 = false;
             if (nA == 0) {
               for (ROPOD_4Wheel_Tdistkinb_cntr_B.ixstart = 0;
@@ -2374,13 +2373,13 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
 
                       ROPOD_4Wheel_Tdistkinb_cntr_B.iA[kNext - 1] = 1;
                       kNext = 0;
-                      ROPOD_4Wheel_Tdistkinb_cntr_B.k_l++;
+                      ROPOD_4Wheel_Tdistkinb_cntr_B.k_g++;
                     }
                   } else {
-                    ROPOD_4Wheel_Tdistkinb_cntr_B.k_l++;
+                    ROPOD_4Wheel_Tdistkinb_cntr_B.k_g++;
                   }
                 } else {
-                  ROPOD_4Wheel_Tdistkinb_cntr_B.k_l++;
+                  ROPOD_4Wheel_Tdistkinb_cntr_B.k_g++;
                 }
               }
             }
@@ -2437,8 +2436,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   boolean_T rtb_Compare;
   boolean_T rtb_LowerRelop1_lp;
   boolean_T rtb_LowerRelop1_i;
-  boolean_T rtb_LowerRelop1_jr;
   boolean_T rtb_LowerRelop1;
+  boolean_T rtb_NotEqual_l2;
+  int8_T t2;
 
   // S-Function (ECAT_Interface): '<S5>/ECAT_Interface'
 
@@ -2455,8 +2455,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   rtb_Compare = (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.t[0] <
                  ROPOD_4Wheel_Tdistkinb_cntr_P.Tinit);
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter14'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter14'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ft.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2464,10 +2464,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ft.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -2475,10 +2475,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2935.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz);
 
-    // MATLAB Function: '<S91>/MATLAB Function' incorporates:
-    //   Constant: '<S91>/Constant'
-    //   Gain: '<S80>/Gain2'
-    //   MATLABSystem: '<S6>/Get Parameter14'
+    // MATLAB Function: '<S94>/MATLAB Function' incorporates:
+    //   Constant: '<S94>/Constant'
+    //   Gain: '<S83>/Gain2'
     //   MATLABSystem: '<S6>/Get Parameter14'
 
     ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain *
@@ -2555,8 +2554,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   // End of Switch: '<S20>/Switch2'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S7>/Get Parameter'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S7>/Get Parameter'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_be.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2564,23 +2563,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_be.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2173.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter11'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter'
+
+    // MATLABSystem: '<S7>/Get Parameter11'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2588,23 +2587,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2176.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter11'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter11_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter12'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter11'
+
+    // MATLABSystem: '<S7>/Get Parameter12'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fa.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2612,23 +2611,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fa.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2177.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter12'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter12_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter13'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter12'
+
+    // MATLABSystem: '<S7>/Get Parameter13'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_p.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2636,23 +2635,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_p.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2178.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter13'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter13_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter14'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter13'
+
+    // MATLABSystem: '<S7>/Get Parameter14'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l1.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2660,23 +2659,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l1.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2179.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter14'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter14_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter15'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter14'
+
+    // MATLABSystem: '<S7>/Get Parameter15'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pe.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2684,23 +2683,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pe.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2180.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter15'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter15_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter16'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter15'
+
+    // MATLABSystem: '<S7>/Get Parameter16'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2708,23 +2707,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2181.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter16'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter16_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter17'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter16'
+
+    // MATLABSystem: '<S7>/Get Parameter17'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bc.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2732,23 +2731,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bc.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2182.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter17'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter17_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter1'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter17'
+
+    // MATLABSystem: '<S7>/Get Parameter1'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hv.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2756,23 +2755,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hv.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2174.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter1'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter2'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter1'
+
+    // MATLABSystem: '<S7>/Get Parameter2'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_j.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2780,23 +2779,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_j.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2183.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter2'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter3'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter2'
+
+    // MATLABSystem: '<S7>/Get Parameter3'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2804,23 +2803,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2184.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter3'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter4'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter3'
+
+    // MATLABSystem: '<S7>/Get Parameter4'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jj.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2828,23 +2827,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jj.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2185.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter4'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter5'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter4'
+
+    // MATLABSystem: '<S7>/Get Parameter5'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2852,23 +2851,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2186.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter5'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter6'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter5'
+
+    // MATLABSystem: '<S7>/Get Parameter6'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ep.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2876,23 +2875,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ep.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2187.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter6'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter7'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter6'
+
+    // MATLABSystem: '<S7>/Get Parameter7'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_lm.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2900,23 +2899,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_lm.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2188.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter7'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter8'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter7'
+
+    // MATLABSystem: '<S7>/Get Parameter8'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ew.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2924,23 +2923,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ew.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2189.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter8'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter9'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter8'
+
+    // MATLABSystem: '<S7>/Get Parameter9'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_nj.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2948,23 +2947,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_nj.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2190.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter9'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter10'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter9'
+
+    // MATLABSystem: '<S7>/Get Parameter10'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b1.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2972,23 +2971,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b1.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2175.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter10'
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter10_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S8>/Get Parameter1'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S7>/Get Parameter10'
+
+    // MATLABSystem: '<S8>/Get Parameter1'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_k.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -2996,23 +2995,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_k.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2214.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S8>/Get Parameter1'
     ROPOD_4Wheel_Tdistkinb_cntr_B.pivot_offs_sw1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S8>/Get Parameter3'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S8>/Get Parameter1'
+
+    // MATLABSystem: '<S8>/Get Parameter3'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_m.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3020,23 +3019,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_m.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2216.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S8>/Get Parameter3'
     ROPOD_4Wheel_Tdistkinb_cntr_B.pivot_offs_sw2 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S8>/Get Parameter4'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S8>/Get Parameter3'
+
+    // MATLABSystem: '<S8>/Get Parameter4'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i4.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3044,23 +3043,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i4.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2217.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S8>/Get Parameter4'
     ROPOD_4Wheel_Tdistkinb_cntr_B.pivot_offs_sw3 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S8>/Get Parameter5'
-    rtb_LowerRelop1_jr = false;
+    // End of MATLABSystem: '<S8>/Get Parameter4'
+
+    // MATLABSystem: '<S8>/Get Parameter5'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3068,20 +3067,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2218.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S8>/Get Parameter5'
     ROPOD_4Wheel_Tdistkinb_cntr_B.pivot_offs_sw4 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S8>/Get Parameter5'
   }
 
   // Switch: '<S20>/Switch' incorporates:
@@ -3121,17 +3120,17 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 = cos
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0);
   ROPOD_4Wheel_Tdistkinb_cntr_B.t5 = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t7 = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 = sin
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 = sin
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 = cos
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t15 = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp = sin
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 = sin
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2);
   ROPOD_4Wheel_Tdistkinb_cntr_B.t17 = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3);
@@ -3139,78 +3138,76 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3);
   ROPOD_4Wheel_Tdistkinb_cntr_B.t11 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t30 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t14_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t22 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter11_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_b = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t30 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter12_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_oa =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp * ROPOD_4Wheel_Tdistkinb_cntr_B.t9 *
-    0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t14_tmp * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter12_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_n =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter13_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t25_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_a =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_c =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp * ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i
-    * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t30 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t27 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter14_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t30_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t31_tmp = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t32 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter15_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pz =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_et =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t30_tmp * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t35 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter16_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_c =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_l =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter10_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t40 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter17_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_l =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter10_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_c * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_l * 0.5;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S9>/Get Parameter'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S9>/Get Parameter'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3218,20 +3215,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2237.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S9>/Get Parameter'
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_acc_xy =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S9>/Get Parameter'
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -3255,8 +3252,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S9>/Get Parameter1'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S9>/Get Parameter1'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_f.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3264,20 +3261,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_f.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2238.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S9>/Get Parameter1'
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_vel_xy =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S9>/Get Parameter1'
 
     // DigitalClock: '<S10>/Digital Clock'
     ROPOD_4Wheel_Tdistkinb_cntr_B.DigitalClock =
@@ -3296,7 +3293,6 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
     // Delay: '<S10>/Enabled Delay' incorporates:
     //   Inport: '<S18>/In1'
-    //   MATLABSystem: '<S17>/SourceBlock'
     //   MATLABSystem: '<S17>/SourceBlock'
 
     if (ROPOD_4Wheel_Tdistkinb_cntr_B.SourceBlock_o1) {
@@ -3388,11 +3384,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_B.Switch_j - ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1;
 
     // RelationalOperator: '<S39>/LowerRelop1'
-    rtb_LowerRelop1_jr = (ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 >
-                          ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e);
+    rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 >
+                       ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e);
 
     // Switch: '<S39>/Switch2'
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       // Product: '<S33>/delta fall limit'
       ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e =
         ROPOD_4Wheel_Tdistkinb_cntr_B.Gain *
@@ -3509,11 +3505,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k;
 
     // RelationalOperator: '<S40>/LowerRelop1'
-    rtb_LowerRelop1_jr = (ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_o >
-                          ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e);
+    rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_o >
+                       ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e);
 
     // Switch: '<S40>/Switch2'
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       // Product: '<S34>/delta fall limit'
       ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e =
         ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2 *
@@ -3545,8 +3541,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S9>/Get Parameter2'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S9>/Get Parameter2'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_n.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3554,20 +3550,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_n.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2239.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S9>/Get Parameter2'
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_acc_theta =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S9>/Get Parameter2'
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -3591,8 +3587,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S9>/Get Parameter3'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S9>/Get Parameter3'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3600,20 +3596,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2240.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S9>/Get Parameter3'
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_vel_theta =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S9>/Get Parameter3'
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
@@ -3738,129 +3734,128 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[1] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[2] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[3] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[4] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[5] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[6] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[7] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp_g) * ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[8] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp_g) *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[7] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj) * ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[8] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[9] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t7 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_oa) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[10] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t7 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_oa) *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[9] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_n) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[10] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_n) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[11] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i) * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[12] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[11] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t15 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t31_tmp) * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[12] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t15 -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t31_tmp) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[13] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t17 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d) * ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[14] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t17 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t40;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d) * ROPOD_4Wheel_Tdistkinb_cntr_B.t40;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[15] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[16] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[17] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[18] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[19] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[20] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[21] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[22] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t6) * ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[23] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m -
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t25) * ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[23] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t25 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[24] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[25] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9) * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[26] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp
-    - ROPOD_4Wheel_Tdistkinb_cntr_B.t6) * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[27] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[24] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 -
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t25) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[25] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t25 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[26] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 -
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t25) * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[27] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t25 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[28] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp
-    - ROPOD_4Wheel_Tdistkinb_cntr_B.t6) * ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[29] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 +
+    - ROPOD_4Wheel_Tdistkinb_cntr_B.t25) * ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[29] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t25 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp) * ROPOD_4Wheel_Tdistkinb_cntr_B.t40;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[30] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[31] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[32] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[33] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t30 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t14_tmp - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[34] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[35] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t30_tmp - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[36] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_c - 1.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_l - 1.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[37] =
     ((ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_b) - ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
-    -ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e) - ROPOD_4Wheel_Tdistkinb_cntr_B.t25)
+    * -ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[38] =
     ((-ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_b) + ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e) + ROPOD_4Wheel_Tdistkinb_cntr_B.t25)
+    * ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[39] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25_tmp +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_c) -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
-    -ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
+    ((ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_a +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t30) - ROPOD_4Wheel_Tdistkinb_cntr_B.t25) *
+    -ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[40] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_B.t25_tmp +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_c) +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t6) * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_a +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t30) + ROPOD_4Wheel_Tdistkinb_cntr_B.t25) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[41] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pz +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp) - ROPOD_4Wheel_Tdistkinb_cntr_B.t6)
+    ((ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_et +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp) - ROPOD_4Wheel_Tdistkinb_cntr_B.t25)
     * -ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[42] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pz +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp) + ROPOD_4Wheel_Tdistkinb_cntr_B.t6)
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_et +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp) + ROPOD_4Wheel_Tdistkinb_cntr_B.t25)
     * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[43] = ((ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_l
-    + ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k) - ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
-    -ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[43] = ((ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h) -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25) * -ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gtl[44] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_l +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k) + ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t40;
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h) +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t25) * ROPOD_4Wheel_Tdistkinb_cntr_B.t40;
 
   // Product: '<S42>/Product3' incorporates:
   //   SignalConversion: '<S42>/TmpSignal ConversionAtProduct3Inport2'
@@ -3879,7 +3874,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   // End of Product: '<S42>/Product3'
 
-  // Product: '<S79>/Product9' incorporates:
+  // Product: '<S82>/Product9' incorporates:
   //   Constant: '<Root>/Constant'
   //   Sum: '<S12>/Sum'
 
@@ -3891,10 +3886,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       * ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_n[ROPOD_4Wheel_Tdistkinb_cntr_B.k];
   }
 
-  // End of Product: '<S79>/Product9'
+  // End of Product: '<S82>/Product9'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter10'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter10'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pz.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -3902,115 +3897,59 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pz.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2931.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S6>/Get Parameter10'
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S6>/Get Parameter10'
   }
 
-  // Product: '<S80>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[0] *
+  // Product: '<S83>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[0] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
 
-  // Product: '<S93>/POut' incorporates:
-  //   Constant: '<S89>/Constant4'
+  // Product: '<S96>/POut' incorporates:
+  //   Constant: '<S92>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
-    * ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter11'
-    rtb_LowerRelop1_jr = false;
-    p = true;
-    if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jt.SampleTime ==
-          ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
-      p = false;
-    }
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value;
 
-    if (p) {
-      rtb_LowerRelop1_jr = true;
-    }
-
-    if (!rtb_LowerRelop1_jr) {
-      ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jt.SampleTime =
-        ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
-    }
-
-    ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2932.get_parameter
-      (&ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz);
-
-    // Gain: '<S89>/Gain2' incorporates:
-    //   Constant: '<S89>/Constant4'
-    //   MATLABSystem: '<S6>/Get Parameter11'
-    //   MATLABSystem: '<S6>/Get Parameter11'
-    //   Product: '<S89>/Product4'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_c =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_i;
-  }
-
-  // DiscreteIntegrator: '<S93>/Integrator' incorporates:
-  //   Product: '<S93>/IOut'
-
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_c);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i = ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1
-    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE;
-
-  // End of DiscreteIntegrator: '<S93>/Integrator'
-
-  // Product: '<S93>/DOut' incorporates:
-  //   Constant: '<S89>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_o;
-
-  // SampleTimeMath: '<S94>/TSamp' incorporates:
-  //   Constant: '<S89>/Constant5'
+  // SampleTimeMath: '<S98>/TSamp' incorporates:
+  //   Constant: '<S92>/Constant5'
   //
-  //  About '<S94>/TSamp':
+  //  About '<S98>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value *
     ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt;
 
-  // Math: '<S94>/Reciprocal' incorporates:
-  //   Constant: '<S94>/Constant'
-  //   Sum: '<S94>/SumDen'
+  // Math: '<S98>/Reciprocal' incorporates:
+  //   Constant: '<S98>/Constant'
+  //   Sum: '<S98>/SumDen'
   //
-  //  About '<S94>/Reciprocal':
+  //  About '<S98>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_nr +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
-  // DiscreteTransferFcn: '<S94>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S94>/Constant'
-  //   Product: '<S94>/Divide'
-  //   Sum: '<S94>/SumNum'
+  // DiscreteTransferFcn: '<S98>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S92>/Constant'
+  //   Constant: '<S98>/Constant'
+  //   Product: '<S96>/DOut'
+  //   Product: '<S98>/Divide'
+  //   Sum: '<S98>/SumNum'
 
   if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_ZC ==
          POS_ZCSIG) != (int32_T)rtb_Compare) &&
@@ -4022,42 +3961,209 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_ZC =
     rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_l =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_h = ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_o -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_nr) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i *
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states;
 
-  // Sum: '<S93>/Sum' incorporates:
-  //   Constant: '<S89>/Constant5'
-  //   DiscreteTransferFcn: '<S94>/Filter Differentiator TF'
-  //   Product: '<S94>/DenCoefOut'
-  //   Product: '<S94>/NOut'
+  // Product: '<S98>/NOut' incorporates:
+  //   Constant: '<S92>/Constant5'
+  //   DiscreteTransferFcn: '<S98>/Filter Differentiator TF'
+  //   Product: '<S98>/DenCoefOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i =
     (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoef[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_l +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_h +
      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoef[1] *
      ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value;
 
-  // DiscreteIntegrator: '<S95>/Integrator' incorporates:
-  //   Constant: '<S90>/Constant2'
-  //   Product: '<S95>/IOut'
+  // Sum: '<S96>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_h =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_i *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_m);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k = ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_h +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_l;
+  // Gain: '<S97>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+
+  // DeadZone: '<S97>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -= ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S97>/DeadZone'
+
+  // RelationalOperator: '<S97>/NotEqual'
+  rtb_LowerRelop1 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
+
+  // Signum: '<S97>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = (rtNaN);
+  }
+
+  // End of Signum: '<S97>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter12'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter11'
+    rtb_NotEqual_l2 = false;
+    p = true;
+    if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jt.SampleTime ==
+          ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
+      p = false;
+    }
+
+    if (p) {
+      rtb_NotEqual_l2 = true;
+    }
+
+    if (!rtb_NotEqual_l2) {
+      ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jt.SampleTime =
+        ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
+    }
+
+    ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2932.get_parameter
+      (&ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz);
+
+    // Gain: '<S92>/Gain2' incorporates:
+    //   Constant: '<S92>/Constant4'
+    //   MATLABSystem: '<S6>/Get Parameter11'
+    //   Product: '<S92>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_c =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_i;
+  }
+
+  // Product: '<S96>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_c;
+
+  // Signum: '<S97>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    // DataTypeConversion: '<S97>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    // DataTypeConversion: '<S97>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    // DataTypeConversion: '<S97>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S97>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S97>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S97>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S97>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S97>/DataTypeConv1'
+
+  // Switch: '<S96>/Switch' incorporates:
+  //   Constant: '<S96>/Constant'
+  //   DataTypeConversion: '<S97>/DataTypeConv2'
+  //   Logic: '<S97>/AND'
+  //   RelationalOperator: '<S97>/Equal'
+
+  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_j;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e = ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  }
+
+  // End of Switch: '<S96>/Switch'
+
+  // DiscreteIntegrator: '<S96>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE;
+
+  // End of DiscreteIntegrator: '<S96>/Integrator'
+
+  // Sum: '<S96>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_l) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i;
+
+  // Saturate: '<S96>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S96>/Saturate'
+
+  // Product: '<S99>/POut' incorporates:
+  //   Constant: '<S93>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_k;
+
+  // DiscreteIntegrator: '<S99>/Integrator' incorporates:
+  //   Constant: '<S93>/Constant2'
+  //   Product: '<S99>/IOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_i *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_m);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j = ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_l;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // MATLABSystem: '<S6>/Get Parameter12'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_da.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -4065,10 +4171,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_da.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -4076,16 +4182,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2933.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz);
 
-    // Gain: '<S90>/Gain2' incorporates:
-    //   MATLABSystem: '<S6>/Get Parameter12'
+    // Gain: '<S93>/Gain2' incorporates:
     //   MATLABSystem: '<S6>/Get Parameter12'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_f *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
 
-    // Start for MATLABSystem: '<S6>/Get Parameter13'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter13'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e5.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -4093,10 +4198,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e5.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -4104,754 +4209,996 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2934.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz);
 
-    // Gain: '<S90>/Gain1' incorporates:
-    //   MATLABSystem: '<S6>/Get Parameter13'
+    // Gain: '<S93>/Gain1' incorporates:
     //   MATLABSystem: '<S6>/Get Parameter13'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_c *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
 
-    // Product: '<S90>/Divide1' incorporates:
-    //   Constant: '<S90>/Constant1'
-    //   Product: '<S90>/Divide'
-    //   Sum: '<S90>/Add'
+    // Product: '<S93>/Divide1' incorporates:
+    //   Constant: '<S93>/Constant1'
+    //   Product: '<S93>/Divide'
+    //   Sum: '<S93>/Add'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1 =
       (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_d -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
 
-  // SampleTimeMath: '<S96>/TSamp' incorporates:
-  //   DataTypeConversion: '<S96>/Passthrough for tuning'
+  // Product: '<S99>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_o =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1;
+
+  // SampleTimeMath: '<S100>/TSamp' incorporates:
+  //   DataTypeConversion: '<S100>/Passthrough for tuning'
   //
-  //  About '<S96>/TSamp':
+  //  About '<S100>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m *
     ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_n;
 
-  // Math: '<S96>/Reciprocal' incorporates:
-  //   Constant: '<S96>/Constant'
-  //   Sum: '<S96>/SumDen'
+  // Math: '<S100>/Reciprocal' incorporates:
+  //   Constant: '<S100>/Constant'
+  //   Sum: '<S100>/SumDen'
   //
-  //  About '<S96>/Reciprocal':
+  //  About '<S100>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_b +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
-  // DiscreteTransferFcn: '<S96>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S96>/Constant'
-  //   Product: '<S95>/DOut'
-  //   Product: '<S96>/Divide'
-  //   Sum: '<S96>/SumNum'
+  // DiscreteTransferFcn: '<S100>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S100>/Constant'
+  //   Product: '<S100>/Divide'
+  //   Sum: '<S100>/SumNum'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1 -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_b) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_o - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2
+    - ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_b) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_l;
 
-  // Sum: '<S95>/Sum' incorporates:
-  //   Constant: '<S90>/Constant4'
-  //   DataTypeConversion: '<S96>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S96>/Filter Differentiator TF'
-  //   Product: '<S95>/POut'
-  //   Product: '<S96>/DenCoefOut'
-  //   Product: '<S96>/NOut'
+  // Sum: '<S99>/Sum' incorporates:
+  //   DataTypeConversion: '<S100>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S100>/Filter Differentiator TF'
+  //   Product: '<S100>/DenCoefOut'
+  //   Product: '<S100>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i =
     (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_a[0] *
      ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e +
      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_a[1] *
      ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_l) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_k +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_m +
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j);
 
-  // Sum: '<S91>/Sum' incorporates:
-  //   UnitDelay: '<S91>/Unit Delay'
+  // Sum: '<S94>/Sum' incorporates:
+  //   UnitDelay: '<S94>/Unit Delay'
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_o =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S100>/MATLAB Function' incorporates:
-    //   Constant: '<S100>/Constant'
-    //   Gain: '<S81>/Gain2'
-
-    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_dw *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_f,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_d, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_l);
-  }
-
-  // Product: '<S81>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[1] *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
-
-  // Product: '<S102>/POut' incorporates:
-  //   Constant: '<S98>/Constant4'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_d;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S98>/Gain2' incorporates:
-    //   Constant: '<S98>/Constant4'
-    //   Product: '<S98>/Product4'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_l =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_d *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_l;
-  }
-
-  // DiscreteIntegrator: '<S102>/Integrator' incorporates:
-  //   Product: '<S102>/IOut'
-
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_d
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_m;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_a *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_l);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f;
-
-  // End of DiscreteIntegrator: '<S102>/Integrator'
-
-  // Product: '<S102>/DOut' incorporates:
-  //   Constant: '<S98>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_fb;
-
-  // SampleTimeMath: '<S103>/TSamp' incorporates:
-  //   Constant: '<S98>/Constant5'
-  //
-  //  About '<S103>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_g *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_a;
-
-  // Math: '<S103>/Reciprocal' incorporates:
-  //   Constant: '<S103>/Constant'
-  //   Sum: '<S103>/SumDen'
-  //
-  //  About '<S103>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_h +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
-
-  // DiscreteTransferFcn: '<S103>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S103>/Constant'
-  //   Product: '<S103>/Divide'
-  //   Sum: '<S103>/SumNum'
-
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_j;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2
-    - ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_h) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b;
-
-  // Sum: '<S102>/Sum' incorporates:
-  //   Constant: '<S98>/Constant5'
-  //   DiscreteTransferFcn: '<S103>/Filter Differentiator TF'
-  //   Product: '<S103>/DenCoefOut'
-  //   Product: '<S103>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_l[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_l[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_g +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d);
-
-  // DiscreteIntegrator: '<S104>/Integrator' incorporates:
-  //   Constant: '<S99>/Constant2'
-  //   Product: '<S104>/IOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_m *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_k);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 = ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp
-    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S99>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_h *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
-
-    // Gain: '<S99>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_n =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_p *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
-
-    // Product: '<S99>/Divide1' incorporates:
-    //   Constant: '<S99>/Constant1'
-    //   Product: '<S99>/Divide'
-    //   Sum: '<S99>/Add'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_h =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_m -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_n)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
-  }
-
-  // SampleTimeMath: '<S105>/TSamp' incorporates:
-  //   DataTypeConversion: '<S105>/Passthrough for tuning'
-  //
-  //  About '<S105>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_n *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_j;
-
-  // Math: '<S105>/Reciprocal' incorporates:
-  //   Constant: '<S105>/Constant'
-  //   Sum: '<S105>/SumDen'
-  //
-  //  About '<S105>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_m +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-  // DiscreteTransferFcn: '<S105>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S105>/Constant'
-  //   Product: '<S104>/DOut'
-  //   Product: '<S105>/Divide'
-  //   Sum: '<S105>/SumNum'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch_j = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_h -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_m) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o;
-
-  // Sum: '<S104>/Sum' incorporates:
-  //   Constant: '<S99>/Constant4'
-  //   DataTypeConversion: '<S105>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S105>/Filter Differentiator TF'
-  //   Product: '<S104>/POut'
-  //   Product: '<S105>/DenCoefOut'
-  //   Product: '<S105>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_lb[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch_j +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_lb[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_n + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_a +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2);
-
-  // Sum: '<S100>/Sum' incorporates:
-  //   UnitDelay: '<S100>/Unit Delay'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_b = ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f
-    + ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_c;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S109>/MATLAB Function' incorporates:
-    //   Constant: '<S109>/Constant'
-    //   Gain: '<S82>/Gain2'
+    // MATLAB Function: '<S104>/MATLAB Function' incorporates:
+    //   Constant: '<S104>/Constant'
+    //   Gain: '<S84>/Gain2'
 
     ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_a *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_f4,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_p, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_d);
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_m,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_n, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_k);
   }
 
-  // Product: '<S82>/Product5'
+  // Product: '<S84>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[1] *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
+
+  // Product: '<S106>/POut' incorporates:
+  //   Constant: '<S102>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_c;
+
+  // SampleTimeMath: '<S108>/TSamp' incorporates:
+  //   Constant: '<S102>/Constant5'
+  //
+  //  About '<S108>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_j *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_a;
+
+  // Math: '<S108>/Reciprocal' incorporates:
+  //   Constant: '<S108>/Constant'
+  //   Sum: '<S108>/SumDen'
+  //
+  //  About '<S108>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gk +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // DiscreteTransferFcn: '<S108>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S102>/Constant'
+  //   Constant: '<S108>/Constant'
+  //   Product: '<S106>/DOut'
+  //   Product: '<S108>/Divide'
+  //   Sum: '<S108>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__i ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__i !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_f;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__i =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1 = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_c -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gk) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f;
+
+  // Product: '<S108>/NOut' incorporates:
+  //   Constant: '<S102>/Constant5'
+  //   DiscreteTransferFcn: '<S108>/Filter Differentiator TF'
+  //   Product: '<S108>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_c[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1 +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_c[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_j;
+
+  // Sum: '<S106>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d;
+
+  // Gain: '<S107>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_m *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S107>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S107>/DeadZone'
+
+  // RelationalOperator: '<S107>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S107>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S107>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S102>/Gain2' incorporates:
+    //   Constant: '<S102>/Constant4'
+    //   Product: '<S102>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_c *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_i2;
+  }
+
+  // Product: '<S106>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_f;
+
+  // Signum: '<S107>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S107>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S107>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S107>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S107>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S107>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S107>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S107>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S107>/DataTypeConv1'
+
+  // Switch: '<S106>/Switch' incorporates:
+  //   Constant: '<S106>/Constant'
+  //   DataTypeConversion: '<S107>/DataTypeConv2'
+  //   Logic: '<S107>/AND'
+  //   RelationalOperator: '<S107>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_k;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime = ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S106>/Switch'
+
+  // DiscreteIntegrator: '<S106>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_b
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_bi;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t14_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_a *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t14_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b;
+
+  // End of DiscreteIntegrator: '<S106>/Integrator'
+
+  // Sum: '<S106>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d;
+
+  // Saturate: '<S106>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S106>/Saturate'
+
+  // Product: '<S109>/POut' incorporates:
+  //   Constant: '<S103>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_d;
+
+  // DiscreteIntegrator: '<S109>/Integrator' incorporates:
+  //   Constant: '<S103>/Constant2'
+  //   Product: '<S109>/IOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_g *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_c);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S103>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_h *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+
+    // Gain: '<S103>/Gain1'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_i *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
+
+    // Product: '<S103>/Divide1' incorporates:
+    //   Constant: '<S103>/Constant1'
+    //   Product: '<S103>/Divide'
+    //   Sum: '<S103>/Add'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_h =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_i -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+  }
+
+  // Product: '<S109>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_h;
+
+  // SampleTimeMath: '<S110>/TSamp' incorporates:
+  //   DataTypeConversion: '<S110>/Passthrough for tuning'
+  //
+  //  About '<S110>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_c;
+
+  // Math: '<S110>/Reciprocal' incorporates:
+  //   Constant: '<S110>/Constant'
+  //   Sum: '<S110>/SumDen'
+  //
+  //  About '<S110>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_lu +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
+
+  // DiscreteTransferFcn: '<S110>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S110>/Constant'
+  //   Product: '<S110>/Divide'
+  //   Sum: '<S110>/SumNum'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Switch_j = ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e
+    - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_lu) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o;
+
+  // Sum: '<S109>/Sum' incorporates:
+  //   DataTypeConversion: '<S110>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S110>/Filter Differentiator TF'
+  //   Product: '<S110>/DenCoefOut'
+  //   Product: '<S110>/NOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_i[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch_j +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_i[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g +
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f);
+
+  // Sum: '<S104>/Sum' incorporates:
+  //   UnitDelay: '<S104>/Unit Delay'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // MATLAB Function: '<S114>/MATLAB Function' incorporates:
+    //   Constant: '<S114>/Constant'
+    //   Gain: '<S85>/Gain2'
+
+    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_m *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_eq,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_l, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_c);
+  }
+
+  // Product: '<S85>/Product5'
   ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[2] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
 
-  // Product: '<S111>/POut' incorporates:
-  //   Constant: '<S107>/Constant4'
+  // Product: '<S116>/POut' incorporates:
+  //   Constant: '<S112>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_h;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S107>/Gain2' incorporates:
-    //   Constant: '<S107>/Constant4'
-    //   Product: '<S107>/Product4'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_a;
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_e =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_h *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_hv;
-  }
-
-  // DiscreteIntegrator: '<S111>/Integrator' incorporates:
-  //   Product: '<S111>/IOut'
-
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_n
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_i =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_i;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t25_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_d *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_e);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_c =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t25_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_i;
-
-  // End of DiscreteIntegrator: '<S111>/Integrator'
-
-  // Product: '<S111>/DOut' incorporates:
-  //   Constant: '<S107>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_bv;
-
-  // SampleTimeMath: '<S112>/TSamp' incorporates:
-  //   Constant: '<S107>/Constant5'
+  // SampleTimeMath: '<S118>/TSamp' incorporates:
+  //   Constant: '<S112>/Constant5'
   //
-  //  About '<S112>/TSamp':
+  //  About '<S118>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_c *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_g;
-
-  // Math: '<S112>/Reciprocal' incorporates:
-  //   Constant: '<S112>/Constant'
-  //   Sum: '<S112>/SumDen'
-  //
-  //  About '<S112>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_k +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
-
-  // DiscreteTransferFcn: '<S112>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S112>/Constant'
-  //   Product: '<S112>/Divide'
-  //   Sum: '<S112>/SumNum'
-
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_m =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_o;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pz =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_k) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_m;
-
-  // Sum: '<S111>/Sum' incorporates:
-  //   Constant: '<S107>/Constant5'
-  //   DiscreteTransferFcn: '<S112>/Filter Differentiator TF'
-  //   Product: '<S112>/DenCoefOut'
-  //   Product: '<S112>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_h[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pz +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_h[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_m) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_c +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_c);
-
-  // DiscreteIntegrator: '<S113>/Integrator' incorporates:
-  //   Constant: '<S108>/Constant2'
-  //   Product: '<S113>/IOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_p *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_ko);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_hs;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S108>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_ft *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
-
-    // Gain: '<S108>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_o =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_g *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
-
-    // Product: '<S108>/Divide1' incorporates:
-    //   Constant: '<S108>/Constant1'
-    //   Product: '<S108>/Divide'
-    //   Sum: '<S108>/Add'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_f =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_l -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_o)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
-  }
-
-  // SampleTimeMath: '<S114>/TSamp' incorporates:
-  //   DataTypeConversion: '<S114>/Passthrough for tuning'
-  //
-  //  About '<S114>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_o *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_c;
-
-  // Math: '<S114>/Reciprocal' incorporates:
-  //   Constant: '<S114>/Constant'
-  //   Sum: '<S114>/SumDen'
-  //
-  //  About '<S114>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_d +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-  // DiscreteTransferFcn: '<S114>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S114>/Constant'
-  //   Product: '<S113>/DOut'
-  //   Product: '<S114>/Divide'
-  //   Sum: '<S114>/SumNum'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_c =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_f -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_d) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_bh;
-
-  // Sum: '<S113>/Sum' incorporates:
-  //   Constant: '<S108>/Constant4'
-  //   DataTypeConversion: '<S114>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S114>/Filter Differentiator TF'
-  //   Product: '<S113>/POut'
-  //   Product: '<S114>/DenCoefOut'
-  //   Product: '<S114>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_j[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_c +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_j[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_bh) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_o
-    + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_e +
-       ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i);
-
-  // Sum: '<S109>/Sum' incorporates:
-  //   UnitDelay: '<S109>/Unit Delay'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_l = ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S118>/MATLAB Function' incorporates:
-    //   Constant: '<S118>/Constant'
-    //   Gain: '<S83>/Gain2'
-
-    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_az *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_n3,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_ay, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_m);
-  }
-
-  // Product: '<S83>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[3] *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
-
-  // Product: '<S120>/POut' incorporates:
-  //   Constant: '<S116>/Constant4'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_o;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S116>/Gain2' incorporates:
-    //   Constant: '<S116>/Constant4'
-    //   Product: '<S116>/Product4'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_b =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_o *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_e;
-  }
-
-  // DiscreteIntegrator: '<S120>/Integrator' incorporates:
-  //   Product: '<S120>/IOut'
-
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_e
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_ih;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_aj *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_b);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_oa =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp_g +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m;
-
-  // End of DiscreteIntegrator: '<S120>/Integrator'
-
-  // Product: '<S120>/DOut' incorporates:
-  //   Constant: '<S116>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_mc;
-
-  // SampleTimeMath: '<S121>/TSamp' incorporates:
-  //   Constant: '<S116>/Constant5'
-  //
-  //  About '<S121>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_l *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_g1;
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_j;
 
-  // Math: '<S121>/Reciprocal' incorporates:
-  //   Constant: '<S121>/Constant'
-  //   Sum: '<S121>/SumDen'
+  // Math: '<S118>/Reciprocal' incorporates:
+  //   Constant: '<S118>/Constant'
+  //   Sum: '<S118>/SumDen'
   //
-  //  About '<S121>/Reciprocal':
+  //  About '<S118>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kp +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ed +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
 
-  // DiscreteTransferFcn: '<S121>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S121>/Constant'
-  //   Product: '<S121>/Divide'
-  //   Sum: '<S121>/SumNum'
+  // DiscreteTransferFcn: '<S118>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S112>/Constant'
+  //   Constant: '<S118>/Constant'
+  //   Product: '<S116>/DOut'
+  //   Product: '<S118>/Divide'
+  //   Sum: '<S118>/SumNum'
 
   if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__c ==
          POS_ZCSIG) != (int32_T)rtb_Compare) &&
        (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__c !=
         UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ji;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_db;
   }
 
   ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__c =
     rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kp) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f;
-
-  // Sum: '<S120>/Sum' incorporates:
-  //   Constant: '<S116>/Constant5'
-  //   DiscreteTransferFcn: '<S121>/Filter Differentiator TF'
-  //   Product: '<S121>/DenCoefOut'
-  //   Product: '<S121>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_g[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_g[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_l +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_oa);
-
-  // DiscreteIntegrator: '<S122>/Integrator' incorporates:
-  //   Constant: '<S117>/Constant2'
-  //   Product: '<S122>/IOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_k_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_o *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_j);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_k_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S117>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_j *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
-
-    // Gain: '<S117>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_e *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
-
-    // Product: '<S117>/Divide1' incorporates:
-    //   Constant: '<S117>/Constant1'
-    //   Product: '<S117>/Divide'
-    //   Sum: '<S117>/Add'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_j =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_p -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
-  }
-
-  // SampleTimeMath: '<S123>/TSamp' incorporates:
-  //   DataTypeConversion: '<S123>/Passthrough for tuning'
-  //
-  //  About '<S123>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_cq;
-
-  // Math: '<S123>/Reciprocal' incorporates:
-  //   Constant: '<S123>/Constant'
-  //   Sum: '<S123>/SumDen'
-  //
-  //  About '<S123>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_h1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-  // DiscreteTransferFcn: '<S123>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S123>/Constant'
-  //   Product: '<S122>/DOut'
-  //   Product: '<S123>/Divide'
-  //   Sum: '<S123>/SumNum'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_m =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_j -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_h1) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_a =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_oz -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ed) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h *
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k;
 
-  // Sum: '<S122>/Sum' incorporates:
-  //   Constant: '<S117>/Constant4'
-  //   DataTypeConversion: '<S123>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S123>/Filter Differentiator TF'
-  //   Product: '<S122>/POut'
-  //   Product: '<S123>/DenCoefOut'
-  //   Product: '<S123>/NOut'
+  // Product: '<S118>/NOut' incorporates:
+  //   Constant: '<S112>/Constant5'
+  //   DiscreteTransferFcn: '<S118>/Filter Differentiator TF'
+  //   Product: '<S118>/DenCoefOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_k[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_m +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_k[1] *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_c1[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_a +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_c1[1] *
      ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h
-    + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_m +
-       ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_l;
 
-  // Sum: '<S118>/Sum' incorporates:
-  //   UnitDelay: '<S118>/Unit Delay'
+  // Sum: '<S116>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_o = ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_cy;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S127>/MATLAB Function' incorporates:
-    //   Constant: '<S127>/Constant'
-    //   Gain: '<S84>/Gain2'
+  // Gain: '<S117>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_n *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
 
-    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_hs *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_fi,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_j, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_k);
+  // DeadZone: '<S117>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
   }
 
-  // Product: '<S84>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[4] *
+  // End of DeadZone: '<S117>/DeadZone'
+
+  // RelationalOperator: '<S117>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S117>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S117>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S112>/Gain2' incorporates:
+    //   Constant: '<S112>/Constant4'
+    //   Product: '<S112>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_n =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_a *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_e;
+  }
+
+  // Product: '<S116>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_n;
+
+  // Signum: '<S117>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S117>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S117>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S117>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S117>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S117>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S117>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S117>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S117>/DataTypeConv1'
+
+  // Switch: '<S116>/Switch' incorporates:
+  //   Constant: '<S116>/Constant'
+  //   DataTypeConversion: '<S117>/DataTypeConv2'
+  //   Logic: '<S117>/AND'
+  //   RelationalOperator: '<S117>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gw;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S116>/Switch'
+
+  // DiscreteIntegrator: '<S116>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_d
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_a;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t30_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_c *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_et = ROPOD_4Wheel_Tdistkinb_cntr_B.t30_tmp
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o;
+
+  // End of DiscreteIntegrator: '<S116>/Integrator'
+
+  // Sum: '<S116>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_et) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h;
+
+  // Saturate: '<S116>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S116>/Saturate'
+
+  // Product: '<S119>/POut' incorporates:
+  //   Constant: '<S113>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    * ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_e;
+
+  // DiscreteIntegrator: '<S119>/Integrator' incorporates:
+  //   Constant: '<S113>/Constant2'
+  //   Product: '<S119>/IOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_m *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_n);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fl;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S113>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_l *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+
+    // Gain: '<S113>/Gain1'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_b *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
+
+    // Product: '<S113>/Divide1' incorporates:
+    //   Constant: '<S113>/Constant1'
+    //   Product: '<S113>/Divide'
+    //   Sum: '<S113>/Add'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_i =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_ix -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_i)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+  }
+
+  // Product: '<S119>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_i;
+
+  // SampleTimeMath: '<S120>/TSamp' incorporates:
+  //   DataTypeConversion: '<S120>/Passthrough for tuning'
+  //
+  //  About '<S120>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_i;
+
+  // Math: '<S120>/Reciprocal' incorporates:
+  //   Constant: '<S120>/Constant'
+  //   Sum: '<S120>/SumDen'
+  //
+  //  About '<S120>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_c2 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
+
+  // DiscreteTransferFcn: '<S120>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S120>/Constant'
+  //   Product: '<S120>/Divide'
+  //   Sum: '<S120>/SumNum'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_c2) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_g;
+
+  // Sum: '<S119>/Sum' incorporates:
+  //   DataTypeConversion: '<S120>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S120>/Filter Differentiator TF'
+  //   Product: '<S120>/DenCoefOut'
+  //   Product: '<S120>/NOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_l[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_l[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_g) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_i + (ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_l);
+
+  // Sum: '<S114>/Sum' incorporates:
+  //   UnitDelay: '<S114>/Unit Delay'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_e;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // MATLAB Function: '<S124>/MATLAB Function' incorporates:
+    //   Constant: '<S124>/Constant'
+    //   Gain: '<S86>/Gain2'
+
+    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_g *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_co,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_p, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_f5);
+  }
+
+  // Product: '<S86>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[3] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
 
-  // Product: '<S129>/POut' incorporates:
-  //   Constant: '<S125>/Constant4'
+  // Product: '<S126>/POut' incorporates:
+  //   Constant: '<S122>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_os = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_hz;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S125>/Gain2' incorporates:
-    //   Constant: '<S125>/Constant4'
-    //   Product: '<S125>/Product4'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_ed;
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_d =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_c;
+  // SampleTimeMath: '<S128>/TSamp' incorporates:
+  //   Constant: '<S122>/Constant5'
+  //
+  //  About '<S128>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_d *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_f;
+
+  // Math: '<S128>/Reciprocal' incorporates:
+  //   Constant: '<S128>/Constant'
+  //   Sum: '<S128>/SumDen'
+  //
+  //  About '<S128>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_fq +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // DiscreteTransferFcn: '<S128>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S122>/Constant'
+  //   Constant: '<S128>/Constant'
+  //   Product: '<S126>/DOut'
+  //   Product: '<S128>/Divide'
+  //   Sum: '<S128>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_gl =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_a;
   }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_n =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_f -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_fq) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_gl;
+
+  // Product: '<S128>/NOut' incorporates:
+  //   Constant: '<S122>/Constant5'
+  //   DiscreteTransferFcn: '<S128>/Filter Differentiator TF'
+  //   Product: '<S128>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_p[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_n +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_p[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_gl) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_d;
+
+  // Sum: '<S126>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_k) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj;
+
+  // Gain: '<S127>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_k *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S127>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S127>/DeadZone'
+
+  // RelationalOperator: '<S127>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S127>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S127>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S122>/Gain2' incorporates:
+    //   Constant: '<S122>/Constant4'
+    //   Product: '<S122>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_h =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_ed *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_j;
+  }
+
+  // Product: '<S126>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_h;
+
+  // Signum: '<S127>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S127>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S127>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S127>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S127>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S127>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S127>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S127>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S127>/DataTypeConv1'
+
+  // Switch: '<S126>/Switch' incorporates:
+  //   Constant: '<S126>/Constant'
+  //   DataTypeConversion: '<S127>/DataTypeConv2'
+  //   Logic: '<S127>/AND'
+  //   RelationalOperator: '<S127>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_oi;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S126>/Switch'
+
+  // DiscreteIntegrator: '<S126>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_f
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_k =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_h;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t31_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_k *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d = ROPOD_4Wheel_Tdistkinb_cntr_B.t31_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_k;
+
+  // End of DiscreteIntegrator: '<S126>/Integrator'
+
+  // Sum: '<S126>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj;
+
+  // Saturate: '<S126>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S126>/Saturate'
+
+  // Product: '<S129>/POut' incorporates:
+  //   Constant: '<S123>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_dr;
 
   // DiscreteIntegrator: '<S129>/Integrator' incorporates:
+  //   Constant: '<S123>/Constant2'
   //   Product: '<S129>/IOut'
 
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_o
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_j;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_e_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_b *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_d);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_e_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_bo;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S123>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_gn *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+
+    // Gain: '<S123>/Gain1'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_k *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
+
+    // Product: '<S123>/Divide1' incorporates:
+    //   Constant: '<S123>/Constant1'
+    //   Product: '<S123>/Divide'
+    //   Sum: '<S123>/Add'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_o =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_j -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_f)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_fc_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_f *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_d);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_fc =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_fc_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e;
-
-  // End of DiscreteIntegrator: '<S129>/Integrator'
-
-  // Product: '<S129>/DOut' incorporates:
-  //   Constant: '<S125>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ol;
+  // Product: '<S129>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_j =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_o;
 
   // SampleTimeMath: '<S130>/TSamp' incorporates:
-  //   Constant: '<S125>/Constant5'
+  //   DataTypeConversion: '<S130>/Passthrough for tuning'
   //
   //  About '<S130>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_ci;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_f *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_fj;
 
   // Math: '<S130>/Reciprocal' incorporates:
   //   Constant: '<S130>/Constant'
@@ -4861,7 +5208,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //   Operator: reciprocal
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_dw +
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_d +
      ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
   // DiscreteTransferFcn: '<S130>/Filter Differentiator TF' incorporates:
@@ -4869,395 +5216,381 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //   Product: '<S130>/Divide'
   //   Sum: '<S130>/SumNum'
 
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gp ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gp !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_h;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gp =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pt =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_dw) *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_at =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_j - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_d) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_h;
 
   // Sum: '<S129>/Sum' incorporates:
-  //   Constant: '<S125>/Constant5'
+  //   DataTypeConversion: '<S130>/Passthrough for tuning'
   //   DiscreteTransferFcn: '<S130>/Filter Differentiator TF'
   //   Product: '<S130>/DenCoefOut'
   //   Product: '<S130>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_e[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pt +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_e[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d) *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_l3[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_at +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_l3[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_h) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_i +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.POut_os +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_fc);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_f +
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_e);
 
-  // DiscreteIntegrator: '<S131>/Integrator' incorporates:
-  //   Constant: '<S126>/Constant2'
-  //   Product: '<S131>/IOut'
+  // Sum: '<S124>/Sum' incorporates:
+  //   UnitDelay: '<S124>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_os_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_oc *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_o);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_os =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_os_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_g;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_j = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_h;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S126>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_n *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+    // MATLAB Function: '<S134>/MATLAB Function' incorporates:
+    //   Constant: '<S134>/Constant'
+    //   Gain: '<S87>/Gain2'
 
-    // Gain: '<S126>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h0 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_k *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
-
-    // Product: '<S126>/Divide1' incorporates:
-    //   Constant: '<S126>/Constant1'
-    //   Product: '<S126>/Divide'
-    //   Sum: '<S126>/Add'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_g =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_b -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h0)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
-  }
-
-  // SampleTimeMath: '<S132>/TSamp' incorporates:
-  //   DataTypeConversion: '<S132>/Passthrough for tuning'
-  //
-  //  About '<S132>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h0 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_ag;
-
-  // Math: '<S132>/Reciprocal' incorporates:
-  //   Constant: '<S132>/Constant'
-  //   Sum: '<S132>/SumDen'
-  //
-  //  About '<S132>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_n0 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-  // DiscreteTransferFcn: '<S132>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S132>/Constant'
-  //   Product: '<S131>/DOut'
-  //   Product: '<S132>/Divide'
-  //   Sum: '<S132>/SumNum'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_hi =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_g -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_n0) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_mj;
-
-  // Sum: '<S131>/Sum' incorporates:
-  //   Constant: '<S126>/Constant4'
-  //   DataTypeConversion: '<S132>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S132>/Filter Differentiator TF'
-  //   Product: '<S131>/POut'
-  //   Product: '<S132>/DenCoefOut'
-  //   Product: '<S132>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_d[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_hi +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_d[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_mj) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_h0 + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_f +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_os);
-
-  // Sum: '<S127>/Sum' incorporates:
-  //   UnitDelay: '<S127>/Unit Delay'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_lp = ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg
-    + ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_o;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S136>/MATLAB Function' incorporates:
-    //   Constant: '<S136>/Constant'
-    //   Gain: '<S85>/Gain2'
-
-    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_ff *
+    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_mi *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_o1,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_a, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_b);
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_cs,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_m, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_i);
   }
 
-  // Product: '<S85>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[5] *
+  // Product: '<S87>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[4] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
 
-  // Product: '<S138>/POut' incorporates:
-  //   Constant: '<S134>/Constant4'
+  // Product: '<S136>/POut' incorporates:
+  //   Constant: '<S132>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_h = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_fb;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S134>/Gain2' incorporates:
-    //   Constant: '<S134>/Constant4'
-    //   Product: '<S134>/Product4'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_dg;
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_m =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_fb *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_lh;
-  }
-
-  // DiscreteIntegrator: '<S138>/Integrator' incorporates:
-  //   Product: '<S138>/IOut'
-
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_l
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mc =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_nm;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_op_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_l *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_m);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_op =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_op_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mc;
-
-  // End of DiscreteIntegrator: '<S138>/Integrator'
-
-  // Product: '<S138>/DOut' incorporates:
-  //   Constant: '<S134>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gd;
-
-  // SampleTimeMath: '<S139>/TSamp' incorporates:
-  //   Constant: '<S134>/Constant5'
+  // SampleTimeMath: '<S138>/TSamp' incorporates:
+  //   Constant: '<S132>/Constant5'
   //
-  //  About '<S139>/TSamp':
+  //  About '<S138>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_d *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_k;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_n *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_g;
 
-  // Math: '<S139>/Reciprocal' incorporates:
-  //   Constant: '<S139>/Constant'
-  //   Sum: '<S139>/SumDen'
+  // Math: '<S138>/Reciprocal' incorporates:
+  //   Constant: '<S138>/Constant'
+  //   Sum: '<S138>/SumDen'
   //
-  //  About '<S139>/Reciprocal':
+  //  About '<S138>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_p +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // DiscreteTransferFcn: '<S138>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S132>/Constant'
+  //   Constant: '<S138>/Constant'
+  //   Product: '<S136>/DOut'
+  //   Product: '<S138>/Divide'
+  //   Sum: '<S138>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_l;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_l2 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_p) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_i;
+
+  // Product: '<S138>/NOut' incorporates:
+  //   Constant: '<S132>/Constant5'
+  //   DiscreteTransferFcn: '<S138>/Filter Differentiator TF'
+  //   Product: '<S138>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_d[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_d[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_i) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_n;
+
+  // Sum: '<S136>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j;
+
+  // Gain: '<S137>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_h *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S137>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S137>/DeadZone'
+
+  // RelationalOperator: '<S137>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S137>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S137>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S132>/Gain2' incorporates:
+    //   Constant: '<S132>/Constant4'
+    //   Product: '<S132>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_dg *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_b;
+  }
+
+  // Product: '<S136>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_e;
+
+  // Signum: '<S137>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S137>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S137>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S137>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S137>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S137>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S137>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S137>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S137>/DataTypeConv1'
+
+  // Switch: '<S136>/Switch' incorporates:
+  //   Constant: '<S136>/Constant'
+  //   DataTypeConversion: '<S137>/DataTypeConv2'
+  //   Logic: '<S137>/AND'
+  //   RelationalOperator: '<S137>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_op;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S136>/Switch'
+
+  // DiscreteIntegrator: '<S136>/Integrator'
+  if (rtb_Compare ||
+      (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_dm != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_k;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_f_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_bp *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_f =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_f_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h;
+
+  // End of DiscreteIntegrator: '<S136>/Integrator'
+
+  // Sum: '<S136>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_f) + ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j;
+
+  // Saturate: '<S136>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S136>/Saturate'
+
+  // Product: '<S139>/POut' incorporates:
+  //   Constant: '<S133>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    * ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_aw;
+
+  // DiscreteIntegrator: '<S139>/Integrator' incorporates:
+  //   Constant: '<S133>/Constant2'
+  //   Product: '<S139>/IOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_k1_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_j *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_k);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_k1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_k1_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_j;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S133>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_be *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+
+    // Gain: '<S133>/Gain1'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_d *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
+
+    // Product: '<S133>/Divide1' incorporates:
+    //   Constant: '<S133>/Constant1'
+    //   Product: '<S133>/Divide'
+    //   Sum: '<S133>/Add'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_g =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_ji -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+  }
+
+  // Product: '<S139>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_hv =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_g;
+
+  // SampleTimeMath: '<S140>/TSamp' incorporates:
+  //   DataTypeConversion: '<S140>/Passthrough for tuning'
+  //
+  //  About '<S140>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_it;
+
+  // Math: '<S140>/Reciprocal' incorporates:
+  //   Constant: '<S140>/Constant'
+  //   Sum: '<S140>/SumDen'
+  //
+  //  About '<S140>/Reciprocal':
   //   Operator: reciprocal
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_c +
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ev +
      ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
-  // DiscreteTransferFcn: '<S139>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S139>/Constant'
-  //   Product: '<S139>/Divide'
-  //   Sum: '<S139>/SumNum'
+  // DiscreteTransferFcn: '<S140>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S140>/Constant'
+  //   Product: '<S140>/Divide'
+  //   Sum: '<S140>/SumNum'
 
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__e ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__e !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ph;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__e =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_k =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_c) *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_hv - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ev) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b;
 
-  // Sum: '<S138>/Sum' incorporates:
-  //   Constant: '<S134>/Constant5'
-  //   DiscreteTransferFcn: '<S139>/Filter Differentiator TF'
-  //   Product: '<S139>/DenCoefOut'
-  //   Product: '<S139>/NOut'
+  // Sum: '<S139>/Sum' incorporates:
+  //   DataTypeConversion: '<S140>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S140>/Filter Differentiator TF'
+  //   Product: '<S140>/DenCoefOut'
+  //   Product: '<S140>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_m[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_k +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_m[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e) *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_j[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_l +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_j[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_d +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.POut_h +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_op);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j + (ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_k1);
 
-  // DiscreteIntegrator: '<S140>/Integrator' incorporates:
-  //   Constant: '<S135>/Constant2'
-  //   Product: '<S140>/IOut'
+  // Sum: '<S134>/Sum' incorporates:
+  //   UnitDelay: '<S134>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_h_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_l5 *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_js);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_h =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_h_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_n;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_hv = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_k;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S135>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_b *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+    // MATLAB Function: '<S144>/MATLAB Function' incorporates:
+    //   Constant: '<S144>/Constant'
+    //   Gain: '<S88>/Gain2'
 
-    // Gain: '<S135>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_e =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_e1 *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
-
-    // Product: '<S135>/Divide1' incorporates:
-    //   Constant: '<S135>/Constant1'
-    //   Product: '<S135>/Divide'
-    //   Sum: '<S135>/Add'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_i =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_e -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_e)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
-  }
-
-  // SampleTimeMath: '<S141>/TSamp' incorporates:
-  //   DataTypeConversion: '<S141>/Passthrough for tuning'
-  //
-  //  About '<S141>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_e *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_gz;
-
-  // Math: '<S141>/Reciprocal' incorporates:
-  //   Constant: '<S141>/Constant'
-  //   Sum: '<S141>/SumDen'
-  //
-  //  About '<S141>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_nl +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-  // DiscreteTransferFcn: '<S141>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S141>/Constant'
-  //   Product: '<S140>/DOut'
-  //   Product: '<S141>/Divide'
-  //   Sum: '<S141>/SumNum'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_f =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_i -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_nl) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_n;
-
-  // Sum: '<S140>/Sum' incorporates:
-  //   Constant: '<S135>/Constant4'
-  //   DataTypeConversion: '<S141>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S141>/Filter Differentiator TF'
-  //   Product: '<S140>/POut'
-  //   Product: '<S141>/DenCoefOut'
-  //   Product: '<S141>/NOut'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_n[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_f +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_n[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_n) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_e
-    + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_l +
-       ROPOD_4Wheel_Tdistkinb_cntr_B.POut_h);
-
-  // Sum: '<S136>/Sum' incorporates:
-  //   UnitDelay: '<S136>/Unit Delay'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_lh = ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_cd;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S145>/MATLAB Function' incorporates:
-    //   Constant: '<S145>/Constant'
-    //   Gain: '<S86>/Gain2'
-
-    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_eh *
+    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_p *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ev,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_l, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_e);
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_bl,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_g, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_fe);
   }
 
-  // Product: '<S86>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[6] *
+  // Product: '<S88>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[5] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
 
-  // Product: '<S147>/POut' incorporates:
-  //   Constant: '<S143>/Constant4'
+  // Product: '<S146>/POut' incorporates:
+  //   Constant: '<S142>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_le = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_n;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S143>/Gain2' incorporates:
-    //   Constant: '<S143>/Constant4'
-    //   Product: '<S143>/Product4'
-
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_h =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_n *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_b2;
-  }
-
-  // DiscreteIntegrator: '<S147>/Integrator' incorporates:
-  //   Product: '<S147>/IOut'
-
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_p
-                      != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_iv;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_i_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_j *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_h);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_i_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c;
-
-  // End of DiscreteIntegrator: '<S147>/Integrator'
-
-  // Product: '<S147>/DOut' incorporates:
-  //   Constant: '<S143>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_j;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_h;
 
   // SampleTimeMath: '<S148>/TSamp' incorporates:
-  //   Constant: '<S143>/Constant5'
+  //   Constant: '<S142>/Constant5'
   //
   //  About '<S148>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_p *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_ky;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_e *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_p;
 
   // Math: '<S148>/Reciprocal' incorporates:
   //   Constant: '<S148>/Constant'
@@ -5266,79 +5599,235 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //  About '<S148>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_b3 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_cs4 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
 
   // DiscreteTransferFcn: '<S148>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S142>/Constant'
   //   Constant: '<S148>/Constant'
+  //   Product: '<S146>/DOut'
   //   Product: '<S148>/Divide'
   //   Sum: '<S148>/SumNum'
 
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gs ==
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__j ==
          POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gs !=
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__j !=
         UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_l0 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_gq;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fs =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_fq;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gs =
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__j =
     rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_fw =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_b3) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_l0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_k =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_h -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_cs4) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fs;
 
-  // Sum: '<S147>/Sum' incorporates:
-  //   Constant: '<S143>/Constant5'
+  // Product: '<S148>/NOut' incorporates:
+  //   Constant: '<S142>/Constant5'
   //   DiscreteTransferFcn: '<S148>/Filter Differentiator TF'
   //   Product: '<S148>/DenCoefOut'
-  //   Product: '<S148>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_jl[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_fw +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_jl[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_l0) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_p +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.POut_le +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_i);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_e[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_k +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_e[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fs) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_e;
+
+  // Sum: '<S146>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ji) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f;
+
+  // Gain: '<S147>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_l *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S147>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S147>/DeadZone'
+
+  // RelationalOperator: '<S147>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S147>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S147>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S142>/Gain2' incorporates:
+    //   Constant: '<S142>/Constant4'
+    //   Product: '<S142>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_m =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_h *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_ie;
+  }
+
+  // Product: '<S146>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_m;
+
+  // Signum: '<S147>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S147>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S147>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S147>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S147>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S147>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S147>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S147>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S147>/DataTypeConv1'
+
+  // Switch: '<S146>/Switch' incorporates:
+  //   Constant: '<S146>/Constant'
+  //   DataTypeConversion: '<S147>/DataTypeConv2'
+  //   Logic: '<S147>/AND'
+  //   RelationalOperator: '<S147>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_bu;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S146>/Switch'
+
+  // DiscreteIntegrator: '<S146>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_n
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ji =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_l;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_m0_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_n *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m0 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_m0_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ji;
+
+  // End of DiscreteIntegrator: '<S146>/Integrator'
+
+  // Sum: '<S146>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m0) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f;
+
+  // Saturate: '<S146>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S146>/Saturate'
+
+  // Product: '<S149>/POut' incorporates:
+  //   Constant: '<S143>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    * ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_f;
 
   // DiscreteIntegrator: '<S149>/Integrator' incorporates:
-  //   Constant: '<S144>/Constant2'
+  //   Constant: '<S143>/Constant2'
   //   Product: '<S149>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_le_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_jy *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_l);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_le =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_le_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_n3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_o_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_f *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_p);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_o =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_o_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S144>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_p *
+    // Gain: '<S143>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_pp *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
 
-    // Gain: '<S144>/Gain1'
+    // Gain: '<S143>/Gain1'
     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_f *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_be *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
 
-    // Product: '<S144>/Divide1' incorporates:
-    //   Constant: '<S144>/Constant1'
-    //   Product: '<S144>/Divide'
-    //   Sum: '<S144>/Add'
+    // Product: '<S143>/Divide1' incorporates:
+    //   Constant: '<S143>/Constant1'
+    //   Product: '<S143>/Divide'
+    //   Sum: '<S143>/Add'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_e =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_lf -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_p =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_p -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
+
+  // Product: '<S149>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_p;
 
   // SampleTimeMath: '<S150>/TSamp' incorporates:
   //   DataTypeConversion: '<S150>/Passthrough for tuning'
@@ -5346,9 +5835,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //  About '<S150>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_l;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_o;
 
   // Math: '<S150>/Reciprocal' incorporates:
   //   Constant: '<S150>/Constant'
@@ -5357,179 +5845,290 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //  About '<S150>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_hq +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_d0 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
   // DiscreteTransferFcn: '<S150>/Filter Differentiator TF' incorporates:
   //   Constant: '<S150>/Constant'
-  //   Product: '<S149>/DOut'
   //   Product: '<S150>/Divide'
   //   Sum: '<S150>/SumNum'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_hi2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_e -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_hq) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_eh;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_m =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m1 - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_d0) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fw;
 
   // Sum: '<S149>/Sum' incorporates:
-  //   Constant: '<S144>/Constant4'
   //   DataTypeConversion: '<S150>/Passthrough for tuning'
   //   DiscreteTransferFcn: '<S150>/Filter Differentiator TF'
-  //   Product: '<S149>/POut'
   //   Product: '<S150>/DenCoefOut'
   //   Product: '<S150>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_kz[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_hi2 +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_kz[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_eh) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_g +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_le);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_dm[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_m +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_dm[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fw) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_l + (ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_o);
 
-  // Sum: '<S145>/Sum' incorporates:
-  //   UnitDelay: '<S145>/Unit Delay'
+  // Sum: '<S144>/Sum' incorporates:
+  //   UnitDelay: '<S144>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h = ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_j;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m1 = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_o;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
     // MATLAB Function: '<S154>/MATLAB Function' incorporates:
     //   Constant: '<S154>/Constant'
-    //   Gain: '<S87>/Gain2'
+    //   Gain: '<S89>/Gain2'
 
-    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_ap *
+    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_c *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_je,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g, &ROPOD_4Wheel_Tdistkinb_cntr_B.a);
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_h5,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_k, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_f);
   }
 
-  // Product: '<S87>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[7] *
+  // Product: '<S89>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[6] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
 
   // Product: '<S156>/POut' incorporates:
   //   Constant: '<S152>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_io = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_b;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_h3;
+
+  // SampleTimeMath: '<S158>/TSamp' incorporates:
+  //   Constant: '<S152>/Constant5'
+  //
+  //  About '<S158>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_p *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_l;
+
+  // Math: '<S158>/Reciprocal' incorporates:
+  //   Constant: '<S158>/Constant'
+  //   Sum: '<S158>/SumDen'
+  //
+  //  About '<S158>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_go +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // DiscreteTransferFcn: '<S158>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S152>/Constant'
+  //   Constant: '<S158>/Constant'
+  //   Product: '<S156>/DOut'
+  //   Product: '<S158>/Divide'
+  //   Sum: '<S158>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__f ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__f !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_hh;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__f =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_o =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_a -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_go) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e;
+
+  // Product: '<S158>/NOut' incorporates:
+  //   Constant: '<S152>/Constant5'
+  //   DiscreteTransferFcn: '<S158>/Filter Differentiator TF'
+  //   Product: '<S158>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_n[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_o +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_n[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_p;
+
+  // Sum: '<S156>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b;
+
+  // Gain: '<S157>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_e *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S157>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S157>/DeadZone'
+
+  // RelationalOperator: '<S157>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S157>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S157>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
     // Gain: '<S152>/Gain2' incorporates:
     //   Constant: '<S152>/Constant4'
     //   Product: '<S152>/Product4'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_dy =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_b *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_h3 *
       ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_fh;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_n;
   }
 
-  // DiscreteIntegrator: '<S156>/Integrator' incorporates:
-  //   Product: '<S156>/IOut'
+  // Product: '<S156>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_i;
 
-  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_f
+  // Signum: '<S157>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S157>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S157>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S157>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S157>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S157>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S157>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S157>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S157>/DataTypeConv1'
+
+  // Switch: '<S156>/Switch' incorporates:
+  //   Constant: '<S156>/Constant'
+  //   DataTypeConversion: '<S157>/DataTypeConv2'
+  //   Logic: '<S157>/AND'
+  //   RelationalOperator: '<S157>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gf;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S156>/Switch'
+
+  // DiscreteIntegrator: '<S156>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_p
                       != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fp =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_eq;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_ed;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_fu *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_dy);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fp;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_g_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_l *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_g =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_g_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m;
 
   // End of DiscreteIntegrator: '<S156>/Integrator'
 
-  // Product: '<S156>/DOut' incorporates:
-  //   Constant: '<S152>/Constant'
+  // Sum: '<S156>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_g) + ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_au = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_c2;
-
-  // SampleTimeMath: '<S157>/TSamp' incorporates:
-  //   Constant: '<S152>/Constant5'
-  //
-  //  About '<S157>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_j *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_b;
-
-  // Math: '<S157>/Reciprocal' incorporates:
-  //   Constant: '<S157>/Constant'
-  //   Sum: '<S157>/SumDen'
-  //
-  //  About '<S157>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kc +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
-
-  // DiscreteTransferFcn: '<S157>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S157>/Constant'
-  //   Product: '<S157>/Divide'
-  //   Sum: '<S157>/SumNum'
-
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_e2 ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_e2 !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_es =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_l;
+  // Saturate: '<S156>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_e2 =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_ho =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_au - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kc) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_es;
+  // End of Saturate: '<S156>/Saturate'
 
-  // Sum: '<S156>/Sum' incorporates:
-  //   Constant: '<S152>/Constant5'
-  //   DiscreteTransferFcn: '<S157>/Filter Differentiator TF'
-  //   Product: '<S157>/DenCoefOut'
-  //   Product: '<S157>/NOut'
+  // Product: '<S159>/POut' incorporates:
+  //   Constant: '<S153>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_ju[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_ho +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_ju[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_es) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_j +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.POut_io +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    * ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_o;
 
-  // DiscreteIntegrator: '<S158>/Integrator' incorporates:
+  // DiscreteIntegrator: '<S159>/Integrator' incorporates:
   //   Constant: '<S153>/Constant2'
-  //   Product: '<S158>/IOut'
+  //   Product: '<S159>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_io_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_pb *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_d);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.POut_io =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_io_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_gz;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_b_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_jz *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_nj);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_b =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_b_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_bd;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
     // Gain: '<S153>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_pr *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_a1 *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
 
     // Gain: '<S153>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_p =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_m *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_n *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
 
     // Product: '<S153>/Divide1' incorporates:
@@ -5537,132 +6136,452 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     //   Product: '<S153>/Divide'
     //   Sum: '<S153>/Add'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_b =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_h -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_p)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_j =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_a -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_d)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
 
-  // SampleTimeMath: '<S159>/TSamp' incorporates:
-  //   DataTypeConversion: '<S159>/Passthrough for tuning'
+  // Product: '<S159>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_j;
+
+  // SampleTimeMath: '<S160>/TSamp' incorporates:
+  //   DataTypeConversion: '<S160>/Passthrough for tuning'
   //
-  //  About '<S159>/TSamp':
+  //  About '<S160>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_p *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_f;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_d *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_aa;
 
-  // Math: '<S159>/Reciprocal' incorporates:
-  //   Constant: '<S159>/Constant'
-  //   Sum: '<S159>/SumDen'
+  // Math: '<S160>/Reciprocal' incorporates:
+  //   Constant: '<S160>/Constant'
+  //   Sum: '<S160>/SumDen'
   //
-  //  About '<S159>/Reciprocal':
+  //  About '<S160>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_mf +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kx +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
-  // DiscreteTransferFcn: '<S159>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S159>/Constant'
-  //   Product: '<S158>/DOut'
-  //   Product: '<S159>/Divide'
-  //   Sum: '<S159>/SumNum'
+  // DiscreteTransferFcn: '<S160>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S160>/Constant'
+  //   Product: '<S160>/Divide'
+  //   Sum: '<S160>/SumNum'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_b -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_mf) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_kx =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i - (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kx) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_e2;
 
-  // Sum: '<S158>/Sum' incorporates:
-  //   Constant: '<S153>/Constant4'
-  //   DataTypeConversion: '<S159>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S159>/Filter Differentiator TF'
-  //   Product: '<S158>/POut'
-  //   Product: '<S159>/DenCoefOut'
-  //   Product: '<S159>/NOut'
+  // Sum: '<S159>/Sum' incorporates:
+  //   DataTypeConversion: '<S160>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S160>/Filter Differentiator TF'
+  //   Product: '<S160>/DenCoefOut'
+  //   Product: '<S160>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_a0[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_a0[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_p + (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_p +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_io);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_ea[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_kx +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_ea[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_e2) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_d + (ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_b);
 
   // Sum: '<S154>/Sum' incorporates:
   //   UnitDelay: '<S154>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_au =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_i;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // MATLAB Function: '<S164>/MATLAB Function' incorporates:
+    //   Constant: '<S164>/Constant'
+    //   Gain: '<S90>/Gain2'
+
+    ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_gl *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz,
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ov,
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g, &ROPOD_4Wheel_Tdistkinb_cntr_B.a);
+  }
+
+  // Product: '<S90>/Product5'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product9[7] *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain;
+
+  // Product: '<S166>/POut' incorporates:
+  //   Constant: '<S162>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_n;
+
+  // SampleTimeMath: '<S168>/TSamp' incorporates:
+  //   Constant: '<S162>/Constant5'
+  //
+  //  About '<S168>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_m *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_b;
+
+  // Math: '<S168>/Reciprocal' incorporates:
+  //   Constant: '<S168>/Constant'
+  //   Sum: '<S168>/SumDen'
+  //
+  //  About '<S168>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ck +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // DiscreteTransferFcn: '<S168>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S162>/Constant'
+  //   Constant: '<S168>/Constant'
+  //   Product: '<S166>/DOut'
+  //   Product: '<S168>/Divide'
+  //   Sum: '<S168>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__h ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__h !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ir =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_b;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__h =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_jl -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ck) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ir;
+
+  // Product: '<S168>/NOut' incorporates:
+  //   Constant: '<S162>/Constant5'
+  //   DiscreteTransferFcn: '<S168>/Filter Differentiator TF'
+  //   Product: '<S168>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_ps[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_ps[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ir) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_m;
+
+  // Sum: '<S166>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by;
+
+  // Gain: '<S167>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_pe =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_c *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S167>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  }
+
+  // End of DeadZone: '<S167>/DeadZone'
+
+  // RelationalOperator: '<S167>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_pe !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S167>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S167>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S162>/Gain2' incorporates:
+    //   Constant: '<S162>/Constant4'
+    //   Product: '<S162>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_hk =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_n *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_iel;
+  }
+
+  // Product: '<S166>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_hk;
+
+  // Signum: '<S167>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S167>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S167>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S167>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S167>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S167>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S167>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S167>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S167>/DataTypeConv1'
+
+  // Switch: '<S166>/Switch' incorporates:
+  //   Constant: '<S166>/Constant'
+  //   DataTypeConversion: '<S167>/DataTypeConv2'
+  //   Logic: '<S167>/AND'
+  //   RelationalOperator: '<S167>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gh;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz = ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S166>/Switch'
+
+  // DiscreteIntegrator: '<S166>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_k
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_h1;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz *=
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_no;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_pe =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c;
+
+  // End of DiscreteIntegrator: '<S166>/Integrator'
+
+  // Sum: '<S166>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_pe) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by;
+
+  // Saturate: '<S166>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_hw_tau;
+    }
+  }
+
+  // End of Saturate: '<S166>/Saturate'
+
+  // Product: '<S169>/POut' incorporates:
+  //   Constant: '<S163>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_b;
+
+  // DiscreteIntegrator: '<S169>/Integrator' incorporates:
+  //   Constant: '<S163>/Constant2'
+  //   Product: '<S169>/IOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_h_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_cs *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_pf);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_h_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ft;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S163>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_c1 *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+
+    // Gain: '<S163>/Gain1'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jd =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_a *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
+
+    // Product: '<S163>/Divide1' incorporates:
+    //   Constant: '<S163>/Constant1'
+    //   Product: '<S163>/Divide'
+    //   Sum: '<S163>/Add'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_g2 =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_e -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 /
+       ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jd) * (1.0 /
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+  }
+
+  // Product: '<S169>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_g2;
+
+  // SampleTimeMath: '<S170>/TSamp' incorporates:
+  //   DataTypeConversion: '<S170>/Passthrough for tuning'
+  //
+  //  About '<S170>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jd *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_g3;
+
+  // Math: '<S170>/Reciprocal' incorporates:
+  //   Constant: '<S170>/Constant'
+  //   Sum: '<S170>/SumDen'
+  //
+  //  About '<S170>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ov1 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
+
+  // DiscreteTransferFcn: '<S170>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S170>/Constant'
+  //   Product: '<S170>/Divide'
+  //   Sum: '<S170>/SumNum'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ov1) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d;
+
+  // Sum: '<S169>/Sum' incorporates:
+  //   DataTypeConversion: '<S170>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S170>/Filter Differentiator TF'
+  //   Product: '<S170>/DenCoefOut'
+  //   Product: '<S170>/NOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_k[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_k[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jd +
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_h);
+
+  // Sum: '<S164>/Sum' incorporates:
+  //   UnitDelay: '<S164>/Unit Delay'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_c;
 
   // MATLAB Function: '<S44>/Gl_matrices' incorporates:
-  //   SignalConversion: '<S77>/TmpSignal ConversionAt SFunction Inport1'
+  //   SignalConversion: '<S80>/TmpSignal ConversionAt SFunction Inport1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t11 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t31 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter11_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t30 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t22 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t6 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t25 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter12_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t4 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t8 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t30 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter13_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t10 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t14 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t8 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t4 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t27 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter14_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t10 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t22 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp *
-    0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t32 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter15_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t26 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t33 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t18 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t10 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t35 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter16_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t34 =
@@ -5686,29 +6605,27 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[1] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[2] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[3] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[4] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[5] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[6] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[7] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[7] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.t31) * ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[8] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 -
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[8] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 -
     ROPOD_4Wheel_Tdistkinb_cntr_B.t31) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[9] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t7 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[10] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t7 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8) * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[11] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t22) * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[12] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t22) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[9] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t30) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[10] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t30) * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[11] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t15 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18) * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[12] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t15 -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[13] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t17 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.t41) * ROPOD_4Wheel_Tdistkinb_cntr_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[14] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t17 -
@@ -5717,41 +6634,43 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[16] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[17] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[18] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[19] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[20] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[21] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[22] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m -
      ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 0.5) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 0.5) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[23] =
     (ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 0.5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[24] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t7 * 0.5) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[24] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 -
+     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 0.5) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[25] =
     (ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t7 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t9) * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[26] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 0.5) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 0.5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[26] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 -
+     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t15 * 0.5)
+    * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[27] =
     (ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t15 * 0.5
+     + ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[28] = (ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp
     - ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.t17 * 0.5) *
@@ -5765,42 +6684,45 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[31] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[32] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[33] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[34] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t4 - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[35] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t18 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t10 - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[36] = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t34 - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[37] =
     ((ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t30) -
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t22) -
      ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     -ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[38] =
     ((-ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t30) +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t22) +
      ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[39] = ((ROPOD_4Wheel_Tdistkinb_cntr_B.t10 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t14) -
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[39] = ((ROPOD_4Wheel_Tdistkinb_cntr_B.t6 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t8) -
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9) *
-    -ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[40] = ((-ROPOD_4Wheel_Tdistkinb_cntr_B.t10 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t14) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1) *
+    -ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[40] = ((-ROPOD_4Wheel_Tdistkinb_cntr_B.t6 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t8) +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9) * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[41] = ((ROPOD_4Wheel_Tdistkinb_cntr_B.t26 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.t33) -
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp) * -ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2) *
+    -ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[42] = ((-ROPOD_4Wheel_Tdistkinb_cntr_B.t26 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.t33) +
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp) * ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Gl[43] = ((ROPOD_4Wheel_Tdistkinb_cntr_B.t42 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.t38) -
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 *
@@ -5827,13 +6749,13 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TSamp_idx_0 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.DifferenceInputs2 *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_o;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_om;
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TSamp_idx_1 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.DifferenceInputs2_l *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_o;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_om;
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TSamp_idx_2 =
       ROPOD_4Wheel_Tdistkinb_cntr_B.DifferenceInputs2_g *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_o;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_om;
 
     // Sum: '<S46>/Diff' incorporates:
     //   UnitDelay: '<S46>/UD'
@@ -5862,7 +6784,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_B.Diff[0];
 
     // Gain: '<S43>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_iu =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FFxy_mass *
       ROPOD_4Wheel_Tdistkinb_cntr_B.Diff[1];
 
@@ -5873,8 +6795,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter6'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter6'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_c.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -5882,10 +6804,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_c.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -5896,7 +6818,6 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     // MATLAB Function: '<S53>/MATLAB Function' incorporates:
     //   Constant: '<S53>/Constant'
     //   Gain: '<S47>/Gain2'
-    //   MATLABSystem: '<S6>/Get Parameter6'
     //   MATLABSystem: '<S6>/Get Parameter6'
 
     ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_cc *
@@ -5912,37 +6833,37 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t4 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t8 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t10 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t14 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t18 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t22 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp;
@@ -5954,15 +6875,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.t27 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t30 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t31 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter4_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t33 = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 +
@@ -5971,15 +6892,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.t34 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t35 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t32 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter6_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t40 = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 +
@@ -5988,15 +6909,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.t41 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t42 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t38 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter8_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t39 = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 +
@@ -6021,20 +6942,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.t4 + ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
     0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t9 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[1] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t5) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 -
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t9) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 *=
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m *=
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter3_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[2] =
     (((ROPOD_4Wheel_Tdistkinb_cntr_B.t27 + ROPOD_4Wheel_Tdistkinb_cntr_B.t30) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t31) -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t26) * -0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6045,13 +6966,13 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     (ROPOD_4Wheel_Tdistkinb_cntr_B.t4 - ROPOD_4Wheel_Tdistkinb_cntr_B.t6) *
     0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[4] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[5] =
     (((-ROPOD_4Wheel_Tdistkinb_cntr_B.t27 + ROPOD_4Wheel_Tdistkinb_cntr_B.t30) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t31) +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t26) * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6061,20 +6982,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.t8 + ROPOD_4Wheel_Tdistkinb_cntr_B.t10) *
     0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[7] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 - ROPOD_4Wheel_Tdistkinb_cntr_B.t5) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 - ROPOD_4Wheel_Tdistkinb_cntr_B.t9) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter5_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[8] =
     (((ROPOD_4Wheel_Tdistkinb_cntr_B.t34 + ROPOD_4Wheel_Tdistkinb_cntr_B.t35) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t32) -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t33) * -0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6085,12 +7006,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     (ROPOD_4Wheel_Tdistkinb_cntr_B.t8 - ROPOD_4Wheel_Tdistkinb_cntr_B.t10) *
     0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[10] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 + ROPOD_4Wheel_Tdistkinb_cntr_B.t24) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 + ROPOD_4Wheel_Tdistkinb_cntr_B.t24) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[11] =
     (((-ROPOD_4Wheel_Tdistkinb_cntr_B.t34 + ROPOD_4Wheel_Tdistkinb_cntr_B.t35) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t32) +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t33) * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6099,21 +7020,21 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[12] =
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t14) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 =
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t11) * 0.125;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 * 2.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t15 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[13] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t11 - ROPOD_4Wheel_Tdistkinb_cntr_B.t5) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t25 - ROPOD_4Wheel_Tdistkinb_cntr_B.t9) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter7_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[14] =
     (((ROPOD_4Wheel_Tdistkinb_cntr_B.t41 + ROPOD_4Wheel_Tdistkinb_cntr_B.t42) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t38) -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t40) * -0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6122,14 +7043,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[15] =
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t14) * 0.125;
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t11) * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[16] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 + ROPOD_4Wheel_Tdistkinb_cntr_B.t11) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 + ROPOD_4Wheel_Tdistkinb_cntr_B.t25) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[17] =
     (((-ROPOD_4Wheel_Tdistkinb_cntr_B.t41 + ROPOD_4Wheel_Tdistkinb_cntr_B.t42) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t38) +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t40) * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6139,20 +7060,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 +
      ROPOD_4Wheel_Tdistkinb_cntr_B.t18) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter1_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17 * 2.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[19] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t22 - ROPOD_4Wheel_Tdistkinb_cntr_B.t5) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t22 - ROPOD_4Wheel_Tdistkinb_cntr_B.t9) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m =
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter9_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[20] =
     (((ROPOD_4Wheel_Tdistkinb_cntr_B.t48 + ROPOD_4Wheel_Tdistkinb_cntr_B.t49) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t50) -
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t39) * -0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g =
@@ -6163,12 +7084,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 -
      ROPOD_4Wheel_Tdistkinb_cntr_B.t18) * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[22] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 + ROPOD_4Wheel_Tdistkinb_cntr_B.t22) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t9 + ROPOD_4Wheel_Tdistkinb_cntr_B.t22) *
     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g * 0.125;
   ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_k[23] =
     (((-ROPOD_4Wheel_Tdistkinb_cntr_B.t48 + ROPOD_4Wheel_Tdistkinb_cntr_B.t49) +
       ROPOD_4Wheel_Tdistkinb_cntr_B.t50) +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) *
     (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_TmpSignalConversionAtSFun_g *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t39) * 0.125;
   for (ROPOD_4Wheel_Tdistkinb_cntr_B.k = 0; ROPOD_4Wheel_Tdistkinb_cntr_B.k < 3;
@@ -6191,8 +7112,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_mn.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6200,20 +7121,20 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_mn.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2716.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S6>/Get Parameter'
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain_i =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S6>/Get Parameter'
   }
 
   // Product: '<S47>/Product5'
@@ -6223,11 +7144,111 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   // Product: '<S55>/POut' incorporates:
   //   Constant: '<S51>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_hd;
+
+  // SampleTimeMath: '<S57>/TSamp' incorporates:
+  //   Constant: '<S51>/Constant5'
+  //
+  //  About '<S57>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_jy *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_je;
+
+  // Math: '<S57>/Reciprocal' incorporates:
+  //   Constant: '<S57>/Constant'
+  //   Sum: '<S57>/SumDen'
+  //
+  //  About '<S57>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_lp +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // DiscreteTransferFcn: '<S57>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S51>/Constant'
+  //   Constant: '<S57>/Constant'
+  //   Product: '<S55>/DOut'
+  //   Product: '<S57>/Divide'
+  //   Sum: '<S57>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l3 ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l3 !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ae;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l3 =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t4 = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_e0 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_lp) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku;
+
+  // Product: '<S57>/NOut' incorporates:
+  //   Constant: '<S51>/Constant5'
+  //   DiscreteTransferFcn: '<S57>/Filter Differentiator TF'
+  //   Product: '<S57>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_jq[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t4 +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_jq[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_jy;
+
+  // Sum: '<S55>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    + ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mx) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+
+  // Gain: '<S56>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_hq *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+
+  // DeadZone: '<S56>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+  }
+
+  // End of DeadZone: '<S56>/DeadZone'
+
+  // RelationalOperator: '<S56>/NotEqual'
+  rtb_LowerRelop1 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
+
+  // Signum: '<S56>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = (rtNaN);
+  }
+
+  // End of Signum: '<S56>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter3'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter3'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d0.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6235,10 +7256,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d0.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6249,7 +7270,6 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     // Gain: '<S51>/Gain2' incorporates:
     //   Constant: '<S51>/Constant4'
     //   MATLABSystem: '<S6>/Get Parameter3'
-    //   MATLABSystem: '<S6>/Get Parameter3'
     //   Product: '<S51>/Product4'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_k =
@@ -6258,101 +7278,116 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_nx;
   }
 
-  // DiscreteIntegrator: '<S55>/Integrator' incorporates:
-  //   Product: '<S55>/IOut'
+  // Product: '<S55>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_k;
 
+  // Signum: '<S56>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 < 0.0) {
+    // DataTypeConversion: '<S56>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 > 0.0) {
+    // DataTypeConversion: '<S56>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 == 0.0) {
+    // DataTypeConversion: '<S56>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S56>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S56>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S56>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S56>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S56>/DataTypeConv1'
+
+  // Switch: '<S55>/Switch' incorporates:
+  //   Constant: '<S55>/Constant'
+  //   DataTypeConversion: '<S56>/DataTypeConv2'
+  //   Logic: '<S56>/AND'
+  //   RelationalOperator: '<S56>/Equal'
+
+  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_ah;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t2;
+  }
+
+  // End of Switch: '<S55>/Switch'
+
+  // DiscreteIntegrator: '<S55>/Integrator'
   if (rtb_Compare ||
       (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_fn != 0)) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mx =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_mp;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_m;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_k);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t4 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 +
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 *=
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_gb;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mx;
 
   // End of DiscreteIntegrator: '<S55>/Integrator'
 
-  // Product: '<S55>/DOut' incorporates:
-  //   Constant: '<S51>/Constant'
+  // Sum: '<S55>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i + ROPOD_4Wheel_Tdistkinb_cntr_B.t6)
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t7 = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_e0;
-
-  // SampleTimeMath: '<S56>/TSamp' incorporates:
-  //   Constant: '<S51>/Constant5'
-  //
-  //  About '<S56>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_jy *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_je;
-
-  // Math: '<S56>/Reciprocal' incorporates:
-  //   Constant: '<S56>/Constant'
-  //   Sum: '<S56>/SumDen'
-  //
-  //  About '<S56>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_lp +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
-
-  // DiscreteTransferFcn: '<S56>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S56>/Constant'
-  //   Product: '<S56>/Divide'
-  //   Sum: '<S56>/SumNum'
-
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_a;
+  // Saturate: '<S55>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+    }
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 = ROPOD_4Wheel_Tdistkinb_cntr_B.t7 -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_lp) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku;
+  // End of Saturate: '<S55>/Saturate'
 
-  // Sum: '<S55>/Sum' incorporates:
-  //   Constant: '<S51>/Constant5'
-  //   DiscreteTransferFcn: '<S56>/Filter Differentiator TF'
-  //   Product: '<S56>/DenCoefOut'
-  //   Product: '<S56>/NOut'
+  // Product: '<S58>/POut' incorporates:
+  //   Constant: '<S52>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_jq[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_jq[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_jy +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 + ROPOD_4Wheel_Tdistkinb_cntr_B.t4);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_dt;
 
-  // DiscreteIntegrator: '<S57>/Integrator' incorporates:
+  // DiscreteIntegrator: '<S58>/Integrator' incorporates:
   //   Constant: '<S52>/Constant2'
-  //   Product: '<S57>/IOut'
+  //   Product: '<S58>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_k *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_n);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t7 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_j;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_k3 *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_ny);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t8 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_jf;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter4'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter4'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ey.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6360,10 +7395,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ey.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6373,14 +7408,13 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
     // Gain: '<S52>/Gain2' incorporates:
     //   MATLABSystem: '<S6>/Get Parameter4'
-    //   MATLABSystem: '<S6>/Get Parameter4'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_g *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_gy *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m;
 
-    // Start for MATLABSystem: '<S6>/Get Parameter5'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter5'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g0.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6388,10 +7422,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g0.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6401,10 +7435,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
     // Gain: '<S52>/Gain1' incorporates:
     //   MATLABSystem: '<S6>/Get Parameter5'
-    //   MATLABSystem: '<S6>/Get Parameter5'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_e4 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_ga =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_e *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n;
 
     // Product: '<S52>/Divide1' incorporates:
@@ -6413,150 +7446,115 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     //   Sum: '<S52>/Add'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_ht =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_j -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_j0 -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 /
+       ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_ga) * (1.0 /
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
 
-  // SampleTimeMath: '<S58>/TSamp' incorporates:
-  //   DataTypeConversion: '<S58>/Passthrough for tuning'
+  // Product: '<S58>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_ht;
+
+  // SampleTimeMath: '<S59>/TSamp' incorporates:
+  //   DataTypeConversion: '<S59>/Passthrough for tuning'
   //
-  //  About '<S58>/TSamp':
+  //  About '<S59>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_ga *
     ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_bz;
 
-  // Math: '<S58>/Reciprocal' incorporates:
-  //   Constant: '<S58>/Constant'
-  //   Sum: '<S58>/SumDen'
+  // Math: '<S59>/Reciprocal' incorporates:
+  //   Constant: '<S59>/Constant'
+  //   Sum: '<S59>/SumDen'
   //
-  //  About '<S58>/Reciprocal':
+  //  About '<S59>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t8 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_a +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_az +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t2);
 
-  // DiscreteTransferFcn: '<S58>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S58>/Constant'
-  //   Product: '<S57>/DOut'
-  //   Product: '<S58>/Divide'
-  //   Sum: '<S58>/SumNum'
+  // DiscreteTransferFcn: '<S59>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S59>/Constant'
+  //   Product: '<S59>/Divide'
+  //   Sum: '<S59>/SumNum'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 = ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_ht -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_a) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8 *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_j5;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t9 = ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_az) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j;
 
-  // Sum: '<S57>/Sum' incorporates:
-  //   Constant: '<S52>/Constant4'
-  //   DataTypeConversion: '<S58>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S58>/Filter Differentiator TF'
-  //   Product: '<S57>/POut'
-  //   Product: '<S58>/DenCoefOut'
-  //   Product: '<S58>/NOut'
+  // Sum: '<S58>/Sum' incorporates:
+  //   DataTypeConversion: '<S59>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S59>/Filter Differentiator TF'
+  //   Product: '<S59>/DenCoefOut'
+  //   Product: '<S59>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t8 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t5 =
     (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_o[0] *
      ROPOD_4Wheel_Tdistkinb_cntr_B.t9 +
      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_o[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_j5) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_g +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_dt +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t7);
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_ga + (ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t8);
 
   // Sum: '<S53>/Sum' incorporates:
   //   UnitDelay: '<S53>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.t8 +
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t2 = ROPOD_4Wheel_Tdistkinb_cntr_B.t5 +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_g;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // MATLAB Function: '<S62>/MATLAB Function' incorporates:
-    //   Constant: '<S62>/Constant'
+    // MATLAB Function: '<S63>/MATLAB Function' incorporates:
+    //   Constant: '<S63>/Constant'
     //   Gain: '<S48>/Gain2'
 
     ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_ju *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n,
       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_l1,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_n, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_j);
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_ne, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_j);
   }
 
   // Product: '<S48>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1] *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain_i;
 
-  // Product: '<S64>/POut' incorporates:
-  //   Constant: '<S60>/Constant4'
+  // Product: '<S65>/POut' incorporates:
+  //   Constant: '<S61>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_oj;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S60>/Gain2' incorporates:
-    //   Constant: '<S60>/Constant4'
-    //   Product: '<S60>/Product4'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_l4 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_oj *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e *
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_fk;
-  }
-
-  // DiscreteIntegrator: '<S64>/Integrator' incorporates:
-  //   Product: '<S64>/IOut'
-
-  if (rtb_Compare ||
-      (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_oj != 0)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_o;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_kx *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_l4);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5;
-
-  // End of DiscreteIntegrator: '<S64>/Integrator'
-
-  // Product: '<S64>/DOut' incorporates:
-  //   Constant: '<S60>/Constant'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t14 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_oh;
-
-  // SampleTimeMath: '<S65>/TSamp' incorporates:
-  //   Constant: '<S60>/Constant5'
+  // SampleTimeMath: '<S67>/TSamp' incorporates:
+  //   Constant: '<S61>/Constant5'
   //
-  //  About '<S65>/TSamp':
+  //  About '<S67>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n =
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_b *
     ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_go;
 
-  // Math: '<S65>/Reciprocal' incorporates:
-  //   Constant: '<S65>/Constant'
-  //   Sum: '<S65>/SumDen'
+  // Math: '<S67>/Reciprocal' incorporates:
+  //   Constant: '<S67>/Constant'
+  //   Sum: '<S67>/SumDen'
   //
-  //  About '<S65>/Reciprocal':
+  //  About '<S67>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t10 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_p +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_pi +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n);
 
-  // DiscreteTransferFcn: '<S65>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S65>/Constant'
-  //   Product: '<S65>/Divide'
-  //   Sum: '<S65>/SumNum'
+  // DiscreteTransferFcn: '<S67>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S61>/Constant'
+  //   Constant: '<S67>/Constant'
+  //   Product: '<S65>/DOut'
+  //   Product: '<S67>/Divide'
+  //   Sum: '<S67>/SumNum'
 
   if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l5 ==
          POS_ZCSIG) != (int32_T)rtb_Compare) &&
@@ -6568,120 +7566,270 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l5 =
     rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 = ROPOD_4Wheel_Tdistkinb_cntr_B.t14 -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_p) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t10 *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t10 = ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_oh -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_pi) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t11 *
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fc;
 
-  // Sum: '<S64>/Sum' incorporates:
-  //   Constant: '<S60>/Constant5'
-  //   DiscreteTransferFcn: '<S65>/Filter Differentiator TF'
-  //   Product: '<S65>/DenCoefOut'
-  //   Product: '<S65>/NOut'
+  // Product: '<S67>/NOut' incorporates:
+  //   Constant: '<S61>/Constant5'
+  //   DiscreteTransferFcn: '<S67>/Filter Differentiator TF'
+  //   Product: '<S67>/DenCoefOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t10 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 =
     (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_k0[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t11 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t10 +
      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_k0[1] *
      ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fc) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t10 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_b +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 + ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t11 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_b;
 
-  // DiscreteIntegrator: '<S66>/Integrator' incorporates:
-  //   Constant: '<S61>/Constant2'
-  //   Product: '<S66>/IOut'
+  // Sum: '<S65>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t30 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_c *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t10 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_c);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t14 = ROPOD_4Wheel_Tdistkinb_cntr_B.t30 +
+  // Gain: '<S66>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_d *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n;
+
+  // DeadZone: '<S66>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+  }
+
+  // End of DeadZone: '<S66>/DeadZone'
+
+  // RelationalOperator: '<S66>/NotEqual'
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n);
+
+  // Signum: '<S66>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n = (rtNaN);
+  }
+
+  // End of Signum: '<S66>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
+    // Gain: '<S61>/Gain2' incorporates:
+    //   Constant: '<S61>/Constant4'
+    //   Product: '<S61>/Product4'
+
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_l =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_oj *
+      ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_fk;
+  }
+
+  // Product: '<S65>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_l;
+
+  // Signum: '<S66>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    // DataTypeConversion: '<S66>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    // DataTypeConversion: '<S66>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    // DataTypeConversion: '<S66>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S66>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S66>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S66>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S66>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S66>/DataTypeConv1'
+
+  // Switch: '<S65>/Switch' incorporates:
+  //   Constant: '<S65>/Constant'
+  //   DataTypeConversion: '<S66>/DataTypeConv2'
+  //   Logic: '<S66>/AND'
+  //   RelationalOperator: '<S66>/Equal'
+
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_nd;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  }
+
+  // End of Switch: '<S65>/Switch'
+
+  // DiscreteIntegrator: '<S65>/Integrator'
+  if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_o
+                      != 0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_oh;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e *=
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_kx;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5;
+
+  // End of DiscreteIntegrator: '<S65>/Integrator'
+
+  // Sum: '<S65>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
+
+  // Saturate: '<S65>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_force;
+    }
+  }
+
+  // End of Saturate: '<S65>/Saturate'
+
+  // Product: '<S68>/POut' incorporates:
+  //   Constant: '<S62>/Constant4'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_ce;
+
+  // DiscreteIntegrator: '<S68>/Integrator' incorporates:
+  //   Constant: '<S62>/Constant2'
+  //   Product: '<S68>/IOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t22 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_ci *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_c5);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t15 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_p;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Gain: '<S61>/Gain2'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    // Gain: '<S62>/Gain2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_o *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m;
 
-    // Gain: '<S61>/Gain1'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_pa *
+    // Gain: '<S62>/Gain1'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jx =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_p *
       ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n;
 
-    // Product: '<S61>/Divide1' incorporates:
-    //   Constant: '<S61>/Constant1'
-    //   Product: '<S61>/Divide'
-    //   Sum: '<S61>/Add'
+    // Product: '<S62>/Divide1' incorporates:
+    //   Constant: '<S62>/Constant1'
+    //   Product: '<S62>/Divide'
+    //   Sum: '<S62>/Add'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_p =
-      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_a -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_pu =
+      (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_at -
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 /
+       ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jx) * (1.0 /
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
 
-  // SampleTimeMath: '<S67>/TSamp' incorporates:
-  //   DataTypeConversion: '<S67>/Passthrough for tuning'
+  // Product: '<S68>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_pu;
+
+  // SampleTimeMath: '<S69>/TSamp' incorporates:
+  //   DataTypeConversion: '<S69>/Passthrough for tuning'
   //
-  //  About '<S67>/TSamp':
+  //  About '<S69>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_p;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jx *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_pv;
 
-  // Math: '<S67>/Reciprocal' incorporates:
-  //   Constant: '<S67>/Constant'
-  //   Sum: '<S67>/SumDen'
+  // Math: '<S69>/Reciprocal' incorporates:
+  //   Constant: '<S69>/Constant'
+  //   Sum: '<S69>/SumDen'
   //
-  //  About '<S67>/Reciprocal':
+  //  About '<S69>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kq +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
+     ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n);
 
-  // DiscreteTransferFcn: '<S67>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S67>/Constant'
-  //   Product: '<S66>/DOut'
-  //   Product: '<S67>/Divide'
-  //   Sum: '<S67>/SumNum'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t10 * ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_p
-    - (ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kq) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_dl;
-
-  // Sum: '<S66>/Sum' incorporates:
-  //   Constant: '<S61>/Constant4'
-  //   DataTypeConversion: '<S67>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S67>/Filter Differentiator TF'
-  //   Product: '<S66>/POut'
-  //   Product: '<S67>/DenCoefOut'
-  //   Product: '<S67>/NOut'
+  // DiscreteTransferFcn: '<S69>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S69>/Constant'
+  //   Product: '<S69>/Divide'
+  //   Sum: '<S69>/SumNum'
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_hk[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_hk[1] *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_kq) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_dl;
+
+  // Sum: '<S68>/Sum' incorporates:
+  //   DataTypeConversion: '<S69>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S69>/Filter Differentiator TF'
+  //   Product: '<S69>/DenCoefOut'
+  //   Product: '<S69>/NOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t11 =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_h[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_h[1] *
      ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_dl) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_j + (ROPOD_4Wheel_Tdistkinb_cntr_B.t10 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_c +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t14);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_jx + (ROPOD_4Wheel_Tdistkinb_cntr_B.t11
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.t15);
 
-  // Sum: '<S62>/Sum' incorporates:
-  //   UnitDelay: '<S62>/Unit Delay'
+  // Sum: '<S63>/Sum' incorporates:
+  //   UnitDelay: '<S63>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t10 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m +
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n = ROPOD_4Wheel_Tdistkinb_cntr_B.t11 +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_gb;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter9'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter9'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ch.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6689,10 +7837,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ch.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6700,19 +7848,18 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2923.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
 
-    // MATLAB Function: '<S71>/MATLAB Function' incorporates:
-    //   Constant: '<S71>/Constant'
+    // MATLAB Function: '<S73>/MATLAB Function' incorporates:
+    //   Constant: '<S73>/Constant'
     //   Gain: '<S49>/Gain2'
-    //   MATLABSystem: '<S6>/Get Parameter9'
     //   MATLABSystem: '<S6>/Get Parameter9'
 
     ROPOD_4Wheel_Tdi_MATLABFunction(ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_op *
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i,
       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_or,
-      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_bl, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_c);
+      &ROPOD_4Wheel_Tdistkinb_cntr_B.g_bl, &ROPOD_4Wheel_Tdistkinb_cntr_B.a_cg);
 
-    // Start for MATLABSystem: '<S6>/Get Parameter1'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter1'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fy.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6720,35 +7867,136 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fy.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2919.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
-
-    // MATLABSystem: '<S6>/Get Parameter1'
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain_h =
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
+
+    // End of MATLABSystem: '<S6>/Get Parameter1'
   }
 
   // Product: '<S49>/Product5'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[2] *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[2] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.P_gain_h;
 
-  // Product: '<S73>/POut' incorporates:
-  //   Constant: '<S69>/Constant4'
+  // Product: '<S75>/POut' incorporates:
+  //   Constant: '<S71>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_bw;
+
+  // SampleTimeMath: '<S77>/TSamp' incorporates:
+  //   Constant: '<S71>/Constant5'
+  //
+  //  About '<S77>/TSamp':
+  //   y = u * K where K = ( w * Ts )
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_ba *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_gy;
+
+  // Math: '<S77>/Reciprocal' incorporates:
+  //   Constant: '<S77>/Constant'
+  //   Sum: '<S77>/SumDen'
+  //
+  //  About '<S77>/Reciprocal':
+  //   Operator: reciprocal
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 = 1.0 /
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gy +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3);
+
+  // DiscreteTransferFcn: '<S77>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S71>/Constant'
+  //   Constant: '<S77>/Constant'
+  //   Product: '<S75>/DOut'
+  //   Product: '<S77>/Divide'
+  //   Sum: '<S77>/SumNum'
+
+  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g ==
+         POS_ZCSIG) != (int32_T)rtb_Compare) &&
+       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g !=
+        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_bt;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g =
+    rtb_Compare;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t17 = ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gl -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gy) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18 *
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei;
+
+  // Product: '<S77>/NOut' incorporates:
+  //   Constant: '<S71>/Constant5'
+  //   DiscreteTransferFcn: '<S77>/Filter Differentiator TF'
+  //   Product: '<S77>/DenCoefOut'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 =
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_it[0] *
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t17 +
+     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCo_it[1] *
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18 *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_ba;
+
+  // Sum: '<S75>/Sum Fdbk'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n +
+     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_d) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18;
+
+  // Gain: '<S76>/ZeroGain'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+    ROPOD_4Wheel_Tdistkinb_cntr_P.ZeroGain_Gain_f *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+
+  // DeadZone: '<S76>/DeadZone'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 -=
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 >=
+             -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 -=
+      -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau;
+  }
+
+  // End of DeadZone: '<S76>/DeadZone'
+
+  // RelationalOperator: '<S76>/NotEqual'
+  rtb_LowerRelop1 = (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3);
+
+  // Signum: '<S76>/SignDeltaU'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 = (rtNaN);
+  }
+
+  // End of Signum: '<S76>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter2'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter2'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hq.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6756,10 +8004,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hq.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6767,11 +8015,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2920.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
 
-    // Gain: '<S69>/Gain2' incorporates:
-    //   Constant: '<S69>/Constant4'
+    // Gain: '<S71>/Gain2' incorporates:
+    //   Constant: '<S71>/Constant4'
     //   MATLABSystem: '<S6>/Get Parameter2'
-    //   MATLABSystem: '<S6>/Get Parameter2'
-    //   Product: '<S69>/Product4'
+    //   Product: '<S71>/Product4'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_mj =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_bw *
@@ -6779,102 +8026,118 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_fo;
   }
 
-  // DiscreteIntegrator: '<S73>/Integrator' incorporates:
-  //   Product: '<S73>/IOut'
+  // Product: '<S75>/IOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 *= ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_mj;
 
+  // Signum: '<S76>/SignPreIntegrator'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 < 0.0) {
+    // DataTypeConversion: '<S76>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 > 0.0) {
+    // DataTypeConversion: '<S76>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_B.t24 == 0.0) {
+    // DataTypeConversion: '<S76>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    // DataTypeConversion: '<S76>/DataTypeConv2'
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = (rtNaN);
+  }
+
+  // End of Signum: '<S76>/SignPreIntegrator'
+
+  // DataTypeConversion: '<S76>/DataTypeConv2'
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
+      256.0);
+  }
+
+  // DataTypeConversion: '<S76>/DataTypeConv1'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+  } else {
+    t2 = MAX_int8_T;
+  }
+
+  // End of DataTypeConversion: '<S76>/DataTypeConv1'
+
+  // Switch: '<S75>/Switch' incorporates:
+  //   Constant: '<S75>/Constant'
+  //   DataTypeConversion: '<S76>/DataTypeConv2'
+  //   Logic: '<S76>/AND'
+  //   RelationalOperator: '<S76>/Equal'
+
+  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)
+        (int8_T)-(int8_T)(uint8_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_B.t25) == t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_om;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+  }
+
+  // End of Switch: '<S75>/Switch'
+
+  // DiscreteIntegrator: '<S75>/Integrator'
   if (rtb_Compare || (ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_m
                       != 0)) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_d =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_c;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_gs *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_mj);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_d;
 
-  // End of DiscreteIntegrator: '<S73>/Integrator'
+  // End of DiscreteIntegrator: '<S75>/Integrator'
 
-  // Product: '<S73>/DOut' incorporates:
-  //   Constant: '<S69>/Constant'
+  // Sum: '<S75>/Sum'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0) +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t6 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gl;
-
-  // SampleTimeMath: '<S74>/TSamp' incorporates:
-  //   Constant: '<S69>/Constant5'
-  //
-  //  About '<S74>/TSamp':
-  //   y = u * K where K = ( w * Ts )
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_ba *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_gy;
-
-  // Math: '<S74>/Reciprocal' incorporates:
-  //   Constant: '<S74>/Constant'
-  //   Sum: '<S74>/SumDen'
-  //
-  //  About '<S74>/Reciprocal':
-  //   Operator: reciprocal
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t17 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gy +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
-
-  // DiscreteTransferFcn: '<S74>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S74>/Constant'
-  //   Product: '<S74>/Divide'
-  //   Sum: '<S74>/SumNum'
-
-  if ((((ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gv ==
-         POS_ZCSIG) != (int32_T)rtb_Compare) &&
-       (ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gv !=
-        UNINITIALIZED_ZCSIG)) || rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_bt;
+  // Saturate: '<S75>/Saturate'
+  if (ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n >
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n <
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
+        -ROPOD_4Wheel_Tdistkinb_cntr_P.max_ropod_sw_tau;
+    }
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gv =
-    rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 -
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_gy) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t17 *
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei;
+  // End of Saturate: '<S75>/Saturate'
 
-  // Sum: '<S73>/Sum' incorporates:
-  //   Constant: '<S69>/Constant5'
-  //   DiscreteTransferFcn: '<S74>/Filter Differentiator TF'
-  //   Product: '<S74>/DenCoefOut'
-  //   Product: '<S74>/NOut'
+  // Product: '<S78>/POut' incorporates:
+  //   Constant: '<S72>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t17 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_i[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t18 +
-     ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_i[1] *
-     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t17 *
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant5_Value_ba +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n *
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_ci;
 
-  // DiscreteIntegrator: '<S75>/Integrator' incorporates:
-  //   Constant: '<S70>/Constant2'
-  //   Product: '<S75>/IOut'
+  // DiscreteIntegrator: '<S78>/Integrator' incorporates:
+  //   Constant: '<S72>/Constant2'
+  //   Product: '<S78>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t30 =
     ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_gainval_cd *
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t17 *
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n *
      ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_i);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t26 = ROPOD_4Wheel_Tdistkinb_cntr_B.t30 +
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_os;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S6>/Get Parameter7'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter7'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_eq.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6882,10 +8145,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_eq.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6893,16 +8156,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2921.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
 
-    // Gain: '<S70>/Gain2' incorporates:
-    //   MATLABSystem: '<S6>/Get Parameter7'
+    // Gain: '<S72>/Gain2' incorporates:
     //   MATLABSystem: '<S6>/Get Parameter7'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain2_Gain_bw *
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Start for MATLABSystem: '<S6>/Get Parameter8'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S6>/Get Parameter8'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_a.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -6910,10 +8172,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_a.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -6921,95 +8183,99 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2922.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i);
 
-    // Gain: '<S70>/Gain1' incorporates:
-    //   MATLABSystem: '<S6>/Get Parameter8'
+    // Gain: '<S72>/Gain1' incorporates:
     //   MATLABSystem: '<S6>/Get Parameter8'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_f1 *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_f *
       ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i;
 
-    // Product: '<S70>/Divide1' incorporates:
-    //   Constant: '<S70>/Constant1'
-    //   Product: '<S70>/Divide'
-    //   Sum: '<S70>/Add'
+    // Product: '<S72>/Divide1' incorporates:
+    //   Constant: '<S72>/Constant1'
+    //   Product: '<S72>/Divide'
+    //   Sum: '<S72>/Add'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_fc =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_f =
       (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_c -
-       ROPOD_4Wheel_Tdistkinb_cntr_B.t6 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a)
-      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+       ROPOD_4Wheel_Tdistkinb_cntr_B.t24 / ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a)
+      * (1.0 / ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
   }
 
-  // SampleTimeMath: '<S76>/TSamp' incorporates:
-  //   DataTypeConversion: '<S76>/Passthrough for tuning'
+  // Product: '<S78>/DOut'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_f;
+
+  // SampleTimeMath: '<S79>/TSamp' incorporates:
+  //   DataTypeConversion: '<S79>/Passthrough for tuning'
   //
-  //  About '<S76>/TSamp':
+  //  About '<S79>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a *
     ROPOD_4Wheel_Tdistkinb_cntr_P.TSamp_WtEt_oh;
 
-  // Math: '<S76>/Reciprocal' incorporates:
-  //   Constant: '<S76>/Constant'
-  //   Sum: '<S76>/SumDen'
+  // Math: '<S79>/Reciprocal' incorporates:
+  //   Constant: '<S79>/Constant'
+  //   Sum: '<S79>/SumDen'
   //
-  //  About '<S76>/Reciprocal':
+  //  About '<S79>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t22 = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_e5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t6);
+     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3);
 
-  // DiscreteTransferFcn: '<S76>/Filter Differentiator TF' incorporates:
-  //   Constant: '<S76>/Constant'
-  //   Product: '<S75>/DOut'
-  //   Product: '<S76>/Divide'
-  //   Sum: '<S76>/SumNum'
+  // DiscreteTransferFcn: '<S79>/Filter Differentiator TF' incorporates:
+  //   Constant: '<S79>/Constant'
+  //   Product: '<S79>/Divide'
+  //   Sum: '<S79>/SumNum'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t26 = ROPOD_4Wheel_Tdistkinb_cntr_B.t17 *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Divide1_fc - (ROPOD_4Wheel_Tdistkinb_cntr_B.t6
-    - ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_e5) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t22 *
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t27 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i -
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 -
+     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_e5) *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n *
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_p;
 
-  // Sum: '<S75>/Sum' incorporates:
-  //   Constant: '<S70>/Constant4'
-  //   DataTypeConversion: '<S76>/Passthrough for tuning'
-  //   DiscreteTransferFcn: '<S76>/Filter Differentiator TF'
-  //   Product: '<S75>/POut'
-  //   Product: '<S76>/DenCoefOut'
-  //   Product: '<S76>/NOut'
+  // Sum: '<S78>/Sum' incorporates:
+  //   DataTypeConversion: '<S79>/Passthrough for tuning'
+  //   DiscreteTransferFcn: '<S79>/Filter Differentiator TF'
+  //   Product: '<S79>/DenCoefOut'
+  //   Product: '<S79>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t22 =
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t18 =
     (ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_b[0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_B.t26 +
+     ROPOD_4Wheel_Tdistkinb_cntr_B.t27 +
      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_NumCoe_b[1] *
      ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_p) *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t22 * ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a +
-    (ROPOD_4Wheel_Tdistkinb_cntr_B.t17 *
-     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant4_Value_ci +
-     ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2);
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_a + (ROPOD_4Wheel_Tdistkinb_cntr_B.t18 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t26);
 
-  // Sum: '<S71>/Sum' incorporates:
-  //   UnitDelay: '<S71>/Unit Delay'
+  // Sum: '<S73>/Sum' incorporates:
+  //   UnitDelay: '<S73>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t17 = ROPOD_4Wheel_Tdistkinb_cntr_B.t22 +
+  ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18 +
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_f;
 
   // Sum: '<S43>/Sum1' incorporates:
   //   Product: '<S53>/Product1'
-  //   Product: '<S62>/Product1'
-  //   Product: '<S71>/Product1'
+  //   Product: '<S63>/Product1'
+  //   Product: '<S73>/Product1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[0] = ROPOD_4Wheel_Tdistkinb_cntr_B.g_c *
     ROPOD_4Wheel_Tdistkinb_cntr_B.t2 + ROPOD_4Wheel_Tdistkinb_cntr_B.Gain_h;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1] = ROPOD_4Wheel_Tdistkinb_cntr_B.g_n *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t10 + ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_i;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1] = ROPOD_4Wheel_Tdistkinb_cntr_B.g_ne *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain1_iu;
   ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[2] = ROPOD_4Wheel_Tdistkinb_cntr_B.g_bl *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t17 + ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_m2;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Gain2_m2;
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S8>/Get Parameter2'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S8>/Get Parameter2'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_h.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -7017,10 +8283,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_h.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -7029,7 +8295,6 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.max_current);
 
     // Gain: '<S44>/Gain3' incorporates:
-    //   MATLABSystem: '<S8>/Get Parameter2'
     //   MATLABSystem: '<S8>/Get Parameter2'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.Gain3_g = 1.0 /
@@ -7145,14 +8410,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //   Gain: '<S26>/Gain2'
   //   Gain: '<S26>/Gain3'
   //   MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-  //   Product: '<S100>/Product1'
-  //   Product: '<S109>/Product1'
-  //   Product: '<S118>/Product1'
-  //   Product: '<S127>/Product1'
-  //   Product: '<S136>/Product1'
-  //   Product: '<S145>/Product1'
+  //   Product: '<S104>/Product1'
+  //   Product: '<S114>/Product1'
+  //   Product: '<S124>/Product1'
+  //   Product: '<S134>/Product1'
+  //   Product: '<S144>/Product1'
   //   Product: '<S154>/Product1'
-  //   Product: '<S91>/Product1'
+  //   Product: '<S164>/Product1'
+  //   Product: '<S94>/Product1'
   //   Sum: '<Root>/Add'
 
   if (rtb_Compare) {
@@ -7166,40 +8431,41 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
        ROPOD_4Wheel_Tdistkinb_cntr_B.x[0]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[1] =
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_d * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_b
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_n * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e
        + ROPOD_4Wheel_Tdistkinb_cntr_B.x[1]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[2] =
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_p * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_l
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_l * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h
        + ROPOD_4Wheel_Tdistkinb_cntr_B.x[2]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.Taucompfactor *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[3] =
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_ay * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_o
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_p * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_j
        + ROPOD_4Wheel_Tdistkinb_cntr_B.x[3]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.Taucompfactor *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[4] =
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_j * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_lp
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_m * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_hv
        + ROPOD_4Wheel_Tdistkinb_cntr_B.x[4]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[5] =
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_a * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_lh
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_g * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m1
        + ROPOD_4Wheel_Tdistkinb_cntr_B.x[5]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[6] =
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_l * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.g_k * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i
        + ROPOD_4Wheel_Tdistkinb_cntr_B.x[6]) *
       ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1[7] = (ROPOD_4Wheel_Tdistkinb_cntr_B.g *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_au + ROPOD_4Wheel_Tdistkinb_cntr_B.x[7])
-      * ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz +
+      ROPOD_4Wheel_Tdistkinb_cntr_B.x[7]) *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.sw_tau_2_curr;
   }
 
   // End of Switch: '<S19>/Switch1'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
-    // Start for MATLABSystem: '<S8>/Get Parameter'
-    rtb_LowerRelop1_jr = false;
+    // MATLABSystem: '<S8>/Get Parameter'
+    rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bg.SampleTime ==
           ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp)) {
@@ -7207,10 +8473,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     }
 
     if (p) {
-      rtb_LowerRelop1_jr = true;
+      rtb_NotEqual_l2 = true;
     }
 
-    if (!rtb_LowerRelop1_jr) {
+    if (!rtb_NotEqual_l2) {
       ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bg.SampleTime =
         ROPOD_4Wheel_Tdistkinb_cntr_P.Tsp;
     }
@@ -7221,18 +8487,17 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     // DataTypeConversion: '<S21>/Data Type Conversion6' incorporates:
     //   Constant: '<S21>/Constant3'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = floor
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = floor
       (ROPOD_4Wheel_Tdistkinb_cntr_P.SW_COM1_ENABLE1);
-    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t6) || rtIsInf
-        (ROPOD_4Wheel_Tdistkinb_cntr_B.t6)) {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = 0.0;
+    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25) || rtIsInf
+        (ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t6,
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
         65536.0);
     }
 
     // DataTypeConversion: '<S21>/Data Type Conversion4' incorporates:
-    //   MATLABSystem: '<S8>/Get Parameter'
     //   MATLABSystem: '<S8>/Get Parameter'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.t31 = floor
@@ -7250,9 +8515,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     //   DataTypeConversion: '<S21>/Data Type Conversion6'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.BitwiseOperator1 = (uint16_T)
-      ((ROPOD_4Wheel_Tdistkinb_cntr_B.t6 < 0.0 ? (int32_T)(uint16_T)-(int16_T)
-        (uint16_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t6 : (int32_T)(uint16_T)
-        ROPOD_4Wheel_Tdistkinb_cntr_B.t6) & (ROPOD_4Wheel_Tdistkinb_cntr_B.t31 <
+      ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)(uint16_T)-(int16_T)
+        (uint16_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)(uint16_T)
+        ROPOD_4Wheel_Tdistkinb_cntr_B.t25) & (ROPOD_4Wheel_Tdistkinb_cntr_B.t31 <
         0.0 ? (int32_T)(uint16_T)-(int16_T)(uint16_T)
         -ROPOD_4Wheel_Tdistkinb_cntr_B.t31 : (int32_T)(uint16_T)
         ROPOD_4Wheel_Tdistkinb_cntr_B.t31));
@@ -7260,19 +8525,18 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     // DataTypeConversion: '<S21>/Data Type Conversion7' incorporates:
     //   Constant: '<S21>/Constant4'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = floor
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = floor
       (ROPOD_4Wheel_Tdistkinb_cntr_P.SW_COM1_ENABLE2);
-    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t6) || rtIsInf
-        (ROPOD_4Wheel_Tdistkinb_cntr_B.t6)) {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = 0.0;
+    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25) || rtIsInf
+        (ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t6,
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
         65536.0);
     }
 
     // DataTypeConversion: '<S21>/Data Type Conversion5' incorporates:
     //   Gain: '<S21>/shift'
-    //   MATLABSystem: '<S8>/Get Parameter'
     //   MATLABSystem: '<S8>/Get Parameter'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.t31 = floor
@@ -7291,9 +8555,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     //   DataTypeConversion: '<S21>/Data Type Conversion7'
 
     ROPOD_4Wheel_Tdistkinb_cntr_B.BitwiseOperator2 = (uint16_T)
-      ((ROPOD_4Wheel_Tdistkinb_cntr_B.t6 < 0.0 ? (int32_T)(uint16_T)-(int16_T)
-        (uint16_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t6 : (int32_T)(uint16_T)
-        ROPOD_4Wheel_Tdistkinb_cntr_B.t6) & (ROPOD_4Wheel_Tdistkinb_cntr_B.t31 <
+      ((ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)(uint16_T)-(int16_T)
+        (uint16_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)(uint16_T)
+        ROPOD_4Wheel_Tdistkinb_cntr_B.t25) & (ROPOD_4Wheel_Tdistkinb_cntr_B.t31 <
         0.0 ? (int32_T)(uint16_T)-(int16_T)(uint16_T)
         -ROPOD_4Wheel_Tdistkinb_cntr_B.t31 : (int32_T)(uint16_T)
         ROPOD_4Wheel_Tdistkinb_cntr_B.t31));
@@ -7305,7 +8569,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
     // Gain: '<S21>/Gain1'
     ROPOD_4Wheel_Tdistkinb_cntr_B.limit1_n =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_b *
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Gain1_Gain_bw *
       ROPOD_4Wheel_Tdistkinb_cntr_B.max_current;
   }
 
@@ -7315,7 +8579,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   // Constant: '<S21>/Constant1'
   ROPOD_4Wheel_Tdistkinb_cntr_B.command2_p =
-    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_bz;
+    ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_b;
 
   // Constant: '<S21>/Constant10'
   ROPOD_4Wheel_Tdistkinb_cntr_B.timestamp =
@@ -7346,22 +8610,23 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //   Constant: '<S19>/Constant5'
 
   if (rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
       ROPOD_4Wheel_Tdistkinb_cntr_P.SW_COM1_MODE_VELOCITY;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n =
       ROPOD_4Wheel_Tdistkinb_cntr_P.SW_COM1_MODE_TORQUE;
   }
 
   // End of Switch: '<S19>/Switch'
 
   // DataTypeConversion: '<S21>/Data Type Conversion2'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = floor(ROPOD_4Wheel_Tdistkinb_cntr_B.t24);
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t6) || rtIsInf
-      (ROPOD_4Wheel_Tdistkinb_cntr_B.t6)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = floor
+    (ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n);
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_B.t25) || rtIsInf
+      (ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t6,
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = fmod(ROPOD_4Wheel_Tdistkinb_cntr_B.t25,
       65536.0);
   }
 
@@ -7385,9 +8650,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.command1 = (real_T)(uint16_T)((uint16_T)
     ((uint16_T)(ROPOD_4Wheel_Tdistkinb_cntr_B.BitwiseOperator1 |
                 ROPOD_4Wheel_Tdistkinb_cntr_B.BitwiseOperator2) | (uint16_T)
-     (ROPOD_4Wheel_Tdistkinb_cntr_B.t6 < 0.0 ? (int32_T)(uint16_T)-(int16_T)
-      (uint16_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t6 : (int32_T)(uint16_T)
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6)) | (uint16_T)
+     (ROPOD_4Wheel_Tdistkinb_cntr_B.t25 < 0.0 ? (int32_T)(uint16_T)-(int16_T)
+      (uint16_T)-ROPOD_4Wheel_Tdistkinb_cntr_B.t25 : (int32_T)(uint16_T)
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t25)) | (uint16_T)
     ROPOD_4Wheel_Tdistkinb_cntr_B.t31) * ((real_T)
     ROPOD_4Wheel_Tdistkinb_cntr_P.Gain10_Gain * 3.0517578125E-5);
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[2] == 0) {
@@ -7448,7 +8713,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_B.max_current;
 
     // Gain: '<S21>/Gain20'
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Taucompfactor *
       ROPOD_4Wheel_Tdistkinb_cntr_B.max_current;
 
@@ -7460,22 +8725,22 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
     // Gain: '<S21>/Gain4'
     ROPOD_4Wheel_Tdistkinb_cntr_B.limit1_p_m =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain4_Gain_d *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
 
     // Gain: '<S21>/Gain5'
     ROPOD_4Wheel_Tdistkinb_cntr_B.limit1_n_b =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain5_Gain_e *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
 
     // Gain: '<S21>/Gain6'
     ROPOD_4Wheel_Tdistkinb_cntr_B.limit2_p_g =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain6_Gain *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
 
     // Gain: '<S21>/Gain7'
     ROPOD_4Wheel_Tdistkinb_cntr_B.limit2_n_m =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Gain7_Gain *
-      ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
+      ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
 
     // Gain: '<S21>/Gain9'
     ROPOD_4Wheel_Tdistkinb_cntr_B.limit1_p_l =
@@ -7505,32 +8770,21 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   // MATLABSystem: '<S3>/Coordinate Transformation Conversion' incorporates:
   //   Constant: '<S3>/Constant1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[0] = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_n / 2.0);
-
-  // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion' incorporates:
-  //   Constant: '<S3>/Constant1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t32 = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_n / 2.0);
-
-  // MATLABSystem: '<S3>/Coordinate Transformation Conversion' incorporates:
-  //   Constant: '<S3>/Constant2'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1] = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_a / 2.0);
-
-  // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion' incorporates:
   //   Constant: '<S3>/Constant2'
   //   DiscreteIntegrator: '<S2>/Discrete-Time Integrator'
   //   SignalConversion: '<S3>/TmpSignal ConversionAtCoordinate Transformation ConversionInport1'
 
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[0] = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_n / 2.0);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = cos
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant1_Value_n / 2.0);
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1] = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_a / 2.0);
   ROPOD_4Wheel_Tdistkinb_cntr_B.max_current = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_P.Constant2_Value_a / 2.0);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = cos
+  ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_DW.DiscreteTimeIntegrator_DSTATE[2] / 2.0);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t27 = sin
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t24 = sin
     (ROPOD_4Wheel_Tdistkinb_cntr_DW.DiscreteTimeIntegrator_DSTATE[2] / 2.0);
 
   // BusAssignment: '<S3>/Bus Assignment' incorporates:
@@ -7547,22 +8801,22 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Pose.Pose.Position.Z =
     ROPOD_4Wheel_Tdistkinb_cntr_P.Constant_Value_f2;
 
-  // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = ROPOD_4Wheel_Tdistkinb_cntr_B.t32 *
+  // MATLABSystem: '<S3>/Coordinate Transformation Conversion'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_current;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t31 = ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[0] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1];
 
   // BusAssignment: '<S3>/Bus Assignment' incorporates:
   //   MATLABSystem: '<S3>/Coordinate Transformation Conversion'
-  //   MATLABSystem: '<S3>/Coordinate Transformation Conversion'
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Pose.Pose.Orientation.W =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 * ROPOD_4Wheel_Tdistkinb_cntr_B.t24 -
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t31 * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n -
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t31 * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
 
-  // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
-  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i = ROPOD_4Wheel_Tdistkinb_cntr_B.t32 *
+  // MATLABSystem: '<S3>/Coordinate Transformation Conversion'
+  ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i *=
     ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[1];
 
   // BusAssignment: '<S3>/Bus Assignment' incorporates:
@@ -7570,21 +8824,21 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   //   Constant: '<S3>/Constant4'
   //   Constant: '<S3>/Constant5'
   //   MATLABSystem: '<S3>/Coordinate Transformation Conversion'
-  //   MATLABSystem: '<S3>/Coordinate Transformation Conversion'
 
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Pose.Pose.Orientation.X =
     ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[0] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_current *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 + ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
-    * ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Pose.Pose.Orientation.Y =
     -ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_pp[0] *
     ROPOD_4Wheel_Tdistkinb_cntr_B.max_current *
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t27 + ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
-    * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t24 + ROPOD_4Wheel_Tdistkinb_cntr_B.Product1_i
+    * ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n;
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Pose.Pose.Orientation.Z =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t6 * ROPOD_4Wheel_Tdistkinb_cntr_B.t27 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t31 * ROPOD_4Wheel_Tdistkinb_cntr_B.t24;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t25 * ROPOD_4Wheel_Tdistkinb_cntr_B.t24 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t31 *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n;
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Twist.Twist.Linear.X =
     ROPOD_4Wheel_Tdistkinb_cntr_B.Diff[0];
   ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment.Twist.Twist.Linear.Y =
@@ -7601,7 +8855,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
   // RateTransition: '<S3>/Rate Transition'
   if (ROPOD_4Wheel_Tdistkinb_cntr_M->Timing.TaskCounters.TID[1] == 0) {
     // Outputs for Atomic SubSystem: '<S3>/Publish'
-    // Start for MATLABSystem: '<S16>/SinkBlock'
+    // MATLABSystem: '<S16>/SinkBlock'
     Pub_ROPOD_4Wheel_Tdistkinb_cntr_1896.publish
       (&ROPOD_4Wheel_Tdistkinb_cntr_B.BusAssignment);
 
@@ -7658,245 +8912,246 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   // End of RateTransition: '<S3>/Rate Transition'
 
-  // Update for DiscreteIntegrator: '<S93>/Integrator'
+  // Update for DiscreteTransferFcn: '<S98>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_h;
+
+  // Update for DiscreteIntegrator: '<S96>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_l;
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState = (int8_T)rtb_Compare;
 
-  // Update for DiscreteTransferFcn: '<S94>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_l;
-
-  // Update for DiscreteIntegrator: '<S95>/Integrator'
+  // Update for DiscreteIntegrator: '<S99>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_l =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_h + ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1_k +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j;
 
-  // Update for DiscreteTransferFcn: '<S96>/Filter Differentiator TF'
+  // Update for DiscreteTransferFcn: '<S100>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_l =
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_e;
 
-  // Update for UnitDelay: '<S91>/Unit Delay' incorporates:
-  //   Product: '<S91>/Product4'
-  //   Sum: '<S91>/Sum1'
+  // Update for UnitDelay: '<S94>/Unit Delay' incorporates:
+  //   Product: '<S94>/Product4'
+  //   Sum: '<S94>/Sum1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE =
     ROPOD_4Wheel_Tdistkinb_cntr_B.a_a * ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_o
-    + ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2_j;
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_i;
 
-  // Update for DiscreteIntegrator: '<S102>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_d = (int8_T)
+  // Update for DiscreteTransferFcn: '<S108>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Yk1;
+
+  // Update for DiscreteIntegrator: '<S106>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t14_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_b = (int8_T)
     rtb_Compare;
 
-  // Update for DiscreteTransferFcn: '<S103>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime;
-
-  // Update for DiscreteIntegrator: '<S104>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h =
+  // Update for DiscreteIntegrator: '<S109>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f =
     ROPOD_4Wheel_Tdistkinb_cntr_B.t17_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch2;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f;
 
-  // Update for DiscreteTransferFcn: '<S105>/Filter Differentiator TF'
+  // Update for DiscreteTransferFcn: '<S110>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o =
     ROPOD_4Wheel_Tdistkinb_cntr_B.Switch_j;
 
-  // Update for UnitDelay: '<S100>/Unit Delay' incorporates:
-  //   Product: '<S100>/Product4'
-  //   Sum: '<S100>/Sum1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_c =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_l * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_b +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Switch1_f;
-
-  // Update for DiscreteIntegrator: '<S111>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t25_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_c;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_n = (int8_T)
-    rtb_Compare;
-
-  // Update for DiscreteTransferFcn: '<S112>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_m =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pz;
-
-  // Update for DiscreteIntegrator: '<S113>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_hs =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp + ROPOD_4Wheel_Tdistkinb_cntr_B.POut_i;
-
-  // Update for DiscreteTransferFcn: '<S114>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_bh =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_c;
-
-  // Update for UnitDelay: '<S109>/Unit Delay' incorporates:
-  //   Product: '<S109>/Product4'
-  //   Sum: '<S109>/Sum1'
+  // Update for UnitDelay: '<S104>/Unit Delay' incorporates:
+  //   Product: '<S104>/Product4'
+  //   Sum: '<S104>/Sum1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_d * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_l +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_k * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_e +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.sampletime_d;
 
-  // Update for DiscreteIntegrator: '<S120>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t15_tmp_g +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_oa;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_e = (int8_T)
+  // Update for DiscreteTransferFcn: '<S118>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_a;
+
+  // Update for DiscreteIntegrator: '<S116>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t30_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_et;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_d = (int8_T)
     rtb_Compare;
 
-  // Update for DiscreteTransferFcn: '<S121>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f =
+  // Update for DiscreteIntegrator: '<S119>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fl =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t34_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_l;
+
+  // Update for DiscreteTransferFcn: '<S120>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_g =
     ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_h;
 
-  // Update for DiscreteIntegrator: '<S122>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_k_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_k;
+  // Update for UnitDelay: '<S114>/Unit Delay' incorporates:
+  //   Product: '<S114>/Product4'
+  //   Sum: '<S114>/Sum1'
 
-  // Update for DiscreteTransferFcn: '<S123>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_m;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_c * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_h;
 
-  // Update for UnitDelay: '<S118>/Unit Delay' incorporates:
-  //   Product: '<S118>/Product4'
-  //   Sum: '<S118>/Sum1'
+  // Update for DiscreteTransferFcn: '<S128>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_gl =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_n;
 
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_cy =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_m * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_o +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i;
-
-  // Update for DiscreteIntegrator: '<S129>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_fc_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_fc;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_o = (int8_T)
-    rtb_Compare;
-
-  // Update for DiscreteTransferFcn: '<S130>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_pt;
-
-  // Update for DiscreteIntegrator: '<S131>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_os_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_os;
-
-  // Update for DiscreteTransferFcn: '<S132>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_mj =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_hi;
-
-  // Update for UnitDelay: '<S127>/Unit Delay' incorporates:
-  //   Product: '<S127>/Product4'
-  //   Sum: '<S127>/Sum1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_o =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_k * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_lp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_bg;
-
-  // Update for DiscreteIntegrator: '<S138>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mc =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_op_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_op;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_l = (int8_T)
-    rtb_Compare;
-
-  // Update for DiscreteTransferFcn: '<S139>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_k;
-
-  // Update for DiscreteIntegrator: '<S140>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_n =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_h_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_h;
-
-  // Update for DiscreteTransferFcn: '<S141>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_n =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_f;
-
-  // Update for UnitDelay: '<S136>/Unit Delay' incorporates:
-  //   Product: '<S136>/Product4'
-  //   Sum: '<S136>/Sum1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_cd =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_b * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_lh +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d;
-
-  // Update for DiscreteIntegrator: '<S147>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_i_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_i;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_p = (int8_T)
-    rtb_Compare;
-
-  // Update for DiscreteTransferFcn: '<S148>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_l0 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_fw;
-
-  // Update for DiscreteIntegrator: '<S149>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_n3 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_le_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_le;
-
-  // Update for DiscreteTransferFcn: '<S150>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_eh =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_hi2;
-
-  // Update for UnitDelay: '<S145>/Unit Delay' incorporates:
-  //   Product: '<S145>/Product4'
-  //   Sum: '<S145>/Sum1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_j =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_e * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_h +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_ld;
-
-  // Update for DiscreteIntegrator: '<S156>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fp =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz;
+  // Update for DiscreteIntegrator: '<S126>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_k =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t31_tmp + ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_d;
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_f = (int8_T)
     rtb_Compare;
 
-  // Update for DiscreteTransferFcn: '<S157>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_es =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_ho;
+  // Update for DiscreteIntegrator: '<S129>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_bo =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_e_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_e;
 
-  // Update for DiscreteIntegrator: '<S158>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_gz =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_POut_io_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.POut_io;
+  // Update for DiscreteTransferFcn: '<S130>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_at;
 
-  // Update for DiscreteTransferFcn: '<S159>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz;
+  // Update for UnitDelay: '<S124>/Unit Delay' incorporates:
+  //   Product: '<S124>/Product4'
+  //   Sum: '<S124>/Sum1'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_f5 * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_j +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_oj;
+
+  // Update for DiscreteTransferFcn: '<S138>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_i;
+
+  // Update for DiscreteIntegrator: '<S136>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_f_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_f;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_dm = (int8_T)
+    rtb_Compare;
+
+  // Update for DiscreteIntegrator: '<S139>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_j =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_k1_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_k1;
+
+  // Update for DiscreteTransferFcn: '<S140>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_l;
+
+  // Update for UnitDelay: '<S134>/Unit Delay' incorporates:
+  //   Product: '<S134>/Product4'
+  //   Sum: '<S134>/Sum1'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_k =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_i * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_hv +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_j;
+
+  // Update for DiscreteTransferFcn: '<S148>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fs =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_k;
+
+  // Update for DiscreteIntegrator: '<S146>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ji =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_m0_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m0;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_n = (int8_T)
+    rtb_Compare;
+
+  // Update for DiscreteIntegrator: '<S149>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_o_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_o;
+
+  // Update for DiscreteTransferFcn: '<S150>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fw =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_m;
+
+  // Update for UnitDelay: '<S144>/Unit Delay' incorporates:
+  //   Product: '<S144>/Product4'
+  //   Sum: '<S144>/Sum1'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_o =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_fe * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_m1 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_f;
+
+  // Update for DiscreteTransferFcn: '<S158>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_o;
+
+  // Update for DiscreteIntegrator: '<S156>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_DOut_g_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_g;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_p = (int8_T)
+    rtb_Compare;
+
+  // Update for DiscreteIntegrator: '<S159>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_bd =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_b_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_b;
+
+  // Update for DiscreteTransferFcn: '<S160>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_e2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_tmp_kx;
 
   // Update for UnitDelay: '<S154>/Unit Delay' incorporates:
   //   Product: '<S154>/Product4'
   //   Sum: '<S154>/Sum1'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d5 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_au +
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_f * ROPOD_4Wheel_Tdistkinb_cntr_B.DOut_i +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_b;
+
+  // Update for DiscreteTransferFcn: '<S168>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ir =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz;
+
+  // Update for DiscreteIntegrator: '<S166>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_pe;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_k = (int8_T)
+    rtb_Compare;
+
+  // Update for DiscreteIntegrator: '<S169>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ft =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_h_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.Integrator_h;
+
+  // Update for DiscreteTransferFcn: '<S170>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d =
     ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz;
+
+  // Update for UnitDelay: '<S164>/Unit Delay' incorporates:
+  //   Product: '<S164>/Product4'
+  //   Sum: '<S164>/Sum1'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_c =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a * ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.Sum_by;
+
+  // Update for DiscreteTransferFcn: '<S57>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t4;
 
   // Update for DiscreteIntegrator: '<S55>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mx =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t4;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_fn = (int8_T)
     rtb_Compare;
 
-  // Update for DiscreteTransferFcn: '<S56>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
+  // Update for DiscreteIntegrator: '<S58>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_jf =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t8;
 
-  // Update for DiscreteIntegrator: '<S57>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_j =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_1 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t7;
-
-  // Update for DiscreteTransferFcn: '<S58>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_j5 =
+  // Update for DiscreteTransferFcn: '<S59>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j =
     ROPOD_4Wheel_Tdistkinb_cntr_B.t9;
 
   // Update for UnitDelay: '<S53>/Unit Delay' incorporates:
@@ -7905,75 +9160,75 @@ void ROPOD_4Wheel_Tdistkinb_cntr_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_g =
     ROPOD_4Wheel_Tdistkinb_cntr_B.a_jp * ROPOD_4Wheel_Tdistkinb_cntr_B.t2 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8;
-
-  // Update for DiscreteIntegrator: '<S64>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5 =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n;
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_oj = (int8_T)
-    rtb_Compare;
-
-  // Update for DiscreteTransferFcn: '<S65>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fc =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
-
-  // Update for DiscreteIntegrator: '<S66>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_p =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t30 + ROPOD_4Wheel_Tdistkinb_cntr_B.t14;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t5;
 
   // Update for DiscreteTransferFcn: '<S67>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fc =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t10;
+
+  // Update for DiscreteIntegrator: '<S65>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5 =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.I_freq_hz_e +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.FilterDifferentiatorTF_m;
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_o = (int8_T)
+    rtb_Compare;
+
+  // Update for DiscreteIntegrator: '<S68>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_p =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t22 + ROPOD_4Wheel_Tdistkinb_cntr_B.t15;
+
+  // Update for DiscreteTransferFcn: '<S69>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_dl =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.LL_pole_fhz_n;
-
-  // Update for UnitDelay: '<S62>/Unit Delay' incorporates:
-  //   Product: '<S62>/Product4'
-  //   Sum: '<S62>/Sum1'
-
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_gb =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_j * ROPOD_4Wheel_Tdistkinb_cntr_B.t10 +
     ROPOD_4Wheel_Tdistkinb_cntr_B.LL_zero_fhz_m;
 
-  // Update for DiscreteIntegrator: '<S73>/Integrator'
+  // Update for UnitDelay: '<S63>/Unit Delay' incorporates:
+  //   Product: '<S63>/Product4'
+  //   Sum: '<S63>/Sum1'
+
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_gb =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_j * ROPOD_4Wheel_Tdistkinb_cntr_B.LPF_fhz_n
+    + ROPOD_4Wheel_Tdistkinb_cntr_B.t11;
+
+  // Update for DiscreteTransferFcn: '<S77>/Filter Differentiator TF'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t17;
+
+  // Update for DiscreteIntegrator: '<S75>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t8_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_0;
   ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_m = (int8_T)
     rtb_Compare;
 
-  // Update for DiscreteTransferFcn: '<S74>/Filter Differentiator TF'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t18;
+  // Update for DiscreteIntegrator: '<S78>/Integrator'
+  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_os =
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t30 + ROPOD_4Wheel_Tdistkinb_cntr_B.t26;
 
-  // Update for DiscreteIntegrator: '<S75>/Integrator'
-  ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t10_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_2;
-
-  // Update for DiscreteTransferFcn: '<S76>/Filter Differentiator TF'
+  // Update for DiscreteTransferFcn: '<S79>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_p =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t26;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t27;
 
-  // Update for UnitDelay: '<S71>/Unit Delay' incorporates:
-  //   Product: '<S71>/Product4'
-  //   Sum: '<S71>/Sum1'
+  // Update for UnitDelay: '<S73>/Unit Delay' incorporates:
+  //   Product: '<S73>/Product4'
+  //   Sum: '<S73>/Sum1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_f =
-    ROPOD_4Wheel_Tdistkinb_cntr_B.a_c * ROPOD_4Wheel_Tdistkinb_cntr_B.t17 +
-    ROPOD_4Wheel_Tdistkinb_cntr_B.t22;
+    ROPOD_4Wheel_Tdistkinb_cntr_B.a_cg *
+    ROPOD_4Wheel_Tdistkinb_cntr_B.rtb_Switch_idx_3 +
+    ROPOD_4Wheel_Tdistkinb_cntr_B.t18;
 
   // MATLAB Function: '<S2>/pos_rot_matrix' incorporates:
   //   DiscreteIntegrator: '<S2>/Discrete-Time Integrator'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_B.t6 = cos
+  ROPOD_4Wheel_Tdistkinb_cntr_B.t25 = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_DW.DiscreteTimeIntegrator_DSTATE[2]);
-  ROPOD_4Wheel_Tdistkinb_cntr_B.f[0] = ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.f[0] = ROPOD_4Wheel_Tdistkinb_cntr_B.t25;
   ROPOD_4Wheel_Tdistkinb_cntr_B.t31 = sin
     (ROPOD_4Wheel_Tdistkinb_cntr_DW.DiscreteTimeIntegrator_DSTATE[2]);
   ROPOD_4Wheel_Tdistkinb_cntr_B.f[3] = -ROPOD_4Wheel_Tdistkinb_cntr_B.t31;
   ROPOD_4Wheel_Tdistkinb_cntr_B.f[6] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.f[1] = ROPOD_4Wheel_Tdistkinb_cntr_B.t31;
-  ROPOD_4Wheel_Tdistkinb_cntr_B.f[4] = ROPOD_4Wheel_Tdistkinb_cntr_B.t6;
+  ROPOD_4Wheel_Tdistkinb_cntr_B.f[4] = ROPOD_4Wheel_Tdistkinb_cntr_B.t25;
   ROPOD_4Wheel_Tdistkinb_cntr_B.f[7] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.f[2] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_B.f[5] = 0.0;
@@ -9439,7 +10694,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2214.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2214.set_initial_value
-      (R_ParameterInitia_j);
+      (R_ParameterInitia_i);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter1'
 
@@ -9458,7 +10713,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2216.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2216.set_initial_value
-      (R_ParameterInitia_i);
+      (ParameterInitia_icsq3sbauzlauko);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter3'
 
@@ -9477,7 +10732,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2217.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2217.set_initial_value
-      (ParameterInitia_icsq3sbauzlauko);
+      (ParameterInitial_icsq3sbauzlauk);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter4'
 
@@ -9496,7 +10751,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2218.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2218.set_initial_value
-      (ParameterInitial_icsq3sbauzlauk);
+      (ParameterInitialV_icsq3sbauzlau);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter5'
 
@@ -9571,7 +10826,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2239.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2239.set_initial_value
-      (R_ParameterInitia_o);
+      (R_ParameterInitia_j);
 
     // End of Start for MATLABSystem: '<S9>/Get Parameter2'
 
@@ -9590,7 +10845,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2240.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2240.set_initial_value
-      (R_ParameterInitia_o);
+      (R_ParameterInitia_j);
 
     // End of Start for MATLABSystem: '<S9>/Get Parameter3'
 
@@ -9875,7 +11130,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2215.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2215.set_initial_value
-      (ParameterInitialV_icsq3sbauzlau);
+      (ROPOD_4Wh_ParameterInitialValue);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter2'
 
@@ -9918,25 +11173,25 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     // End of Start for SubSystem: '<S3>/Publish'
     ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_ZC =
       UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g =
-      UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k =
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__i =
       UNINITIALIZED_ZCSIG;
     ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__c =
       UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gp =
-      UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__e =
-      UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gs =
-      UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_e2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__k =
       UNINITIALIZED_ZCSIG;
     ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__l =
       UNINITIALIZED_ZCSIG;
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__j =
+      UNINITIALIZED_ZCSIG;
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__f =
+      UNINITIALIZED_ZCSIG;
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__h =
+      UNINITIALIZED_ZCSIG;
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l3 =
+      UNINITIALIZED_ZCSIG;
     ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_l5 =
       UNINITIALIZED_ZCSIG;
-    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset_gv =
+    ROPOD_4Wheel_Tdistkinb_cntr_PrevZCX.FilterDifferentiatorTF_Reset__g =
       UNINITIALIZED_ZCSIG;
 
     // InitializeConditions for Delay: '<S10>/Enabled Delay'
@@ -9970,236 +11225,236 @@ void ROPOD_4Wheel_Tdistkinb_cntr_initialize(void)
     ROPOD_4Wheel_Tdistkinb_cntr_DW.DelayInput2_DSTATE_k =
       ROPOD_4Wheel_Tdistkinb_cntr_P.DelayInput2_InitialCondition_c;
 
-    // InitializeConditions for DiscreteIntegrator: '<S93>/Integrator'
+    // InitializeConditions for DiscreteTransferFcn: '<S98>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_InitialS;
+
+    // InitializeConditions for DiscreteIntegrator: '<S96>/Integrator'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC;
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState = 0;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S94>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_InitialS;
-
-    // InitializeConditions for DiscreteIntegrator: '<S95>/Integrator'
+    // InitializeConditions for DiscreteIntegrator: '<S99>/Integrator'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_l =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_b;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S96>/Filter Differentiator TF' 
+    // InitializeConditions for DiscreteTransferFcn: '<S100>/Filter Differentiator TF' 
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_l =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_p;
 
-    // InitializeConditions for UnitDelay: '<S91>/Unit Delay'
+    // InitializeConditions for UnitDelay: '<S94>/Unit Delay'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE =
       ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition;
 
-    // InitializeConditions for DiscreteIntegrator: '<S102>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_m;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_d = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S103>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_j;
-
-    // InitializeConditions for DiscreteIntegrator: '<S104>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_e;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S105>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_g;
-
-    // InitializeConditions for UnitDelay: '<S100>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_c =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_j;
-
-    // InitializeConditions for DiscreteIntegrator: '<S111>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_i =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_i;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_n = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S112>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_m =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_o;
-
-    // InitializeConditions for DiscreteIntegrator: '<S113>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_hs =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_n;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S114>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_bh =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_e;
-
-    // InitializeConditions for UnitDelay: '<S109>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_h;
-
-    // InitializeConditions for DiscreteIntegrator: '<S120>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_ih;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_e = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S121>/Filter Differentiator TF' 
+    // InitializeConditions for DiscreteTransferFcn: '<S108>/Filter Differentiator TF' 
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_f =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ji;
-
-    // InitializeConditions for DiscreteIntegrator: '<S122>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_in;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S123>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ow;
-
-    // InitializeConditions for UnitDelay: '<S118>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_cy =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_f;
-
-    // InitializeConditions for DiscreteIntegrator: '<S129>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_j;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_o = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S130>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_h;
-
-    // InitializeConditions for DiscreteIntegrator: '<S131>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_g =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_l;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S132>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_mj =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_b;
-
-    // InitializeConditions for UnitDelay: '<S127>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_o =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_fm;
-
-    // InitializeConditions for DiscreteIntegrator: '<S138>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mc =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_nm;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_l = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S139>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ph;
-
-    // InitializeConditions for DiscreteIntegrator: '<S140>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_n =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_g;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S141>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_n =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_c;
-
-    // InitializeConditions for UnitDelay: '<S136>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_cd =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_b;
-
-    // InitializeConditions for DiscreteIntegrator: '<S147>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_iv;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_p = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S148>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_l0 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_gq;
-
-    // InitializeConditions for DiscreteIntegrator: '<S149>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_n3 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_p;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S150>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_eh =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_f;
 
-    // InitializeConditions for UnitDelay: '<S145>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_j =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_g;
+    // InitializeConditions for DiscreteIntegrator: '<S106>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_b =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_bi;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_b = 0;
 
-    // InitializeConditions for DiscreteIntegrator: '<S156>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fp =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_eq;
+    // InitializeConditions for DiscreteIntegrator: '<S109>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_o;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S110>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_o =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_d;
+
+    // InitializeConditions for UnitDelay: '<S104>/Unit Delay'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_i;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S118>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_k =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_db;
+
+    // InitializeConditions for DiscreteIntegrator: '<S116>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_a;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_d = 0;
+
+    // InitializeConditions for DiscreteIntegrator: '<S119>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_fl =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_e;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S120>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_pj;
+
+    // InitializeConditions for UnitDelay: '<S114>/Unit Delay'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_k;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S128>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_gl =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_a;
+
+    // InitializeConditions for DiscreteIntegrator: '<S126>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_k =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_h;
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_f = 0;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S157>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_es =
+    // InitializeConditions for DiscreteIntegrator: '<S129>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_bo =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_be;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S130>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_h =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_j;
+
+    // InitializeConditions for UnitDelay: '<S124>/Unit Delay'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_h =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_n;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S138>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_i =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_l;
 
-    // InitializeConditions for DiscreteIntegrator: '<S158>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_gz =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_m1;
+    // InitializeConditions for DiscreteIntegrator: '<S136>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_h =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_k;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_dm = 0;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S159>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_m;
+    // InitializeConditions for DiscreteIntegrator: '<S139>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_kh;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S140>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_b =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_h;
+
+    // InitializeConditions for UnitDelay: '<S134>/Unit Delay'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_k =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_m;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S148>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fs =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_fq;
+
+    // InitializeConditions for DiscreteIntegrator: '<S146>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ji =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_l;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_n = 0;
+
+    // InitializeConditions for DiscreteIntegrator: '<S149>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_lm;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S150>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fw =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_i;
+
+    // InitializeConditions for UnitDelay: '<S144>/Unit Delay'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_o =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_a;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S158>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_e =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_hh;
+
+    // InitializeConditions for DiscreteIntegrator: '<S156>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_m =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_ed;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_p = 0;
+
+    // InitializeConditions for DiscreteIntegrator: '<S159>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_bd =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_l1;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S160>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_e2 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_lr;
 
     // InitializeConditions for UnitDelay: '<S154>/Unit Delay'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_d5 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_bi;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_i =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_e;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S168>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ir =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_b;
+
+    // InitializeConditions for DiscreteIntegrator: '<S166>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_h1;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_k = 0;
+
+    // InitializeConditions for DiscreteIntegrator: '<S169>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_ft =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_es;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S170>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_hz;
+
+    // InitializeConditions for UnitDelay: '<S164>/Unit Delay'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_c =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_p;
+
+    // InitializeConditions for DiscreteTransferFcn: '<S57>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ae;
 
     // InitializeConditions for DiscreteIntegrator: '<S55>/Integrator'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_mx =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_mp;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_m;
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_fn = 0;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S56>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ku =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_a;
+    // InitializeConditions for DiscreteIntegrator: '<S58>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_jf =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_g;
 
-    // InitializeConditions for DiscreteIntegrator: '<S57>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_j =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_gw;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S58>/Filter Differentiator TF' 
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_j5 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_cm;
+    // InitializeConditions for DiscreteTransferFcn: '<S59>/Filter Differentiator TF' 
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_c;
 
     // InitializeConditions for UnitDelay: '<S53>/Unit Delay'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_g =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_p;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_pg;
 
-    // InitializeConditions for DiscreteIntegrator: '<S64>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5 =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_o;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_oj = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S65>/Filter Differentiator TF' 
+    // InitializeConditions for DiscreteTransferFcn: '<S67>/Filter Differentiator TF' 
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_fc =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_b2;
 
-    // InitializeConditions for DiscreteIntegrator: '<S66>/Integrator'
+    // InitializeConditions for DiscreteIntegrator: '<S65>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_c5 =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_oh;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_o = 0;
+
+    // InitializeConditions for DiscreteIntegrator: '<S68>/Integrator'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_p =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_f;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S67>/Filter Differentiator TF' 
+    // InitializeConditions for DiscreteTransferFcn: '<S69>/Filter Differentiator TF' 
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_dl =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_k;
 
-    // InitializeConditions for UnitDelay: '<S62>/Unit Delay'
+    // InitializeConditions for UnitDelay: '<S63>/Unit Delay'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_gb =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_e;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_ew;
 
-    // InitializeConditions for DiscreteIntegrator: '<S73>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_d =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_c;
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_m = 0;
-
-    // InitializeConditions for DiscreteTransferFcn: '<S74>/Filter Differentiator TF' 
+    // InitializeConditions for DiscreteTransferFcn: '<S77>/Filter Differentiator TF' 
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_state_ei =
       ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_bt;
 
     // InitializeConditions for DiscreteIntegrator: '<S75>/Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_o =
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_c;
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_PrevResetState_m = 0;
+
+    // InitializeConditions for DiscreteIntegrator: '<S78>/Integrator'
+    ROPOD_4Wheel_Tdistkinb_cntr_DW.Integrator_DSTATE_os =
       ROPOD_4Wheel_Tdistkinb_cntr_P.Integrator_IC_l2;
 
-    // InitializeConditions for DiscreteTransferFcn: '<S76>/Filter Differentiator TF' 
+    // InitializeConditions for DiscreteTransferFcn: '<S79>/Filter Differentiator TF' 
     ROPOD_4Wheel_Tdistkinb_cntr_DW.FilterDifferentiatorTF_states_p =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initi_ox;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.FilterDifferentiatorTF_Initia_o;
 
-    // InitializeConditions for UnitDelay: '<S71>/Unit Delay'
+    // InitializeConditions for UnitDelay: '<S73>/Unit Delay'
     ROPOD_4Wheel_Tdistkinb_cntr_DW.UnitDelay_DSTATE_f =
-      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_i;
+      ROPOD_4Wheel_Tdistkinb_cntr_P.UnitDelay_InitialCondition_if;
 
     // InitializeConditions for UnitDelay: '<S46>/UD'
     //
@@ -10260,12 +11515,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_terminate(void)
     sfcnTerminate(rts);
   }
 
-  // Start for MATLABSystem: '<S6>/Get Parameter14'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter14'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ft.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ft.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter14'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter14'
 
   // Terminate for S-Function (ec_ROPOD_SmartWheel): '<S28>/S-Function'
   // Level2 S-Function Block: '<S28>/S-Function' (ec_ROPOD_SmartWheel)
@@ -10295,323 +11550,323 @@ void ROPOD_4Wheel_Tdistkinb_cntr_terminate(void)
     sfcnTerminate(rts);
   }
 
-  // Start for MATLABSystem: '<S7>/Get Parameter'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_be.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_be.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter11'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter11'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter11'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter11'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter12'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter12'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fa.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fa.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter12'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter12'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter13'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter13'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_p.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_p.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter13'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter13'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter14'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter14'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l1.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_l1.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter14'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter14'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter15'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter15'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pe.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pe.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter15'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter15'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter16'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter16'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter16'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter16'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter17'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter17'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bc.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bc.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter17'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter17'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter1'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hv.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hv.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter1'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter1'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter2'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_j.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_j.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter2'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter2'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter3'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter3'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter3'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter4'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jj.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jj.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter4'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter4'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter5'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter5'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter5'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter6'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter6'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ep.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ep.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter6'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter6'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter7'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter7'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_lm.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_lm.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter7'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter7'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter8'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter8'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ew.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ew.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter8'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter8'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter9'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter9'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_nj.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_nj.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter9'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter9'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter10'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter10'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b1.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b1.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter10'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter10'
 
-  // Start for MATLABSystem: '<S8>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S8>/Get Parameter1'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_k.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_k.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S8>/Get Parameter1'
+  // End of Terminate for MATLABSystem: '<S8>/Get Parameter1'
 
-  // Start for MATLABSystem: '<S8>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S8>/Get Parameter3'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_m.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_m.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S8>/Get Parameter3'
+  // End of Terminate for MATLABSystem: '<S8>/Get Parameter3'
 
-  // Start for MATLABSystem: '<S8>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S8>/Get Parameter4'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i4.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i4.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S8>/Get Parameter4'
+  // End of Terminate for MATLABSystem: '<S8>/Get Parameter4'
 
-  // Start for MATLABSystem: '<S8>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S8>/Get Parameter5'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_b.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S8>/Get Parameter5'
+  // End of Terminate for MATLABSystem: '<S8>/Get Parameter5'
 
-  // Start for MATLABSystem: '<S9>/Get Parameter'
+  // Terminate for MATLABSystem: '<S9>/Get Parameter'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S9>/Get Parameter'
+  // End of Terminate for MATLABSystem: '<S9>/Get Parameter'
 
-  // Start for MATLABSystem: '<S9>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S9>/Get Parameter1'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_f.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_f.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S9>/Get Parameter1'
+  // End of Terminate for MATLABSystem: '<S9>/Get Parameter1'
 
   // Terminate for Atomic SubSystem: '<S4>/Subscribe1'
-  // Start for MATLABSystem: '<S17>/SourceBlock'
+  // Terminate for MATLABSystem: '<S17>/SourceBlock'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_a1.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_a1.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S17>/SourceBlock'
+  // End of Terminate for MATLABSystem: '<S17>/SourceBlock'
   // End of Terminate for SubSystem: '<S4>/Subscribe1'
 
-  // Start for MATLABSystem: '<S9>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S9>/Get Parameter2'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_n.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_n.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S9>/Get Parameter2'
+  // End of Terminate for MATLABSystem: '<S9>/Get Parameter2'
 
-  // Start for MATLABSystem: '<S9>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S9>/Get Parameter3'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_i.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S9>/Get Parameter3'
+  // End of Terminate for MATLABSystem: '<S9>/Get Parameter3'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter10'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter10'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pz.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_pz.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter10'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter10'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter11'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter11'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jt.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_jt.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter11'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter11'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter12'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter12'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_da.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_da.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter12'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter12'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter13'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter13'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e5.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_e5.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter13'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter13'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter6'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter6'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_c.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_c.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter6'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter6'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_mn.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_mn.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter3'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d0.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_d0.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter3'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter3'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter4'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ey.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ey.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter4'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter4'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter5'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g0.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_g0.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter5'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter5'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter9'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter9'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ch.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_ch.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter9'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter9'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter1'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fy.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_fy.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter1'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter1'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter2'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hq.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hq.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter2'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter2'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter7'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter7'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_eq.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_eq.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter7'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter7'
 
-  // Start for MATLABSystem: '<S6>/Get Parameter8'
+  // Terminate for MATLABSystem: '<S6>/Get Parameter8'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_a.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_a.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S6>/Get Parameter8'
+  // End of Terminate for MATLABSystem: '<S6>/Get Parameter8'
 
-  // Start for MATLABSystem: '<S8>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S8>/Get Parameter2'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_h.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_h.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S8>/Get Parameter2'
+  // End of Terminate for MATLABSystem: '<S8>/Get Parameter2'
 
-  // Start for MATLABSystem: '<S8>/Get Parameter'
+  // Terminate for MATLABSystem: '<S8>/Get Parameter'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bg.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_bg.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S8>/Get Parameter'
+  // End of Terminate for MATLABSystem: '<S8>/Get Parameter'
 
-  // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
+  // Terminate for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_nv.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_nv.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
+  // End of Terminate for MATLABSystem: '<S3>/Coordinate Transformation Conversion' 
 
   // Terminate for Atomic SubSystem: '<S3>/Publish'
-  // Start for MATLABSystem: '<S16>/SinkBlock'
+  // Terminate for MATLABSystem: '<S16>/SinkBlock'
   if (ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hy.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_DW.obj_hy.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S16>/SinkBlock'
+  // End of Terminate for MATLABSystem: '<S16>/SinkBlock'
   // End of Terminate for SubSystem: '<S3>/Publish'
 }
 

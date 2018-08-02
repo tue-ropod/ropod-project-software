@@ -10,7 +10,7 @@ Panels:
         - /Local Path planning1
         - /Map1
       Splitter Ratio: 0.5
-    Tree Height: 359
+    Tree Height: 747
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -240,7 +240,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /move_base/TebLocalPlannerROS/global_plan
+      Topic: /move_base/TrajectoryPlannerROS/global_plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -263,7 +263,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /move_base/TebLocalPlannerROS/local_plan
+      Topic: /move_base/TrajectoryPlannerROS/local_plan
       Unreliable: false
       Value: true
     - Alpha: 0.699999988
@@ -324,9 +324,9 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 4.75542164
-        Y: 13.0491199
-        Z: 4.1042285
+        X: 5.1468215
+        Y: 11.9710627
+        Z: 4.10379362
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false

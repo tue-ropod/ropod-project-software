@@ -6,75 +6,9 @@ composition:
           y: 0
           z: 0
 
-    - type: "hospital_test_amcl/walls"
+    - type: "hospital_basement_large/walls"
       id: "walls"
       pose:
           x: 0
           y: 0
-          z: 0     
-
-    - type: "hospital_test_amcl/corridor"
-      id: "crossing_test"
-      pose: { x: 4.73, y: 12.96, z: 0, rz: 0 }
-      shape:
-          compound:
-            - polygon:
-                  points:
-                    - { x: 0, y: 0 }
-                    - { x: 0.01, y: -2.24 }
-                    - { x: 6.83, y: -1.40 }
-                    - { x: 6.80, y: 0.52 }
-                  height: 2.0
-
-    - type: "hospital_test_amcl/MobiDikArea"
-      id: "MobiDikWaitingArea1"
-      pose: { x: 9.43, y: -7.62, z: 0, rz: 0 }
-      shape:
-          compound:
-            - polygon:
-                  points:
-                    - { x: 0, y: 0 }
-                    - { x: 4.27, y: 1.56 }
-                    - { x: 3.67, y: 3.13 }
-                    - { x: -0.41, y: 1.79 }
-                  height: 2.0
-
-# - - - - - - Elevator - - - - - - -
-    - type: "elevatordoor"
-      id: "door1"
-      pose: { x: 8.84, y: -3.64, z: 0, rz: 0 }
-      shape:
-          compound:
-            - polygon:
-                  points:
-                    - { x: 0, y: 0 }
-                    - { x: 0.02, y: -0.37 }
-                    - { x: 1.32, y: 0.01 }
-                    - { x: 1.22, y: 0.33 }
-                  height: 2.0
-    - type: "elevatordoor"
-      id: "door2"
-      pose: { x: 8.30, y: -1.16, z: 0, rz: 0 }
-      shape:
-          compound:
-            - polygon:
-                  points:
-                    - { x: 0, y: 0 }
-                    - { x: 1.26, y: 0.30 }
-                    - { x: 1.23, y: 0.58 }
-                    - { x: -0.04, y: 0.48 }
-                  height: 2.0
-    - type: "hospital_test_amcl/corridor"
-      id: "elevator"
-      pose: { x: 8.31, y: -1.16, z: 0, rz: 0 }
-      shape:
-          compound:
-            - polygon:
-                  points:
-                    - { x: 0, y: 0 }
-                    - { x: 0.54, y: -2.47 }
-                    - { x: 1.87, y: -2.09 }
-                    - { x: 1.46, y: 0.28 }
-                  height: 2.0
-
- 
+          z: 0 

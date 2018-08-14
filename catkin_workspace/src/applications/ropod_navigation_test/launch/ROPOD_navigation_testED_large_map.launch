@@ -6,7 +6,7 @@
         <!--<arg name="map_file" default="$(find ed_object_models)/models/hospital_test_amcl/walls/map_amcl.yaml" />-->
 	<!--<arg name="map_file" default="$(find ropod_navigation_test)/config/amk-f064/map.yaml"/>-->
         <!--<arg name="map_file" default="/home/cesar/ropod-project-software/catkin_workspace/src/applications/occupancy_grids/tue/lab-level/map.yaml"/>-->
-        <arg name="map_file" default="/home/ropod/ropod-project-software/catkin_workspace/src/applications/agaplesion/occupancy_grids/basement-full/map.yaml"/> 
+        <arg name="map_file" default="/home/ropod/ropod-project-software/catkin_workspace/src/applications/occupancy_grids/agaplesion/basement/basement-full/map.yaml"/> 
         <!-- TODO create a package of the folder with the maps, such that it is locatable with the find-command -->
        
 	

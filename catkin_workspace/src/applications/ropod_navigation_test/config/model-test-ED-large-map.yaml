@@ -7,7 +7,7 @@ plugins:
     lib: libed_laser_plugin_tracking.so
     frequency: 10
     parameters:
-        laser_topic: /pico/laser/scan
+        laser_topic: /ropod/laser/scan
         min_segment_size_pixels: 5
         world_association_distance: 0.1
         segment_depth_threshold: 0.2
@@ -20,4 +20,4 @@ plugins:
     lib: libed_clearer_plugin.so
     enabled: 1
     parameters:
-        entity_timeout: 1.0        
+        entity_timeout: 1.0

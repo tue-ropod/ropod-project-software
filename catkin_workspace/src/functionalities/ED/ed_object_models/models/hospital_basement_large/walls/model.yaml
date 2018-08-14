@@ -1,6 +1,6 @@
 type: walls
 shape:
-    path: shape/map.pgm
+    path: shape/map_cleaned.pgm
     blockheight: 2.0
     resolution: 0.02
     origin_x: -17.160000

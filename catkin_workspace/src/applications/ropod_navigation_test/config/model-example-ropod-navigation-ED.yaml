@@ -1,4 +1,4 @@
-world_name: hospital_basement_large
+world_name: hospital_test_amcl
   
 plugins:
   - name: gui_server
@@ -21,3 +21,6 @@ plugins:
     enabled: 1
     parameters:
         entity_timeout: 1.0
+  - name: route_navigation
+    lib: libed_route_navigation_plugin.so
+    frequency: 5

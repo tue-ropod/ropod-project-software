@@ -16,7 +16,7 @@
 
 - git: {local-name: functionalities/ros_structured_nav/ros_structured_nav, uri: 'https://github.com/tue-ropod/ros-structured-nav.git', version: master}
 
-- git: {local-name: functionalities/ropod_comm/ros_task_executor, uri: 'git@git.ropod.org:ropod/ropod_task_executor.git', version: master}
+- git: {local-name: functionalities/ropod_comm/ropod_task_executor, uri: 'git@git.ropod.org:ropod/ropod_task_executor.git', version: master}
 
 # platform repos
 

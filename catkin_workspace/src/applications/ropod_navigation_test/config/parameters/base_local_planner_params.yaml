@@ -4,12 +4,9 @@ TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   max_vel_theta: 0.5
   min_vel_theta: -0.5
   min_in_place_vel_theta: 0.3
-  
-  min_in_place_rotational_vel: 0.2
-  max_rotational_vel: 0.6
 
-  acc_lim_theta: 0.1
-  acc_lim_x: 1.0
+  acc_lim_theta: 0.2
+  acc_lim_x: 0.7
   # acc_lim_y: 0.0
   meter_scoring: true
 
@@ -21,15 +18,15 @@ TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   heading_scoring_timestep: 0.5
   escape_reset_dist_: 0.2
   escape_reset_theta: 0.1
-  oscillation_reset_dist_: 0.2
+  oscillation_reset_dist: 0.2
   escape_vel: -0.2
   heading_lookahead: 0.5
   
-  path_distance_max: 0.25
+  path_distance_max: 0.2
   
   xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.05
-  latch_xy_goal_tolerance: true  
+  yaw_goal_tolerance: 0.15
+  latch_xy_goal_tolerance: true
   
   
   holonomic_robot: false

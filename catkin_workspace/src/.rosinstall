@@ -11,10 +11,12 @@
 - git: {local-name: functionalities/ropod_comm/ropod_ros_msgs, uri: 'git@git.ropod.org:ropod/communication/ropod_ros_msgs.git', version: master}
 - git: {local-name: functionalities/ropod_comm/ropod_wm_mediator, uri: 'git@git.ropod.org:ropod/wm/ropod_wm_mediator.git', version: master}
 
-- git: {local-name: functionalities/ropod_nav/ropod_navigation, uri: 'git@git.ropod.org:ropod/navigation/ropod_navigation.git', version: feature/ropod_load_navigation}
+- git: {local-name: functionalities/ropod_nav/ropod_navigation, uri: 'git@git.ropod.org:ropod/navigation/ropod_navigation.git', version: master}
 
 
 - git: {local-name: functionalities/ros_structured_nav/ros_structured_nav, uri: 'https://github.com/tue-ropod/ros-structured-nav.git', version: master}
+
+- git: {local-name: functionalities/ropod_comm/ropod_task_executor, uri: 'git@git.ropod.org:ropod/ropod_task_executor.git', version: master}
 
 # platform repos
 

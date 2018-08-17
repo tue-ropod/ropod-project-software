@@ -69,7 +69,7 @@
     % Launch navigation
     <node name="maneuver_navigation" pkg="maneuver_navigation" type="maneuver_navigation" output="screen">             
         <rosparam file="$(find ropod_navigation_test)/config/parameters/footprint_ropod.yaml" command="load" ns="local_costmap" />       
-        <rosparam file="$(find ropod_navigation_test)/config/parameters/local_costmap_params.yaml"  command="load" ns="local_costmap" />    
+        <rosparam file="$(find ropod_navigation_test)/config/parameters/local_costmap_params EDhallway.yaml.yaml"  command="load" ns="local_costmap" />    
         <rosparam file="$(find ropod_navigation_test)/config/parameters/base_local_planner_params.yaml" command="load" />     
         
         <remap from="/maneuver_navigation/cmd_vel" to="/ropod/cmd_vel"/>

@@ -2,9 +2,9 @@ type: walls
 shape:
     path: shape/map.pgm
     blockheight: 2.0
-    resolution: 0.02
-    origin_x: 0.0
-    origin_y: 0.0
+    resolution: 0.025
+    origin_x: -10.0
+    origin_y: -10.0
     origin_z:  0.000000
 color:
    red: 0.0

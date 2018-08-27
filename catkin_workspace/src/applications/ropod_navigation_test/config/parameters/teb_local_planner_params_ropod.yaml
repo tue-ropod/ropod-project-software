@@ -17,11 +17,11 @@ TebLocalPlannerROS:
   # Robot
           
   max_vel_x: 1.4   # This parameters changes with respect to load
-  max_vel_x_backwards: 0.2
+  max_vel_x_backwards: 0.35
   max_vel_y: 0.0
   max_vel_theta: 0.5
-  acc_lim_x: 1.0 # This parameters changes with respect to load
-  acc_lim_theta: 0.5
+  acc_lim_x: 0.7 # This parameters changes with respect to load
+  acc_lim_theta: 0.2
   min_turning_radius: 0.0 # diff-drive robot (can turn on place!)
 
   footprint_model: # types: "point", "circular", "line", "two_circles", "polygon"

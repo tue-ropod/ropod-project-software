@@ -45,7 +45,7 @@
 	
 			<!-- dynamic tf broadcaster -->	
 			<group unless="$(arg LOAD_ATTACHED)">
-			    <node pkg="ropod_bringup" type="ropod_tf_broadcaster_simulator" name="ropod_tf_broadcaster_simulator" />			    
+			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster_only_ropod" name="ropod_mobidik_tf_broadcaster_only_ropod" />			    
 			</group> 
 			<group if="$(arg LOAD_ATTACHED)">
 			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster" name="ropod_mobidik_tf_broadcaster" />
@@ -57,14 +57,20 @@
 				<arg name="laser1" value="$(arg laser1_name)"/>
 			</include> 			
 
-			<!-- Laser publishing -->
-			<group if="$(arg laser)">
-				<include file="$(find robot_common)/launch/hardware/sick_laser.launch">
-					<arg name="bringup_path" value="$(arg robot_bringup_path)"/>
-					<arg name="name" value="$(arg laser1_name)"/>
-					<arg name="robot" value="$(arg robotName)"/>
-				</include>
-			</group>
+                        <!-- Laser publishing -->
+                        <group if="$(arg laser)">
+                                <include file="$(find robot_common)/launch/hardware/hokuyo_laser.launch">
+                                        <arg name="bringup_path" value="$(arg robot_bringup_path)"/>
+                                        <arg name="name" value="$(arg laser1_name)"/>
+                                        <arg name="robot" value="$(arg robotName)"/>
+                                </include>
+                                <include file="$(find robot_common)/launch/hardware/sick_laser.launch">
+                                        <arg name="bringup_path" value="$(arg robot_bringup_path)"/>
+                                        <arg name="name" value="sick_laser"/>
+                                        <arg name="robot" value="$(arg robotName)"/>
+                                </include>
+                        </group>
+
 
 		</group>	
 	</group>
@@ -80,7 +86,7 @@
 			</include>
 	
 			<!-- Launch tf broadcaster for ropod robot -->
-			<node pkg="ropod_bringup" type="ropod_tf_broadcaster_simulator" name="ropod_tf_broadcaster_simulator" />
+			<node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster_only_ropod" name="ropod_mobidik_tf_broadcaster_only_ropod" />
 
 		</group>
 		

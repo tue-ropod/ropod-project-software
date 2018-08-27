@@ -1,0 +1,101 @@
+composition:
+    - type: "floor"
+      id: "floor"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+
+    - type: "hospital_test/walls"
+      id: "walls"
+      pose:
+          x: 0
+          y: 0
+          z: 0     
+
+    - type: "hospital_test/corridor"
+      id: "crossing_test"
+      pose: { x: 3.74, y: -1.28, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.21, y: -5.65 }
+                    - { x: 1.3, y: -5.85 }
+                    - { x: 1.79, y: -0.24 }
+                  height: 0.1
+                  
+# - - - - - - Elevator - - - - - - -                 
+    - type: "door"
+      id: "elevatordoor"
+      pose: { x: -6.99, y: -0.51, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 0.10, y: 1.24 }
+                    - { x: -0.16, y: -0.22 }
+                    - { x: -0.23, y: 0.00 }
+                  height: 2.0
+    - type: "door"
+      id: "testdoor"
+      pose: { x: 8.40, y: -2.58, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.85, y: 0.13 }
+                    - { x: -1.16, y: -1.67 }
+                    - { x: -0.28, y: -1.81 }
+                  height: 2.0
+    - type: "door"
+      id: "door4"
+      pose: { x: -3.85, y: 0.78, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.05, y: -1.37 }
+                    - { x: 0.32, y: -1.37 }
+                    - { x: 0.32, y: -0.00 }
+                  height: 2.0
+    - type: "door"
+      id: "door1"
+      pose: { x: 8.56, y: 5.13, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 3.04, y: -0.45 }
+                    - { x: 3.14, y: 0.13 }
+                    - { x: 0.00, y: 0.55 }
+                  height: 2.0
+    - type: "door"
+      id: "door3"
+      pose: { x: -7.16, y: 0.73, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.05, y: -1.24 }
+                    - { x: 0.20, y: -1.25 }
+                    - { x: 0.28, y: 0.00 }
+                  height: 2.0
+    - type: "door"
+      id: "door2"
+      pose: { x: 9.71, y: -7.28, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -2.25, y: 0.27 }
+                    - { x: -2.25, y: 0.22 }
+                    - { x: 0.00, y: -0.05 }
+                  height: 2.0

@@ -1,0 +1,14 @@
+composition:
+    - type: "floor"
+      id: "floor"
+      pose:
+          x: 0
+          y: 0
+          z: 0
+
+    - type: "hospital_basement_large_osm/walls"
+      id: "walls"
+      pose:
+          x: 0
+          y: 0
+          z: 0

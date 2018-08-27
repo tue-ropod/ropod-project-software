@@ -3,7 +3,7 @@ TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   min_vel_x: 0.35
   max_vel_theta: 0.5
   min_vel_theta: -0.5
-  min_in_place_vel_theta: 0.3
+  min_in_place_vel_theta: 0.5
 
   acc_lim_theta: 0.2
   acc_lim_x: 0.7
@@ -19,7 +19,7 @@ TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
   escape_reset_dist_: 0.2
   escape_reset_theta: 0.1
   oscillation_reset_dist: 0.2
-  escape_vel: -0.2
+  escape_vel: -0.35
   heading_lookahead: 0.5
   
   path_distance_max: 0.2
@@ -47,7 +47,7 @@ DWAPlannerROS: # http://wiki.ros.org/dwa_local_planner
   max_rot_vel: 0.7
   min_rot_vel: 0.2
   
-  sim_time: 1.0
+  sim_time: 0.5
   #  controller_frequency: 10.0 # Set only the one of move_base
   
   path_distance_bias: 100.0

@@ -52,6 +52,7 @@ add_executable(${PROJECT_NAME}_node
    rtGetInf.cpp
    rtGetNaN.cpp
    rt_nonfinite.cpp
+   ECAT_Interface.c
    Read_Serial_Port.cpp
    ec_ROPOD_SmartWheel.c
    Read_Serial_Port_wrapper.cpp

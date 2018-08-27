@@ -1,0 +1,6 @@
+MobidikArea1; center; 2.43; 3.01;
+MobidikArea1; point1; 4.69; 2.29;
+MobidikArea1; point2; 5.33; 4.85;  
+MobidikArea1; point3; 2.95; 5.31;
+
+

@@ -55,7 +55,7 @@ int portNr, i, bytes_avail;
         printf("fd opened as %i\n", fd[i]);
     }  
     /* wait for the Arduino to reboot */
-    usleep(50000);
+//    usleep(50000);
     /* get current serial port settings */
     tcgetattr(fd[i], &toptions);
     /* set 9600 baud both ways */
@@ -72,12 +72,12 @@ int portNr, i, bytes_avail;
     /* commit the serial port settings */
     tcsetattr(fd[i], TCSANOW, &toptions);
     /* check bytes available */
-    ioctl(fd[i], FIONREAD, &bytes_avail);
-    if (bytes_avail > 0){
-       printf("Initialisation ACM%i done \n",i);   
-    }
-    else
-       printf("\n Error! ACM%i \n \n",i);
+//    ioctl(fd[i], FIONREAD, &bytes_avail);
+//    if (bytes_avail > 0){
+//       printf("Initialisation ACM%i done \n",i);   
+//    }
+//    else
+//       printf("\n Error! ACM%i \n \n",i);
     }
 /* %%%-SFUNWIZ_wrapper_Start_Changes_END --- EDIT HERE TO _BEGIN */
 }

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_TdistZMPC_cntr'.
 //
-// Model version                  : 1.310
+// Model version                  : 1.316
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Fri Aug 24 12:11:56 2018
+// C/C++ source code generated on : Mon Aug 27 13:49:16 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -93,7 +93,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   // Variable: Tinit
   //  Referenced by: '<S10>/Constant'
 
-  0.0,
+  11.369,
 
   // Variable: Tsp
   //  Referenced by:
@@ -1749,32 +1749,32 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   10000.0,
 
   // Mask Parameter: DiscreteDerivative_ICPrevScaled
-  //  Referenced by: '<S269>/UD'
+  //  Referenced by: '<S333>/UD'
 
   0.0,
 
   // Mask Parameter: CompareToConstant_const
-  //  Referenced by: '<S262>/Constant'
+  //  Referenced by: '<S326>/Constant'
 
   0.1,
 
   // Mask Parameter: CompareToConstant_const_e
-  //  Referenced by: '<S263>/Constant'
+  //  Referenced by: '<S327>/Constant'
 
   0.1,
 
   // Mask Parameter: CompareToConstant_const_g
-  //  Referenced by: '<S264>/Constant'
+  //  Referenced by: '<S328>/Constant'
 
   0.1,
 
   // Mask Parameter: CompareToConstant_const_b
-  //  Referenced by: '<S265>/Constant'
+  //  Referenced by: '<S329>/Constant'
 
   0.1,
 
   // Mask Parameter: CompareToConstant_const_i
-  //  Referenced by: '<S313>/Constant'
+  //  Referenced by: '<S377>/Constant'
 
   0.5,
 
@@ -1789,7 +1789,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0,
 
   // Computed Parameter: Constant_Value
-  //  Referenced by: '<S411>/Constant'
+  //  Referenced by: '<S475>/Constant'
 
   {
     {
@@ -1879,7 +1879,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   },
 
   // Computed Parameter: Constant_Value_o
-  //  Referenced by: '<S432>/Constant'
+  //  Referenced by: '<S496>/Constant'
 
   {
     {
@@ -1923,7 +1923,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   },
 
   // Computed Parameter: Constant_Value_j
-  //  Referenced by: '<S431>/Constant'
+  //  Referenced by: '<S495>/Constant'
 
   {
     {
@@ -1967,7 +1967,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   },
 
   // Computed Parameter: Constant_Value_i
-  //  Referenced by: '<S433>/Constant'
+  //  Referenced by: '<S497>/Constant'
 
   {
     {
@@ -2011,7 +2011,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   },
 
   // Computed Parameter: Constant_Value_d
-  //  Referenced by: '<S434>/Constant'
+  //  Referenced by: '<S498>/Constant'
 
   {
     {
@@ -2055,7 +2055,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S418>/Out1'
+  //  Referenced by: '<S482>/Out1'
 
   {
     {
@@ -2072,7 +2072,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   },
 
   // Computed Parameter: Constant_Value_e
-  //  Referenced by: '<S417>/Constant'
+  //  Referenced by: '<S481>/Constant'
 
   {
     {
@@ -2164,7 +2164,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S330>/Constant1'
+  //  Referenced by: '<S394>/Constant1'
 
   0.0,
 
@@ -2379,7 +2379,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S303>/Constant2'
+  //  Referenced by: '<S367>/Constant2'
 
   0.0,
 
@@ -2389,7 +2389,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S303>/Constant1'
+  //  Referenced by: '<S367>/Constant1'
 
   0.0,
 
@@ -2399,7 +2399,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S303>/Constant'
+  //  Referenced by: '<S367>/Constant'
 
   0.0,
 
@@ -2408,85 +2408,25 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Computed Parameter: DiscreteTimeIntegrator_gainva_d
-  //  Referenced by: '<S11>/Discrete-Time Integrator'
+  // Computed Parameter: ECAT_Interface_P1_Size
+  //  Referenced by: '<S12>/ECAT_Interface'
+
+  { 1.0, 4.0 },
+
+  // Computed Parameter: ECAT_Interface_P1
+  //  Referenced by: '<S12>/ECAT_Interface'
+
+  { 101.0, 116.0, 104.0, 48.0 },
+
+  // Computed Parameter: ECAT_Interface_P2_Size
+  //  Referenced by: '<S12>/ECAT_Interface'
+
+  { 1.0, 1.0 },
+
+  // Expression: TS
+  //  Referenced by: '<S12>/ECAT_Interface'
 
   0.001,
-
-  // Expression: 0
-  //  Referenced by: '<S11>/Discrete-Time Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S2>/Constant'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S2>/Constant1'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S2>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: SFunction_P1_Size
-  //  Referenced by: '<S32>/S-Function'
-
-  { 1.0, 1.0 },
-
-  // Expression: link_id
-  //  Referenced by: '<S32>/S-Function'
-
-  1.0,
-
-  // Computed Parameter: SFunction_P1_Size_j
-  //  Referenced by: '<S33>/S-Function'
-
-  { 1.0, 1.0 },
-
-  // Expression: link_id
-  //  Referenced by: '<S33>/S-Function'
-
-  2.0,
-
-  // Computed Parameter: SFunction_P1_Size_e
-  //  Referenced by: '<S34>/S-Function'
-
-  { 1.0, 1.0 },
-
-  // Expression: link_id
-  //  Referenced by: '<S34>/S-Function'
-
-  3.0,
-
-  // Computed Parameter: SFunction_P1_Size_d
-  //  Referenced by: '<S35>/S-Function'
-
-  { 1.0, 1.0 },
-
-  // Expression: link_id
-  //  Referenced by: '<S35>/S-Function'
-
-  4.0,
-
-  // Expression: 0
-  //  Referenced by: '<S2>/Constant3'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S2>/Constant4'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S2>/Constant5'
-
-  0.0,
 
   // Expression: 0
   //  Referenced by: '<S46>/Constant6'
@@ -2604,82 +2544,82 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   5.026548245743669,
 
   // Expression: tau
-  //  Referenced by: '<S151>/Constant'
+  //  Referenced by: '<S167>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S151>/Unit Delay'
+  //  Referenced by: '<S167>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S149>/Constant'
+  //  Referenced by: '<S165>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S149>/Unit Delay'
+  //  Referenced by: '<S165>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S153>/Constant'
+  //  Referenced by: '<S169>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S153>/Unit Delay'
+  //  Referenced by: '<S169>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S155>/Constant'
+  //  Referenced by: '<S171>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S155>/Unit Delay'
+  //  Referenced by: '<S171>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S157>/Constant'
+  //  Referenced by: '<S173>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S157>/Unit Delay'
+  //  Referenced by: '<S173>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S159>/Constant'
+  //  Referenced by: '<S175>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S159>/Unit Delay'
+  //  Referenced by: '<S175>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S161>/Constant'
+  //  Referenced by: '<S177>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S161>/Unit Delay'
+  //  Referenced by: '<S177>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S163>/Constant'
+  //  Referenced by: '<S179>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S163>/Unit Delay'
+  //  Referenced by: '<S179>/Unit Delay'
 
   0.0,
 
@@ -2724,107 +2664,42 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   5.026548245743669,
 
   // Expression: tau
-  //  Referenced by: '<S191>/Constant'
+  //  Referenced by: '<S223>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S191>/Unit Delay'
+  //  Referenced by: '<S223>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S189>/Constant'
+  //  Referenced by: '<S221>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S189>/Unit Delay'
+  //  Referenced by: '<S221>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S193>/Constant'
+  //  Referenced by: '<S225>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S193>/Unit Delay'
+  //  Referenced by: '<S225>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S195>/Constant'
+  //  Referenced by: '<S227>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S195>/Unit Delay'
-
-  0.0,
-
-  // Expression: tau
-  //  Referenced by: '<S197>/Constant'
-
-  0.0005,
-
-  // Expression: 0
-  //  Referenced by: '<S197>/Unit Delay'
-
-  0.0,
-
-  // Expression: tau
-  //  Referenced by: '<S199>/Constant'
-
-  0.0005,
-
-  // Expression: 0
-  //  Referenced by: '<S199>/Unit Delay'
-
-  0.0,
-
-  // Expression: tau
-  //  Referenced by: '<S201>/Constant'
-
-  0.0005,
-
-  // Expression: 0
-  //  Referenced by: '<S201>/Unit Delay'
-
-  0.0,
-
-  // Expression: tau
-  //  Referenced by: '<S203>/Constant'
-
-  0.0005,
-
-  // Expression: 0
-  //  Referenced by: '<S203>/Unit Delay'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S60>/Memory2'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S60>/Memory3'
-
-  0.0,
-
-  // Expression: 2*pi*0.8
-  //  Referenced by: '<S59>/Constant'
-
-  5.026548245743669,
-
-  // Expression: tau
-  //  Referenced by: '<S231>/Constant'
-
-  0.0005,
-
-  // Expression: 0
-  //  Referenced by: '<S231>/Unit Delay'
+  //  Referenced by: '<S227>/Unit Delay'
 
   0.0,
 
@@ -2835,6 +2710,16 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   // Expression: 0
   //  Referenced by: '<S229>/Unit Delay'
+
+  0.0,
+
+  // Expression: tau
+  //  Referenced by: '<S231>/Constant'
+
+  0.0005,
+
+  // Expression: 0
+  //  Referenced by: '<S231>/Unit Delay'
 
   0.0,
 
@@ -2858,43 +2743,98 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
+  // Expression: 1
+  //  Referenced by: '<S60>/Memory2'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S60>/Memory3'
+
+  0.0,
+
+  // Expression: 2*pi*0.8
+  //  Referenced by: '<S59>/Constant'
+
+  5.026548245743669,
+
   // Expression: tau
-  //  Referenced by: '<S237>/Constant'
+  //  Referenced by: '<S279>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S237>/Unit Delay'
+  //  Referenced by: '<S279>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S239>/Constant'
+  //  Referenced by: '<S277>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S239>/Unit Delay'
+  //  Referenced by: '<S277>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S241>/Constant'
+  //  Referenced by: '<S281>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S241>/Unit Delay'
+  //  Referenced by: '<S281>/Unit Delay'
 
   0.0,
 
   // Expression: tau
-  //  Referenced by: '<S243>/Constant'
+  //  Referenced by: '<S283>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S243>/Unit Delay'
+  //  Referenced by: '<S283>/Unit Delay'
+
+  0.0,
+
+  // Expression: tau
+  //  Referenced by: '<S285>/Constant'
+
+  0.0005,
+
+  // Expression: 0
+  //  Referenced by: '<S285>/Unit Delay'
+
+  0.0,
+
+  // Expression: tau
+  //  Referenced by: '<S287>/Constant'
+
+  0.0005,
+
+  // Expression: 0
+  //  Referenced by: '<S287>/Unit Delay'
+
+  0.0,
+
+  // Expression: tau
+  //  Referenced by: '<S289>/Constant'
+
+  0.0005,
+
+  // Expression: 0
+  //  Referenced by: '<S289>/Unit Delay'
+
+  0.0,
+
+  // Expression: tau
+  //  Referenced by: '<S291>/Constant'
+
+  0.0005,
+
+  // Expression: 0
+  //  Referenced by: '<S291>/Unit Delay'
 
   0.0,
 
@@ -2979,22 +2919,62 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: 2*pi
-  //  Referenced by: '<S331>/Gain2'
+  //  Referenced by: '<S395>/Gain2'
 
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S342>/Constant'
+  //  Referenced by: '<S406>/Constant'
 
   0.0005,
 
+  // Computed Parameter: SFunction_P1_Size
+  //  Referenced by: '<S32>/S-Function'
+
+  { 1.0, 1.0 },
+
+  // Expression: link_id
+  //  Referenced by: '<S32>/S-Function'
+
+  1.0,
+
+  // Computed Parameter: SFunction_P1_Size_j
+  //  Referenced by: '<S33>/S-Function'
+
+  { 1.0, 1.0 },
+
+  // Expression: link_id
+  //  Referenced by: '<S33>/S-Function'
+
+  2.0,
+
+  // Computed Parameter: SFunction_P1_Size_e
+  //  Referenced by: '<S34>/S-Function'
+
+  { 1.0, 1.0 },
+
+  // Expression: link_id
+  //  Referenced by: '<S34>/S-Function'
+
+  3.0,
+
+  // Computed Parameter: SFunction_P1_Size_d
+  //  Referenced by: '<S35>/S-Function'
+
+  { 1.0, 1.0 },
+
+  // Expression: link_id
+  //  Referenced by: '<S35>/S-Function'
+
+  4.0,
+
   // Computed Parameter: sampletime_WtEt
-  //  Referenced by: '<S304>/sample time'
+  //  Referenced by: '<S368>/sample time'
 
   0.001,
 
   // Expression: 0.0
-  //  Referenced by: '<S303>/Enabled Delay'
+  //  Referenced by: '<S367>/Enabled Delay'
 
   0.0,
 
@@ -3004,22 +2984,22 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: -1
-  //  Referenced by: '<S302>/Gain1'
+  //  Referenced by: '<S366>/Gain1'
 
   -1.0,
 
   // Expression: 0
-  //  Referenced by: '<S304>/Delay Input2'
+  //  Referenced by: '<S368>/Delay Input2'
 
   0.0,
 
   // Expression: -1
-  //  Referenced by: '<S302>/Gain'
+  //  Referenced by: '<S366>/Gain'
 
   -1.0,
 
   // Computed Parameter: sampletime_WtEt_l
-  //  Referenced by: '<S305>/sample time'
+  //  Referenced by: '<S369>/sample time'
 
   0.001,
 
@@ -3029,22 +3009,22 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: -1
-  //  Referenced by: '<S302>/Gain3'
+  //  Referenced by: '<S366>/Gain3'
 
   -1.0,
 
   // Expression: 0
-  //  Referenced by: '<S305>/Delay Input2'
+  //  Referenced by: '<S369>/Delay Input2'
 
   0.0,
 
   // Expression: -1
-  //  Referenced by: '<S302>/Gain2'
+  //  Referenced by: '<S366>/Gain2'
 
   -1.0,
 
   // Computed Parameter: sampletime_WtEt_b
-  //  Referenced by: '<S306>/sample time'
+  //  Referenced by: '<S370>/sample time'
 
   0.001,
 
@@ -3054,17 +3034,17 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   0.0,
 
   // Expression: -1
-  //  Referenced by: '<S302>/Gain5'
+  //  Referenced by: '<S366>/Gain5'
 
   -1.0,
 
   // Expression: 0
-  //  Referenced by: '<S306>/Delay Input2'
+  //  Referenced by: '<S370>/Delay Input2'
 
   0.0,
 
   // Expression: -1
-  //  Referenced by: '<S302>/Gain4'
+  //  Referenced by: '<S366>/Gain4'
 
   -1.0,
 
@@ -3074,16 +3054,1036 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 },
 
   // Expression: 1
-  //  Referenced by: '<S340>/Constant4'
+  //  Referenced by: '<S404>/Constant4'
 
   1.0,
 
   // Expression: 2*pi
-  //  Referenced by: '<S340>/Gain2'
+  //  Referenced by: '<S404>/Gain2'
 
   6.2831853071795862,
 
   // Computed Parameter: Integrator_gainval
+  //  Referenced by: '<S408>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S408>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S404>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S409>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S404>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt
+  //  Referenced by: '<S409>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S409>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S409>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S405>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S405>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_b
+  //  Referenced by: '<S410>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S410>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S405>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S405>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S405>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S411>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_h
+  //  Referenced by: '<S411>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S411>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S411>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S406>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S396>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S415>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S413>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S413>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_j
+  //  Referenced by: '<S417>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S417>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S413>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S418>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S413>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_m
+  //  Referenced by: '<S418>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S418>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S418>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S414>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S414>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_d
+  //  Referenced by: '<S419>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S419>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S414>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S414>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S414>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S420>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_l
+  //  Referenced by: '<S420>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S420>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S420>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S415>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S397>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S424>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S422>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S422>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_bn
+  //  Referenced by: '<S426>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S426>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S422>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S427>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S422>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_c
+  //  Referenced by: '<S427>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S427>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S427>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S423>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S423>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_e
+  //  Referenced by: '<S428>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S428>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S423>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S423>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S423>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S429>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_o
+  //  Referenced by: '<S429>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S429>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S429>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S424>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S398>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S433>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S431>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S431>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_n
+  //  Referenced by: '<S435>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S435>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S431>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S436>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S431>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_n
+  //  Referenced by: '<S436>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S436>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S436>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S432>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S432>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_je
+  //  Referenced by: '<S437>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S437>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S432>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S432>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S432>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S438>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_cd
+  //  Referenced by: '<S438>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S438>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S438>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S433>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S399>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S442>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S440>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S440>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_k
+  //  Referenced by: '<S444>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S444>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S440>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S445>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S440>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_lp
+  //  Referenced by: '<S445>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S445>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S445>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S441>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S441>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_bnj
+  //  Referenced by: '<S446>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S446>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S441>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S441>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S441>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S447>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_d
+  //  Referenced by: '<S447>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S447>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S447>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S442>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S400>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S451>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S449>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S449>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_m
+  //  Referenced by: '<S453>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S453>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S449>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S454>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S449>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_b
+  //  Referenced by: '<S454>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S454>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S454>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S450>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S450>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_o
+  //  Referenced by: '<S455>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S455>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S450>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S450>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S450>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S456>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_he
+  //  Referenced by: '<S456>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S456>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S456>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S451>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S401>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S460>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S458>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S458>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_i
+  //  Referenced by: '<S462>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S462>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S458>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S463>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S458>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_e
+  //  Referenced by: '<S463>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S463>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S463>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S459>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S459>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_ij
+  //  Referenced by: '<S464>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S464>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S459>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S459>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S459>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S465>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_hw
+  //  Referenced by: '<S465>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S465>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S465>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S460>/Unit Delay'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S402>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S469>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S467>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S467>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_g
+  //  Referenced by: '<S471>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S471>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S467>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S472>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S467>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_f
+  //  Referenced by: '<S472>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S472>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S472>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S468>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S468>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_bm
+  //  Referenced by: '<S473>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S473>/Integrator'
+
+  0.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S468>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S468>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S468>/Gain1'
+
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S474>/Constant'
+
+  1.0,
+
+  // Computed Parameter: TSamp_WtEt_dj
+  //  Referenced by: '<S474>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S474>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S474>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S469>/Unit Delay'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S43>/Gain3'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_g
+  //  Referenced by: '<S333>/TSamp'
+
+  1000.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S334>/Gain2'
+
+  6.2831853071795862,
+
+  // Expression: tau
+  //  Referenced by: '<S340>/Constant'
+
+  0.0005,
+
+  // Expression: 1
+  //  Referenced by: '<S338>/Constant4'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S338>/Gain2'
+
+  6.2831853071795862,
+
+  // Computed Parameter: Integrator_gainval_p
+  //  Referenced by: '<S342>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S342>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S338>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S343>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S338>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_p
+  //  Referenced by: '<S343>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S343>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S343>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S339>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S339>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_e0
   //  Referenced by: '<S344>/Integrator'
 
   0.0005,
@@ -3093,22 +4093,27 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: 0
-  //  Referenced by: '<S340>/Constant'
+  // Expression: 2*pi
+  //  Referenced by: '<S339>/Gain2'
 
-  0.0,
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S339>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S339>/Gain1'
+
+  6.2831853071795862,
 
   // Expression: 1
   //  Referenced by: '<S345>/Constant'
 
   1.0,
 
-  // Expression: 0
-  //  Referenced by: '<S340>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt
+  // Computed Parameter: TSamp_WtEt_dn
   //  Referenced by: '<S345>/TSamp'
 
   0.0005,
@@ -3123,87 +4128,82 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: 1
-  //  Referenced by: '<S341>/Constant4'
-
-  1.0,
-
   // Expression: 0
-  //  Referenced by: '<S341>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_b
-  //  Referenced by: '<S346>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S346>/Integrator'
+  //  Referenced by: '<S340>/Unit Delay'
 
   0.0,
 
   // Expression: 2*pi
-  //  Referenced by: '<S341>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S341>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S341>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S347>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_h
-  //  Referenced by: '<S347>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S347>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S347>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S342>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S332>/Gain2'
+  //  Referenced by: '<S335>/Gain2'
 
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S351>/Constant'
+  //  Referenced by: '<S349>/Constant'
 
   0.0005,
 
   // Expression: 1
-  //  Referenced by: '<S349>/Constant4'
+  //  Referenced by: '<S347>/Constant4'
 
   1.0,
 
   // Expression: 2*pi
-  //  Referenced by: '<S349>/Gain2'
+  //  Referenced by: '<S347>/Gain2'
 
   6.2831853071795862,
 
-  // Computed Parameter: Integrator_gainval_j
+  // Computed Parameter: Integrator_gainval_f
+  //  Referenced by: '<S351>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S351>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S347>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S352>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S347>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_nx
+  //  Referenced by: '<S352>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S352>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S352>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S348>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S348>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_f4
   //  Referenced by: '<S353>/Integrator'
 
   0.0005,
@@ -3213,22 +4213,27 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: 0
-  //  Referenced by: '<S349>/Constant'
+  // Expression: 2*pi
+  //  Referenced by: '<S348>/Gain2'
 
-  0.0,
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S348>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S348>/Gain1'
+
+  6.2831853071795862,
 
   // Expression: 1
   //  Referenced by: '<S354>/Constant'
 
   1.0,
 
-  // Expression: 0
-  //  Referenced by: '<S349>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_m
+  // Computed Parameter: TSamp_WtEt_bh
   //  Referenced by: '<S354>/TSamp'
 
   0.0005,
@@ -3243,87 +4248,82 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: 1
-  //  Referenced by: '<S350>/Constant4'
-
-  1.0,
-
   // Expression: 0
-  //  Referenced by: '<S350>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_d
-  //  Referenced by: '<S355>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S355>/Integrator'
+  //  Referenced by: '<S349>/Unit Delay'
 
   0.0,
 
   // Expression: 2*pi
-  //  Referenced by: '<S350>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S350>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S350>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S356>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_l
-  //  Referenced by: '<S356>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S356>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S356>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S351>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S333>/Gain2'
+  //  Referenced by: '<S336>/Gain2'
 
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S360>/Constant'
+  //  Referenced by: '<S358>/Constant'
 
   0.0005,
 
   // Expression: 1
-  //  Referenced by: '<S358>/Constant4'
+  //  Referenced by: '<S356>/Constant4'
 
   1.0,
 
   // Expression: 2*pi
-  //  Referenced by: '<S358>/Gain2'
+  //  Referenced by: '<S356>/Gain2'
 
   6.2831853071795862,
 
-  // Computed Parameter: Integrator_gainval_bn
+  // Computed Parameter: Integrator_gainval_h
+  //  Referenced by: '<S360>/Integrator'
+
+  0.0005,
+
+  // Expression: InitialConditionForIntegrator
+  //  Referenced by: '<S360>/Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S356>/Constant'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S361>/Constant'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S356>/Constant5'
+
+  0.0,
+
+  // Computed Parameter: TSamp_WtEt_cp
+  //  Referenced by: '<S361>/TSamp'
+
+  0.0005,
+
+  // Expression: [1 -1]
+  //  Referenced by: '<S361>/Filter Differentiator TF'
+
+  { 1.0, -1.0 },
+
+  // Expression: InitialConditionForFilter
+  //  Referenced by: '<S361>/Filter Differentiator TF'
+
+  0.0,
+
+  // Expression: 1
+  //  Referenced by: '<S357>/Constant4'
+
+  1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S357>/Constant2'
+
+  0.0,
+
+  // Computed Parameter: Integrator_gainval_mv
   //  Referenced by: '<S362>/Integrator'
 
   0.0005,
@@ -3333,22 +4333,27 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: 0
-  //  Referenced by: '<S358>/Constant'
+  // Expression: 2*pi
+  //  Referenced by: '<S357>/Gain2'
 
-  0.0,
+  6.2831853071795862,
+
+  // Expression: 1
+  //  Referenced by: '<S357>/Constant1'
+
+  1.0,
+
+  // Expression: 2*pi
+  //  Referenced by: '<S357>/Gain1'
+
+  6.2831853071795862,
 
   // Expression: 1
   //  Referenced by: '<S363>/Constant'
 
   1.0,
 
-  // Expression: 0
-  //  Referenced by: '<S358>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_c
+  // Computed Parameter: TSamp_WtEt_bw
   //  Referenced by: '<S363>/TSamp'
 
   0.0005,
@@ -3363,1033 +4368,8 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: 1
-  //  Referenced by: '<S359>/Constant4'
-
-  1.0,
-
   // Expression: 0
-  //  Referenced by: '<S359>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_e
-  //  Referenced by: '<S364>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S364>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S359>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S359>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S359>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S365>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_o
-  //  Referenced by: '<S365>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S365>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S365>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S360>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S334>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S369>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S367>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S367>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_n
-  //  Referenced by: '<S371>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S371>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S367>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S372>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S367>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_n
-  //  Referenced by: '<S372>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S372>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S372>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S368>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S368>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_je
-  //  Referenced by: '<S373>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S373>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S368>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S368>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S368>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S374>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_cd
-  //  Referenced by: '<S374>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S374>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S374>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S369>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S335>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S378>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S376>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S376>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_k
-  //  Referenced by: '<S380>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S380>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S376>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S381>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S376>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_lp
-  //  Referenced by: '<S381>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S381>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S381>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S377>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S377>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_bnj
-  //  Referenced by: '<S382>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S382>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S377>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S377>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S377>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S383>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_d
-  //  Referenced by: '<S383>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S383>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S383>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S378>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S336>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S387>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S385>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S385>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_m
-  //  Referenced by: '<S389>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S389>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S385>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S390>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S385>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_b
-  //  Referenced by: '<S390>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S390>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S390>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S386>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S386>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_o
-  //  Referenced by: '<S391>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S391>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S386>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S386>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S386>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S392>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_he
-  //  Referenced by: '<S392>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S392>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S392>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S387>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S337>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S396>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S394>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S394>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_i
-  //  Referenced by: '<S398>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S398>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S394>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S399>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S394>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_e
-  //  Referenced by: '<S399>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S399>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S399>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S395>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S395>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_ij
-  //  Referenced by: '<S400>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S400>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S395>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S395>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S395>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S401>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_hw
-  //  Referenced by: '<S401>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S401>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S401>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S396>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S338>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S405>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S403>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S403>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_g
-  //  Referenced by: '<S407>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S407>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S403>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S408>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S403>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_f
-  //  Referenced by: '<S408>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S408>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S408>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S404>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S404>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_bm
-  //  Referenced by: '<S409>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S409>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S404>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S404>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S404>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S410>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_dj
-  //  Referenced by: '<S410>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S410>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S410>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S405>/Unit Delay'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S43>/Gain3'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_g
-  //  Referenced by: '<S269>/TSamp'
-
-  1000.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S270>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S276>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S274>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S274>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_p
-  //  Referenced by: '<S278>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S278>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S274>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S279>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S274>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_p
-  //  Referenced by: '<S279>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S279>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S279>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S275>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S275>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_e0
-  //  Referenced by: '<S280>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S280>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S275>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S275>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S275>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S281>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_dn
-  //  Referenced by: '<S281>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S281>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S281>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S276>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S271>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S285>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S283>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S283>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_f
-  //  Referenced by: '<S287>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S287>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S283>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S288>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S283>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_nx
-  //  Referenced by: '<S288>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S288>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S288>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S284>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S284>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_f4
-  //  Referenced by: '<S289>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S289>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S284>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S284>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S284>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S290>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_bh
-  //  Referenced by: '<S290>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S290>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S290>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S285>/Unit Delay'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S272>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: tau
-  //  Referenced by: '<S294>/Constant'
-
-  0.0005,
-
-  // Expression: 1
-  //  Referenced by: '<S292>/Constant4'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S292>/Gain2'
-
-  6.2831853071795862,
-
-  // Computed Parameter: Integrator_gainval_h
-  //  Referenced by: '<S296>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S296>/Integrator'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S292>/Constant'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S297>/Constant'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S292>/Constant5'
-
-  0.0,
-
-  // Computed Parameter: TSamp_WtEt_cp
-  //  Referenced by: '<S297>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S297>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S297>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 1
-  //  Referenced by: '<S293>/Constant4'
-
-  1.0,
-
-  // Expression: 0
-  //  Referenced by: '<S293>/Constant2'
-
-  0.0,
-
-  // Computed Parameter: Integrator_gainval_mv
-  //  Referenced by: '<S298>/Integrator'
-
-  0.0005,
-
-  // Expression: InitialConditionForIntegrator
-  //  Referenced by: '<S298>/Integrator'
-
-  0.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S293>/Gain2'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S293>/Constant1'
-
-  1.0,
-
-  // Expression: 2*pi
-  //  Referenced by: '<S293>/Gain1'
-
-  6.2831853071795862,
-
-  // Expression: 1
-  //  Referenced by: '<S299>/Constant'
-
-  1.0,
-
-  // Computed Parameter: TSamp_WtEt_bw
-  //  Referenced by: '<S299>/TSamp'
-
-  0.0005,
-
-  // Expression: [1 -1]
-  //  Referenced by: '<S299>/Filter Differentiator TF'
-
-  { 1.0, -1.0 },
-
-  // Expression: InitialConditionForFilter
-  //  Referenced by: '<S299>/Filter Differentiator TF'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S294>/Unit Delay'
+  //  Referenced by: '<S358>/Unit Delay'
 
   0.0,
 
@@ -4504,7 +4484,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S322>/Constant'
+  //  Referenced by: '<S386>/Constant'
 
   0.0005,
 
@@ -4514,7 +4494,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   { 0.0, 0.0, 0.0, 0.0 },
 
   // Expression: 0
-  //  Referenced by: '<S322>/Unit Delay'
+  //  Referenced by: '<S386>/Unit Delay'
 
   0.0,
 
@@ -4524,12 +4504,12 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S318>/Constant'
+  //  Referenced by: '<S382>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S318>/Unit Delay'
+  //  Referenced by: '<S382>/Unit Delay'
 
   0.0,
 
@@ -4539,12 +4519,12 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S320>/Constant'
+  //  Referenced by: '<S384>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S320>/Unit Delay'
+  //  Referenced by: '<S384>/Unit Delay'
 
   0.0,
 
@@ -4554,12 +4534,12 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   6.2831853071795862,
 
   // Expression: tau
-  //  Referenced by: '<S324>/Constant'
+  //  Referenced by: '<S388>/Constant'
 
   0.0005,
 
   // Expression: 0
-  //  Referenced by: '<S324>/Unit Delay'
+  //  Referenced by: '<S388>/Unit Delay'
 
   0.0,
 
@@ -4723,43 +4703,83 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   -1.0,
 
+  // Computed Parameter: DiscreteTimeIntegrator_gainva_d
+  //  Referenced by: '<S11>/Discrete-Time Integrator'
+
+  0.001,
+
+  // Expression: 0
+  //  Referenced by: '<S11>/Discrete-Time Integrator'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S2>/Constant'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S2>/Constant1'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S2>/Constant2'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S2>/Constant3'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S2>/Constant4'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S2>/Constant5'
+
+  0.0,
+
   // Computed Parameter: Out1_Y0_b
-  //  Referenced by: '<S415>/Out1'
+  //  Referenced by: '<S479>/Out1'
 
   {
     0U                                 // Data
   },
 
   // Computed Parameter: Constant_Value_gt
-  //  Referenced by: '<S413>/Constant'
+  //  Referenced by: '<S477>/Constant'
 
   {
     0U                                 // Data
   },
 
   // Computed Parameter: Constant_Value_k2
-  //  Referenced by: '<S435>/Constant'
+  //  Referenced by: '<S499>/Constant'
 
   {
     0U                                 // Data
   },
 
   // Computed Parameter: Out1_Y0_d
-  //  Referenced by: '<S416>/Out1'
+  //  Referenced by: '<S480>/Out1'
 
   {
     false                              // Data
   },
 
   // Computed Parameter: Constant_Value_k4
-  //  Referenced by: '<S414>/Constant'
+  //  Referenced by: '<S478>/Constant'
 
   {
     false                              // Data
   },
 
   // Computed Parameter: Constant_Value_pl
-  //  Referenced by: '<S436>/Constant'
+  //  Referenced by: '<S500>/Constant'
 
   {
     false                              // Data
@@ -4826,7 +4846,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   1U,
 
   // Computed Parameter: EnabledDelay_DelayLength
-  //  Referenced by: '<S303>/Enabled Delay'
+  //  Referenced by: '<S367>/Enabled Delay'
 
   1U,
 
@@ -4836,22 +4856,22 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   32768U,
 
   // Computed Parameter: Switch2_Threshold_n
-  //  Referenced by: '<S303>/Switch2'
+  //  Referenced by: '<S367>/Switch2'
 
   0U,
 
   // Computed Parameter: Switch1_Threshold_j
-  //  Referenced by: '<S303>/Switch1'
+  //  Referenced by: '<S367>/Switch1'
 
   0U,
 
   // Computed Parameter: Switch_Threshold_l
-  //  Referenced by: '<S303>/Switch'
+  //  Referenced by: '<S367>/Switch'
 
   0U,
 
   // Computed Parameter: Gain6_Gain_k
-  //  Referenced by: '<S303>/Gain6'
+  //  Referenced by: '<S367>/Gain6'
 
   128U
 };

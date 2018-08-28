@@ -68,18 +68,18 @@
     
     % Launch navigation
     <node name="maneuver_navigation" pkg="maneuver_navigation" type="maneuver_navigation" output="screen">             
-        <rosparam file="$(find ropod_navigation_test)/config/parameters/footprint_ropod.yaml" command="load" ns="local_costmap" />       
+        <rosparam file="$(find ropod_navigation_test)/config/parameters/footprint_ropod_mobidik.yaml" command="load" ns="local_costmap" />       
         <rosparam file="$(find ropod_navigation_test)/config/parameters/local_costmap_params_EDhallway.yaml"  command="load" ns="local_costmap" />    
         
 <!--        <rosparam file="$(find ropod_navigation_test)/config/parameters/base_local_planner_params.yaml" command="load" />
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />        -->
 
-        <rosparam file="$(find ropod_navigation_test)/config/parameters/teb_local_planner_params_ropod.yaml" command="load" />
+        <rosparam file="$(find ropod_navigation_test)/config/parameters/teb_local_planner_params.yaml" command="load" />
         <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
 
         
         <remap from="/maneuver_navigation/cmd_vel" to="/load/cmd_vel"/>
-        <remap from="odom" to="/ropod/odom"/>        
+        <remap from="odom" to="/load/odom"/>        
     </node>   
 	
 

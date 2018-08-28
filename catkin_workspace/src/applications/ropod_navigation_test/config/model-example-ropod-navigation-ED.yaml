@@ -1,4 +1,4 @@
-world_name: hospital_test_amcl
+world_name: tue_hallway_RLtoAL
   
 plugins:
   - name: gui_server

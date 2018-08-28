@@ -16,7 +16,7 @@ TebLocalPlannerROS:
       
   # Robot
           
-  max_vel_x: 1.4
+  max_vel_x: 1.0
   max_vel_x_backwards: 0.35
   max_vel_y: 0.0
   max_vel_theta: 0.5
@@ -33,7 +33,8 @@ TebLocalPlannerROS:
     front_radius: 0.2 # for type "two_circles"
     rear_offset: 0.2 # for type "two_circles"
     rear_radius: 0.2 # for type "two_circles"
-    vertices: [[-0.1, 0.4], [1.35, 0.4], [1.35, -0.4], [-0.1, -0.4]] # for type "polygon"
+    vertices: [[-0.1, 0.36], [1.3, 0.36], [1.3, -0.36], [-0.1, -0.36]] # for type "polygon"
+    # vertices: [[-0.1, 0.4], [1.35, 0.4], [1.35, -0.4], [-0.1, -0.4]] # for type "polygon"
     
      
   # GoalTolerance

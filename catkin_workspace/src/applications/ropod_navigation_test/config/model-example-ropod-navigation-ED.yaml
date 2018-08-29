@@ -1,7 +1,6 @@
 #world_name: hospital_test_amcl
 world_name: tue_hallway_RLtoAL
 
->>>>>>> branch 'Development' of https://github.com/tue-ropod/ropod-project-software.git
 plugins:
   - name: gui_server
     lib: libed_gui_server_plugin.so     

@@ -1,6 +1,6 @@
 TebLocalPlannerROS:
 
-  odom_topic: /ropod/odom  # This parameters changes with respect to load
+  odom_topic: /load/odom  # This parameters changes with respect to load. The broadcaster is incharge to make the right transformation
   map_frame:   /map #/load/base_link #
       
   # Trajectory
@@ -10,9 +10,9 @@ TebLocalPlannerROS:
   dt_hysteresis: 0.0
   global_plan_overwrite_orientation: False
   allow_init_with_backwards_motion: False
-  max_global_plan_lookahead_dist: 0.5 # This parameters changes with respect to load
+  max_global_plan_lookahead_dist: 1.5 # This parameters changes with respect to load
   feasibility_check_no_poses: 5
-  global_plan_viapoint_sep: 0.2 # This parameters changes with respect to load
+  global_plan_viapoint_sep: 0.2
       
   # Robot
           
@@ -20,7 +20,7 @@ TebLocalPlannerROS:
   max_vel_x_backwards: 0.35
   max_vel_y: 0.0
   max_vel_theta: 0.5
-  acc_lim_x: 0.7 # This parameters changes with respect to load
+  acc_lim_x: 0.7
   acc_lim_theta: 0.2
   min_turning_radius: 0.0 # diff-drive robot (can turn on place!)
 
@@ -33,13 +33,13 @@ TebLocalPlannerROS:
     front_radius: 0.2 # for type "two_circles"
     rear_offset: 0.2 # for type "two_circles"
     rear_radius: 0.2 # for type "two_circles"
-    vertices: [[-0.33, 0.33], [0.33, 0.33], [0.33, -0.33], [-0.33, -0.33]] # for type "polygon" # This parameters changes with respect to load
+    vertices: [[-0.36, 0.36], [0.36, 0.36], [0.36, -0.36], [-0.36, -0.36]] # for type "polygon" # This parameters changes with respect to load
     
      
   # GoalTolerance
       
-  xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.05
+  xy_goal_tolerance: 0.1 # This parameters changes with respect to load
+  yaw_goal_tolerance: 0.05 # This parameters changes with respect to load
   free_goal_vel: False
       
   # Obstacles

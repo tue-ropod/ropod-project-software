@@ -108,8 +108,8 @@ void loadvelcmdCallback(const geometry_msgs::Twist::ConstPtr& msg){
   ropod_cmd_vel.angular.y =  msg->angular.y;
   ropod_cmd_vel.angular.z =  msg->angular.z;
   
-  double min_magn_xy_vel = 0.3;
-  double min_magn_theta_vel = 0.3;
+  double min_magn_xy_vel = 0.15;
+  double min_magn_theta_vel = 0.15;
   double sc_factor;
   if(std::abs(ropod_cmd_vel.linear.x) < min_magn_xy_vel && std::abs(ropod_cmd_vel.linear.x) < min_magn_xy_vel)      
   {

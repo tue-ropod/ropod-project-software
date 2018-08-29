@@ -12,7 +12,7 @@ Panels:
         - /PoseArray2
         - /LaserScan2
       Splitter Ratio: 0.5
-    Tree Height: 359
+    Tree Height: 747
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -324,6 +324,14 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /ed/gui/objectMarkers
+      Name: NewEntities
+      Namespaces:
+        Mobidik: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -349,16 +357,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 9.6279335
+      Distance: 8.81004238
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 7.52040386
-        Y: 3.80208015
-        Z: 5.19349623
+        X: 7.05298376
+        Y: 3.45938826
+        Z: 5.19387484
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
@@ -367,7 +375,7 @@ Visualization Manager:
       Pitch: 1.56979632
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.02357197
+      Yaw: 6.03857231
     Saved: ~
 Window Geometry:
   Displays:

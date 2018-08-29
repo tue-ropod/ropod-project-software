@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr'.
 //
-// Model version                  : 1.266
+// Model version                  : 1.277
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Aug  1 17:44:50 2018
+// C/C++ source code generated on : Tue Aug 28 14:27:20 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -223,7 +223,7 @@ typedef struct {
 
 #endif                                 //typedef_robotics_slros_internal_bl_ic_T
 
-// Custom Type definition for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal' 
+// Custom Type definition for MATLAB Function: '<S45>/platform_forces_2_tau_dist_optimal' 
 #ifndef struct_tag_scZlGNcmSdXsfgNftx2nQBF
 #define struct_tag_scZlGNcmSdXsfgNftx2nQBF
 

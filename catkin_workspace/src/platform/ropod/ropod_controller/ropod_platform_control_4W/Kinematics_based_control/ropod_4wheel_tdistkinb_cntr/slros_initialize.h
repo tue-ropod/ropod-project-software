@@ -130,6 +130,12 @@ extern SimulinkParameterGetter<real64_T, double> ParamGet_ROPOD_4Wheel_Tdistkinb
 // For Block ROPOD_4Wheel_Tdistkinb_cntr/ROS Smart wheels conf/Get Parameter5
 extern SimulinkParameterGetter<real64_T, double> ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2218;
 
+// For Block ROPOD_4Wheel_Tdistkinb_cntr/ROS Smart wheels conf/Get Parameter6
+extern SimulinkParameterGetter<real64_T, double> ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_4048;
+
+// For Block ROPOD_4Wheel_Tdistkinb_cntr/ROS Smart wheels conf/Get Parameter7
+extern SimulinkParameterGetter<real64_T, double> ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_4050;
+
 // For Block ROPOD_4Wheel_Tdistkinb_cntr/ROS base conf/Get Parameter
 extern SimulinkParameterGetter<real64_T, double> ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_2237;
 

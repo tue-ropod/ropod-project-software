@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_TdistZMPC_cntr'.
 //
-// Model version                  : 1.310
+// Model version                  : 1.316
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Fri Aug 24 12:11:56 2018
+// C/C++ source code generated on : Mon Aug 27 13:49:16 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -89,8 +89,9 @@ preprocessor word size checks.
 
 extern real_T rt_hypotd_snf(real_T u0, real_T u1);
 extern real_T rt_atan2d_snf(real_T u0, real_T u1);
-extern "C" void ec_ROPOD_SmartWheel(SimStruct *rts);
+extern "C" void ECAT_Interface(SimStruct *rts);
 extern "C" void Read_Serial_Port(SimStruct *rts);
+extern "C" void ec_ROPOD_SmartWheel(SimStruct *rts);
 extern void ROPOD_4Wheel_Tdi_MATLABFunction(real_T rtu_w, real_T rtu_tau, real_T
   *rty_g, real_T *rty_a);
 extern void ROPOD_4Wheel_Tdist_Calibration1(real_T rtu_angle, real_T rtu_sample,

@@ -1,6 +1,6 @@
 TebLocalPlannerROS:
 
-  odom_topic: /ropod/odom  # This parameters changes with respect to load
+  odom_topic: /load/odom  # This parameters changes with respect to load. The broadcaster is incharge to make the right transformation
   map_frame:   /map #/load/base_link #
       
   # Trajectory
@@ -12,16 +12,16 @@ TebLocalPlannerROS:
   allow_init_with_backwards_motion: False
   max_global_plan_lookahead_dist: 0.5 # This parameters changes with respect to load
   feasibility_check_no_poses: 5
-  global_plan_viapoint_sep: 0.2 # This parameters changes with respect to load
+  global_plan_viapoint_sep: 0.2
       
   # Robot
           
-  max_vel_x: 1.4   # This parameters changes with respect to load
-  max_vel_x_backwards: 0.2
+  max_vel_x: 1.0   # This parameters changes with respect to load
+  max_vel_x_backwards: 0.35
   max_vel_y: 0.0
   max_vel_theta: 0.5
-  acc_lim_x: 1.0 # This parameters changes with respect to load
-  acc_lim_theta: 0.5
+  acc_lim_x: 0.7
+  acc_lim_theta: 0.2
   min_turning_radius: 0.0 # diff-drive robot (can turn on place!)
 
   footprint_model: # types: "point", "circular", "line", "two_circles", "polygon"
@@ -33,13 +33,13 @@ TebLocalPlannerROS:
     front_radius: 0.2 # for type "two_circles"
     rear_offset: 0.2 # for type "two_circles"
     rear_radius: 0.2 # for type "two_circles"
-    vertices: [[-0.33, 0.33], [0.33, 0.33], [0.33, -0.33], [-0.33, -0.33]] # for type "polygon" # This parameters changes with respect to load
+    vertices: [[-0.36, 0.36], [0.36, 0.36], [0.36, -0.36], [-0.36, -0.36]] # for type "polygon" # This parameters changes with respect to load
     
      
   # GoalTolerance
       
-  xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.05
+  xy_goal_tolerance: 0.09 # This parameters changes with respect to load
+  yaw_goal_tolerance: 0.04 # This parameters changes with respect to load
   free_goal_vel: False
       
   # Obstacles
@@ -65,10 +65,11 @@ TebLocalPlannerROS:
   weight_acc_lim_x: 1
   weight_acc_lim_theta: 1
   weight_kinematics_nh: 1000
-  weight_kinematics_forward_drive: 0
+  weight_kinematics_forward_drive: 1
   weight_kinematics_turning_radius: 1
   weight_optimaltime: 1
   weight_obstacle: 50
+  weight_viapoint: 10
   weight_dynamic_obstacle: 10 # not in use yet
   weight_adapt_factor: 2
   

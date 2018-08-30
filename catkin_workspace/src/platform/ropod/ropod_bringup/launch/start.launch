@@ -11,7 +11,8 @@
 	<arg name="asus_cam_calibration" default="false"/>
 	<arg name="gmapping" default="false"/>
 	<!--<arg name="floorplan" default="$(find ropod_demo_dec_2017)/config/shape/floorplan_ropod_demo"/>-->
-	<arg name="floorplan" default="$(find ed_object_models)/models/hospital_test_amcl/walls/shape/Floorplan_demo_ROPOD_amcl"/>
+<!-- 	<arg name="floorplan" default="$(find ed_object_models)/models/hospital_test_amcl/walls/shape/Floorplan_demo_ROPOD_amcl"/> -->
+        <arg name="floorplan" default="$(find ed_object_models)/models/tue_hallway_RLtoAL/walls/shape/map"/>
 	<arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL)" />
 	<arg name="robot_path" default="$(env CATKIN_WORKSPACE)/src/platform/$(arg robotName)"/>
 	<arg name="robot_bringup_path" default="$(arg robot_path)/$(arg robotName)_bringup"/>
@@ -45,7 +46,7 @@
 	
 			<!-- dynamic tf broadcaster -->	
 			<group unless="$(arg LOAD_ATTACHED)">
-			    <node pkg="ropod_bringup" type="ropod_tf_broadcaster_simulator" name="ropod_tf_broadcaster_simulator" />			    
+			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster_only_ropod" name="ropod_mobidik_tf_broadcaster_only_ropod" />			    
 			</group> 
 			<group if="$(arg LOAD_ATTACHED)">
 			    <node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster" name="ropod_mobidik_tf_broadcaster" />
@@ -57,14 +58,20 @@
 				<arg name="laser1" value="$(arg laser1_name)"/>
 			</include> 			
 
-			<!-- Laser publishing -->
-			<group if="$(arg laser)">
-				<include file="$(find robot_common)/launch/hardware/sick_laser.launch">
-					<arg name="bringup_path" value="$(arg robot_bringup_path)"/>
-					<arg name="name" value="$(arg laser1_name)"/>
-					<arg name="robot" value="$(arg robotName)"/>
-				</include>
-			</group>
+                        <!-- Laser publishing -->
+                        <group if="$(arg laser)">
+                                <include file="$(find robot_common)/launch/hardware/hokuyo_laser.launch">
+                                        <arg name="bringup_path" value="$(arg robot_bringup_path)"/>
+                                        <arg name="name" value="$(arg laser1_name)"/>
+                                        <arg name="robot" value="$(arg robotName)"/>
+                                </include>
+                                <include file="$(find robot_common)/launch/hardware/sick_laser.launch">
+                                        <arg name="bringup_path" value="$(arg robot_bringup_path)"/>
+                                        <arg name="name" value="sick_laser"/>
+                                        <arg name="robot" value="$(arg robotName)"/>
+                                </include>
+                        </group>
+
 
 		</group>	
 	</group>
@@ -80,7 +87,7 @@
 			</include>
 	
 			<!-- Launch tf broadcaster for ropod robot -->
-			<node pkg="ropod_bringup" type="ropod_tf_broadcaster_simulator" name="ropod_tf_broadcaster_simulator" />
+			<node pkg="ropod_bringup" type="ropod_mobidik_tf_broadcaster_only_ropod" name="ropod_mobidik_tf_broadcaster_only_ropod" />
 
 		</group>
 		

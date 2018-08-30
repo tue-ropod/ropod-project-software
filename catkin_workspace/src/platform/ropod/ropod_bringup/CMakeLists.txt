@@ -80,3 +80,5 @@ target_link_libraries(ropod_mobidik_tf_broadcaster_simulator ${catkin_LIBRARIES}
 add_executable(ropod_mobidik_tf_broadcaster src/ropod_mobidik_tf_broadcaster.cpp)
 target_link_libraries(ropod_mobidik_tf_broadcaster ${catkin_LIBRARIES})
 
+add_executable(ropod_mobidik_tf_broadcaster_only_ropod src/ropod_mobidik_tf_broadcaster_only_ropod.cpp)
+target_link_libraries(ropod_mobidik_tf_broadcaster_only_ropod ${catkin_LIBRARIES})

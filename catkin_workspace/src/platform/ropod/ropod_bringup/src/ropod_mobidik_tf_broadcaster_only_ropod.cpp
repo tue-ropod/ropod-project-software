@@ -102,7 +102,11 @@ void loadvelcmdCallback(const geometry_msgs::Twist::ConstPtr& msg){
   tf::Vector3 loadShift = base2loadTF.getOrigin();
   geometry_msgs::Twist ropod_cmd_vel;
   ropod_cmd_vel.linear.x  =  msg->linear.x;
-  ropod_cmd_vel.linear.y  =  0.0 + msg->angular.z*(-loadShift.x()); 
+  if(std::abs(loadShift.x())>0.0)
+    ropod_cmd_vel.linear.y  =  0.0 + msg->angular.z*(-loadShift.x()); 
+  else
+    ropod_cmd_vel.linear.y  = msg->linear.y; // Allow for holonomic movements when no load is connected
+      
   ropod_cmd_vel.linear.z  =  msg->linear.z;
   ropod_cmd_vel.angular.x =  msg->angular.x;
   ropod_cmd_vel.angular.y =  msg->angular.y;

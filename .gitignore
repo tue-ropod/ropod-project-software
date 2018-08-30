@@ -4,6 +4,8 @@
 catkin_workspace/build/
 catkin_workspace/devel/
 catkin_workspace/.catkin_workspace
+catkin_workspace/.catkin_tools/
+
 
 dependencies/
 

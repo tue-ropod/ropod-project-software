@@ -1,0 +1,13 @@
+flags:
+- flag: "non-localizable"
+
+affordances:
+    navigate-to:
+        position_constraint:
+            constraint: "x^2 + y^2 < 0^2"
+            
+color:
+   red: 0.0
+   green: 1.0
+   blue: 0.0
+   alpha: 0.1

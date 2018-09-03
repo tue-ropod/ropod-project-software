@@ -174,7 +174,7 @@ int main(int argc, char** argv){
    ros::Subscriber sub_odom = n.subscribe<nav_msgs::Odometry>("/ropod/odom_incomplete", 1, poseCallback);  
    ros::Subscriber sub_loadcmdvel = n.subscribe<geometry_msgs::Twist>("/load/cmd_vel", 1, loadvelcmdCallback);
    
-   ros::Subscriber load_attached_sub = n.subscribe<std_msgs::Bool>("/route_navigation/load_attached", 10, loadAttachedCallback);   
+   ros::Subscriber load_attached_sub = n.subscribe<std_msgs::Bool>("/route_navigation/set_load_attached", 10, loadAttachedCallback);   
    
   //ros::Subscriber sub = n.subscribe<geometry_msgs::PoseArray>("/ed/localization/particles", 1, poseCallback);
   

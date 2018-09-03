@@ -41,8 +41,8 @@
 
 	  <node pkg="laser_filters" type="scan_to_scan_filter_chain"
 	      name="laser_filter">
-	    <rosparam command="load" file="$$(arg bringup_path)/parameters/hardware/$(arg name)_filter_config.yaml" />
-	    <remap from="scan" to="$(arg robot)/$(arg name)/scan" />
+	    <rosparam command="load" file="$(arg bringup_path)/parameters/hardware/$(arg name)_filter_config.yaml" />
+            <!-- <remap from="scan" to="base_scan" /> -->
 	  </node>
   
     

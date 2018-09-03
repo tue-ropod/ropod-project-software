@@ -25,3 +25,5 @@ plugins:
   - name: route_navigation
     lib: libed_route_navigation_plugin.so
     frequency: 5
+    parameters:
+        mobidik_initially_connected: 1

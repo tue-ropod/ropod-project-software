@@ -14,6 +14,13 @@ mobidik2; point1; 12.09; 2.58;
 mobidik2; point2; 12.45; 4.11;
 mobidik2; point3; 11.38; 4.22;
 
+mobidik3; center; 11.41; 5.23;
+mobidik3; point1; 12.63; 4.90;
+mobidik3; point2; 13.08; 6.97;
+mobidik3; point3; 11.91; 7.28;
+
+
+
 
 
 

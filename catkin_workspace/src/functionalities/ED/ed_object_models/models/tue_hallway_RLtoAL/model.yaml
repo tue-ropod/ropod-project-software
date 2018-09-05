@@ -46,6 +46,25 @@ composition:
     - type: "waypoint"
       id: "orient_wp_MobidikArea2"
       pose: { x: 12.03, y: 3.31, z: 0, Z: 2.9 }      
+
+    - type: "indoor_navigation_areas/MobidikArea"
+      id: "MobidikArea3"
+      pose: { x: 11.41, y: 5.23, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 1.22, y: -0.33 }
+                    - { x: 1.67, y: 1.74 }
+                    - { x: 0.50, y: 2.05 }
+                  height: 0.1
+
+    - type: "waypoint"
+      id: "orient_wp_MobidikArea3"
+      pose: { x: 12.49, y: 5.43, z: 0, Z: 2.9 }      
+
+
       
     - type: "indoor_navigation_areas/elevator"
       id: "Elevator1"

@@ -78,11 +78,12 @@
                                         <arg name="name" value="$(arg laser1_name)"/>
                                         <arg name="robot" value="$(arg robotName)"/>
                                 </include>
-                                <include file="$(find robot_common)/launch/hardware/sick_laser.launch">
+<!--                                <include file="$(find robot_common)/launch/hardware/sick_laser.launch">
                                         <arg name="bringup_path" value="$(arg robot_bringup_path)"/>
                                         <arg name="name" value="sick_laser"/>
                                         <arg name="robot" value="$(arg robotName)"/>
                                 </include>
+-->
                         </group>
 
 

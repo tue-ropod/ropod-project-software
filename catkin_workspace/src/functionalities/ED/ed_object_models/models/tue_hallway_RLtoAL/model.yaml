@@ -62,7 +62,7 @@ composition:
 
     - type: "waypoint"
       id: "orient_wp_MobidikArea3"
-      pose: { x: 12.49, y: 5.43, z: 0, Z: 2.9 }      
+      pose: { x: 12.56, y: 5.83, z: 0, Z: 2.9 }      
 
 
       

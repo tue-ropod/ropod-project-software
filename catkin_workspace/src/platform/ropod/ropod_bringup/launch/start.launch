@@ -98,6 +98,7 @@
 				<arg name="robot" value="$(arg robotName)" />
 				<arg name="model_name" value="$(arg robotName)" />
 				<arg name="model_path" value="$(arg robot_path)/$(arg robotName)_model" />
+                                <arg name="movingObjects" value="true" />
 			</include>
 	
 			<!-- Launch tf broadcaster for ropod robot -->

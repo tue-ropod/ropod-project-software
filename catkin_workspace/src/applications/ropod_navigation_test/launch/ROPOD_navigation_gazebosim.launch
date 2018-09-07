@@ -53,18 +53,18 @@
 	
 	<!-- initial pose of the robot -->
 	<param name="initial_pose_x" value="3.1"/>
-	<param name="initial_pose_y" value="16.4"/>
+	<param name="initial_pose_y" value="15.3"/>
 	<param name="initial_pose_a" value="-1.54"/>
 	
     </node>
   
-	% Launch ED
+<!--	% Launch ED
 	<node pkg="ed" type="ed" name="ed" args="$(find ropod_navigation_test)/config/model-test-nav-amcl.yaml">
 	</node>
 
 	% Launch ED GUI server
 	<node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher">
-	</node>
+	</node>-->
 	
 	% Launch navigation
 	<include file="$(find ropod_navigation_test)/launch/move_base.launch" />

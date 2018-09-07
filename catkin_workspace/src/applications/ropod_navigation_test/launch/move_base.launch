@@ -9,14 +9,12 @@
     <rosparam file="$(find ropod_navigation_test)/config/parameters/local_costmap_params.yaml"  command="load"/>    
     <rosparam file="$(find ropod_navigation_test)/config/parameters/base_local_planner_params.yaml" command="load" />
     
-    <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
     
     
-    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
+<!--     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" /> -->
     
-
-    
-    
+        
     <remap from="cmd_vel" to="/ropod/cmd_vel"/>
     <remap from="odom" to="/ropod/odom"/>
   </node>

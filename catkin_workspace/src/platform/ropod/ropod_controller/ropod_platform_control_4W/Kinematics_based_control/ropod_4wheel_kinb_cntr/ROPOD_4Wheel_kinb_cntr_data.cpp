@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_kinb_cntr'.
 //
-// Model version                  : 1.210
+// Model version                  : 1.211
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Fri Apr 20 09:35:38 2018
+// C/C++ source code generated on : Tue May 15 14:42:18 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -375,44 +375,39 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   0.001,
 
   // Computed Parameter: SFunction_P1_Size
-  //  Referenced by: '<S41>/S-Function'
+  //  Referenced by: '<S42>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S41>/S-Function'
+  //  Referenced by: '<S42>/S-Function'
 
   1.0,
 
   // Computed Parameter: SFunction_P1_Size_d
-  //  Referenced by: '<S42>/S-Function'
+  //  Referenced by: '<S43>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S42>/S-Function'
+  //  Referenced by: '<S43>/S-Function'
 
   2.0,
 
   // Computed Parameter: SFunction_P1_Size_e
-  //  Referenced by: '<S43>/S-Function'
+  //  Referenced by: '<S44>/S-Function'
 
   { 1.0, 1.0 },
 
   // Expression: link_id
-  //  Referenced by: '<S43>/S-Function'
+  //  Referenced by: '<S44>/S-Function'
 
   3.0,
 
-  // Computed Parameter: SFunction_P1_Size_l
-  //  Referenced by: '<S44>/S-Function'
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant20'
 
-  { 1.0, 1.0 },
-
-  // Expression: link_id
-  //  Referenced by: '<S44>/S-Function'
-
-  4.0,
+  0.0,
 
   // Expression: -1
   //  Referenced by: '<S35>/sign convention'
@@ -428,6 +423,11 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   //  Referenced by: '<S35>/sign convention2'
 
   -1.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant17'
+
+  0.0,
 
   // Expression: -1
   //  Referenced by: '<S35>/sign convention3'
@@ -450,11 +450,6 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
   0.0,
 
   // Expression: 0
-  //  Referenced by: '<S36>/Constant10'
-
-  0.0,
-
-  // Expression: 0
   //  Referenced by: '<S36>/Constant2'
 
   0.0,
@@ -471,11 +466,6 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
 
   // Expression: 0
   //  Referenced by: '<S36>/Constant8'
-
-  0.0,
-
-  // Expression: 0
-  //  Referenced by: '<S36>/Constant9'
 
   0.0,
 
@@ -511,31 +501,6 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
 
   // Expression: 1
   //  Referenced by: '<S36>/Gain14'
-
-  1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S36>/Gain15'
-
-  -1.0,
-
-  // Expression: 1
-  //  Referenced by: '<S36>/Gain16'
-
-  1.0,
-
-  // Expression: -1
-  //  Referenced by: '<S36>/Gain17'
-
-  -1.0,
-
-  // Expression: 1
-  //  Referenced by: '<S36>/Gain18'
-
-  1.0,
-
-  // Expression: 1
-  //  Referenced by: '<S36>/Gain19'
 
   1.0,
 
@@ -654,10 +619,40 @@ P_ROPOD_4Wheel_kinb_cntr_T ROPOD_4Wheel_kinb_cntr_P = {
 
   -1.0,
 
-  // Expression: -1
-  //  Referenced by: '<S36>/sign_convention3'
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant11'
 
-  -1.0,
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant24'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant25'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant29'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant5'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant6'
+
+  0.0,
+
+  // Expression: 0
+  //  Referenced by: '<S41>/Constant7'
+
+  0.0,
 
   // Expression: 1
   //  Referenced by: '<S1>/Constant'

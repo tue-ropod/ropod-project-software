@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   
-  	
-	% Launch joy
-	<node pkg="joy" type="joy_node" name="joy_node" ns="ropod">
-	</node>
+    <arg name="scale_linear" default="1.0"/>
+    <arg name="scale_angular" default="0.5"/>
+    <arg name="vel_topic" default="/ropod/cmd_vel"/>
+        
+    % Launch joy
+    <node pkg="joy" type="joy_node" name="joy_node">
+    </node>
 
-	% Launch teleop twist
-	<node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node" ns="ropod">
-	</node>
-	
-
-	
-
-
+    % Launch teleop twist
+    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node">
+        <param name="scale_linear" type="double" value="$(arg scale_linear)" />
+        <param name="scale_angular" type="double" value="$(arg scale_angular)" />
+        <remap from="/cmd_vel" to="$(arg vel_topic)"/>
+    </node>	
 	
 </launch>

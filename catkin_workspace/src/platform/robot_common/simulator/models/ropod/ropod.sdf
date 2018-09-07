@@ -9,15 +9,15 @@
      
      	   
       <inertial>
-        <mass>30.0</mass>
+        <mass>0.01</mass>
         <inertia> <!-- inertias are tricky to compute -->
           <!-- http://gazebosim.org/tutorials?tut=inertia&cat=build_robot -->
-          <ixx>0.083*30.0*1.01</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+          <ixx>0.083*00.0*1.01</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
           <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
           <ixz>0.0</ixz>         <!-- for a box: ixz = 0 -->
-          <iyy>0.083*30.0*1.01</iyy>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+          <iyy>0.083*00.01*1.01</iyy>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
           <iyz>0.0</iyz>         <!-- for a box: iyz = 0 -->
-          <izz>0.083*30.0*2</izz>       <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+          <izz>0.083*00.01*2</izz>       <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
         </inertia>
       </inertial>
 	   
@@ -196,8 +196,8 @@
             <horizontal>
               <samples>500</samples>
               <resolution>1</resolution>
-              <min_angle>-1.6</min_angle>
-              <max_angle>1.6</max_angle>
+              <min_angle>-2.35</min_angle>
+              <max_angle>2.35</max_angle>
             </horizontal>
             <vertical>
               <samples>1</samples>
@@ -242,10 +242,9 @@
    <plugin name="Odometry_Plugin" filename="libOdometry_Plugin.so">
        <updateRate>30.0</updateRate>
        <veltopicName>/ropod/cmd_vel</veltopicName>       
-       <odomtopicName>/ropod/odom</odomtopicName>       
+       <odomtopicName>/ropod/odom_incomplete</odomtopicName>       
        <robotBaseFrame>/ropod/base_link</robotBaseFrame>
-       <odomFrame>/ropod/odom</odomFrame>
-      
+       <odomFrame>/ropod/odom</odomFrame>      
    </plugin>
 
 

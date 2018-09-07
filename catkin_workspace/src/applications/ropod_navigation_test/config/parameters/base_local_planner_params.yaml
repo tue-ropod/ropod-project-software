@@ -1,43 +1,73 @@
-TrajectoryPlannerROS:
-  max_vel_x: 1.0
-  min_vel_x: -0.2
-  max_vel_theta: 0.7
-  min_vel_theta: -0.7
-  min_in_place_vel_theta: 0.3
+TrajectoryPlannerROS: # http://wiki.ros.org/base_local_planner
+  max_vel_x: 1.4
+  min_vel_x: 0.35
+  max_vel_theta: 0.5
+  min_vel_theta: -0.5
+  min_in_place_vel_theta: 0.5
 
-  acc_lim_theta: 2.0
-  acc_lim_x: 2.5
-  acc_lim_y: 2.5
+  acc_lim_theta: 0.2
+  acc_lim_x: 0.7
+  # acc_lim_y: 0.0
   meter_scoring: true
 
-  holonomic_robot: true
-  controller_frequency: 5.0
-  pdist_scale: 3.0
-  path_distance_bias: 100.0
-  occdist_scale: 0.02
-  latch_xy_goal_tolerance: true
-  clearing_rotation_allowed: false
+  controller_frequency: 10.0
+  pdist_scale: 10.0
+  # gdist_scale: 1.5
+  occdist_scale: 0.001  
+  heading_scoring: true  
+  heading_scoring_timestep: 0.5
+  escape_reset_dist_: 0.2
+  escape_reset_theta: 0.1
+  oscillation_reset_dist: 0.2
+  escape_vel: -0.35
+  heading_lookahead: 0.5
   
-DWAPlannerROS:
-  acc_lim_x: 2.5
-  acc_lim_y: 2.5
-  acc_lim_th: 2.0
-  max_trans_vel: 2.0
-  min_trans_vel: 0.1
-  max_vel_x: 1.5
-  min_vel_x: 0.0
-  max_vel_y: 1.0
-  min_vel_y: 0.0 
-  max_rot_vel: 0.5
-  min_rot_vel: 0.0
+  path_distance_max: 0.2
   
-  controller_frequency: 5.0
   xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.15
+  latch_xy_goal_tolerance: true
+  
+  
+  holonomic_robot: false
+  vx_samples: 10
+  vth_samples: 10
+  sim_time: 1.0
+  
+DWAPlannerROS: # http://wiki.ros.org/dwa_local_planner
+  acc_lim_x: 0.5
+  acc_lim_y: 0.0
+  acc_lim_th: 0.5
+  max_trans_vel: 1.0
+  min_trans_vel: 0.2
+  max_vel_x: 1.0
+  min_vel_x: -0.2
+  max_vel_y: 0.0
+  min_vel_y: 0.0 
+  max_rot_vel: 0.7
+  min_rot_vel: 0.2
+  
+  sim_time: 0.5
+  #  controller_frequency: 10.0 # Set only the one of move_base
+  
+  path_distance_bias: 100.0
+  goal_distance_bias: 50.0
+  # forward_point_distance: 0.325
+  
+  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.05
   latch_xy_goal_tolerance: true
   
   path_distance_max: 0.2
+  vx_samples: 10
+  vth_samples: 10
 
-
+  
+  
+# Move base parameters
+recovery_behavior_enabled: false
+clearing_rotation_allowed: false
+max_planning_retries: 10
+controller_frequency: 10.0
 global_frame: /map  
 

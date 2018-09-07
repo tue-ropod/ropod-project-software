@@ -3,6 +3,8 @@
 #include <nav_msgs/Odometry.h>
 #include <ros/console.h>
 #include <geometry_msgs/PoseArray.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <tf2_ros/transform_listener.h>
 
 
 
@@ -34,7 +36,25 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   odommsg.header.stamp = ros::Time::now();
   pub_ropod_odom.publish(odommsg);     
   
-  tf::Vector3 loadShift = base2loadTF.getOrigin();
+  
+  
+  
+  // Compute load odometry using ropod odometry
+/*  tf::Vector3 loadShift = base2loadTF.getOrigin();
+  double rx, ry, rz;
+  tf::Quaternion q(
+        msg->pose.pose.orientation.x,
+        msg->pose.pose.orientation.y,
+        msg->pose.pose.orientation.z,
+        msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  m.getRPY(rx,ry,rz);  
+  loadodommsg.pose.pose.position.x = msg->pose.pose.position.x-(-loadShift.x())*cos(rz);
+  loadodommsg.pose.pose.position.y = msg->pose.pose.position.y-(-loadShift.x())*sin(rz);
+  loadodommsg.pose.pose.orientation.x = msg->pose.pose.orientation.x;
+  loadodommsg.pose.pose.orientation.y = msg->pose.pose.orientation.y;
+  loadodommsg.pose.pose.orientation.z = msg->pose.pose.orientation.z;
+  loadodommsg.pose.pose.orientation.w = msg->pose.pose.orientation.w;  
   loadodommsg.twist.twist.linear.x = msg->twist.twist.linear.x;
   loadodommsg.twist.twist.linear.y = msg->twist.twist.linear.y -  msg->twist.twist.angular.z*(-loadShift.x());
   loadodommsg.twist.twist.linear.z = msg->twist.twist.linear.z;
@@ -44,9 +64,31 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
   loadodommsg.header.frame_id = "/load/odom";
   loadodommsg.child_frame_id = "/load/base_link";
   loadodommsg.header.stamp = ros::Time::now();
-  pub_loadodom.publish(loadodommsg);      
+  pub_loadodom.publish(loadodommsg);    */  
   
 }
+
+
+void loadposeCallback(const nav_msgs::Odometry::ConstPtr& msg){     
+  loadodommsg.pose.pose.position.x = msg->pose.pose.position.x;
+  loadodommsg.pose.pose.position.y = msg->pose.pose.position.y;
+  loadodommsg.pose.pose.orientation.x = msg->pose.pose.orientation.x;
+  loadodommsg.pose.pose.orientation.y = msg->pose.pose.orientation.y;
+  loadodommsg.pose.pose.orientation.z = msg->pose.pose.orientation.z;
+  loadodommsg.pose.pose.orientation.w = msg->pose.pose.orientation.w;
+  loadodommsg.twist.twist.linear.x = msg->twist.twist.linear.x;
+  loadodommsg.twist.twist.linear.y = msg->twist.twist.linear.y;
+  loadodommsg.twist.twist.linear.z = msg->twist.twist.linear.z;
+  loadodommsg.twist.twist.angular.x = msg->twist.twist.angular.x;
+  loadodommsg.twist.twist.angular.y = msg->twist.twist.angular.y;
+  loadodommsg.twist.twist.angular.z = msg->twist.twist.angular.z;     
+  loadodommsg.header.frame_id = "/load/odom";
+  loadodommsg.child_frame_id = "/load/base_link";
+  loadodommsg.header.stamp = ros::Time::now();
+  pub_loadodom.publish(loadodommsg);     
+}
+
+
 /* 
 */
 /*
@@ -74,8 +116,36 @@ void loadvelcmdCallback(const geometry_msgs::Twist::ConstPtr& msg){
   ropod_cmd_vel.angular.x =  msg->angular.x;
   ropod_cmd_vel.angular.y =  msg->angular.y;
   ropod_cmd_vel.angular.z =  msg->angular.z;
+  
+  double min_magn_xy_vel = 0.3;
+  double min_magn_theta_vel = 0.15;
+  double sc_factor;
+  if(std::abs(ropod_cmd_vel.linear.x) < min_magn_xy_vel && std::abs(ropod_cmd_vel.linear.x) < min_magn_xy_vel)      
+  {
+      if(std::abs(ropod_cmd_vel.linear.x)>std::abs(ropod_cmd_vel.linear.y) && std::abs(ropod_cmd_vel.linear.x) > 0.05)
+      {
+          sc_factor = std::abs(min_magn_xy_vel/ropod_cmd_vel.linear.x);
+          ropod_cmd_vel.linear.x  *= sc_factor;
+          ropod_cmd_vel.linear.y  *= sc_factor;
+          ropod_cmd_vel.angular.z *= sc_factor;
+          
+      }      
+      if (std::abs(ropod_cmd_vel.linear.y)>std::abs(ropod_cmd_vel.linear.x) && std::abs(ropod_cmd_vel.linear.y) > 0.05)
+      {
+          sc_factor = std::abs(min_magn_xy_vel/ropod_cmd_vel.linear.y);
+          ropod_cmd_vel.linear.x  *= sc_factor;
+          ropod_cmd_vel.linear.y  *= sc_factor;
+          ropod_cmd_vel.angular.z *= sc_factor;
+      }
+  }
+  
+  if(std::abs(ropod_cmd_vel.angular.z) < min_magn_theta_vel && std::abs(ropod_cmd_vel.angular.z) > 0.05 && ropod_cmd_vel.linear.x == 0.0 && ropod_cmd_vel.linear.y == 0.0)
+  {
+      sc_factor = std::abs(min_magn_theta_vel/ropod_cmd_vel.angular.z);
+      ropod_cmd_vel.angular.z *= sc_factor;
+  }  
     
-  pub_robcmdvel.publish(ropod_cmd_vel);
+  // pub_robcmdvel.publish(ropod_cmd_vel);
 }
 
 int main(int argc, char** argv){
@@ -107,6 +177,7 @@ int main(int argc, char** argv){
    pub_loadodom = n.advertise<nav_msgs::Odometry>("/load/odom", 1);
    pub_ropod_odom = n.advertise<nav_msgs::Odometry>("/ropod/odom", 1);
    ros::Subscriber sub_odom = n.subscribe<nav_msgs::Odometry>("/ropod/odom_incomplete", 1, poseCallback);
+   ros::Subscriber sub_loadodom = n.subscribe<nav_msgs::Odometry>("/load/odom_incomplete", 1, loadposeCallback);
    ros::Subscriber sub_loadcmdvel = n.subscribe<geometry_msgs::Twist>("/load/cmd_vel", 1, loadvelcmdCallback);
    
   //ros::Subscriber sub = n.subscribe<geometry_msgs::PoseArray>("/ed/localization/particles", 1, poseCallback);

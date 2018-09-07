@@ -271,10 +271,14 @@
 	  <surface>
 	  <friction>
 	    <ode>
-	      <mu>100000.0</mu>
+<!--	      <mu>100.0</mu>
 	      <mu2>100000.0</mu2>
 	      <slip1>0.0</slip1>
-	      <slip2>0.0</slip2>
+	      <slip2>0.0</slip2>-->
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>                
 	    </ode>
 	  </friction>	  
 	  <contact>
@@ -304,10 +308,14 @@
 	  <surface>
 	    <friction>
 	      <ode>
-		<mu>100000.0</mu>
-		<mu2>100000.0</mu2>
-		<slip1>0.0</slip1>
-		<slip2>0.0</slip2>
+<!--          <mu>100.0</mu>
+              <mu2>100000.0</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>-->
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>   
 	      </ode>
 	    </friction>
 	    <contact>
@@ -345,6 +353,13 @@
   
 <!-- ********************** Other parameters ***************************** -->
 
+   <plugin name="Odometry_Plugin" filename="libOdometry_Plugin.so">
+       <updateRate>30.0</updateRate>
+       <veltopicName>/load/cmd_vel</veltopicName>       
+       <odomtopicName>/load/odom_incomplete</odomtopicName>       
+       <robotBaseFrame>/load/base_link</robotBaseFrame>
+       <odomFrame>/load/odom</odomFrame>      
+   </plugin>    
 
 
   </model>

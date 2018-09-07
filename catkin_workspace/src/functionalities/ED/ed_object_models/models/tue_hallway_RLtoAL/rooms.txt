@@ -1,0 +1,28 @@
+elevator; center; 8.17; 3.65;
+elevator; point1; 9.39; 3.38;
+elevator; point2; 9.81; 5.18;
+elevator; point3; 8.59; 5.46;
+
+wa_elevator; center; 6.79; 7.66;
+wa_elevator; point1; 9.11; 7.08;
+wa_elevator; point2; 9.33; 8.03;
+wa_elevator; point3; 7.04; 8.56;
+
+
+mobidik2; center; 10.95; 2.84;
+mobidik2; point1; 12.09; 2.58;
+mobidik2; point2; 12.45; 4.11;
+mobidik2; point3; 11.38; 4.22;
+
+mobidik3; center; 11.41; 5.23;
+mobidik3; point1; 12.63; 4.90;
+mobidik3; point2; 13.08; 6.97;
+mobidik3; point3; 11.91; 7.28;
+
+
+
+
+
+
+
+

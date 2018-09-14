@@ -246,8 +246,18 @@
        <robotBaseFrame>/ropod/base_link</robotBaseFrame>
        <odomFrame>/ropod/odom</odomFrame>      
    </plugin>
+   
+   
 
-
+   <!--
+   <plugin name="Odometry_Plugin" filename="libgazebo_ros_planar_move.so">
+       <odometryRate>30.0</odometryRate>
+       <commandTopic>/ropod/cmd_vel</commandTopic>       
+       <odometryTopic>/ropod/odom_incomplete</odometryTopic>       
+       <robotBaseFrame>/ropod/base_link</robotBaseFrame>
+       <odometryFrame>/ropod/odom</odometryFrame>      
+   </plugin>
+   -->
 
   </model>
 

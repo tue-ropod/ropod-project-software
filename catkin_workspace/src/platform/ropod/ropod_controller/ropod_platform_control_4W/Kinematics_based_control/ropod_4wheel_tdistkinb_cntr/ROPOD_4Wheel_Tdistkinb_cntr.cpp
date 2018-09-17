@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.277
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Tue Aug 28 14:27:20 2018
+// C/C++ source code generated on : Mon Sep 17 18:46:38 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -36,10 +36,10 @@
 #define ROP_ParameterInitialValue_icsq3 (200.0)
 #define RO_ParameterInitialValue_icsq3s (10.0)
 #define R_ParameterInitia_i            (1.0)
-#define R_ParameterInitia_j            (3.508)
-#define R_ParameterInitia_jd           (2.21)
-#define R_ParameterInitia_l            (1.873)
-#define R_ParameterInitia_o            (2.001)
+#define R_ParameterInitia_j            (4.7711)
+#define R_ParameterInitia_jd           (2.252)
+#define R_ParameterInitia_l            (1.8598)
+#define R_ParameterInitia_o            (1.9866)
 #define R_ParameterInitia_p            (1.6)
 #define R_ParameterInitialValue_icsq3sb (2.0)
 

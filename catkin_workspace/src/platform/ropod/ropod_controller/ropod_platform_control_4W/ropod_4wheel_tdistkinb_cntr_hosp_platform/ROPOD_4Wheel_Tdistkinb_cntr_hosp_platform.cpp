@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.279
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Tue Sep 18 10:53:58 2018
+// C/C++ source code generated on : Tue Sep 18 17:46:33 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -36,11 +36,11 @@
 #define ROP_ParameterInitialValue_hifyy (200.0)
 #define RO_ParameterInitialValue_hifyy5 (10.0)
 #define R_ParameterInitia_a            (1.0)
-#define R_ParameterInitia_g            (2.252)
-#define R_ParameterInitia_k            (1.9866)
+#define R_ParameterInitia_g            (2.663)
+#define R_ParameterInitia_k            (5.877)
 #define R_ParameterInitia_l            (1.6)
-#define R_ParameterInitia_m            (4.7711)
-#define R_ParameterInitia_o            (1.8598)
+#define R_ParameterInitia_m            (3.875)
+#define R_ParameterInitia_o            (5.306)
 #define R_ParameterInitialValue_hifyy5q (2.0)
 
 // Block signals (auto storage)
@@ -3149,7 +3149,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter7'
+    // MATLABSystem: '<S7>/Get Parameter7'
     rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_lm.SampleTime ==
@@ -3168,10 +3168,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2188.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter7'
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i;
+
+    // End of MATLABSystem: '<S7>/Get Parameter7'
 
     // Start for MATLABSystem: '<S7>/Get Parameter8'
     rtb_NotEqual_l2 = false;
@@ -3197,7 +3197,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i;
 
-    // Start for MATLABSystem: '<S7>/Get Parameter9'
+    // MATLABSystem: '<S7>/Get Parameter9'
     rtb_NotEqual_l2 = false;
     p = true;
     if (!(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_nj.SampleTime ==
@@ -3216,10 +3216,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2190.get_parameter
       (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i);
-
-    // MATLABSystem: '<S7>/Get Parameter9'
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i;
+
+    // End of MATLABSystem: '<S7>/Get Parameter9'
 
     // Start for MATLABSystem: '<S7>/Get Parameter10'
     rtb_NotEqual_l2 = false;
@@ -11577,7 +11577,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2188.initialize_error_codes
       (0U, 1U, 2U, 3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2188.set_initial_value
-      (ParameterInitialVa_hifyy5qsjpeg);
+      (ParameterInitialVal_hifyy5qsjpe);
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter7'
 
@@ -11615,7 +11615,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2190.initialize_error_codes
       (0U, 1U, 2U, 3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2190.set_initial_value
-      (ParameterInitialVal_hifyy5qsjpe);
+      (ParameterInitialVa_hifyy5qsjpeg);
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter9'
 
@@ -12073,7 +12073,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_initialize(void)
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2215.initialize_error_codes
       (0U, 1U, 2U, 3U);
     ParamGet_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_2215.set_initial_value
-      (ROPOD_4Wh_ParameterInitialValue);
+      (RO_ParameterInitialValue_hifyy5);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter2'
 
@@ -12657,12 +12657,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_terminate(void)
 
   // End of Start for MATLABSystem: '<S7>/Get Parameter6'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter7'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter7'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_lm.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_lm.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter7'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter7'
 
   // Start for MATLABSystem: '<S7>/Get Parameter8'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_ew.isInitialized == 1) {
@@ -12671,12 +12671,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_terminate(void)
 
   // End of Start for MATLABSystem: '<S7>/Get Parameter8'
 
-  // Start for MATLABSystem: '<S7>/Get Parameter9'
+  // Terminate for MATLABSystem: '<S7>/Get Parameter9'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_nj.isInitialized == 1) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_nj.isInitialized = 2;
   }
 
-  // End of Start for MATLABSystem: '<S7>/Get Parameter9'
+  // End of Terminate for MATLABSystem: '<S7>/Get Parameter9'
 
   // Start for MATLABSystem: '<S7>/Get Parameter10'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.obj_b1.isInitialized == 1) {

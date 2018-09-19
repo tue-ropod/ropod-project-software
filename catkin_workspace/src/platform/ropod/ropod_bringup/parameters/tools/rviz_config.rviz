@@ -6,11 +6,14 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /WorldModel1
         - /Footprint1
         - /Global Path planned1
         - /Local Path planning1
         - /PoseArray2
-        - /LaserScan2
+        - /Waypoints navigation1
+        - /Shapes OSM1
+        - /GoalNav1
       Splitter Ratio: 0.5
     Tree Height: 747
   - Class: rviz/Selection
@@ -211,16 +214,6 @@ Visualization Manager:
       Color Scheme: costmap
       Draw Behind: false
       Enabled: true
-      Name: Global cost map
-      Topic: /maneuver_navigation/global_costmap/costmap
-      Unreliable: false
-      Use Timestamp: false
-      Value: true
-    - Alpha: 0.699999988
-      Class: rviz/Map
-      Color Scheme: costmap
-      Draw Behind: false
-      Enabled: true
       Name: Local cost map
       Topic: /maneuver_navigation/local_costmap/costmap
       Unreliable: false
@@ -310,7 +303,7 @@ Visualization Manager:
       Color: 255; 0; 0
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 4096
@@ -327,7 +320,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /ed/gui/objectMarkers
@@ -336,6 +329,75 @@ Visualization Manager:
         Mobidik: true
         default namespace: true
       Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 0; 255; 0
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 217
+      Min Color: 0; 0; 0
+      Min Intensity: 101
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.0500000007
+      Style: Flat Squares
+      Topic: /ropod/sick_laser/scan_filtered
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Arrow Length: 0.300000012
+      Axes Length: 0.300000012
+      Axes Radius: 0.00999999978
+      Class: rviz/PoseArray
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.300000012
+      Head Radius: 0.300000012
+      Name: Waypoints navigation
+      Shaft Length: 0.5
+      Shaft Radius: 0.100000001
+      Shape: Arrow (3D)
+      Topic: /route_navigation/nav_waypoints
+      Unreliable: false
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: visualization_marker_array
+      Name: Shapes OSM
+      Namespaces:
+        "": true
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.100000001
+      Class: rviz/Pose
+      Color: 0; 255; 0
+      Enabled: true
+      Head Length: 0.300000012
+      Head Radius: 0.300000012
+      Name: GoalNav
+      Shaft Length: 1
+      Shaft Radius: 0.100000001
+      Shape: Arrow
+      Topic: /maneuver_navigation/goal_rviz
+      Unreliable: false
       Value: true
   Enabled: true
   Global Options:
@@ -362,25 +424,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.81004238
+      Distance: 9.79247189
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 7.12217808
-        Y: 3.5132041
-        Z: 5.19382524
+        X: -0.210005865
+        Y: 0.295460969
+        Z: 5.43374968
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.56979632
+      Pitch: 1.55479634
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.00357389
+      Yaw: 6.10857534
     Saved: ~
 Window Geometry:
   Displays:
@@ -398,5 +460,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 928
-  X: 2052
+  X: 992
   Y: 48

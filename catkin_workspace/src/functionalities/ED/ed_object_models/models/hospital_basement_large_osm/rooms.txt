@@ -59,9 +59,19 @@ MobiDikArea3; point1; 15.2676916122; 6.24664354324;
 MobiDikArea3; point2; 13.2910318375; 6.57284736633;  
 MobiDikArea3; point3; 13.0422801971; 4.66784620285;
 
+MobiDikArea4; center; 13.9724245071; 7.4371547699;
+MobiDikArea4; point1; 13.7554512024; 6.00698566437;
+MobiDikArea4; point2; 14.9575824738; 5.76702594757;  
+MobiDikArea4; point3; 15.209900856; 7.28930854797;
+
 Elevator1; center; 0.497129440308; 1.68133878708;
 Elevator1; point1; 3.13779258728; 1.56195569038;
 Elevator1; point2; 3.13847112656; 3.11098361015;
 Elevator1; point3; 0.446225106716; 3.12015724182;  
+
+wait_Elevator1; center; -2.0; 1.0;
+wait_Elevator1; point1; -1.0; 1.0;
+wait_Elevator1; point2; -1.0; 3.0;
+wait_Elevator1; point3; -2.0; 3.0;  
 
 

@@ -43,9 +43,25 @@ corridor2; point1; 4.73876571655; 10.7205648422;
 corridor2; point2; 11.5605964661; 11.5663757324;
 corridor2; point3; 11.5259571075; 13.4870815277;  
 
-MobiDikWaitingArea1; center; 9.43; -7.62;
-MobiDikWaitingArea1; point1; 13.7; -6.06;
-MobiDikWaitingArea1; point2; 13.1; -4.49;  
-MobiDikWaitingArea1; point3; 9.02; -5.83;
+
+MobiDikArea1; center; 1.02674937248; 0.0210037827492;
+MobiDikArea1; point1; 1.02160012722; -1.97920203209;
+MobiDikArea1; point2; 3.0316529274; -1.96823048592;  
+MobiDikArea1; point3; 3.04034876823; 0.0354846119881;
+
+MobiDikArea2; center; 17.7808132172; 4.03353595734;
+MobiDikArea2; point1; 20.1344261169; 3.66128277779;
+MobiDikArea2; point2; 20.4650344849; 5.3114066124;  
+MobiDikArea2; point3; 18.0577507019; 5.67439651489;
+
+MobiDikArea3; center; 14.9721727371; 4.46914339066;
+MobiDikArea3; point1; 15.2676916122; 6.24664354324;
+MobiDikArea3; point2; 13.2910318375; 6.57284736633;  
+MobiDikArea3; point3; 13.0422801971; 4.66784620285;
+
+Elevator1; center; 0.497129440308; 1.68133878708;
+Elevator1; point1; 3.13779258728; 1.56195569038;
+Elevator1; point2; 3.13847112656; 3.11098361015;
+Elevator1; point3; 0.446225106716; 3.12015724182;  
 
 

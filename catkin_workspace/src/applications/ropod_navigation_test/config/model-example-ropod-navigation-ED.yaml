@@ -6,7 +6,7 @@ plugins:
     lib: libed_gui_server_plugin.so     
   - name: laser_integration
     lib: libed_laser_plugin_tracking.so
-    frequency: 1
+    frequency: 10
     parameters:
         laser_topic: /ropod/laser/scan
         min_segment_size_pixels: 5
@@ -21,7 +21,7 @@ plugins:
     lib: libed_clearer_plugin.so
     enabled: 1
     parameters:
-        entity_timeout: 1.0
+        entity_timeout: 3.0
   - name: route_navigation
     lib: libed_route_navigation_plugin.so
     frequency: 5

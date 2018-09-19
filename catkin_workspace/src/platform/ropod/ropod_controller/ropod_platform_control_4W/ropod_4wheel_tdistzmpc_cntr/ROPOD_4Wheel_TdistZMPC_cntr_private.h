@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_TdistZMPC_cntr'.
 //
-// Model version                  : 1.318
+// Model version                  : 1.320
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Sep  5 11:05:03 2018
+// C/C++ source code generated on : Wed Sep 19 19:29:44 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -87,7 +87,6 @@ preprocessor word size checks.
 #endif
 #endif
 
-extern real_T rt_hypotd_snf(real_T u0, real_T u1);
 extern real_T rt_atan2d_snf(real_T u0, real_T u1);
 extern "C" void ECAT_Interface(SimStruct *rts);
 extern "C" void Read_Serial_Port(SimStruct *rts);
@@ -97,25 +96,22 @@ extern void ROPOD_4Wheel_Tdi_MATLABFunction(real_T rtu_w, real_T rtu_tau, real_T
 extern void ROPOD_4Wheel_Tdist_Calibration1(real_T rtu_angle, real_T rtu_sample,
   real_T rtu_data, real_T *rty_cal_angle, real_T *rty_i, real_T *rty_data_out);
 extern void speeddeflectionanglecalculation(real_T rtu_s_data, real_T
-  rtu_s_data_p, real_T rtu_s_data_n, real_T rtu_s_data_np, real_T rtu_s_data_i,
-  real_T rtu_s_data_h, real_T rtu_s_data_g, real_T rtu_s_data_g3, real_T
-  *rty_Total_deflection, real_T *rty_Total_speed, real_T *rty_max_angle,
-  B_speeddeflectionanglecalcula_T *localB);
-extern void ROPOD_4Wheel_TdistZMPC__ZoneMPC(real_T rtu_mo, real_T rtu_mo_m,
-  real_T rtu_mo_f, real_T rtu_mo_k, real_T rtu_Fd_max, real_T rtu_Fd_min, real_T
-  rtu_Fr_max, real_T rtu_Fr_min, const real_T rtu_H[1600], const real_T rtu_F[80],
-  const real_T rtu_A[4080], const real_T rtu_W[328], real_T rtu_rho, real_T
-  rtu_epsilon_old, real_T rtu_uf_old, real_T rtu_mv_old, real_T rtu_exitflag_old,
-  const real_T rtu_iA0[102], real_T rtu_s_old, real_T *rty_epsilon, real_T
-  *rty_u_f, real_T *rty_mv, real_T *rty_exitflag, real_T rty_iA[102], real_T
-  *rty_s, B_ZoneMPC_ROPOD_4Wheel_TdistZ_T *localB);
-extern void ROPOD_4Wheel_T_MATLABFunction_d(real_T rtu_w, real_T rtu_tau, real_T
+  rtu_s_data_n, real_T rtu_s_data_m, real_T rtu_s_data_k, real_T rtu_s_data_i,
+  real_T rtu_s_data_in, real_T rtu_s_data_ia, real_T rtu_s_data_ku, real_T
+  rtu_k_cx, real_T rtu_b_cx, real_T *rty_Total_deflection, real_T
+  *rty_Total_speed, real_T *rty_Toatal_torque);
+extern void speeddeflectionanglecalculati_l(real_T rtu_s_data, real_T
+  rtu_s_data_k, real_T rtu_s_data_f, real_T rtu_s_data_fi, real_T rtu_s_data_n,
+  real_T rtu_s_data_ft, real_T rtu_s_data_i, real_T rtu_s_data_a, real_T
+  rtu_k_cy, real_T rtu_b_cy, real_T *rty_Total_deflection, real_T
+  *rty_Total_speed, real_T *rty_Toatal_torque);
+extern void ROPOD_4Wheel_T_MATLABFunction_j(real_T rtu_w, real_T rtu_tau, real_T
   *rty_g, real_T *rty_a);
-extern void ROPOD_4Wheel_T_MATLABFunction_m(real_T rtu_w, real_T rtu_tau, real_T
+extern void ROPOD_4Wheel_T_MATLABFunction_o(real_T rtu_w, real_T rtu_tau, real_T
   *rty_g, real_T *rty_a);
 extern void ROPOD_4Wheel_Td_MATLABFunction1(real_T rtu_tl, real_T rtu_tr, real_T
-  rtu_ropod_kinmodel_param_vec, real_T rtu_ropod_kinmodel_param_vec_l, real_T
-  rtu_ropod_kinmodel_param_vec_gn, real_T rtu_ropod_kinmodel_param_vec_e, real_T
+  rtu_ropod_kinmodel_param_vec, real_T rtu_ropod_kinmodel_param_vec_a, real_T
+  rtu_ropod_kinmodel_param_vec_e5, real_T rtu_ropod_kinmodel_param_vec_b, real_T
   rtu_kmax, real_T *rty_tl_out, real_T *rty_tr_out);
 
 #endif                                 // RTW_HEADER_ROPOD_4Wheel_TdistZMPC_cntr_private_h_ 

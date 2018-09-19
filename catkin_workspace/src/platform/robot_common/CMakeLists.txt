@@ -14,10 +14,10 @@ find_package(catkin REQUIRED COMPONENTS
     roslib   
     roscpp
     std_msgs
-    #gazebo
 )
 
 # Find Gazebo
+find_package(gazebo REQUIRED)
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
@@ -31,11 +31,11 @@ include_directories(
 
 #list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
-#add_library(Odometry_Plugin SHARED simulator/gazebo_plugins/odometry/src/Odometry_Plugin.cc)
-#target_link_libraries(Odometry_Plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
+add_library(Odometry_Plugin SHARED simulator/gazebo_plugins/odometry/src/Odometry_Plugin.cc)
+target_link_libraries(Odometry_Plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
 
-#add_library(Custom_Laser_Plugin SHARED simulator/gazebo_plugins/laser/src/Custom_Laser_Plugin.cc)
-#target_link_libraries(Custom_Laser_Plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
+add_library(Custom_Laser_Plugin SHARED simulator/gazebo_plugins/laser/src/Custom_Laser_Plugin.cc)
+target_link_libraries(Custom_Laser_Plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
 
 #add_library(animated_cylinder2 SHARED simulator/gazebo_plugins/animatedCylinder2/animated_cylinder2.cc)
 #target_link_libraries(animated_cylinder2 ${GAZEBO_LIBRARIES})

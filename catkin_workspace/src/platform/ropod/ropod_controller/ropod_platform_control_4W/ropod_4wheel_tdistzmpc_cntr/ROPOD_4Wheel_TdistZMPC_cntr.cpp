@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.320
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Thu Sep 20 11:31:52 2018
+// C/C++ source code generated on : Thu Sep 20 16:36:53 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -51,6 +51,7 @@
 #define R_ParameterInitia_g            (1.8598)
 #define R_ParameterInitia_h            (4.7711)
 #define R_ParameterInitia_j            (2.252)
+#define R_ParameterInitia_j4           (4.0)
 #define R_ParameterInitia_n            (1.6)
 #define R_ParameterInitialValue_pjsf4rz (0.0)
 
@@ -17792,7 +17793,7 @@ void ROPOD_4Wheel_TdistZMPC_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_TdistZMPC_cntr_2237.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_TdistZMPC_cntr_2237.set_initial_value
-      (ParameterInitial_pjsf4rz1te2rav);
+      (R_ParameterInitia_j4);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter'
 
@@ -17811,7 +17812,7 @@ void ROPOD_4Wheel_TdistZMPC_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_TdistZMPC_cntr_2238.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_TdistZMPC_cntr_2238.set_initial_value
-      (ParameterInitial_pjsf4rz1te2rav);
+      (RO_ParameterInitialValue_pjsf4r);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter1'
 
@@ -17848,7 +17849,7 @@ void ROPOD_4Wheel_TdistZMPC_cntr_initialize(void)
     ParamGet_ROPOD_4Wheel_TdistZMPC_cntr_2239.initialize_error_codes(0U, 1U, 2U,
       3U);
     ParamGet_ROPOD_4Wheel_TdistZMPC_cntr_2239.set_initial_value
-      (R_ParameterInitia_n);
+      (R_ParameterInitia_j4);
 
     // End of Start for MATLABSystem: '<S8>/Get Parameter2'
 

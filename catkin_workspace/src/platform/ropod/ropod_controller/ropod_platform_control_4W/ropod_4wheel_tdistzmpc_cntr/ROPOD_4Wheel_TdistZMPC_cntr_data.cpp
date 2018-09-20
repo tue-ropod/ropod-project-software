@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.320
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Sep 19 20:42:15 2018
+// C/C++ source code generated on : Wed Sep 19 21:00:55 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -127,7 +127,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   // Variable: ZMPCx_Fd_max_sp
   //  Referenced by: '<S13>/Fd_min1'
 
-  130.0,
+  80.0,
 
   // Variable: ZMPCx_Fd_min_cart_sp
   //  Referenced by: '<S13>/Fd_min6'
@@ -167,7 +167,7 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
   // Variable: ZMPCy_Fd_min_sp
   //  Referenced by: '<S13>/Fd_min2'
 
-  20.0,
+  30.0,
 
   // Variable: ZMPCy_Fr_max_sp
   //  Referenced by: '<S45>/Constant27'

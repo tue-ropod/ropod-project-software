@@ -64,6 +64,11 @@ MobiDikArea4; point1; 13.7554512024; 6.00698566437;
 MobiDikArea4; point2; 14.9575824738; 5.76702594757;  
 MobiDikArea4; point3; 15.209900856; 7.28930854797;
 
+MobiDikArea5; center; 9.36856460571; -15.84778690;
+MobiDikArea5; point1; 11.6811; -15.5530;
+MobiDikArea5; point2; 11.43966; -14.04023;  
+MobiDikArea5; point3; 9.16507; -14.4215;
+
 Elevator1; center; 0.497129440308; 1.68133878708;
 Elevator1; point1; 3.13779258728; 1.56195569038;
 Elevator1; point2; 3.13847112656; 3.11098361015;

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_TdistZMPC_cntr'.
 //
-// Model version                  : 1.320
+// Model version                  : 1.321
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Mon Sep 24 16:40:33 2018
+// C/C++ source code generated on : Mon Sep 24 16:56:41 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -1924,10 +1924,10 @@ P_ROPOD_4Wheel_TdistZMPC_cntr_T ROPOD_4Wheel_TdistZMPC_cntr_P = {
 
   0.0,
 
-  // Expression: [2 -2 2 -2 2 -2 2 -2]
+  // Expression: 0.5*[2 -2 2 -2 2 -2 2 -2]
   //  Referenced by: '<S22>/Movinf around SW axis center'
 
-  { 2.0, -2.0, 2.0, -2.0, 2.0, -2.0, 2.0, -2.0 },
+  { 1.0, -1.0, 1.0, -1.0, 1.0, -1.0, 1.0, -1.0 },
 
   // Expression: -1
   //  Referenced by: '<S23>/sign convention'

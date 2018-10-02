@@ -5,10 +5,137 @@ composition:
           x: 0
           y: 0
           z: 0
-
+          
     - type: "hospital_basement_large_osm/walls"
       id: "walls"
       pose:
           x: 0
           y: 0
           z: 0
+          
+    - type: "indoor_navigation_areas/MobidikArea"
+      id: "MobidikArea1"
+      pose: { x: 1.03, y: 0.02, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.01, y: -2.00 }
+                    - { x: 2.00, y: -1.99 }
+                    - { x: 2.01, y: 0.01 }
+                  height: 0.1
+
+    - type: "waypoint"
+      id: "orient_wp_MobidikArea1"
+      pose: { x: 2.0, y: -0.22, z: 0, Z: -1.571}
+      
+    - type: "indoor_navigation_areas/MobidikArea"
+      id: "MobidikArea2"
+      pose: { x: 17.78, y: 4.03, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 2.35, y: -0.37 }
+                    - { x: 2.68, y: 1.28 }
+                    - { x: 0.28, y: 1.64 }
+                  height: 0.1
+
+    - type: "waypoint"
+      id: "orient_wp_MobidikArea2"
+      pose: { x: 19.09, y: 4.10, z: 0, Z: 1.42 }      
+
+    #- type: "indoor_navigation_areas/MobidikArea"
+      #id: "MobidikArea3"
+      #pose: { x: 14.97, y: 4.47, z: 0, rz: 0 }
+      #shape:
+          #compound:
+            #- polygon:
+                  #points:
+                    #- { x: 0, y: 0 }
+                    #- { x: 0.30, y: 1.78 }
+                    #- { x: -1.68, y: 2.10 }
+                    #- { x: -1.93, y: 0.20 }
+                  #height: 0.1                                   
+                  
+    #- type: "waypoint"
+      #id: "orient_wp_MobidikArea3"
+      #pose: { x: 14.08, y: 4.77, z: 0, Z: 1.42 }      
+      
+    - type: "indoor_navigation_areas/MobidikArea"
+      id: "MobidikArea4"
+      pose: { x: 13.97, y: 7.44, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: -0.22, y: -1.43 }
+                    - { x: 0.99, y: -1.67 }
+                    - { x: 1.24, y: -0.15 }
+                  height: 0.1                                   
+                  
+    - type: "waypoint"
+      id: "orient_wp_MobidikArea4"
+      pose: { x: 14.4, y: 7.08, z: 0, Z: -1.722 }         
+
+    - type: "indoor_navigation_areas/MobidikArea"
+      id: "MobidikArea5"
+      pose: { x: 9.37, y: -15.85, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 2.31, y: 0.29 }
+                    - { x: 2.07, y: 1.81 }
+                    - { x: -0.20, y: 1.43 }
+                  height: 0.1                                   
+                  
+    - type: "waypoint"
+      id: "orient_wp_MobidikArea5"
+      pose: { x: 10.4673976, y: -15.47952, z: 0, Z:  1.680 }   
+      
+    - type: "indoor_navigation_areas/elevator"
+      id: "Elevator1"
+      pose: { x: 0.50, y: 1.68, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 2.64, y: -0.12 }
+                    - { x: 2.64, y: 1.43 }
+                    - { x: -0.05, y: 1.44 }
+                  height: 2.0                
+                  
+    - type: "waypoint"
+      id: "orient_wp_Elevator1"
+      pose: { x: 1.8, y: 2.46, z: 0, Z: -3.142 } 
+               
+    - type: "waypoint"
+      id: "orient_wp_out_Elevator1"
+      pose: { x: -0.65, y: 2.45, z: 0, Z: -3.142 }             
+                  
+    - type: "indoor_navigation_areas/elevator"
+      id: "waiting_area_Elevator1"
+      pose: { x: -2.00, y: 1.00, z: 0, rz: 0 }
+      shape:
+          compound:
+            - polygon:
+                  points:
+                    - { x: 0, y: 0 }
+                    - { x: 1.00, y: 0.00 }
+                    - { x: 1.00, y: 2.00 }
+                    - { x: 0.00, y: 2.00 }
+                  height: 0.1          
+                  
+    - type: "waypoint"
+      id: "orient_wp_waiting_area_Elevator1"
+      pose: { x: -1.57, y: 1.56, z: 0, Z: 1.571 } 
+
+
+
+

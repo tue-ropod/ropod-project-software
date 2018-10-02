@@ -16,8 +16,8 @@ TebLocalPlannerROS:
       
   # Robot
           
-  max_vel_x: 0.5   # This parameters changes with respect to load
-  max_vel_x_backwards: 0.35
+  max_vel_x: 1.4   # This parameters changes with respect to load
+  max_vel_x_backwards: 0.2
   max_vel_y: 0.0
   max_vel_theta: 0.5
   acc_lim_x: 0.7

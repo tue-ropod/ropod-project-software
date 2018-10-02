@@ -3,53 +3,8 @@ world_name: hospital_basement_large_osm
 plugins:
   - name: gui_server
     lib: libed_gui_server_plugin.so     
-    
-  #- name: localization
-    #lib: libed_localization_plugin.so
-    #parameters:
-      #robot_name: robot    # the robot will also be in the world model. This is the
-                           ## id the robot entity will get in ED
-      #initial_pose_topic: /initialpose
-      #num_particles: 200   # maximum number of particles to use
-      #initial_pose:        # where does the robot start (in map frame)?
-        #x: 1.6
-        #y: 4.5
-        #rz: -3.1416             # rotation
-      #laser_model:
-        #topic: /ropod/laser/scan   # Laser topic
-        #num_beams: 200         # Max number of beams used per particle (evenly spread)
-        #z_hit: 0.95            # \
-        #sigma_hit: 0.2         # |
-        #z_short: 0.1           # |-- These are all parameters of the probabilistic laser
-        #z_max: 0.05            # |    model. See 'Probabilistic Robotics' for more info.
-        #z_rand: 0.05           # |
-        #lambda_short: 0.01      # /
-        #range_max: 10
-        #min_particle_distance: 0.01            # Particles that are too close together will
-        #min_particle_rotation_distance: 0.02   # be combined (resulting in less particles)
-      #odom_model:
-        #map_frame: map
-        #odom_frame: /ropod/odom
-        #base_link_frame: /ropod/base_link
-        #alpha1: 0.70   # rot -> trans + strafe   # \
-        #alpha2: 0.50    # trans -> rot            # |-- These are all parameters of the
-        #alpha3: 0.50    # trans -> trans          # |   probabilistic odom model. See
-        #alpha4: 0.50    # rot -> rot              # |   'Probabilistic Robotics' for more info
-        #alpha5: 0.70    # trans -> strafe         # /
-        
-  #- name: navigation
-    #lib: libed_navigation_plugin.so
-    #parameters:
-      #occupancy_grid_publisher:
-        #resolution: 0.05       # Grid cell size in meters
-        #frame_id: /map         # Frame id of the occupancy grid
-        #min_z: 0.025           # All entities below min_z and above max_z are not
-        #max_z: 1.8             # Projected onto the occupancy grid
-        #default_offset: 0.7    # <-- not used for ROS' Move Base, but needs to be specified
-        #convex_hull_enabled: 1 # Enable projecting unmodeled entities into navigation map
-    
   - name: laser_integration
-    lib: libed_laser_plugin.so
+    lib: libed_laser_plugin_tracking.so
     frequency: 10
     parameters:
         laser_topic: /ropod/laser/scan
@@ -60,8 +15,14 @@ plugins:
         max_cluster_size: 10.0
         max_gap_size: 1
         check_door_status: 1
-  - name: entity_clearer
-    lib: libed_clearer_plugin.so
-    enabled: 1
+        nominal_corridor_width: 3
+#  - name: entity_clearer
+#    lib: libed_clearer_plugin.so
+#    enabled: 1
+#    parameters:
+#        entity_timeout: 1.0
+  - name: route_navigation
+    lib: libed_route_navigation_plugin.so
+    frequency: 5
     parameters:
-        entity_timeout: 1.0
+        mobidik_initially_connected: 1

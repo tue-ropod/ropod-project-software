@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr'.
 //
-// Model version                  : 1.277
+// Model version                  : 1.278
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Tue Aug 28 14:27:20 2018
+// C/C++ source code generated on : Tue Sep 18 10:14:59 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -129,6 +129,7 @@ typedef struct {
   real_T P[64];
   real_T Gtl[45];                      // '<S45>/Gl_matrices'
   real_T Gl[45];                       // '<S45>/Gl_matrices'
+  real_T SFunction[40];                // '<S29>/S-Function'
   real_T SFunction_o[40];              // '<S30>/S-Function'
   real_T SFunction_b[40];              // '<S31>/S-Function'
   real_T SFunction_m[40];              // '<S32>/S-Function'
@@ -153,29 +154,29 @@ typedef struct {
   real_T work[9];
   real_T work_b[9];
   real_T e[9];
+  char_T cv0[67];
+  char_T cv1[66];
+  char_T cv2[65];
+  char_T cv3[64];
   real_T Switch2_k[8];                 // '<S20>/Switch2'
   real_T Product9[8];                  // '<S83>/Product9'
+  char_T cv4[63];
+  char_T cv5[62];
+  char_T cv6[60];
+  char_T cv7[59];
+  char_T cv8[56];
+  char_T cv9[55];
+  char_T cv10[54];
   SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_geometry_msgs_Twist In1;// '<S18>/In1'
-  real_T SFunction[40];                // '<S29>/S-Function'
   SL_Bus_ROPOD_4Wheel_Tdistkinb_cntr_geometry_msgs_Twist b_varargout_2;
   int16_T iC[21];
   int16_T iA[21];
   real_T varargin_1_p[5];
-  char_T cv0[33];
-  char_T cv1[32];
   real_T s[4];
-  char_T cv2[31];
-  char_T cv3[30];
-  char_T cv4[29];
-  char_T cv5[28];
-  char_T cv6[26];
-  char_T cv7[25];
   real_T Sum_pp[3];                    // '<S44>/Sum'
   real_T Diff[3];                      // '<S47>/Diff'
   real_T dv2[3];
   real_T work_c[3];
-  char_T cv8[22];
-  char_T cv9[21];
   real_T DigitalClock;                 // '<S10>/Digital Clock'
   real_T EnabledDelay;                 // '<S10>/Enabled Delay'
   real_T Gain1;                        // '<S10>/Gain1'
@@ -306,8 +307,8 @@ typedef struct {
   real_T GetParameter9_o1;             // '<S7>/Get Parameter9'
   real_T GetParameter10_o1;            // '<S7>/Get Parameter10'
   real_T P_gain;                       // '<S6>/Get Parameter10'
-  real_T P_gain_i;                     // '<S6>/Get Parameter'
-  real_T P_gain_h;                     // '<S6>/Get Parameter1'
+  real_T P_gain_c;                     // '<S6>/Get Parameter'
+  real_T P_gain_o;                     // '<S6>/Get Parameter1'
   real_T t2;
   real_T t4;
   real_T t5;
@@ -352,10 +353,10 @@ typedef struct {
   real_T sampletime_d;                 // '<S35>/sample time'
   real_T sampletime;                   // '<S34>/sample time'
   real_T max_current;                  // '<S8>/Get Parameter2'
-  real_T LL_pole_fhz_n;                // '<S6>/Get Parameter5'
-  real_T LL_zero_fhz_m;                // '<S6>/Get Parameter4'
-  real_T I_freq_hz_e;                  // '<S6>/Get Parameter3'
-  real_T LPF_fhz_n;                    // '<S6>/Get Parameter6'
+  real_T LL_pole_fhz_j;                // '<S6>/Get Parameter5'
+  real_T LL_zero_fhz_d;                // '<S6>/Get Parameter4'
+  real_T I_freq_hz_f;                  // '<S6>/Get Parameter3'
+  real_T LPF_fhz_j;                    // '<S6>/Get Parameter6'
   real_T LL_pole_fhz;                  // '<S6>/Get Parameter13'
   real_T LL_zero_fhz;                  // '<S6>/Get Parameter12'
   real_T I_freq_hz;                    // '<S6>/Get Parameter11'
@@ -487,50 +488,50 @@ typedef struct {
 // Block states (auto storage) for system '<Root>'
 typedef struct {
   robotics_slros_internal_bl_ic_T obj; // '<S9>/Get Parameter'
-  robotics_slros_internal_bl_ic_T obj_f;// '<S9>/Get Parameter1'
-  robotics_slros_internal_bl_ic_T obj_n;// '<S9>/Get Parameter2'
-  robotics_slros_internal_bl_ic_T obj_i;// '<S9>/Get Parameter3'
-  robotics_slros_internal_bl_ic_T obj_k;// '<S8>/Get Parameter1'
-  robotics_slros_internal_bl_ic_T obj_m;// '<S8>/Get Parameter3'
-  robotics_slros_internal_bl_ic_T obj_i4;// '<S8>/Get Parameter4'
-  robotics_slros_internal_bl_ic_T obj_b;// '<S8>/Get Parameter5'
-  robotics_slros_internal_bl_ic_T obj_h;// '<S8>/Get Parameter2'
-  robotics_slros_internal_bl_ic_T obj_bg;// '<S8>/Get Parameter'
-  robotics_slros_internal_bl_ic_T obj_m5;// '<S8>/Get Parameter6'
-  robotics_slros_internal_bl_ic_T obj_nk;// '<S8>/Get Parameter7'
-  robotics_slros_internal_bl_ic_T obj_be;// '<S7>/Get Parameter'
-  robotics_slros_internal_bl_ic_T obj_l;// '<S7>/Get Parameter11'
-  robotics_slros_internal_bl_ic_T obj_fa;// '<S7>/Get Parameter12'
-  robotics_slros_internal_bl_ic_T obj_p;// '<S7>/Get Parameter13'
-  robotics_slros_internal_bl_ic_T obj_l1;// '<S7>/Get Parameter14'
-  robotics_slros_internal_bl_ic_T obj_pe;// '<S7>/Get Parameter15'
+  robotics_slros_internal_bl_ic_T obj_n;// '<S9>/Get Parameter1'
+  robotics_slros_internal_bl_ic_T obj_d;// '<S9>/Get Parameter2'
+  robotics_slros_internal_bl_ic_T obj_h;// '<S9>/Get Parameter3'
+  robotics_slros_internal_bl_ic_T obj_l;// '<S8>/Get Parameter1'
+  robotics_slros_internal_bl_ic_T obj_e;// '<S8>/Get Parameter3'
+  robotics_slros_internal_bl_ic_T obj_m;// '<S8>/Get Parameter4'
+  robotics_slros_internal_bl_ic_T obj_f;// '<S8>/Get Parameter5'
+  robotics_slros_internal_bl_ic_T obj_o;// '<S8>/Get Parameter2'
+  robotics_slros_internal_bl_ic_T obj_mo;// '<S8>/Get Parameter'
+  robotics_slros_internal_bl_ic_T obj_p;// '<S8>/Get Parameter6'
+  robotics_slros_internal_bl_ic_T obj_b;// '<S8>/Get Parameter7'
+  robotics_slros_internal_bl_ic_T obj_a;// '<S7>/Get Parameter'
+  robotics_slros_internal_bl_ic_T obj_or;// '<S7>/Get Parameter11'
+  robotics_slros_internal_bl_ic_T obj_pq;// '<S7>/Get Parameter12'
+  robotics_slros_internal_bl_ic_T obj_ds;// '<S7>/Get Parameter13'
+  robotics_slros_internal_bl_ic_T obj_oj;// '<S7>/Get Parameter14'
+  robotics_slros_internal_bl_ic_T obj_aj;// '<S7>/Get Parameter15'
   robotics_slros_internal_bl_ic_T obj_g;// '<S7>/Get Parameter16'
-  robotics_slros_internal_bl_ic_T obj_bc;// '<S7>/Get Parameter17'
-  robotics_slros_internal_bl_ic_T obj_hv;// '<S7>/Get Parameter1'
-  robotics_slros_internal_bl_ic_T obj_j;// '<S7>/Get Parameter2'
-  robotics_slros_internal_bl_ic_T obj_e;// '<S7>/Get Parameter3'
-  robotics_slros_internal_bl_ic_T obj_jj;// '<S7>/Get Parameter4'
-  robotics_slros_internal_bl_ic_T obj_d;// '<S7>/Get Parameter5'
-  robotics_slros_internal_bl_ic_T obj_ep;// '<S7>/Get Parameter6'
-  robotics_slros_internal_bl_ic_T obj_lm;// '<S7>/Get Parameter7'
-  robotics_slros_internal_bl_ic_T obj_ew;// '<S7>/Get Parameter8'
-  robotics_slros_internal_bl_ic_T obj_nj;// '<S7>/Get Parameter9'
-  robotics_slros_internal_bl_ic_T obj_b1;// '<S7>/Get Parameter10'
-  robotics_slros_internal_bl_ic_T obj_ft;// '<S6>/Get Parameter14'
-  robotics_slros_internal_bl_ic_T obj_pz;// '<S6>/Get Parameter10'
-  robotics_slros_internal_bl_ic_T obj_jt;// '<S6>/Get Parameter11'
-  robotics_slros_internal_bl_ic_T obj_da;// '<S6>/Get Parameter12'
-  robotics_slros_internal_bl_ic_T obj_e5;// '<S6>/Get Parameter13'
-  robotics_slros_internal_bl_ic_T obj_c;// '<S6>/Get Parameter6'
-  robotics_slros_internal_bl_ic_T obj_mn;// '<S6>/Get Parameter'
-  robotics_slros_internal_bl_ic_T obj_d0;// '<S6>/Get Parameter3'
-  robotics_slros_internal_bl_ic_T obj_ey;// '<S6>/Get Parameter4'
-  robotics_slros_internal_bl_ic_T obj_g0;// '<S6>/Get Parameter5'
-  robotics_slros_internal_bl_ic_T obj_ch;// '<S6>/Get Parameter9'
-  robotics_slros_internal_bl_ic_T obj_fy;// '<S6>/Get Parameter1'
-  robotics_slros_internal_bl_ic_T obj_hq;// '<S6>/Get Parameter2'
-  robotics_slros_internal_bl_ic_T obj_eq;// '<S6>/Get Parameter7'
-  robotics_slros_internal_bl_ic_T obj_a;// '<S6>/Get Parameter8'
+  robotics_slros_internal_bl_ic_T obj_nd;// '<S7>/Get Parameter17'
+  robotics_slros_internal_bl_ic_T obj_gg;// '<S7>/Get Parameter1'
+  robotics_slros_internal_bl_ic_T obj_ee;// '<S7>/Get Parameter2'
+  robotics_slros_internal_bl_ic_T obj_f4;// '<S7>/Get Parameter3'
+  robotics_slros_internal_bl_ic_T obj_o5;// '<S7>/Get Parameter4'
+  robotics_slros_internal_bl_ic_T obj_i;// '<S7>/Get Parameter5'
+  robotics_slros_internal_bl_ic_T obj_ad;// '<S7>/Get Parameter6'
+  robotics_slros_internal_bl_ic_T obj_b3;// '<S7>/Get Parameter7'
+  robotics_slros_internal_bl_ic_T obj_bu;// '<S7>/Get Parameter8'
+  robotics_slros_internal_bl_ic_T obj_j;// '<S7>/Get Parameter9'
+  robotics_slros_internal_bl_ic_T obj_gs;// '<S7>/Get Parameter10'
+  robotics_slros_internal_bl_ic_T obj_gr;// '<S6>/Get Parameter14'
+  robotics_slros_internal_bl_ic_T obj_k;// '<S6>/Get Parameter10'
+  robotics_slros_internal_bl_ic_T obj_c;// '<S6>/Get Parameter11'
+  robotics_slros_internal_bl_ic_T obj_pt;// '<S6>/Get Parameter12'
+  robotics_slros_internal_bl_ic_T obj_o5e;// '<S6>/Get Parameter13'
+  robotics_slros_internal_bl_ic_T obj_dj;// '<S6>/Get Parameter6'
+  robotics_slros_internal_bl_ic_T obj_dq;// '<S6>/Get Parameter'
+  robotics_slros_internal_bl_ic_T obj_oa;// '<S6>/Get Parameter3'
+  robotics_slros_internal_bl_ic_T obj_h5;// '<S6>/Get Parameter4'
+  robotics_slros_internal_bl_ic_T obj_bg;// '<S6>/Get Parameter5'
+  robotics_slros_internal_bl_ic_T obj_na;// '<S6>/Get Parameter9'
+  robotics_slros_internal_bl_ic_T obj_h1;// '<S6>/Get Parameter1'
+  robotics_slros_internal_bl_ic_T obj_bv;// '<S6>/Get Parameter2'
+  robotics_slros_internal_bl_ic_T obj_m3;// '<S6>/Get Parameter7'
+  robotics_slros_internal_bl_ic_T obj_mg;// '<S6>/Get Parameter8'
   real_T EnabledDelay_DSTATE;          // '<S10>/Enabled Delay'
   real_T DelayInput2_DSTATE;           // '<S34>/Delay Input2'
   real_T DelayInput2_DSTATE_f;         // '<S35>/Delay Input2'

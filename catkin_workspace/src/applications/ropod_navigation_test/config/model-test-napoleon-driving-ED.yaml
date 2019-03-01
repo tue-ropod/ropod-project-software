@@ -1,0 +1,30 @@
+#world_name: hospital_test_amcl
+world_name: tue_hallway_RLtoAL
+
+plugins:
+  - name: gui_server
+    lib: libed_gui_server_plugin.so     
+  - name: laser_integration
+    lib: libed_laser_plugin_tracking.so
+    frequency: 10
+    parameters:
+        laser_topic: /ropod/laser/scan
+        min_segment_size_pixels: 5
+        world_association_distance: 0.5
+        segment_depth_threshold: 0.2
+        min_cluster_size: 0.05
+        max_cluster_size: 10.0
+        max_gap_size: 1
+        check_door_status: 1
+        nominal_corridor_width: 3
+  - name: entity_clearer
+    lib: libed_clearer_plugin.so
+    enabled: 1
+    parameters:
+        entity_timeout: 1.0
+# commented by melvin for ED plugin:
+#  - name: route_navigation
+#    lib: libed_route_navigation_plugin.so
+#    frequency: 5
+#    parameters:
+#        mobidik_initially_connected: 1
